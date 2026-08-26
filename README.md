@@ -1,16 +1,27 @@
-# Victorian Election Forecast 2026 — browser dashboard
+# Victorian Election Forecast 2026
 
-A responsive public-interest data dashboard built from the sealed 14 August 2026 Victorian Election Forecasting Laboratory checkpoint.
+A responsive, experimental 2026 Victorian state election forecast and data atlas.
+
+## Open in a browser
+
+Once GitHub Pages is enabled for this repository, open:
+
+https://musicofscience.github.io/vic-election-2026/
+
+The site is also deployed at:
+
+https://vic-election-forecast-2026.hxz.chatgpt.site
 
 ## What it shows
 
-- The current model gate and the reason no 2026 seat probabilities are published yet.
-- Searchable reference data for all 88 Legislative Assembly districts.
-- Official 2022 ALP two-party-preferred measures and June 2026 enrolment.
-- The four-cycle preregistered historical validation result.
-- Methodology, integrity and source-provenance status.
+- A clearly labelled provisional Legislative Assembly forecast.
+- Government-outcome probabilities and a full seat-count distribution.
+- A live scenario slider for the statewide Labor two-party vote.
+- Forecasts and uncertainty for all 88 districts.
+- A region-by-region Legislative Council projection.
+- Polling, historical validation, model limits and source links.
 
-Historical results are clearly separated from forecasts. The production forecast gate remains closed because the frozen demographic residual candidate failed its held-out promotion test.
+The default lower-house benchmark anchors to Roy Morgan's 5–7 August 2026 poll (ALP 49%, Coalition 51% two-party preferred), applies uniform swing to official 2022 district results, and uses the historical baseline RMSE as a conditional district-error envelope. It is deliberately labelled experimental and is not voting advice.
 
 ## Run locally
 
@@ -19,18 +30,16 @@ npm ci
 npm run dev
 ```
 
-## Build
+## Build for Sites
 
 ```bash
 npm run build
 ```
 
-## Refresh generated dashboard data
-
-With a reconstructed modelling repository available locally:
+## Build the static GitHub Pages version
 
 ```bash
-node scripts/generate-dashboard-data.mjs /path/to/vic-election-model
+GITHUB_PAGES=true npx next build
 ```
 
-The generated TypeScript file is committed so the deployed dashboard does not need the large private/raw source archive at runtime.
+The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds and publishes the static site automatically after pushes to `main`.
