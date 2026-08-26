@@ -35,16 +35,15 @@ async function readCssTree(directory) {
   return contents.join("\n");
 }
 
-test("emits the catalog's animation and scrolling utilities", async () => {
+test("emits responsive dashboard and accessibility utilities", async () => {
   const css = await readCssTree(path.join(root, "dist"));
 
-  assert.match(css, /--tw-enter-opacity/);
-  assert.match(css, /scrollbar-width:\s*thin/);
   assert.match(css, /scrollbar-width:\s*none/);
-  assert.match(css, /scrollbar-gutter:\s*stable/);
-  assert.match(css, /scroll-fade-reveal-b/);
-  assert.match(css, /mask-image:/);
-  assert.match(css, /tw-shimmer/);
+  assert.match(css, /\.synthesis-hero/);
+  assert.match(css, /\.model-layer-grid/);
+  assert.match(css, /\.polling-layout/);
+  // Lightning CSS modernises max-width media queries in the production bundle.
+  assert.match(css, /@media\s*\((?:max-width:\s*650px|width<=650px)\)/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
 });
 

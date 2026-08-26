@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[38801,["/vic-election-2026/_next/static/chunks/0o~269zocnb95.js","/vic-election-2026/_next/static/chunks/06v-4d9crj1zw.js"],"ElectionDashboard"]
+2:I[38801,["/vic-election-2026/_next/static/chunks/0o~269zocnb95.js","/vic-election-2026/_next/static/chunks/11tf0_7szic_f.js"],"ElectionDashboard"]
 3:I[97367,["/vic-election-2026/_next/static/chunks/0o~269zocnb95.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/vic-election-2026/_next/static/chunks/06v-4d9crj1zw.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ODT0WpmEvgGb18blgAzRc"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/vic-election-2026/_next/static/chunks/11tf0_7szic_f.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"_yDc4VL72FAhMg5kbK_eg"}
 5:null

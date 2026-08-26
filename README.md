@@ -1,27 +1,17 @@
-# Victorian Election Forecast 2026
+# Victorian Election Forecasting Laboratory — browser dashboard
 
-A responsive, experimental 2026 Victorian state election forecast and data atlas.
-
-## Open in a browser
-
-Once GitHub Pages is enabled for this repository, open:
-
-https://musicofscience.github.io/vic-election-2026/
-
-The site is also deployed at:
-
-https://vic-election-forecast-2026.hxz.chatgpt.site
+A responsive public-interest research dashboard built from the sealed 14 August 2026 Victorian Election Forecasting Laboratory checkpoint.
 
 ## What it shows
 
-- A clearly labelled provisional Legislative Assembly forecast.
-- Government-outcome probabilities and a full seat-count distribution.
-- A live scenario slider for the statewide Labor two-party vote.
-- Forecasts and uncertainty for all 88 districts.
-- A region-by-region Legislative Council projection.
-- Polling, historical validation, model limits and source links.
+- A nine-poll, multi-party benchmark with recency and sample-size weighting.
+- Sensitivity to 21-, 45- and 90-day poll half-lives, plus the complete eligible-poll registry.
+- The evidence stack: polling, official results, boundary lineage, demographics, preference distributions and historical validation.
+- A searchable conditional-scenario explorer for all 88 Legislative Assembly districts.
+- Council-region external benchmarks, kept distinct from model outputs.
+- The four-cycle preregistered held-out validation result and current model gate.
 
-The default lower-house benchmark anchors to Roy Morgan's 5–7 August 2026 poll (ALP 49%, Coalition 51% two-party preferred), applies uniform swing to official 2022 district results, and uses the historical baseline RMSE as a conditional district-error envelope. It is deliberately labelled experimental and is not voting advice.
+Roy Morgan is one polling input and one external Council benchmark; it is not presented as the forecasting model. Historical results, external commentary, polling benchmarks, scenario diagnostics and authorised model outputs are kept visually and methodologically distinct. The production forecast gate remains closed because the frozen demographic residual candidate failed its held-out promotion test.
 
 ## Run locally
 
@@ -30,16 +20,18 @@ npm ci
 npm run dev
 ```
 
-## Build for Sites
+## Build
 
 ```bash
 npm run build
 ```
 
-## Build the static GitHub Pages version
+## Refresh generated dashboard data
+
+With a reconstructed modelling repository available locally:
 
 ```bash
-GITHUB_PAGES=true npx next build
+node scripts/generate-dashboard-data.mjs /path/to/vic-election-model
 ```
 
-The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds and publishes the static site automatically after pushes to `main`.
+The generated TypeScript file is committed so the deployed dashboard does not need the large private/raw source archive at runtime.

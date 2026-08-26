@@ -3,6 +3,51 @@ export const POLL_ANCHOR_DATE = "7 August 2026";
 export const DEFAULT_ALP_TPP = 49;
 export const HISTORICAL_BASELINE_RMSE = 3.69;
 
+export const pollingBenchmark = {
+  asOf: "9 August 2026",
+  pollCount: 9,
+  method: "Sample-size and recency weighted primary-vote benchmark",
+  halfLives: [21, 45, 90] as const,
+  estimates: {
+    21: { alp: 26.1112, coalition: 27.0396, onp: 23.2745, greens: 12.8143, other: 10.7604 },
+    45: { alp: 25.7347, coalition: 26.8548, onp: 23.8162, greens: 13.0550, other: 10.5393 },
+    90: { alp: 25.4677, coalition: 26.5550, onp: 24.1079, greens: 13.2199, other: 10.6494 },
+  },
+} as const;
+
+export const pollSeries = [
+  { date: "10 Feb", pollster: "DemosAU", alp: 23, coalition: 29, onp: 21, greens: 15, other: 12, n: 1274 },
+  { date: "16 Feb", pollster: "Roy Morgan", alp: 25.5, coalition: 21.5, onp: 26.5, greens: 13.5, other: 13, n: 2462 },
+  { date: "27 Feb", pollster: "RedBridge / Accent", alp: 25, coalition: 28, onp: 24, greens: 13, other: 10, n: 2165 },
+  { date: "24 Apr", pollster: "Roy Morgan", alp: 25.5, coalition: 24, onp: 24.5, greens: 13.5, other: 12.5, n: 1707 },
+  { date: "8 Jun", pollster: "Freshwater", alp: 23, coalition: 27, onp: 25, greens: 14, other: 11, n: 1034 },
+  { date: "11 Jun", pollster: "DemosAU", alp: 21, coalition: 30, onp: 23, greens: 15, other: 11, n: 1056 },
+  { date: "28 Jun", pollster: "RedBridge / Accent", alp: 26, coalition: 26, onp: 27, greens: 13, other: 8, n: 5516 },
+  { date: "26 Jul", pollster: "Newspoll / Pyxis", alp: 28, coalition: 31, onp: 19, greens: 13, other: 9, n: 1035 },
+  { date: "7 Aug", pollster: "Roy Morgan", alp: 26, coalition: 26, onp: 23.5, greens: 12.5, other: 12, n: 2084 },
+] as const;
+
+export const modelLayers = [
+  { layer: "Polling state", status: "Benchmark live", detail: "9 eligible polls; recency, sample and regime sensitivity. Bayesian latent state and house effects remain a planned candidate." },
+  { layer: "Election baseline", status: "Operational", detail: "Official VEC results, active 88-district and eight-region registries, redistribution-aware historical surfaces." },
+  { layer: "Demography + housing", status: "Validated, not promoted", detail: "Four census-aligned cycles and seven preregistered features; first held-out ridge candidate failed its gate." },
+  { layer: "Preferences + contests", status: "Experimental", detail: "39/39 VEC indicative distributions parsed; IRV engine and candidate-set evidence exist, but no production transfer model is authorised." },
+  { layer: "Legislative Council", status: "Engine under validation", detail: "Five-member STV/PR engine and eight-region targets exist; Roy Morgan remains an external 2026 benchmark only." },
+  { layer: "Forecast release", status: "Gate closed", detail: "No production probabilities or forecast-error distribution are authorised by the sealed 14 August checkpoint." },
+] as const;
+
+export const validationSummary = {
+  cycles: 4,
+  districtTransitions: 340,
+  featureCells: 2464,
+  baselineMae: 2.7804,
+  candidateMae: 2.8121,
+  baselineRmse: 3.6938,
+  candidateRmse: 3.7190,
+  baselineWinnerErrors: 21,
+  candidateWinnerErrors: 24,
+} as const;
+
 export const latestPrimary = [
   { party: "Labor", value: 26, key: "alp" },
   { party: "Coalition", value: 26, key: "coalition" },
