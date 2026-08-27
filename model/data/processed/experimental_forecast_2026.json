@@ -1,0 +1,123 @@
+{
+  "forecast_id": "vic_2026_experimental_joint_v1",
+  "status": "experimental_forecast",
+  "production_compatible": false,
+  "as_of": "2026-08-26",
+  "simulations": 5000,
+  "seed": 20260826,
+  "party_order": [
+    "ALP",
+    "LIB_NAT",
+    "ONP",
+    "GRN",
+    "OTH_IND"
+  ],
+  "polling": {
+    "poll_count": 9,
+    "mean": {
+      "ALP": 25.673302572638686,
+      "LIB_NAT": 27.185271964123128,
+      "ONP": 23.671471376896577,
+      "GRN": 13.191609146395733,
+      "OTH_IND": 10.278344939945786
+    },
+    "median": {
+      "ALP": 25.661631463110062,
+      "LIB_NAT": 27.162770743043296,
+      "ONP": 23.644493773088875,
+      "GRN": 13.186216296089476,
+      "OTH_IND": 10.265364211223162
+    },
+    "lower80": {
+      "ALP": 24.31172124522714,
+      "LIB_NAT": 25.705965088725215,
+      "ONP": 22.13883351891123,
+      "GRN": 12.516446839711652,
+      "OTH_IND": 9.501336449246358
+    },
+    "upper80": {
+      "ALP": 27.023705409608368,
+      "LIB_NAT": 28.718629927832776,
+      "ONP": 25.221896102424274,
+      "GRN": 13.873833030119517,
+      "OTH_IND": 11.097036705782125
+    },
+    "house_effects": {
+      "DemosAU": {
+        "ALP": -0.4244234213849296,
+        "LIB_NAT": 0.25557223314368116,
+        "ONP": -0.0959929721053463,
+        "GRN": 0.17148928640350292,
+        "OTH_IND": 0.09335487394309006
+      },
+      "Freshwater Strategy": {
+        "ALP": -0.3048801215157191,
+        "LIB_NAT": -0.013103748079352329,
+        "ONP": 0.14797718895141188,
+        "GRN": 0.08981383778377428,
+        "OTH_IND": 0.0801928428598675
+      },
+      "Newspoll / Pyxis Polling & Insights": {
+        "ALP": 0.5010626436490675,
+        "LIB_NAT": 0.790940274707868,
+        "ONP": -1.0130269202759195,
+        "GRN": -0.018894200280765716,
+        "OTH_IND": -0.26008179780026275
+      },
+      "RedBridge / Accent Research": {
+        "ALP": 0.08992841441404309,
+        "LIB_NAT": -0.2689135378574399,
+        "ONP": 0.8867452176551858,
+        "GRN": -0.04334119455397634,
+        "OTH_IND": -0.6644188996578091
+      },
+      "Roy Morgan": {
+        "ALP": 0.11451132655032126,
+        "LIB_NAT": -0.77577431217086,
+        "ONP": 0.08190303654598807,
+        "GRN": -0.21349328970159576,
+        "OTH_IND": 0.7928532387761305
+      }
+    },
+    "model": "empirical_bayes_logistic_normal"
+  },
+  "assembly": {
+    "model": "correlated_multi_party_irv",
+    "districts": 88,
+    "hung_probability": 0.7662
+  },
+  "council": {
+    "model": "voter_directed_group_stv_approximation",
+    "regions": 8,
+    "members_per_region": 5,
+    "candidate_order_forecast": false
+  },
+  "governance": {
+    "demographic_residual_weight": 0,
+    "demographic_gate": "failed_sealed_four_cycle_promotion_test",
+    "aec_local_pattern_role": "derived_auxiliary_predictor",
+    "official_anchor": "VEC_2022"
+  },
+  "outputs": {
+    "districts": {
+      "path": "data/processed/experimental_forecast_2026_districts.csv",
+      "sha256": "32a9b114706d4ee8e774b50f30c649e15d5014bc0be5ca55755fecd7d67bc7d0"
+    },
+    "chamber": {
+      "path": "data/processed/experimental_forecast_2026_chamber.csv",
+      "sha256": "c354da0a0a2902ae1e603a03898025059bd319e68daa18a7803fd1ab096fa53f"
+    },
+    "seat_distribution": {
+      "path": "data/processed/experimental_forecast_2026_seat_distribution.csv",
+      "sha256": "6f334ff3b5fcff761572925e08a7835c6b34bc093b0b996d30eb9c247cf30c7f"
+    },
+    "council_regions": {
+      "path": "data/processed/experimental_forecast_2026_council_regions.csv",
+      "sha256": "ed8ecf23457bb0e1ad1d3ee8d70bfc2808c103371d6adf4c51ee7d133661ebf1"
+    },
+    "council": {
+      "path": "data/processed/experimental_forecast_2026_council.csv",
+      "sha256": "3d864e46ef8066f31fb565ec32a391ce5bc94b8c53b503a725ec55636f7d106b"
+    }
+  }
+}

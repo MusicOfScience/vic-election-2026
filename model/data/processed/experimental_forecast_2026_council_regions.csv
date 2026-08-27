@@ -1,0 +1,9 @@
+region_id,region_name,modal_probability,seats_alp,mean_alp,seats_lib_nat,mean_lib_nat,seats_onp,mean_onp,seats_grn,mean_grn,seats_oth_ind,mean_oth_ind
+eastern-victoria,Eastern Victoria,0.5738,1,1.0158,2,1.8952,2,1.6782,0,0.0856,0,0.3252
+north-eastern-metropolitan,North-Eastern Metropolitan,0.433,2,1.6074,2,1.8222,1,1.0082,0,0.5526,0,0.0096
+northern-metropolitan,Northern Metropolitan,0.8494,2,1.8518,1,1.0162,1,1.0726,1,0.998,0,0.0614
+northern-victoria,Northern Victoria,0.4986,1,1.0158,2,1.5954,1,1.4848,0,0.013,1,0.891
+south-eastern-metropolitan,South-Eastern Metropolitan,0.5768,2,1.8206,2,1.7388,1,1.1374,0,0.2004,0,0.1028
+southern-metropolitan,Southern Metropolitan,0.7508,1,1.018,2,1.8522,1,0.9648,1,0.9278,0,0.2372
+western-metropolitan,Western Metropolitan,0.2888,2,1.8008,1,1.2394,2,1.3858,0,0.4316,0,0.1424
+western-victoria,Western Victoria,0.295,1,1.4318,2,1.7094,1,1.1604,1,0.4194,0,0.279

@@ -1,0 +1,522 @@
+{
+  "checked_on": "2026-08-09",
+  "authority": "Victorian Electoral Commission",
+  "events": [
+    {
+      "election_id": "vic_la_2023_warrandyte_by",
+      "district": "Warrandyte",
+      "date": "2023-08-26",
+      "enrolment": 50986,
+      "formal_votes": 38279,
+      "informal_votes": 2344,
+      "total_votes": 40623,
+      "turnout_pct": 79.67,
+      "elected_candidate": "WERNER, Nicole",
+      "elected_party_raw": "Liberal",
+      "source_url": "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline/warrandyte-district-by-election-results/results-by-district/warrandyte-district-results",
+      "candidates": [
+        [
+          "CORCORAN, Jack",
+          "Sustainable Australia Party - Stop Overdevelopment / Corruption",
+          1030,
+          2.69
+        ],
+        [
+          "WERNER, Nicole",
+          "Liberal",
+          21921,
+          57.27
+        ],
+        [
+          "CHEESMAN, Greg",
+          "Freedom Party of Victoria",
+          846,
+          2.21
+        ],
+        [
+          "DE WIT, Cary",
+          "Labour DLP",
+          2204,
+          5.76
+        ],
+        [
+          "CHOW, Wai Man Raymond",
+          "",
+          694,
+          1.81
+        ],
+        [
+          "RANIERI, Morgan",
+          "",
+          168,
+          0.44
+        ],
+        [
+          "BOLGER, Colleen",
+          "Victorian Socialists",
+          1459,
+          3.81
+        ],
+        [
+          "GRIFFITH-JONES, Richard",
+          "Family First Victoria",
+          1073,
+          2.8
+        ],
+        [
+          "JENKINS, Philip",
+          "",
+          77,
+          0.2
+        ],
+        [
+          "TESA, Maya",
+          "",
+          1556,
+          4.06
+        ],
+        [
+          "LIGHTBODY, Tomas",
+          "Australian Greens",
+          7130,
+          18.63
+        ],
+        [
+          "MENADUE, Alan Max",
+          "",
+          121,
+          0.32
+        ]
+      ],
+      "terminal_count": {
+        "count_semantics": "statutory_absolute_majority_on_primary",
+        "rows": [
+          [
+            "WERNER, Nicole",
+            "Liberal",
+            21921,
+            57.27
+          ]
+        ],
+        "reconciles_to_formal": false
+      },
+      "alternate_counts": [
+        {
+          "count_semantics": "indicative_2cp",
+          "reconciles_to_formal": false,
+          "rows": [
+            [
+              "WERNER, Nicole",
+              "Liberal",
+              27334,
+              70.99
+            ],
+            [
+              "LIGHTBODY, Tomas",
+              "Australian Greens",
+              11172,
+              29.01
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "election_id": "vic_la_2023_mulgrave_by",
+      "district": "Mulgrave",
+      "date": "2023-11-18",
+      "enrolment": 47142,
+      "formal_votes": 36044,
+      "informal_votes": 2112,
+      "total_votes": 38156,
+      "turnout_pct": 80.94,
+      "elected_candidate": "FOSTER, Eden",
+      "elected_party_raw": "Australian Labor Party",
+      "source_url": "https://vec.vic.gov.au/results/state-election-results/state-by-elections-timeline/mulgrave-district-by-election-results/results-by-district/mulgrave-district-by-election-results",
+      "candidates": [
+        [
+          "KING, Ethelyn",
+          "Libertarian",
+          1046,
+          2.9
+        ],
+        [
+          "ACKERLY, Celeste",
+          "Sustainable Australia Party - Stop Overdevelopment / Corruption",
+          276,
+          0.77
+        ],
+        [
+          "COOK, Ian",
+          "",
+          6780,
+          18.81
+        ],
+        [
+          "FOREMAN, Jane",
+          "Family First Victoria",
+          1111,
+          3.08
+        ],
+        [
+          "MANN, Courtney",
+          "Liberal",
+          7817,
+          21.69
+        ],
+        [
+          "CVETKOVA, Kelly",
+          "Victorian Socialists",
+          1315,
+          3.65
+        ],
+        [
+          "GARAD, Rhonda",
+          "Australian Greens",
+          2153,
+          5.97
+        ],
+        [
+          "FOSTER, Eden",
+          "Australian Labor Party",
+          14481,
+          40.18
+        ],
+        [
+          "THEODOSSOPOULOU, Tina",
+          "",
+          662,
+          1.84
+        ],
+        [
+          "CURRIE, Bronwyn",
+          "Animal Justice Party",
+          403,
+          1.12
+        ]
+      ],
+      "terminal_count": {
+        "count_semantics": "statutory_preference_distribution",
+        "rows": [
+          [
+            "COOK, Ian",
+            "",
+            15681,
+            43.51
+          ],
+          [
+            "FOSTER, Eden",
+            "Australian Labor Party",
+            20363,
+            56.49
+          ]
+        ]
+      },
+      "alternate_counts": [
+        {
+          "count_semantics": "indicative_2pp",
+          "reconciles_to_formal": true,
+          "rows": [
+            [
+              "MANN, Courtney",
+              "Liberal",
+              16340,
+              45.33
+            ],
+            [
+              "FOSTER, Eden",
+              "Australian Labor Party",
+              19704,
+              54.67
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "election_id": "vic_la_2025_prahran_by",
+      "district": "Prahran",
+      "date": "2025-02-08",
+      "enrolment": 48164,
+      "formal_votes": 31615,
+      "informal_votes": 1271,
+      "total_votes": 32886,
+      "turnout_pct": 68.28,
+      "elected_candidate": "WESTAWAY, Rachel",
+      "elected_party_raw": "Liberal",
+      "source_url": "https://www.vec.vic.gov.au/prahran-results",
+      "candidates": [
+        [
+          "CHISHOLM, Nathan",
+          "",
+          1672,
+          5.29
+        ],
+        [
+          "WESTAWAY, Rachel",
+          "Liberal",
+          11443,
+          36.19
+        ],
+        [
+          "HENDRY, Janine",
+          "",
+          505,
+          1.6
+        ],
+        [
+          "GILBERT, Geneviève",
+          "Family First Victoria",
+          340,
+          1.08
+        ],
+        [
+          "MENADUE, Alan",
+          "",
+          126,
+          0.4
+        ],
+        [
+          "LUPTON, Tony",
+          "",
+          4021,
+          12.72
+        ],
+        [
+          "DESSAU, Mark",
+          "Libertarian Party",
+          292,
+          0.92
+        ],
+        [
+          "DI CAMILLO, Angelica",
+          "Australian Greens",
+          11442,
+          36.19
+        ],
+        [
+          "BILIC, Dennis",
+          "Sustainable Australia Party - Stop Overdevelopment / Corruption",
+          430,
+          1.36
+        ],
+        [
+          "BILLMAN, Buzz",
+          "",
+          465,
+          1.47
+        ],
+        [
+          "FUHRER, Faith",
+          "Animal Justice Party",
+          879,
+          2.78
+        ]
+      ],
+      "terminal_count": {
+        "count_semantics": "statutory_preference_distribution",
+        "rows": [
+          [
+            "WESTAWAY, Rachel",
+            "Liberal",
+            16234,
+            51.35
+          ],
+          [
+            "DI CAMILLO, Angelica",
+            "Australian Greens",
+            15381,
+            48.65
+          ]
+        ]
+      },
+      "alternate_counts": []
+    },
+    {
+      "election_id": "vic_la_2025_werribee_by",
+      "district": "Werribee",
+      "date": "2025-02-08",
+      "enrolment": 56464,
+      "formal_votes": 42117,
+      "informal_votes": 3003,
+      "total_votes": 45120,
+      "turnout_pct": 79.91,
+      "elected_candidate": "LISTER, John",
+      "elected_party_raw": "Australian Labor Party",
+      "source_url": "https://vec.vic.gov.au/results/state-election-results/state-by-elections-timeline/werribee-district-results/results-by-district/werribee-district-results",
+      "candidates": [
+        [
+          "RIFAI, A. Raheem",
+          "Australian Greens",
+          3190,
+          7.57
+        ],
+        [
+          "MURPHY, Steve",
+          "Liberal",
+          12207,
+          28.98
+        ],
+        [
+          "EMERSON, Matthew",
+          "Family First Victoria",
+          1827,
+          4.34
+        ],
+        [
+          "MENTA, Xavier",
+          "Legalise Cannabis Victoria",
+          2316,
+          5.5
+        ],
+        [
+          "JOSHI, Munish",
+          "",
+          352,
+          0.84
+        ],
+        [
+          "MUNRO, Sue",
+          "Victorian Socialists",
+          3008,
+          7.14
+        ],
+        [
+          "MANSOURI JAJAEE, Shohre",
+          "Animal Justice Party",
+          401,
+          0.95
+        ],
+        [
+          "MULCAHY, Kodei",
+          "",
+          80,
+          0.19
+        ],
+        [
+          "McLINDON, Aidan",
+          "",
+          270,
+          0.64
+        ],
+        [
+          "HOPPER, Paul",
+          "",
+          6134,
+          14.56
+        ],
+        [
+          "LISTER, John",
+          "Australian Labor Party",
+          12168,
+          28.89
+        ],
+        [
+          "MOINUDDIN, Aijaz",
+          "",
+          164,
+          0.39
+        ]
+      ],
+      "terminal_count": {
+        "count_semantics": "statutory_preference_distribution",
+        "rows": [
+          [
+            "MURPHY, Steve",
+            "Liberal",
+            20712,
+            49.18
+          ],
+          [
+            "LISTER, John",
+            "Australian Labor Party",
+            21405,
+            50.82
+          ]
+        ]
+      },
+      "alternate_counts": []
+    },
+    {
+      "election_id": "vic_la_2026_nepean_by",
+      "district": "Nepean",
+      "date": "2026-05-02",
+      "enrolment": 50910,
+      "formal_votes": 40545,
+      "informal_votes": 2041,
+      "total_votes": 42586,
+      "turnout_pct": 83.65,
+      "elected_candidate": "MARSH, Anthony",
+      "elected_party_raw": "Liberal",
+      "source_url": "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline/nepean-by-election-results/results-by-district/nepean-district-results",
+      "candidates": [
+        [
+          "HERCUS, Darren",
+          "Pauline Hanson's One Nation",
+          9941,
+          24.52
+        ],
+        [
+          "SMITH, Reade",
+          "Affordable Housing Now – Sustainable Australia Party",
+          721,
+          1.78
+        ],
+        [
+          "HEALY, Sianan",
+          "The Greens",
+          3805,
+          9.38
+        ],
+        [
+          "MARSH, Anthony",
+          "Liberal",
+          15682,
+          38.68
+        ],
+        [
+          "WILDE, Milton",
+          "End Mass Immigration – Reform AU",
+          166,
+          0.41
+        ],
+        [
+          "ANGELICO, Peter",
+          "Libertarian",
+          505,
+          1.25
+        ],
+        [
+          "HUTCHISON, Tracee",
+          "",
+          8533,
+          21.05
+        ],
+        [
+          "THOMPSON, Renee",
+          "Legalise Cannabis",
+          1192,
+          2.94
+        ]
+      ],
+      "terminal_count": {
+        "count_semantics": "statutory_preference_distribution",
+        "rows": [
+          [
+            "MARSH, Anthony",
+            "Liberal",
+            25642,
+            63.24
+          ],
+          [
+            "HUTCHISON, Tracee",
+            "",
+            14903,
+            36.76
+          ]
+        ]
+      },
+      "alternate_counts": []
+    }
+  ]
+}

@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[97367,["/vic-election-2026/_next/static/chunks/0o~269zocnb95.js"],"ViewportBoundary"]
-3:I[97367,["/vic-election-2026/_next/static/chunks/0o~269zocnb95.js"],"MetadataBoundary"]
-4:"$Sreact.suspense"
-5:I[27201,["/vic-election-2026/_next/static/chunks/0o~269zocnb95.js"],"IconMark"]
-0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Victorian Election Forecast 2026"}],["$","meta","1",{"name":"description","content":"A transparent dashboard for the Victorian state election forecasting model, historical validation, districts and regions."}],["$","link","2",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","3",{"rel":"icon","href":"/favicon.svg"}],["$","$L5","4",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"_yDc4VL72FAhMg5kbK_eg"}

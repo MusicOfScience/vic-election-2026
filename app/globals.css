@@ -129,6 +129,7 @@ a { color: inherit; }
 .seat-totals .labor strong { color: #ff766f; }
 .seat-totals .coalition strong { color: #78a9ee; }
 .seat-totals .greens strong { color: #62d5a3; }
+.seat-totals .onp strong { color: #b99be8; }
 .parliament-card { align-self: stretch; display: grid; align-content: center; padding: 22px 28px; }
 .seat-arc { width: 100%; max-height: 300px; overflow: visible; filter: drop-shadow(0 7px 10px rgba(0,0,0,.15)); }
 .seat-arc circle { stroke: rgba(255,255,255,.55); stroke-width: .75; transition: opacity .2s, r .2s; }

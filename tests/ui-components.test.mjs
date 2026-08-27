@@ -39,7 +39,7 @@ test("emits responsive dashboard and accessibility utilities", async () => {
   const css = await readCssTree(path.join(root, "dist"));
 
   assert.match(css, /scrollbar-width:\s*none/);
-  assert.match(css, /\.synthesis-hero/);
+  assert.match(css, /\.forecast-hero/);
   assert.match(css, /\.model-layer-grid/);
   assert.match(css, /\.polling-layout/);
   // Lightning CSS modernises max-width media queries in the production bundle.

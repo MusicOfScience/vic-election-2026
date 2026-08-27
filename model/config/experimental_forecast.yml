@@ -1,0 +1,31 @@
+forecast_id: vic_2026_experimental_joint_v1
+status: experimental
+as_of: 2026-08-26
+election_date: 2026-11-28
+seed: 20260826
+simulations: 5000
+production_compatible: false
+polling:
+  model: empirical_bayes_logistic_normal
+  half_life_days: 45
+  effective_sample_cap: 2500
+  house_effects: partially_pooled
+  party_covariance: joint
+assembly:
+  model: correlated_multi_party_irv
+  statewide_anchor: official_VEC_2022
+  local_pattern: AEC_2022_ecological_auxiliary
+  direct_district_evidence_weight: 0.78
+  preference_prior_concentration: 72
+  demographic_residual_weight: 0
+  demographic_reason: sealed four-cycle promotion gate failed
+council:
+  model: voter_directed_group_stv_approximation
+  members_per_region: 5
+  exhaustion_probability: 0.10
+  candidate_order_forecast: false
+governance:
+  observations_are_not_forecasts: true
+  scenarios_are_not_predictions: true
+  release_label: experimental_forecast
+

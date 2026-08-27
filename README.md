@@ -1,37 +1,31 @@
-# Victorian Election Forecasting Laboratory — browser dashboard
+# Victorian Election Forecasting Laboratory
 
-A responsive public-interest research dashboard built from the sealed 14 August 2026 Victorian Election Forecasting Laboratory checkpoint.
+A responsive public-interest forecasting application for the 2026 Victorian state election.
 
-## What it shows
+## What is implemented
 
-- A nine-poll, multi-party benchmark with recency and sample-size weighting.
-- Sensitivity to 21-, 45- and 90-day poll half-lives, plus the complete eligible-poll registry.
-- The evidence stack: polling, official results, boundary lineage, demographics, preference distributions and historical validation.
-- A searchable conditional-scenario explorer for all 88 Legislative Assembly districts.
-- Council-region external benchmarks, kept distinct from model outputs.
-- The four-cycle preregistered held-out validation result and current model gate.
+- An empirical-Bayes, five-party poll of polls with recency weighting, effective-sample-size caps, partially pooled pollster effects and joint covariance.
+- 5,000 reproducible correlated simulations across all 88 Legislative Assembly districts.
+- Multi-party full-preferential counts with stochastic transfers and no forced Labor–Coalition final pair.
+- Official VEC 2022 anchors combined with shrunk AEC-derived local patterns, current enrolment, direct district evidence and guarded by-election signals.
+- A separate eight-region, five-member Council model under the enacted voter-directed 2026 rules.
+- Historical four-cycle validation, including the failed demographic challenger and its zero central model weight.
+- Searchable district probabilities, likely final pairs, primary-vote estimates, chamber distributions and uncertainty intervals.
 
-Roy Morgan is one polling input and one external Council benchmark; it is not presented as the forecasting model. Historical results, external commentary, polling benchmarks, scenario diagnostics and authorised model outputs are kept visually and methodologically distinct. The production forecast gate remains closed because the frozen demographic residual candidate failed its held-out promotion test.
+The forecast is explicitly experimental. It is a research estimate, not voting advice or an authorised production forecast.
 
-## Run locally
+## Run the website
 
 ```bash
 npm ci
 npm run dev
 ```
 
-## Build
+## Refresh the embedded model output
 
 ```bash
-npm run build
+python scripts/run_experimental_forecast.py --simulations 5000 --seed 20260826
+node scripts/generate-model-output.mjs /path/to/model-repository
 ```
 
-## Refresh generated dashboard data
-
-With a reconstructed modelling repository available locally:
-
-```bash
-node scripts/generate-dashboard-data.mjs /path/to/vic-election-model
-```
-
-The generated TypeScript file is committed so the deployed dashboard does not need the large private/raw source archive at runtime.
+The generated TypeScript output is committed so the public static site does not need the large source-data archive at runtime. A minimal reproducible model bundle is included under `model/`.
