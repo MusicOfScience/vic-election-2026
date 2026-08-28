@@ -37,4 +37,5 @@ test("renders the joint experimental forecast dashboard", async () => {
   assert.match(html, /88 electorates/i);
   assert.match(html, /twelve most uncertain electorates/i);
   assert.match(html, /Swing history/i);
+  assert.match(html, /Data &amp; sources/i);
 });
