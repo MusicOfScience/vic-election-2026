@@ -137,12 +137,29 @@ test("ships a complete checksummed source-provenance registry", async () => {
   );
   const artifacts = sourceProvenance.sources.flatMap((source) => source.artifacts);
 
-  assert.equal(sourceProvenance.summary.sourceGroups, 8);
+  assert.equal(sourceProvenance.summary.sourceGroups, 9);
   assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
-  assert.equal(sourceProvenance.summary.tracedArtifacts, 14);
-  assert.equal(artifacts.length, 14);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 21);
+  assert.equal(sourceProvenance.summary.automationStatus, "scheduled-freshness-monitoring");
+  assert.equal(artifacts.length, 21);
   assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
-  assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 8);
+  assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 9);
+});
+
+test("ships explicit fail-closed release gates", async () => {
+  const { releaseReadiness } = await vite.ssrLoadModule(
+    "/app/release-readiness.generated.ts",
+  );
+  const { DataSources } = await vite.ssrLoadModule("/app/election-dashboard.tsx");
+  const html = renderToStaticMarkup(React.createElement(DataSources));
+
+  assert.equal(releaseReadiness.status, "experimental-blocked");
+  assert.equal(releaseReadiness.gates.sourceIntegrity.passed, true);
+  assert.equal(releaseReadiness.gates.criticalSourceFreshness.passed, true);
+  assert.equal(releaseReadiness.gates.productionAuthorisation.passed, false);
+  assert.equal(releaseReadiness.automation.automaticProductionPublish, false);
+  assert.match(html, /Automation may check the work/i);
+  assert.match(html, /Experimental · gate closed/i);
 });
 
 test("generates the public poll series from the canonical model registry", async () => {

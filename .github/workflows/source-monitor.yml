@@ -1,0 +1,34 @@
+name: Source freshness monitor
+
+on:
+  schedule:
+    - cron: "17 20 * * 1,4"
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: Optional YYYY-MM-DD assessment date
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Assess critical-source freshness
+        shell: bash
+        run: |
+          assessment_date="${{ inputs.as_of }}"
+          if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
+          node scripts/check-release-readiness.mjs --as-of "${assessment_date}" --report release-readiness-report.json --require-fresh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-readiness-report
+          path: release-readiness-report.json
+          retention-days: 30

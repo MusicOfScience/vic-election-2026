@@ -16,6 +16,7 @@ import { modelLayers, validationSummary } from "./forecast-data";
 import { historicalDistricts } from "./historical-data.generated";
 import { modelOutput } from "./model-output.generated";
 import { pollSeries } from "./poll-data.generated";
+import { releaseReadiness } from "./release-readiness.generated";
 import { sourceProvenance } from "./source-provenance.generated";
 
 type District = (typeof modelOutput.districts)[number];
@@ -338,7 +339,7 @@ function readableDate(value: string) {
   return new Intl.DateTimeFormat("en-AU", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(value));
 }
 
-function DataSources() {
+export function DataSources() {
   const { summary, sources } = sourceProvenance;
   return <div className="tab-stack provenance-stack">
     <section className="provenance-hero">
@@ -357,14 +358,19 @@ function DataSources() {
         <article><Clock3 size={17} /><span>Sources reviewed</span><strong>28 Aug 2026</strong><small>registry and current evidence checked</small></article>
         <article><Activity size={17} /><span>Latest polling data</span><strong>7 Aug 2026</strong><small>fieldwork end—not publication or model date</small></article>
         <article><Database size={17} /><span>Latest model run</span><strong>26 Aug 2026</strong><small>5,000 whole-election simulations</small></article>
-        <article className="attention"><CircleAlert size={17} /><span>Automated monitoring</span><strong>Not active yet</strong><small>scheduled checks belong to a later batch</small></article>
+        <article><ShieldCheck size={17} /><span>Automated monitoring</span><strong>Twice weekly</strong><small>freshness checks also run on demand</small></article>
       </div>
+    </section>
+    <section className="surface release-ledger">
+      <div className="section-heading"><div><p className="eyebrow">Release gates</p><h3>Automation may check the work. It cannot overrule the evidence.</h3><p className="section-subcopy">Every update is regenerated from canonical inputs, compared by content and held behind review. A failed gate retains the last valid forecast.</p></div><Badge variant="outline">{releaseReadiness.status === "production-ready" ? "Production ready" : "Experimental · gate closed"}</Badge></div>
+      <div className="release-gates">{Object.entries(releaseReadiness.gates).map(([id, gate]) => <article className={gate.passed ? "passed" : "blocked"} key={id}>{gate.passed ? <ShieldCheck size={17} /> : <CircleAlert size={17} />}<span>{gate.label}</span><strong>{gate.passed ? "Pass" : "Closed"}</strong></article>)}</div>
+      <p className="release-policy"><strong>No automatic production publishing.</strong> The current blocker is deliberate: the complete 2026 probability model has not yet earned production authorisation.</p>
     </section>
     <section className="source-library">
       <div className="section-heading"><div><p className="eyebrow">Canonical source library</p><h3>What is used, why, and with what caveat</h3></div><Badge variant="outline">{sources.length} source groups</Badge></div>
       <div className="source-card-grid">{sources.map((source) => <article className="surface source-card" key={source.id}>
         <div className="source-card-head"><div><span className={`source-status ${source.useStatus}`}>{sourceUseLabels[source.useStatus]}</span><h4>{source.name}</h4><p>{source.publisher}</p></div>{source.criticalToForecast ? <Badge>Critical</Badge> : <Badge variant="outline">Supporting</Badge>}</div>
-        <dl><div><dt>Model role</dt><dd>{source.modelRole}</dd></div><div><dt>Data date</dt><dd>{readableDate(source.dataEffectiveDate)}</dd></div><div><dt>Source confidence</dt><dd>{source.confidence === "official" ? "Official" : "Mixed primary sources"}</dd></div></dl>
+        <dl><div><dt>Model role</dt><dd>{source.modelRole}</dd></div><div><dt>Data date</dt><dd>{readableDate(source.dataEffectiveDate)}</dd></div><div><dt>Source confidence</dt><dd>{source.confidence === "official" ? "Official" : source.confidence === "internal-derived" ? "Internal derived output" : "Mixed primary sources"}</dd></div></dl>
         <p className="source-note">{source.notes}</p>
         <details className="artifact-details"><summary>{source.artifacts.length} traced artefact{source.artifacts.length === 1 ? "" : "s"}</summary><ul>{source.artifacts.map((artifact) => <li key={artifact.path}><span>{artifact.path}</span><code>{artifact.sha256.slice(0, 12)}…</code></li>)}</ul></details>
         <a className="source-link" href={source.canonicalUrl} target="_blank" rel="noreferrer">Open canonical source <ExternalLink size={13} /></a>

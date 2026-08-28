@@ -159,6 +159,31 @@
         "model/data/seed/recent_state_by_elections.json"
       ],
       "notes": "Narracan's January 2023 supplementary result is handled separately. Its booth explorer remains an explicit tracked gap rather than being mixed with the ordinary 2022 acquisition."
+    },
+    {
+      "id": "forecast-derived-outputs",
+      "name": "Deterministic 2026 forecast outputs",
+      "publisher": "Victorian Election Forecasting Laboratory",
+      "sourceType": "derived-model-output",
+      "confidence": "internal-derived",
+      "useStatus": "derived",
+      "modelRole": "Checksummed bridge from the seeded model run to the published dashboard",
+      "canonicalUrl": "https://github.com/MusicOfScience/vic-election-2026",
+      "dataEffectiveDate": "2026-08-26",
+      "lastCheckedAt": "2026-08-28T01:30:00Z",
+      "updateFrequency": "dependency-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/experimental_forecast_2026.json",
+        "model/data/processed/experimental_forecast_2026_districts.csv",
+        "model/data/processed/experimental_forecast_2026_chamber.csv",
+        "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
+        "model/data/processed/experimental_forecast_2026_council_regions.csv",
+        "model/data/processed/experimental_forecast_2026_council.csv",
+        "app/model-output.generated.ts"
+      ],
+      "notes": "Seeded outputs are regenerated only when dependencies change. Checksums prevent an old website bundle from being paired with newer model files."
     }
   ]
 }
