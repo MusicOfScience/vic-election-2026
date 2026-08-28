@@ -115,3 +115,32 @@ test("ships official ordinary-booth results without mixing in vote modes", async
   assert.ok(allBooths.every((booth) => !/postal|early|absent|provisional/i.test(booth.name)));
   assert.equal(narracan.status, "supplementary-election-source-required");
 });
+
+test("keeps the majority label in a high-contrast capsule above the columns", async () => {
+  const { MajorityMarkerLabel } = await vite.ssrLoadModule(
+    "/app/election-dashboard.tsx",
+  );
+  const html = renderToStaticMarkup(
+    React.createElement(MajorityMarkerLabel, {
+      viewBox: { x: 220, y: 40, width: 0, height: 210 },
+    }),
+  );
+
+  assert.match(html, /45 SEATS · MAJORITY/);
+  assert.match(html, /fill="#fffdf8"/);
+  assert.match(html, /translate\(220, 13\)/);
+});
+
+test("ships a complete checksummed source-provenance registry", async () => {
+  const { sourceProvenance } = await vite.ssrLoadModule(
+    "/app/source-provenance.generated.ts",
+  );
+  const artifacts = sourceProvenance.sources.flatMap((source) => source.artifacts);
+
+  assert.equal(sourceProvenance.summary.sourceGroups, 8);
+  assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 12);
+  assert.equal(artifacts.length, 12);
+  assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
+  assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 8);
+});
