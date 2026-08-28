@@ -36,6 +36,8 @@ PREFERENCE_PRIOR = np.array([
 @dataclass(frozen=True)
 class ExperimentalForecast:
     poll_state: LatentPollState
+    poll_sensitivity: dict[str, dict[str, float]]
+    assumptions: dict
     districts: pd.DataFrame
     chamber: pd.DataFrame
     seat_distribution: pd.DataFrame
@@ -44,6 +46,15 @@ class ExperimentalForecast:
     simulations: int
     seed: int
     production_compatible: bool = False
+
+
+def load_forecast_config(root: str | Path) -> dict:
+    path = Path(root) / "config/experimental_forecast.yml"
+    config = yaml.safe_load(path.read_text())
+    required = {"as_of", "election_date", "polling", "assembly", "council"}
+    if not isinstance(config, dict) or not required.issubset(config):
+        raise ValueError(f"forecast config is missing required keys: {sorted(required)}")
+    return config
 
 
 def _slug(value: str) -> str:
@@ -77,8 +88,10 @@ def _rake(frame: pd.DataFrame, targets: np.ndarray, weights: np.ndarray) -> pd.D
     return out
 
 
-def build_assembly_seed(root: str | Path) -> pd.DataFrame:
+def build_assembly_seed(root: str | Path, config: dict | None = None) -> pd.DataFrame:
     root = Path(root)
+    config = config or load_forecast_config(root)
+    assembly = config["assembly"]
     surface = pd.read_csv(root / "data/processed/aec_2022_state_district_party_surface_vic.csv.gz")
     surface["family"] = surface.party_id.map(_family)
     surface = surface[surface.party_id.ne("INFORMAL")]
@@ -94,7 +107,7 @@ def build_assembly_seed(root: str | Path) -> pd.DataFrame:
     # Shrink an auxiliary federal-to-state surface toward the official VEC
     # statewide anchor before incorporating direct district evidence.
     local = np.log(np.clip(raw, .002, None)) - np.log(np.clip(state, .002, None))
-    pivot.loc[:, PARTIES] = np.exp(np.log(ASSEMBLY_2022_TARGET / 100) + 0.62 * local)
+    pivot.loc[:, PARTIES] = np.exp(np.log(ASSEMBLY_2022_TARGET / 100) + float(assembly["aec_local_pattern_shrinkage"]) * local)
     pivot.loc[:, PARTIES] = pivot.loc[:, PARTIES].div(pivot.loc[:, PARTIES].sum(axis=1), axis=0)
 
     evidence = pd.read_csv(root / "data/processed/vec_2022_indicative_candidate_evidence.csv")
@@ -111,7 +124,8 @@ def build_assembly_seed(root: str | Path) -> pd.DataFrame:
         observed = np.maximum(observed, .002)
         observed /= observed.sum()
         auxiliary = pivot.loc[i, list(PARTIES)].to_numpy(float)
-        blended = .78 * observed + .22 * auxiliary
+        direct_weight = float(assembly["direct_district_evidence_weight"])
+        blended = direct_weight * observed + (1.0 - direct_weight) * auxiliary
         pivot.loc[i, list(PARTIES)] = blended / blended.sum()
 
     enrol = pd.read_csv(root / "data/processed/vec_enrolment_district_2026-06.csv")
@@ -199,10 +213,30 @@ def _summary(values: np.ndarray) -> tuple[float, float, float, float]:
 
 def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed: int = 20260826) -> ExperimentalForecast:
     root = Path(root)
+    config = load_forecast_config(root)
+    polling = config["polling"]
+    assembly = config["assembly"]
     events = pd.read_csv(root / "data/processed/poll_events_seed.csv")
     estimates = pd.read_csv(root / "data/processed/poll_estimates_seed.csv")
-    poll = fit_latent_poll_state(events, estimates, as_of="2026-08-26", draws=simulations, seed=seed)
-    districts = build_assembly_seed(root)
+    poll = fit_latent_poll_state(
+        events, estimates, as_of=config["as_of"], draws=simulations, seed=seed,
+        half_life_days=float(polling["half_life_days"]),
+        effective_sample_cap=int(polling["effective_sample_cap"]),
+        systematic_floor=float(polling["systematic_floor"]),
+    )
+    sensitivity: dict[str, dict[str, float]] = {}
+    for half_life in (21, int(polling["half_life_days"]), 90):
+        if half_life == int(polling["half_life_days"]):
+            sensitivity[str(half_life)] = poll.mean
+            continue
+        fitted = fit_latent_poll_state(
+            events, estimates, as_of=config["as_of"], draws=min(max(simulations, 1000), 2000),
+            seed=seed + half_life, half_life_days=half_life,
+            effective_sample_cap=int(polling["effective_sample_cap"]),
+            systematic_floor=float(polling["systematic_floor"]),
+        )
+        sensitivity[str(half_life)] = fitted.mean
+    districts = build_assembly_seed(root, config)
     council_seed = build_council_seed(root)
     rng = np.random.default_rng(seed + 1)
     baseline_state = ASSEMBLY_2022_TARGET / 100.0
@@ -220,8 +254,8 @@ def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed
         for event in by:
             if event["district"] not in index:
                 continue
-            age = (pd.Timestamp("2026-11-28") - pd.Timestamp(event["date"])).days
-            strength = .030 * np.exp(-age / 1100.0)
+            age = (pd.Timestamp(config["election_date"]) - pd.Timestamp(event["date"])).days
+            strength = float(assembly["by_election_max_logit_boost"]) * np.exp(-age / float(assembly["by_election_decay_days"]))
             boosts[index[event["district"]], PARTIES.index(_family(event.get("elected_party_raw")))] += strength
 
     region_names = sorted(districts.region_name.dropna().unique())
@@ -232,21 +266,22 @@ def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed
     # The 2022 One Nation state result reflected very sparse contest coverage.
     # Its 2026 statewide rise must not be multiplied by that ballot-access
     # artefact. Preserve broad local tendency, but shrink the extreme ratios.
-    local_limits = np.array([1.30, 1.30, .45, 1.20, 1.20])
+    local_limits = np.array([float(assembly["local_logit_limits"][party]) for party in PARTIES])
     local_pattern = np.clip(local_pattern, -local_limits, local_limits)
     # Unlike the sparse 2022 state ballot, the federal ecological surface gives
     # statewide contest coverage for One Nation's geographic propensity.
     local_pattern[:, 2] = districts.onp_local_log.to_numpy(float)
-    local_pattern[:, 3] = np.clip(local_pattern[:, 3] * 1.28, -1.50, 1.50)
+    greens_limit = float(assembly["greens_local_logit_limit"])
+    local_pattern[:, 3] = np.clip(local_pattern[:, 3] * float(assembly["greens_local_pattern_multiplier"]), -greens_limit, greens_limit)
     for s in range(simulations):
         state = poll.draws[s] / 100.0
-        region_shock = rng.normal(0, .052, size=(len(region_names), len(PARTIES)))
-        local_shock = rng.normal(0, .145, size=(len(districts), len(PARTIES)))
+        region_shock = rng.normal(0, float(assembly["region_shock_sd"]), size=(len(region_names), len(PARTIES)))
+        local_shock = rng.normal(0, float(assembly["district_shock_sd"]), size=(len(districts), len(PARTIES)))
         logits = np.log(np.clip(state, 1e-6, None)) + local_pattern + region_shock[district_regions] + local_shock + boosts
         primaries = np.exp(logits - logits.max(axis=1, keepdims=True))
         primaries /= primaries.sum(axis=1, keepdims=True)
         primary_sum += primaries
-        pref = np.vstack([rng.dirichlet(np.maximum(row * 72.0, .02)) for row in PREFERENCE_PRIOR])
+        pref = np.vstack([rng.dirichlet(np.maximum(row * float(assembly["preference_prior_concentration"]), .02)) for row in PREFERENCE_PRIOR])
         for d in range(len(districts)):
             winner, pair = _count_irv(primaries[d], pref)
             wins[d, winner] += 1
@@ -257,11 +292,23 @@ def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed
     district_rows = []
     for i, row in districts.iterrows():
         pair = max(pairs[i], key=pairs[i].get)
+        probabilities = wins[i] / simulations
+        positive = probabilities[probabilities > 0]
+        entropy = float(-(positive * np.log(positive)).sum())
         item = {"district_id": row.district_id, "district_name": row.district_name, "region_name": row.region_name,
-                "likely_final_pair": pair, "final_pair_probability": pairs[i][pair] / simulations}
+                "likely_final_pair": pair, "final_pair_probability": pairs[i][pair] / simulations,
+                "effective_contenders": float(np.exp(entropy)),
+                "competitive_parties": int((probabilities >= .10).sum()),
+                "win_entropy": entropy / np.log(len(PARTIES)),
+                "by_election_signal_party": PARTIES[int(np.argmax(boosts[i]))] if boosts[i].max() > 0 else "",
+                "by_election_signal_strength": float(boosts[i].max())}
         for j, party in enumerate(PARTIES):
-            item[f"win_{party.lower()}"] = wins[i, j] / simulations
-            item[f"primary_{party.lower()}"] = primary_sum[i, j] / simulations * 100.0
+            forecast_primary = primary_sum[i, j] / simulations * 100.0
+            baseline_primary = float(row[party]) * 100.0
+            item[f"win_{party.lower()}"] = probabilities[j]
+            item[f"primary_{party.lower()}"] = forecast_primary
+            item[f"baseline_{party.lower()}"] = baseline_primary
+            item[f"change_{party.lower()}"] = forecast_primary - baseline_primary
         item["favoured_party"] = PARTIES[int(np.argmax(wins[i]))]
         item["favoured_probability"] = float(wins[i].max() / simulations)
         district_rows.append(item)
@@ -305,5 +352,5 @@ def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed
     for j, party in enumerate(PARTIES):
         mean, median, low, high = _summary(total_council[:, j])
         council_rows.append({"party": party, "mean": mean, "median": median, "lower80": low, "upper80": high})
-    return ExperimentalForecast(poll, pd.DataFrame(district_rows), chamber, seat_dist,
+    return ExperimentalForecast(poll, sensitivity, config, pd.DataFrame(district_rows), chamber, seat_dist,
                                 pd.DataFrame(council_region_rows), pd.DataFrame(council_rows), simulations, seed)

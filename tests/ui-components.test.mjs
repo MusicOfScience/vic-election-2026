@@ -153,3 +153,14 @@ test("generates the public poll series from the canonical model registry", async
   assert.ok(pollSeries.every((poll) => Math.abs(poll.alp + poll.coalition + poll.onp + poll.greens + poll.other - 100) < .01));
   assert.ok(pollSeries.every((poll) => poll.verificationStatus === "verified" || poll.verificationStatus === "partially_verified"));
 });
+
+test("ships Batch 3 polling and electorate diagnostics", async () => {
+  const { modelOutput } = await vite.ssrLoadModule("/app/model-output.generated.ts");
+  const seat = modelOutput.districts[0];
+
+  assert.deepEqual(Object.keys(modelOutput.manifest.polling.sensitivity_by_half_life_days), ["21", "45", "90"]);
+  assert.ok(seat.effective_contenders >= 1);
+  assert.ok(seat.win_entropy >= 0 && seat.win_entropy <= 1);
+  assert.ok(Number.isFinite(seat.baseline_alp));
+  assert.ok(Number.isFinite(seat.change_alp));
+});

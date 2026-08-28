@@ -32,6 +32,17 @@ def test_assembly_seed_has_88_districts_and_rakes_to_official_anchor():
     assert np.allclose(actual, ASSEMBLY_2022_TARGET, atol=.02)
 
 
+def test_configured_assembly_diagnostics_are_complete():
+    forecast = run_experimental_forecast(ROOT, simulations=30, seed=13)
+    required = {"effective_contenders", "competitive_parties", "win_entropy"}
+    assert required.issubset(forecast.districts.columns)
+    for party in PARTIES:
+        assert f"baseline_{party.lower()}" in forecast.districts
+        assert f"change_{party.lower()}" in forecast.districts
+    assert set(forecast.poll_sensitivity) == {"21", "45", "90"}
+    assert forecast.districts.win_entropy.between(0, 1).all()
+
+
 def test_irv_does_not_force_labor_coalition_final_pair():
     primary = np.array([.12, .10, .55, .15, .08])
     winner, pair = _count_irv(primary, PREFERENCE_PRIOR)

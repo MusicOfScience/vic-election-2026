@@ -9,14 +9,28 @@ polling:
   model: empirical_bayes_logistic_normal
   half_life_days: 45
   effective_sample_cap: 2500
+  systematic_floor: 0.035
   house_effects: partially_pooled
   party_covariance: joint
 assembly:
   model: correlated_multi_party_irv
   statewide_anchor: official_VEC_2022
   local_pattern: AEC_2022_ecological_auxiliary
+  aec_local_pattern_shrinkage: 0.62
   direct_district_evidence_weight: 0.78
+  region_shock_sd: 0.052
+  district_shock_sd: 0.145
   preference_prior_concentration: 72
+  by_election_max_logit_boost: 0.030
+  by_election_decay_days: 1100
+  local_logit_limits:
+    ALP: 1.30
+    LIB_NAT: 1.30
+    ONP: 0.45
+    GRN: 1.20
+    OTH_IND: 1.20
+  greens_local_pattern_multiplier: 1.28
+  greens_local_logit_limit: 1.50
   demographic_residual_weight: 0
   demographic_reason: sealed four-cycle promotion gate failed
 council:
@@ -28,4 +42,3 @@ governance:
   observations_are_not_forecasts: true
   scenarios_are_not_predictions: true
   release_label: experimental_forecast
-
