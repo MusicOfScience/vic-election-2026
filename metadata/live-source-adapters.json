@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "policy": "observe-validate-quarantine-review-promote",
   "automaticPromotion": false,
   "adapters": [
@@ -28,7 +28,13 @@
       "critical": false,
       "minimumCanonicalBytes": 1000,
       "expectedMarkers": ["2026 state election", "Candidate nominations", "4 November", "9 November"],
-      "promotionPolicy": "manual-review-until-official-nominations"
+      "promotionPolicy": "manual-review-until-official-nominations",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "vec-candidate-table",
+        "policy": "follow-official-candidate-list-links-and-quarantine-new-records"
+      }
     },
     {
       "id": "roy-morgan-vic-2026-state-poll",
@@ -37,7 +43,12 @@
       "critical": true,
       "minimumCanonicalBytes": 1000,
       "expectedMarkers": ["Victorian State Voting Intention", "August 5-7, 2026", "2,084 electors", "L-NP Coalition 26%", "ALP 26%"],
-      "promotionPolicy": "manual-review"
+      "promotionPolicy": "manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "poll",
+        "extractor": "roy-morgan-state-poll"
+      }
     },
     {
       "id": "roy-morgan-vic-2026-upper-house",
@@ -46,7 +57,31 @@
       "critical": false,
       "minimumCanonicalBytes": 1000,
       "expectedMarkers": ["Upper House", "Northern Metropolitan", "Western Metropolitan", "Western Victoria"],
-      "promotionPolicy": "manual-review"
+      "promotionPolicy": "manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "poll-upper-house",
+        "extractor": "roy-morgan-upper-house"
+      }
+    },
+    {
+      "id": "roy-morgan-findings-index",
+      "publisher": "Roy Morgan",
+      "url": "https://www.roymorgan.com/findings",
+      "critical": false,
+      "minimumCanonicalBytes": 500,
+      "expectedMarkers": ["Findings", "Search findings"],
+      "promotionPolicy": "discovery-only-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "poll-index",
+        "extractor": "roy-morgan-index",
+        "match": "Victorian State Voting Intention",
+        "acceptedSourceUrls": [
+          "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
+          "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november"
+        ]
+      }
     }
   ]
 }
