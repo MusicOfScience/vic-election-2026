@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Activity, ArrowRight, CircleHelp, Database, ExternalLink, History, Landmark, Layers3, MapPinned, Search, ShieldCheck, Vote } from "lucide-react";
+import { Activity, ArrowRight, BookOpenCheck, CircleAlert, CircleHelp, Clock3, Database, ExternalLink, FileCheck2, History, Landmark, Layers3, MapPinned, Search, ShieldCheck, Vote } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import type { LabelProps } from "recharts";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -14,6 +15,7 @@ import { boothData } from "./booth-data.generated";
 import { modelLayers, pollSeries, validationSummary } from "./forecast-data";
 import { historicalDistricts } from "./historical-data.generated";
 import { modelOutput } from "./model-output.generated";
+import { sourceProvenance } from "./source-provenance.generated";
 
 type District = (typeof modelOutput.districts)[number];
 type Party = "ALP" | "LIB_NAT" | "ONP" | "GRN" | "OTH_IND";
@@ -50,6 +52,14 @@ const regions = [...new Set(modelOutput.districts.map((district) => district.reg
 const baselineById = new Map(districtBaselines.map((district) => [district.id, district]));
 const historyById = new Map(historicalDistricts.map((district) => [district.districtId, district]));
 const boothById = new Map(boothData.districts.map((district) => [district.districtId, district as unknown as BoothDistrict]));
+
+export function MajorityMarkerLabel({ viewBox }: LabelProps) {
+  if (!viewBox || !("x" in viewBox) || !("y" in viewBox) || typeof viewBox.x !== "number" || typeof viewBox.y !== "number") return <g />;
+  return <g className="majority-marker-label" transform={`translate(${viewBox.x}, ${viewBox.y - 27})`} aria-hidden="true">
+    <rect x="-48" y="2" width="96" height="20" rx="10" fill="#fffdf8" stroke="#ea7540" strokeWidth="1.25" />
+    <text x="0" y="15" textAnchor="middle" fill="#7e472f" fontSize="8.5" fontWeight="800" letterSpacing=".45">45 SEATS · MAJORITY</text>
+  </g>;
+}
 
 function confidenceLabel(probability: number) {
   if (probability < .55) return "Toss-up";
@@ -133,7 +143,7 @@ function Forecast() {
     <ForecastQuickRead />
     <section className="outcome-strip">{outcomes.map(([label, probability]) => <OutcomeProbability key={label} label={label} probability={probability} active={label === "Hung parliament"} />)}</section>
     <BattlegroundBoard />
-    <section className="forecast-grid"><article className="surface distribution-card"><div className="section-heading"><div><p className="eyebrow">How often each total occurs</p><h3>Labor’s possible Lower House results</h3></div><Badge variant="outline">Middle result {Math.round(chamber.ALP.median)}</Badge></div><div className="distribution-chart"><ResponsiveContainer width="100%" height="100%"><BarChart data={distribution} margin={{ top: 12, right: 4, left: -20, bottom: 0 }}><CartesianGrid vertical={false} stroke="#d7d8d4" strokeDasharray="2 4" /><XAxis dataKey="seats" tickLine={false} axisLine={false} tick={{ fontSize: 9 }} /><YAxis tickLine={false} axisLine={false} tick={{ fontSize: 9 }} tickFormatter={(v) => `${v}%`} /><Tooltip formatter={(value) => [`${Number(value).toFixed(1)}%`, "Share of simulations"]} /><ReferenceLine x={45} stroke="#ea7540" strokeWidth={2} label={{ value: "MAJORITY", fill: "#9a522f", fontSize: 8 }} /><Bar dataKey="probabilityPct" radius={[2, 2, 0, 0]}>{distribution.map((row) => <Cell key={row.seats} fill={row.seats >= 45 ? "#d84a42" : "#173d64"} />)}</Bar></BarChart></ResponsiveContainer></div><p className="chart-note">Each bar shows the share of 5,000 whole-election simulations producing that Labor seat total. The 88 electorates move together rather than being added as if they were independent.</p></article><article className="surface signal-card"><p className="eyebrow">Central finding</p><h3>Three large blocs, few easy paths.</h3><div className="signal-number"><strong>{pct(hung)}</strong><span>chance that no party wins 45 seats</span></div><div className="signal-rule" /><p>One Nation’s polling rise is modelled as a distinct multi-party force. The count does not assume every electorate ends Labor versus Coalition.</p></article></section>
+    <section className="forecast-grid"><article className="surface distribution-card"><div className="section-heading"><div><p className="eyebrow">How often each total occurs</p><h3>Labor’s possible Lower House results</h3></div><Badge variant="outline">Middle result {Math.round(chamber.ALP.median)}</Badge></div><div className="distribution-chart"><ResponsiveContainer width="100%" height="100%"><BarChart data={distribution} margin={{ top: 40, right: 4, left: -20, bottom: 0 }}><CartesianGrid vertical={false} stroke="#d7d8d4" strokeDasharray="2 4" /><XAxis dataKey="seats" tickLine={false} axisLine={false} tick={{ fontSize: 9 }} /><YAxis tickLine={false} axisLine={false} tick={{ fontSize: 9 }} tickFormatter={(v) => `${v}%`} /><Tooltip formatter={(value) => [`${Number(value).toFixed(1)}%`, "Share of simulations"]} /><ReferenceLine x={45} stroke="#ea7540" strokeWidth={2} label={<MajorityMarkerLabel />} /><Bar dataKey="probabilityPct" radius={[2, 2, 0, 0]}>{distribution.map((row) => <Cell key={row.seats} fill={row.seats >= 45 ? "#d84a42" : "#173d64"} />)}</Bar></BarChart></ResponsiveContainer></div><p className="chart-note">Each bar shows the share of 5,000 whole-election simulations producing that Labor seat total. The 88 electorates move together rather than being added as if they were independent.</p></article><article className="surface signal-card"><p className="eyebrow">Central finding</p><h3>Three large blocs, few easy paths.</h3><div className="signal-number"><strong>{pct(hung)}</strong><span>chance that no party wins 45 seats</span></div><div className="signal-rule" /><p>One Nation’s polling rise is modelled as a distinct multi-party force. The count does not assume every electorate ends Labor versus Coalition.</p></article></section>
     <section className="model-warning"><ShieldCheck size={20} /><div><strong>Experimental, reproducible, and deliberately uncertain</strong><p>The historical baseline is verified, but this 2026 layer has not cleared a production forecast gate. It is a documented research estimate, not voting advice. The failed demographic challenger has zero central weight.</p></div></section>
   </div>;
 }
@@ -281,6 +291,55 @@ function HistoricalExplorer() {
   </div>;
 }
 
+const sourceUseLabels = {
+  accepted: "Used as an accepted input",
+  experimental: "Experimental model input",
+  "display-only": "Shown as supporting evidence",
+  "validation-only": "Used for history and testing",
+  "gap-tracked": "Known source gap",
+  derived: "Generated by this project",
+} as const;
+
+function readableDate(value: string) {
+  return new Intl.DateTimeFormat("en-AU", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(value));
+}
+
+function DataSources() {
+  const { summary, sources } = sourceProvenance;
+  return <div className="tab-stack provenance-stack">
+    <section className="provenance-hero">
+      <div><p className="eyebrow">Trace every important input</p><h2>What the numbers rest on.</h2><p>Official results, boundaries and enrolment are kept separate from polling, experimental predictors and display-only evidence. “We have the data” does not automatically mean “the model uses it”.</p></div>
+      <div className="provenance-seal"><FileCheck2 size={28} /><strong>{summary.tracedArtifacts}</strong><span>local artefacts fingerprinted</span><small>SHA-256 checksums recorded</small></div>
+    </section>
+    <section className="provenance-summary" aria-label="Source provenance summary">
+      <article><span>Registered source groups</span><strong>{summary.sourceGroups}</strong><small>each with a canonical publisher and use status</small></article>
+      <article><span>Official source groups</span><strong>{summary.officialSourceGroups}</strong><small>VEC, EBC or AEC evidence</small></article>
+      <article><span>Critical inputs</span><strong>{summary.criticalSourceGroups}</strong><small>missing or invalid data can stop a forecast release</small></article>
+      <article><span>Registry reviewed</span><strong>{readableDate(sourceProvenance.registryReviewedAt)}</strong><small>a review date—not a claim that every source changed</small></article>
+    </section>
+    <section className="surface operations-ledger">
+      <div className="section-heading"><div><p className="eyebrow">Operational truth</p><h3>Four dates that must not be collapsed into “updated”</h3></div><Badge variant="outline">Current project state</Badge></div>
+      <div className="operations-grid">
+        <article><Clock3 size={17} /><span>Sources reviewed</span><strong>28 Aug 2026</strong><small>registry and current evidence checked</small></article>
+        <article><Activity size={17} /><span>Latest polling data</span><strong>7 Aug 2026</strong><small>fieldwork end—not publication or model date</small></article>
+        <article><Database size={17} /><span>Latest model run</span><strong>26 Aug 2026</strong><small>5,000 whole-election simulations</small></article>
+        <article className="attention"><CircleAlert size={17} /><span>Automated monitoring</span><strong>Not active yet</strong><small>scheduled checks belong to a later batch</small></article>
+      </div>
+    </section>
+    <section className="source-library">
+      <div className="section-heading"><div><p className="eyebrow">Canonical source library</p><h3>What is used, why, and with what caveat</h3></div><Badge variant="outline">{sources.length} source groups</Badge></div>
+      <div className="source-card-grid">{sources.map((source) => <article className="surface source-card" key={source.id}>
+        <div className="source-card-head"><div><span className={`source-status ${source.useStatus}`}>{sourceUseLabels[source.useStatus]}</span><h4>{source.name}</h4><p>{source.publisher}</p></div>{source.criticalToForecast ? <Badge>Critical</Badge> : <Badge variant="outline">Supporting</Badge>}</div>
+        <dl><div><dt>Model role</dt><dd>{source.modelRole}</dd></div><div><dt>Data date</dt><dd>{readableDate(source.dataEffectiveDate)}</dd></div><div><dt>Source confidence</dt><dd>{source.confidence === "official" ? "Official" : "Mixed primary sources"}</dd></div></dl>
+        <p className="source-note">{source.notes}</p>
+        <details className="artifact-details"><summary>{source.artifacts.length} traced artefact{source.artifacts.length === 1 ? "" : "s"}</summary><ul>{source.artifacts.map((artifact) => <li key={artifact.path}><span>{artifact.path}</span><code>{artifact.sha256.slice(0, 12)}…</code></li>)}</ul></details>
+        <a className="source-link" href={source.canonicalUrl} target="_blank" rel="noreferrer">Open canonical source <ExternalLink size={13} /></a>
+      </article>)}</div>
+    </section>
+    <section className="model-warning"><ShieldCheck size={20} /><div><strong>Provenance now fails closed</strong><p>The build checks that every declared local artefact exists and still matches the generated checksum manifest. A missing or silently changed input cannot pass as the same evidence bundle.</p></div></section>
+  </div>;
+}
+
 function Model() {
   const chart = validationFolds.map((fold) => ({ cycle: fold.cycle, baseline: Number(fold.baselineMae.toFixed(2)), candidate: Number(fold.candidateMae.toFixed(2)) }));
   return <div className="tab-stack"><section className="explorer-intro"><div><p className="eyebrow">How the model is tested</p><h2>Beauty should never outrun evidence.</h2><p>The model only uses an added layer if it improves predictions on elections that were held back from training. The demographic version failed that test, so it has no influence on the central 2026 forecast.</p></div><Badge variant="outline">Demographic layer weight: 0%</Badge></section><section className="model-stack"><div className="model-stack-head"><div><p className="eyebrow">Forecast pipeline</p><h3>From source data to simulated parliaments</h3></div><p>Official VEC results provide the state-election anchor. Federal AEC patterns can add local context, but they are kept secondary and clearly labelled.</p></div><div className="model-layer-grid">{modelLayers.map((item, index) => <article key={item.layer}><span>{String(index + 1).padStart(2, "0")}</span><div><h4>{item.layer}</h4><strong>{item.status}</strong><p>{item.detail}</p></div></article>)}</div></section><section className="surface chart-surface"><div className="chart-heading"><div><h3>Did adding demographics improve past predictions?</h3><p>Average electorate error in percentage points · lower is better</p></div><div className="chart-summary"><strong>No</strong><span>the simpler baseline stays</span></div></div><div className="chart-frame"><ResponsiveContainer width="100%" height="100%"><BarChart data={chart} margin={{ top: 12, right: 8, left: -20, bottom: 0 }}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#d8d6cf" /><XAxis dataKey="cycle" tickLine={false} axisLine={false} /><YAxis domain={[0, 4]} tickLine={false} axisLine={false} tickFormatter={(v) => `${v} pp`} /><Tooltip formatter={(value, name) => [`${Number(value).toFixed(2)} points`, name === "baseline" ? "Simpler baseline" : "With demographics"]} /><Bar dataKey="baseline" fill="#173d64" /><Bar dataKey="candidate" fill="#dc6a32" /></BarChart></ResponsiveContainer></div><p className="chart-note">Across the held-back elections, the simpler baseline missed by {validationSummary.baselineMae.toFixed(2)} points on average versus {validationSummary.candidateMae.toFixed(2)} with the demographic layer. Wrong seat winners also rose from {validationSummary.baselineWinnerErrors} to {validationSummary.candidateWinnerErrors}.</p></section><section className="method-cards"><article><span>01</span><h3>Combine polls</h3><p>Give newer and better-sized polls more weight; account for recurring pollster lean.</p></article><article><span>02</span><h3>Build local starting points</h3><p>Anchor every electorate in official VEC results, then cautiously add local evidence.</p></article><article><span>03</span><h3>Distribute preferences</h3><p>Eliminate candidates until two remain; let transfers vary between simulations.</p></article><article><span>04</span><h3>Rerun the whole election</h3><p>Move statewide, regional, electorate and preference uncertainty together 5,000 times.</p></article></section><section className="integrity-strip"><ShieldCheck size={22} /><div><strong>Reproducible experimental forecast</strong><span>Seed {modelOutput.manifest.seed} · {number.format(modelOutput.manifest.simulations)} whole-election runs · 88 electorates · 8 regions · output fingerprints recorded</span></div><Badge>Experimental</Badge></section></div>;
@@ -301,5 +360,5 @@ function ReadingGuide() {
 }
 
 export function ElectionDashboard() {
-  return <main className="site-shell"><header className="topbar"><div className="topbar-inner"><a href="#content" className="brand"><span className="brand-mark">V</span><span><strong>Victorian Election</strong><small>Forecasting laboratory · 2026</small></span></a><div className="status-cluster"><span className="status-dot" /><span>Experimental research forecast · updated 26 August</span></div></div></header><div className="content-shell" id="content"><section className="page-heading"><div><p className="eyebrow">The election, rendered honestly</p><h1>A forecast you can interrogate.</h1><p className="page-deck">See the headline, then open the evidence: polls, all 88 electorates, Upper House regions, historical swings and the tests the model passed—or failed.</p></div><div className="snapshot-stamp"><span>Forecast updated</span><strong>26 AUGUST 2026</strong><span>Model runs</span><strong>{number.format(modelOutput.manifest.simulations)} WHOLE ELECTIONS</strong></div></section><ReadingGuide /><Tabs defaultValue="forecast" className="dashboard-tabs"><div className="tabs-rail"><TabsList variant="line" className="dashboard-tabs-list"><TabsTrigger value="forecast"><Layers3 />Forecast</TabsTrigger><TabsTrigger value="polling"><Activity />Polls</TabsTrigger><TabsTrigger value="districts"><MapPinned />88 electorates</TabsTrigger><TabsTrigger value="council"><Landmark />Upper House</TabsTrigger><TabsTrigger value="history"><History />Swing history</TabsTrigger><TabsTrigger value="model"><Database />How it works</TabsTrigger></TabsList></div><TabsContent value="forecast"><Forecast /></TabsContent><TabsContent value="polling"><Polling /></TabsContent><TabsContent value="districts"><DistrictExplorer /></TabsContent><TabsContent value="council"><Council /></TabsContent><TabsContent value="history"><HistoricalExplorer /></TabsContent><TabsContent value="model"><Model /></TabsContent></Tabs></div><footer><div><strong>Victorian Election Forecasting Laboratory</strong><span>Independent · provisional · reproducible</span></div><p>Experimental research forecast, not voting advice. Inputs and assumptions are versioned; uncertainty is part of the result.</p></footer></main>;
+  return <main className="site-shell"><header className="topbar"><div className="topbar-inner"><a href="#content" className="brand"><span className="brand-mark">V</span><span><strong>Victorian Election</strong><small>Forecasting laboratory · 2026</small></span></a><div className="status-cluster"><span className="status-dot" /><span>Experimental research forecast · updated 26 August</span></div></div></header><div className="content-shell" id="content"><section className="page-heading"><div><p className="eyebrow">The election, rendered honestly</p><h1>A forecast you can interrogate.</h1><p className="page-deck">See the headline, then open the evidence: polls, all 88 electorates, Upper House regions, historical swings, source provenance and the tests the model passed—or failed.</p></div><div className="snapshot-stamp"><span>Forecast updated</span><strong>26 AUGUST 2026</strong><span>Model runs</span><strong>{number.format(modelOutput.manifest.simulations)} WHOLE ELECTIONS</strong></div></section><ReadingGuide /><Tabs defaultValue="forecast" className="dashboard-tabs"><div className="tabs-rail"><TabsList variant="line" className="dashboard-tabs-list"><TabsTrigger value="forecast"><Layers3 />Forecast</TabsTrigger><TabsTrigger value="polling"><Activity />Polls</TabsTrigger><TabsTrigger value="districts"><MapPinned />88 electorates</TabsTrigger><TabsTrigger value="council"><Landmark />Upper House</TabsTrigger><TabsTrigger value="history"><History />Swing history</TabsTrigger><TabsTrigger value="data"><BookOpenCheck />Data &amp; sources</TabsTrigger><TabsTrigger value="model"><Database />How it works</TabsTrigger></TabsList></div><TabsContent value="forecast"><Forecast /></TabsContent><TabsContent value="polling"><Polling /></TabsContent><TabsContent value="districts"><DistrictExplorer /></TabsContent><TabsContent value="council"><Council /></TabsContent><TabsContent value="history"><HistoricalExplorer /></TabsContent><TabsContent value="data"><DataSources /></TabsContent><TabsContent value="model"><Model /></TabsContent></Tabs></div><footer><div><strong>Victorian Election Forecasting Laboratory</strong><span>Independent · provisional · reproducible</span></div><p>Experimental research forecast, not voting advice. Inputs and assumptions are versioned; uncertainty is part of the result.</p></footer></main>;
 }
