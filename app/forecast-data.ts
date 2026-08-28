@@ -15,18 +15,6 @@ export const pollingBenchmark = {
   },
 } as const;
 
-export const pollSeries = [
-  { date: "10 Feb", pollster: "DemosAU", alp: 23, coalition: 29, onp: 21, greens: 15, other: 12, n: 1274 },
-  { date: "16 Feb", pollster: "Roy Morgan", alp: 25.5, coalition: 21.5, onp: 26.5, greens: 13.5, other: 13, n: 2462 },
-  { date: "27 Feb", pollster: "RedBridge / Accent", alp: 25, coalition: 28, onp: 24, greens: 13, other: 10, n: 2165 },
-  { date: "24 Apr", pollster: "Roy Morgan", alp: 25.5, coalition: 24, onp: 24.5, greens: 13.5, other: 12.5, n: 1707 },
-  { date: "8 Jun", pollster: "Freshwater", alp: 23, coalition: 27, onp: 25, greens: 14, other: 11, n: 1034 },
-  { date: "11 Jun", pollster: "DemosAU", alp: 21, coalition: 30, onp: 23, greens: 15, other: 11, n: 1056 },
-  { date: "28 Jun", pollster: "RedBridge / Accent", alp: 26, coalition: 26, onp: 27, greens: 13, other: 8, n: 5516 },
-  { date: "26 Jul", pollster: "Newspoll / Pyxis", alp: 28, coalition: 31, onp: 19, greens: 13, other: 9, n: 1035 },
-  { date: "7 Aug", pollster: "Roy Morgan", alp: 26, coalition: 26, onp: 23.5, greens: 12.5, other: 12, n: 2084 },
-] as const;
-
 export const modelLayers = [
   { layer: "Polls", status: "Live experimental input", detail: "Nine eligible polls are combined with recency, sample size and estimated pollster lean taken into account." },
   { layer: "Election baseline", status: "Working", detail: "Official VEC results anchor all 88 Lower House electorates and eight Upper House regions, with boundary changes handled explicitly." },
