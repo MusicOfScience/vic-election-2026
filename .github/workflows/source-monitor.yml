@@ -1,6 +1,8 @@
 name: Source freshness and live-source monitor
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: "17 20 * * 1,4"
   workflow_dispatch:

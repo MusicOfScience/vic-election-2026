@@ -8,6 +8,7 @@ test("live source canonicalisation removes volatile script/style content", () =>
   assert.equal(canonical.includes("nonce"), false);
   assert.equal(canonical.includes("color:red"), false);
   assert.equal(canonical.includes("Victorian election"), true);
+  assert.equal(canonical.includes("<body>"), false);
 });
 
 test("marker validation is case-insensitive and reports missing markers", () => {
