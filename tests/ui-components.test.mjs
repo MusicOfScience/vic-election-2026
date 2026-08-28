@@ -45,6 +45,9 @@ test("emits responsive dashboard and accessibility utilities", async () => {
   // Lightning CSS modernises max-width media queries in the production bundle.
   assert.match(css, /@media\s*\((?:max-width:\s*650px|width<=650px)\)/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.match(css, /\.skip-link/);
+  assert.match(css, /\.tabs-scroll-cue/);
+  assert.match(css, /\.seat-tile\{height:48px/);
 });
 
 test("forwards progress semantics to the primitive", async () => {
@@ -129,6 +132,20 @@ test("keeps the majority label in a high-contrast capsule above the columns", as
   assert.match(html, /45 SEATS · MAJORITY/);
   assert.match(html, /fill="#fffdf8"/);
   assert.match(html, /translate\(220, 13\)/);
+});
+
+test("ships the Batch 6 navigation and chart accessibility pass", async () => {
+  const { ElectionDashboard } = await vite.ssrLoadModule(
+    "/app/election-dashboard.tsx",
+  );
+  const html = renderToStaticMarkup(React.createElement(ElectionDashboard));
+
+  assert.match(html, /Skip to forecast navigation/);
+  assert.match(html, /aria-label="Forecast sections"/);
+  assert.match(html, /Party colour key/);
+  assert.match(html, /majority threshold is 45 seats/);
+  assert.match(html, /26 Aug 2026/);
+  assert.doesNotMatch(html, /updated 26 August/);
 });
 
 test("ships a complete checksummed source-provenance registry", async () => {
