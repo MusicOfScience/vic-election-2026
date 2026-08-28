@@ -28,12 +28,12 @@ export const pollSeries = [
 ] as const;
 
 export const modelLayers = [
-  { layer: "Polling state", status: "Benchmark live", detail: "9 eligible polls; recency, sample and regime sensitivity. Bayesian latent state and house effects remain a planned candidate." },
-  { layer: "Election baseline", status: "Operational", detail: "Official VEC results, active 88-district and eight-region registries, redistribution-aware historical surfaces." },
-  { layer: "Demography + housing", status: "Validated, not promoted", detail: "Four census-aligned cycles and seven preregistered features; first held-out ridge candidate failed its gate." },
-  { layer: "Preferences + contests", status: "Experimental", detail: "39/39 VEC indicative distributions parsed; IRV engine and candidate-set evidence exist, but no production transfer model is authorised." },
-  { layer: "Legislative Council", status: "Engine under validation", detail: "Five-member STV/PR engine and eight-region targets exist; Roy Morgan remains an external 2026 benchmark only." },
-  { layer: "Forecast release", status: "Gate closed", detail: "No production probabilities or forecast-error distribution are authorised by the sealed 14 August checkpoint." },
+  { layer: "Polls", status: "Live experimental input", detail: "Nine eligible polls are combined with recency, sample size and estimated pollster lean taken into account." },
+  { layer: "Election baseline", status: "Working", detail: "Official VEC results anchor all 88 Lower House electorates and eight Upper House regions, with boundary changes handled explicitly." },
+  { layer: "Demography + housing", status: "Tested and excluded", detail: "The added demographic layer was tested across four past election cycles and made predictions slightly worse, so its central weight is zero." },
+  { layer: "Preferences + local contests", status: "Experimental", detail: "Official preference files inform transfers. The model can discover different final-two pairings rather than assuming Labor versus Coalition." },
+  { layer: "Upper House", status: "Experimental", detail: "Each five-member regional count is simulated under the 2026 voter-directed preference rules, without group voting tickets." },
+  { layer: "Public forecast", status: "Research release", detail: "The app shows a reproducible experimental estimate with uncertainty; it has not been approved as a production forecasting system." },
 ] as const;
 
 export const validationSummary = {
