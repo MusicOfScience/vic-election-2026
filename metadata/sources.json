@@ -135,7 +135,8 @@
       "criticalToForecast": true,
       "localArtifacts": [
         "model/data/processed/poll_events_seed.csv",
-        "model/data/processed/poll_estimates_seed.csv"
+        "model/data/processed/poll_estimates_seed.csv",
+        "app/poll-data.generated.ts"
       ],
       "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. Roy Morgan is one input rather than the forecast."
     },
