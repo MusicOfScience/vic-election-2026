@@ -79,6 +79,29 @@
         "OTH_IND": 0.7928532387761305
       }
     },
+    "sensitivity_by_half_life_days": {
+      "21": {
+        "ALP": 26.155850538653592,
+        "LIB_NAT": 27.30274070860541,
+        "ONP": 23.128928236076,
+        "GRN": 12.912583650150882,
+        "OTH_IND": 10.499896866514137
+      },
+      "45": {
+        "ALP": 25.673302572638686,
+        "LIB_NAT": 27.185271964123128,
+        "ONP": 23.671471376896577,
+        "GRN": 13.191609146395733,
+        "OTH_IND": 10.278344939945786
+      },
+      "90": {
+        "ALP": 25.408423596873675,
+        "LIB_NAT": 27.0222337337757,
+        "ONP": 23.812123868579853,
+        "GRN": 13.375276316021305,
+        "OTH_IND": 10.381942484749485
+      }
+    },
     "model": "empirical_bayes_logistic_normal"
   },
   "assembly": {
@@ -92,6 +115,41 @@
     "members_per_region": 5,
     "candidate_order_forecast": false
   },
+  "assumptions": {
+    "polling": {
+      "model": "empirical_bayes_logistic_normal",
+      "half_life_days": 45,
+      "effective_sample_cap": 2500,
+      "systematic_floor": 0.035,
+      "house_effects": "partially_pooled",
+      "party_covariance": "joint"
+    },
+    "assembly": {
+      "model": "correlated_multi_party_irv",
+      "statewide_anchor": "official_VEC_2022",
+      "local_pattern": "AEC_2022_ecological_auxiliary",
+      "aec_local_pattern_shrinkage": 0.62,
+      "direct_district_evidence_weight": 0.78,
+      "region_shock_sd": 0.052,
+      "district_shock_sd": 0.145,
+      "preference_prior_concentration": 72,
+      "by_election_max_logit_boost": 0.03,
+      "by_election_decay_days": 1100,
+      "local_logit_limits": {
+        "ALP": 1.3,
+        "LIB_NAT": 1.3,
+        "ONP": 0.45,
+        "GRN": 1.2,
+        "OTH_IND": 1.2
+      },
+      "greens_local_pattern_multiplier": 1.28,
+      "greens_local_logit_limit": 1.5,
+      "demographic_residual_weight": 0,
+      "demographic_reason": "sealed four-cycle promotion gate failed"
+    },
+    "config_path": "config/experimental_forecast.yml",
+    "config_sha256": "352fa74be4e3408db6df923c13bdd4e2d15508225cb975ea758cc5716ea27297"
+  },
   "governance": {
     "demographic_residual_weight": 0,
     "demographic_gate": "failed_sealed_four_cycle_promotion_test",
@@ -101,7 +159,7 @@
   "outputs": {
     "districts": {
       "path": "data/processed/experimental_forecast_2026_districts.csv",
-      "sha256": "32a9b114706d4ee8e774b50f30c649e15d5014bc0be5ca55755fecd7d67bc7d0"
+      "sha256": "b8f78db6d1a04c5bcb56223169ab50a82a563ae7c31d1f9398c79e520b36617d"
     },
     "chamber": {
       "path": "data/processed/experimental_forecast_2026_chamber.csv",

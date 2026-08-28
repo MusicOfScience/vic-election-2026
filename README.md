@@ -17,6 +17,9 @@ A responsive public-interest forecasting application for the 2026 Victorian stat
 - A machine-readable source registry with canonical URLs, use status, data dates, criticality, local artefacts and material caveats.
 - A generated provenance manifest recording SHA-256 checksums, byte counts and record counts for 13 important local artefacts.
 - A public poll series generated directly from the canonical model registry, eliminating the former duplicate hand-written interface list.
+- A 21/45/90-day polling sensitivity check showing how recency assumptions affect the statewide estimate.
+- Electorate-level “Why this seat?” diagnostics comparing the official 2022-anchored starting point with the 2026 model average, including effective contenders and any guarded by-election signal.
+- A single versioned forecast configuration controlling material polling and Assembly assumptions; its checksum is recorded in every forecast manifest.
 - A statewide battleground board and five-cycle swing-history view with distributions, crossings, local extremes and boundary-method notes.
 
 The forecast is explicitly experimental. It is a research estimate, not voting advice or an authorised production forecast.
@@ -31,8 +34,8 @@ npm run dev
 ## Refresh the embedded model output
 
 ```bash
-python scripts/run_experimental_forecast.py --simulations 5000 --seed 20260826
-node scripts/generate-model-output.mjs /path/to/model-repository
+PYTHONPATH=model/src python model/scripts/run_experimental_forecast.py --root model
+node scripts/generate-model-output.mjs model
 node scripts/generate-historical-data.mjs /path/to/reconstructed-model-repository
 python3 scripts/generate-vec-booth-data.py
 ```

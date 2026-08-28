@@ -7,6 +7,8 @@ import hashlib
 import json
 from pathlib import Path
 
+import yaml
+
 from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
 
 
@@ -17,12 +19,15 @@ def _hash(path: Path) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
-    parser.add_argument("--simulations", type=int, default=5000)
-    parser.add_argument("--seed", type=int, default=20260826)
+    parser.add_argument("--simulations", type=int)
+    parser.add_argument("--seed", type=int)
     args = parser.parse_args()
     root = args.root.resolve()
     out = root / "data/processed"
-    forecast = run_experimental_forecast(root, simulations=args.simulations, seed=args.seed)
+    config = yaml.safe_load((root / "config/experimental_forecast.yml").read_text())
+    simulations = args.simulations or int(config["simulations"])
+    seed = args.seed or int(config["seed"])
+    forecast = run_experimental_forecast(root, simulations=simulations, seed=seed)
     files = {
         "districts": out / "experimental_forecast_2026_districts.csv",
         "chamber": out / "experimental_forecast_2026_chamber.csv",
@@ -47,11 +52,16 @@ def main() -> None:
         "polling": {"poll_count": poll.poll_count, "mean": poll.mean, "median": poll.median,
                     "lower80": poll.lower80, "upper80": poll.upper80,
                     "house_effects": poll.house_effects,
+                    "sensitivity_by_half_life_days": forecast.poll_sensitivity,
                     "model": "empirical_bayes_logistic_normal"},
         "assembly": {"model": "correlated_multi_party_irv", "districts": len(forecast.districts),
                      "hung_probability": float(forecast.chamber.hung_probability.iloc[0])},
         "council": {"model": "voter_directed_group_stv_approximation", "regions": len(forecast.council_regions),
                     "members_per_region": 5, "candidate_order_forecast": False},
+        "assumptions": {"polling": forecast.assumptions["polling"],
+                        "assembly": forecast.assumptions["assembly"],
+                        "config_path": "config/experimental_forecast.yml",
+                        "config_sha256": _hash(root / "config/experimental_forecast.yml")},
         "governance": {"demographic_residual_weight": 0,
                        "demographic_gate": "failed_sealed_four_cycle_promotion_test",
                        "aec_local_pattern_role": "derived_auxiliary_predictor",
