@@ -100,7 +100,8 @@ def build_assembly_seed(root: str | Path, config: dict | None = None) -> pd.Data
     for party in PARTIES:
         if party not in pivot:
             pivot[party] = 0.0
-    raw = pivot.loc[:, PARTIES].to_numpy(float)
+    # pandas 3 may expose a read-only NumPy view; normalisation below is in-place.
+    raw = pivot.loc[:, PARTIES].to_numpy(dtype=float, copy=True)
     raw /= raw.sum(axis=1, keepdims=True)
     state = raw.mean(axis=0)
     pivot["onp_local_log"] = np.clip(np.log(np.clip(raw[:, 2], .004, None) / max(state[2], .004)), -1.20, 1.10)
@@ -149,7 +150,8 @@ def build_council_seed(root: str | Path, config: dict | None = None) -> pd.DataF
     for p in PARTIES:
         if p not in pivot:
             pivot[p] = 0.0
-    vals = pivot.loc[:, PARTIES].to_numpy(float)
+    # Keep this writable across pandas/NumPy versions for in-place normalisation.
+    vals = pivot.loc[:, PARTIES].to_numpy(dtype=float, copy=True)
     vals /= vals.sum(axis=1, keepdims=True)
     state = vals.mean(axis=0)
     local = np.log(np.clip(vals, .002, None)) - np.log(np.clip(state, .002, None))
