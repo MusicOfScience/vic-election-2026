@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "electionDate": "2026-11-28",
+  "authority": "Victorian Electoral Commission",
+  "officialNominations": {
+    "open": "2026-11-04T09:00:00+11:00",
+    "close": "2026-11-09T12:00:00+11:00",
+    "sourceUrl": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate"
+  },
+  "policy": {
+    "preNomination": "Publicly announced or party-endorsed candidates may be tracked as provisional with a primary source URL.",
+    "official": "Only VEC evidence may promote a record to nominated, withdrawn, elected or not-elected.",
+    "conflicts": "Conflicting or stale candidate claims are quarantined for review and do not silently replace accepted records."
+  },
+  "candidates": []
+}
