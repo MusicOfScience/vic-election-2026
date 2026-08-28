@@ -136,9 +136,10 @@
       "localArtifacts": [
         "model/data/processed/poll_events_seed.csv",
         "model/data/processed/poll_estimates_seed.csv",
+        "model/data/processed/upper_house_region_poll_2026-08.csv",
         "app/poll-data.generated.ts"
       ],
-      "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. Roy Morgan is one input rather than the forecast."
+      "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. The Upper House regional estimates are partially verified and receive guarded weight because regional sample sizes were not reported. Roy Morgan is one input rather than the forecast."
     },
     {
       "id": "vec-recent-by-elections",

@@ -139,8 +139,8 @@ test("ships a complete checksummed source-provenance registry", async () => {
 
   assert.equal(sourceProvenance.summary.sourceGroups, 8);
   assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
-  assert.equal(sourceProvenance.summary.tracedArtifacts, 13);
-  assert.equal(artifacts.length, 13);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 14);
+  assert.equal(artifacts.length, 14);
   assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
   assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 8);
 });
@@ -163,4 +163,16 @@ test("ships Batch 3 polling and electorate diagnostics", async () => {
   assert.ok(seat.win_entropy >= 0 && seat.win_entropy <= 1);
   assert.ok(Number.isFinite(seat.baseline_alp));
   assert.ok(Number.isFinite(seat.change_alp));
+});
+
+test("ships Batch 4 Upper House uncertainty diagnostics", async () => {
+  const { modelOutput } = await vite.ssrLoadModule("/app/model-output.generated.ts");
+  const region = modelOutput.councilRegions[0];
+
+  assert.equal(modelOutput.councilRegions.length, 8);
+  assert.ok(region.effective_outcomes >= 1);
+  assert.ok(region.outcome_entropy >= 0 && region.outcome_entropy <= 1);
+  assert.ok(region.at_least_one_alp >= 0 && region.at_least_one_alp <= 1);
+  assert.ok(Number.isFinite(region.primary_alp));
+  assert.ok(modelOutput.manifest.council.major_party_no_control_probability >= 0);
 });

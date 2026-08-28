@@ -58,6 +58,20 @@ def test_council_seed_and_count_conserve_five_seats():
     assert seats.sum() == 5
 
 
+def test_council_diagnostics_cover_regions_and_probabilities():
+    forecast = run_experimental_forecast(ROOT, simulations=30, seed=17)
+    assert len(forecast.council_regions) == 8
+    assert forecast.council_regions.effective_outcomes.ge(1).all()
+    assert forecast.council_regions.outcome_entropy.between(0, 1).all()
+    for party in PARTIES:
+        assert forecast.council_regions[f"at_least_one_{party.lower()}"].between(0, 1).all()
+        assert forecast.council_regions[f"at_least_two_{party.lower()}"].between(0, 1).all()
+        assert np.allclose(
+            forecast.council_regions[f"change_{party.lower()}"],
+            forecast.council_regions[f"primary_{party.lower()}"] - forecast.council_regions[f"baseline_{party.lower()}"],
+        )
+
+
 def test_end_to_end_reproducible_and_conserves_chambers():
     a = run_experimental_forecast(ROOT, simulations=30, seed=11)
     b = run_experimental_forecast(ROOT, simulations=30, seed=11)

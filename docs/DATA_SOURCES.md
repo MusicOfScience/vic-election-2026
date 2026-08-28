@@ -19,6 +19,8 @@ It records, for every source group:
 
 An official source may be display-only or experimental. For example, AEC federal-election geography is official data, but it remains a secondary contextual predictor rather than a substitute for VEC state-election results.
 
+Published August 2026 Upper House regional estimates are retained as a separate processed poll table. They are partially verified and receive guarded model weight because regional sample sizes were not published; they do not override the official VEC baseline.
+
 Finding or retrieving a source does not automatically authorise it for the central model.
 
 ## Generated provenance manifest

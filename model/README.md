@@ -8,6 +8,6 @@ python scripts/run_experimental_forecast.py
 python -m pytest -q
 ```
 
-Material poll-of-polls and Assembly assumptions live in `config/experimental_forecast.yml`; the output manifest records that file's SHA-256 fingerprint. The district output also includes its 2022-anchored starting shares, changes to the 2026 average, effective-contender count, win entropy and guarded by-election signal.
+Material poll-of-polls, Assembly and Council assumptions live in `config/experimental_forecast.yml`; the output manifest records that file's SHA-256 fingerprint. District output includes its 2022-anchored starting shares, changes to the 2026 average, effective-contender count, win entropy and guarded by-election signal. Council output includes regional primary averages, seat-winning thresholds and result-pattern entropy.
 
 The model is experimental and `production_compatible` remains false. The sealed demographic challenger receives zero central weight because it failed the four-cycle promotion test.
