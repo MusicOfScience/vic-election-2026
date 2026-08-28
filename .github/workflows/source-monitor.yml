@@ -31,6 +31,9 @@ jobs:
       - name: Observe and validate live upstream sources
         if: always()
         run: node scripts/monitor-live-sources.mjs --report live-source-report.json --fail-on-unhealthy
+      - name: Discover structured candidate and poll records
+        if: always()
+        run: node scripts/discover-live-source-records.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
       - name: Validate candidate registry
         if: always()
         run: node scripts/validate-candidates.mjs
@@ -41,4 +44,6 @@ jobs:
           path: |
             release-readiness-report.json
             live-source-report.json
+            source-discovery-report.json
+            source-discovery-quarantine.json
           retention-days: 90
