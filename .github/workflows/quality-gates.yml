@@ -29,5 +29,6 @@ jobs:
       - name: Reject uncommitted or timestamp-only drift
         run: git diff --exit-code
       - run: python -m pytest model/tests
+      - run: npm run candidates:validate
       - run: npm test
       - run: npm run lint
