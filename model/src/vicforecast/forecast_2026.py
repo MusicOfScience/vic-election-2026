@@ -137,8 +137,10 @@ def build_assembly_seed(root: str | Path, config: dict | None = None) -> pd.Data
     return pivot.sort_values("district_name").reset_index(drop=True)
 
 
-def build_council_seed(root: str | Path) -> pd.DataFrame:
+def build_council_seed(root: str | Path, config: dict | None = None) -> pd.DataFrame:
     root = Path(root)
+    config = config or load_forecast_config(root)
+    council = config["council"]
     surface = pd.read_csv(root / "data/processed/aec_2022_state_region_party_surface_vic.csv.gz")
     surface = surface[surface.party_id.ne("INFORMAL")].copy()
     surface["family"] = surface.party_id.map(_family)
@@ -151,7 +153,7 @@ def build_council_seed(root: str | Path) -> pd.DataFrame:
     vals /= vals.sum(axis=1, keepdims=True)
     state = vals.mean(axis=0)
     local = np.log(np.clip(vals, .002, None)) - np.log(np.clip(state, .002, None))
-    pivot.loc[:, PARTIES] = np.exp(np.log(COUNCIL_2022_TARGET / 100) + .55 * local)
+    pivot.loc[:, PARTIES] = np.exp(np.log(COUNCIL_2022_TARGET / 100) + float(council["aec_local_pattern_shrinkage"]) * local)
     pivot.loc[:, PARTIES] = pivot.loc[:, PARTIES].div(pivot.loc[:, PARTIES].sum(axis=1), axis=0)
     enrol = pd.read_csv(root / "data/processed/vec_enrolment_region_2026-06.csv")
     weights = dict(zip(enrol.geography_name, enrol.enrolled_electors))
@@ -175,7 +177,7 @@ def _count_irv(primary: np.ndarray, preference: np.ndarray) -> tuple[int, tuple[
     return final[0], final
 
 
-def _count_group_stv(primary: np.ndarray, preference: np.ndarray) -> np.ndarray:
+def _count_group_stv(primary: np.ndarray, preference: np.ndarray, exhaustion_probability: float = .10) -> np.ndarray:
     """Five-member voter-directed group STV approximation.
 
     It models party-group vote pools and voter-directed transfers, including
@@ -202,7 +204,7 @@ def _count_group_stv(primary: np.ndarray, preference: np.ndarray) -> np.ndarray:
         dest = sorted(active)
         probs = preference[source, dest]
         probs = probs / probs.sum()
-        votes[dest] += votes[source] * .90 * probs
+        votes[dest] += votes[source] * (1.0 - exhaustion_probability) * probs
         votes[source] = 0.0
     return seats
 
@@ -216,6 +218,7 @@ def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed
     config = load_forecast_config(root)
     polling = config["polling"]
     assembly = config["assembly"]
+    council_config = config["council"]
     events = pd.read_csv(root / "data/processed/poll_events_seed.csv")
     estimates = pd.read_csv(root / "data/processed/poll_estimates_seed.csv")
     poll = fit_latent_poll_state(
@@ -237,7 +240,7 @@ def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed
         )
         sensitivity[str(half_life)] = fitted.mean
     districts = build_assembly_seed(root, config)
-    council_seed = build_council_seed(root)
+    council_seed = build_council_seed(root, config)
     rng = np.random.default_rng(seed + 1)
     baseline_state = ASSEMBLY_2022_TARGET / 100.0
     wins = np.zeros((len(districts), len(PARTIES)), int)
@@ -326,31 +329,60 @@ def run_experimental_forecast(root: str | Path, *, simulations: int = 5000, seed
     # Council uses the same statewide latent draw but a separate regional model
     # and voter-directed five-member counting process.
     council_draws = np.zeros((simulations, len(council_seed), len(PARTIES)), int)
+    council_primary_sum = np.zeros((len(council_seed), len(PARTIES)), float)
     cbase = council_seed.loc[:, PARTIES].to_numpy(float)
     council_anchor = COUNCIL_2022_TARGET / 100.0
     council_local = np.log(np.clip(cbase, .002, None) / council_anchor)
-    council_local = np.clip(council_local, -np.array([.8, .8, .4, .8, .8]), np.array([.8, .8, .4, .8, .8]))
+    council_limits = np.array([float(council_config["local_logit_limits"][party]) for party in PARTIES])
+    council_local = np.clip(council_local, -council_limits, council_limits)
+    region_poll = pd.read_csv(root / council_config["regional_poll_path"]).set_index("region_name")
+    if set(region_poll.index) != set(council_seed.region_name):
+        raise ValueError("Upper House regional poll must contain exactly the eight current regions")
+    region_poll_values = region_poll.loc[council_seed.region_name, list(PARTIES)].to_numpy(float) / 100.0
+    if not np.allclose(region_poll_values.sum(axis=1), 1.0, atol=1e-6):
+        raise ValueError("Upper House regional poll shares must sum to 100 in every region")
+    poll_central = np.array([poll.mean[party] for party in PARTIES]) / 100.0
+    region_poll_pattern = np.log(np.clip(region_poll_values, .002, None) / np.clip(poll_central, .002, None))
+    poll_limit = float(council_config["regional_poll_logit_limit"])
+    region_poll_pattern = np.clip(region_poll_pattern, -poll_limit, poll_limit)
     for s in range(simulations):
         state = poll.draws[s] / 100.0
-        pref = np.vstack([rng.dirichlet(np.maximum(row * 42.0, .02)) for row in PREFERENCE_PRIOR])
+        pref = np.vstack([rng.dirichlet(np.maximum(row * float(council_config["preference_prior_concentration"]), .02)) for row in PREFERENCE_PRIOR])
         for r in range(len(council_seed)):
-            logits = np.log(np.clip(state, 1e-6, None)) + council_local[r] + rng.normal(0, .10, len(PARTIES))
+            logits = (np.log(np.clip(state, 1e-6, None)) + council_local[r]
+                      + float(council_config["regional_poll_pattern_weight"]) * region_poll_pattern[r]
+                      + rng.normal(0, float(council_config["region_shock_sd"]), len(PARTIES)))
             primary = np.exp(logits - logits.max()); primary /= primary.sum()
-            council_draws[s, r] = _count_group_stv(primary, pref)
+            council_primary_sum[r] += primary
+            council_draws[s, r] = _count_group_stv(primary, pref, float(council_config["exhaustion_probability"]))
     council_region_rows = []
     for r, row in council_seed.iterrows():
         patterns, counts = np.unique(council_draws[:, r, :], axis=0, return_counts=True)
         modal = patterns[counts.argmax()]
+        pattern_probabilities = counts / simulations
+        pattern_entropy = float(-(pattern_probabilities * np.log(pattern_probabilities)).sum())
         item = {"region_id": row.region_id, "region_name": row.region_name,
-                "modal_probability": float(counts.max() / simulations)}
+                "modal_probability": float(counts.max() / simulations),
+                "effective_outcomes": float(np.exp(pattern_entropy)),
+                "outcome_entropy": pattern_entropy / np.log(len(patterns)) if len(patterns) > 1 else 0.0}
         for j, party in enumerate(PARTIES):
             item[f"seats_{party.lower()}"] = int(modal[j])
             item[f"mean_{party.lower()}"] = float(council_draws[:, r, j].mean())
+            primary = council_primary_sum[r, j] / simulations * 100.0
+            baseline = float(row[party]) * 100.0
+            item[f"primary_{party.lower()}"] = primary
+            item[f"baseline_{party.lower()}"] = baseline
+            item[f"change_{party.lower()}"] = primary - baseline
+            item[f"at_least_one_{party.lower()}"] = float((council_draws[:, r, j] >= 1).mean())
+            item[f"at_least_two_{party.lower()}"] = float((council_draws[:, r, j] >= 2).mean())
         council_region_rows.append(item)
     total_council = council_draws.sum(axis=1)
+    major_party_no_control = float(((total_council[:, 0] < 21) & (total_council[:, 1] < 21)).mean())
     council_rows = []
     for j, party in enumerate(PARTIES):
         mean, median, low, high = _summary(total_council[:, j])
-        council_rows.append({"party": party, "mean": mean, "median": median, "lower80": low, "upper80": high})
+        council_rows.append({"party": party, "mean": mean, "median": median, "lower80": low, "upper80": high,
+                             "majority_probability": float((total_council[:, j] >= 21).mean()),
+                             "major_party_no_control_probability": major_party_no_control})
     return ExperimentalForecast(poll, sensitivity, config, pd.DataFrame(district_rows), chamber, seat_dist,
                                 pd.DataFrame(council_region_rows), pd.DataFrame(council_rows), simulations, seed)

@@ -6,7 +6,7 @@ export const sourceProvenance = {
     "sourceGroups": 8,
     "officialSourceGroups": 7,
     "criticalSourceGroups": 5,
-    "tracedArtifacts": 13,
+    "tracedArtifacts": 14,
     "automationStatus": "not-yet-active"
   },
   "sources": [
@@ -210,9 +210,10 @@ export const sourceProvenance = {
       "localArtifacts": [
         "model/data/processed/poll_events_seed.csv",
         "model/data/processed/poll_estimates_seed.csv",
+        "model/data/processed/upper_house_region_poll_2026-08.csv",
         "app/poll-data.generated.ts"
       ],
-      "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. Roy Morgan is one input rather than the forecast.",
+      "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. The Upper House regional estimates are partially verified and receive guarded weight because regional sample sizes were not reported. Roy Morgan is one input rather than the forecast.",
       "artifacts": [
         {
           "path": "model/data/processed/poll_events_seed.csv",
@@ -225,6 +226,12 @@ export const sourceProvenance = {
           "sha256": "834ac3642b31b8473912e644af89bce56c66e494d73b5b39a3e81b73d3eabd33",
           "bytes": 2178,
           "records": 50
+        },
+        {
+          "path": "model/data/processed/upper_house_region_poll_2026-08.csv",
+          "sha256": "3387d85815972fcb3420c7316856efe28520158608cce62a5a68b42fc3dfb3d1",
+          "bytes": 2331,
+          "records": 8
         },
         {
           "path": "app/poll-data.generated.ts",

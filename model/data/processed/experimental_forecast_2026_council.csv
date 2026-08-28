@@ -1,6 +1,6 @@
-party,mean,median,lower80,upper80
-ALP,11.562,12.0,10.0,13.0
-LIB_NAT,12.8688,13.0,11.0,15.0
-ONP,9.8922,10.0,8.0,12.0
-GRN,3.6284,4.0,2.0,5.0
-OTH_IND,2.0486,2.0,1.0,4.0
+party,mean,median,lower80,upper80,majority_probability,major_party_no_control_probability
+ALP,11.744,12.0,10.0,13.0,0.0,1.0
+LIB_NAT,12.344,12.0,11.0,14.0,0.0,1.0
+ONP,10.2368,10.0,8.0,12.0,0.0,1.0
+GRN,2.8474,3.0,2.0,4.0,0.0,1.0
+OTH_IND,2.8278,3.0,1.0,5.0,0.0,1.0

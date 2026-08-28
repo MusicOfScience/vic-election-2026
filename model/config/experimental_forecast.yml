@@ -37,6 +37,18 @@ council:
   model: voter_directed_group_stv_approximation
   members_per_region: 5
   exhaustion_probability: 0.10
+  aec_local_pattern_shrinkage: 0.55
+  regional_poll_path: data/processed/upper_house_region_poll_2026-08.csv
+  regional_poll_pattern_weight: 0.35
+  regional_poll_logit_limit: 0.85
+  region_shock_sd: 0.10
+  preference_prior_concentration: 42
+  local_logit_limits:
+    ALP: 0.80
+    LIB_NAT: 0.80
+    ONP: 0.40
+    GRN: 0.80
+    OTH_IND: 0.80
   candidate_order_forecast: false
 governance:
   observations_are_not_forecasts: true

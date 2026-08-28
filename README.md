@@ -8,19 +8,21 @@ A responsive public-interest forecasting application for the 2026 Victorian stat
 - 5,000 reproducible correlated simulations across all 88 Legislative Assembly districts.
 - Multi-party full-preferential counts with stochastic transfers and no forced Labor–Coalition final pair.
 - Official VEC 2022 anchors combined with shrunk AEC-derived local patterns, current enrolment, direct district evidence and guarded by-election signals.
-- A separate eight-region, five-member Council model under the enacted voter-directed 2026 rules.
+- A separate eight-region, five-member Council model under the enacted voter-directed 2026 rules, with guarded regional polling, exhausted preferences and region-level outcome uncertainty.
 - Historical four-cycle validation, including the failed demographic challenger and its zero central model weight.
 - Searchable district probabilities, likely final pairs, primary-vote estimates, chamber distributions and uncertainty intervals.
 - Plain-English reading guidance and electorate profiles with current enrolment, 2022 baselines and five comparable historical swing cycles.
 - An embedded explorer covering 1,729 ordinary voting centres from the VEC's official 2022 first-preference and final-two tables, with source links retained for verification. Federal polling places and non-geographic vote modes are not presented as state-election booths.
 - A public Data & sources view separating official evidence, experimental model inputs, validation-only material and display-only evidence.
 - A machine-readable source registry with canonical URLs, use status, data dates, criticality, local artefacts and material caveats.
-- A generated provenance manifest recording SHA-256 checksums, byte counts and record counts for 13 important local artefacts.
+- A generated provenance manifest recording SHA-256 checksums, byte counts and record counts for 14 important local artefacts.
 - A public poll series generated directly from the canonical model registry, eliminating the former duplicate hand-written interface list.
 - A 21/45/90-day polling sensitivity check showing how recency assumptions affect the statewide estimate.
 - Electorate-level “Why this seat?” diagnostics comparing the official 2022-anchored starting point with the 2026 model average, including effective contenders and any guarded by-election signal.
 - A single versioned forecast configuration controlling material polling and Assembly assumptions; its checksum is recorded in every forecast manifest.
 - A statewide battleground board and five-cycle swing-history view with distributions, crossings, local extremes and boundary-method notes.
+- Multi-party, unstable-final-two and recent-by-election hotspot lenses, plus Upper House regional volatility rankings.
+- A plain-English four-cycle backtesting ledger showing average error, large-miss error and seat-winner accuracy while preserving the closed production gate.
 
 The forecast is explicitly experimental. It is a research estimate, not voting advice or an authorised production forecast.
 

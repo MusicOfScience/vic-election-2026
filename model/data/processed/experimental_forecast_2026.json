@@ -113,7 +113,8 @@
     "model": "voter_directed_group_stv_approximation",
     "regions": 8,
     "members_per_region": 5,
-    "candidate_order_forecast": false
+    "candidate_order_forecast": false,
+    "major_party_no_control_probability": 1.0
   },
   "assumptions": {
     "polling": {
@@ -147,8 +148,27 @@
       "demographic_residual_weight": 0,
       "demographic_reason": "sealed four-cycle promotion gate failed"
     },
+    "council": {
+      "model": "voter_directed_group_stv_approximation",
+      "members_per_region": 5,
+      "exhaustion_probability": 0.1,
+      "aec_local_pattern_shrinkage": 0.55,
+      "regional_poll_path": "data/processed/upper_house_region_poll_2026-08.csv",
+      "regional_poll_pattern_weight": 0.35,
+      "regional_poll_logit_limit": 0.85,
+      "region_shock_sd": 0.1,
+      "preference_prior_concentration": 42,
+      "local_logit_limits": {
+        "ALP": 0.8,
+        "LIB_NAT": 0.8,
+        "ONP": 0.4,
+        "GRN": 0.8,
+        "OTH_IND": 0.8
+      },
+      "candidate_order_forecast": false
+    },
     "config_path": "config/experimental_forecast.yml",
-    "config_sha256": "352fa74be4e3408db6df923c13bdd4e2d15508225cb975ea758cc5716ea27297"
+    "config_sha256": "57fbc079258a13b600afc6dbd244c5ceaca5219ccc5697e0ffaba2b7145ae0b0"
   },
   "governance": {
     "demographic_residual_weight": 0,
@@ -171,11 +191,11 @@
     },
     "council_regions": {
       "path": "data/processed/experimental_forecast_2026_council_regions.csv",
-      "sha256": "ed8ecf23457bb0e1ad1d3ee8d70bfc2808c103371d6adf4c51ee7d133661ebf1"
+      "sha256": "95342bfaf12930e6fb7ae65da529182a2d42ca7f9e483f1c919336c0ad11cfcd"
     },
     "council": {
       "path": "data/processed/experimental_forecast_2026_council.csv",
-      "sha256": "3d864e46ef8066f31fb565ec32a391ce5bc94b8c53b503a725ec55636f7d106b"
+      "sha256": "455c9dc6d3352ac08ee82b28a1991b0fffe44c24fee77369c086810141d0b7e0"
     }
   }
 }
