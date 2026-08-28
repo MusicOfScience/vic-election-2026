@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "policy": "observe-validate-quarantine-review-promote",
   "automaticPromotion": false,
   "adapters": [
@@ -65,22 +65,51 @@
       }
     },
     {
-      "id": "roy-morgan-findings-index",
+      "id": "roy-morgan-latest-releases",
       "publisher": "Roy Morgan",
-      "url": "https://www.roymorgan.com/findings",
+      "url": "https://www.roymorgan.com/",
+      "monitor": false,
       "critical": false,
-      "minimumCanonicalBytes": 500,
-      "expectedMarkers": ["Findings", "Search findings"],
       "promotionPolicy": "discovery-only-manual-review",
       "discovery": {
         "enabled": true,
         "kind": "poll-index",
-        "extractor": "roy-morgan-index",
+        "extractor": "roy-morgan-homepage",
         "match": "Victorian State Voting Intention",
         "acceptedSourceUrls": [
           "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
           "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november"
         ]
+      }
+    },
+    {
+      "id": "greens-victoria-candidates",
+      "publisher": "Australian Greens Victoria",
+      "url": "https://greens.org.au/vic/candidates",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "provisional-party-evidence-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "greens-victoria-candidates",
+        "candidateStatus": "endorsed",
+        "authority": "Australian Greens Victoria"
+      }
+    },
+    {
+      "id": "one-nation-victoria-candidates",
+      "publisher": "One Nation Victoria",
+      "url": "https://vic.onenation.org.au/candidates",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "provisional-party-evidence-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "one-nation-victoria-candidates",
+        "candidateStatus": "endorsed",
+        "authority": "One Nation Victoria"
       }
     }
   ]
