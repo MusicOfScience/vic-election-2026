@@ -6,7 +6,7 @@ export const sourceProvenance = {
     "sourceGroups": 8,
     "officialSourceGroups": 7,
     "criticalSourceGroups": 5,
-    "tracedArtifacts": 12,
+    "tracedArtifacts": 13,
     "automationStatus": "not-yet-active"
   },
   "sources": [
@@ -209,7 +209,8 @@ export const sourceProvenance = {
       "criticalToForecast": true,
       "localArtifacts": [
         "model/data/processed/poll_events_seed.csv",
-        "model/data/processed/poll_estimates_seed.csv"
+        "model/data/processed/poll_estimates_seed.csv",
+        "app/poll-data.generated.ts"
       ],
       "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. Roy Morgan is one input rather than the forecast.",
       "artifacts": [
@@ -224,6 +225,12 @@ export const sourceProvenance = {
           "sha256": "834ac3642b31b8473912e644af89bce56c66e494d73b5b39a3e81b73d3eabd33",
           "bytes": 2178,
           "records": 50
+        },
+        {
+          "path": "app/poll-data.generated.ts",
+          "sha256": "e6912de68291e76bd0593eba17a0db5fd4a9f333642ee15d1f48fac1a0b71087",
+          "bytes": 6056,
+          "records": null
         }
       ]
     },
