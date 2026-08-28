@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "policy": "observe-validate-quarantine-review-promote",
+  "automaticPromotion": false,
+  "adapters": [
+    {
+      "id": "vec-2026-election",
+      "publisher": "Victorian Electoral Commission",
+      "url": "https://www.vec.vic.gov.au/voting/2026-state-election",
+      "critical": true,
+      "minimumCanonicalBytes": 1000,
+      "expectedMarkers": ["2026 state election", "28 November", "3 November", "9 November"],
+      "promotionPolicy": "manual-review"
+    },
+    {
+      "id": "vec-2026-enrolment",
+      "publisher": "Victorian Electoral Commission",
+      "url": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
+      "critical": true,
+      "minimumCanonicalBytes": 1000,
+      "expectedMarkers": ["Electoral roll statistics", "District statistics", "Region statistics", "July 2026"],
+      "promotionPolicy": "manual-review"
+    },
+    {
+      "id": "vec-2026-candidates",
+      "publisher": "Victorian Electoral Commission",
+      "url": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate",
+      "critical": false,
+      "minimumCanonicalBytes": 1000,
+      "expectedMarkers": ["2026 state election", "Candidate nominations", "4 November", "9 November"],
+      "promotionPolicy": "manual-review-until-official-nominations"
+    },
+    {
+      "id": "roy-morgan-vic-2026-state-poll",
+      "publisher": "Roy Morgan",
+      "url": "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
+      "critical": true,
+      "minimumCanonicalBytes": 1000,
+      "expectedMarkers": ["Victorian State Voting Intention", "August 5-7, 2026", "2,084 electors", "L-NP Coalition 26%", "ALP 26%"],
+      "promotionPolicy": "manual-review"
+    },
+    {
+      "id": "roy-morgan-vic-2026-upper-house",
+      "publisher": "Roy Morgan",
+      "url": "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november",
+      "critical": false,
+      "minimumCanonicalBytes": 1000,
+      "expectedMarkers": ["Upper House", "Northern Metropolitan", "Western Metropolitan", "Western Victoria"],
+      "promotionPolicy": "manual-review"
+    }
+  ]
+}

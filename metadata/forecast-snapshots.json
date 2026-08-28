@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "policy": "append-only-material-forecast-snapshots",
+  "snapshots": [
+    {
+      "id": "batch-6-closure-2026-08-29",
+      "capturedAt": "2026-08-29T08:27:00+10:00",
+      "commitSha": "91883962242302e6b74bff8400a922c71c09d764",
+      "forecastAsOf": "2026-08-26",
+      "status": "experimental-blocked",
+      "passedGates": 4,
+      "totalGates": 5,
+      "note": "Baseline operational-readiness snapshot created from the post-Batch-6 merged main branch."
+    }
+  ]
+}

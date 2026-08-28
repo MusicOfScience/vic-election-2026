@@ -1,4 +1,4 @@
-name: Source freshness monitor
+name: Source freshness and live-source monitor
 
 on:
   schedule:
@@ -26,9 +26,17 @@ jobs:
           assessment_date="${{ inputs.as_of }}"
           if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
           node scripts/check-release-readiness.mjs --as-of "${assessment_date}" --report release-readiness-report.json --require-fresh
+      - name: Observe and validate live upstream sources
+        if: always()
+        run: node scripts/monitor-live-sources.mjs --report live-source-report.json --fail-on-unhealthy
+      - name: Validate candidate registry
+        if: always()
+        run: node scripts/validate-candidates.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: release-readiness-report
-          path: release-readiness-report.json
-          retention-days: 30
+          name: operational-readiness-reports
+          path: |
+            release-readiness-report.json
+            live-source-report.json
+          retention-days: 90
