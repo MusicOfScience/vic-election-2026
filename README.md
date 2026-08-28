@@ -11,6 +11,9 @@ A responsive public-interest forecasting application for the 2026 Victorian stat
 - A separate eight-region, five-member Council model under the enacted voter-directed 2026 rules.
 - Historical four-cycle validation, including the failed demographic challenger and its zero central model weight.
 - Searchable district probabilities, likely final pairs, primary-vote estimates, chamber distributions and uncertainty intervals.
+- Plain-English reading guidance and electorate profiles with current enrolment, 2022 baselines and five comparable historical swing cycles.
+- An embedded explorer covering 1,729 ordinary voting centres from the VEC's official 2022 first-preference and final-two tables, with source links retained for verification. Federal polling places and non-geographic vote modes are not presented as state-election booths.
+- A statewide battleground board and five-cycle swing-history view with distributions, crossings, local extremes and boundary-method notes.
 
 The forecast is explicitly experimental. It is a research estimate, not voting advice or an authorised production forecast.
 
@@ -26,6 +29,8 @@ npm run dev
 ```bash
 python scripts/run_experimental_forecast.py --simulations 5000 --seed 20260826
 node scripts/generate-model-output.mjs /path/to/model-repository
+node scripts/generate-historical-data.mjs /path/to/reconstructed-model-repository
+python3 scripts/generate-vec-booth-data.py
 ```
 
 The generated TypeScript output is committed so the public static site does not need the large source-data archive at runtime. A minimal reproducible model bundle is included under `model/`.
