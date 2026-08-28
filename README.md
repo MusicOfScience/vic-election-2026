@@ -13,6 +13,9 @@ A responsive public-interest forecasting application for the 2026 Victorian stat
 - Searchable district probabilities, likely final pairs, primary-vote estimates, chamber distributions and uncertainty intervals.
 - Plain-English reading guidance and electorate profiles with current enrolment, 2022 baselines and five comparable historical swing cycles.
 - An embedded explorer covering 1,729 ordinary voting centres from the VEC's official 2022 first-preference and final-two tables, with source links retained for verification. Federal polling places and non-geographic vote modes are not presented as state-election booths.
+- A public Data & sources view separating official evidence, experimental model inputs, validation-only material and display-only evidence.
+- A machine-readable source registry with canonical URLs, use status, data dates, criticality, local artefacts and material caveats.
+- A generated provenance manifest recording SHA-256 checksums, byte counts and record counts for 12 important local artefacts.
 - A statewide battleground board and five-cycle swing-history view with distributions, crossings, local extremes and boundary-method notes.
 
 The forecast is explicitly experimental. It is a research estimate, not voting advice or an authorised production forecast.
@@ -34,3 +37,12 @@ python3 scripts/generate-vec-booth-data.py
 ```
 
 The generated TypeScript output is committed so the public static site does not need the large source-data archive at runtime. A minimal reproducible model bundle is included under `model/`.
+
+## Verify source provenance
+
+```bash
+npm run data:provenance
+npm run data:provenance:check
+```
+
+The production build runs the check automatically. A declared source artefact that is missing or has changed without regenerating the manifest fails the build. See `docs/DATA_SOURCES.md` for the source-status rules and update procedure.
