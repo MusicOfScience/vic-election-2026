@@ -16,6 +16,7 @@
     "release:readiness": "node scripts/check-release-readiness.mjs",
     "release:readiness:check": "node scripts/check-release-readiness.mjs --check",
     "sources:live": "node scripts/monitor-live-sources.mjs --report live-source-report.json",
+    "sources:discover": "node scripts/discover-live-source-records.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json",
     "sources:promote": "node scripts/promote-live-source.mjs",
     "candidates:validate": "node scripts/validate-candidates.mjs",
     "snapshot:create": "node scripts/create-forecast-snapshot.mjs",
