@@ -1,5 +1,41 @@
 {
   "schemaVersion": 1,
   "policy": "manual-review-required",
-  "sources": []
+  "sources": [
+    {
+      "id": "roy-morgan-vic-2026-state-poll",
+      "acceptedFingerprint": "8d25ac36e78f410e29d79ca7526341bb16159a921f71d1c0ea9ff0b493159df5",
+      "acceptedAt": "2026-08-28T23:06:03.511Z",
+      "sourceCheckedAt": "2026-08-28T23:06:00.821Z",
+      "url": "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026"
+    },
+    {
+      "id": "roy-morgan-vic-2026-upper-house",
+      "acceptedFingerprint": "48ccbd9f74e77ece344ef72d57beefb126ee1d4edd639eccddaff633df4b6165",
+      "acceptedAt": "2026-08-28T23:06:03.511Z",
+      "sourceCheckedAt": "2026-08-28T23:06:02.240Z",
+      "url": "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november"
+    },
+    {
+      "id": "vec-2026-candidates",
+      "acceptedFingerprint": "dac7456cdd6f2326ee0891d0464535a0ba71ceb31e6979f83e0b15f76aa68534",
+      "acceptedAt": "2026-08-28T23:06:03.511Z",
+      "sourceCheckedAt": "2026-08-28T23:05:59.280Z",
+      "url": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate"
+    },
+    {
+      "id": "vec-2026-election",
+      "acceptedFingerprint": "032f3dc629e2e4188c4c9c1e93850ad4ae73b6077dd7d5e6eb52fb341f4757f4",
+      "acceptedAt": "2026-08-28T23:06:03.511Z",
+      "sourceCheckedAt": "2026-08-28T23:05:56.564Z",
+      "url": "https://www.vec.vic.gov.au/voting/2026-state-election"
+    },
+    {
+      "id": "vec-2026-enrolment",
+      "acceptedFingerprint": "59ebf8cc8068643ed46c8209c340676b3b8de19fb6c109e33e2a18d856d283d0",
+      "acceptedAt": "2026-08-28T23:06:03.511Z",
+      "sourceCheckedAt": "2026-08-28T23:05:57.945Z",
+      "url": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics"
+    }
+  ]
 }
