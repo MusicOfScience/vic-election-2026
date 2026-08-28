@@ -7,6 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import pandas as pd
 import yaml
 
 from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
@@ -14,6 +15,38 @@ from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
 
 def _hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _equivalent(value, previous) -> bool:
+    if isinstance(value, float) and isinstance(previous, (int, float)) and not isinstance(previous, bool):
+        return abs(value - previous) <= 1e-12
+    if isinstance(value, dict) and isinstance(previous, dict):
+        return value.keys() == previous.keys() and all(_equivalent(item, previous[key]) for key, item in value.items())
+    if isinstance(value, list) and isinstance(previous, list):
+        return len(value) == len(previous) and all(_equivalent(item, old) for item, old in zip(value, previous))
+    return value == previous
+
+
+def _write_stable_csv(frame, path: Path) -> None:
+    """Leave byte-identical artefacts untouched when only float noise changed."""
+    if path.exists():
+        previous = pd.read_csv(path)
+        if list(previous.columns) == list(frame.columns) and len(previous) == len(frame):
+            same = True
+            for column in frame.columns:
+                current_numeric = pd.to_numeric(frame[column], errors="coerce")
+                old_numeric = pd.to_numeric(previous[column], errors="coerce")
+                numeric_shape_matches = current_numeric.notna().equals(old_numeric.notna())
+                if numeric_shape_matches and bool(current_numeric.notna().any()):
+                    close = (current_numeric - old_numeric).abs().le(1e-12) | (current_numeric.isna() & old_numeric.isna())
+                    same = same and bool(close.all())
+                else:
+                    current = frame[column].replace("", pd.NA).fillna("<NA>").astype(str)
+                    old = previous[column].replace("", pd.NA).fillna("<NA>").astype(str)
+                    same = same and current.equals(old)
+            if same:
+                return
+    frame.to_csv(path, index=False)
 
 
 def main() -> None:
@@ -35,11 +68,15 @@ def main() -> None:
         "council_regions": out / "experimental_forecast_2026_council_regions.csv",
         "council": out / "experimental_forecast_2026_council.csv",
     }
-    forecast.districts.to_csv(files["districts"], index=False)
-    forecast.chamber.to_csv(files["chamber"], index=False)
-    forecast.seat_distribution.to_csv(files["seat_distribution"], index=False)
-    forecast.council_regions.to_csv(files["council_regions"], index=False)
-    forecast.council.to_csv(files["council"], index=False)
+    frames = {
+        "districts": forecast.districts,
+        "chamber": forecast.chamber,
+        "seat_distribution": forecast.seat_distribution,
+        "council_regions": forecast.council_regions,
+        "council": forecast.council,
+    }
+    for name, frame in frames.items():
+        _write_stable_csv(frame, files[name])
     poll = forecast.poll_state
     manifest = {
         "forecast_id": "vic_2026_experimental_joint_v1",
@@ -71,9 +108,11 @@ def main() -> None:
         "outputs": {},
     }
     manifest_path = out / "experimental_forecast_2026.json"
+    previous_manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     for name, path in files.items():
         manifest["outputs"][name] = {"path": str(path.relative_to(root)), "sha256": _hash(path)}
-    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+    if not _equivalent(manifest, previous_manifest):
+        manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
     print(json.dumps({"manifest": str(manifest_path), "simulations": forecast.simulations,
                       "hung_probability": manifest["assembly"]["hung_probability"]}, indent=2))
 
