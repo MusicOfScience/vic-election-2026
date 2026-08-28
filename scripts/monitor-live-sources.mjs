@@ -89,7 +89,8 @@ async function main() {
   const prior = existsSync(statePath) ? JSON.parse(readFileSync(statePath, "utf8")) : { sources: [] };
   const priorById = new Map((prior.sources ?? []).map((source) => [source.id, source]));
   const observations = [];
-  for (const adapter of config.adapters) observations.push(await inspect(adapter, priorById.get(adapter.id)));
+  const monitoredAdapters = config.adapters.filter((adapter) => adapter.monitor !== false);
+  for (const adapter of monitoredAdapters) observations.push(await inspect(adapter, priorById.get(adapter.id)));
   const unhealthy = observations.filter((item) => ["fetch-failed", "invalid-quarantined"].includes(item.status));
   const quarantined = observations.filter((item) => item.status.endsWith("quarantined"));
   const report = {

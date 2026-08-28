@@ -68,16 +68,31 @@ export function extractVecCandidatesFromHtml(html, sourceUrl) {
       const name = row[nameIdx]?.trim();
       const contest = row[contestIdx]?.trim();
       if (!name || !contest || /^candidate$|^name$/i.test(name)) continue;
-      records.push({
-        kind: "candidate",
-        name,
-        contest,
-        party: partyIdx >= 0 ? row[partyIdx]?.trim() || null : null,
-        sourceAuthority: "VEC",
-        officialStatus: "nominated",
-        sourceUrl,
-      });
+      records.push({ kind: "candidate", name, contest, party: partyIdx >= 0 ? row[partyIdx]?.trim() || null : null, candidateStatus: "nominated", sourceAuthority: "VEC", sourceUrl });
     }
+  }
+  return records;
+}
+
+export function extractGreensCandidates(html, pageUrl) {
+  const records = [];
+  for (const link of extractLinks(html, pageUrl)) {
+    const match = link.text.match(/^(.+?)\s+(?:Lead\s+)?Candidate for\s+(.+?)(?:\s+and\s+(?:Councillor|Mayor)\b.*)?$/i);
+    if (!match) continue;
+    records.push({ kind: "candidate", name: match[1].trim(), contest: match[2].trim(), party: "Australian Greens Victoria", candidateStatus: "endorsed", sourceAuthority: "Australian Greens Victoria", sourceUrl: link.url });
+  }
+  return records;
+}
+
+export function extractOneNationCandidates(html, pageUrl) {
+  const records = [];
+  for (const heading of html.matchAll(/<h3\b[^>]*>[\s\S]*?<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>[\s\S]*?<\/h3>/gi)) {
+    const text = clean(heading[2]);
+    const match = text.match(/^(.+?)\s+for\s+(.+)$/i);
+    if (!match) continue;
+    let sourceUrl = pageUrl;
+    try { sourceUrl = new URL(heading[1], pageUrl).href; } catch {}
+    records.push({ kind: "candidate", name: match[1].trim(), contest: match[2].trim(), party: "Pauline Hanson's One Nation", candidateStatus: "endorsed", sourceAuthority: "One Nation Victoria", sourceUrl });
   }
   return records;
 }
@@ -101,28 +116,10 @@ export function extractRoyMorganStatePoll(text, sourceUrl) {
   const fieldwork = parseFieldworkRange(text);
   const sampleMatch = text.match(/cross-section of\s+([\d,]+)\s+electors/i);
   const sampleSize = sampleMatch ? Number(sampleMatch[1].replaceAll(",", "")) : null;
-  const primaryVote = {
-    coalition: pct(text, "L-NP"),
-    alp: pct(text, "ALP"),
-    oneNation: pct(text, "One Nation"),
-    greens: pct(text, "Greens"),
-    otherParties: pct(text, "Other Parties"),
-    independents: pct(text, "Independents"),
-  };
+  const primaryVote = { coalition: pct(text, "L-NP"), alp: pct(text, "ALP"), oneNation: pct(text, "One Nation"), greens: pct(text, "Greens"), otherParties: pct(text, "Other Parties"), independents: pct(text, "Independents") };
   const tppMatch = text.match(/two-party preferred[\s\S]{0,500}?L-NP\s+(\d+(?:\.\d+)?)%[\s\S]{0,180}?ALP\s+(\d+(?:\.\d+)?)%/i);
   if (!fieldwork || !sampleSize || primaryVote.alp === null || primaryVote.coalition === null) return null;
-  return {
-    kind: "poll",
-    pollster: "Roy Morgan",
-    fieldworkStart: fieldwork.start,
-    fieldworkEnd: fieldwork.end,
-    sampleSize,
-    method: /special SMS Roy Morgan Poll/i.test(text) ? "special SMS survey" : "Roy Morgan survey",
-    geography: "Victoria",
-    primaryVote,
-    twoPartyPreferred: tppMatch ? { coalition: Number(tppMatch[1]), alp: Number(tppMatch[2]) } : null,
-    sourceUrl,
-  };
+  return { kind: "poll", pollster: "Roy Morgan", fieldworkStart: fieldwork.start, fieldworkEnd: fieldwork.end, sampleSize, method: /special SMS Roy Morgan Poll/i.test(text) ? "special SMS survey" : "Roy Morgan survey", geography: "Victoria", primaryVote, twoPartyPreferred: tppMatch ? { coalition: Number(tppMatch[1]), alp: Number(tppMatch[2]) } : null, sourceUrl };
 }
 
 export function extractRoyMorganUpperHouse(text, sourceUrl) {
@@ -133,16 +130,7 @@ export function extractRoyMorganUpperHouse(text, sourceUrl) {
   const alpWord = text.match(/ALP\s*\((\d+|nine|ten|eleven|twelve)\s+seats\)/i);
   const words = { nine: 9, ten: 10, eleven: 11, twelve: 12 };
   if (!fieldwork || !sampleMatch || !coalition || !oneNation || !alpWord) return null;
-  return {
-    kind: "poll-upper-house",
-    pollster: "Roy Morgan",
-    fieldworkStart: fieldwork.start,
-    fieldworkEnd: fieldwork.end,
-    sampleSize: Number(sampleMatch[1].replaceAll(",", "")),
-    geography: "Victoria Legislative Council",
-    seatProjection: { coalition: Number(coalition[1]), oneNation: Number(oneNation[1]), alp: Number(alpWord[1]) || words[alpWord[1].toLowerCase()] },
-    sourceUrl,
-  };
+  return { kind: "poll-upper-house", pollster: "Roy Morgan", fieldworkStart: fieldwork.start, fieldworkEnd: fieldwork.end, sampleSize: Number(sampleMatch[1].replaceAll(",", "")), geography: "Victoria Legislative Council", seatProjection: { coalition: Number(coalition[1]), oneNation: Number(oneNation[1]), alp: Number(alpWord[1]) || words[alpWord[1].toLowerCase()] }, sourceUrl };
 }
 
 export function parseCsv(text) {
@@ -187,6 +175,16 @@ function wrapRecord(record, sourceId, status) {
   return { id: sha256(`${sourceId}|${identity(record)}|${dataHash}`), sourceId, status, automaticPromotion: false, dataHash, ...record };
 }
 
+async function discoverRoyMorganLinks(page, adapter, found) {
+  const links = extractLinks(page.html, page.finalUrl).filter((link) => /victorian state voting intention/i.test(link.text) && /\/findings\//i.test(link.url));
+  for (const link of [...new Map(links.map((item) => [item.url, item])).values()].slice(0, 8)) {
+    const article = await fetchPage(link.url);
+    const text = canonicaliseHtml(article.html);
+    const record = /upper house/i.test(text) ? extractRoyMorganUpperHouse(text, article.finalUrl) : extractRoyMorganStatePoll(text, article.finalUrl);
+    if (record) found.push(record);
+  }
+}
+
 async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, polls) {
   const page = await fetchPage(adapter.url);
   const canonical = canonicaliseHtml(page.html);
@@ -200,20 +198,18 @@ async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, pol
   } else if (adapter.discovery.extractor === "roy-morgan-upper-house") {
     const record = extractRoyMorganUpperHouse(canonical, page.finalUrl);
     if (record) found.push(record);
-  } else if (adapter.discovery.extractor === "roy-morgan-index") {
-    const links = extractLinks(page.html, page.finalUrl).filter((link) => /victorian state voting intention/i.test(link.text) && /\/findings\//i.test(link.url));
-    for (const link of [...new Map(links.map((item) => [item.url, item])).values()].slice(0, 12)) {
-      const article = await fetchPage(link.url);
-      const text = canonicaliseHtml(article.html);
-      const record = /upper house/i.test(text) ? extractRoyMorganUpperHouse(text, article.finalUrl) : extractRoyMorganStatePoll(text, article.finalUrl);
-      if (record) found.push(record);
-    }
+  } else if (adapter.discovery.extractor === "roy-morgan-homepage") {
+    await discoverRoyMorganLinks(page, adapter, found);
   } else if (adapter.discovery.extractor === "vec-candidate-table") {
     const urls = [page.finalUrl, ...findVecCandidateListUrls(page.html, page.finalUrl)];
     for (const url of [...new Set(urls)]) {
       const candidatePage = url === page.finalUrl ? page : await fetchPage(url);
       found.push(...extractVecCandidatesFromHtml(candidatePage.html, candidatePage.finalUrl));
     }
+  } else if (adapter.discovery.extractor === "greens-victoria-candidates") {
+    found.push(...extractGreensCandidates(page.html, page.finalUrl));
+  } else if (adapter.discovery.extractor === "one-nation-victoria-candidates") {
+    found.push(...extractOneNationCandidates(page.html, page.finalUrl));
   }
 
   return found.map((record) => {
@@ -242,7 +238,7 @@ async function main() {
     }
   }
 
-  const unique = [...new Map(records.map((record) => [record.id, record])).values()];
+  const unique = [...new Map(records.map((record) => [identity(record), record])).values()];
   const quarantine = unique.filter((record) => record.status === "quarantined-awaiting-review");
   const report = {
     schemaVersion: 1,
