@@ -4,6 +4,8 @@ import {
   extractLinks,
   findVecCandidateListUrls,
   extractVecCandidatesFromHtml,
+  extractGreensCandidates,
+  extractOneNationCandidates,
   extractRoyMorganStatePoll,
   extractRoyMorganUpperHouse,
   parseFieldworkRange,
@@ -16,17 +18,27 @@ test("VEC discovery follows only candidate-list style links", () => {
   assert.deepEqual(findVecCandidateListUrls(html, "https://www.vec.vic.gov.au/"), ["https://www.vec.vic.gov.au/voting/2026-candidates"]);
 });
 
-test("VEC candidate table becomes structured official evidence", () => {
+test("VEC candidate table becomes structured nomination evidence", () => {
   const html = `<table><tr><th>District</th><th>Candidate</th><th>Party</th></tr><tr><td>Footscray</td><td>Alex Example</td><td>Independent</td></tr></table>`;
   assert.deepEqual(extractVecCandidatesFromHtml(html, "https://vec.example/candidates"), [{
-    kind: "candidate",
-    name: "Alex Example",
-    contest: "Footscray",
-    party: "Independent",
-    sourceAuthority: "VEC",
-    officialStatus: "nominated",
-    sourceUrl: "https://vec.example/candidates",
+    kind: "candidate", name: "Alex Example", contest: "Footscray", party: "Independent", candidateStatus: "nominated", sourceAuthority: "VEC", sourceUrl: "https://vec.example/candidates",
   }]);
+});
+
+test("Greens party page yields endorsed provisional candidate evidence", () => {
+  const html = `<a href="/vic/person/elena">Elena Pereyra Candidate for Footscray and Councillor for Maribyrnong City Council</a><a href="/vic/person/mat">Mat Morgan Lead Candidate for Eastern Victoria Region</a><a href="/vic/person/mp">Ellen Sandell Leader of the Victorian Greens, State Member for Melbourne</a>`;
+  assert.deepEqual(extractGreensCandidates(html, "https://greens.org.au/vic/candidates"), [
+    { kind: "candidate", name: "Elena Pereyra", contest: "Footscray", party: "Australian Greens Victoria", candidateStatus: "endorsed", sourceAuthority: "Australian Greens Victoria", sourceUrl: "https://greens.org.au/vic/person/elena" },
+    { kind: "candidate", name: "Mat Morgan", contest: "Eastern Victoria Region", party: "Australian Greens Victoria", candidateStatus: "endorsed", sourceAuthority: "Australian Greens Victoria", sourceUrl: "https://greens.org.au/vic/person/mat" },
+  ]);
+});
+
+test("One Nation candidate headings yield endorsed provisional evidence", () => {
+  const html = `<h3><a href="/warren-pickering">Warren Pickering for Pakenham</a></h3><p>Bio.</p><h3><a href="/fiona-lopez">Fiona Lopez for Western Metro</a></h3>`;
+  assert.deepEqual(extractOneNationCandidates(html, "https://vic.onenation.org.au/candidates"), [
+    { kind: "candidate", name: "Warren Pickering", contest: "Pakenham", party: "Pauline Hanson's One Nation", candidateStatus: "endorsed", sourceAuthority: "One Nation Victoria", sourceUrl: "https://vic.onenation.org.au/warren-pickering" },
+    { kind: "candidate", name: "Fiona Lopez", contest: "Western Metro", party: "Pauline Hanson's One Nation", candidateStatus: "endorsed", sourceAuthority: "One Nation Victoria", sourceUrl: "https://vic.onenation.org.au/fiona-lopez" },
+  ]);
 });
 
 test("Roy Morgan statewide poll extracts fieldwork, sample and votes", () => {
