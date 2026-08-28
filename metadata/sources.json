@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "registryReviewedAt": "2026-08-28T01:30:00Z",
+  "sources": [
+    {
+      "id": "vec-2022-district-results",
+      "name": "VEC 2022 state election district results",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-election-results",
+      "confidence": "official",
+      "useStatus": "accepted",
+      "modelRole": "Lower House baseline, candidate evidence and preference structure",
+      "canonicalUrl": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district",
+      "dataEffectiveDate": "2022-11-26",
+      "lastCheckedAt": "2026-08-28T00:45:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
+        "app/data.generated.ts"
+      ],
+      "notes": "Official election results remain the primary state-election anchor."
+    },
+    {
+      "id": "vec-2022-voting-centres",
+      "name": "VEC 2022 ordinary voting-centre results",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-voting-centre-results",
+      "confidence": "official",
+      "useStatus": "display-only",
+      "modelRole": "Seat-profile evidence; not currently a central forecast input",
+      "canonicalUrl": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district",
+      "dataEffectiveDate": "2022-11-26",
+      "lastCheckedAt": "2026-08-28T00:45:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": false,
+      "localArtifacts": [
+        "app/booth-data.generated.ts"
+      ],
+      "notes": "Contains 1,729 physical ordinary voting centres. Early, postal, absent and provisional vote modes are excluded from geographic booth comparisons."
+    },
+    {
+      "id": "vec-historical-boundary-estimates",
+      "name": "VEC historical results and 2018 estimates on 2022 boundaries",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-historical-results",
+      "confidence": "official",
+      "useStatus": "validation-only",
+      "modelRole": "Historical swing, boundary-aware comparison and backtesting",
+      "canonicalUrl": "https://www.vec.vic.gov.au/about-us/publications/research/research-archive",
+      "dataEffectiveDate": "2022-11-26",
+      "lastCheckedAt": "2026-08-28T00:30:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "app/historical-data.generated.ts"
+      ],
+      "notes": "The 2018–22 comparison uses the VEC estimate of 2018 support on the 2022 boundaries; it is not presented as a raw booth count."
+    },
+    {
+      "id": "vec-2026-enrolment",
+      "name": "VEC district and region enrolment statistics",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-enrolment",
+      "confidence": "official",
+      "useStatus": "accepted",
+      "modelRole": "District and Upper House region weighting",
+      "canonicalUrl": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
+      "dataEffectiveDate": "2026-06-30",
+      "lastCheckedAt": "2026-08-28T00:30:00Z",
+      "updateFrequency": "monthly",
+      "stalenessThresholdDays": 62,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/vec_enrolment_district_2026-06.csv",
+        "model/data/processed/vec_enrolment_region_2026-06.csv"
+      ],
+      "notes": "The current model bundle uses the June 2026 district and region releases. A later automation phase will detect and validate newer releases before promotion."
+    },
+    {
+      "id": "ebc-2021-boundaries",
+      "name": "2021 Victorian state electoral redivision",
+      "publisher": "Electoral Boundaries Commission Victoria",
+      "sourceType": "official-boundaries",
+      "confidence": "official",
+      "useStatus": "accepted",
+      "modelRole": "Current district identities and district-to-region membership",
+      "canonicalUrl": "https://www.ebc.vic.gov.au/Past-Redivisions/Default.html",
+      "dataEffectiveDate": "2022-11-01",
+      "lastCheckedAt": "2026-08-28T00:30:00Z",
+      "updateFrequency": "event-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/district_region_membership_2026.csv"
+      ],
+      "notes": "The 2021 redivision took effect for the 2022 state election and defines the current 88-district, eight-region structure."
+    },
+    {
+      "id": "aec-2022-geographic-vote-surface",
+      "name": "AEC 2022 federal-election geographic vote surface",
+      "publisher": "Australian Electoral Commission",
+      "sourceType": "official-federal-results",
+      "confidence": "official",
+      "useStatus": "experimental",
+      "modelRole": "Secondary local-pattern evidence with shrinkage toward the VEC baseline",
+      "canonicalUrl": "https://www.aec.gov.au/Elections/federal_elections/2022/downloads.htm",
+      "dataEffectiveDate": "2022-05-21",
+      "lastCheckedAt": "2026-08-26T04:30:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": false,
+      "localArtifacts": [
+        "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz",
+        "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz"
+      ],
+      "notes": "Federal voting patterns are contextual predictors, not substitutes for Victorian state-election results."
+    },
+    {
+      "id": "vic-2026-poll-registry",
+      "name": "Victorian 2026 voting-intention poll registry",
+      "publisher": "Multiple pollsters and publishers",
+      "sourceType": "polling",
+      "confidence": "primary-mixed",
+      "useStatus": "experimental",
+      "modelRole": "Statewide multi-party polling state and uncertainty",
+      "canonicalUrl": "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
+      "dataEffectiveDate": "2026-08-07",
+      "lastCheckedAt": "2026-08-26T04:30:00Z",
+      "updateFrequency": "weekly",
+      "stalenessThresholdDays": 21,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/poll_events_seed.csv",
+        "model/data/processed/poll_estimates_seed.csv",
+        "app/poll-data.generated.ts"
+      ],
+      "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. Roy Morgan is one input rather than the forecast."
+    },
+    {
+      "id": "vec-recent-by-elections",
+      "name": "VEC recent state by-election and supplementary-election results",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-by-election-results",
+      "confidence": "official",
+      "useStatus": "experimental",
+      "modelRole": "Guarded local evidence for Prahran, Werribee and Narracan",
+      "canonicalUrl": "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline",
+      "dataEffectiveDate": "2025-02-08",
+      "lastCheckedAt": "2026-08-26T04:30:00Z",
+      "updateFrequency": "event-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": false,
+      "localArtifacts": [
+        "model/data/seed/recent_state_by_elections.json"
+      ],
+      "notes": "Narracan's January 2023 supplementary result is handled separately. Its booth explorer remains an explicit tracked gap rather than being mixed with the ordinary 2022 acquisition."
+    }
+  ]
+}

@@ -82,3 +82,74 @@ test("renders sidebar skeletons deterministically", async () => {
   assert.equal(first, second);
   assert.match(first, /--skeleton-width:70%/);
 });
+
+test("ships comparable historical swing series for the current districts", async () => {
+  const { historicalDistricts } = await vite.ssrLoadModule(
+    "/app/historical-data.generated.ts",
+  );
+  const albertPark = historicalDistricts.find(
+    (district) => district.districtId === "albert-park",
+  );
+
+  assert.equal(historicalDistricts.length, 87);
+  assert.equal(albertPark.cycles.length, 5);
+  assert.equal(albertPark.cycles.at(-1).cycle, "2018–22");
+  assert.equal(albertPark.cycles.at(-1).comparison, "Estimated on 2022 boundaries");
+});
+
+test("ships official ordinary-booth results without mixing in vote modes", async () => {
+  const { boothData } = await vite.ssrLoadModule(
+    "/app/booth-data.generated.ts",
+  );
+  const brunswick = boothData.districts.find(
+    (district) => district.districtId === "brunswick",
+  );
+  const narracan = boothData.districts.find(
+    (district) => district.districtId === "narracan",
+  );
+  const allBooths = boothData.districts.flatMap((district) => district.booths);
+
+  assert.equal(boothData.districts.length, 88);
+  assert.equal(allBooths.length, 1729);
+  assert.ok(brunswick.booths.some((booth) => booth.name === "Blyth"));
+  assert.ok(allBooths.every((booth) => !/postal|early|absent|provisional/i.test(booth.name)));
+  assert.equal(narracan.status, "supplementary-election-source-required");
+});
+
+test("keeps the majority label in a high-contrast capsule above the columns", async () => {
+  const { MajorityMarkerLabel } = await vite.ssrLoadModule(
+    "/app/election-dashboard.tsx",
+  );
+  const html = renderToStaticMarkup(
+    React.createElement(MajorityMarkerLabel, {
+      viewBox: { x: 220, y: 40, width: 0, height: 210 },
+    }),
+  );
+
+  assert.match(html, /45 SEATS · MAJORITY/);
+  assert.match(html, /fill="#fffdf8"/);
+  assert.match(html, /translate\(220, 13\)/);
+});
+
+test("ships a complete checksummed source-provenance registry", async () => {
+  const { sourceProvenance } = await vite.ssrLoadModule(
+    "/app/source-provenance.generated.ts",
+  );
+  const artifacts = sourceProvenance.sources.flatMap((source) => source.artifacts);
+
+  assert.equal(sourceProvenance.summary.sourceGroups, 8);
+  assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 13);
+  assert.equal(artifacts.length, 13);
+  assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
+  assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 8);
+});
+
+test("generates the public poll series from the canonical model registry", async () => {
+  const { pollSeries } = await vite.ssrLoadModule("/app/poll-data.generated.ts");
+
+  assert.equal(pollSeries.length, 9);
+  assert.equal(pollSeries.at(-1).id, "roy_morgan_2026-08");
+  assert.ok(pollSeries.every((poll) => Math.abs(poll.alp + poll.coalition + poll.onp + poll.greens + poll.other - 100) < .01));
+  assert.ok(pollSeries.every((poll) => poll.verificationStatus === "verified" || poll.verificationStatus === "partially_verified"));
+});
