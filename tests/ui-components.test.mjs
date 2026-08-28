@@ -139,8 +139,17 @@ test("ships a complete checksummed source-provenance registry", async () => {
 
   assert.equal(sourceProvenance.summary.sourceGroups, 8);
   assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
-  assert.equal(sourceProvenance.summary.tracedArtifacts, 12);
-  assert.equal(artifacts.length, 12);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 13);
+  assert.equal(artifacts.length, 13);
   assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
   assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 8);
+});
+
+test("generates the public poll series from the canonical model registry", async () => {
+  const { pollSeries } = await vite.ssrLoadModule("/app/poll-data.generated.ts");
+
+  assert.equal(pollSeries.length, 9);
+  assert.equal(pollSeries.at(-1).id, "roy_morgan_2026-08");
+  assert.ok(pollSeries.every((poll) => Math.abs(poll.alp + poll.coalition + poll.onp + poll.greens + poll.other - 100) < .01));
+  assert.ok(pollSeries.every((poll) => poll.verificationStatus === "verified" || poll.verificationStatus === "partially_verified"));
 });
