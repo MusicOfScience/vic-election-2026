@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Victorian Election Forecast 2026",
   description:
-    "A transparent dashboard for the Victorian state election forecasting model, historical validation, districts and regions.",
+    "A transparent experimental Victorian election forecast covering polls, all 88 electorates, eight Council regions, uncertainty, sources and validation.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
