@@ -3,11 +3,11 @@ export const sourceProvenance = {
   "schemaVersion": 1,
   "registryReviewedAt": "2026-08-28T01:30:00Z",
   "summary": {
-    "sourceGroups": 8,
+    "sourceGroups": 9,
     "officialSourceGroups": 7,
-    "criticalSourceGroups": 5,
-    "tracedArtifacts": 14,
-    "automationStatus": "not-yet-active"
+    "criticalSourceGroups": 6,
+    "tracedArtifacts": 21,
+    "automationStatus": "scheduled-freshness-monitoring"
   },
   "sources": [
     {
@@ -264,6 +264,75 @@ export const sourceProvenance = {
           "path": "model/data/seed/recent_state_by_elections.json",
           "sha256": "46e040ef205019ed565ac8df7386c956e36a529e31b407ee252552fcbaa8aad0",
           "bytes": 11302,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "forecast-derived-outputs",
+      "name": "Deterministic 2026 forecast outputs",
+      "publisher": "Victorian Election Forecasting Laboratory",
+      "sourceType": "derived-model-output",
+      "confidence": "internal-derived",
+      "useStatus": "derived",
+      "modelRole": "Checksummed bridge from the seeded model run to the published dashboard",
+      "canonicalUrl": "https://github.com/MusicOfScience/vic-election-2026",
+      "dataEffectiveDate": "2026-08-26",
+      "lastCheckedAt": "2026-08-28T01:30:00Z",
+      "updateFrequency": "dependency-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/experimental_forecast_2026.json",
+        "model/data/processed/experimental_forecast_2026_districts.csv",
+        "model/data/processed/experimental_forecast_2026_chamber.csv",
+        "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
+        "model/data/processed/experimental_forecast_2026_council_regions.csv",
+        "model/data/processed/experimental_forecast_2026_council.csv",
+        "app/model-output.generated.ts"
+      ],
+      "notes": "Seeded outputs are regenerated only when dependencies change. Checksums prevent an old website bundle from being paired with newer model files.",
+      "artifacts": [
+        {
+          "path": "model/data/processed/experimental_forecast_2026.json",
+          "sha256": "433840ada81aa4d97380d41d0a19c29331f3ef9a5a117c0aba5cebcf67bee65d",
+          "bytes": 6290,
+          "records": null
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_districts.csv",
+          "sha256": "b8f78db6d1a04c5bcb56223169ab50a82a563ae7c31d1f9398c79e520b36617d",
+          "bytes": 38048,
+          "records": 88
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_chamber.csv",
+          "sha256": "c354da0a0a2902ae1e603a03898025059bd319e68daa18a7803fd1ab096fa53f",
+          "bytes": 268,
+          "records": 5
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
+          "sha256": "6f334ff3b5fcff761572925e08a7835c6b34bc093b0b996d30eb9c247cf30c7f",
+          "bytes": 757,
+          "records": 89
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_council_regions.csv",
+          "sha256": "95342bfaf12930e6fb7ae65da529182a2d42ca7f9e483f1c919336c0ad11cfcd",
+          "bytes": 4302,
+          "records": 8
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_council.csv",
+          "sha256": "455c9dc6d3352ac08ee82b28a1991b0fffe44c24fee77369c086810141d0b7e0",
+          "bytes": 262,
+          "records": 5
+        },
+        {
+          "path": "app/model-output.generated.ts",
+          "sha256": "ddc4220058af61c8183f39e956dc11759048d68cd6aa96f9f9be269511526c0a",
+          "bytes": 134427,
           "records": null
         }
       ]

@@ -52,6 +52,6 @@ Routine validated data refreshes may later be automated. Parser changes, schema 
 
 ## Current limitations
 
-- GitHub-native scheduled acquisition and change detection belong to the later automation phase and are not yet active.
+- GitHub-native source-freshness monitoring now runs twice weekly. Acquisition remains guarded and source-specific rather than silently scraping or replacing canonical inputs.
 - The public forecast remains experimental and has not cleared the production forecast gate.
 - Narracan's January 2023 supplementary-election result is modelled separately, but its physical voting-centre explorer remains a tracked source gap.

@@ -73,7 +73,7 @@ const manifest = {
     officialSourceGroups: officialCount,
     criticalSourceGroups: criticalCount,
     tracedArtifacts: artifactCount,
-    automationStatus: "not-yet-active",
+    automationStatus: "scheduled-freshness-monitoring",
   },
   sources,
 };
