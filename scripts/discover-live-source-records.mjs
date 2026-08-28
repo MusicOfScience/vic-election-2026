@@ -109,7 +109,7 @@ export function extractRoyMorganStatePoll(text, sourceUrl) {
     otherParties: pct(text, "Other Parties"),
     independents: pct(text, "Independents"),
   };
-  const tppMatch = text.match(/L-NP\s+(\d+(?:\.\d+)?)%[\s\S]{0,180}?ALP\s+(\d+(?:\.\d+)?)%/i);
+  const tppMatch = text.match(/two-party preferred[\s\S]{0,500}?L-NP\s+(\d+(?:\.\d+)?)%[\s\S]{0,180}?ALP\s+(\d+(?:\.\d+)?)%/i);
   if (!fieldwork || !sampleSize || primaryVote.alp === null || primaryVote.coalition === null) return null;
   return {
     kind: "poll",
@@ -218,7 +218,8 @@ async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, pol
 
   return found.map((record) => {
     const known = isKnown(record, candidates, polls);
-    const status = known ? "already-tracked" : baselineHealthy ? "baseline-observed" : "quarantined-awaiting-review";
+    const acceptedSource = (adapter.discovery.acceptedSourceUrls ?? []).includes(record.sourceUrl);
+    const status = known ? "already-tracked" : (baselineHealthy || acceptedSource) ? "baseline-observed" : "quarantined-awaiting-review";
     return wrapRecord(record, adapter.id, status);
   });
 }
