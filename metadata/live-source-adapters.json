@@ -76,7 +76,11 @@
         "enabled": true,
         "kind": "poll-index",
         "extractor": "roy-morgan-index",
-        "match": "Victorian State Voting Intention"
+        "match": "Victorian State Voting Intention",
+        "acceptedSourceUrls": [
+          "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
+          "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november"
+        ]
       }
     }
   ]
