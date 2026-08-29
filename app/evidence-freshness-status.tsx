@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { CircleAlert } from "lucide-react";
 import { pollSeries } from "./poll-data.generated";
 import manualEvidence from "../metadata/manual-source-evidence-2026.json";
+import primaryEvidence from "../metadata/primary-source-evidence-2026.json";
 import researchEvidence from "../metadata/research-source-evidence-2026.json";
 
 const subscribe = () => () => {};
@@ -21,8 +22,9 @@ export function EvidenceFreshnessStatus() {
 
   const modelEnd = pollSeries.at(-1)?.fieldworkEnd ?? null;
   const stagedRecords = [
-    ...manualEvidence.records.map((record) => ({ ...record, evidenceBasis: "primary-source capture" })),
-    ...researchEvidence.records.map((record) => ({ ...record, evidenceBasis: "corroborated secondary reporting; primary capture pending" })),
+    ...manualEvidence.records.map((record) => ({ ...record, publicationDate: record.publicationDate, evidenceBasis: "primary-source capture" })),
+    ...primaryEvidence.records.map((record) => ({ ...record, publicationDate: record.pollPublicationDate, evidenceBasis: "first-party polling evidence; human review pending" })),
+    ...researchEvidence.records.map((record) => ({ ...record, publicationDate: record.publicationDate, evidenceBasis: "corroborated secondary reporting; primary capture pending" })),
   ];
   const staged = stagedRecords
     .filter((record) => record.kind === "poll" && record.status === "quarantined-awaiting-review")
