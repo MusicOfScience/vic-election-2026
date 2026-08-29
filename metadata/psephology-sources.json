@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-29",
+  "principles": {
+    "sourceFamilyIsUnitOfIndependence": true,
+    "commentaryIsNotPolling": true,
+    "pollDerivedAnalysisMustDeclareUpstreamEvidence": true,
+    "defaultModelUsage": "reference_only"
+  },
+  "sources": [
+    {
+      "id": "antony-green",
+      "displayName": "Antony Green",
+      "platform": "Antony Green's Election Blog",
+      "canonicalUrl": "https://antonygreen.com.au/",
+      "sourceFamily": "antony-green",
+      "evidenceClasses": ["redistribution", "pendulum", "preference_flow", "electoral_system", "seat_analysis"],
+      "independenceNotes": "Treat Antony Green's blog, published tables and linked election analysis as one analyst family, not multiple votes in an ensemble."
+    },
+    {
+      "id": "ben-raue-tally-room",
+      "displayName": "Ben Raue / The Tally Room",
+      "platform": "The Tally Room",
+      "canonicalUrl": "https://www.tallyroom.com.au/",
+      "sourceFamily": "ben-raue-tally-room",
+      "evidenceClasses": ["seat_analysis", "vote_to_seat_model", "preference_flow", "redistribution", "geographic_pattern"],
+      "independenceNotes": "The Tally Room is Ben Raue's platform. Never count Ben Raue and The Tally Room as separate analyst signals."
+    },
+    {
+      "id": "kevin-bonham",
+      "displayName": "Dr Kevin Bonham",
+      "platform": "Dr Kevin Bonham",
+      "canonicalUrl": "https://kevinbonham.blogspot.com/",
+      "sourceFamily": "kevin-bonham",
+      "evidenceClasses": ["poll_aggregation", "seat_analysis", "preference_flow", "upper_house", "electoral_system"],
+      "independenceNotes": "Bonham's poll-derived estimates inherit dependence on the underlying polls. Distinct modelling or preference-flow analysis may be compared separately but must still declare upstream polling where applicable."
+    },
+    {
+      "id": "casey-briggs-abc",
+      "displayName": "Casey Briggs",
+      "platform": "ABC Elections",
+      "canonicalUrl": "https://www.abc.net.au/news/elections",
+      "sourceFamily": "casey-briggs-abc",
+      "evidenceClasses": ["seat_analysis", "by_election", "preference_flow", "geographic_pattern", "electoral_system"],
+      "independenceNotes": "Use Briggs-authored or ABC Elections material attributable to the Chief Elections and Data Analyst. General ABC political reporting is not automatically a Briggs signal."
+    },
+    {
+      "id": "kos-samaras-redbridge",
+      "displayName": "Kos Samaras",
+      "platform": "RedBridge Group / published commentary",
+      "canonicalUrl": "https://redbridgegroup.com.au/",
+      "sourceFamily": "kos-samaras-redbridge",
+      "evidenceClasses": ["demographic_pattern", "regional_pattern", "seat_analysis", "poll_interpretation"],
+      "independenceNotes": "Samaras is closely connected to RedBridge polling. Any analysis using RedBridge/Accent data must declare that dependency and must not be counted as an independent poll observation."
+    },
+    {
+      "id": "mark-the-ballot",
+      "displayName": "Mark the Ballot",
+      "platform": "Mark the Ballot — Psephology by the numbers",
+      "canonicalUrl": "https://marktheballot.blogspot.com/",
+      "sourceFamily": "mark-the-ballot",
+      "evidenceClasses": ["poll_aggregation", "bayesian_model", "pollster_effect", "trend_analysis"],
+      "independenceNotes": "Polling aggregations are transformations of underlying polls, not independent observations. Use for model comparison, calibration and methodological challenge unless a distinct non-poll evidence product is identified."
+    }
+  ]
+}

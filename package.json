@@ -19,6 +19,7 @@
     "sources:discover": "node scripts/discover-live-source-records.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json",
     "sources:promote": "node scripts/promote-live-source.mjs",
     "candidates:validate": "node scripts/validate-candidates.mjs",
+    "psephology:validate": "node scripts/validate-psephology-evidence.mjs",
     "snapshot:create": "node scripts/create-forecast-snapshot.mjs",
     "forecast:refresh": "bash scripts/refresh-forecast.sh",
     "forecast:refresh:changed": "bash scripts/refresh-forecast.sh --changed-since",
