@@ -1,0 +1,75 @@
+:root {
+  /* App conventions: election authorities identify parties/codes but do not prescribe a universal colour palette. */
+  --party-labor: #d84a42;
+  --party-coalition: #2e63ad;
+  --party-liberal: #2e63ad;
+  --party-national: #17804b;
+  --party-greens: #159867;
+  --party-one-nation: #e36f14;
+  --party-independent: #69727b;
+  --party-teal: #1597a5;
+  --party-other: #a58b55;
+  --party-other-independent: #817d76;
+
+  /* Keep existing component variables aligned with the canonical visual language. */
+  --labor: var(--party-labor);
+  --coalition: var(--party-coalition);
+  --greens: var(--party-greens);
+  --onp: var(--party-one-nation);
+  --other: var(--party-other-independent);
+}
+
+/* Existing chart code contains legacy literal fills. Override them globally until generated chart metadata is migrated. */
+svg [fill="#d84a42"] { fill: var(--party-labor) !important; }
+svg [fill="#2e63ad"] { fill: var(--party-coalition) !important; }
+svg [fill="#159867"] { fill: var(--party-greens) !important; }
+svg [fill="#6e4da0"] { fill: var(--party-one-nation) !important; }
+svg [fill="#d19b2a"], svg [fill="#7d6a92"] { fill: var(--party-other-independent) !important; }
+
+.party-visual-key {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 35;
+  width: min(330px, calc(100vw - 28px));
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 250, .97);
+  box-shadow: 0 12px 35px rgba(17, 38, 59, .16);
+}
+.party-visual-key summary {
+  min-height: 42px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.party-visual-key summary small { color: var(--muted-ink); font-size: 8px; font-weight: 600; }
+.party-key-body { padding: 12px 13px 14px; border-top: 1px solid var(--line); }
+.party-key-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 12px; }
+.party-key-item { display: flex; align-items: center; gap: 7px; min-width: 0; font-size: 9px; font-weight: 700; }
+.party-swatch { width: 22px; height: 13px; flex: 0 0 auto; border: 1px solid rgba(17,38,59,.22); background: var(--swatch); }
+.party-swatch.labor { --swatch: var(--party-labor); }
+.party-swatch.coalition { --swatch: var(--party-coalition); }
+.party-swatch.national { --swatch: var(--party-national); }
+.party-swatch.greens { --swatch: var(--party-greens); }
+.party-swatch.one-nation { --swatch: var(--party-one-nation); }
+.party-swatch.independent { --swatch: var(--party-independent); }
+.party-swatch.other { --swatch: var(--party-other); }
+.party-swatch.teal-independent {
+  background: linear-gradient(90deg,
+    var(--party-independent) 0 60%,
+    var(--party-teal) 60% 74%,
+    var(--party-independent) 74% 100%);
+}
+.party-key-note { margin: 12px 0 0; color: var(--muted-ink); font-size: 8.5px; line-height: 1.45; }
+
+@media (max-width: 640px) {
+  .party-visual-key { right: 8px; bottom: 8px; width: min(310px, calc(100vw - 16px)); }
+}
