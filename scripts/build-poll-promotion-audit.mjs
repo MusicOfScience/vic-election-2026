@@ -53,7 +53,9 @@ export function auditPollPromotion(record, { modelEvents, acceptedPolls }) {
   const primaryTotal = estimateRows.reduce((sum, row) => sum + row.primary_pct, 0);
   const duplicateId = modelEvents.some((poll) => poll.poll_id === record.proposedModelPollId);
   const sourceTier = record.sourceTier ?? (record.captureMode === "manual-primary-source-capture" ? "primary_pollster" : "unclassified");
-  const awaitingPrimary = String(record.verificationStatus ?? "").includes("awaiting-primary") || !record.pollPublicationDate;
+  const verification = String(record.verificationStatus ?? "");
+  const secondaryReconciled = /primary-(?:reconciled|exception-approved)/i.test(verification);
+  const awaitingPrimary = sourceTier === "reputable_secondary" ? !secondaryReconciled : verification.includes("awaiting-primary") || !record.pollPublicationDate;
   const blockers = [];
   if (!record.proposedModelPollId) blockers.push("canonical-poll-id-required");
   if (!accepted) blockers.push("human-evidence-acceptance-required");
