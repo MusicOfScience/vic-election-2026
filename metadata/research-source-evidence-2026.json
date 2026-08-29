@@ -31,6 +31,8 @@
       },
       "sourceUrl": "https://theconversation.com/victorian-polls-have-coalition-leading-labor-by-narrow-to-large-margins-289893",
       "publicationDate": "2026-08-21",
+      "proposedModelPollId": "resolve_strategic_2026-08",
+      "pollPublicationDate": null,
       "sourceTier": "reputable_secondary",
       "verificationStatus": "corroborated-secondary-awaiting-primary",
       "corroboratingSourceUrls": [

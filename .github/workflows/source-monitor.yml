@@ -56,6 +56,13 @@ jobs:
           assessment_date="${{ inputs.as_of }}"
           if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
           node scripts/build-evidence-freshness-report.mjs --as-of "${assessment_date}" --output evidence-freshness-report.json
+      - name: Preview staged-poll promotion blockers
+        if: always()
+        shell: bash
+        run: |
+          assessment_date="${{ inputs.as_of }}"
+          if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
+          node scripts/build-poll-promotion-audit.mjs --as-of "${assessment_date}" --output poll-promotion-audit.json
       - name: Validate candidate registry
         if: always()
         run: node scripts/validate-candidates.mjs
@@ -71,4 +78,5 @@ jobs:
             discovery-review-manifest.json
             analyst-comparison-report.json
             evidence-freshness-report.json
+            poll-promotion-audit.json
           retention-days: 90
