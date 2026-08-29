@@ -66,7 +66,8 @@ test("YouGov Common Threads keeps statewide polling and seat-model output in one
   assert.equal(record.effectiveSampleSize, 2901);
   assert.equal(record.primaryMethodologyFieldworkEnd, "2026-07-09");
   assert.equal(record.methodologyReconciliation.secondaryReportedFieldworkEnd, "2026-07-10");
-  assert.equal(record.sourceTier, "primary_methodology_secondary_topline");
+  assert.equal(record.sourceTier, "reputable_secondary");
+  assert.equal(record.methodologySourceTier, "primary_pollster");
   assert.match(record.verificationStatus, /primary-methodology-captured/);
   assert.match(record.questionnaireOrder, /before the later issue and Treaty questions/i);
   assert.deepEqual(record.seatModelProjection, { coalition: 39, alp: 29, oneNation: 17, greens: 3, totalSeats: 88, role: "external-seat-model-comparison-only" });
