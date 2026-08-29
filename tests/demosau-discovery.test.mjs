@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { diagnoseDemosPoll, extractDemosAuVictoriaPoll, normaliseDemosText } from "../scripts/discover-demosau-victoria-polls.mjs";
+import { diagnoseDemosPoll, extractDemosAuVictoriaPoll, extractLinks, normaliseDemosText, readerProxyUrl } from "../scripts/discover-demosau-victoria-polls.mjs";
 
 const expectedPrimary = { coalition: 32, alp: 23, oneNation: 22, greens: 13, otherParties: 10 };
 
@@ -38,4 +38,18 @@ test("DemosAU parser refuses incomplete records and reports missing fields", () 
   assert.equal(extractDemosAuVictoriaPoll(text, "https://example.test"), null);
   assert.equal(diagnoseDemosPoll(text).fieldwork, false);
   assert.equal(diagnoseDemosPoll(text).sampleSize, false);
+});
+
+test("reader fallback is restricted to public DemosAU HTTPS pages", () => {
+  assert.equal(readerProxyUrl("https://demosau.com/news/example/"), "https://r.jina.ai/https://demosau.com/news/example/");
+  assert.throws(() => readerProxyUrl("http://demosau.com/news/example/"), /restricted/i);
+  assert.throws(() => readerProxyUrl("https://example.com/news/example/"), /restricted/i);
+});
+
+test("source discovery accepts HTML and reader-markdown links", () => {
+  const links = extractLinks('<a href="/news/html-poll/">Victoria HTML poll</a>\n[Victoria Markdown poll](https://demosau.com/news/markdown-poll/)', "https://demosau.com/news/");
+  assert.deepEqual(links.map((link) => link.url).sort(), [
+    "https://demosau.com/news/html-poll/",
+    "https://demosau.com/news/markdown-poll/",
+  ]);
 });
