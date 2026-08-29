@@ -3,8 +3,9 @@
   --party-labor: #d84a42;
   --party-coalition: #2e63ad;
   --party-liberal: #2e63ad;
-  --party-national: #17804b;
-  --party-greens: #159867;
+  /* Nationals and Greens both conventionally use green. Keep their recognised identities but separate them strongly by tone. */
+  --party-national: #006946;
+  --party-greens: #009c3d;
   --party-one-nation: #e36f14;
   --party-independent: #69727b;
   --party-teal: #1597a5;
