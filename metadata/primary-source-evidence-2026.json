@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "policy": "Primary-source polling evidence may be staged for review when the publisher supplies sufficient methodology and the reported toplines can be reconciled. Staging never implies human acceptance or model eligibility.",
+  "records": [
+    {
+      "id": "redbridge-accent-vic-2026-08-01-primary",
+      "sourceId": "redbridge-accent-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "RedBridge / Accent Research",
+      "commissioner": "Australian Financial Review",
+      "fieldworkStart": "2026-07-28",
+      "fieldworkEnd": "2026-08-01",
+      "sampleSize": 1014,
+      "effectiveSampleSize": 745,
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted; undecided leaner then unresolved excluded",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 30,
+        "alp": 23,
+        "oneNation": 22,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "twoPartyPreferred": {
+        "coalition": 57,
+        "alp": 43,
+        "basis": "respondent allocated"
+      },
+      "sourceUrl": "https://www.accent-research.com/projects/afr%2C-redbridge-group-and-accent-research-august-2026-victorian-state-poll",
+      "pollPublicationDate": "2026-08-03",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-methodology-topline-corrected",
+      "proposedModelPollId": "redbridge_accent_2026-08",
+      "correctionHistory": "The AFR initially displayed conflicting 53-47 and 57-43 Coalition-Labor two-party figures. Subsequent reporting records that RedBridge/Accent clarified the correct respondent-allocated result as 57-43.",
+      "reviewNotes": "Primary publisher confirms fieldwork, sample, effective sample, weighting, undecided treatment and respondent-allocated preference method. Primary vote toplines are consistently reported as Coalition 30, Labor 23, One Nation 22, Greens 14, Others 11. Before model eligibility, review sample-family independence from the June large-sample/MRP-related evidence and the leadership-regime timing."
+    }
+  ]
+}

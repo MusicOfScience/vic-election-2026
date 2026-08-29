@@ -26,13 +26,13 @@ function parseCsv(text) {
   return data.map((values) => Object.fromEntries(headers.map((header, i) => [header, values[i] ?? ""])));
 }
 
-export function buildCoverageReport({ ledger, events, manualRecords = [], researchRecords = [] }) {
+export function buildCoverageReport({ ledger, events, manualRecords = [], primaryRecords = [], researchRecords = [] }) {
   const eventIds = new Set(events.map((event) => event.poll_id));
   const eligible = events.filter((event) => String(event.model_eligible).toLowerCase() === "true");
   const declaredIds = ledger.sourceFamilies.flatMap((family) => family.canonicalModelEligiblePollIds ?? []);
   const unknownDeclaredIds = declaredIds.filter((id) => !eventIds.has(id));
   const duplicateDeclaredIds = declaredIds.filter((id, index) => declaredIds.indexOf(id) !== index);
-  const staged = [...manualRecords, ...researchRecords].filter((record) => record.kind === "poll");
+  const staged = [...manualRecords, ...primaryRecords, ...researchRecords].filter((record) => record.kind === "poll");
   const actionable = ledger.sourceFamilies.flatMap((family) =>
     (family.actionableGaps ?? []).map((gap) => ({ sourceFamilyId: family.id, sourceFamily: family.label, ...gap })),
   );
@@ -82,8 +82,9 @@ function main() {
   const ledger = JSON.parse(readFileSync(resolve(root, "metadata/poll-coverage-ledger-2026.json"), "utf8"));
   const events = parseCsv(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
   const manual = JSON.parse(readFileSync(resolve(root, "metadata/manual-source-evidence-2026.json"), "utf8"));
+  const primary = JSON.parse(readFileSync(resolve(root, "metadata/primary-source-evidence-2026.json"), "utf8"));
   const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
-  const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, researchRecords: research.records });
+  const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, primaryRecords: primary.records, researchRecords: research.records });
   if (!report.integrity.allDeclaredCanonicalIdsExist || !report.integrity.declaredCanonicalIdsAreUnique) {
     throw new Error(`poll coverage ledger integrity failed: ${JSON.stringify(report.integrity)}`);
   }

@@ -29,10 +29,11 @@ const root = resolve(new URL("..", import.meta.url).pathname);
 const ledger = JSON.parse(readFileSync(resolve(root, "metadata/poll-coverage-ledger-2026.json"), "utf8"));
 const events = parseCsv(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
 const manual = JSON.parse(readFileSync(resolve(root, "metadata/manual-source-evidence-2026.json"), "utf8"));
+const primary = JSON.parse(readFileSync(resolve(root, "metadata/primary-source-evidence-2026.json"), "utf8"));
 const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
 
 test("poll coverage ledger separates published coverage from comparable/model-eligible coverage", () => {
-  const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, researchRecords: research.records });
+  const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, primaryRecords: primary.records, researchRecords: research.records });
 
   assert.equal(report.externalBenchmark.publishedAssemblyPolls, 60);
   assert.equal(report.externalBenchmark.pollingOrganisations, 8);
@@ -40,7 +41,7 @@ test("poll coverage ledger separates published coverage from comparable/model-el
   assert.equal(report.repository.sourceFamiliesDeclared, 8);
   assert.equal(report.repository.registryEvents, 11);
   assert.equal(report.repository.modelEligibleEvents, 9);
-  assert.equal(report.repository.stagedPollRecords, 2);
+  assert.equal(report.repository.stagedPollRecords, 3);
   assert.equal(report.integrity.allDeclaredCanonicalIdsExist, true);
   assert.equal(report.integrity.declaredCanonicalIdsAreUnique, true);
 });
@@ -55,5 +56,8 @@ test("coverage ledger makes missing comparable polling actionable without imputi
   assert.equal(byId["yougov-common-threads"].actionableGaps[0].sampleSize, 4003);
   assert.deepEqual(byId["yougov-common-threads"].actionableGaps[0].seatProjection, { LIB_NAT: 39, ALP: 29, ONP: 17, GRN: 3 });
   assert.ok(byId["freshwater"].actionableGaps.length >= 3);
-  assert.ok(byId["redbridge-accent"].actionableGaps.some((gap) => gap.fieldworkEnd === "2026-08-01"));
+  const redbridgeAugust = byId["redbridge-accent"].actionableGaps.find((gap) => gap.fieldworkEnd === "2026-08-01");
+  assert.ok(redbridgeAugust);
+  assert.deepEqual(redbridgeAugust.twoPartyPreferred, { LIB_NAT: 57, ALP: 43, basis: "respondent allocated" });
+  assert.deepEqual(byId["redbridge-accent"].stagedEvidence, ["redbridge_accent_2026-08"]);
 });

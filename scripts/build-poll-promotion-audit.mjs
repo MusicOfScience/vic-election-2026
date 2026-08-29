@@ -84,6 +84,7 @@ export function auditPollPromotion(record, { modelEvents, acceptedPolls }) {
         fieldwork_end: record.fieldworkEnd,
         publication_date: record.pollPublicationDate ?? null,
         sample_size: record.sampleSize,
+        effective_sample_size: record.effectiveSampleSize ?? null,
         method: record.method ?? null,
         geography: record.geography,
         source_tier: sourceTier,
@@ -119,8 +120,9 @@ function main() {
   const modelEvents = parseCsv(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
   const accepted = JSON.parse(readFileSync(resolve(root, "metadata/accepted-polls-2026.json"), "utf8"));
   const manual = JSON.parse(readFileSync(resolve(root, "metadata/manual-source-evidence-2026.json"), "utf8"));
+  const primary = JSON.parse(readFileSync(resolve(root, "metadata/primary-source-evidence-2026.json"), "utf8"));
   const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
-  const report = buildPromotionAudit({ records: [...(manual.records ?? []), ...(research.records ?? [])], modelEvents, acceptedPolls: accepted.polls ?? [], asOf });
+  const report = buildPromotionAudit({ records: [...(manual.records ?? []), ...(primary.records ?? []), ...(research.records ?? [])], modelEvents, acceptedPolls: accepted.polls ?? [], asOf });
   writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
   console.log(`Poll promotion audit: ${report.summary.stagedPolls} staged; ${report.summary.promotableNow} promotable; ${report.summary.blocked} blocked. No model files written.`);
 }
