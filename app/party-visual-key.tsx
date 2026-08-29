@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { CircleHelp, X } from "lucide-react";
 
@@ -15,13 +15,14 @@ const items = [
   ["other", "Other party"],
 ] as const;
 
-export function PartyVisualKey() {
-  const [target, setTarget] = useState<Element | null>(null);
-  const dialogRef = useRef<HTMLDialogElement>(null);
+const subscribe = () => () => {};
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
 
-  useEffect(() => {
-    setTarget(document.querySelector(".dashboard-tabs-list"));
-  }, []);
+export function PartyVisualKey() {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const isClient = useSyncExternalStore(subscribe, clientSnapshot, serverSnapshot);
+  const target = isClient ? document.querySelector(".dashboard-tabs-list") : null;
 
   const open = () => dialogRef.current?.showModal();
   const close = () => dialogRef.current?.close();
