@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "policy": "First-party XLSX extraction is review evidence only. Successful parsing does not accept evidence or confer model eligibility.",
+  "workbooks": [
+    {
+      "id": "freshwater-vic-2026-02",
+      "proposedModelPollId": "freshwater_2026-02",
+      "url": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230226.xlsx",
+      "expectedSampleSize": 1030,
+      "expectedPrimaryVoteRounded": {"alp": 28, "coalition": 27, "oneNation": 23, "greens": 13, "otherParties": 10},
+      "expectedTwoPartyPreferredRounded": {"alp": 50, "coalition": 50}
+    },
+    {
+      "id": "freshwater-vic-2026-03",
+      "proposedModelPollId": "freshwater_2026-03",
+      "url": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230326.xlsx",
+      "expectedSampleSize": 1062,
+      "expectedPrimaryVoteRounded": {"alp": 27, "coalition": 30, "oneNation": 20, "greens": 14, "otherParties": 9},
+      "expectedTwoPartyPreferredRounded": {"alp": 48, "coalition": 52}
+    },
+    {
+      "id": "freshwater-vic-2026-08",
+      "proposedModelPollId": "freshwater_2026-08",
+      "url": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-030826-Full-Tables.xlsx",
+      "expectedSampleSize": 1020,
+      "expectedPrimaryVoteRounded": {"alp": 25, "coalition": 30, "oneNation": 22, "greens": 14, "otherParties": 9},
+      "expectedTwoPartyPreferredRounded": {"alp": 48, "coalition": 52}
+    }
+  ]
+}
