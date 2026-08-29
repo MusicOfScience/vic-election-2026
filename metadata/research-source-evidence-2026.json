@@ -52,7 +52,7 @@
       "fieldworkStart": "2026-06-16",
       "fieldworkEnd": "2026-07-10",
       "sampleSize": 4003,
-      "method": "multilevel regression with poststratification (MRP)",
+      "method": "online panel; multilevel regression with post-stratification (MRP) across all 88 Victorian Assembly electorates",
       "geography": "Victoria",
       "primaryVote": {
         "coalition": 26,
@@ -64,7 +64,7 @@
       "twoPartyPreferred": {
         "coalition": 53.8,
         "alp": 46.2,
-        "basis": "published MRP estimate"
+        "basis": "survey respondent preferences"
       },
       "seatModelProjection": {
         "coalition": 39,
@@ -80,11 +80,27 @@
       "publicationDate": "2026-08-09",
       "pollPublicationDate": "2026-08-09",
       "proposedModelPollId": "yougov_common_threads_mrp_2026-07",
-      "sourceTier": "reputable_secondary",
-      "verificationStatus": "secondary-topline-primary-methodology-listed-awaiting-primary-methodology-capture",
+      "sourceTier": "primary_methodology_secondary_topline",
+      "verificationStatus": "primary-methodology-captured-secondary-topline-awaiting-primary-results",
       "leadershipRegime": "Allan-Wilson",
       "dependencyPolicy": "The statewide topline and seat projection are outputs of the same YouGov/Common Threads survey/model family. They must never be counted as independent polling observations. The seat projection is comparison evidence unless separately validated out of sample.",
-      "captureNotes": "YouGov's Australian Polling Council methodology index lists a dedicated Victorian MRP Common Threads methodology statement dated 9 August 2026. Poll Bludger reports fieldwork 16 June-10 July, the statewide composition, 53.8-46.2 Coalition-Labor estimate and 39/29/17/3 median seat projection. Retain secondary-tier semantics until the direct methodology statement/report is captured and reviewed."
+      "captureNotes": "YouGov's own Australian Polling Council statement confirms sample 4,003, effective sample 2,901, online-panel recruitment, rim weighting, respondent preferences, questionnaire order and the MRP method. It gives fieldwork as 16 June–9 July, while secondary reporting used 16 June–10 July. The statewide toplines and 39/29/17/3 seat projection remain secondary-reported and in one dependency family; retain quarantine until first-party results are captured and the date discrepancy is reviewed.",
+      "effectiveSampleSize": 2901,
+      "marginOfError": 1.819,
+      "mode": "online recruited from research panel (100%)",
+      "weighting": "rim weighting by age, gender, education, AEC region, household income, 2025 federal vote and 2023 Voice referendum vote",
+      "undecidedTreatment": "no undecided option provided",
+      "primaryMethodologyUrl": "https://d3nnbamw3dez3b.cloudfront.net/documents/Commonthreads_Aug9_APC_Methodology_Statement.pdf",
+      "primaryMethodologyFieldworkStart": "2026-06-16",
+      "primaryMethodologyFieldworkEnd": "2026-07-09",
+      "questionnaireOrder": "Voting intention was asked after demographics and before the later issue and Treaty questions.",
+      "mrpSpecification": "Multilevel model using individual and geographic characteristics, applied to an electorate-level post-stratification frame; electorate estimates reported with 90% credible intervals.",
+      "methodologyReconciliation": {
+        "status": "fieldwork-end-discrepancy-awaiting-review",
+        "primaryMethodologyFieldworkEnd": "2026-07-09",
+        "secondaryReportedFieldworkEnd": "2026-07-10",
+        "policy": "Preserve the discrepancy explicitly; do not alter the staged fieldwork end or admit the record to the model until reviewed."
+      }
     }
   ]
 }
