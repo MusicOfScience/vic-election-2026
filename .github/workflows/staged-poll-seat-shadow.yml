@@ -1,0 +1,56 @@
+name: Staged poll full-election shadow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "model/scripts/run_staged_poll_seat_shadow.py"
+      - "model/scripts/run_staged_poll_shadow.py"
+      - "model/src/vicforecast/**"
+      - "model/data/processed/poll_events_seed.csv"
+      - "model/data/processed/poll_estimates_seed.csv"
+      - "metadata/manual-source-evidence-2026.json"
+      - "metadata/research-source-evidence-2026.json"
+      - ".github/workflows/staged-poll-seat-shadow.yml"
+  pull_request:
+    paths:
+      - "model/scripts/run_staged_poll_seat_shadow.py"
+      - "model/scripts/run_staged_poll_shadow.py"
+      - "model/src/vicforecast/**"
+      - "model/data/processed/poll_events_seed.csv"
+      - "model/data/processed/poll_estimates_seed.csv"
+      - "metadata/manual-source-evidence-2026.json"
+      - "metadata/research-source-evidence-2026.json"
+      - ".github/workflows/staged-poll-seat-shadow.yml"
+  workflow_dispatch:
+    inputs:
+      simulations:
+        description: Simulations per scenario
+        required: false
+        default: "2000"
+
+permissions:
+  contents: read
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e './model'
+      - name: Run canonical vs both-newer-polls full-election shadow
+        shell: bash
+        run: |
+          simulations="${{ inputs.simulations }}"
+          if [[ -z "${simulations}" ]]; then simulations="2000"; fi
+          PYTHONPATH="model/src" python model/scripts/run_staged_poll_seat_shadow.py \
+            --simulations "${simulations}" \
+            --output staged-poll-seat-shadow.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staged-poll-seat-shadow
+          path: staged-poll-seat-shadow.json
+          retention-days: 90
