@@ -30,7 +30,7 @@
     {
       "id": "freshwater-vic-2026-02-19-23-linked-primary",
       "sourceId": "freshwater-victoria-state-polls",
-      "status": "quarantined-awaiting-primary-table-parse",
+      "status": "quarantined-awaiting-review",
       "automaticPromotion": false,
       "kind": "poll",
       "pollster": "Freshwater Strategy",
@@ -55,7 +55,7 @@
     {
       "id": "freshwater-vic-2026-03-19-23-linked-primary",
       "sourceId": "freshwater-victoria-state-polls",
-      "status": "quarantined-awaiting-primary-table-parse",
+      "status": "quarantined-awaiting-review",
       "automaticPromotion": false,
       "kind": "poll",
       "pollster": "Freshwater Strategy",
