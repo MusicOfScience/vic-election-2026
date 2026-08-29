@@ -254,7 +254,7 @@
     {
       "id": "yougov-common-threads",
       "label": "YouGov / Common Threads MRP",
-      "coverageClass": "current-comparable-needs-ingestion-review",
+      "coverageClass": "current-comparable-primary-methodology-captured",
       "canonicalModelEligiblePollIds": [],
       "actionableGaps": [
         {
@@ -282,22 +282,28 @@
           "method": "multilevel regression with poststratification (MRP)",
           "commissioner": "Common Threads",
           "methodologySourceUrl": "https://yougov.com/about/methodology/australian-polling-council",
-          "status": "pollster-methodology-listed-needs-report-capture-and-role-review",
+          "status": "primary-methodology-captured-secondary-results-awaiting-reconciliation",
           "requiredChecks": [
-            "capture YouGov methodology/report",
-            "advocacy-commissioner treatment",
-            "whether statewide topline and seat-level MRP should enter different evidence layers",
+            "capture first-party results/topline report",
+            "reconcile the 9 July primary-methodology fieldwork end against the 10 July secondary report",
+            "retain commissioner/questionnaire-order context",
+            "keep statewide topline and seat-level MRP in one dependency family",
             "leadership timing because fieldwork predates Ben Carroll premiership"
-          ]
+          ],
+          "primaryMethodologySourceUrl": "https://d3nnbamw3dez3b.cloudfront.net/documents/Commonthreads_Aug9_APC_Methodology_Statement.pdf",
+          "primaryMethodologyFieldworkEnd": "2026-07-09",
+          "effectiveSampleSize": 2901,
+          "marginOfError": 1.819
         }
-      ]
+      ],
+      "nextAction": "Capture YouGov/Common Threads first-party results, reconcile the 9/10 July fieldwork-end discrepancy and complete human role review; do not treat the statewide topline and seat projection as independent evidence."
     }
   ],
   "priorityQueue": [
     "Review the staged RedBridge/Accent 28 July-1 August evidence and resolve sample-family/leadership-regime checks before model eligibility.",
     "Review the parsed Freshwater first-party workbooks; resolve February residual rounding and the August publication-date/canonical-ID reconciliation before model eligibility.",
     "Reconcile the now-captured Resolve sample families against pollster methodology and exact component-wave metadata before model eligibility.",
-    "Capture YouGov/Common Threads methodology/report and separate statewide polling evidence from seat-level MRP evidence.",
+    "Capture YouGov/Common Threads first-party results; reconcile the primary-methodology 9 July fieldwork end against the secondary 10 July report while keeping statewide and seat-model outputs in one dependency family.",
     "Keep pre-10-February-2026 polls in historical/reference coverage rather than imputing One Nation."
   ]
 }
