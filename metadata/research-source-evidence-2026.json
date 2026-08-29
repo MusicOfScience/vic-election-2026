@@ -100,7 +100,7 @@
       "pollPublicationDate": "2026-08-09",
       "proposedModelPollId": "yougov_common_threads_mrp_2026-07",
       "sourceTier": "reputable_secondary",
-      "verificationStatus": "secondary-topline-primary-methodology-listed-awaiting-direct-methodology-capture",
+      "verificationStatus": "secondary-topline-primary-methodology-listed-awaiting-primary-methodology-capture",
       "leadershipRegime": "Allan-Wilson",
       "dependencyPolicy": "The statewide topline and seat projection are outputs of the same YouGov/Common Threads survey/model family. They must never be counted as independent polling observations. The seat projection is comparison evidence unless separately validated out of sample.",
       "captureNotes": "YouGov's Australian Polling Council methodology index lists a dedicated Victorian MRP Common Threads methodology statement dated 9 August 2026. Poll Bludger reports fieldwork 16 June-10 July, the statewide composition, 53.8-46.2 Coalition-Labor estimate and 39/29/17/3 median seat projection. Retain secondary-tier semantics until the direct methodology statement/report is captured and reviewed."
