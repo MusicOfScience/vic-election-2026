@@ -5,12 +5,25 @@ import { createPortal } from "react-dom";
 import { ExternalLink, Microscope, X } from "lucide-react";
 import psephologySources from "../metadata/psephology-sources.json";
 import psephologyEvidence from "../metadata/psephology-evidence-2026.json";
+import researchEvidence from "../metadata/research-source-evidence-2026.json";
 import { modelOutput } from "./model-output.generated";
 
 const subscribe = () => () => {};
 const clientSnapshot = () => true;
 const serverSnapshot = () => false;
 const pct = (value: number) => `${value.toFixed(1)}%`;
+
+type SeatModelRecord = {
+  id: string;
+  pollster: string;
+  commissioner: string;
+  fieldworkStart: string;
+  fieldworkEnd: string;
+  sourceUrl: string;
+  sourceTier: string;
+  verificationStatus: string;
+  seatModelProjection?: { coalition: number; alp: number; oneNation: number; greens: number; totalSeats: number; role: string };
+};
 
 const summaryById: Record<string, string> = {
   "ben-raue-2026-07-27-vote-to-seat": "A specified 26 Coalition / 26 Labor / 27 One Nation / 13 Greens MRP scenario produced 31 Coalition, 30 Labor, 27 One Nation and 0 Greens seats under Raue's preference assumptions. This is a scenario comparison, not a second forecast observation.",
@@ -30,6 +43,8 @@ export function AnalystEvidenceGuide() {
   const mean = modelOutput.manifest.polling.mean;
   const evidenceCount = new Map<string, number>();
   for (const record of psephologyEvidence.records) evidenceCount.set(record.analystSourceId, (evidenceCount.get(record.analystSourceId) ?? 0) + 1);
+  const externalSeatModel = (researchEvidence.records as unknown as SeatModelRecord[]).find((record) => record.seatModelProjection);
+  const modelMedian = (party: string) => modelOutput.chamber.find((row) => row.party === party)?.median ?? 0;
 
   return <>
     {target && createPortal(
@@ -39,7 +54,7 @@ export function AnalystEvidenceGuide() {
     <dialog ref={dialogRef} className="analyst-evidence-dialog" onClick={(event) => { if (event.target === dialogRef.current) close(); }}>
       <div className="analyst-evidence-panel">
         <header className="analyst-evidence-head">
-          <div><p className="eyebrow">Psephology &amp; external evidence</p><h2>Model vs analysts</h2><p>Comparison, not averaging. Published analyst work is kept separate from polling observations so the same underlying evidence is not counted twice.</p></div>
+          <div><p className="eyebrow">Psephology &amp; external evidence</p><h2>Model vs analysts</h2><p>Comparison, not averaging. Published analyst work and external models are kept separate from polling observations so the same underlying evidence is not counted twice.</p></div>
           <button type="button" className="analyst-evidence-close" onClick={close} aria-label="Close analyst evidence"><X size={18} /></button>
         </header>
 
@@ -50,6 +65,24 @@ export function AnalystEvidenceGuide() {
           <div><span>Greens primary</span><strong>{pct(mean.GRN)}</strong></div>
           <div><span>Hung parliament</span><strong>{pct(hung * 100)}</strong></div>
         </section>
+
+        {externalSeatModel?.seatModelProjection && <section className="analyst-evidence-section" aria-label="External seat model comparison">
+          <div className="analyst-section-heading"><p className="eyebrow">External seat model</p><h3>YouGov / Common Threads MRP</h3><span>Comparison only · not a forecast input</span></div>
+          <div className="analyst-evidence-grid">
+            <article>
+              <div className="analyst-card-meta"><span>Published MRP projection</span><time>{externalSeatModel.fieldworkEnd}</time></div>
+              <h4>{externalSeatModel.seatModelProjection.coalition} Coalition · {externalSeatModel.seatModelProjection.alp} Labor · {externalSeatModel.seatModelProjection.oneNation} One Nation · {externalSeatModel.seatModelProjection.greens} Greens</h4>
+              <p>Fieldwork ran {externalSeatModel.fieldworkStart} to {externalSeatModel.fieldworkEnd}, before the current leadership regime. The statewide topline and seat projection come from the same survey/model family and are never counted as two independent signals.</p>
+              <div className="analyst-card-foot"><span>{externalSeatModel.sourceTier.replaceAll("_", " ")} · primary methodology reconciliation pending</span><a href={externalSeatModel.sourceUrl} target="_blank" rel="noreferrer">Source <ExternalLink size={11} /></a></div>
+            </article>
+            <article>
+              <div className="analyst-card-meta"><span>Our current experimental model</span><span>Same 88-seat chamber</span></div>
+              <h4>{modelMedian("LIB_NAT")} Coalition · {modelMedian("ALP")} Labor · {modelMedian("ONP")} One Nation · {modelMedian("GRN")} Greens</h4>
+              <p>These are current model median seats, not a re-fit to the YouGov MRP. Showing the two side by side makes disagreement visible without averaging one forecast into another.</p>
+              <div className="analyst-card-foot"><span>Internal probabilistic model · 5,000 simulations</span></div>
+            </article>
+          </div>
+        </section>}
 
         <section className="analyst-evidence-section">
           <div className="analyst-section-heading"><p className="eyebrow">Reviewed comparisons</p><h3>What external analysis is telling us</h3><span>{psephologyEvidence.records.length} evidence records · zero direct analyst model inputs</span></div>
