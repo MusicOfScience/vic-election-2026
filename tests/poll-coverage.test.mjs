@@ -41,9 +41,21 @@ test("poll coverage ledger separates published coverage from comparable/model-el
   assert.equal(report.repository.sourceFamiliesDeclared, 8);
   assert.equal(report.repository.registryEvents, 11);
   assert.equal(report.repository.modelEligibleEvents, 9);
-  assert.equal(report.repository.stagedPollRecords, 3);
+  assert.equal(report.repository.stagedPollRecords, 5);
+  assert.equal(report.repository.declaredGapsResolvedByStaging, 3);
+  assert.equal(report.repository.actionableGapItems, 3);
+  assert.equal(report.repository.currentSourceFamiliesWithActionableGaps, 3);
   assert.equal(report.integrity.allDeclaredCanonicalIdsExist, true);
   assert.equal(report.integrity.declaredCanonicalIdsAreUnique, true);
+});
+
+test("staged evidence resolves dated coverage gaps without pretending it is model eligible", () => {
+  const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, primaryRecords: primary.records, researchRecords: research.records });
+  const resolved = report.stagedCoverageResolutions.map((item) => item.proposedModelPollId).sort();
+  assert.deepEqual(resolved, ["freshwater_2026-02", "freshwater_2026-03", "redbridge_accent_2026-08"]);
+  assert.equal(report.actionableGaps.some((gap) => gap.fieldworkEnd === "2026-02-23"), false);
+  assert.equal(report.actionableGaps.some((gap) => gap.fieldworkEnd === "2026-03-23"), false);
+  assert.equal(report.actionableGaps.some((gap) => gap.fieldworkEnd === "2026-08-03"), true);
 });
 
 test("coverage ledger makes missing comparable polling actionable without imputing old One Nation support", () => {
@@ -55,9 +67,17 @@ test("coverage ledger makes missing comparable polling actionable without imputi
   assert.ok(byId["resolve-strategic"].actionableGaps.length > 0);
   assert.equal(byId["yougov-common-threads"].actionableGaps[0].sampleSize, 4003);
   assert.deepEqual(byId["yougov-common-threads"].actionableGaps[0].seatProjection, { LIB_NAT: 39, ALP: 29, ONP: 17, GRN: 3 });
-  assert.ok(byId["freshwater"].actionableGaps.length >= 3);
   const redbridgeAugust = byId["redbridge-accent"].actionableGaps.find((gap) => gap.fieldworkEnd === "2026-08-01");
   assert.ok(redbridgeAugust);
   assert.deepEqual(redbridgeAugust.twoPartyPreferred, { LIB_NAT: 57, ALP: 43, basis: "respondent allocated" });
   assert.deepEqual(byId["redbridge-accent"].stagedEvidence, ["redbridge_accent_2026-08"]);
+});
+
+test("Freshwater February and March records retain secondary-tier semantics until first-party workbooks are parsed", () => {
+  const freshwater = research.records.filter((record) => record.pollster === "Freshwater Strategy");
+  assert.equal(freshwater.length, 2);
+  assert.deepEqual(freshwater.map((record) => record.sampleSize), [1030, 1062]);
+  assert.ok(freshwater.every((record) => record.sourceTier === "reputable_secondary"));
+  assert.ok(freshwater.every((record) => /awaiting-primary-parse/.test(record.verificationStatus)));
+  assert.ok(freshwater.every((record) => record.primaryWorkbookUrl?.startsWith("https://freshwaterstrategy.com/")));
 });

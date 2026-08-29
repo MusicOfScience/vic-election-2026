@@ -37,10 +37,11 @@ test("corroborated Resolve evidence remains secondary and awaiting primary captu
 test("evidence staging adds review records but never promotes them", () => {
   const report = { checkedAt: "2026-08-29T00:00:00Z", records: [], observations: [] };
   const quarantine = { checkedAt: null, records: [] };
-  assert.equal(stageManualEvidence(report, quarantine, manual).length, 1);
-  assert.equal(stageManualEvidence(report, quarantine, research).length, 1);
-  assert.equal(report.summary.quarantined, 2);
-  assert.equal(report.summary.polls, 2);
+  const expected = manual.records.length + research.records.length;
+  assert.equal(stageManualEvidence(report, quarantine, manual).length, manual.records.length);
+  assert.equal(stageManualEvidence(report, quarantine, research).length, research.records.length);
+  assert.equal(report.summary.quarantined, expected);
+  assert.equal(report.summary.polls, expected);
   assert.ok(quarantine.records.every((record) => record.automaticPromotion === false));
   assert.deepEqual(report.observations.map((item) => item.sourceId), ["manual-blocked-source-evidence", "corroborated-secondary-evidence"]);
   assert.equal(stageManualEvidence(report, quarantine, manual).length, 0, "staging must be idempotent");
