@@ -40,6 +40,9 @@ jobs:
       - name: Stage manually captured blocked-source evidence
         if: always()
         run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/manual-source-evidence-2026.json
+      - name: Stage first-party poll evidence awaiting review
+        if: always()
+        run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/primary-source-evidence-2026.json
       - name: Stage corroborated secondary evidence
         if: always()
         run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/research-source-evidence-2026.json
