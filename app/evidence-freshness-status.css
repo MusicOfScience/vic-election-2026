@@ -1,0 +1,24 @@
+.evidence-freshness-card {
+  border-color: #e9c788 !important;
+  background: #fffaf0;
+}
+.evidence-freshness-card > svg { color: #a86220; }
+.evidence-freshness-card small { max-width: 180px; }
+
+.evidence-freshness-callout {
+  margin: 18px 0 0;
+  padding: 15px 17px;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  border: 1px solid #e9c788;
+  background: #fffaf0;
+  color: var(--ink);
+}
+.evidence-freshness-callout > svg { flex: 0 0 auto; margin-top: 1px; color: #a86220; }
+.evidence-freshness-callout strong { display: block; margin-bottom: 4px; font-size: 11px; }
+.evidence-freshness-callout p { margin: 0; color: var(--muted-ink); font-size: 10px; line-height: 1.55; }
+
+@media (max-width: 760px) {
+  .evidence-freshness-callout { padding: 13px 14px; }
+}
