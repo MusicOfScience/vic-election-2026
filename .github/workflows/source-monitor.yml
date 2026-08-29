@@ -37,6 +37,9 @@ jobs:
       - name: Discover DemosAU Victorian state polls
         if: always()
         run: node scripts/discover-demosau-victoria-polls.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
+      - name: Stage manually captured blocked-source evidence
+        if: always()
+        run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/manual-source-evidence-2026.json
       - name: Build human review manifest
         if: always()
         run: node scripts/build-discovery-review-manifest.mjs --input source-discovery-quarantine.json --output discovery-review-manifest.json
