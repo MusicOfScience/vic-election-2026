@@ -63,13 +63,11 @@ def test_scenario_registry_is_in_memory_and_adds_only_the_two_staged_polls():
     canonical_estimates = pd.read_csv(estimate_path)
 
     scenario_events, scenario_estimates = _scenario_registry(ROOT)
+    staged_ids = {"demosau_2026-08", "resolve_strategic_2026-08"}
 
     assert len(scenario_events) == len(canonical_events) + 2
-    assert set(scenario_events.poll_id) - set(canonical_events.poll_id) == {
-        "demosau_2026-08-06-11",
-        "resolve_2026-08-09-15",
-    }
-    assert scenario_events.loc[scenario_events.poll_id.isin({"demosau_2026-08-06-11", "resolve_2026-08-09-15"}), "model_eligible"].all()
+    assert set(scenario_events.poll_id) - set(canonical_events.poll_id) == staged_ids
+    assert scenario_events.loc[scenario_events.poll_id.isin(staged_ids), "model_eligible"].all()
     assert len(scenario_estimates) > len(canonical_estimates)
     assert pd.read_csv(event_path).equals(canonical_events)
     assert pd.read_csv(estimate_path).equals(canonical_estimates)
