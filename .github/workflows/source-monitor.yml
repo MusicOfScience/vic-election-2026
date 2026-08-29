@@ -46,6 +46,13 @@ jobs:
       - name: Build model versus analyst comparison
         if: always()
         run: node scripts/build-analyst-comparison.mjs --output analyst-comparison-report.json
+      - name: Distinguish evidence freshness from model freshness
+        if: always()
+        shell: bash
+        run: |
+          assessment_date="${{ inputs.as_of }}"
+          if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
+          node scripts/build-evidence-freshness-report.mjs --as-of "${assessment_date}" --output evidence-freshness-report.json
       - name: Validate candidate registry
         if: always()
         run: node scripts/validate-candidates.mjs
@@ -60,4 +67,5 @@ jobs:
             source-discovery-quarantine.json
             discovery-review-manifest.json
             analyst-comparison-report.json
+            evidence-freshness-report.json
           retention-days: 90
