@@ -31,3 +31,16 @@ test("historical Resolve family evidence cannot displace the fixed August shadow
   assert.equal(marApr.status, "comparable-secondary-evidence-awaiting-primary-reconciliation");
   assert.equal(marApr.modelEligible, false);
 });
+
+
+test("Resolve May-June combined family is captured without inventing monthly observations", () => {
+  const mayJun = ledger.families.find((family) => family.id === "resolve-vic-2026-may-jun");
+  assert.equal(mayJun.combinedSampleSize, 1000);
+  assert.equal(mayJun.fieldworkPrecision, "month-only");
+  assert.deepEqual(mayJun.combinedPublishedPrimaryVote, { alp: 26, coalition: 26, oneNation: 24, greens: 12, residual: 12 });
+  assert.equal(mayJun.componentEvidence.mayOneNation, 20);
+  assert.equal(mayJun.componentEvidence.juneOneNation, 28);
+  assert.equal(mayJun.componentEvidence.fullMonthlyCompositionsAvailable, false);
+  assert.match(mayJun.dependencyCheck, /one sample family/i);
+  assert.equal(mayJun.modelEligible, false);
+});

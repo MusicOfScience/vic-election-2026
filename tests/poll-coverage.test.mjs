@@ -27,8 +27,8 @@ test("poll coverage ledger separates published coverage from comparable/model-el
   assert.equal(report.repository.modelEligibleEvents, 9);
   assert.equal(report.repository.stagedPollRecords, manual.records.length + primary.records.length + research.records.length);
   assert.equal(report.repository.declaredGapsResolvedByStaging, 5);
-  assert.equal(report.repository.actionableGapItems, 1);
-  assert.equal(report.repository.currentSourceFamiliesWithActionableGaps, 1);
+  assert.equal(report.repository.actionableGapItems, 0);
+  assert.equal(report.repository.currentSourceFamiliesWithActionableGaps, 0);
   assert.equal(report.integrity.allDeclaredCanonicalIdsExist, true);
 });
 
@@ -36,7 +36,7 @@ test("staged evidence resolves dated coverage gaps without pretending it is mode
   const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, primaryRecords: primary.records, researchRecords: research.records });
   const resolved = report.stagedCoverageResolutions.map((item) => item.proposedModelPollId).sort();
   assert.deepEqual(resolved, ["freshwater_2026-02", "freshwater_2026-03", "freshwater_2026-08", "redbridge_accent_2026-08", "yougov_common_threads_mrp_2026-07"]);
-  assert.equal(report.actionableGaps[0].sourceFamilyId, "resolve-strategic");
+  assert.deepEqual(report.actionableGaps, []);
 });
 
 test("coverage ledger keeps old non-comparable polling out of the current five-way model", () => {
@@ -44,7 +44,8 @@ test("coverage ledger keeps old non-comparable polling out of the current five-w
   assert.equal(byId["wolf-smith"].coverageClass, "historical-non-comparable");
   assert.match(byId["wolf-smith"].exclusionReason, /One Nation was not separately reported/i);
   assert.equal(byId["resolve-strategic"].canonicalModelEligiblePollIds.length, 0);
-  assert.ok(byId["resolve-strategic"].actionableGaps.length > 0);
+  assert.equal(byId["resolve-strategic"].actionableGaps.length, 0);
+  assert.ok(byId["resolve-strategic"].familyEvidence.some((item) => item.id === "resolve-vic-2026-may-jun"));
 });
 
 test("Freshwater staged records now derive from parsed first-party workbooks", () => {
