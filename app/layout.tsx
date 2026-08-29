@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./party-visual-language.css";
 import "./analyst-evidence.css";
+import "./evidence-freshness-status.css";
 import { PartyVisualKey } from "./party-visual-key";
 import { AnalystEvidenceGuide } from "./analyst-evidence-guide";
+import { EvidenceFreshnessStatus } from "./evidence-freshness-status";
 
 export const metadata: Metadata = {
   title: "Victorian Election Forecast 2026",
@@ -26,6 +28,7 @@ export default function RootLayout({
         {children}
         <PartyVisualKey />
         <AnalystEvidenceGuide />
+        <EvidenceFreshnessStatus />
       </body>
     </html>
   );
