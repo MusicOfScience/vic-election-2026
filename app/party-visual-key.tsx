@@ -59,7 +59,7 @@ export function PartyVisualKey() {
               ))}
             </div>
             <p className="party-key-note">
-              Nationals use very dark green with a yellow diagonal accent; on line charts the yellow becomes an outline/halo and marker cue. Independents use neutral slate; teal-aligned independents remain independent and carry a teal accent. Labels and line styles remain visible so colour is never the only cue.
+              Nationals use very dark green with a yellow diagonal accent; on line charts the yellow becomes an outline/halo and marker cue. Independents use neutral slate. A teal-aligned independent remains an independent and carries a teal accent. Labels and line styles remain visible so colour is never the only cue.
             </p>
           </section>
         </div>
