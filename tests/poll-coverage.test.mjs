@@ -47,12 +47,13 @@ test("coverage ledger keeps old non-comparable polling out of the current five-w
   assert.ok(byId["resolve-strategic"].actionableGaps.length > 0);
 });
 
-test("Freshwater staged records retain secondary-tier semantics until first-party workbooks are parsed", () => {
-  const freshwater = research.records.filter((record) => record.pollster === "Freshwater Strategy");
+test("Freshwater staged records now derive from parsed first-party workbooks", () => {
+  const freshwater = primary.records.filter((record) => record.pollster === "Freshwater Strategy");
   assert.equal(freshwater.length, 3);
   assert.deepEqual(freshwater.map((record) => record.sampleSize), [1030, 1062, 1020]);
-  assert.ok(freshwater.every((record) => record.sourceTier === "reputable_secondary"));
-  assert.ok(freshwater.every((record) => /awaiting-primary-parse/.test(record.verificationStatus)));
+  assert.ok(freshwater.every((record) => record.sourceTier === "primary_pollster"));
+  assert.ok(freshwater.every((record) => /primary-workbook-parsed/.test(record.verificationStatus)));
+  assert.equal(research.records.filter((record) => record.pollster === "Freshwater Strategy").length, 0);
   const august = freshwater.find((record) => record.fieldworkEnd === "2026-08-03");
   assert.deepEqual(august.registryReconciliation.missingReportedParties, ["GRN", "OTH"]);
 });
