@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-29",
+  "records": [
+    {
+      "id": "ben-raue-2026-07-27-vote-to-seat",
+      "analystSourceId": "ben-raue-tally-room",
+      "publishedDate": "2026-07-27",
+      "sourceUrl": "https://www.tallyroom.com.au/65163",
+      "title": "How might votes turn into seats in Victoria?",
+      "evidenceType": "vote_to_seat_model",
+      "geography": { "scope": "statewide", "jurisdiction": "VIC" },
+      "pollDerived": true,
+      "upstreamEvidence": ["redbridge-accent-june-2026-mrp"],
+      "independenceAssessment": "dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "comparison_only",
+      "structuredFindings": {
+        "scenarioPrimaryVote": { "coalition": 26, "labor": 26, "oneNation": 27, "greens": 13 },
+        "seatProjectionUsingRauePreferenceFlows": { "coalition": 31, "labor": 30, "oneNation": 27, "greens": 0 },
+        "comparisonSeatProjectionFromRedBridgeAccent": { "coalition": 39, "labor": 35, "oneNation": 12, "greens": 2 }
+      },
+      "notes": "Useful evidence about preference-flow sensitivity and vote-to-seat translation. It reuses RedBridge/Accent MRP seat primaries and therefore is not an independent polling observation."
+    },
+    {
+      "id": "kevin-bonham-2026-07-17-victoria",
+      "analystSourceId": "kevin-bonham",
+      "publishedDate": "2026-07-17",
+      "sourceUrl": "https://kevinbonham.blogspot.com/2026/07/victoria-2026-election-where-sorts-of.html",
+      "title": "Victoria 2026: The Election Where All Sorts Of Things Can Happen!",
+      "evidenceType": "poll_aggregation_and_seat_analysis",
+      "geography": { "scope": "statewide", "jurisdiction": "VIC" },
+      "pollDerived": true,
+      "upstreamEvidence": ["multiple-published-victorian-polls"],
+      "independenceAssessment": "dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "comparison_only",
+      "structuredFindings": {
+        "aggregatePrimaryVote": { "labor": 26.0, "coalition": 27.3, "greens": 12.8, "oneNation": 23.7, "others": 10.3 },
+        "coalitionTwoPartyPreferred": 52.0,
+        "oneNationSeatDescription": "around the mid-teens",
+        "governmentDescription": "Coalition likely to govern in minority with One Nation support on the evidence available at publication"
+      },
+      "notes": "Treat the poll aggregate as a comparator, not another poll. The seat and preference discussion is useful for structural calibration and scenario testing."
+    },
+    {
+      "id": "casey-briggs-2026-05-13-nepean",
+      "analystSourceId": "casey-briggs-abc",
+      "publishedDate": "2026-05-13",
+      "sourceUrl": "https://www.abc.net.au/news/elections/nepean-by-election-2026/commentary",
+      "title": "Commentary on Nepean By-election 2026",
+      "evidenceType": "by_election_analysis",
+      "geography": { "scope": "district", "jurisdiction": "VIC", "district": "Nepean" },
+      "pollDerived": false,
+      "upstreamEvidence": ["vec-nepean-2026-by-election-results"],
+      "independenceAssessment": "derived_from_official_results",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "structuredFindings": {
+        "liberalFinalMargin": 13.2,
+        "swingToLiberal": 6.9,
+        "multiPartyPrimarySignal": "Independent Tracee Hutchison and One Nation's Darren Hercus both exceeded 20% primary vote"
+      },
+      "notes": "Interpretive cross-check for a local electoral test. Official VEC results remain the numerical authority used by the model."
+    },
+    {
+      "id": "kos-samaras-2026-08-07-victoria-context",
+      "analystSourceId": "kos-samaras-redbridge",
+      "publishedDate": "2026-08-07",
+      "sourceUrl": "https://www.abc.net.au/news/2026-08-07/federal-implications-victoria-election-one-nation-labor/107005850",
+      "title": "Published RedBridge interpretation of Victorian voter movement",
+      "evidenceType": "poll_interpretation",
+      "geography": { "scope": "statewide", "jurisdiction": "VIC" },
+      "pollDerived": true,
+      "upstreamEvidence": ["redbridge-august-2026-victoria-poll"],
+      "independenceAssessment": "dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "structuredFindings": {
+        "theme": "long-run voter disaffection and post-pandemic political effects",
+        "quantitativeUse": "none"
+      },
+      "notes": "Qualitative interpretation only. Because Samaras is associated with RedBridge, this cannot be treated as independent confirmation of RedBridge polling."
+    }
+  ]
+}
