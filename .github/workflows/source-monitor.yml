@@ -63,6 +63,9 @@ jobs:
           assessment_date="${{ inputs.as_of }}"
           if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
           node scripts/build-poll-promotion-audit.mjs --as-of "${assessment_date}" --output poll-promotion-audit.json
+      - name: Audit published polling coverage
+        if: always()
+        run: node scripts/build-poll-coverage-report.mjs --output poll-coverage-report.json
       - name: Validate candidate registry
         if: always()
         run: node scripts/validate-candidates.mjs
@@ -79,4 +82,5 @@ jobs:
             analyst-comparison-report.json
             evidence-freshness-report.json
             poll-promotion-audit.json
+            poll-coverage-report.json
           retention-days: 90
