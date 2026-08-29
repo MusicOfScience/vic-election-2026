@@ -37,6 +37,9 @@ jobs:
       - name: Discover DemosAU Victorian state polls
         if: always()
         run: node scripts/discover-demosau-victoria-polls.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
+      - name: Extract Freshwater primary workbooks
+        if: always()
+        run: python3 scripts/extract-freshwater-workbooks.py --output freshwater-primary-report.json
       - name: Stage manually captured blocked-source evidence
         if: always()
         run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/manual-source-evidence-2026.json
@@ -86,4 +89,5 @@ jobs:
             evidence-freshness-report.json
             poll-promotion-audit.json
             poll-coverage-report.json
+            freshwater-primary-report.json
           retention-days: 90
