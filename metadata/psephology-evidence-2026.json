@@ -81,6 +81,37 @@
         "quantitativeUse": "none"
       },
       "notes": "Qualitative interpretation only. Because Samaras is associated with RedBridge, this cannot be treated as independent confirmation of RedBridge polling."
+    },
+    {
+      "id": "antony-green-2026-07-25-victorian-pendulum",
+      "analystSourceId": "antony-green",
+      "publishedDate": "2026-07-25",
+      "sourceUrl": "https://antonygreen.com.au/2026-victorian-election-pendulum/",
+      "title": "2026 Victorian Election Pendulum",
+      "evidenceType": "seat_analysis",
+      "geography": { "scope": "statewide-and-district", "jurisdiction": "VIC" },
+      "pollDerived": true,
+      "upstreamEvidence": ["vec-2022-state-election-results", "south-australia-2026-state-election-results", "redbridge-accent-june-2026-victoria-poll"],
+      "independenceAssessment": "partially_dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "comparison_only",
+      "structuredFindings": {
+        "uniformSwingForCoalitionMajorityIfNoLosses": 7.6,
+        "coalitionSeatsRequiredToGainForMajority": 16,
+        "preferenceBenchmarks": {
+          "greensToLaborApprox": 85,
+          "southAustraliaLiberalToOneNationApprox": 65,
+          "southAustraliaOneNationToLiberalApprox": 70
+        },
+        "structuralSignals": [
+          "Traditional two-party pendulums are less reliable in a three-party contest.",
+          "One Nation strength is expected to be greater outside metropolitan Melbourne and may threaten both Coalition and safe Labor seats.",
+          "Green preference concentration can allow Labor to retain more seats than primary-vote comparisons imply.",
+          "Coalition losses to One Nation or independents raise the number of Labor gains required for a Coalition majority."
+        ],
+        "namedLaborRiskSeats": ["Bass", "Pakenham", "Hastings", "Glen Waverley", "Bayswater", "Yan Yean", "Melton", "Sunbury", "Box Hill", "Ringwood", "Monbulk", "Bendigo East", "Werribee"]
+      },
+      "notes": "A structural comparator rather than a poll observation. Preference benchmarks and geographic patterns are useful candidates for sensitivity testing, but should not be imported as Victorian parameters without validation."
     }
   ]
 }

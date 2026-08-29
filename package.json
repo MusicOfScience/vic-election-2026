@@ -20,6 +20,7 @@
     "sources:promote": "node scripts/promote-live-source.mjs",
     "candidates:validate": "node scripts/validate-candidates.mjs",
     "psephology:validate": "node scripts/validate-psephology-evidence.mjs",
+    "analysts:compare": "node scripts/build-analyst-comparison.mjs --output analyst-comparison-report.json",
     "snapshot:create": "node scripts/create-forecast-snapshot.mjs",
     "forecast:refresh": "bash scripts/refresh-forecast.sh",
     "forecast:refresh:changed": "bash scripts/refresh-forecast.sh --changed-since",
