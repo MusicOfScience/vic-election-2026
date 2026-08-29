@@ -12,6 +12,7 @@ test("Resolve combined releases and monthly components are explicitly mutually e
   assert.ok(marApr);
   assert.equal(marApr.components.reduce((sum, component) => sum + component.sampleSize, 0), marApr.combinedSampleSize);
   assert.equal(marApr.combinedSampleSize, 1047);
+  assert.deepEqual(marApr.combinedPublishedPrimaryVote, { alp: 27, coalition: 29, oneNation: 21, greens: 10, independents: 7, otherParties: 6 });
   assert.match(marApr.dependencyCheck, /cannot all enter the polling likelihood/i);
   assert.equal(marApr.modelEligible, false);
 });
@@ -22,14 +23,11 @@ test("Resolve January-February transition is not treated as a coherent five-way 
   assert.match(transition.comparabilityWarning, /January did not separately report One Nation/i);
 });
 
-test("staged March-April combined record declares its sample family and remains secondary", () => {
-  const record = research.records.find((item) => item.proposedModelPollId === "resolve_strategic_2026-03-04_combined");
-  assert.ok(record);
-  assert.equal(record.sampleFamily, "resolve-vic-2026-mar-apr");
-  assert.equal(record.sampleSize, 1047);
-  assert.deepEqual(record.primaryVote, { coalition: 29, alp: 27, oneNation: 21, greens: 10, independents: 7, otherParties: 6 });
-  assert.equal(record.componentSamples.reduce((sum, component) => sum + component.sampleSize, 0), 1047);
-  assert.equal(record.sourceTier, "reputable_secondary");
-  assert.match(record.verificationStatus, /awaiting-primary/i);
-  assert.match(record.dependencyPolicy, /never count combined and components independently/i);
+test("historical Resolve family evidence cannot displace the fixed August shadow scenario", () => {
+  const stagedResolve = research.records.filter((record) => record.pollster === "Resolve Strategic");
+  assert.equal(stagedResolve.length, 1);
+  assert.equal(stagedResolve[0].proposedModelPollId, "resolve_strategic_2026-08");
+  const marApr = ledger.families.find((family) => family.id === "resolve-vic-2026-mar-apr");
+  assert.equal(marApr.status, "comparable-secondary-evidence-awaiting-primary-reconciliation");
+  assert.equal(marApr.modelEligible, false);
 });
