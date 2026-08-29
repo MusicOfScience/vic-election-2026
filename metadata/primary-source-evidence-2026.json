@@ -35,6 +35,173 @@
       "proposedModelPollId": "redbridge_accent_2026-08",
       "correctionHistory": "The AFR initially displayed conflicting 53-47 and 57-43 Coalition-Labor two-party figures. Subsequent reporting records that RedBridge/Accent clarified the correct respondent-allocated result as 57-43.",
       "reviewNotes": "Primary publisher confirms fieldwork, sample, effective sample, weighting, undecided treatment and respondent-allocated preference method. Primary vote toplines are consistently reported as Coalition 30, Labor 23, One Nation 22, Greens 14, Others 11. Before model eligibility, review sample-family independence from the June large-sample/MRP-related evidence and the leadership-regime timing."
+    },
+    {
+      "id": "freshwater-2026-02-primary-workbook",
+      "sourceId": "freshwater-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "commissioner": "Herald Sun",
+      "fieldworkStart": "2026-02-19",
+      "fieldworkEnd": "2026-02-23",
+      "sampleSize": 1030,
+      "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 27.5543,
+        "coalition": 26.8263,
+        "oneNation": 22.6102,
+        "greens": 13.1181,
+        "otherParties": 9.8911
+      },
+      "primaryVoteRounded": {
+        "alp": 28,
+        "coalition": 27,
+        "oneNation": 23,
+        "greens": 13,
+        "otherParties": 10
+      },
+      "twoPartyPreferred": {
+        "alp": 49.9581,
+        "coalition": 50.0419,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "twoPartyPreferredRounded": {
+        "alp": 50,
+        "coalition": 50
+      },
+      "primaryVoteUnweightedBase": 950,
+      "twoPartyPreferredUnweightedBase": 931,
+      "sourceUrl": "https://freshwaterstrategy.com/2026/03/11/herald-sun-freshwater-strategy-february-polling-data/",
+      "workbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230226.xlsx",
+      "workbookSha256": "5080ec635a09d9047110b378ce72da130c5aad796ec4b45a23aec6727e8953dd",
+      "workbookBytes": 109620,
+      "pollPublicationDate": "2026-03-04",
+      "proposedModelPollId": "freshwater_2026-02",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-workbook-parsed-awaiting-human-review",
+      "captureMode": "automated-primary-workbook-extraction",
+      "extractor": "scripts/extract-freshwater-workbooks.py",
+      "secondaryEvidenceUrl": "https://www.pollbludger.net/2026/03/04/freshwater-strategy-labor-28-coalition-27-one-nation-23-greens-13-in-victoria/",
+      "reviewNotes": "The workbook exact residual is 9.8911%, while some rounded secondary summaries reported Other as 9%. Preserve the exact five-way composition for review; do not silently force headline integers to sum to 100."
+    },
+    {
+      "id": "freshwater-2026-03-primary-workbook",
+      "sourceId": "freshwater-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "commissioner": "Herald Sun",
+      "fieldworkStart": "2026-03-19",
+      "fieldworkEnd": "2026-03-23",
+      "sampleSize": 1062,
+      "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 27.115,
+        "coalition": 29.5888,
+        "oneNation": 20.3898,
+        "greens": 13.8359,
+        "otherParties": 9.0705
+      },
+      "primaryVoteRounded": {
+        "alp": 27,
+        "coalition": 30,
+        "oneNation": 20,
+        "greens": 14,
+        "otherParties": 9
+      },
+      "twoPartyPreferred": {
+        "alp": 47.6118,
+        "coalition": 52.3882,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "twoPartyPreferredRounded": {
+        "alp": 48,
+        "coalition": 52
+      },
+      "primaryVoteUnweightedBase": 988,
+      "twoPartyPreferredUnweightedBase": 977,
+      "sourceUrl": "https://freshwaterstrategy.com/2026/04/02/herald-sun-freshwater-strategy-march-polling-data/",
+      "workbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230326.xlsx",
+      "workbookSha256": "f3329619a0632b81c81a99d476722be7b219f37efd62f1667f224ab079ff66e9",
+      "workbookBytes": 120059,
+      "pollPublicationDate": "2026-03-24",
+      "proposedModelPollId": "freshwater_2026-03",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-workbook-parsed-awaiting-human-review",
+      "captureMode": "automated-primary-workbook-extraction",
+      "extractor": "scripts/extract-freshwater-workbooks.py",
+      "secondaryEvidenceUrl": "https://www.pollbludger.net/2026/03/24/freshwater-strategy-52-48-to-coalition-in-victoria/",
+      "reviewNotes": "The first-party workbook confirms the full five-way composition, methodology, sample and Coalition-Labor TPP. Human evidence acceptance remains required."
+    },
+    {
+      "id": "freshwater-2026-08-primary-workbook",
+      "sourceId": "freshwater-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "commissioner": "Herald Sun",
+      "fieldworkStart": "2026-07-31",
+      "fieldworkEnd": "2026-08-03",
+      "sampleSize": 1020,
+      "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24.6592,
+        "coalition": 30.3013,
+        "oneNation": 21.6056,
+        "greens": 14.4694,
+        "otherParties": 8.9645
+      },
+      "primaryVoteRounded": {
+        "alp": 25,
+        "coalition": 30,
+        "oneNation": 22,
+        "greens": 14,
+        "otherParties": 9
+      },
+      "twoPartyPreferred": {
+        "alp": 48.1641,
+        "coalition": 51.8359,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "twoPartyPreferredRounded": {
+        "alp": 48,
+        "coalition": 52
+      },
+      "primaryVoteUnweightedBase": 952,
+      "twoPartyPreferredUnweightedBase": 928,
+      "sourceUrl": "https://freshwaterstrategy.com/2026/08/04/herald-sun-freshwater-strategy-august-polling-data/",
+      "workbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-030826-Full-Tables.xlsx",
+      "workbookSha256": "d87fad6e036bebee2b11b93be2402a4afca1813f1c3811daa1686491085ef7df",
+      "workbookBytes": 137491,
+      "pollPublicationDate": "2026-08-04",
+      "proposedModelPollId": "freshwater_2026-08",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-workbook-parsed-awaiting-human-review",
+      "captureMode": "automated-primary-workbook-extraction",
+      "extractor": "scripts/extract-freshwater-workbooks.py",
+      "secondaryEvidenceUrl": "https://www.pollbludger.net/2026/08/04/freshwater-strategy-52-48-to-coalition-in-victoria/",
+      "registryReconciliation": {
+        "existingEvent": true,
+        "existingPublicationDate": "2026-08-05",
+        "existingReportedParties": [
+          "LIB_NAT",
+          "ALP",
+          "ONP"
+        ],
+        "missingReportedParties": [
+          "GRN",
+          "OTH"
+        ],
+        "policy": "Do not mutate the canonical event until the first-party workbook and publication-date discrepancy are reviewed."
+      },
+      "reviewNotes": "The first-party page/workbook resolves the publication date to 4 August. The canonical registry currently uses 5 August and the same poll ID; review that correction and the completed Greens/Other rows before any model decision."
     }
   ]
 }
