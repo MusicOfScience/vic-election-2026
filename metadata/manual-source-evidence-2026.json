@@ -28,6 +28,8 @@
       },
       "sourceUrl": "https://demosau.com/news/coalition-holds-election-winning-lead-in-latest-victoria-poll/",
       "publicationDate": "2026-08-15",
+      "proposedModelPollId": "demosau_2026-08",
+      "pollPublicationDate": "2026-08-15",
       "captureMode": "manual-primary-source-capture",
       "captureReason": "The primary publisher returns HTTP 403 to GitHub Actions and the restricted text-reader fallback does not return parseable article content.",
       "captureNotes": "Structured figures transcribed from the DemosAU primary-source article. Review against the cited page before acceptance; do not infer model eligibility from this record."
