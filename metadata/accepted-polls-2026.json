@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "electionDate": "2026-11-28",
+  "policy": {
+    "acceptance": "Human-reviewed source evidence only.",
+    "modelEligibility": "Acceptance here does not make a poll model-eligible; model inclusion remains a separate explicit decision."
+  },
+  "polls": []
+}
