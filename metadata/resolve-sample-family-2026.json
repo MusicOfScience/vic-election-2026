@@ -14,7 +14,13 @@
       "period": "January-February 2026",
       "status": "historical-transition-not-current-five-way-comparable",
       "combinedSampleSize": 1100,
-      "reportedPrimaryVote": {"alp": 28, "coalition": 30, "greens": 12, "oneNation": 11, "residual": 19},
+      "reportedPrimaryVote": {
+        "alp": 28,
+        "coalition": 30,
+        "greens": 12,
+        "oneNation": 11,
+        "residual": 19
+      },
       "comparabilityWarning": "January did not separately report One Nation while February did. The combined 11% One Nation figure therefore mixes questionnaire regimes and must not be treated as a coherent five-way observation.",
       "sourceUrl": "https://www.pollbludger.net/2026/02/18/resolve-strategic-labor-28-coalition-30-greens-12-one-nation-11-in-victoria/",
       "modelEligible": false
@@ -26,10 +32,41 @@
       "combinedSampleSize": 1047,
       "combinedFieldworkStart": "2026-03-08",
       "combinedFieldworkEnd": "2026-04-18",
-      "combinedPublishedPrimaryVote": {"alp": 27, "coalition": 29, "oneNation": 21, "greens": 10, "independents": 7, "otherParties": 6},
+      "combinedPublishedPrimaryVote": {
+        "alp": 27,
+        "coalition": 29,
+        "oneNation": 21,
+        "greens": 10,
+        "independents": 7,
+        "otherParties": 6
+      },
       "components": [
-        {"month": "March", "fieldworkStart": "2026-03-08", "fieldworkEnd": "2026-03-14", "sampleSize": 519, "reportedPrimaryVote": {"alp": 27, "coalition": 31, "oneNation": 19, "greens": 9, "residual": 14}},
-        {"month": "April", "fieldworkStart": "2026-04-12", "fieldworkEnd": "2026-04-18", "sampleSize": 528, "reportedPrimaryVote": {"alp": 26, "coalition": 27, "oneNation": 23, "greens": 11, "residual": 13}}
+        {
+          "month": "March",
+          "fieldworkStart": "2026-03-08",
+          "fieldworkEnd": "2026-03-14",
+          "sampleSize": 519,
+          "reportedPrimaryVote": {
+            "alp": 27,
+            "coalition": 31,
+            "oneNation": 19,
+            "greens": 9,
+            "residual": 14
+          }
+        },
+        {
+          "month": "April",
+          "fieldworkStart": "2026-04-12",
+          "fieldworkEnd": "2026-04-18",
+          "sampleSize": 528,
+          "reportedPrimaryVote": {
+            "alp": 26,
+            "coalition": 27,
+            "oneNation": 23,
+            "greens": 11,
+            "residual": 13
+          }
+        }
       ],
       "dependencyCheck": "519 + 528 = 1,047, matching the combined Victorian release. Combined and component records are the same sample family and cannot all enter the polling likelihood.",
       "sourceUrl": "https://www.pollbludger.net/2026/04/22/resolve-strategic-labor-27-coalition-29-one-nation-21-in-victoria/",
@@ -38,9 +75,31 @@
     {
       "id": "resolve-vic-2026-may-jun",
       "period": "May-June 2026",
-      "status": "published-series-gap-awaiting-source-reconciliation",
+      "status": "comparable-publisher-evidence-awaiting-pollster-methodology-reconciliation",
       "modelEligible": false,
-      "notes": "Known to be part of the 2026 Victorian Resolve series, but do not create model rows until the Victorian combined release, component dependence and full composition are captured from suitable source material."
+      "notes": "The combined five-way topline and n=1,000 are now captured. Exact component fieldwork/sample details and Resolve methodology remain unresolved, so this family stays outside live staged shadow and canonical model inputs.",
+      "combinedSampleSize": 1000,
+      "combinedFieldworkStart": "2026-05-01",
+      "combinedFieldworkEnd": "2026-06-30",
+      "fieldworkPrecision": "month-only",
+      "publicationDate": "2026-06-14",
+      "combinedPublishedPrimaryVote": {
+        "alp": 26,
+        "coalition": 26,
+        "oneNation": 24,
+        "greens": 12,
+        "residual": 12
+      },
+      "componentEvidence": {
+        "mayOneNation": 20,
+        "juneOneNation": 28,
+        "fullMonthlyCompositionsAvailable": false,
+        "exactMonthlySampleSizesAvailable": false
+      },
+      "dependencyCheck": "The published result is an average of the May and June Victorian subsamples. Treat the combined release as one sample family; do not add partly reported monthly components as separate polls.",
+      "sourceUrl": "https://www.theage.com.au/politics/victoria/end-of-days-labor-s-own-supporters-say-time-s-up-for-allan-government-20260614-p606m1.html",
+      "structuredCrossCheckUrl": "https://plainpolitics.com.au/data/polls-victoria.json",
+      "sourceTier": "publisher-primary-report-awaiting-pollster-methodology"
     },
     {
       "id": "resolve-vic-2026-aug",
@@ -50,7 +109,14 @@
       "fieldworkEnd": "2026-08-15",
       "sampleSize": 1000,
       "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
-      "reportedPrimaryVote": {"alp": 25, "coalition": 27, "oneNation": 23, "greens": 12, "independents": 7, "otherParties": 6},
+      "reportedPrimaryVote": {
+        "alp": 25,
+        "coalition": 27,
+        "oneNation": 23,
+        "greens": 12,
+        "independents": 7,
+        "otherParties": 6
+      },
       "modelEligible": false
     }
   ],
