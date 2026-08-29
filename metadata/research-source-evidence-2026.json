@@ -80,7 +80,7 @@
       "publicationDate": "2026-08-09",
       "pollPublicationDate": "2026-08-09",
       "proposedModelPollId": "yougov_common_threads_mrp_2026-07",
-      "sourceTier": "primary_methodology_secondary_topline",
+      "sourceTier": "reputable_secondary",
       "verificationStatus": "primary-methodology-captured-secondary-topline-awaiting-primary-results",
       "leadershipRegime": "Allan-Wilson",
       "dependencyPolicy": "The statewide topline and seat projection are outputs of the same YouGov/Common Threads survey/model family. They must never be counted as independent polling observations. The seat projection is comparison evidence unless separately validated out of sample.",
@@ -100,7 +100,8 @@
         "primaryMethodologyFieldworkEnd": "2026-07-09",
         "secondaryReportedFieldworkEnd": "2026-07-10",
         "policy": "Preserve the discrepancy explicitly; do not alter the staged fieldwork end or admit the record to the model until reviewed."
-      }
+      },
+      "methodologySourceTier": "primary_pollster"
     }
   ]
 }
