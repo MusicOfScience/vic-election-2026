@@ -35,3 +35,19 @@ test("RedBridge promotion preview is complete but still requires human acceptanc
   assert.equal(audit.proposedChanges.pollEvent.effective_sample_size, 745);
   assert.equal(audit.proposedChanges.pollEvent.publication_date, "2026-08-03");
 });
+
+
+test("Freshwater workbooks are primary parsed evidence but remain quarantined", () => {
+  const freshwater = primary.records.filter((record) => record.pollster === "Freshwater Strategy");
+  assert.equal(freshwater.length, 3);
+  assert.deepEqual(freshwater.map((record) => record.sampleSize), [1030, 1062, 1020]);
+  assert.ok(freshwater.every((record) => record.sourceTier === "primary_pollster"));
+  assert.ok(freshwater.every((record) => record.verificationStatus === "primary-workbook-parsed-awaiting-human-review"));
+  assert.ok(freshwater.every((record) => record.status === "quarantined-awaiting-review" && record.automaticPromotion === false));
+  assert.ok(freshwater.every((record) => Math.abs(Object.values(record.primaryVote).reduce((sum, value) => sum + value, 0) - 100) < 0.01));
+  const february = freshwater.find((record) => record.proposedModelPollId === "freshwater_2026-02");
+  assert.equal(february.primaryVote.otherParties, 9.8911);
+  const august = freshwater.find((record) => record.proposedModelPollId === "freshwater_2026-08");
+  assert.equal(august.pollPublicationDate, "2026-08-04");
+  assert.deepEqual(august.primaryVoteRounded, { alp: 25, coalition: 30, oneNation: 22, greens: 14, otherParties: 9 });
+});
