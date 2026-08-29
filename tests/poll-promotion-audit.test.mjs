@@ -8,6 +8,7 @@ const manual = JSON.parse(readFileSync(resolve("metadata/manual-source-evidence-
 const research = JSON.parse(readFileSync(resolve("metadata/research-source-evidence-2026.json"), "utf8"));
 const demos = manual.records[0];
 const resolvePoll = research.records[0];
+const yougov = research.records.find((record) => record.pollster === "YouGov");
 
 test("DemosAU preview maps the complete primary vote without writing model inputs", () => {
   const rows = proposedEstimateRows(demos);
@@ -40,6 +41,16 @@ test("Resolve remains blocked pending primary reconciliation and canonical publi
   assert.ok(audit.blockers.includes("primary-source-reconciliation-or-reviewed-exception-required"));
   assert.ok(audit.blockers.includes("canonical-poll-publication-date-required"));
   assert.equal(audit.primaryVoteTotal, 100);
+});
+
+test("secondary evidence stays blocked even when its publication date is known", () => {
+  assert.ok(yougov);
+  const audit = auditPollPromotion(yougov, { modelEvents: [], acceptedPolls: [] });
+  assert.equal(audit.primaryVoteTotal, 100);
+  assert.ok(!audit.blockers.includes("canonical-poll-publication-date-required"));
+  assert.ok(audit.blockers.includes("primary-source-reconciliation-or-reviewed-exception-required"));
+  assert.ok(audit.blockers.includes("human-evidence-acceptance-required"));
+  assert.equal(audit.canPromoteNow, false);
 });
 
 test("accepted evidence still requires a separate model-eligibility decision", () => {

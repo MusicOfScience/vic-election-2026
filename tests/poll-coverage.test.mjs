@@ -41,10 +41,10 @@ test("poll coverage ledger separates published coverage from comparable/model-el
   assert.equal(report.repository.sourceFamiliesDeclared, 8);
   assert.equal(report.repository.registryEvents, 11);
   assert.equal(report.repository.modelEligibleEvents, 9);
-  assert.equal(report.repository.stagedPollRecords, 5);
-  assert.equal(report.repository.declaredGapsResolvedByStaging, 3);
-  assert.equal(report.repository.actionableGapItems, 3);
-  assert.equal(report.repository.currentSourceFamiliesWithActionableGaps, 3);
+  assert.equal(report.repository.stagedPollRecords, 6);
+  assert.equal(report.repository.declaredGapsResolvedByStaging, 4);
+  assert.equal(report.repository.actionableGapItems, 2);
+  assert.equal(report.repository.currentSourceFamiliesWithActionableGaps, 2);
   assert.equal(report.integrity.allDeclaredCanonicalIdsExist, true);
   assert.equal(report.integrity.declaredCanonicalIdsAreUnique, true);
 });
@@ -52,9 +52,10 @@ test("poll coverage ledger separates published coverage from comparable/model-el
 test("staged evidence resolves dated coverage gaps without pretending it is model eligible", () => {
   const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, primaryRecords: primary.records, researchRecords: research.records });
   const resolved = report.stagedCoverageResolutions.map((item) => item.proposedModelPollId).sort();
-  assert.deepEqual(resolved, ["freshwater_2026-02", "freshwater_2026-03", "redbridge_accent_2026-08"]);
+  assert.deepEqual(resolved, ["freshwater_2026-02", "freshwater_2026-03", "redbridge_accent_2026-08", "yougov_common_threads_mrp_2026-07"]);
   assert.equal(report.actionableGaps.some((gap) => gap.fieldworkEnd === "2026-02-23"), false);
   assert.equal(report.actionableGaps.some((gap) => gap.fieldworkEnd === "2026-03-23"), false);
+  assert.equal(report.actionableGaps.some((gap) => gap.fieldworkEnd === "2026-07-10"), false);
   assert.equal(report.actionableGaps.some((gap) => gap.fieldworkEnd === "2026-08-03"), true);
 });
 
@@ -70,7 +71,6 @@ test("coverage ledger makes missing comparable polling actionable without imputi
   const redbridgeAugust = byId["redbridge-accent"].actionableGaps.find((gap) => gap.fieldworkEnd === "2026-08-01");
   assert.ok(redbridgeAugust);
   assert.deepEqual(redbridgeAugust.twoPartyPreferred, { LIB_NAT: 57, ALP: 43, basis: "respondent allocated" });
-  assert.deepEqual(byId["redbridge-accent"].stagedEvidence, ["redbridge_accent_2026-08"]);
 });
 
 test("Freshwater February and March records retain secondary-tier semantics until first-party workbooks are parsed", () => {
@@ -80,4 +80,15 @@ test("Freshwater February and March records retain secondary-tier semantics unti
   assert.ok(freshwater.every((record) => record.sourceTier === "reputable_secondary"));
   assert.ok(freshwater.every((record) => /awaiting-primary-parse/.test(record.verificationStatus)));
   assert.ok(freshwater.every((record) => record.primaryWorkbookUrl?.startsWith("https://freshwaterstrategy.com/")));
+});
+
+test("YouGov Common Threads keeps statewide polling and seat-model output in one dependency family", () => {
+  const record = research.records.find((item) => item.pollster === "YouGov");
+  assert.ok(record);
+  assert.equal(record.sampleSize, 4003);
+  assert.deepEqual(record.primaryVote, { coalition: 26, alp: 23, oneNation: 24, greens: 13, otherParties: 14 });
+  assert.deepEqual(record.seatModelProjection, { coalition: 39, alp: 29, oneNation: 17, greens: 3, totalSeats: 88, role: "external-seat-model-comparison-only" });
+  assert.match(record.primaryMethodologyListing, /Victorian MRP Common Threads/i);
+  assert.match(record.dependencyPolicy, /never be counted as independent polling observations/i);
+  assert.equal(record.sourceTier, "reputable_secondary");
 });

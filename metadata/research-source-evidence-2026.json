@@ -76,6 +76,34 @@
       "sourceTier": "reputable_secondary",
       "verificationStatus": "secondary-topline-primary-workbook-linked-awaiting-primary-parse",
       "captureNotes": "Freshwater's own page links the full-results workbook. Poll Bludger reports n=1,062, the complete five-way composition and respondent-allocated 52-48 Coalition-Labor result. Keep secondary-tier semantics until the linked first-party workbook is parsed and reconciled."
+    },
+    {
+      "id": "yougov-common-threads-vic-mrp-2026-06-16-07-10-secondary",
+      "sourceId": "yougov-common-threads-victoria-mrp",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "YouGov",
+      "commissioner": "Common Threads",
+      "fieldworkStart": "2026-06-16",
+      "fieldworkEnd": "2026-07-10",
+      "sampleSize": 4003,
+      "method": "multilevel regression with poststratification (MRP)",
+      "geography": "Victoria",
+      "primaryVote": {"coalition": 26, "alp": 23, "oneNation": 24, "greens": 13, "otherParties": 14},
+      "twoPartyPreferred": {"coalition": 53.8, "alp": 46.2, "basis": "published MRP estimate"},
+      "seatModelProjection": {"coalition": 39, "alp": 29, "oneNation": 17, "greens": 3, "totalSeats": 88, "role": "external-seat-model-comparison-only"},
+      "sourceUrl": "https://www.pollbludger.net/2026/08/10/victorian-election-minus-16-weeks/",
+      "primaryMethodologyIndexUrl": "https://yougov.com/about/methodology/australian-polling-council",
+      "primaryMethodologyListing": "Victorian MRP Common Threads 09 Aug 2026",
+      "publicationDate": "2026-08-09",
+      "pollPublicationDate": "2026-08-09",
+      "proposedModelPollId": "yougov_common_threads_mrp_2026-07",
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "secondary-topline-primary-methodology-listed-awaiting-primary-methodology-capture",
+      "leadershipRegime": "Allan-Wilson",
+      "dependencyPolicy": "The statewide topline and seat projection are outputs of the same YouGov/Common Threads survey/model family. They must never be counted as independent polling observations. The seat projection is comparison evidence unless separately validated out of sample.",
+      "captureNotes": "YouGov's Australian Polling Council methodology index lists a dedicated Victorian MRP Common Threads methodology statement dated 9 August 2026. Poll Bludger reports fieldwork 16 June-10 July, the statewide composition, 53.8-46.2 Coalition-Labor estimate and 39/29/17/3 median seat projection. Retain secondary-tier semantics until the direct methodology statement/report is captured and reviewed."
     }
   ]
 }
