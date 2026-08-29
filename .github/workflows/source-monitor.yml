@@ -34,6 +34,9 @@ jobs:
       - name: Discover structured candidate and poll records
         if: always()
         run: node scripts/discover-live-source-records.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
+      - name: Build human review manifest
+        if: always()
+        run: node scripts/build-discovery-review-manifest.mjs --input source-discovery-quarantine.json --output discovery-review-manifest.json
       - name: Validate candidate registry
         if: always()
         run: node scripts/validate-candidates.mjs
@@ -46,4 +49,5 @@ jobs:
             live-source-report.json
             source-discovery-report.json
             source-discovery-quarantine.json
+            discovery-review-manifest.json
           retention-days: 90
