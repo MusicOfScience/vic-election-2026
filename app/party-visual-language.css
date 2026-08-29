@@ -26,6 +26,13 @@ svg [fill="#159867"] { fill: var(--party-greens) !important; }
 svg [fill="#6e4da0"] { fill: var(--party-one-nation) !important; }
 svg [fill="#d19b2a"], svg [fill="#7d6a92"] { fill: var(--party-other-independent) !important; }
 
+/* The existing chamber key uses inline legacy colours; preserve its order while applying the canonical palette. */
+.arc-party-legend span:nth-child(1) i { background-color: var(--party-labor) !important; }
+.arc-party-legend span:nth-child(2) i { background-color: var(--party-coalition) !important; }
+.arc-party-legend span:nth-child(3) i { background-color: var(--party-one-nation) !important; }
+.arc-party-legend span:nth-child(4) i { background-color: var(--party-greens) !important; }
+.arc-party-legend span:nth-child(5) i { background-color: var(--party-other-independent) !important; }
+
 .party-visual-key {
   position: fixed;
   right: 14px;
