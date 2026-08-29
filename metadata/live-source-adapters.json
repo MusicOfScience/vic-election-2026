@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "policy": "observe-validate-quarantine-review-promote",
   "automaticPromotion": false,
   "adapters": [
@@ -80,6 +80,24 @@
           "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
           "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november"
         ]
+      }
+    },
+    {
+      "id": "demosau-victoria-state-polls",
+      "publisher": "DemosAU",
+      "url": "https://demosau.com/news/",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "discovery-only-manual-review",
+      "discovery": {
+        "enabled": false,
+        "kind": "poll-index",
+        "extractor": "demosau-victoria-poll-index",
+        "match": "Victoria poll",
+        "seedUrls": [
+          "https://demosau.com/news/coalition-holds-election-winning-lead-in-latest-victoria-poll/"
+        ],
+        "policy": "dedicated-source-extractor-quarantines-untracked-state-polls"
       }
     },
     {
