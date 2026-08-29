@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "stagingSourceId": "corroborated-secondary-evidence",
+  "policy": "Reputable secondary reporting may be staged when primary pollster/publisher evidence has not yet been captured. Such records remain quarantined, must disclose their evidence tier, and cannot become model inputs without primary-source reconciliation or an explicit reviewed exception.",
+  "records": [
+    {
+      "id": "resolve-strategic-vic-2026-08-09-15-secondary",
+      "sourceId": "resolve-strategic-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Resolve Strategic",
+      "commissioner": "Nine Newspapers / The Age",
+      "fieldworkStart": "2026-08-09",
+      "fieldworkEnd": "2026-08-15",
+      "sampleSize": 1000,
+      "method": "Resolve Strategic Victorian state voting-intention poll; primary methodology capture pending",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 27,
+        "alp": 25,
+        "oneNation": 23,
+        "greens": 12,
+        "independents": 7,
+        "otherParties": 6
+      },
+      "twoPartyPreferred": {
+        "coalition": 53,
+        "alp": 47,
+        "basis": "respondent preferences"
+      },
+      "sourceUrl": "https://theconversation.com/victorian-polls-have-coalition-leading-labor-by-narrow-to-large-margins-289893",
+      "publicationDate": "2026-08-21",
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "corroborated-secondary-awaiting-primary",
+      "corroboratingSourceUrls": [
+        "https://www.pollbludger.net/2026/08/17/demosau-labor-23-coalition-32-one-nation-22-in-victoria/",
+        "https://theconversation.com/victorian-polls-have-coalition-leading-labor-by-narrow-to-large-margins-289893"
+      ],
+      "captureNotes": "The Conversation reports the full primary composition, fieldwork and sample and identifies The Age/Resolve as the underlying poll; Poll Bludger independently reports the same top lines and sample. Retain as secondary evidence until the primary Resolve/The Age material is captured or a reviewed exception is made."
+    }
+  ]
+}

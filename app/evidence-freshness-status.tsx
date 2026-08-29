@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { CircleAlert } from "lucide-react";
 import { pollSeries } from "./poll-data.generated";
 import manualEvidence from "../metadata/manual-source-evidence-2026.json";
+import researchEvidence from "../metadata/research-source-evidence-2026.json";
 
 const subscribe = () => () => {};
 const clientSnapshot = () => true;
@@ -19,9 +20,13 @@ export function EvidenceFreshnessStatus() {
   if (!isClient) return null;
 
   const modelEnd = pollSeries.at(-1)?.fieldworkEnd ?? null;
-  const staged = [...manualEvidence.records]
+  const stagedRecords = [
+    ...manualEvidence.records.map((record) => ({ ...record, evidenceBasis: "primary-source capture" })),
+    ...researchEvidence.records.map((record) => ({ ...record, evidenceBasis: "corroborated secondary reporting; primary capture pending" })),
+  ];
+  const staged = stagedRecords
     .filter((record) => record.kind === "poll" && record.status === "quarantined-awaiting-review")
-    .sort((a, b) => b.fieldworkEnd.localeCompare(a.fieldworkEnd))[0];
+    .sort((a, b) => b.fieldworkEnd.localeCompare(a.fieldworkEnd) || b.publicationDate.localeCompare(a.publicationDate))[0];
   const newerEvidence = Boolean(staged && modelEnd && staged.fieldworkEnd > modelEnd);
   if (!staged || !newerEvidence || !modelEnd) return null;
 
@@ -43,7 +48,7 @@ export function EvidenceFreshnessStatus() {
         <CircleAlert size={18} />
         <div>
           <strong>Why the polling freshness gate is closed</strong>
-          <p>{staged.pollster} evidence ending {readableDate(staged.fieldworkEnd)} is newer than the admitted model polling ending {readableDate(modelEnd)}. It has been captured from the cited primary source and staged for review; it cannot refresh the forecast until evidence acceptance and model eligibility are explicitly approved.</p>
+          <p>{staged.pollster} evidence ending {readableDate(staged.fieldworkEnd)} is newer than the admitted model polling ending {readableDate(modelEnd)}. Its current evidence basis is {staged.evidenceBasis}; it remains staged for review and cannot refresh the forecast until evidence acceptance and model eligibility are explicitly approved.</p>
         </div>
       </div>,
       releaseTarget,
