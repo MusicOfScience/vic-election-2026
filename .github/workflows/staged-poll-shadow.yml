@@ -1,0 +1,36 @@
+name: Staged poll shadow sensitivity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "metadata/manual-source-evidence-2026.json"
+      - "metadata/research-source-evidence-2026.json"
+      - "model/data/processed/poll_events_seed.csv"
+      - "model/data/processed/poll_estimates_seed.csv"
+      - "model/config/experimental_forecast.yml"
+      - "model/src/vicforecast/polling/**"
+      - "model/scripts/run_staged_poll_shadow.py"
+      - ".github/workflows/staged-poll-shadow.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -e './model'
+      - name: Run in-memory staged-poll sensitivity
+        run: python model/scripts/run_staged_poll_shadow.py --repo-root . --output staged-poll-shadow-sensitivity.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staged-poll-shadow-sensitivity
+          path: staged-poll-shadow-sensitivity.json
+          retention-days: 90
