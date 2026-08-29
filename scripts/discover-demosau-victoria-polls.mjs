@@ -14,12 +14,21 @@ function arg(name, fallback) {
 function sha256(value) { return createHash("sha256").update(value).digest("hex"); }
 function clean(value) { return canonicaliseHtml(value ?? "").replace(/\s+/g, " ").trim(); }
 
-function extractLinks(html, baseUrl) {
+export function extractLinks(value, baseUrl) {
   const links = [];
-  for (const match of html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)) {
+  for (const match of String(value ?? "").matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)) {
     try { links.push({ url: new URL(match[1], baseUrl).href, text: clean(match[2]) }); } catch {}
   }
-  return links;
+  for (const match of String(value ?? "").matchAll(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g)) {
+    try { links.push({ url: new URL(match[2], baseUrl).href, text: clean(match[1]) }); } catch {}
+  }
+  return [...new Map(links.map((item) => [item.url, item])).values()];
+}
+
+export function readerProxyUrl(url) {
+  const parsed = new URL(url);
+  if (parsed.protocol !== "https:" || parsed.hostname !== "demosau.com") throw new Error("reader fallback is restricted to demosau.com HTTPS URLs");
+  return `https://r.jina.ai/${url}`;
 }
 
 export function normaliseDemosText(value) {
@@ -99,14 +108,30 @@ export function extractDemosAuVictoriaPoll(value, sourceUrl) {
   };
 }
 
-async function fetchPage(url) {
+async function request(url) {
   const response = await fetch(url, {
     headers: { "user-agent": "vic-election-forecast-discovery/1.0 (+https://github.com/MusicOfScience/vic-election-2026)" },
     redirect: "follow",
     signal: AbortSignal.timeout(20_000),
   });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return { html: await response.text(), finalUrl: response.url };
+  const body = await response.text();
+  return { response, body };
+}
+
+async function fetchPage(sourceUrl) {
+  let directError = null;
+  try {
+    const { response, body } = await request(sourceUrl);
+    if (response.ok) return { body, sourceUrl, retrievalTransport: "direct", retrievalUrl: response.url };
+    directError = `HTTP ${response.status}`;
+  } catch (error) {
+    directError = error instanceof Error ? error.message : String(error);
+  }
+
+  const fallbackUrl = readerProxyUrl(sourceUrl);
+  const { response, body } = await request(fallbackUrl);
+  if (!response.ok) throw new Error(`direct ${directError}; reader fallback HTTP ${response.status}`);
+  return { body, sourceUrl, retrievalTransport: "r.jina.ai-reader", retrievalUrl: fallbackUrl, directError };
 }
 
 function parsePollSeed(text) {
@@ -161,23 +186,29 @@ async function main() {
   const quarantine = JSON.parse(readFileSync(quarantinePath, "utf8"));
   const polls = parsePollSeed(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
   const urls = new Set(adapter.discovery.seedUrls ?? []);
-  let indexError = null;
+  let indexWarning = null;
   try {
     const index = await fetchPage(adapter.url);
-    for (const link of extractLinks(index.html, index.finalUrl)) {
+    for (const link of extractLinks(index.body, index.sourceUrl)) {
       if (/\/news\//i.test(link.url) && /victoria|victorian/i.test(link.text) && /poll|coalition|labor|election/i.test(link.text)) urls.add(link.url);
     }
-  } catch (error) { indexError = error instanceof Error ? error.message : String(error); }
+  } catch (error) { indexWarning = error instanceof Error ? error.message : String(error); }
 
   const extracted = [];
   const errors = [];
+  const transports = {};
   for (const url of [...urls].slice(0, 10)) {
     try {
       const page = await fetchPage(url);
-      const canonical = canonicaliseHtml(page.html);
-      const record = extractDemosAuVictoriaPoll(canonical, page.finalUrl);
-      if (record) extracted.push(record);
-      else errors.push(`${page.finalUrl}: parse-miss ${JSON.stringify(diagnoseDemosPoll(canonical))}`);
+      const canonical = canonicaliseHtml(page.body);
+      const record = extractDemosAuVictoriaPoll(canonical, page.sourceUrl);
+      transports[page.retrievalTransport] = (transports[page.retrievalTransport] ?? 0) + 1;
+      if (record) {
+        if (page.retrievalTransport !== "direct") record.retrievalTransport = page.retrievalTransport;
+        extracted.push(record);
+      } else {
+        errors.push(`${page.sourceUrl}: parse-miss ${JSON.stringify(diagnoseDemosPoll(canonical))}`);
+      }
     } catch (error) { errors.push(`${url}: ${error instanceof Error ? error.message : String(error)}`); }
   }
 
@@ -198,7 +229,8 @@ async function main() {
     status: extracted.length ? "ok" : "extract-failed",
     extracted: extracted.length,
     added,
-    ...(indexError ? { indexWarning: indexError } : {}),
+    retrievalTransports: transports,
+    ...(indexWarning ? { indexWarning } : {}),
     ...(errors.length ? { errors } : {}),
   });
   recompute(report);
