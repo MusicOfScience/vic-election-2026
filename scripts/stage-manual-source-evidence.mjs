@@ -10,11 +10,15 @@ function readJson(path) { return JSON.parse(readFileSync(resolve(path), "utf8"))
 function writeJson(path, value) { writeFileSync(resolve(path), `${JSON.stringify(value, null, 2)}\n`); }
 
 export function stageManualEvidence(report, quarantine, manual) {
+  const stagingSourceId = manual.stagingSourceId ?? "manual-blocked-source-evidence";
   const existing = new Set((report.records ?? []).map((record) => record.id));
   const additions = [];
   for (const record of manual.records ?? []) {
-    if (!record.id || !record.sourceId || !record.sourceUrl || !record.kind) throw new Error("manual evidence: incomplete record");
-    if (record.status !== "quarantined-awaiting-review" || record.automaticPromotion !== false) throw new Error(`manual evidence: ${record.id} must remain quarantined with automaticPromotion=false`);
+    if (!record.id || !record.sourceId || !record.sourceUrl || !record.kind) throw new Error("staged evidence: incomplete record");
+    if (record.status !== "quarantined-awaiting-review" || record.automaticPromotion !== false) throw new Error(`staged evidence: ${record.id} must remain quarantined with automaticPromotion=false`);
+    if (stagingSourceId === "corroborated-secondary-evidence" && (record.sourceTier !== "reputable_secondary" || !String(record.verificationStatus ?? "").includes("awaiting-primary"))) {
+      throw new Error(`staged evidence: ${record.id} secondary evidence must disclose reputable_secondary tier and awaiting-primary verification status`);
+    }
     if (existing.has(record.id)) continue;
     report.records.push(record);
     quarantine.records.push(record);
@@ -23,7 +27,7 @@ export function stageManualEvidence(report, quarantine, manual) {
   }
   if (additions.length) {
     report.observations.push({
-      sourceId: "manual-blocked-source-evidence",
+      sourceId: stagingSourceId,
       status: "manual-evidence-staged",
       extracted: additions.length,
       added: additions.length,
@@ -33,7 +37,7 @@ export function stageManualEvidence(report, quarantine, manual) {
   const records = report.records ?? [];
   const observations = report.observations ?? [];
   report.summary = {
-    sourcesScanned: observations.filter((observation) => observation.sourceId !== "manual-blocked-source-evidence").length,
+    sourcesScanned: observations.filter((observation) => observation.status !== "manual-evidence-staged").length,
     recordsExtracted: records.length,
     candidates: records.filter((record) => record.kind === "candidate").length,
     polls: records.filter((record) => record.kind?.startsWith("poll")).length,
@@ -55,7 +59,7 @@ function main() {
   const additions = stageManualEvidence(report, quarantine, manual);
   writeJson(reportPath, report);
   writeJson(quarantinePath, quarantine);
-  console.log(`Manual evidence staging: ${additions.length} quarantined record(s) added; automatic promotion disabled.`);
+  console.log(`Evidence staging (${manual.stagingSourceId ?? "manual-blocked-source-evidence"}): ${additions.length} quarantined record(s) added; automatic promotion disabled.`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === resolve(new URL(import.meta.url).pathname)) main();
