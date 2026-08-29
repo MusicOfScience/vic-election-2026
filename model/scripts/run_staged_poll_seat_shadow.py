@@ -8,6 +8,7 @@ registry and once with DemosAU + Resolve temporarily injected in memory.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 from unittest.mock import patch
@@ -17,6 +18,42 @@ import yaml
 
 from run_staged_poll_shadow import _estimate_rows, _event_row
 from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
+
+
+SHADOW_INPUT_PATHS = (
+    "metadata/manual-source-evidence-2026.json",
+    "metadata/research-source-evidence-2026.json",
+    "model/config/experimental_forecast.yml",
+    "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz",
+    "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz",
+    "model/data/processed/district_region_membership_2026.csv",
+    "model/data/processed/poll_estimates_seed.csv",
+    "model/data/processed/poll_events_seed.csv",
+    "model/data/processed/upper_house_region_poll_2026-08.csv",
+    "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
+    "model/data/processed/vec_enrolment_district_2026-06.csv",
+    "model/data/processed/vec_enrolment_region_2026-06.csv",
+    "model/data/seed/recent_state_by_elections.json",
+    "model/scripts/run_staged_poll_seat_shadow.py",
+    "model/scripts/run_staged_poll_shadow.py",
+    "model/src/vicforecast/forecast_2026.py",
+    "model/src/vicforecast/polling/latent.py",
+    "model/src/vicforecast/polling/registry.py",
+)
+
+
+def _input_fingerprint(repo_root: Path) -> dict:
+    digest = hashlib.sha256()
+    files = {}
+    for relative in SHADOW_INPUT_PATHS:
+        payload = (repo_root / relative).read_bytes()
+        sha = hashlib.sha256(payload).hexdigest()
+        files[relative] = sha
+        digest.update(relative.encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(payload)
+        digest.update(b"\0")
+    return {"combinedSha256": digest.hexdigest(), "files": files}
 
 
 def _load_staged(repo_root: Path) -> list[dict]:
@@ -183,7 +220,27 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
     canonical = run_experimental_forecast(model_root, simulations=simulations, seed=seed)
     events, estimates = _scenario_registry(repo_root)
     shadow = _run_with_registry(model_root, events, estimates, simulations=simulations, seed=seed)
-    return build_impact_report(canonical, shadow, simulations=simulations, seed=seed, as_of=str(config["as_of"]))
+    report = build_impact_report(canonical, shadow, simulations=simulations, seed=seed, as_of=str(config["as_of"]))
+    staged = _load_staged(repo_root)
+    report["scenario"] = {
+        "id": "plus-demosau-resolve-august",
+        "label": "Two newest staged August polls",
+        "evidence": [
+            {
+                "id": record["id"],
+                "pollster": record["pollster"],
+                "fieldworkStart": record["fieldworkStart"],
+                "fieldworkEnd": record["fieldworkEnd"],
+                "sourceTier": record.get("sourceTier", "primary_pollster"),
+                "verificationStatus": record.get("verificationStatus", "primary-source-captured-awaiting-review"),
+                "status": record["status"],
+                "sourceUrl": record["sourceUrl"],
+            }
+            for record in staged
+        ],
+    }
+    report["inputFingerprint"] = _input_fingerprint(repo_root)
+    return report
 
 
 def main() -> None:
@@ -191,13 +248,19 @@ def main() -> None:
     parser.add_argument("--repo-root", default=Path(__file__).resolve().parents[2])
     parser.add_argument("--output", default="staged-poll-seat-shadow.json")
     parser.add_argument("--simulations", type=int, default=2000)
+    parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     repo_root = Path(args.repo_root).resolve()
     report = run_shadow(repo_root, simulations=args.simulations)
     output = Path(args.output)
     if not output.is_absolute():
         output = repo_root / output
-    output.write_text(json.dumps(report, indent=2) + "\n")
+    rendered = json.dumps(report, indent=2) + "\n"
+    if args.check:
+        if not output.exists() or output.read_text() != rendered:
+            raise SystemExit(f"staged poll seat shadow is stale: regenerate {output}")
+    else:
+        output.write_text(rendered)
     assembly = report["assembly"]
     changes = len(assembly["districts"]["modalWinnerChanges"])
     print(f"Full-election shadow: hung {assembly['deltaHungProbability']:+.3f}; modal seat changes={changes}; canonical files untouched.")

@@ -33,3 +33,10 @@ test("analyst evidence dialog is mobile contained rather than a floating strap",
   assert.match(css, /max-height: calc\(100dvh - 16px\)/);
   assert.doesNotMatch(css, /position:\s*fixed/);
 });
+
+test("analyst view exposes the governed full-election shadow without presenting it as the forecast", () => {
+  assert.match(component, /What if the two newest staged polls were admitted\?/);
+  assert.match(component, /Shadow only/);
+  assert.match(component, /it does not accept either poll, change the published forecast or open the production gate/);
+  assert.match(component, /Most fragile calls/);
+});

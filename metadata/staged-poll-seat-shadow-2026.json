@@ -848,10 +848,10 @@
     ]
   },
   "inputFingerprint": {
-    "combinedSha256": "06950d06d6f20426d1f98f95bdecefcf49d7e18fe29e0783467710870dcdf1d9",
+    "combinedSha256": "57d0207098b066c4395df526f5cd4a3b5724160806198a8fcd758dcbab47bf8f",
     "files": {
-      "metadata/manual-source-evidence-2026.json": "5f2b698ddd246cb03f958eeb4a24c4c333d63b542ec6cb38127b921f05344c9c",
-      "metadata/research-source-evidence-2026.json": "c12203d352ac4c50eaa7666316ddf7eefd91a86e18ba3fc9db188f6bfd9c349d",
+      "metadata/manual-source-evidence-2026.json": "06a82229ad96f77a4af6628e6bc2bb283f6cb35ab719e9d50829d74aa0d71fd3",
+      "metadata/research-source-evidence-2026.json": "25eda5d8d58b5ddc229fac11bea102826debb9919f77e19246a90f7fc8811c2b",
       "model/config/experimental_forecast.yml": "57fbc079258a13b600afc6dbd244c5ceaca5219ccc5697e0ffaba2b7145ae0b0",
       "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz": "1b65fc4f865925f0f8abdfa6adb12ee674357c0867f5f7a2b8bc46d56e8f223a",
       "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz": "94548a20f13b47707adb97004bca8059b30b95512d9dec17ae2b44c53d171549",
@@ -864,8 +864,8 @@
       "model/data/processed/vec_enrolment_region_2026-06.csv": "1c0ae644efb45cd14044b5b69528cb3af7cd15166d1dcaabd1763bd9e5087f85",
       "model/data/seed/recent_state_by_elections.json": "46e040ef205019ed565ac8df7386c956e36a529e31b407ee252552fcbaa8aad0",
       "model/scripts/run_staged_poll_seat_shadow.py": "ec550220f76a7f606c4f7806ade40a815d163cfbdadcddc12c07012796d7868f",
-      "model/scripts/run_staged_poll_shadow.py": "3283d31909cfab8a308a3ce8bbf9889667b6b43290f6dd19b3263b7fb202b73d",
-      "model/src/vicforecast/forecast_2026.py": "233b4b2605eb7954000eab831cfcdc2c4f3fd24526402a359d976e3c43f7fb18",
+      "model/scripts/run_staged_poll_shadow.py": "b2a243ccc64b9ad68220d4006fdfc30308aac5514a38a47efdae6c5d069ddf4d",
+      "model/src/vicforecast/forecast_2026.py": "2d55f6afac3d2762e1c46a3d22e883bbcf09d0ee2f72bbc5dfbc25f8439b0d66",
       "model/src/vicforecast/polling/latent.py": "9213398cbb946064b49f91c08e6cf4c63a0642c85c8b131ad8b21d4ad354da34",
       "model/src/vicforecast/polling/registry.py": "1bb58ef0d3703442eaa34f107cdf9ea69b680c5d2f7a19227fe00df03d5392e6"
     }

@@ -31,5 +31,6 @@ jobs:
       - run: python -m pytest model/tests
       - run: npm run candidates:validate
       - run: npm run psephology:validate
+      - run: npm run shadow:check
       - run: npm test
       - run: npm run lint
