@@ -22,8 +22,21 @@ function extractLinks(html, baseUrl) {
   return links;
 }
 
+export function normaliseDemosText(value) {
+  return String(value ?? "")
+    .replace(/&#(?:8211|x2013);|&ndash;|\u2013/gi, "-")
+    .replace(/&#(?:8212|x2014);|&mdash;|\u2014/gi, "-")
+    .replace(/&#(?:8216|8217|x2018|x2019);|&(?:lsquo|rsquo);|[\u2018\u2019]/gi, "'")
+    .replace(/&#(?:8220|8221|x201c|x201d);|&(?:ldquo|rdquo);|[\u201c\u201d]/gi, '"')
+    .replace(/&#(?:160|xa0);|&nbsp;|\u00a0/gi, " ")
+    .replace(/&#37;|&percnt;/gi, "%")
+    .replace(/&amp;/gi, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function dayFirstRange(text, fallbackYear = "2026") {
-  const match = text.match(/conducted\s+(?:from|between)\s+(\d{1,2})\s*(?:-|–|to)\s*(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)(?:\s+(20\d{2}))?/i);
+  const match = text.match(/conducted\s+(?:from|between)\s+(\d{1,2})\s*(?:-|to)\s*(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)(?:[ ,]+(20\d{2}))?/i);
   if (!match) return null;
   const year = match[4] ?? fallbackYear;
   const month = MONTHS[match[3].toLowerCase()];
@@ -35,16 +48,42 @@ function matchNumber(text, pattern) {
   return match ? Number(match[1].replaceAll(",", "")) : null;
 }
 
-export function extractDemosAuVictoriaPoll(text, sourceUrl) {
+function extractFields(value) {
+  const text = normaliseDemosText(value);
   const fieldwork = dayFirstRange(text);
-  const sampleSize = matchNumber(text, /poll of\s+([\d,]+)\s+Victorians/i) ?? matchNumber(text, /poll of\s+([\d,]+)\s+voters/i);
-  const coalition = matchNumber(text, /Coalition[^.]{0,180}?(?:primary vote of|on primary votes?\s*\(?)\s*(\d+(?:\.\d+)?)%/i);
-  const alp = matchNumber(text, /Labor[^.]{0,120}?(?:to|on)\s+(\d+(?:\.\d+)?)%/i);
-  const oneNation = matchNumber(text, /One Nation[^.]{0,80}?(?:is|on|second on)\s+(\d+(?:\.\d+)?)%/i);
-  const greens = matchNumber(text, /(?:The\s+)?Greens[^.]{0,60}?\s+(\d+(?:\.\d+)?)%/i);
-  const otherParties = matchNumber(text, /Others?\s*(\d+(?:\.\d+)?)%/i);
-  const tpp = text.match(/(?:Coalition\s+leads?\s+Labor|Coalition leads Labor to)\s+(\d+(?:\.\d+)?)%?\s*(?:to|-|–)\s*(\d+(?:\.\d+)?)%?/i);
-  if (!fieldwork || !sampleSize || coalition === null || alp === null || oneNation === null || greens === null) return null;
+  const sampleSize = matchNumber(text, /poll\s+of\s+([\d,]+)\s+(?:Victorians|voters)/i);
+  const coalition =
+    matchNumber(text, /(?:Liberal\/National\s+)?Coalition[^.]{0,220}?primary\s+vote(?:\s+of)?[^\d]{0,30}(\d+(?:\.\d+)?)\s*%/i) ??
+    matchNumber(text, /(?:Liberal\/National\s+)?Coalition[^.]{0,140}?(\d+(?:\.\d+)?)\s*%/i);
+  const alp =
+    matchNumber(text, /Labor[^.]{0,140}?(?:to|on|at)\s*(\d+(?:\.\d+)?)\s*%/i) ??
+    matchNumber(text, /Labor\s+(?:is\s+)?(\d+(?:\.\d+)?)\s*%/i);
+  const oneNation =
+    matchNumber(text, /One\s+Nation[^.]{0,100}?(?:is|on|at|second\s+on)\s*(\d+(?:\.\d+)?)\s*%/i) ??
+    matchNumber(text, /One\s+Nation\s+(\d+(?:\.\d+)?)\s*%/i);
+  const greens = matchNumber(text, /(?:The\s+)?Greens[^.]{0,80}?(\d+(?:\.\d+)?)\s*%/i);
+  const otherParties = matchNumber(text, /Others?\s*(\d+(?:\.\d+)?)\s*%/i);
+  const tpp = text.match(/Coalition\s+leads?\s+Labor\s+(\d+(?:\.\d+)?)\s*%?\s*(?:to|-)\s*(\d+(?:\.\d+)?)\s*%?/i);
+  return { text, fieldwork, sampleSize, coalition, alp, oneNation, greens, otherParties, tpp };
+}
+
+export function diagnoseDemosPoll(value) {
+  const fields = extractFields(value);
+  return {
+    fieldwork: Boolean(fields.fieldwork),
+    sampleSize: fields.sampleSize !== null,
+    coalition: fields.coalition !== null,
+    alp: fields.alp !== null,
+    oneNation: fields.oneNation !== null,
+    greens: fields.greens !== null,
+    otherParties: fields.otherParties !== null,
+    twoPartyPreferred: Boolean(fields.tpp),
+  };
+}
+
+export function extractDemosAuVictoriaPoll(value, sourceUrl) {
+  const { fieldwork, sampleSize, coalition, alp, oneNation, greens, otherParties, tpp } = extractFields(value);
+  if (!fieldwork || sampleSize === null || coalition === null || alp === null || oneNation === null || greens === null) return null;
   return {
     kind: "poll",
     pollster: "DemosAU",
@@ -135,8 +174,10 @@ async function main() {
   for (const url of [...urls].slice(0, 10)) {
     try {
       const page = await fetchPage(url);
-      const record = extractDemosAuVictoriaPoll(canonicaliseHtml(page.html), page.finalUrl);
+      const canonical = canonicaliseHtml(page.html);
+      const record = extractDemosAuVictoriaPoll(canonical, page.finalUrl);
       if (record) extracted.push(record);
+      else errors.push(`${page.finalUrl}: parse-miss ${JSON.stringify(diagnoseDemosPoll(canonical))}`);
     } catch (error) { errors.push(`${url}: ${error instanceof Error ? error.message : String(error)}`); }
   }
 
