@@ -65,6 +65,8 @@ export function buildEvidenceFreshness({ modelPolls, acceptedPolls, stagedPolls,
       pollster: latestStaged.pollster,
       evidenceId: latestStaged.id,
       status: latestStaged.status,
+      sourceTier: latestStaged.sourceTier ?? "primary-or-manual-capture",
+      verificationStatus: latestStaged.verificationStatus ?? "awaiting-review",
     } : null,
     newestEvidenceDate,
     newerEvidenceAwaitingReview: Boolean(stagedDate && (!modelDate || stagedDate > modelDate)),
@@ -78,7 +80,9 @@ function main() {
   const modelPolls = parseCsv(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
   const accepted = JSON.parse(readFileSync(resolve(root, "metadata/accepted-polls-2026.json"), "utf8"));
   const manual = JSON.parse(readFileSync(resolve(root, "metadata/manual-source-evidence-2026.json"), "utf8"));
-  const report = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls: manual.records ?? [], asOf });
+  const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
+  const stagedPolls = [...(manual.records ?? []), ...(research.records ?? [])];
+  const report = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, asOf });
   writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
   console.log(`Evidence freshness: model=${report.modelInput?.latestPublicationDate ?? "none"}; newest evidence=${report.newestEvidenceDate ?? "none"}; awaiting review=${report.newerEvidenceAwaitingReview}.`);
 }
