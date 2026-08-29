@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "policy": "Manual capture is permitted only when automated retrieval is blocked. Records remain quarantined and cannot alter model inputs without the normal evidence review and separate model-eligibility decision.",
+  "records": [
+    {
+      "id": "742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72",
+      "sourceId": "demosau-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "DemosAU",
+      "commissioner": "PremierNational",
+      "fieldworkStart": "2026-08-06",
+      "fieldworkEnd": "2026-08-11",
+      "sampleSize": 1007,
+      "method": "DemosAU / PremierNational state poll",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 32,
+        "alp": 23,
+        "oneNation": 22,
+        "greens": 13,
+        "otherParties": 10
+      },
+      "twoPartyPreferred": {
+        "coalition": 55,
+        "alp": 45
+      },
+      "sourceUrl": "https://demosau.com/news/coalition-holds-election-winning-lead-in-latest-victoria-poll/",
+      "publicationDate": "2026-08-15",
+      "captureMode": "manual-primary-source-capture",
+      "captureReason": "The primary publisher returns HTTP 403 to GitHub Actions and the restricted text-reader fallback does not return parseable article content.",
+      "captureNotes": "Structured figures transcribed from the DemosAU primary-source article. Review against the cited page before acceptance; do not infer model eligibility from this record."
+    }
+  ]
+}
