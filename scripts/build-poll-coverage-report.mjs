@@ -26,6 +26,15 @@ function parseCsv(text) {
   return data.map((values) => Object.fromEntries(headers.map((header, i) => [header, values[i] ?? ""])));
 }
 
+function stagedResolution(family, gap, staged) {
+  if (!gap.fieldworkStart || !gap.fieldworkEnd) return null;
+  return staged.find((record) =>
+    String(record.sourceId ?? "").startsWith(family.id)
+    && record.fieldworkStart === gap.fieldworkStart
+    && record.fieldworkEnd === gap.fieldworkEnd,
+  ) ?? null;
+}
+
 export function buildCoverageReport({ ledger, events, manualRecords = [], primaryRecords = [], researchRecords = [] }) {
   const eventIds = new Set(events.map((event) => event.poll_id));
   const eligible = events.filter((event) => String(event.model_eligible).toLowerCase() === "true");
@@ -33,13 +42,18 @@ export function buildCoverageReport({ ledger, events, manualRecords = [], primar
   const unknownDeclaredIds = declaredIds.filter((id) => !eventIds.has(id));
   const duplicateDeclaredIds = declaredIds.filter((id, index) => declaredIds.indexOf(id) !== index);
   const staged = [...manualRecords, ...primaryRecords, ...researchRecords].filter((record) => record.kind === "poll");
-  const actionable = ledger.sourceFamilies.flatMap((family) =>
-    (family.actionableGaps ?? []).map((gap) => ({ sourceFamilyId: family.id, sourceFamily: family.label, ...gap })),
+  const declaredGaps = ledger.sourceFamilies.flatMap((family) =>
+    (family.actionableGaps ?? []).map((gap) => ({ family, gap })),
+  );
+  const stagedCoverageResolutions = declaredGaps.flatMap(({ family, gap }) => {
+    const record = stagedResolution(family, gap, staged);
+    return record ? [{ sourceFamilyId: family.id, sourceFamily: family.label, evidenceId: record.id, proposedModelPollId: record.proposedModelPollId ?? null, fieldworkStart: gap.fieldworkStart, fieldworkEnd: gap.fieldworkEnd, status: record.status }] : [];
+  });
+  const actionable = declaredGaps.flatMap(({ family, gap }) =>
+    stagedResolution(family, gap, staged) ? [] : [{ sourceFamilyId: family.id, sourceFamily: family.label, ...gap }],
   );
   const representedFamilies = ledger.sourceFamilies.filter((family) => (family.canonicalModelEligiblePollIds ?? []).length > 0);
-  const currentGapFamilies = ledger.sourceFamilies.filter((family) =>
-    (family.actionableGaps ?? []).length > 0 && family.coverageClass !== "historical-non-comparable",
-  );
+  const actionableFamilyIds = new Set(actionable.map((gap) => gap.sourceFamilyId));
 
   return {
     schemaVersion: 1,
@@ -53,8 +67,9 @@ export function buildCoverageReport({ ledger, events, manualRecords = [], primar
       stagedPollRecords: staged.length,
       sourceFamiliesDeclared: ledger.sourceFamilies.length,
       sourceFamiliesWithCanonicalEligiblePolling: representedFamilies.length,
-      currentSourceFamiliesWithActionableGaps: currentGapFamilies.length,
+      currentSourceFamiliesWithActionableGaps: actionableFamilyIds.size,
       actionableGapItems: actionable.length,
+      declaredGapsResolvedByStaging: stagedCoverageResolutions.length,
     },
     integrity: {
       allDeclaredCanonicalIdsExist: unknownDeclaredIds.length === 0,
@@ -68,10 +83,11 @@ export function buildCoverageReport({ ledger, events, manualRecords = [], primar
       coverageClass: family.coverageClass,
       canonicalModelEligiblePollIds: family.canonicalModelEligiblePollIds ?? [],
       stagedEvidence: family.stagedEvidence ?? [],
-      actionableGapCount: (family.actionableGaps ?? []).length,
+      actionableGapCount: actionable.filter((gap) => gap.sourceFamilyId === family.id).length,
       exclusionReason: family.exclusionReason ?? null,
       nextAction: family.nextAction ?? null,
     })),
+    stagedCoverageResolutions,
     actionableGaps: actionable,
     priorityQueue: ledger.priorityQueue,
   };
@@ -90,7 +106,7 @@ function main() {
   }
   const output = resolve(root, arg("--output", "poll-coverage-report.json"));
   writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
-  console.log(`Poll coverage: ${report.repository.modelEligibleEvents} model-eligible events; ${report.repository.actionableGapItems} actionable gap items across ${report.repository.currentSourceFamiliesWithActionableGaps} source families.`);
+  console.log(`Poll coverage: ${report.repository.modelEligibleEvents} model-eligible events; ${report.repository.actionableGapItems} actionable gap items across ${report.repository.currentSourceFamiliesWithActionableGaps} source families; ${report.repository.declaredGapsResolvedByStaging} declared gaps resolved by staged evidence.`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === resolve(new URL(import.meta.url).pathname)) main();
