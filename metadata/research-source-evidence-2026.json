@@ -104,6 +104,33 @@
       "leadershipRegime": "Allan-Wilson",
       "dependencyPolicy": "The statewide topline and seat projection are outputs of the same YouGov/Common Threads survey/model family. They must never be counted as independent polling observations. The seat projection is comparison evidence unless separately validated out of sample.",
       "captureNotes": "YouGov's Australian Polling Council methodology index lists a dedicated Victorian MRP Common Threads methodology statement dated 9 August 2026. Poll Bludger reports fieldwork 16 June-10 July, the statewide composition, 53.8-46.2 Coalition-Labor estimate and 39/29/17/3 median seat projection. Retain secondary-tier semantics until the direct methodology statement/report is captured and reviewed."
+    },
+    {
+      "id": "freshwater-vic-2026-07-31-08-03-linked-primary",
+      "sourceId": "freshwater-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "commissioner": "Herald Sun",
+      "fieldworkStart": "2026-07-31",
+      "fieldworkEnd": "2026-08-03",
+      "sampleSize": 1020,
+      "method": "Freshwater Strategy Victorian state poll; first-party full-results workbook linked but not machine-parsed in the current evidence capture",
+      "geography": "Victoria",
+      "primaryVote": {"coalition": 30, "alp": 25, "oneNation": 22, "greens": 14, "otherParties": 9},
+      "twoPartyPreferred": {"coalition": 52, "alp": 48, "basis": "reported respondent-allocated result"},
+      "sourceUrl": "https://www.pollbludger.net/2026/08/04/freshwater-strategy-52-48-to-coalition-in-victoria/",
+      "primarySourceUrl": "https://freshwaterstrategy.com/2026/08/04/herald-sun-freshwater-strategy-august-polling-data/",
+      "primaryWorkbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-030826-Full-Tables.xlsx",
+      "publicationDate": "2026-08-04",
+      "pollPublicationDate": "2026-08-04",
+      "proposedModelPollId": "freshwater_2026-08",
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "secondary-topline-primary-workbook-linked-awaiting-primary-parse",
+      "leadershipRegime": "Carroll-Wilson",
+      "registryReconciliation": {"existingEvent": true, "existingPublicationDate": "2026-08-05", "existingReportedParties": ["LIB_NAT", "ALP", "ONP"], "missingReportedParties": ["GRN", "OTH"], "policy": "Do not mutate the canonical event until the first-party workbook and publication-date discrepancy are reviewed."},
+      "captureNotes": "The canonical registry already contains this poll as model-ineligible with only Coalition, Labor and One Nation rows. Contemporary reporting supplies Greens 14 and residual 9, while Freshwater's own page links the full-results workbook. This record stages the completion evidence but does not modify the canonical event."
     }
   ]
 }
