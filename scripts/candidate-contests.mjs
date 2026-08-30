@@ -21,13 +21,22 @@ function parseCsv(text) {
   return data.map((values) => Object.fromEntries(headers.map((header, i) => [header, values[i] ?? ""])));
 }
 
+const COUNCIL_CONTEST_ALIASES = new Map([
+  ["north-east metro", "north-eastern metropolitan"],
+  ["northern metro", "northern metropolitan"],
+  ["south-east metro", "south-eastern metropolitan"],
+  ["southern metro", "southern metropolitan"],
+  ["western metro", "western metropolitan"],
+]);
+
 function contestKey(value) {
-  return String(value ?? "")
+  const key = String(value ?? "")
     .normalize("NFKC")
     .trim()
     .replace(/\s+region$/i, "")
     .replace(/\s+/g, " ")
     .toLowerCase();
+  return COUNCIL_CONTEST_ALIASES.get(key) ?? key;
 }
 
 export function loadContestUniverse(root) {

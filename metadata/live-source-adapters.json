@@ -129,6 +129,21 @@
         "candidateStatus": "endorsed",
         "authority": "One Nation Victoria"
       }
+    },
+    {
+      "id": "nationals-victoria-candidates",
+      "publisher": "The Nationals Victoria",
+      "url": "https://vic.nationals.org.au/our-team/",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "provisional-party-evidence-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "nationals-victoria-candidates",
+        "candidateStatus": "endorsed",
+        "authority": "The Nationals Victoria"
+      }
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "evidenceAsOf": "2026-08-30T04:19:45.265Z",
+  "evidenceAsOf": "2026-08-30T18:05:00Z",
   "policy": "Discovered party-announced candidates are durable quarantined evidence only. They require explicit identity, contest and endorsement review before entering the accepted candidate registry; only VEC evidence may confer official nomination status.",
   "automaticPromotion": false,
   "summary": {
-    "records": 76,
-    "assemblyContests": 72,
+    "records": 104,
+    "assemblyContests": 73,
     "assemblyDistrictsTotal": 88,
-    "councilRegions": 4,
-    "sourceFamilies": 1
+    "councilRegions": 8,
+    "sourceFamilies": 3
   },
   "records": [
     {
@@ -110,6 +110,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/michael-tolhurst"
     },
     {
+      "id": "1e28c1e5369d909c036e23870377d9d4fab7e078c52b1932370635edaa6119b6",
+      "sourceId": "nationals-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "91f0cc99779c3e5b6161c91b5f94c45222dbd0a1fbf2b6db70c6930976fb751d",
+      "kind": "candidate",
+      "name": "Andrew Lethlean",
+      "contest": "Bendigo East",
+      "party": "The Nationals",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "The Nationals Victoria",
+      "sourceUrl": "https://vic.nationals.org.au/our-team/"
+    },
+    {
       "id": "7f5134e29a6e730f3952a92a6cc433541b6c409c609e846fe96e804a0ecde7c5",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -124,6 +138,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/liza-shaw"
     },
     {
+      "id": "f9a2d3b376f20a19a707ca89da258447b7e609c44f252371521d3f7f91ec92c4",
+      "sourceId": "nationals-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ccc129b73ce4671196a520146efa07ebdeb4dea5ef5e55d15e922bc49a60c7b0",
+      "kind": "candidate",
+      "name": "David Hutchings",
+      "contest": "Bendigo West",
+      "party": "The Nationals",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "The Nationals Victoria",
+      "sourceUrl": "https://vic.nationals.org.au/our-team/"
+    },
+    {
       "id": "ade12f2ebcc89229d483b7c2d770d0e9265f6aecd5fc2c1cf43203e3c3a80b2b",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -136,6 +164,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/roshan-de-silva"
+    },
+    {
+      "id": "0c3b31816887cf79209c7e5bb0691cea5ddb0dc7be3510e18c2e1b66ad149478",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "de0812490ffdab88c588b42e82b84a8327b458b61e72fdcf923c7ef203c4a758",
+      "kind": "candidate",
+      "name": "Michael Piastrino",
+      "contest": "Berwick",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/michael-piastrino"
     },
     {
       "id": "2f95a8f48a3244850c657129af1f7d0698e53002a63df69ddce201b3c8d86003",
@@ -292,6 +334,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/mat-morgan"
     },
     {
+      "id": "5ef0588774a46375d88e4445549d30475ed35673b73711036f4f3b866aa1286c",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "3ed9c3036eda168ba38659109cd6c9aab428f805350e600152a7f94f2a682939",
+      "kind": "candidate",
+      "name": "Greg Hansford",
+      "contest": "Eastern Victoria Region",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/greg-hansford"
+    },
+    {
       "id": "fb40c7bcf5a61ade8e604e9cc8b59e97015df83dbfdab78375f16fe436787e8a",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -320,6 +376,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/rachel-busbridge"
     },
     {
+      "id": "5abaad773cbb0c296a90dd224d3ad8b90ebebd21e79a72ab0a5650907f9f2dcb",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "81094fa3d1f337653bec2a0f8d5a59f5406c86a4a800338d9e88825fc8caced5",
+      "kind": "candidate",
+      "name": "Jessie Weatherley",
+      "contest": "Eltham",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/jessie-weatherley"
+    },
+    {
       "id": "e865b12ab59185453b28b89910872b3e0d966b8fc07d90d3c1b9036db79f6519",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -334,6 +404,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/james-williams"
     },
     {
+      "id": "1a46d67e26f8ed4bb9b56be40fdc055d3eb0ad2558743d9b89e90ce755db4e6a",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "43abce0c11f04120552784a44d78ab08bfdad1327b8e45b22d5ec7c2e68a755d",
+      "kind": "candidate",
+      "name": "John Barnes",
+      "contest": "Essendon",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/john-barnes"
+    },
+    {
       "id": "daf16e17c2bd78be007dee5155bc44cab3728fda7401397ce5d63c2379f2ff73",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -346,6 +430,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/sam-mccoll"
+    },
+    {
+      "id": "2b96c48da49c0b6ff89e958be0a85b05647234fb94b9ea62a1cf981a795f3345",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "63e6045f3d1e011c3bb9400080be58d7bcfdf5a84cac32a40c700f2adbcad4e3",
+      "kind": "candidate",
+      "name": "Paul Ballinger",
+      "contest": "Eureka",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/paul-ballinger"
     },
     {
       "id": "8f88351899b67870f6f73727a143c9643fbf8509d2e302864140f5433d1a6c30",
@@ -430,6 +528,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/ash-munro"
+    },
+    {
+      "id": "64cebc849248ab873edc9724499b00b47bc014fd47da2b2c09dc34710bfadadc",
+      "sourceId": "nationals-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "a5ad2e8a56bbbda67a18bf3dee613cc4293a334179a5431c4c76c855f1e773b7",
+      "kind": "candidate",
+      "name": "Gemma Rendell",
+      "contest": "Gippsland East",
+      "party": "The Nationals",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "The Nationals Victoria",
+      "sourceUrl": "https://vic.nationals.org.au/our-team/"
     },
     {
       "id": "423890c7d526963d7bccb69454e4019feca94146bb43f4e45c9f3c14ba491ad6",
@@ -600,6 +712,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/veronika-levchenkova"
     },
     {
+      "id": "7f3b2a2dd52dd8ec444426f1f32a5202f19d11038a7b14da0597a25838a616f5",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "69d489f88e3ad15d063cd8355a2e111930a13b06bb1f9fa16101ff70b8a623f0",
+      "kind": "candidate",
+      "name": "Matthew Katselis",
+      "contest": "Melton",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/matthew-katselis"
+    },
+    {
       "id": "737d999ff3859333a95464222ac36356d342d93dcc8091df0548d40738fd231a",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -684,6 +810,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/zoe-cook"
     },
     {
+      "id": "19f3d01fd2c08879596c7973befd4885689f5fdcb7145f3d8bf0d2d12a2fe5e4",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "13b9a9e53c2747fe8559718d9e62fb0d5fc5b0a2280e7ce52f051917fbac18ee",
+      "kind": "candidate",
+      "name": "Garner Smith",
+      "contest": "Murray Plains",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/garner-smith"
+    },
+    {
+      "id": "a82c8d48b740bc77b486e227b54e45927eb8d8f942e4a3f5c00a6786b5d16b42",
+      "sourceId": "nationals-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "63aec959530bca7e585e39e71d65214b98a3f3958544895a775e461c75b9d926",
+      "kind": "candidate",
+      "name": "Brett Hosking",
+      "contest": "Murray Plains",
+      "party": "The Nationals",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "The Nationals Victoria",
+      "sourceUrl": "https://vic.nationals.org.au/our-team/"
+    },
+    {
       "id": "e0438121bd04bc2e7bfeaa2abc14516aa2579393618e1760398c20c26805eb48",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -696,6 +850,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/alyssa-weaver"
+    },
+    {
+      "id": "55d182d79bd343056d87bea6168f3dfbec528c84ad9387201e960ef402d09aa7",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "8bb75af029c0c1435171cc4b7c70ffdf6e7a3d6b3b795002330c9e02c9108f29",
+      "kind": "candidate",
+      "name": "Ben Lucas",
+      "contest": "Narracan",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/ben-lucas"
     },
     {
       "id": "14a1e5d3094dd67b2a859687db2137781f5c8a0423a2c29a8bfed0991941775a",
@@ -726,6 +894,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/jill-nambu"
     },
     {
+      "id": "efb97839de1a41e4fdf0f231ba743c7a79e3aee6aa4da168ead051fd8b1350fa",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "b129c026d3aad5060279a5b80b8d772d333ceef9e9dcb56d535bae01c3a41c49",
+      "kind": "candidate",
+      "name": "Trevor Hammond",
+      "contest": "Narre Warren South",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/trevor-hammond"
+    },
+    {
       "id": "d9809bb7c7bffe1fbd8f1f1256241b57563c7b8c8fc28185cf0b5eee35a7203a",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -738,6 +920,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/sianan-healy"
+    },
+    {
+      "id": "93323ba184224cb5bdd59a391b3c7f615a36c3231858a7dcd1ff2ebdb7e8f329",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "7481fccd0145077a45eafd0d34f2a2afb11f0d05898698fdb89db50387b1143a",
+      "kind": "candidate",
+      "name": "Darren Hercus",
+      "contest": "Nepean",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/darren-hercus"
+    },
+    {
+      "id": "b81b42b322ffc28580de07dae5cb46b228f1cff742f0c530cca4b51a9f6e47da",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "cca8eb15f260c64abab45f862792c0798c8fa62d921d35b01bbd3337fbac36fe",
+      "kind": "candidate",
+      "name": "Natalie Adams",
+      "contest": "North-East Metro Region",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/natalie-adams"
     },
     {
       "id": "0232a8a521ebdf5b14688469906cc64ff9e1e7c4afb40ff558f9e0d7cbfac717",
@@ -754,6 +964,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/campbell-gome"
     },
     {
+      "id": "2fb834e4fcab6de856c55eacccb7240c9f801f5e6784458ea15731176191d5e2",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "277ca1dd1a00eb0a8288cae5af824519f38398a5539e05b96cf269c37798afe6",
+      "kind": "candidate",
+      "name": "Mark Nicholson",
+      "contest": "Northern Metro",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/mark-nicholson"
+    },
+    {
       "id": "8bc0e56842a560e4e882471e68452da4ca38c19f62a3ba40360bf4ebd9c4cc6b",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -766,6 +990,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/cate-sinclair"
+    },
+    {
+      "id": "5057e462cca104aae9f036936bf8fa1606798a6d4f0921bcd40d008d52d87041",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ebcde366748930a8116d36ee74e442811adaecc2d8eca60828e3e112b7665084",
+      "kind": "candidate",
+      "name": "Rikkie-Lee Tyrrell",
+      "contest": "Northern Victoria Region",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/rikkie-lee-tyrrell"
     },
     {
       "id": "20958281068cf3cc1cacef572d29a3a285618f3881046254fddd7ff0fb48a424",
@@ -794,6 +1032,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/nasser-yawari"
+    },
+    {
+      "id": "85b69a7181813ba0f7f66498d3c82bb3fe5c7005ee1816d6cdd565b831058c9c",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "f83b33e056af8ea3f590c521d101f9facee0760120f9522ee18cf487241ffa18",
+      "kind": "candidate",
+      "name": "Warren Pickering",
+      "contest": "Pakenham",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/warren-pickering"
     },
     {
       "id": "5fa8cfa37066d2889957ed81722d9228ca1b2cab2aa13be39170db60f9a15107",
@@ -894,6 +1146,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/tim-drylie"
     },
     {
+      "id": "98aa4058a984da4a378d2c694406b55cc8c91fad8ef4bd3fa36aa5beb8417d1f",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "4fb8b0a5c9a977ab3308b66fbacbd9c0050a48dc4600929ecb3d3cc2b6089298",
+      "kind": "candidate",
+      "name": "Donna Buxton",
+      "contest": "Ripon",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/donna-buxton"
+    },
+    {
+      "id": "507dc69a65fd7bb00ffc8181b17e0e954470053160535b046425b6b4ca78da91",
+      "sourceId": "nationals-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "0be73119554332fb53a489084e7beb868bf6c23ff5e94aa82812b8f38850bcfb",
+      "kind": "candidate",
+      "name": "Jo Armstrong",
+      "contest": "Ripon",
+      "party": "The Nationals",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "The Nationals Victoria",
+      "sourceUrl": "https://vic.nationals.org.au/our-team/"
+    },
+    {
       "id": "ff27cf3a5735dbc6f8b435880c91624289beca00a340ff4ae748dfdbf7fa7ee7",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -936,6 +1216,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/izzy-scherrer"
     },
     {
+      "id": "ae48c0001f751315ba8b5219d2dde795fe938e70b3e06f2f0a333b2a91e3be32",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "9f552309f132e44492866b555b654baf8a2b61e79aa38c255b3ea0a6f1fdaf9e",
+      "kind": "candidate",
+      "name": "Colleen Harkin",
+      "contest": "South-East Metro",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/colleen-harkin"
+    },
+    {
       "id": "dfcfa19c23d5dc8e2c02fb5358ffc6f9200a77730463e6a4a727416e5a6a52a0",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -964,6 +1258,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/silver-rose"
     },
     {
+      "id": "6063965375439e2f2b98162ada792a8215bdaa5e67b170c40c25c33acfeb717f",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "e292142b70c55bf5e68d15d515e2583a5475ac6796c6fe396faa3f7c470e5589",
+      "kind": "candidate",
+      "name": "Aaron Sanford",
+      "contest": "Southern Metro",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/aaron-sanford"
+    },
+    {
       "id": "62ef6d9989a78bc8963349544b0f75a39a96190947d7ead81a69810567d71805",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -976,6 +1284,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/bao-huynh"
+    },
+    {
+      "id": "e3d7eb162bdcf113de8576b7c0128209e9d2c48e851c78e73d9e6a721ddb09e6",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "3f63b02c6b8696170613c3b32a5c707cf33ab54affa070c74962a1e5154fd2bd",
+      "kind": "candidate",
+      "name": "Elita Dabrowski",
+      "contest": "Sunbury",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/elita-dabrowski"
     },
     {
       "id": "2243e70296fdce0f84fe11c5fe0275d9f1ec7e9f9032512d071f53d9165799b4",
@@ -1020,6 +1342,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/ellen-burns"
     },
     {
+      "id": "19b7c7f2d364cc5c4d74e1be7e8323104448b473b2ef35c718806733a87de8a9",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "351d07dbf65abc985e04fc80c9c2db34ca545a8843b282474b421af48a2dd2c5",
+      "kind": "candidate",
+      "name": "Stuart Robinson",
+      "contest": "Wendouree",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/stuart-robinson"
+    },
+    {
       "id": "f9642acef61022d87bd9368eb4bbfbb6cb5b18432d4bcb4ce1d239ca0f66daaf",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1034,6 +1370,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/tushar-kumar"
     },
     {
+      "id": "e9458644848d15edc700c2622a168b24474e121fbc9c23b515d824690042c798",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "8c7f54091261946a46aa919632abb505e4e5cc0b1b8a3595a95d7483a972cbc0",
+      "kind": "candidate",
+      "name": "Fiona Lopez",
+      "contest": "Western Metro",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/fiona-lopez"
+    },
+    {
       "id": "e3cbee1a0352bf43e0a164e20d6b5c968bc134164cb86ff023d6ba452097166f",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1046,6 +1396,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/brittney-henderson"
+    },
+    {
+      "id": "54d7bb018133375e819132a569e0899f1e4aeaee5dbe46133ddf117f663c9b20",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "c264c990c9c81a590e9e95ed2b334431b3a3f5551716e33731ca1065b0b3e770",
+      "kind": "candidate",
+      "name": "Chris Burson",
+      "contest": "Western Victoria",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/chris-burson"
+    },
+    {
+      "id": "94c9da666b00be0c747ea04ea02898093f7748e93f25a19b8d613f2627a7a91d",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "858095c908669691f2d15c78e5a9d94a674af55f312a34a8e39fa1a6329ae003",
+      "kind": "candidate",
+      "name": "Vaughan Williams",
+      "contest": "Western Victoria Region",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/vaughan-williams"
     },
     {
       "id": "fe14ba467abba4a2ce991ebad06b9653ab6d6172185c081d80a4c11481e318a7",
@@ -1074,6 +1452,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/gufran-mohammed"
+    },
+    {
+      "id": "e66f1327ff6aded4fca8cca7b4df8b6641a2a6295e11017c979fd7dd98122529",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "46269d83d27f67ed53f530e7520e4e547a3f2c1ea3a88bc2f850e46abb0f7087",
+      "kind": "candidate",
+      "name": "Jeremy Johnson",
+      "contest": "Yan Yean",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/jeremy-johnson"
     }
   ]
 }

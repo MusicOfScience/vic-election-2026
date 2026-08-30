@@ -6,6 +6,7 @@ import {
   extractVecCandidatesFromHtml,
   extractGreensCandidates,
   extractOneNationCandidates,
+  extractNationalsCandidates,
   extractRoyMorganStatePoll,
   extractRoyMorganUpperHouse,
   parseFieldworkRange,
@@ -38,6 +39,13 @@ test("One Nation candidate headings yield endorsed provisional evidence", () => 
   assert.deepEqual(extractOneNationCandidates(html, "https://vic.onenation.org.au/candidates"), [
     { kind: "candidate", name: "Warren Pickering", contest: "Pakenham", party: "Pauline Hanson's One Nation", candidateStatus: "endorsed", sourceAuthority: "One Nation Victoria", sourceUrl: "https://vic.onenation.org.au/warren-pickering" },
     { kind: "candidate", name: "Fiona Lopez", contest: "Western Metro", party: "Pauline Hanson's One Nation", candidateStatus: "endorsed", sourceAuthority: "One Nation Victoria", sourceUrl: "https://vic.onenation.org.au/fiona-lopez" },
+  ]);
+});
+
+test("Nationals team page yields endorsed provisional candidate evidence", () => {
+  const html = `<h1>Andrew Lethlean<code><a id="andrew"></a></code></h1><h3><strong>Candidate for Bendigo East</strong></h3><h1>Existing MP</h1><h3>Member for Gippsland South</h3>`;
+  assert.deepEqual(extractNationalsCandidates(html, "https://vic.nationals.org.au/our-team/"), [
+    { kind: "candidate", name: "Andrew Lethlean", contest: "Bendigo East", party: "The Nationals", candidateStatus: "endorsed", sourceAuthority: "The Nationals Victoria", sourceUrl: "https://vic.nationals.org.au/our-team/" },
   ]);
 });
 
