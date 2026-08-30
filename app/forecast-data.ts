@@ -1,7 +1,7 @@
 import validationStatus from "../metadata/model-validation-status.json";
 
 export const modelLayers = [
-  { layer: "Polls", status: "Live experimental input", detail: "Nine eligible polls are combined with recency, sample size and estimated pollster lean taken into account." },
+  { layer: "Polls", status: "Live experimental input", detail: "Twelve eligible polls are combined with recency, sample size and estimated pollster lean taken into account." },
   { layer: "Election baseline", status: "Working", detail: "Official VEC results anchor all 88 Lower House electorates and eight Upper House regions, with boundary changes handled explicitly." },
   { layer: "Demography + housing", status: "Tested and excluded", detail: "The added demographic layer was tested across four past election cycles and made predictions slightly worse, so its central weight is zero." },
   { layer: "Preferences + local contests", status: "Experimental", detail: "Official preference files inform transfers. The model can discover different final-two pairings rather than assuming Labor versus Coalition." },

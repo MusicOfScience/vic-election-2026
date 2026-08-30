@@ -10,72 +10,72 @@
   "scenarioEvidencePromoted": false,
   "policy": "This report is a counterfactual sensitivity test. Staged DemosAU and Resolve evidence is injected only in memory; it does not become accepted or model-eligible evidence and cannot update the published forecast.",
   "polling": {
-    "canonicalPollCount": 9,
-    "shadowPollCount": 11,
+    "canonicalPollCount": 12,
+    "shadowPollCount": 14,
     "canonicalMean": {
-      "ALP": 25.673302572638686,
-      "LIB_NAT": 27.185271964123128,
-      "ONP": 23.671471376896577,
-      "GRN": 13.191609146395733,
-      "OTH_IND": 10.278344939945786
+      "ALP": 25.640302589320253,
+      "LIB_NAT": 27.672443108904552,
+      "ONP": 23.27224962363894,
+      "GRN": 13.373699575458694,
+      "OTH_IND": 10.041305102677631
     },
     "shadowMean": {
-      "ALP": 25.264043004278168,
-      "LIB_NAT": 27.781303839046565,
-      "ONP": 23.36685161351217,
-      "GRN": 12.965180696035334,
-      "OTH_IND": 10.622620847127747
+      "ALP": 25.287848464188443,
+      "LIB_NAT": 28.08239192517376,
+      "ONP": 23.105197490414398,
+      "GRN": 13.125920991625902,
+      "OTH_IND": 10.398641128597369
     },
     "deltaMean": {
-      "ALP": -0.40925956836051824,
-      "LIB_NAT": 0.5960318749234368,
-      "ONP": -0.3046197633844052,
-      "GRN": -0.22642845036039816,
-      "OTH_IND": 0.3442759071819612
+      "ALP": -0.3524541251318105,
+      "LIB_NAT": 0.4099488162692069,
+      "ONP": -0.1670521332245407,
+      "GRN": -0.24777858383279217,
+      "OTH_IND": 0.35733602591973757
     }
   },
   "assembly": {
-    "canonicalHungProbability": 0.7662,
-    "shadowHungProbability": 0.8112,
-    "deltaHungProbability": 0.04500000000000004,
+    "canonicalHungProbability": 0.7638,
+    "shadowHungProbability": 0.8026,
+    "deltaHungProbability": 0.038799999999999946,
     "parties": {
       "ALP": {
-        "canonicalMeanSeats": 39.0426,
-        "shadowMeanSeats": 37.218,
-        "deltaMeanSeats": -1.8245999999999967,
+        "canonicalMeanSeats": 38.9042,
+        "shadowMeanSeats": 37.313,
+        "deltaMeanSeats": -1.5912000000000006,
         "canonicalMedianSeats": 39.0,
         "shadowMedianSeats": 37.0,
-        "canonicalMajorityProbability": 0.2196,
-        "shadowMajorityProbability": 0.155,
-        "deltaMajorityProbability": -0.06459999999999999,
+        "canonicalMajorityProbability": 0.2142,
+        "shadowMajorityProbability": 0.1568,
+        "deltaMajorityProbability": -0.05740000000000001,
         "majorityThreshold": 45
       },
       "LIB_NAT": {
-        "canonicalMeanSeats": 29.0722,
-        "shadowMeanSeats": 31.4068,
-        "deltaMeanSeats": 2.334600000000002,
-        "canonicalMedianSeats": 29.0,
-        "shadowMedianSeats": 31.0,
-        "canonicalMajorityProbability": 0.0142,
-        "shadowMajorityProbability": 0.0338,
-        "deltaMajorityProbability": 0.019599999999999996,
+        "canonicalMeanSeats": 30.3226,
+        "shadowMeanSeats": 32.0892,
+        "deltaMeanSeats": 1.7665999999999968,
+        "canonicalMedianSeats": 30.0,
+        "shadowMedianSeats": 32.0,
+        "canonicalMajorityProbability": 0.022,
+        "shadowMajorityProbability": 0.0406,
+        "deltaMajorityProbability": 0.0186,
         "majorityThreshold": 45
       },
       "ONP": {
-        "canonicalMeanSeats": 17.6486,
-        "shadowMeanSeats": 17.1678,
-        "deltaMeanSeats": -0.48079999999999856,
-        "canonicalMedianSeats": 17.0,
-        "shadowMedianSeats": 17.0,
+        "canonicalMeanSeats": 16.463,
+        "shadowMeanSeats": 16.3318,
+        "deltaMeanSeats": -0.13119999999999976,
+        "canonicalMedianSeats": 16.0,
+        "shadowMedianSeats": 16.0,
         "canonicalMajorityProbability": 0.0,
         "shadowMajorityProbability": 0.0,
         "deltaMajorityProbability": 0.0,
         "majorityThreshold": 45
       },
       "GRN": {
-        "canonicalMeanSeats": 2.2312,
-        "shadowMeanSeats": 2.2022,
-        "deltaMeanSeats": -0.028999999999999915,
+        "canonicalMeanSeats": 2.3064,
+        "shadowMeanSeats": 2.262,
+        "deltaMeanSeats": -0.044399999999999995,
         "canonicalMedianSeats": 2.0,
         "shadowMedianSeats": 2.0,
         "canonicalMajorityProbability": 0.0,
@@ -84,9 +84,9 @@
         "majorityThreshold": 45
       },
       "OTH_IND": {
-        "canonicalMeanSeats": 0.0054,
-        "shadowMeanSeats": 0.0052,
-        "deltaMeanSeats": -0.00020000000000000052,
+        "canonicalMeanSeats": 0.0038,
+        "shadowMeanSeats": 0.004,
+        "deltaMeanSeats": 0.0002000000000000001,
         "canonicalMedianSeats": 0.0,
         "shadowMedianSeats": 0.0,
         "canonicalMajorityProbability": 0.0,
@@ -104,59 +104,40 @@
           "shadowFavourite": "LIB_NAT",
           "modalWinnerChanged": true,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.059799999999999964,
-          "absoluteLargestShift": 0.059799999999999964,
+          "largestWinProbabilityShift": 0.04680000000000001,
+          "absoluteLargestShift": 0.04680000000000001,
           "winProbabilityDeltas": {
-            "ALP": -0.05840000000000001,
-            "LIB_NAT": 0.059799999999999964,
-            "ONP": -0.0014000000000000002,
+            "ALP": -0.04620000000000002,
+            "LIB_NAT": 0.04680000000000001,
+            "ONP": -0.0006000000000000001,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.5462,
-          "shadowFavouriteProbability": 0.5104
-        },
-        {
-          "districtId": "bendigo-east",
-          "districtName": "Bendigo East",
-          "canonicalFavourite": "ALP",
-          "shadowFavourite": "ONP",
-          "modalWinnerChanged": true,
-          "largestShiftParty": "ALP",
-          "largestWinProbabilityShift": -0.021600000000000064,
-          "absoluteLargestShift": 0.021600000000000064,
-          "winProbabilityDeltas": {
-            "ALP": -0.021600000000000064,
-            "LIB_NAT": 0.0058,
-            "ONP": 0.015800000000000036,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.5006,
-          "shadowFavouriteProbability": 0.5038
+          "canonicalFavouriteProbability": 0.534,
+          "shadowFavouriteProbability": 0.5108
         }
       ],
-      "seatsWithFivePointOrLargerProbabilityShift": 13,
+      "seatsWithFivePointOrLargerProbabilityShift": 4,
       "seatsWithTenPointOrLargerProbabilityShift": 0,
       "largestProbabilityShifts": [
         {
-          "districtId": "pakenham",
-          "districtName": "Pakenham",
-          "canonicalFavourite": "LIB_NAT",
-          "shadowFavourite": "LIB_NAT",
+          "districtId": "bass",
+          "districtName": "Bass",
+          "canonicalFavourite": "ONP",
+          "shadowFavourite": "ONP",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.07220000000000004,
-          "absoluteLargestShift": 0.07220000000000004,
+          "largestWinProbabilityShift": 0.05740000000000001,
+          "absoluteLargestShift": 0.05740000000000001,
           "winProbabilityDeltas": {
-            "ALP": -0.006600000000000002,
-            "LIB_NAT": 0.07220000000000004,
-            "ONP": -0.06559999999999999,
+            "ALP": -0.008800000000000002,
+            "LIB_NAT": 0.05740000000000001,
+            "ONP": -0.04859999999999998,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.6566,
-          "shadowFavouriteProbability": 0.7288
+          "canonicalFavouriteProbability": 0.5336,
+          "shadowFavouriteProbability": 0.485
         },
         {
           "districtId": "monbulk",
@@ -165,55 +146,17 @@
           "shadowFavourite": "LIB_NAT",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.07119999999999993,
-          "absoluteLargestShift": 0.07119999999999993,
+          "largestWinProbabilityShift": 0.0534,
+          "absoluteLargestShift": 0.0534,
           "winProbabilityDeltas": {
-            "ALP": -0.06159999999999999,
-            "LIB_NAT": 0.07119999999999993,
-            "ONP": -0.009599999999999997,
+            "ALP": -0.0494,
+            "LIB_NAT": 0.0534,
+            "ONP": -0.0040000000000000036,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.5108,
-          "shadowFavouriteProbability": 0.582
-        },
-        {
-          "districtId": "ripon",
-          "districtName": "Ripon",
-          "canonicalFavourite": "ONP",
-          "shadowFavourite": "ONP",
-          "modalWinnerChanged": false,
-          "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.06440000000000001,
-          "absoluteLargestShift": 0.06440000000000001,
-          "winProbabilityDeltas": {
-            "ALP": -0.011200000000000002,
-            "LIB_NAT": 0.06440000000000001,
-            "ONP": -0.053200000000000025,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.618,
-          "shadowFavouriteProbability": 0.5648
-        },
-        {
-          "districtId": "bass",
-          "districtName": "Bass",
-          "canonicalFavourite": "ONP",
-          "shadowFavourite": "ONP",
-          "modalWinnerChanged": false,
-          "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.06419999999999998,
-          "absoluteLargestShift": 0.06419999999999998,
-          "winProbabilityDeltas": {
-            "ALP": -0.007600000000000003,
-            "LIB_NAT": 0.06419999999999998,
-            "ONP": -0.056599999999999984,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.5728,
-          "shadowFavouriteProbability": 0.5162
+          "canonicalFavouriteProbability": 0.5344,
+          "shadowFavouriteProbability": 0.5878
         },
         {
           "districtId": "glen-waverley",
@@ -222,55 +165,17 @@
           "shadowFavourite": "ALP",
           "modalWinnerChanged": false,
           "largestShiftParty": "ALP",
-          "largestWinProbabilityShift": -0.06340000000000001,
-          "absoluteLargestShift": 0.06340000000000001,
+          "largestWinProbabilityShift": -0.0524,
+          "absoluteLargestShift": 0.0524,
           "winProbabilityDeltas": {
-            "ALP": -0.06340000000000001,
-            "LIB_NAT": 0.06340000000000001,
+            "ALP": -0.0524,
+            "LIB_NAT": 0.0524,
             "ONP": 0.0,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.7072,
-          "shadowFavouriteProbability": 0.6438
-        },
-        {
-          "districtId": "croydon",
-          "districtName": "Croydon",
-          "canonicalFavourite": "LIB_NAT",
-          "shadowFavourite": "LIB_NAT",
-          "modalWinnerChanged": false,
-          "largestShiftParty": "ALP",
-          "largestWinProbabilityShift": -0.06220000000000003,
-          "absoluteLargestShift": 0.06220000000000003,
-          "winProbabilityDeltas": {
-            "ALP": -0.06220000000000003,
-            "LIB_NAT": 0.062000000000000055,
-            "ONP": 0.0002000000000000001,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.6294,
-          "shadowFavouriteProbability": 0.6914
-        },
-        {
-          "districtId": "bentleigh",
-          "districtName": "Bentleigh",
-          "canonicalFavourite": "ALP",
-          "shadowFavourite": "LIB_NAT",
-          "modalWinnerChanged": true,
-          "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.059799999999999964,
-          "absoluteLargestShift": 0.059799999999999964,
-          "winProbabilityDeltas": {
-            "ALP": -0.05840000000000001,
-            "LIB_NAT": 0.059799999999999964,
-            "ONP": -0.0014000000000000002,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.5462,
-          "shadowFavouriteProbability": 0.5104
+          "canonicalFavouriteProbability": 0.692,
+          "shadowFavouriteProbability": 0.6396
         },
         {
           "districtId": "ringwood",
@@ -279,17 +184,74 @@
           "shadowFavourite": "ALP",
           "modalWinnerChanged": false,
           "largestShiftParty": "ALP",
-          "largestWinProbabilityShift": -0.056400000000000006,
-          "absoluteLargestShift": 0.056400000000000006,
+          "largestWinProbabilityShift": -0.0504,
+          "absoluteLargestShift": 0.0504,
           "winProbabilityDeltas": {
-            "ALP": -0.056400000000000006,
-            "LIB_NAT": 0.056400000000000006,
+            "ALP": -0.0504,
+            "LIB_NAT": 0.0504,
             "ONP": 0.0,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.7118,
-          "shadowFavouriteProbability": 0.6554
+          "canonicalFavouriteProbability": 0.7034,
+          "shadowFavouriteProbability": 0.653
+        },
+        {
+          "districtId": "ripon",
+          "districtName": "Ripon",
+          "canonicalFavourite": "ONP",
+          "shadowFavourite": "ONP",
+          "modalWinnerChanged": false,
+          "largestShiftParty": "LIB_NAT",
+          "largestWinProbabilityShift": 0.0494,
+          "absoluteLargestShift": 0.0494,
+          "winProbabilityDeltas": {
+            "ALP": -0.012999999999999998,
+            "LIB_NAT": 0.0494,
+            "ONP": -0.03639999999999999,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "canonicalFavouriteProbability": 0.5744,
+          "shadowFavouriteProbability": 0.538
+        },
+        {
+          "districtId": "croydon",
+          "districtName": "Croydon",
+          "canonicalFavourite": "LIB_NAT",
+          "shadowFavourite": "LIB_NAT",
+          "modalWinnerChanged": false,
+          "largestShiftParty": "LIB_NAT",
+          "largestWinProbabilityShift": 0.047799999999999954,
+          "absoluteLargestShift": 0.047799999999999954,
+          "winProbabilityDeltas": {
+            "ALP": -0.047199999999999964,
+            "LIB_NAT": 0.047799999999999954,
+            "ONP": -0.0006000000000000001,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "canonicalFavouriteProbability": 0.646,
+          "shadowFavouriteProbability": 0.6938
+        },
+        {
+          "districtId": "bentleigh",
+          "districtName": "Bentleigh",
+          "canonicalFavourite": "ALP",
+          "shadowFavourite": "LIB_NAT",
+          "modalWinnerChanged": true,
+          "largestShiftParty": "LIB_NAT",
+          "largestWinProbabilityShift": 0.04680000000000001,
+          "absoluteLargestShift": 0.04680000000000001,
+          "winProbabilityDeltas": {
+            "ALP": -0.04620000000000002,
+            "LIB_NAT": 0.04680000000000001,
+            "ONP": -0.0006000000000000001,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "canonicalFavouriteProbability": 0.534,
+          "shadowFavouriteProbability": 0.5108
         },
         {
           "districtId": "bayswater",
@@ -298,55 +260,36 @@
           "shadowFavourite": "LIB_NAT",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.055400000000000005,
-          "absoluteLargestShift": 0.055400000000000005,
+          "largestWinProbabilityShift": 0.04619999999999991,
+          "absoluteLargestShift": 0.04619999999999991,
           "winProbabilityDeltas": {
-            "ALP": -0.054200000000000026,
-            "LIB_NAT": 0.055400000000000005,
-            "ONP": -0.0012000000000000005,
+            "ALP": -0.044800000000000006,
+            "LIB_NAT": 0.04619999999999991,
+            "ONP": -0.0014000000000000002,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.6046,
-          "shadowFavouriteProbability": 0.66
+          "canonicalFavouriteProbability": 0.6216,
+          "shadowFavouriteProbability": 0.6678
         },
         {
-          "districtId": "niddrie",
-          "districtName": "Niddrie",
-          "canonicalFavourite": "ALP",
-          "shadowFavourite": "ALP",
-          "modalWinnerChanged": false,
-          "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.0532,
-          "absoluteLargestShift": 0.0532,
-          "winProbabilityDeltas": {
-            "ALP": -0.05280000000000007,
-            "LIB_NAT": 0.0532,
-            "ONP": -0.00040000000000000105,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.7586,
-          "shadowFavouriteProbability": 0.7058
-        },
-        {
-          "districtId": "hastings",
-          "districtName": "Hastings",
+          "districtId": "pakenham",
+          "districtName": "Pakenham",
           "canonicalFavourite": "LIB_NAT",
           "shadowFavourite": "LIB_NAT",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.053199999999999914,
-          "absoluteLargestShift": 0.053199999999999914,
+          "largestWinProbabilityShift": 0.04459999999999997,
+          "absoluteLargestShift": 0.04459999999999997,
           "winProbabilityDeltas": {
-            "ALP": -0.027800000000000005,
-            "LIB_NAT": 0.053199999999999914,
-            "ONP": -0.025399999999999992,
+            "ALP": -0.006999999999999999,
+            "LIB_NAT": 0.04459999999999997,
+            "ONP": -0.037599999999999995,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.7344,
-          "shadowFavouriteProbability": 0.7876
+          "canonicalFavouriteProbability": 0.7044,
+          "shadowFavouriteProbability": 0.749
         },
         {
           "districtId": "frankston",
@@ -355,17 +298,93 @@
           "shadowFavourite": "ALP",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.050600000000000006,
-          "absoluteLargestShift": 0.050600000000000006,
+          "largestWinProbabilityShift": 0.04419999999999999,
+          "absoluteLargestShift": 0.04419999999999999,
           "winProbabilityDeltas": {
-            "ALP": -0.05020000000000002,
-            "LIB_NAT": 0.050600000000000006,
-            "ONP": -0.00039999999999999996,
+            "ALP": -0.04399999999999993,
+            "LIB_NAT": 0.04419999999999999,
+            "ONP": -0.0002000000000000001,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.7684,
-          "shadowFavouriteProbability": 0.7182
+          "canonicalFavouriteProbability": 0.7614,
+          "shadowFavouriteProbability": 0.7174
+        },
+        {
+          "districtId": "st-albans",
+          "districtName": "St Albans",
+          "canonicalFavourite": "ALP",
+          "shadowFavourite": "ALP",
+          "modalWinnerChanged": false,
+          "largestShiftParty": "ALP",
+          "largestWinProbabilityShift": -0.041000000000000036,
+          "absoluteLargestShift": 0.041000000000000036,
+          "winProbabilityDeltas": {
+            "ALP": -0.041000000000000036,
+            "LIB_NAT": 0.038599999999999995,
+            "ONP": 0.0023999999999999994,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "canonicalFavouriteProbability": 0.76,
+          "shadowFavouriteProbability": 0.719
+        },
+        {
+          "districtId": "niddrie",
+          "districtName": "Niddrie",
+          "canonicalFavourite": "ALP",
+          "shadowFavourite": "ALP",
+          "modalWinnerChanged": false,
+          "largestShiftParty": "LIB_NAT",
+          "largestWinProbabilityShift": 0.04080000000000003,
+          "absoluteLargestShift": 0.04080000000000003,
+          "winProbabilityDeltas": {
+            "ALP": -0.0401999999999999,
+            "LIB_NAT": 0.04080000000000003,
+            "ONP": -0.0005999999999999998,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "canonicalFavouriteProbability": 0.7464,
+          "shadowFavouriteProbability": 0.7062
+        },
+        {
+          "districtId": "narre-warren-south",
+          "districtName": "Narre Warren South",
+          "canonicalFavourite": "ALP",
+          "shadowFavourite": "ALP",
+          "modalWinnerChanged": false,
+          "largestShiftParty": "ALP",
+          "largestWinProbabilityShift": -0.04059999999999997,
+          "absoluteLargestShift": 0.04059999999999997,
+          "winProbabilityDeltas": {
+            "ALP": -0.04059999999999997,
+            "LIB_NAT": 0.03340000000000001,
+            "ONP": 0.007199999999999984,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "canonicalFavouriteProbability": 0.475,
+          "shadowFavouriteProbability": 0.4344
+        },
+        {
+          "districtId": "hastings",
+          "districtName": "Hastings",
+          "canonicalFavourite": "LIB_NAT",
+          "shadowFavourite": "LIB_NAT",
+          "modalWinnerChanged": false,
+          "largestShiftParty": "LIB_NAT",
+          "largestWinProbabilityShift": 0.040000000000000036,
+          "absoluteLargestShift": 0.040000000000000036,
+          "winProbabilityDeltas": {
+            "ALP": -0.02679999999999999,
+            "LIB_NAT": 0.040000000000000036,
+            "ONP": -0.013200000000000003,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "canonicalFavouriteProbability": 0.764,
+          "shadowFavouriteProbability": 0.804
         },
         {
           "districtId": "bellarine",
@@ -374,74 +393,36 @@
           "shadowFavourite": "ALP",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.05000000000000002,
-          "absoluteLargestShift": 0.05000000000000002,
+          "largestWinProbabilityShift": 0.039600000000000024,
+          "absoluteLargestShift": 0.039600000000000024,
           "winProbabilityDeltas": {
-            "ALP": -0.04999999999999993,
-            "LIB_NAT": 0.05000000000000002,
+            "ALP": -0.03959999999999997,
+            "LIB_NAT": 0.039600000000000024,
             "ONP": 0.0,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.7522,
-          "shadowFavouriteProbability": 0.7022
+          "canonicalFavouriteProbability": 0.7414,
+          "shadowFavouriteProbability": 0.7018
         },
         {
-          "districtId": "euroa",
-          "districtName": "Euroa",
-          "canonicalFavourite": "LIB_NAT",
-          "shadowFavourite": "LIB_NAT",
-          "modalWinnerChanged": false,
-          "largestShiftParty": "ONP",
-          "largestWinProbabilityShift": -0.04960000000000003,
-          "absoluteLargestShift": 0.04960000000000003,
-          "winProbabilityDeltas": {
-            "ALP": 0.0,
-            "LIB_NAT": 0.04959999999999998,
-            "ONP": -0.04960000000000003,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.5874,
-          "shadowFavouriteProbability": 0.637
-        },
-        {
-          "districtId": "box-hill",
-          "districtName": "Box Hill",
+          "districtId": "eureka",
+          "districtName": "Eureka",
           "canonicalFavourite": "ALP",
           "shadowFavourite": "ALP",
           "modalWinnerChanged": false,
           "largestShiftParty": "ALP",
-          "largestWinProbabilityShift": -0.047800000000000065,
-          "absoluteLargestShift": 0.047800000000000065,
+          "largestWinProbabilityShift": -0.03859999999999997,
+          "absoluteLargestShift": 0.03859999999999997,
           "winProbabilityDeltas": {
-            "ALP": -0.047800000000000065,
-            "LIB_NAT": 0.04779999999999998,
-            "ONP": 0.0,
+            "ALP": -0.03859999999999997,
+            "LIB_NAT": 0.02880000000000002,
+            "ONP": 0.009800000000000003,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.8282,
-          "shadowFavouriteProbability": 0.7804
-        },
-        {
-          "districtId": "st-albans",
-          "districtName": "St Albans",
-          "canonicalFavourite": "ALP",
-          "shadowFavourite": "ALP",
-          "modalWinnerChanged": false,
-          "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.046999999999999986,
-          "absoluteLargestShift": 0.046999999999999986,
-          "winProbabilityDeltas": {
-            "ALP": -0.04420000000000002,
-            "LIB_NAT": 0.046999999999999986,
-            "ONP": -0.002800000000000011,
-            "GRN": 0.0,
-            "OTH_IND": 0.0
-          },
-          "canonicalFavouriteProbability": 0.7574,
-          "shadowFavouriteProbability": 0.7132
+          "canonicalFavouriteProbability": 0.6322,
+          "shadowFavouriteProbability": 0.5936
         },
         {
           "districtId": "mordialloc",
@@ -450,36 +431,36 @@
           "shadowFavourite": "ALP",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.0464,
-          "absoluteLargestShift": 0.0464,
+          "largestWinProbabilityShift": 0.0378,
+          "absoluteLargestShift": 0.0378,
           "winProbabilityDeltas": {
-            "ALP": -0.045399999999999996,
-            "LIB_NAT": 0.0464,
-            "ONP": -0.001,
+            "ALP": -0.03739999999999999,
+            "LIB_NAT": 0.0378,
+            "ONP": -0.0004000000000000002,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.8128,
-          "shadowFavouriteProbability": 0.7674
+          "canonicalFavouriteProbability": 0.8032,
+          "shadowFavouriteProbability": 0.7658
         },
         {
-          "districtId": "polwarth",
-          "districtName": "Polwarth",
-          "canonicalFavourite": "LIB_NAT",
-          "shadowFavourite": "LIB_NAT",
+          "districtId": "box-hill",
+          "districtName": "Box Hill",
+          "canonicalFavourite": "ALP",
+          "shadowFavourite": "ALP",
           "modalWinnerChanged": false,
-          "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.04580000000000006,
-          "absoluteLargestShift": 0.04580000000000006,
+          "largestShiftParty": "ALP",
+          "largestWinProbabilityShift": -0.03720000000000001,
+          "absoluteLargestShift": 0.03720000000000001,
           "winProbabilityDeltas": {
-            "ALP": -0.043999999999999984,
-            "LIB_NAT": 0.04580000000000006,
-            "ONP": -0.0017999999999999995,
+            "ALP": -0.03720000000000001,
+            "LIB_NAT": 0.03719999999999998,
+            "ONP": 0.0,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.7824,
-          "shadowFavouriteProbability": 0.8282
+          "canonicalFavouriteProbability": 0.8164,
+          "shadowFavouriteProbability": 0.7792
         },
         {
           "districtId": "brighton",
@@ -487,37 +468,37 @@
           "canonicalFavourite": "LIB_NAT",
           "shadowFavourite": "LIB_NAT",
           "modalWinnerChanged": false,
-          "largestShiftParty": "ALP",
-          "largestWinProbabilityShift": -0.0456,
-          "absoluteLargestShift": 0.0456,
+          "largestShiftParty": "LIB_NAT",
+          "largestWinProbabilityShift": 0.036800000000000055,
+          "absoluteLargestShift": 0.036800000000000055,
           "winProbabilityDeltas": {
-            "ALP": -0.0456,
-            "LIB_NAT": 0.045599999999999974,
+            "ALP": -0.0368,
+            "LIB_NAT": 0.036800000000000055,
             "ONP": 0.0,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.7502,
-          "shadowFavouriteProbability": 0.7958
+          "canonicalFavouriteProbability": 0.7692,
+          "shadowFavouriteProbability": 0.806
         },
         {
-          "districtId": "rowville",
-          "districtName": "Rowville",
+          "districtId": "warrandyte",
+          "districtName": "Warrandyte",
           "canonicalFavourite": "LIB_NAT",
           "shadowFavourite": "LIB_NAT",
           "modalWinnerChanged": false,
           "largestShiftParty": "LIB_NAT",
-          "largestWinProbabilityShift": 0.043399999999999994,
-          "absoluteLargestShift": 0.043399999999999994,
+          "largestWinProbabilityShift": 0.03500000000000003,
+          "absoluteLargestShift": 0.03500000000000003,
           "winProbabilityDeltas": {
-            "ALP": -0.0426,
-            "LIB_NAT": 0.043399999999999994,
-            "ONP": -0.0008000000000000001,
+            "ALP": -0.035,
+            "LIB_NAT": 0.03500000000000003,
+            "ONP": 0.0,
             "GRN": 0.0,
             "OTH_IND": 0.0
           },
-          "canonicalFavouriteProbability": 0.805,
-          "shadowFavouriteProbability": 0.8484
+          "canonicalFavouriteProbability": 0.8228,
+          "shadowFavouriteProbability": 0.8578
         }
       ]
     }
@@ -528,9 +509,9 @@
     "deltaMajorPartyNoControlProbability": 0.0,
     "parties": {
       "ALP": {
-        "canonicalMeanSeats": 11.744,
-        "shadowMeanSeats": 11.6268,
-        "deltaMeanSeats": -0.11720000000000041,
+        "canonicalMeanSeats": 11.7358,
+        "shadowMeanSeats": 11.635,
+        "deltaMeanSeats": -0.10079999999999956,
         "canonicalMedianSeats": 12.0,
         "shadowMedianSeats": 12.0,
         "canonicalMajorityProbability": 0.0,
@@ -539,10 +520,10 @@
         "majorityThreshold": 21
       },
       "LIB_NAT": {
-        "canonicalMeanSeats": 12.344,
-        "shadowMeanSeats": 12.5378,
-        "deltaMeanSeats": 0.1938000000000013,
-        "canonicalMedianSeats": 12.0,
+        "canonicalMeanSeats": 12.5458,
+        "shadowMeanSeats": 12.6678,
+        "deltaMeanSeats": 0.12199999999999989,
+        "canonicalMedianSeats": 13.0,
         "shadowMedianSeats": 13.0,
         "canonicalMajorityProbability": 0.0,
         "shadowMajorityProbability": 0.0,
@@ -550,9 +531,9 @@
         "majorityThreshold": 21
       },
       "ONP": {
-        "canonicalMeanSeats": 10.2368,
-        "shadowMeanSeats": 9.9448,
-        "deltaMeanSeats": -0.2919999999999998,
+        "canonicalMeanSeats": 10.1292,
+        "shadowMeanSeats": 9.8902,
+        "deltaMeanSeats": -0.23900000000000077,
         "canonicalMedianSeats": 10.0,
         "shadowMedianSeats": 10.0,
         "canonicalMajorityProbability": 0.0,
@@ -561,9 +542,9 @@
         "majorityThreshold": 21
       },
       "GRN": {
-        "canonicalMeanSeats": 2.8474,
-        "shadowMeanSeats": 2.78,
-        "deltaMeanSeats": -0.06740000000000013,
+        "canonicalMeanSeats": 2.9008,
+        "shadowMeanSeats": 2.8302,
+        "deltaMeanSeats": -0.07059999999999977,
         "canonicalMedianSeats": 3.0,
         "shadowMedianSeats": 3.0,
         "canonicalMajorityProbability": 0.0,
@@ -572,9 +553,9 @@
         "majorityThreshold": 21
       },
       "OTH_IND": {
-        "canonicalMeanSeats": 2.8278,
-        "shadowMeanSeats": 3.1106,
-        "deltaMeanSeats": 0.28279999999999994,
+        "canonicalMeanSeats": 2.6884,
+        "shadowMeanSeats": 2.9768,
+        "deltaMeanSeats": 0.28839999999999977,
         "canonicalMedianSeats": 3.0,
         "shadowMedianSeats": 3.0,
         "canonicalMajorityProbability": 0.0,
@@ -605,43 +586,14 @@
           },
           "modalPatternChanged": false,
           "largestAtLeastOneShiftParty": "OTH_IND",
-          "largestAtLeastOneProbabilityShift": 0.0663999999999999,
-          "absoluteLargestShift": 0.0663999999999999,
+          "largestAtLeastOneProbabilityShift": 0.06840000000000002,
+          "absoluteLargestShift": 0.06840000000000002,
           "atLeastOneProbabilityDeltas": {
             "ALP": 0.0,
             "LIB_NAT": 0.0,
-            "ONP": -0.023399999999999976,
-            "GRN": -0.052200000000000024,
-            "OTH_IND": 0.0663999999999999
-          }
-        },
-        {
-          "regionId": "western-metropolitan",
-          "regionName": "Western Metropolitan",
-          "canonicalModalPattern": {
-            "ALP": 2,
-            "LIB_NAT": 1,
-            "ONP": 1,
-            "GRN": 0,
-            "OTH_IND": 1
-          },
-          "shadowModalPattern": {
-            "ALP": 2,
-            "LIB_NAT": 1,
-            "ONP": 1,
-            "GRN": 0,
-            "OTH_IND": 1
-          },
-          "modalPatternChanged": false,
-          "largestAtLeastOneShiftParty": "OTH_IND",
-          "largestAtLeastOneProbabilityShift": 0.059599999999999986,
-          "absoluteLargestShift": 0.059599999999999986,
-          "atLeastOneProbabilityDeltas": {
-            "ALP": 0.0,
-            "LIB_NAT": 0.0,
-            "ONP": 0.0,
-            "GRN": -0.00040000000000001146,
-            "OTH_IND": 0.059599999999999986
+            "ONP": -0.0242,
+            "GRN": -0.04619999999999991,
+            "OTH_IND": 0.06840000000000002
           }
         },
         {
@@ -663,14 +615,43 @@
           },
           "modalPatternChanged": false,
           "largestAtLeastOneShiftParty": "OTH_IND",
-          "largestAtLeastOneProbabilityShift": 0.057999999999999996,
-          "absoluteLargestShift": 0.057999999999999996,
+          "largestAtLeastOneProbabilityShift": 0.05980000000000002,
+          "absoluteLargestShift": 0.05980000000000002,
           "atLeastOneProbabilityDeltas": {
             "ALP": 0.0,
             "LIB_NAT": 0.0,
             "ONP": 0.0,
-            "GRN": -0.0023999999999999994,
-            "OTH_IND": 0.057999999999999996
+            "GRN": -0.0027999999999999987,
+            "OTH_IND": 0.05980000000000002
+          }
+        },
+        {
+          "regionId": "western-metropolitan",
+          "regionName": "Western Metropolitan",
+          "canonicalModalPattern": {
+            "ALP": 2,
+            "LIB_NAT": 1,
+            "ONP": 1,
+            "GRN": 0,
+            "OTH_IND": 1
+          },
+          "shadowModalPattern": {
+            "ALP": 2,
+            "LIB_NAT": 1,
+            "ONP": 1,
+            "GRN": 0,
+            "OTH_IND": 1
+          },
+          "modalPatternChanged": false,
+          "largestAtLeastOneShiftParty": "OTH_IND",
+          "largestAtLeastOneProbabilityShift": 0.05700000000000005,
+          "absoluteLargestShift": 0.05700000000000005,
+          "atLeastOneProbabilityDeltas": {
+            "ALP": 0.0,
+            "LIB_NAT": 0.0,
+            "ONP": 0.0,
+            "GRN": -0.0050000000000000044,
+            "OTH_IND": 0.05700000000000005
           }
         },
         {
@@ -692,14 +673,14 @@
           },
           "modalPatternChanged": false,
           "largestAtLeastOneShiftParty": "OTH_IND",
-          "largestAtLeastOneProbabilityShift": 0.04119999999999996,
-          "absoluteLargestShift": 0.04119999999999996,
+          "largestAtLeastOneProbabilityShift": 0.03940000000000002,
+          "absoluteLargestShift": 0.03940000000000002,
           "atLeastOneProbabilityDeltas": {
             "ALP": 0.0,
             "LIB_NAT": 0.0,
             "ONP": 0.0,
-            "GRN": -0.006600000000000009,
-            "OTH_IND": 0.04119999999999996
+            "GRN": -0.008800000000000002,
+            "OTH_IND": 0.03940000000000002
           }
         },
         {
@@ -721,14 +702,14 @@
           },
           "modalPatternChanged": false,
           "largestAtLeastOneShiftParty": "OTH_IND",
-          "largestAtLeastOneProbabilityShift": 0.03379999999999997,
-          "absoluteLargestShift": 0.03379999999999997,
+          "largestAtLeastOneProbabilityShift": 0.03520000000000001,
+          "absoluteLargestShift": 0.03520000000000001,
           "atLeastOneProbabilityDeltas": {
             "ALP": 0.0,
             "LIB_NAT": 0.0,
             "ONP": 0.0,
-            "GRN": -0.0023999999999999994,
-            "OTH_IND": 0.03379999999999997
+            "GRN": -0.0028000000000000004,
+            "OTH_IND": 0.03520000000000001
           }
         },
         {
@@ -750,14 +731,14 @@
           },
           "modalPatternChanged": false,
           "largestAtLeastOneShiftParty": "OTH_IND",
-          "largestAtLeastOneProbabilityShift": 0.021400000000000086,
-          "absoluteLargestShift": 0.021400000000000086,
+          "largestAtLeastOneProbabilityShift": 0.025800000000000045,
+          "absoluteLargestShift": 0.025800000000000045,
           "atLeastOneProbabilityDeltas": {
             "ALP": 0.0,
             "LIB_NAT": 0.0,
             "ONP": 0.0,
-            "GRN": -0.0004000000000000002,
-            "OTH_IND": 0.021400000000000086
+            "GRN": -0.0018,
+            "OTH_IND": 0.025800000000000045
           }
         },
         {
@@ -784,9 +765,9 @@
           "atLeastOneProbabilityDeltas": {
             "ALP": 0.0,
             "LIB_NAT": 0.0,
-            "ONP": 0.0,
+            "ONP": 0.00019999999999997797,
             "GRN": -0.0028000000000000247,
-            "OTH_IND": 0.0026000000000000016
+            "OTH_IND": 0.002
           }
         },
         {
@@ -807,15 +788,15 @@
             "OTH_IND": 0
           },
           "modalPatternChanged": false,
-          "largestAtLeastOneShiftParty": "LIB_NAT",
-          "largestAtLeastOneProbabilityShift": 0.0010000000000000009,
+          "largestAtLeastOneShiftParty": "ONP",
+          "largestAtLeastOneProbabilityShift": -0.0010000000000000009,
           "absoluteLargestShift": 0.0010000000000000009,
           "atLeastOneProbabilityDeltas": {
             "ALP": 0.0,
-            "LIB_NAT": 0.0010000000000000009,
-            "ONP": -0.00040000000000006697,
+            "LIB_NAT": 0.0006000000000000449,
+            "ONP": -0.0010000000000000009,
             "GRN": 0.0,
-            "OTH_IND": -0.0001999999999999988
+            "OTH_IND": 0.0007999999999999986
           }
         }
       ]
@@ -848,7 +829,7 @@
     ]
   },
   "inputFingerprint": {
-    "combinedSha256": "f25dfeffb404a644edd96847b9489cf0d9cb67996f2896c95b1c35005ad7fcd8",
+    "combinedSha256": "4422abb5b024e2dd4a6836b6bbc1dace378b52bd36374b1852d9bde5455a5464",
     "files": {
       "metadata/manual-source-evidence-2026.json": "06a82229ad96f77a4af6628e6bc2bb283f6cb35ab719e9d50829d74aa0d71fd3",
       "metadata/research-source-evidence-2026.json": "25eda5d8d58b5ddc229fac11bea102826debb9919f77e19246a90f7fc8811c2b",
@@ -857,8 +838,8 @@
       "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz": "1b65fc4f865925f0f8abdfa6adb12ee674357c0867f5f7a2b8bc46d56e8f223a",
       "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz": "94548a20f13b47707adb97004bca8059b30b95512d9dec17ae2b44c53d171549",
       "model/data/processed/district_region_membership_2026.csv": "f815161b2d8d6aa0c028f01d4e2fbeb615057ff2e659f1d116d5c52af3a921d7",
-      "model/data/processed/poll_estimates_seed.csv": "834ac3642b31b8473912e644af89bce56c66e494d73b5b39a3e81b73d3eabd33",
-      "model/data/processed/poll_events_seed.csv": "682caf96a75028580b27f3e2fd4c0b34342e151b354a88ea423ff4bbaf1e806f",
+      "model/data/processed/poll_estimates_seed.csv": "35ff2acb57606d66d28f09b79d4b1427e6f43af5387e15473d228def856bf43b",
+      "model/data/processed/poll_events_seed.csv": "8bf9fe10fc4839bea01341ee6a1e0a5d48d09084697c829b3ce62f95e38b5858",
       "model/data/processed/upper_house_region_poll_2026-08.csv": "3387d85815972fcb3420c7316856efe28520158608cce62a5a68b42fc3dfb3d1",
       "model/data/processed/vec_2022_indicative_candidate_evidence.csv": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa",
       "model/data/processed/vec_enrolment_district_2026-06.csv": "ce4af13b5082134d0b7fb165abf991e14b35f7a2b9e317ef7f87a3f662764b28",

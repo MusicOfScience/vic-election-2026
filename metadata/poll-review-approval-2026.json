@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "approvedAt": "2026-08-30T09:10:00Z",
+  "reviewerRole": "project-owner",
+  "scope": "Approval of the seven recommendations in metadata/poll-review-dossier-2026.json. Evidence acceptance and model eligibility remain separate decisions.",
+  "evidenceDecisions": [
+    { "evidenceId": "742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72", "decision": "defer" },
+    { "evidenceId": "redbridge-accent-vic-2026-08-01-primary", "decision": "approve" },
+    { "evidenceId": "freshwater-2026-02-primary-workbook", "decision": "approve" },
+    { "evidenceId": "freshwater-2026-03-primary-workbook", "decision": "approve" },
+    { "evidenceId": "freshwater-2026-08-primary-workbook", "decision": "approve" },
+    { "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary", "decision": "hold" },
+    { "evidenceId": "yougov-common-threads-vic-mrp-2026-06-16-07-10-secondary", "decision": "hold" }
+  ],
+  "modelEligibilityDecisions": [
+    { "evidenceId": "freshwater-2026-02-primary-workbook", "pollId": "freshwater_2026-02", "decision": "eligible", "canonicalAction": "add" },
+    { "evidenceId": "freshwater-2026-03-primary-workbook", "pollId": "freshwater_2026-03", "decision": "eligible", "canonicalAction": "add" },
+    { "evidenceId": "freshwater-2026-08-primary-workbook", "pollId": "freshwater_2026-08", "decision": "eligible", "canonicalAction": "repair-existing" },
+    { "evidenceId": "redbridge-accent-vic-2026-08-01-primary", "pollId": "redbridge_accent_2026-08", "decision": "pending", "canonicalAction": "none", "blocker": "Confirm sample-family independence from the June RedBridge evidence before model admission." }
+  ]
+}

@@ -5,5 +5,126 @@
     "acceptance": "Human-reviewed source evidence only.",
     "modelEligibility": "Acceptance here does not make a poll model-eligible; model inclusion remains a separate explicit decision."
   },
-  "polls": []
+  "polls": [
+    {
+      "evidenceId": "redbridge-accent-vic-2026-08-01-primary",
+      "kind": "poll",
+      "pollster": "RedBridge / Accent Research",
+      "fieldworkStart": "2026-07-28",
+      "fieldworkEnd": "2026-08-01",
+      "publicationDate": "2026-08-03",
+      "sampleSize": 1014,
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted; undecided leaner then unresolved excluded",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 30,
+        "alp": 23,
+        "oneNation": 22,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "twoPartyPreferred": {
+        "coalition": 57,
+        "alp": 43,
+        "basis": "respondent allocated"
+      },
+      "sourceUrl": "https://www.accent-research.com/projects/afr%2C-redbridge-group-and-accent-research-august-2026-victorian-state-poll",
+      "sourceId": "redbridge-accent-victoria-state-polls",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "modelEligible": false,
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "reviewerRole": "project-owner"
+    },
+    {
+      "evidenceId": "freshwater-2026-02-primary-workbook",
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "fieldworkStart": "2026-02-19",
+      "fieldworkEnd": "2026-02-23",
+      "publicationDate": "2026-03-04",
+      "sampleSize": 1030,
+      "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 27.5543,
+        "coalition": 26.8263,
+        "oneNation": 22.6102,
+        "greens": 13.1181,
+        "otherParties": 9.8911
+      },
+      "twoPartyPreferred": {
+        "alp": 49.9581,
+        "coalition": 50.0419,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "sourceUrl": "https://freshwaterstrategy.com/2026/03/11/herald-sun-freshwater-strategy-february-polling-data/",
+      "sourceId": "freshwater-victoria-state-polls",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "modelEligible": true,
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "reviewerRole": "project-owner"
+    },
+    {
+      "evidenceId": "freshwater-2026-03-primary-workbook",
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "fieldworkStart": "2026-03-19",
+      "fieldworkEnd": "2026-03-23",
+      "publicationDate": "2026-03-24",
+      "sampleSize": 1062,
+      "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 27.115,
+        "coalition": 29.5888,
+        "oneNation": 20.3898,
+        "greens": 13.8359,
+        "otherParties": 9.0705
+      },
+      "twoPartyPreferred": {
+        "alp": 47.6118,
+        "coalition": 52.3882,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "sourceUrl": "https://freshwaterstrategy.com/2026/04/02/herald-sun-freshwater-strategy-march-polling-data/",
+      "sourceId": "freshwater-victoria-state-polls",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "modelEligible": true,
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "reviewerRole": "project-owner"
+    },
+    {
+      "evidenceId": "freshwater-2026-08-primary-workbook",
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "fieldworkStart": "2026-07-31",
+      "fieldworkEnd": "2026-08-03",
+      "publicationDate": "2026-08-04",
+      "sampleSize": 1020,
+      "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24.6592,
+        "coalition": 30.3013,
+        "oneNation": 21.6056,
+        "greens": 14.4694,
+        "otherParties": 8.9645
+      },
+      "twoPartyPreferred": {
+        "alp": 48.1641,
+        "coalition": 51.8359,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "sourceUrl": "https://freshwaterstrategy.com/2026/08/04/herald-sun-freshwater-strategy-august-polling-data/",
+      "sourceId": "freshwater-victoria-state-polls",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "modelEligible": true,
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "reviewerRole": "project-owner"
+    }
+  ]
 }

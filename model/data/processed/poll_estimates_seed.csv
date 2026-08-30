@@ -9,11 +9,21 @@ roy_morgan_2026-02,ONP,26.5,reported,
 roy_morgan_2026-02,LIB_NAT,21.5,reported,
 roy_morgan_2026-02,GRN,13.5,reported,
 roy_morgan_2026-02,OTH_IND,13.0,reported,
+freshwater_2026-02,ALP,27.5543,reported,Primary workbook SHA-256 5080ec635a09d9047110b378ce72da130c5aad796ec4b45a23aec6727e8953dd
+freshwater_2026-02,LIB_NAT,26.8263,reported,Primary workbook SHA-256 5080ec635a09d9047110b378ce72da130c5aad796ec4b45a23aec6727e8953dd
+freshwater_2026-02,ONP,22.6102,reported,Primary workbook SHA-256 5080ec635a09d9047110b378ce72da130c5aad796ec4b45a23aec6727e8953dd
+freshwater_2026-02,GRN,13.1181,reported,Primary workbook SHA-256 5080ec635a09d9047110b378ce72da130c5aad796ec4b45a23aec6727e8953dd
+freshwater_2026-02,OTH,9.8911,reported,Primary workbook SHA-256 5080ec635a09d9047110b378ce72da130c5aad796ec4b45a23aec6727e8953dd
 redbridge_accent_2026-02,LIB_NAT,28.0,reported,
 redbridge_accent_2026-02,ALP,25.0,reported,
 redbridge_accent_2026-02,ONP,24.0,reported,
 redbridge_accent_2026-02,GRN,13.0,reported,
 redbridge_accent_2026-02,OTH,10.0,reported,
+freshwater_2026-03,ALP,27.115,reported,Primary workbook SHA-256 f3329619a0632b81c81a99d476722be7b219f37efd62f1667f224ab079ff66e9
+freshwater_2026-03,LIB_NAT,29.5888,reported,Primary workbook SHA-256 f3329619a0632b81c81a99d476722be7b219f37efd62f1667f224ab079ff66e9
+freshwater_2026-03,ONP,20.3898,reported,Primary workbook SHA-256 f3329619a0632b81c81a99d476722be7b219f37efd62f1667f224ab079ff66e9
+freshwater_2026-03,GRN,13.8359,reported,Primary workbook SHA-256 f3329619a0632b81c81a99d476722be7b219f37efd62f1667f224ab079ff66e9
+freshwater_2026-03,OTH,9.0705,reported,Primary workbook SHA-256 f3329619a0632b81c81a99d476722be7b219f37efd62f1667f224ab079ff66e9
 roy_morgan_2026-04,ALP,25.5,reported,
 roy_morgan_2026-04,ONP,24.5,reported,
 roy_morgan_2026-04,LIB_NAT,24.0,reported,
@@ -40,12 +50,14 @@ newspoll_pyxis_2026-07,ALP,28.0,reported,
 newspoll_pyxis_2026-07,ONP,19.0,reported,
 newspoll_pyxis_2026-07,GRN,13.0,reported,
 newspoll_pyxis_2026-07,OTH,9.0,derived_remainder,"Derived as 100 minus the directly reported Coalition, Labor, One Nation and Greens primary shares."
+freshwater_2026-08,ALP,24.6592,reported,Primary workbook SHA-256 d87fad6e036bebee2b11b93be2402a4afca1813f1c3811daa1686491085ef7df
+freshwater_2026-08,LIB_NAT,30.3013,reported,Primary workbook SHA-256 d87fad6e036bebee2b11b93be2402a4afca1813f1c3811daa1686491085ef7df
+freshwater_2026-08,ONP,21.6056,reported,Primary workbook SHA-256 d87fad6e036bebee2b11b93be2402a4afca1813f1c3811daa1686491085ef7df
+freshwater_2026-08,GRN,14.4694,reported,Primary workbook SHA-256 d87fad6e036bebee2b11b93be2402a4afca1813f1c3811daa1686491085ef7df
+freshwater_2026-08,OTH,8.9645,reported,Primary workbook SHA-256 d87fad6e036bebee2b11b93be2402a4afca1813f1c3811daa1686491085ef7df
 roy_morgan_2026-08,ALP,26.0,reported,
 roy_morgan_2026-08,LIB_NAT,26.0,reported,
 roy_morgan_2026-08,ONP,23.5,reported,
 roy_morgan_2026-08,GRN,12.5,reported,
 roy_morgan_2026-08,OTH,4.0,reported,
 roy_morgan_2026-08,IND,8.0,reported,
-freshwater_2026-08,LIB_NAT,30.0,reported,
-freshwater_2026-08,ALP,25.0,reported,
-freshwater_2026-08,ONP,22.0,reported,

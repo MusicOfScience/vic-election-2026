@@ -23,10 +23,10 @@ test("poll coverage ledger separates published coverage from comparable/model-el
   assert.equal(report.externalBenchmark.publishedAssemblyPolls, 60);
   assert.equal(report.externalBenchmark.pollingOrganisations, 8);
   assert.equal(report.repository.sourceFamiliesDeclared, 8);
-  assert.equal(report.repository.registryEvents, 11);
-  assert.equal(report.repository.modelEligibleEvents, 9);
+  assert.equal(report.repository.registryEvents, 13);
+  assert.equal(report.repository.modelEligibleEvents, 12);
   assert.equal(report.repository.stagedPollRecords, manual.records.length + primary.records.length + research.records.length);
-  assert.equal(report.repository.declaredGapsResolvedByStaging, 5);
+  assert.equal(report.repository.declaredGapsResolvedByStaging, 2);
   assert.equal(report.repository.actionableGapItems, 0);
   assert.equal(report.repository.currentSourceFamiliesWithActionableGaps, 0);
   assert.equal(report.integrity.allDeclaredCanonicalIdsExist, true);
@@ -35,7 +35,7 @@ test("poll coverage ledger separates published coverage from comparable/model-el
 test("staged evidence resolves dated coverage gaps without pretending it is model eligible", () => {
   const report = buildCoverageReport({ ledger, events, manualRecords: manual.records, primaryRecords: primary.records, researchRecords: research.records });
   const resolved = report.stagedCoverageResolutions.map((item) => item.proposedModelPollId).sort();
-  assert.deepEqual(resolved, ["freshwater_2026-02", "freshwater_2026-03", "freshwater_2026-08", "redbridge_accent_2026-08", "yougov_common_threads_mrp_2026-07"]);
+  assert.deepEqual(resolved, ["redbridge_accent_2026-08", "yougov_common_threads_mrp_2026-07"]);
   assert.deepEqual(report.actionableGaps, []);
 });
 
