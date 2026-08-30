@@ -74,6 +74,18 @@ export const releaseReadiness = {
         "betterRmseFolds": 2,
         "folds": 4
       }
+    },
+    "candidateDiscovery": {
+      "status": "quarantined-awaiting-review",
+      "records": 76,
+      "assemblyContests": 72,
+      "assemblyDistrictsTotal": 88,
+      "councilRegions": 4,
+      "councilRegionsTotal": 8,
+      "acceptedAssemblyContests": 0,
+      "unclassifiedContests": [],
+      "automaticPromotion": false,
+      "label": "72/88 Assembly districts have provisional candidate evidence staged for review"
     }
   },
   "evidenceFreshness": {
