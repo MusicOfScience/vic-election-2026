@@ -82,16 +82,16 @@ def test_scenario_registry_is_in_memory_and_adds_only_the_two_staged_polls():
 
 
 def test_impact_report_is_counterfactual_and_exposes_probability_shifts():
-    canonical = _forecast(poll_count=9)
-    shadow = _forecast(poll_count=11, poll_shift=0.5, district_shift=0.08)
+    canonical = _forecast(poll_count=12)
+    shadow = _forecast(poll_count=14, poll_shift=0.5, district_shift=0.08)
     report = build_impact_report(canonical, shadow, simulations=100, seed=42, as_of="2026-08-26")
 
     assert report["canonicalModelInputsChanged"] is False
     assert report["canonicalForecastArtifactsWritten"] is False
     assert report["scenarioEvidencePromoted"] is False
     assert report["commonRandomNumbers"] is True
-    assert report["polling"]["canonicalPollCount"] == 9
-    assert report["polling"]["shadowPollCount"] == 11
+    assert report["polling"]["canonicalPollCount"] == 12
+    assert report["polling"]["shadowPollCount"] == 14
     assert report["polling"]["deltaMean"]["LIB_NAT"] == 0.5
     assert report["assembly"]["districts"]["seatsWithFivePointOrLargerProbabilityShift"] == 1
     assert report["council"]["regions"]["largestProbabilityShifts"][0]["regionName"] == "Example"

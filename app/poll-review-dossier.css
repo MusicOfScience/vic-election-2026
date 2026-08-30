@@ -1,0 +1,48 @@
+.poll-review-dossier { padding: 27px; }
+.poll-review-heading { align-items: start; }
+.poll-review-status { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; color: #8b4a22; background: #fff3e6; border: 1px solid #e3ba91; font-size: 8px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+.poll-review-status.approved { color: #22624f; background: #e9f3ef; border-color: #a9cbbf; }
+.poll-review-summary { margin: 20px 0; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
+.poll-review-summary article { min-height: 92px; padding: 16px; display: grid; align-content: center; border-right: 1px solid var(--line); }
+.poll-review-summary article:last-child { border-right: 0; }
+.poll-review-summary strong { font: 28px Georgia, serif; }
+.poll-review-summary span { margin-top: 4px; color: var(--muted-ink); font-size: 8px; line-height: 1.35; text-transform: uppercase; }
+.poll-review-list { border-top: 1px solid var(--line); }
+.poll-review-item { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); background: var(--white); }
+.poll-review-item summary { min-height: 72px; padding: 13px 16px; display: grid; grid-template-columns: 26px minmax(150px, .55fr) minmax(220px, 1fr); align-items: center; gap: 12px; cursor: pointer; list-style: none; }
+.poll-review-item summary::-webkit-details-marker { display: none; }
+.poll-review-item summary::after { content: "+"; grid-column: 4; color: var(--muted-ink); font: 18px Georgia, serif; }
+.poll-review-item[open] summary::after { content: "−"; }
+.poll-review-icon { width: 26px; height: 26px; display: grid; place-items: center; color: #22624f; background: #e9f3ef; border-radius: 50%; }
+.poll-review-item.defer .poll-review-icon, .poll-review-item.hold .poll-review-icon { color: #9a5725; background: #fff0df; }
+.poll-review-name, .poll-review-recommendation { display: grid; gap: 4px; }
+.poll-review-name strong { font: 17px/1.1 Georgia, serif; }
+.poll-review-name small, .poll-review-recommendation small { color: var(--muted-ink); font-size: 8.5px; line-height: 1.4; }
+.poll-review-recommendation b { color: #22624f; font-size: 9px; letter-spacing: .045em; text-transform: uppercase; }
+.poll-review-item.defer .poll-review-recommendation b, .poll-review-item.hold .poll-review-recommendation b { color: #99501f; }
+.poll-review-detail { padding: 0 18px 18px 54px; display: grid; gap: 15px; border-top: 1px solid #e5e4de; }
+.poll-review-detail > p { max-width: 860px; margin: 16px 0 0; color: #4f5d66; font-size: 10px; line-height: 1.6; }
+.poll-review-votes { display: flex; flex-wrap: wrap; gap: 8px; }
+.poll-review-votes span { min-width: 90px; padding: 9px 11px; display: grid; gap: 2px; color: var(--muted-ink); background: #f3f3ef; font-size: 7.5px; text-transform: uppercase; }
+.poll-review-votes b { color: var(--ink); font: 15px Georgia, serif; }
+.poll-review-checks { max-width: 860px; padding: 13px 15px; background: #f7f4ec; border-left: 3px solid #bd8d37; }
+.poll-review-checks strong { display: flex; align-items: center; gap: 6px; color: #6e4b16; font-size: 8.5px; text-transform: uppercase; }
+.poll-review-checks ul { margin: 8px 0 0; padding-left: 18px; color: #556169; font-size: 9px; line-height: 1.55; }
+.poll-review-detail > a { width: fit-content; display: inline-flex; align-items: center; gap: 5px; color: #85462c; font-size: 9px; font-weight: 800; text-decoration: none; }
+.poll-review-detail > a:hover, .poll-review-detail > a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.poll-review-policy { margin: 16px 0 0; color: var(--muted-ink); font-size: 9.5px; line-height: 1.55; }
+.poll-review-policy strong { color: #8d4528; }
+
+@media (max-width: 760px) {
+  .poll-review-dossier { padding: 21px 16px; }
+  .poll-review-heading { display: grid; }
+  .poll-review-status { width: fit-content; }
+  .poll-review-summary { grid-template-columns: repeat(2, 1fr); }
+  .poll-review-summary article:nth-child(2) { border-right: 0; }
+  .poll-review-summary article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .poll-review-item summary { grid-template-columns: 26px 1fr auto; }
+  .poll-review-recommendation { grid-column: 2 / 4; }
+  .poll-review-item summary::after { grid-column: 3; grid-row: 1; }
+  .poll-review-detail { padding: 0 14px 16px; }
+  .poll-review-votes span { min-width: calc(50% - 4px); }
+}

@@ -94,107 +94,14 @@
     {
       "id": "freshwater",
       "label": "Freshwater Strategy",
-      "coverageClass": "canonical-plus-primary-staged",
+      "coverageClass": "canonical-current",
       "canonicalModelEligiblePollIds": [
-        "freshwater_2026-06"
-      ],
-      "registeredButNotEligiblePollIds": [
+        "freshwater_2026-02",
+        "freshwater_2026-03",
+        "freshwater_2026-06",
         "freshwater_2026-08"
       ],
-      "actionableGaps": [
-        {
-          "label": "Herald Sun / Freshwater February state poll",
-          "fieldworkStart": "2026-02-19",
-          "fieldworkEnd": "2026-02-23",
-          "sampleSize": 1030,
-          "primaryVote": {
-            "ALP": 28,
-            "LIB_NAT": 27,
-            "ONP": 23,
-            "GRN": 13,
-            "OTH_IND": 9
-          },
-          "status": "primary-workbook-parsed-awaiting-human-review",
-          "primaryVoteExact": {
-            "alp": 27.5543,
-            "coalition": 26.8263,
-            "oneNation": 22.6102,
-            "greens": 13.1181,
-            "otherParties": 9.8911
-          },
-          "twoPartyPreferredExact": {
-            "alp": 49.9581,
-            "coalition": 50.0419,
-            "basis": "first-party workbook valid Coalition-Labor TPP"
-          },
-          "primarySourceUrl": "https://freshwaterstrategy.com/2026/03/11/herald-sun-freshwater-strategy-february-polling-data/",
-          "primaryWorkbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230226.xlsx",
-          "notes": "The workbook exact residual is 9.8911%, while some rounded secondary summaries reported Other as 9%. Preserve the exact five-way composition for review; do not silently force headline integers to sum to 100."
-        },
-        {
-          "label": "Herald Sun / Freshwater March state poll",
-          "fieldworkStart": "2026-03-19",
-          "fieldworkEnd": "2026-03-23",
-          "sampleSize": 1062,
-          "primaryVote": {
-            "LIB_NAT": 30,
-            "ALP": 27,
-            "ONP": 20,
-            "GRN": 14,
-            "OTH_IND": 9
-          },
-          "primarySourceUrl": "https://freshwaterstrategy.com/2026/04/02/herald-sun-freshwater-strategy-march-polling-data/",
-          "status": "primary-workbook-parsed-awaiting-human-review",
-          "notes": "The first-party workbook confirms the full five-way composition, methodology, sample and Coalition-Labor TPP. Human evidence acceptance remains required.",
-          "primaryVoteExact": {
-            "alp": 27.115,
-            "coalition": 29.5888,
-            "oneNation": 20.3898,
-            "greens": 13.8359,
-            "otherParties": 9.0705
-          },
-          "twoPartyPreferredExact": {
-            "alp": 47.6118,
-            "coalition": 52.3882,
-            "basis": "first-party workbook valid Coalition-Labor TPP"
-          },
-          "primaryWorkbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230326.xlsx"
-        },
-        {
-          "label": "Herald Sun / Freshwater August state poll",
-          "fieldworkStart": "2026-07-31",
-          "fieldworkEnd": "2026-08-03",
-          "sampleSize": 1020,
-          "primaryVote": {
-            "LIB_NAT": 30,
-            "ALP": 25,
-            "ONP": 22,
-            "GRN": 14,
-            "OTH_IND": 9
-          },
-          "twoPartyPreferred": {
-            "LIB_NAT": 52,
-            "ALP": 48
-          },
-          "status": "primary-workbook-parsed-awaiting-human-review",
-          "notes": "The first-party page/workbook resolves the publication date to 4 August. The canonical registry currently uses 5 August and the same poll ID; review that correction and the completed Greens/Other rows before any model decision.",
-          "primaryVoteExact": {
-            "alp": 24.6592,
-            "coalition": 30.3013,
-            "oneNation": 21.6056,
-            "greens": 14.4694,
-            "otherParties": 8.9645
-          },
-          "twoPartyPreferredExact": {
-            "alp": 48.1641,
-            "coalition": 51.8359,
-            "basis": "first-party workbook valid Coalition-Labor TPP"
-          },
-          "primarySourceUrl": "https://freshwaterstrategy.com/2026/08/04/herald-sun-freshwater-strategy-august-polling-data/",
-          "primaryWorkbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-030826-Full-Tables.xlsx"
-        }
-      ],
-      "nextAction": "Human-review the parsed first-party workbooks, including February residual rounding and the August publication-date/canonical-ID reconciliation, before any model-eligibility decision."
+      "nextAction": "Continue live monitoring; primary-workbook evidence is human-reviewed and the four current comparable waves are canonical."
     },
     {
       "id": "newspoll-pyxis",

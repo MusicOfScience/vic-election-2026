@@ -182,7 +182,7 @@ test("ships explicit fail-closed release gates", async () => {
 test("generates the public poll series from the canonical model registry", async () => {
   const { pollSeries } = await vite.ssrLoadModule("/app/poll-data.generated.ts");
 
-  assert.equal(pollSeries.length, 9);
+  assert.equal(pollSeries.length, 12);
   assert.equal(pollSeries.at(-1).id, "roy_morgan_2026-08");
   assert.ok(pollSeries.every((poll) => Math.abs(poll.alp + poll.coalition + poll.onp + poll.greens + poll.other - 100) < .01));
   assert.ok(pollSeries.every((poll) => poll.verificationStatus === "verified" || poll.verificationStatus === "partially_verified"));

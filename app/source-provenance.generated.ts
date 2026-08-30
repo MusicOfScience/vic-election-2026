@@ -217,15 +217,15 @@ export const sourceProvenance = {
       "artifacts": [
         {
           "path": "model/data/processed/poll_events_seed.csv",
-          "sha256": "682caf96a75028580b27f3e2fd4c0b34342e151b354a88ea423ff4bbaf1e806f",
-          "bytes": 5532,
-          "records": 11
+          "sha256": "8bf9fe10fc4839bea01341ee6a1e0a5d48d09084697c829b3ce62f95e38b5858",
+          "bytes": 7091,
+          "records": 13
         },
         {
           "path": "model/data/processed/poll_estimates_seed.csv",
-          "sha256": "834ac3642b31b8473912e644af89bce56c66e494d73b5b39a3e81b73d3eabd33",
-          "bytes": 2178,
-          "records": 50
+          "sha256": "35ff2acb57606d66d28f09b79d4b1427e6f43af5387e15473d228def856bf43b",
+          "bytes": 4018,
+          "records": 62
         },
         {
           "path": "model/data/processed/upper_house_region_poll_2026-08.csv",
@@ -235,8 +235,8 @@ export const sourceProvenance = {
         },
         {
           "path": "app/poll-data.generated.ts",
-          "sha256": "e6912de68291e76bd0593eba17a0db5fd4a9f333642ee15d1f48fac1a0b71087",
-          "bytes": 6056,
+          "sha256": "ae24d87fcbff710bac0dacfda920dd2799e1c700a7a954e2b0b0ed8f9aae1a95",
+          "bytes": 8710,
           "records": null
         }
       ]
@@ -295,44 +295,44 @@ export const sourceProvenance = {
       "artifacts": [
         {
           "path": "model/data/processed/experimental_forecast_2026.json",
-          "sha256": "433840ada81aa4d97380d41d0a19c29331f3ef9a5a117c0aba5cebcf67bee65d",
-          "bytes": 6290,
+          "sha256": "abc915428fb521f32ab463cc76b8e15b9f18c21bb47b1efba593a5cf5f612d7d",
+          "bytes": 6291,
           "records": null
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_districts.csv",
-          "sha256": "b8f78db6d1a04c5bcb56223169ab50a82a563ae7c31d1f9398c79e520b36617d",
-          "bytes": 38048,
+          "sha256": "0908b755e60f6d67e9dd94f5c439c95077f13ec54b129e46ef380c9cb8c55834",
+          "bytes": 38023,
           "records": 88
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_chamber.csv",
-          "sha256": "c354da0a0a2902ae1e603a03898025059bd319e68daa18a7803fd1ab096fa53f",
-          "bytes": 268,
+          "sha256": "9c7580b68d27d0cacdad1d93d6265f26559ef5adb82eb28bff61e98bee34f4e8",
+          "bytes": 266,
           "records": 5
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
-          "sha256": "6f334ff3b5fcff761572925e08a7835c6b34bc093b0b996d30eb9c247cf30c7f",
-          "bytes": 757,
+          "sha256": "f2b5070563791c50fcdc74bf1a52009bc753fbfd676044208bb22e3892188ce3",
+          "bytes": 762,
           "records": 89
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council_regions.csv",
-          "sha256": "95342bfaf12930e6fb7ae65da529182a2d42ca7f9e483f1c919336c0ad11cfcd",
-          "bytes": 4302,
+          "sha256": "120f3f8d7c72fee48907f63f3ad875b833dd555e38e166d9064521df676f4c4c",
+          "bytes": 4301,
           "records": 8
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council.csv",
-          "sha256": "455c9dc6d3352ac08ee82b28a1991b0fffe44c24fee77369c086810141d0b7e0",
-          "bytes": 262,
+          "sha256": "f0b8446e94172222998505d940d60067bb49ae48a828e68ca1f9f774614d4b85",
+          "bytes": 264,
           "records": 5
         },
         {
           "path": "app/model-output.generated.ts",
-          "sha256": "ddc4220058af61c8183f39e956dc11759048d68cd6aa96f9f9be269511526c0a",
-          "bytes": 134427,
+          "sha256": "b686d09083c7484ac37978a7f8c5f413757aa47f7cfce8b1e8e30b5123c0b515",
+          "bytes": 134418,
           "records": null
         }
       ]

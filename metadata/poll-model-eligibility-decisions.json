@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "policy": "Model eligibility is decided separately from evidence acceptance. Eligible records enter the canonical registry only through an explicit canonical action.",
+  "decidedAt": "2026-08-30T09:10:00Z",
+  "reviewerRole": "project-owner",
+  "decisions": [
+    {
+      "evidenceId": "freshwater-2026-02-primary-workbook",
+      "pollId": "freshwater_2026-02",
+      "decision": "eligible",
+      "canonicalAction": "add"
+    },
+    {
+      "evidenceId": "freshwater-2026-03-primary-workbook",
+      "pollId": "freshwater_2026-03",
+      "decision": "eligible",
+      "canonicalAction": "add"
+    },
+    {
+      "evidenceId": "freshwater-2026-08-primary-workbook",
+      "pollId": "freshwater_2026-08",
+      "decision": "eligible",
+      "canonicalAction": "repair-existing"
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-08-01-primary",
+      "pollId": "redbridge_accent_2026-08",
+      "decision": "pending",
+      "canonicalAction": "none",
+      "blocker": "Confirm sample-family independence from the June RedBridge evidence before model admission."
+    }
+  ]
+}

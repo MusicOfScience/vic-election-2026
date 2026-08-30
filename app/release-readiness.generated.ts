@@ -107,7 +107,11 @@ export const releaseReadiness = {
       "pollster": "Roy Morgan",
       "status": "model-eligible"
     },
-    "acceptedEvidence": null,
+    "acceptedEvidence": {
+      "latestPublicationDate": "2026-08-04",
+      "pollster": "Freshwater Strategy",
+      "status": "human-reviewed-not-necessarily-model-eligible"
+    },
     "stagedEvidence": {
       "latestPublicationDate": "2026-08-21",
       "pollster": "Resolve Strategic",

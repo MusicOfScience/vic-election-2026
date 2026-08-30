@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-08-30",
+  "status": "recommendations-awaiting-human-decision",
+  "policy": "Evidence acceptance confirms that a poll record faithfully represents its source. Model eligibility is a separate decision about comparability, independence and statistical use. This dossier makes recommendations but cannot approve either decision.",
+  "summary": {
+    "stagedPolls": 7,
+    "recommendEvidenceAcceptance": 4,
+    "verifyThenAccept": 1,
+    "holdEvidence": 2,
+    "readyForModelDecisionAfterAcceptance": 2
+  },
+  "reviews": [
+    {
+      "evidenceId": "742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72",
+      "evidenceRecommendation": "verify_then_accept",
+      "modelRecommendation": "hold",
+      "rationale": "The figures were transcribed from the cited DemosAU article, but automated archival retrieval is blocked and the current record does not capture a full methodology statement.",
+      "requiredChecks": [
+        "A human compares every topline, fieldwork date and sample against the cited primary page",
+        "Capture questionnaire, undecided treatment, weighting and population details before model admission"
+      ]
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-08-01-primary",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "conditional_review",
+      "rationale": "First-party methodology and toplines are captured, including the corrected 57–43 respondent-allocated result. Model use still depends on sample-family independence and timing checks.",
+      "requiredChecks": [
+        "Confirm independence from the June large-sample/MRP-related RedBridge evidence",
+        "Encode the Allan–Wilson leadership regime and preserve the published 2PP correction history"
+      ]
+    },
+    {
+      "evidenceId": "freshwater-2026-02-primary-workbook",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "admit_after_acceptance",
+      "rationale": "The first-party workbook is fingerprinted and supplies the complete five-way vote, sample, weighting, undecided treatment and respondent-preference result.",
+      "requiredChecks": [
+        "Use exact workbook values rather than forcing rounded headlines to sum to 100",
+        "Retain the workbook checksum and extraction version with the admitted event"
+      ]
+    },
+    {
+      "evidenceId": "freshwater-2026-03-primary-workbook",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "admit_after_acceptance",
+      "rationale": "The first-party workbook is fingerprinted and reconciles the full composition, methodology, sample and Coalition–Labor preference result.",
+      "requiredChecks": [
+        "Use exact workbook values and preserve the published rounded values separately",
+        "Retain the workbook checksum and extraction version with the admitted event"
+      ]
+    },
+    {
+      "evidenceId": "freshwater-2026-08-primary-workbook",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "repair_existing_then_admit",
+      "rationale": "The primary workbook completes the Greens and residual rows omitted from the current registry and resolves the publication date to 4 August.",
+      "requiredChecks": [
+        "Amend the existing event rather than create a duplicate poll",
+        "Record the 4 August publication-date correction and add the complete exact five-way rows"
+      ]
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
+      "evidenceRecommendation": "hold",
+      "modelRecommendation": "hold",
+      "rationale": "Two reputable secondary reports agree, but the primary Resolve/The Age release, canonical publication date and methodology capture are still missing.",
+      "requiredChecks": [
+        "Capture the primary publisher or pollster record",
+        "Resolve the publication date, questionnaire, weighting and undecided treatment"
+      ]
+    },
+    {
+      "evidenceId": "yougov-common-threads-vic-mrp-2026-06-16-07-10-secondary",
+      "evidenceRecommendation": "hold",
+      "modelRecommendation": "comparison_only",
+      "rationale": "The primary methodology statement is captured, but the reported toplines remain secondary and the fieldwork end differs by one day. The statewide estimate and seat projection are one MRP evidence family.",
+      "requiredChecks": [
+        "Capture first-party published results and reconcile the 9/10 July fieldwork-end discrepancy",
+        "Do not count the statewide topline and 88-seat projection as independent signals",
+        "Keep the seat projection comparison-only unless the MRP transformation is validated out of sample"
+      ]
+    }
+  ]
+}

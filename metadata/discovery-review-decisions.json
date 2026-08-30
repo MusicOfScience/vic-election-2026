@@ -1,5 +1,76 @@
 {
   "schemaVersion": 1,
   "policy": "explicit-human-review-required",
-  "decisions": []
+  "decisions": [
+    {
+      "evidenceId": "742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72",
+      "recordHash": "30db68c6da76d99243cc3a8abb08853e62e7c77d2b8aef99565f02bbe796a6ab",
+      "kind": "poll",
+      "decision": "defer",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "note": "The figures were transcribed from the cited DemosAU article, but automated archival retrieval is blocked and the current record does not capture a full methodology statement.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-08-01-primary",
+      "recordHash": "c1b8a00c3199cc796e1f7f214144a0f1bfce94e27aa38140f89464313f4ac0b8",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "note": "First-party methodology and toplines are captured, including the corrected 57–43 respondent-allocated result. Model use still depends on sample-family independence and timing checks.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "freshwater-2026-02-primary-workbook",
+      "recordHash": "432ea41f3540b0d8fd9774925da4473994695be2ed6143351bbb914035b2972a",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "note": "The first-party workbook is fingerprinted and supplies the complete five-way vote, sample, weighting, undecided treatment and respondent-preference result.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "freshwater-2026-03-primary-workbook",
+      "recordHash": "8af9f6dfc4dbee133914c9439f033a29dc1be3f81dd22a437ef5240f50e65296",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "note": "The first-party workbook is fingerprinted and reconciles the full composition, methodology, sample and Coalition–Labor preference result.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "freshwater-2026-08-primary-workbook",
+      "recordHash": "db6b30a1464b85c68af27869c74f4c3d427999a3ee3002b214763753c4739bd9",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "note": "The primary workbook completes the Greens and residual rows omitted from the current registry and resolves the publication date to 4 August.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
+      "recordHash": "ed609dca5bb048f09b289cc100f8717e9fb56a873a3c72a76a0fc6556508ea7c",
+      "kind": "poll",
+      "decision": "hold",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "note": "Two reputable secondary reports agree, but the primary Resolve/The Age release, canonical publication date and methodology capture are still missing.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "yougov-common-threads-vic-mrp-2026-06-16-07-10-secondary",
+      "recordHash": "d4076490afec2f0ffd0f3f64c4b00fd1371fa4c66031f07d57a0ecda47f85a4e",
+      "kind": "poll",
+      "decision": "hold",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-30T09:10:00Z",
+      "note": "The primary methodology statement is captured, but the reported toplines remain secondary and the fieldwork end differs by one day. The statewide estimate and seat projection are one MRP evidence family.",
+      "modelInputsChanged": false
+    }
+  ]
 }

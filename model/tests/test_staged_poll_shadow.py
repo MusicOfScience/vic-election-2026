@@ -19,10 +19,10 @@ def test_shadow_report_keeps_canonical_inputs_untouched():
     assert report["mode"] == "shadow-polling-sensitivity-only"
     assert report["canonicalModelInputsChanged"] is False
     assert report["seatForecastRecomputed"] is False
-    assert report["scenarios"]["canonical"]["pollCount"] == 9
-    assert report["scenarios"]["plus_demosau"]["pollCount"] == 10
-    assert report["scenarios"]["plus_resolve"]["pollCount"] == 10
-    assert report["scenarios"]["plus_both"]["pollCount"] == 11
+    assert report["scenarios"]["canonical"]["pollCount"] == 12
+    assert report["scenarios"]["plus_demosau"]["pollCount"] == 13
+    assert report["scenarios"]["plus_resolve"]["pollCount"] == 13
+    assert report["scenarios"]["plus_both"]["pollCount"] == 14
 
 
 def test_shadow_compositions_remain_coherent_and_deltas_net_to_zero():
