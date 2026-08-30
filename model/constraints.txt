@@ -1,0 +1,4 @@
+# Reproducibility contract for forecast generation and CI.
+numpy==2.3.5
+pandas==2.2.3
+pyyaml==6.0.3

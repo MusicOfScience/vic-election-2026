@@ -23,7 +23,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: npm ci
-      - run: python -m pip install -e './model[dev]'
+      - run: python -m pip install -c model/constraints.txt -e './model[dev]'
       - name: Regenerate deterministic artefacts
         run: bash scripts/refresh-forecast.sh
       - name: Reject uncommitted or timestamp-only drift

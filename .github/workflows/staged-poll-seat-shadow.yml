@@ -40,7 +40,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python -m pip install -e './model'
+      - run: python -m pip install -c model/constraints.txt -e './model'
       - name: Run canonical vs both-newer-polls full-election shadow
         shell: bash
         run: |
