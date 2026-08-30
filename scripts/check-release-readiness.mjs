@@ -47,6 +47,7 @@ export function buildReadiness({ asOf }) {
   const provenance = readJson("metadata/source-provenance.generated.json");
   const forecast = readJson("model/data/processed/experimental_forecast_2026.json");
   const validation = readJson("metadata/model-validation-status.json");
+  const validationEvidence = readJson("metadata/model-validation-evidence-contract.json");
   const candidates = readJson("metadata/candidates-2026.json");
   const provisionalCandidates = readJson("metadata/provisional-candidate-evidence-2026.json");
   const accepted = readJson("metadata/accepted-polls-2026.json");
@@ -99,6 +100,10 @@ export function buildReadiness({ asOf }) {
   const unclassifiedCandidateContests = [...new Set(stagedContests.filter((item) => !item.classification).map((item) => item.sourceContest))];
   const completeForecastBacktest = validation.completeForecastBacktest?.passed === true;
   const probabilityCalibration = validation.probabilityCalibration?.passed === true;
+  const validationEvidenceCounts = validationEvidence.components.reduce((counts, component) => {
+    counts[component.status] = (counts[component.status] ?? 0) + 1;
+    return counts;
+  }, {});
   const productionAuthorised = forecast.production_compatible === true;
   const gates = {
     sourceIntegrity: { passed: sourceIntegrity, label: "Source fingerprints match" },
@@ -137,6 +142,15 @@ export function buildReadiness({ asOf }) {
         unclassifiedContests: unclassifiedCandidateContests,
         automaticPromotion: false,
         label: `${stagedAssemblyContests.size}/88 Assembly districts have provisional candidate evidence staged for review`,
+      },
+      validationEvidence: {
+        scope: validationEvidence.scope,
+        complete: validationEvidenceCounts.complete ?? 0,
+        partial: validationEvidenceCounts.partial ?? 0,
+        missing: validationEvidenceCounts.missing ?? 0,
+        total: validationEvidence.components.length,
+        automaticGateOpening: validationEvidence.automaticGateOpening,
+        label: `${validationEvidenceCounts.complete ?? 0}/${validationEvidence.components.length} complete-model historical evidence components are complete`,
       },
     },
     evidenceFreshness,

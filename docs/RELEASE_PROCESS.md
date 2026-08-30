@@ -40,4 +40,6 @@ A production release requires all of the following:
 
 Feature experiments are recorded separately. The demographic challenger failed its sealed promotion test and remains at zero central weight. That rejection is an honest modelling result, not a failed requirement that prevents a simpler validated model from eventually reaching production.
 
+`metadata/model-validation-evidence-contract.json` records the evidence required to test the complete system. The existing four-cycle TPP residual ledger satisfies the two-party benchmark component only; historical polling vintages, party-primary/ballot coverage, preference/final-pair evidence, Council evidence and leakage-safe cycle configurations must be acquired and frozen before the complete-model gates can be evaluated.
+
 If any required gate fails, retain the last valid forecast and do not publish new probabilities as production-ready.

@@ -53,3 +53,14 @@ test("reports provisional candidate discovery without treating it as accepted co
   assert.equal(readiness.findings.candidateDiscovery.automaticPromotion, false);
   assert.equal(readiness.gates.candidateEvidence.passed, false);
 });
+
+test("does not substitute a two-party residual ledger for complete-model evidence", () => {
+  const readiness = buildReadiness({ asOf: "2026-08-28" });
+  assert.equal(readiness.findings.validationEvidence.complete, 1);
+  assert.equal(readiness.findings.validationEvidence.partial, 1);
+  assert.equal(readiness.findings.validationEvidence.missing, 5);
+  assert.equal(readiness.findings.validationEvidence.total, 7);
+  assert.equal(readiness.findings.validationEvidence.automaticGateOpening, false);
+  assert.equal(readiness.gates.completeForecastBacktest.passed, false);
+  assert.equal(readiness.gates.probabilityCalibration.passed, false);
+});
