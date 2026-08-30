@@ -9,8 +9,16 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "model/scripts"))
 
-from run_staged_poll_seat_shadow import _scenario_registry, build_impact_report  # noqa: E402
+from run_staged_poll_seat_shadow import SHADOW_INPUT_PATHS, _scenario_registry, build_impact_report  # noqa: E402
 from vicforecast.forecast_2026 import PARTIES  # noqa: E402
+
+
+def test_shadow_fingerprint_includes_the_pinned_numerical_stack():
+    constraints = (ROOT / "model/constraints.txt").read_text()
+    assert "numpy==2.3.5" in constraints
+    assert "pandas==2.2.3" in constraints
+    assert "pyyaml==6.0.3" in constraints
+    assert "model/constraints.txt" in SHADOW_INPUT_PATHS
 
 
 def _chamber(hung: float = 0.7) -> pd.DataFrame:

@@ -3,7 +3,7 @@
 This is the compact, runnable subset used to generate the website’s forecast artefacts. The full research repository contains the upstream acquisition, geography, census and historical-validation pipelines; this bundle contains the frozen inputs required by the public forecast layer.
 
 ```bash
-python -m pip install -e '.[dev]'
+python -m pip install -c constraints.txt -e '.[dev]'
 python scripts/run_experimental_forecast.py
 python -m pytest -q
 ```

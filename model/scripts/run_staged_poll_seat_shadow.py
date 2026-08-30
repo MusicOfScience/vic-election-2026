@@ -23,6 +23,7 @@ from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
 SHADOW_INPUT_PATHS = (
     "metadata/manual-source-evidence-2026.json",
     "metadata/research-source-evidence-2026.json",
+    "model/constraints.txt",
     "model/config/experimental_forecast.yml",
     "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz",
     "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz",
@@ -45,7 +46,7 @@ SHADOW_INPUT_PATHS = (
 def _input_fingerprint(repo_root: Path) -> dict:
     digest = hashlib.sha256()
     files = {}
-    for relative in SHADOW_INPUT_PATHS:
+    for relative in sorted(SHADOW_INPUT_PATHS):
         payload = (repo_root / relative).read_bytes()
         sha = hashlib.sha256(payload).hexdigest()
         files[relative] = sha
