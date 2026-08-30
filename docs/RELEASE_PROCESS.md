@@ -23,6 +23,21 @@ The project follows a fail-closed, pull-request-based release process. Automatio
 
 A valid changed source is not automatically accepted. Review `live-source-report.json`, confirm that the publisher, date, semantics and parsed values are what the model expects, then run `npm run sources:promote -- --id <adapter-id> --report live-source-report.json`. Commit the resulting state change through a pull request before adapting any canonical model input.
 
-## Production gate
+## Production gates
 
-A release requires current source fingerprints, fresh critical inputs, matching model output and configuration hashes, the historical validation ledger, and explicit production authorisation for the complete probability model. The last gate is currently closed. If any required gate fails, retain the last valid forecast and do not publish new probabilities as production-ready.
+The readiness report deliberately separates historical **data availability** from predictive **model validation**. A four-cycle ledger proves that the historical substrate exists; it does not certify the complete 2026 probability model.
+
+A production release requires all of the following:
+
+- current source fingerprints and critical-source age checks;
+- no newer reviewed evidence left unresolved outside the canonical model input;
+- matching model output and configuration hashes;
+- the four-cycle historical dataset;
+- walk-forward backtesting of the complete multi-party seat model;
+- probability calibration and interval-coverage tests;
+- sufficient 2026 candidate evidence across all 88 Assembly districts; and
+- explicit production authorisation.
+
+Feature experiments are recorded separately. The demographic challenger failed its sealed promotion test and remains at zero central weight. That rejection is an honest modelling result, not a failed requirement that prevents a simpler validated model from eventually reaching production.
+
+If any required gate fails, retain the last valid forecast and do not publish new probabilities as production-ready.

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-30",
+  "policy": "Data availability, feature tests and complete-model validation are separate decisions. A rejected feature does not block a simpler model, but no complete forecast may be authorised without out-of-sample probability calibration.",
+  "historicalDataReadiness": {
+    "passed": true,
+    "cycles": [
+      "2010",
+      "2014",
+      "2018",
+      "2022"
+    ],
+    "districtTransitions": 340,
+    "featureCells": 2464,
+    "label": "Four-cycle historical dataset is ready"
+  },
+  "demographicChallenger": {
+    "outcome": "rejected",
+    "requiredForProduction": false,
+    "centralWeight": 0,
+    "label": "Demographic challenger failed its sealed promotion test and remains excluded",
+    "metrics": {
+      "baselineMae": 0.027804,
+      "candidateMae": 0.028121,
+      "baselineRmse": 0.036938,
+      "candidateRmse": 0.03719,
+      "baselineWinnerErrors": 21,
+      "candidateWinnerErrors": 24,
+      "betterMaeFolds": 1,
+      "betterRmseFolds": 2,
+      "folds": 4
+    }
+  },
+  "completeForecastBacktest": {
+    "passed": false,
+    "status": "not-yet-demonstrated",
+    "label": "Complete multi-party seat model passes walk-forward backtesting",
+    "requiredMetrics": [
+      "statewide vote error",
+      "seat winner accuracy",
+      "seat-count error",
+      "Brier score",
+      "log loss",
+      "regional error",
+      "performance by contest type"
+    ]
+  },
+  "probabilityCalibration": {
+    "passed": false,
+    "status": "not-yet-demonstrated",
+    "label": "Published win probabilities pass reliability and coverage tests",
+    "requiredMetrics": [
+      "reliability curve",
+      "calibration slope and intercept",
+      "80% interval coverage",
+      "final-pair calibration"
+    ]
+  }
+}

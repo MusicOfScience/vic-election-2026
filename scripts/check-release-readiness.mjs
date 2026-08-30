@@ -3,6 +3,8 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { buildEvidenceFreshness } from "./build-evidence-freshness-report.mjs";
+
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const generatedJson = resolve(root, "metadata/release-readiness.generated.json");
 const generatedTs = resolve(root, "app/release-readiness.generated.ts");
@@ -15,10 +17,40 @@ function hash(path) {
   return createHash("sha256").update(readFileSync(path)).digest("hex");
 }
 
+function parseCsv(text) {
+  const rows = [];
+  let row = [], cell = "", quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (ch === '"' && quoted && text[i + 1] === '"') { cell += '"'; i++; }
+    else if (ch === '"') quoted = !quoted;
+    else if (ch === "," && !quoted) { row.push(cell); cell = ""; }
+    else if ((ch === "\n" || ch === "\r") && !quoted) {
+      if (ch === "\r" && text[i + 1] === "\n") i++;
+      row.push(cell); cell = "";
+      if (row.some((value) => value !== "")) rows.push(row);
+      row = [];
+    } else cell += ch;
+  }
+  if (cell || row.length) { row.push(cell); rows.push(row); }
+  const [headers, ...data] = rows;
+  return data.map((values) => Object.fromEntries(headers.map((header, i) => [header, values[i] ?? ""])));
+}
+
+function readJson(path) {
+  return JSON.parse(readFileSync(resolve(root, path), "utf8"));
+}
+
 export function buildReadiness({ asOf }) {
-  const registry = JSON.parse(readFileSync(resolve(root, "metadata/sources.json"), "utf8"));
-  const provenance = JSON.parse(readFileSync(resolve(root, "metadata/source-provenance.generated.json"), "utf8"));
-  const forecast = JSON.parse(readFileSync(resolve(root, "model/data/processed/experimental_forecast_2026.json"), "utf8"));
+  const registry = readJson("metadata/sources.json");
+  const provenance = readJson("metadata/source-provenance.generated.json");
+  const forecast = readJson("model/data/processed/experimental_forecast_2026.json");
+  const validation = readJson("metadata/model-validation-status.json");
+  const candidates = readJson("metadata/candidates-2026.json");
+  const accepted = readJson("metadata/accepted-polls-2026.json");
+  const manual = readJson("metadata/manual-source-evidence-2026.json");
+  const primary = readJson("metadata/primary-source-evidence-2026.json");
+  const research = readJson("metadata/research-source-evidence-2026.json");
   const provenanceById = new Map(provenance.sources.map((source) => [source.id, source]));
   const sources = registry.sources.map((source) => {
     const ageDays = ageInDays(source.dataEffectiveDate, asOf);
@@ -38,22 +70,54 @@ export function buildReadiness({ asOf }) {
   const criticalSourcesFresh = sources.filter((source) => source.critical).every((source) => !source.stale);
   const sourceIntegrity = sources.every((source) => source.artifactsCurrent);
   const generatedOutputsCurrent = sourceIntegrity && modelOutputsCurrent && configCurrent;
-  const validationLedger = readFileSync(resolve(root, "app/data.generated.ts"), "utf8");
-  const historicalValidation = ["2010", "2014", "2018", "2022"].every((cycle) => validationLedger.includes(`\"cycle\": \"${cycle}\"`));
+  const expectedCycles = ["2010", "2014", "2018", "2022"];
+  const historicalDataReady = validation.historicalDataReadiness?.passed === true
+    && expectedCycles.every((cycle) => validation.historicalDataReadiness.cycles?.includes(cycle));
+  const modelPolls = parseCsv(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
+  const stagedPolls = [
+    ...(manual.records ?? []),
+    ...(primary.records ?? []).map((record) => ({ ...record, publicationDate: record.pollPublicationDate ?? record.publicationDate })),
+    ...(research.records ?? []),
+  ];
+  const evidenceFreshness = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, asOf });
+  const modelInputCurrent = !evidenceFreshness.newerEvidenceAwaitingReview;
+  const assemblyContests = new Set(
+    (candidates.candidates ?? [])
+      .map((candidate) => candidate.contest)
+      .filter((contest) => contest && !/region$/i.test(contest)),
+  );
+  const candidateEvidenceReady = assemblyContests.size === 88;
+  const completeForecastBacktest = validation.completeForecastBacktest?.passed === true;
+  const probabilityCalibration = validation.probabilityCalibration?.passed === true;
   const productionAuthorised = forecast.production_compatible === true;
+  const gates = {
+    sourceIntegrity: { passed: sourceIntegrity, label: "Source fingerprints match" },
+    criticalSourceFreshness: { passed: criticalSourcesFresh, label: "Critical sources are within age policy" },
+    modelInputFreshness: { passed: modelInputCurrent, label: "Newer reviewed evidence is resolved into or excluded from model inputs" },
+    deterministicOutputs: { passed: generatedOutputsCurrent, label: "Model outputs and configuration match" },
+    historicalDataReadiness: { passed: historicalDataReady, label: validation.historicalDataReadiness.label },
+    completeForecastBacktest: { passed: completeForecastBacktest, label: validation.completeForecastBacktest.label },
+    probabilityCalibration: { passed: probabilityCalibration, label: validation.probabilityCalibration.label },
+    candidateEvidence: { passed: candidateEvidenceReady, label: `2026 candidate evidence covers ${assemblyContests.size}/88 Assembly districts` },
+    productionAuthorisation: { passed: productionAuthorised, label: "Complete probability model explicitly authorised" },
+  };
+  const blockingGateIds = Object.entries(gates).filter(([, gate]) => !gate.passed).map(([id]) => id);
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     assessedAsOf: asOf,
-    status: criticalSourcesFresh && generatedOutputsCurrent && productionAuthorised ? "production-ready" : "experimental-blocked",
+    status: blockingGateIds.length === 0 ? "production-ready" : "experimental-blocked",
     policy: "retain-last-valid-forecast",
     automation: { scheduledMonitoring: true, automaticProductionPublish: false },
-    gates: {
-      sourceIntegrity: { passed: sourceIntegrity, label: "Source fingerprints match" },
-      criticalSourceFreshness: { passed: criticalSourcesFresh, label: "Critical sources are within policy" },
-      deterministicOutputs: { passed: generatedOutputsCurrent, label: "Model outputs and configuration match" },
-      historicalValidation: { passed: historicalValidation, label: "Four-cycle baseline ledger is present" },
-      productionAuthorisation: { passed: productionAuthorised, label: "Complete probability model authorised" },
+    summary: {
+      passedRequiredGates: Object.values(gates).filter((gate) => gate.passed).length,
+      requiredGateCount: Object.keys(gates).length,
+      blockingGateIds,
     },
+    gates,
+    findings: {
+      demographicChallenger: validation.demographicChallenger,
+    },
+    evidenceFreshness,
     sources,
   };
 }
