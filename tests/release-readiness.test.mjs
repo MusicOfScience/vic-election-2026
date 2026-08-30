@@ -19,6 +19,26 @@ test("keeps production authorisation separate from technical integrity", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
   assert.equal(readiness.gates.sourceIntegrity.passed, true);
   assert.equal(readiness.gates.deterministicOutputs.passed, true);
+  assert.equal(readiness.gates.historicalDataReadiness.passed, true);
+  assert.equal(readiness.gates.completeForecastBacktest.passed, false);
+  assert.equal(readiness.gates.probabilityCalibration.passed, false);
+  assert.equal(readiness.gates.candidateEvidence.passed, false);
   assert.equal(readiness.gates.productionAuthorisation.passed, false);
   assert.equal(readiness.policy, "retain-last-valid-forecast");
+});
+
+test("does not mislabel a four-cycle data ledger as complete model validation", () => {
+  const readiness = buildReadiness({ asOf: "2026-08-28" });
+  assert.equal("historicalValidation" in readiness.gates, false);
+  assert.equal(readiness.findings.demographicChallenger.outcome, "rejected");
+  assert.equal(readiness.findings.demographicChallenger.centralWeight, 0);
+  assert.ok(readiness.summary.blockingGateIds.includes("completeForecastBacktest"));
+  assert.ok(readiness.summary.blockingGateIds.includes("probabilityCalibration"));
+});
+
+test("keeps newer staged polling separate from admitted model inputs", () => {
+  const readiness = buildReadiness({ asOf: "2026-08-28" });
+  assert.equal(readiness.evidenceFreshness.newerEvidenceAwaitingReview, true);
+  assert.equal(readiness.gates.modelInputFreshness.passed, false);
+  assert.ok(readiness.summary.blockingGateIds.includes("modelInputFreshness"));
 });

@@ -1,3 +1,5 @@
+import validationStatus from "../metadata/model-validation-status.json";
+
 export const modelLayers = [
   { layer: "Polls", status: "Live experimental input", detail: "Nine eligible polls are combined with recency, sample size and estimated pollster lean taken into account." },
   { layer: "Election baseline", status: "Working", detail: "Official VEC results anchor all 88 Lower House electorates and eight Upper House regions, with boundary changes handled explicitly." },
@@ -8,13 +10,13 @@ export const modelLayers = [
 ] as const;
 
 export const validationSummary = {
-  cycles: 4,
-  districtTransitions: 340,
-  featureCells: 2464,
-  baselineMae: 2.7804,
-  candidateMae: 2.8121,
-  baselineRmse: 3.6938,
-  candidateRmse: 3.7190,
-  baselineWinnerErrors: 21,
-  candidateWinnerErrors: 24,
+  cycles: validationStatus.historicalDataReadiness.cycles.length,
+  districtTransitions: validationStatus.historicalDataReadiness.districtTransitions,
+  featureCells: validationStatus.historicalDataReadiness.featureCells,
+  baselineMae: validationStatus.demographicChallenger.metrics.baselineMae * 100,
+  candidateMae: validationStatus.demographicChallenger.metrics.candidateMae * 100,
+  baselineRmse: validationStatus.demographicChallenger.metrics.baselineRmse * 100,
+  candidateRmse: validationStatus.demographicChallenger.metrics.candidateRmse * 100,
+  baselineWinnerErrors: validationStatus.demographicChallenger.metrics.baselineWinnerErrors,
+  candidateWinnerErrors: validationStatus.demographicChallenger.metrics.candidateWinnerErrors,
 } as const;
