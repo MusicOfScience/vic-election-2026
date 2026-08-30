@@ -134,6 +134,7 @@ export function buildReadiness({ asOf }) {
       candidateDiscovery: {
         status: "quarantined-awaiting-review",
         records: provisionalCandidates.records?.length ?? 0,
+        sourceFamilies: provisionalCandidates.summary?.sourceFamilies ?? 0,
         assemblyContests: stagedAssemblyContests.size,
         assemblyDistrictsTotal: 88,
         councilRegions: stagedCouncilRegions.size,

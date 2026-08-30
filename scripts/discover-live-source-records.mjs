@@ -97,6 +97,18 @@ export function extractOneNationCandidates(html, pageUrl) {
   return records;
 }
 
+export function extractNationalsCandidates(html, pageUrl) {
+  const records = [];
+  for (const section of html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>\s*<h3\b[^>]*>([\s\S]*?)<\/h3>/gi)) {
+    const name = clean(section[1]);
+    const role = clean(section[2]);
+    const match = role.match(/^Candidate for\s+(.+)$/i);
+    if (!name || !match) continue;
+    records.push({ kind: "candidate", name, contest: match[1].trim(), party: "The Nationals", candidateStatus: "endorsed", sourceAuthority: "The Nationals Victoria", sourceUrl: pageUrl });
+  }
+  return records;
+}
+
 const MONTHS = { january: "01", february: "02", march: "03", april: "04", may: "05", june: "06", july: "07", august: "08", september: "09", october: "10", november: "11", december: "12" };
 
 export function parseFieldworkRange(text) {
@@ -210,6 +222,8 @@ async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, pol
     found.push(...extractGreensCandidates(page.html, page.finalUrl));
   } else if (adapter.discovery.extractor === "one-nation-victoria-candidates") {
     found.push(...extractOneNationCandidates(page.html, page.finalUrl));
+  } else if (adapter.discovery.extractor === "nationals-victoria-candidates") {
+    found.push(...extractNationalsCandidates(page.html, page.finalUrl));
   }
 
   return found.map((record) => {

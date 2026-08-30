@@ -45,12 +45,13 @@ test("keeps newer staged polling separate from admitted model inputs", () => {
 
 test("reports provisional candidate discovery without treating it as accepted coverage", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
-  assert.equal(readiness.findings.candidateDiscovery.records, 76);
-  assert.equal(readiness.findings.candidateDiscovery.assemblyContests, 72);
-  assert.equal(readiness.findings.candidateDiscovery.councilRegions, 4);
+  assert.equal(readiness.findings.candidateDiscovery.records, 104);
+  assert.equal(readiness.findings.candidateDiscovery.assemblyContests, 73);
+  assert.equal(readiness.findings.candidateDiscovery.councilRegions, 8);
   assert.deepEqual(readiness.findings.candidateDiscovery.unclassifiedContests, []);
   assert.equal(readiness.findings.candidateDiscovery.acceptedAssemblyContests, 0);
   assert.equal(readiness.findings.candidateDiscovery.automaticPromotion, false);
+  assert.equal(readiness.findings.candidateDiscovery.sourceFamilies, 3);
   assert.equal(readiness.gates.candidateEvidence.passed, false);
 });
 
