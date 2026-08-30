@@ -459,6 +459,8 @@ a { color: inherit; }
 .release-finding svg { flex: 0 0 auto; color: #8b6419; }
 .release-finding strong { color: #65450e; font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
 .release-finding p { margin: 4px 0 0; color: #596168; font-size: 10px; line-height: 1.55; }
+.candidate-finding { border-color: #b9cdd1; background: #f3faf9; }
+.candidate-finding svg, .candidate-finding strong { color: var(--source-teal); }
 .release-policy { margin: 16px 0 0; color: #626d75; font-size: 10px; line-height: 1.55; }
 .release-policy strong { color: #8d4528; }
 .source-library { display: grid; gap: 18px; }

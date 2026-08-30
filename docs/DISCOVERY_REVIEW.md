@@ -2,6 +2,8 @@
 
 Live discovery remains fail-closed. The scheduled source-monitor workflow now produces `discovery-review-manifest.json` beside the raw discovery and quarantine reports.
 
+Party-announced candidate discoveries that have survived structural validation are also preserved in `metadata/provisional-candidate-evidence-2026.json`. This is a durable quarantine ledger, not the accepted candidate registry. Its records may be reviewed individually even when the source page later changes or disappears.
+
 To make an explicit decision, review the cited primary source first, then run:
 
 ```bash

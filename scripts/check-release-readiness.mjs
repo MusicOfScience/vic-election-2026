@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { buildEvidenceFreshness } from "./build-evidence-freshness-report.mjs";
+import { classifyContest, loadContestUniverse } from "./candidate-contests.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const generatedJson = resolve(root, "metadata/release-readiness.generated.json");
@@ -47,6 +48,7 @@ export function buildReadiness({ asOf }) {
   const forecast = readJson("model/data/processed/experimental_forecast_2026.json");
   const validation = readJson("metadata/model-validation-status.json");
   const candidates = readJson("metadata/candidates-2026.json");
+  const provisionalCandidates = readJson("metadata/provisional-candidate-evidence-2026.json");
   const accepted = readJson("metadata/accepted-polls-2026.json");
   const manual = readJson("metadata/manual-source-evidence-2026.json");
   const primary = readJson("metadata/primary-source-evidence-2026.json");
@@ -81,12 +83,20 @@ export function buildReadiness({ asOf }) {
   ];
   const evidenceFreshness = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, asOf });
   const modelInputCurrent = !evidenceFreshness.newerEvidenceAwaitingReview;
+  const contestUniverse = loadContestUniverse(root);
   const assemblyContests = new Set(
     (candidates.candidates ?? [])
-      .map((candidate) => candidate.contest)
-      .filter((contest) => contest && !/region$/i.test(contest)),
+      .map((candidate) => classifyContest(candidate.contest, contestUniverse))
+      .filter((contest) => contest?.chamber === "assembly")
+      .map((contest) => contest.canonicalContest),
   );
   const candidateEvidenceReady = assemblyContests.size === 88;
+  const stagedContests = (provisionalCandidates.records ?? [])
+    .filter((candidate) => candidate.status === "quarantined-awaiting-review")
+    .map((candidate) => ({ sourceContest: candidate.contest, classification: classifyContest(candidate.contest, contestUniverse) }));
+  const stagedAssemblyContests = new Set(stagedContests.filter((item) => item.classification?.chamber === "assembly").map((item) => item.classification.canonicalContest));
+  const stagedCouncilRegions = new Set(stagedContests.filter((item) => item.classification?.chamber === "council").map((item) => item.classification.canonicalContest));
+  const unclassifiedCandidateContests = [...new Set(stagedContests.filter((item) => !item.classification).map((item) => item.sourceContest))];
   const completeForecastBacktest = validation.completeForecastBacktest?.passed === true;
   const probabilityCalibration = validation.probabilityCalibration?.passed === true;
   const productionAuthorised = forecast.production_compatible === true;
@@ -116,6 +126,18 @@ export function buildReadiness({ asOf }) {
     gates,
     findings: {
       demographicChallenger: validation.demographicChallenger,
+      candidateDiscovery: {
+        status: "quarantined-awaiting-review",
+        records: provisionalCandidates.records?.length ?? 0,
+        assemblyContests: stagedAssemblyContests.size,
+        assemblyDistrictsTotal: 88,
+        councilRegions: stagedCouncilRegions.size,
+        councilRegionsTotal: 8,
+        acceptedAssemblyContests: assemblyContests.size,
+        unclassifiedContests: unclassifiedCandidateContests,
+        automaticPromotion: false,
+        label: `${stagedAssemblyContests.size}/88 Assembly districts have provisional candidate evidence staged for review`,
+      },
     },
     evidenceFreshness,
     sources,
