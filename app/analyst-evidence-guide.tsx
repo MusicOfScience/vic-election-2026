@@ -6,12 +6,16 @@ import { ExternalLink, Microscope, X } from "lucide-react";
 import psephologySources from "../metadata/psephology-sources.json";
 import psephologyEvidence from "../metadata/psephology-evidence-2026.json";
 import researchEvidence from "../metadata/research-source-evidence-2026.json";
+import stagedPollShadow from "../metadata/staged-poll-seat-shadow-2026.json";
 import { modelOutput } from "./model-output.generated";
 
 const subscribe = () => () => {};
 const clientSnapshot = () => true;
 const serverSnapshot = () => false;
 const pct = (value: number) => `${value.toFixed(1)}%`;
+const pp = (value: number) => `${value >= 0 ? "+" : ""}${(value * 100).toFixed(1)} pp`;
+const seats = (value: number) => `${value >= 0 ? "+" : ""}${value.toFixed(1)}`;
+const partyLabel: Record<string, string> = { ALP: "Labor", LIB_NAT: "Coalition", ONP: "One Nation", GRN: "Greens", OTH_IND: "Other / Independent" };
 
 type SeatModelRecord = {
   id: string;
@@ -64,6 +68,25 @@ export function AnalystEvidenceGuide() {
           <div><span>One Nation primary</span><strong>{pct(mean.ONP)}</strong></div>
           <div><span>Greens primary</span><strong>{pct(mean.GRN)}</strong></div>
           <div><span>Hung parliament</span><strong>{pct(hung * 100)}</strong></div>
+        </section>
+
+        <section className="analyst-evidence-section shadow-evidence-section" aria-label="Staged polling shadow sensitivity">
+          <div className="analyst-section-heading"><p className="eyebrow">Governed sensitivity test</p><h3>What if the two newest staged polls were admitted?</h3><span>Shadow only · {stagedPollShadow.simulationsPerScenario.toLocaleString()} paired simulations</span></div>
+          <p className="shadow-intro">This deliberately reruns the full election with the quarantined August DemosAU and Resolve polls added in memory. It measures sensitivity; it does not accept either poll, change the published forecast or open the production gate.</p>
+          <div className="shadow-summary-grid">
+            <article><span>Hung parliament</span><strong>{pct(stagedPollShadow.assembly.canonicalHungProbability * 100)} → {pct(stagedPollShadow.assembly.shadowHungProbability * 100)}</strong><small>{pp(stagedPollShadow.assembly.deltaHungProbability)}</small></article>
+            <article><span>Coalition mean seats</span><strong>{stagedPollShadow.assembly.parties.LIB_NAT.canonicalMeanSeats.toFixed(1)} → {stagedPollShadow.assembly.parties.LIB_NAT.shadowMeanSeats.toFixed(1)}</strong><small>{seats(stagedPollShadow.assembly.parties.LIB_NAT.deltaMeanSeats)} seats</small></article>
+            <article><span>Labor mean seats</span><strong>{stagedPollShadow.assembly.parties.ALP.canonicalMeanSeats.toFixed(1)} → {stagedPollShadow.assembly.parties.ALP.shadowMeanSeats.toFixed(1)}</strong><small>{seats(stagedPollShadow.assembly.parties.ALP.deltaMeanSeats)} seats</small></article>
+            <article><span>Meaningful seat movement</span><strong>{stagedPollShadow.assembly.districts.seatsWithFivePointOrLargerProbabilityShift} electorates</strong><small>win chance shifted by at least 5 points</small></article>
+          </div>
+          <div className="shadow-flips">
+            <div className="analyst-section-heading compact"><p className="eyebrow">Most fragile calls</p><h4>{stagedPollShadow.assembly.districts.modalWinnerChanges.length} electorate favourites change</h4></div>
+            {stagedPollShadow.assembly.districts.modalWinnerChanges.map((seat) => <article key={seat.districtId}>
+              <div><strong>{seat.districtName}</strong><span>{partyLabel[seat.canonicalFavourite]} → {partyLabel[seat.shadowFavourite]}</span></div>
+              <p>{partyLabel[seat.canonicalFavourite]} {pct(seat.canonicalFavouriteProbability * 100)} in the canonical run; {partyLabel[seat.shadowFavourite]} {pct(seat.shadowFavouriteProbability * 100)} in the shadow run.</p>
+            </article>)}
+          </div>
+          <p className="analyst-policy-note"><strong>Why this is not the forecast:</strong> DemosAU is primary-source evidence awaiting explicit human acceptance; Resolve remains corroborated secondary evidence awaiting primary reconciliation or a reviewed exception. The report is fingerprinted to its exact model and evidence inputs so it fails closed if either changes.</p>
         </section>
 
         {externalSeatModel?.seatModelProjection && <section className="analyst-evidence-section" aria-label="External seat model comparison">

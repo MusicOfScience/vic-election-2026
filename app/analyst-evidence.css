@@ -65,6 +65,19 @@
 .analyst-source-grid strong { font: 16px Georgia, serif; }
 .analyst-source-grid span { margin-top: 5px; color: var(--muted-ink); font-size: 8.5px; line-height: 1.4; }
 .analyst-policy-note { max-width: 850px; margin: 18px 0 0; color: var(--muted-ink); font-size: 9.5px; line-height: 1.6; }
+.shadow-evidence-section { border-color: rgba(229, 162, 42, .45); background: linear-gradient(145deg, #fffdf7, #fff); }
+.shadow-intro { max-width: 78ch; margin: 0 0 18px; color: var(--muted-ink); font-size: 10px; line-height: 1.65; }
+.shadow-summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.shadow-summary-grid article { display: grid; gap: 5px; padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.86); }
+.shadow-summary-grid span, .shadow-summary-grid small { color: var(--muted-ink); font-size: 8px; }
+.shadow-summary-grid strong { color: var(--ink); font: 18px/1.1 Georgia, serif; }
+.shadow-flips { display: grid; gap: 9px; margin-top: 20px; }
+.analyst-section-heading.compact { margin-bottom: 2px; }
+.analyst-section-heading.compact h4 { margin: 0; font: 17px/1.1 Georgia, serif; }
+.shadow-flips article { display: grid; grid-template-columns: minmax(170px, .42fr) 1fr; gap: 16px; align-items: center; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.shadow-flips article div { display: grid; gap: 3px; }
+.shadow-flips article span, .shadow-flips article p { color: var(--muted-ink); font-size: 8.5px; }
+.shadow-flips article p { margin: 0; line-height: 1.45; }
 
 @media (max-width: 760px) {
   .analyst-evidence-dialog { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
@@ -80,4 +93,6 @@
   .analyst-section-heading > span { text-align: left; }
   .analyst-evidence-grid, .analyst-source-grid { grid-template-columns: 1fr; }
   .analyst-evidence-grid article { min-height: 190px; }
+  .shadow-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shadow-flips article { grid-template-columns: 1fr; gap: 7px; }
 }

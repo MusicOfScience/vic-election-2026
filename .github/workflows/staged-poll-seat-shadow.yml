@@ -27,7 +27,7 @@ on:
       simulations:
         description: Simulations per scenario
         required: false
-        default: "2000"
+        default: "5000"
 
 permissions:
   contents: read
@@ -45,12 +45,13 @@ jobs:
         shell: bash
         run: |
           simulations="${{ inputs.simulations }}"
-          if [[ -z "${simulations}" ]]; then simulations="2000"; fi
+          if [[ -z "${simulations}" ]]; then simulations="5000"; fi
           PYTHONPATH="model/src" python model/scripts/run_staged_poll_seat_shadow.py \
             --simulations "${simulations}" \
-            --output staged-poll-seat-shadow.json
+            --output metadata/staged-poll-seat-shadow-2026.json \
+            --check
       - uses: actions/upload-artifact@v4
         with:
           name: staged-poll-seat-shadow
-          path: staged-poll-seat-shadow.json
+          path: metadata/staged-poll-seat-shadow-2026.json
           retention-days: 90
