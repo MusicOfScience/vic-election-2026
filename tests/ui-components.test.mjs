@@ -185,10 +185,11 @@ test("renders the governed candidate review dossier without implying nomination"
   );
   const html = renderToStaticMarkup(React.createElement(CandidateReviewDossier));
 
-  assert.match(html, /188 party-endorsed records are ready for a human evidence decision/i);
+  assert.match(html, /188 party-endorsed records have passed the evidence review/i);
+  assert.match(html, /Approval recorded/i);
   assert.match(html, /82\/88/);
   assert.match(html, /Dandenong, Kalkallo, Lowan, Mornington, Thomastown, Warrandyte/);
-  assert.match(html, /would not make a candidate VEC-nominated/i);
+  assert.match(html, /does not make a candidate VEC-nominated/i);
 });
 
 test("generates the public poll series from the canonical model registry", async () => {

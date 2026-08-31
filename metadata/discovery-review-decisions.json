@@ -71,6 +71,1886 @@
       "reviewedAt": "2026-08-30T09:10:00Z",
       "note": "The primary methodology statement is captured, but the reported toplines remain secondary and the fieldwork end differs by one day. The statewide estimate and seat projection are one MRP evidence family.",
       "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5d449b0e7201bdff7c7adfde262366be434b5598c8a7af736be7f27f86ec076d",
+      "recordHash": "0555747eb23cf17c16af53f03753664e384e2b8c01c3b4dcb4591600c480e7ab",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b41ee8c3b4c7c090485375e7b4f9d27e018d2e6019394ab914769f025f94dd04",
+      "recordHash": "90c83443a48e59b08a120c80d707f3d900cb62a3f29739d8be8daaa13a16ff0f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2f077361bff0778509131e0baa3783031ebef57e5da87e46f92106e07852e41d",
+      "recordHash": "77fd33d0e9aa2b20333e47f9f44d7ebecf80619bc1d4eda5c3ced3c9bf3e6dd0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "4bf30f19fa304d67d2f39b68c5e5c003e4a29c267f5f4eabb33fb043d087f046",
+      "recordHash": "fb92be1127ef50c76cfb464cef714b593ab5a8e2d40802e7c710c87898bef8a6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "6778369bc75d60e0e896ec0a782bb778667098b4577f40e46d3be80b7285ba47",
+      "recordHash": "46e231abff798c5da13b82f2f1a87ca77026b9607f0969d0abaa6a0f9529dfda",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e0bf14561f67f2dc5035ed3725bbf3467e8a92dfcf4f69c31eafc2f6198bfd3c",
+      "recordHash": "8a9b220d0d474ea1cdf91f03a525ad3d3c5c4a6a02bbed3ea12bd3c8b88f883a",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b672c07c94c123e9fa120f80b5b3151c70adfbf536d456ffb9c38e8ae1e399d8",
+      "recordHash": "7fc63beda9c2680e769496dcc36e84569410e4c298eba7d3234a131b3c89d186",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "bd8ae45fa387844c4ea57eb8fd5fd38efb67474618d2712b40aaef88969a87dc",
+      "recordHash": "4136ca89b066e60309a3af5844c74b7e589ef4af54cff827d5cd1a7a8b9baf5d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "92082f8d7883429af563fb48586a810e281638f68773fb77dbdb0c952f6f039a",
+      "recordHash": "464e9c27810685babc0f7fe037293b4dbab6d38ea0d3002f10457d4452b73c40",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "081b189e4717b1493b65c25939ca7d984802023a75b5b9d8493e35fe1b43edf2",
+      "recordHash": "d28b851a7a3f75eeb2244722304f68d85a2bc40b31c8479873e13391b696ee08",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d1e67f8cd4600585d9d0fb1cddcba5ca74136a2f79ee42f9c839b4b7ac14a564",
+      "recordHash": "be98aeca359c63d43240886ee41ebb280531f56dceb2ec179c37347520d3dfc0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2e41f90f5f35d5b0e02e98176b81827d8dc299d53fdd304c1e57c011346a17f2",
+      "recordHash": "cc8054108051d89404e641aeca52dabb7fb7796fd9076b31a92ff090aa56ff97",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "eaa7609e40faf57b30ef4f0573e781c3648d6a1c5259761c6ce8103db26b3e61",
+      "recordHash": "09a176dd0f971006fc0516558b02cb8ac3928e5db885fb52cb08eb8e2656575f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0968bd79d8e2ebc5d41363b40bed4cbd29263f5f9268f8796671d75b752f86cb",
+      "recordHash": "ce9ff163b0c1169bfcc6a7b6d304786b295cab8b23c61c163442207ae5e17a49",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1e28c1e5369d909c036e23870377d9d4fab7e078c52b1932370635edaa6119b6",
+      "recordHash": "86e7d13f3702443f15dcc7694edb8d8557859b3ae5873c1e819f6d93677d04d4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "7f5134e29a6e730f3952a92a6cc433541b6c409c609e846fe96e804a0ecde7c5",
+      "recordHash": "4aaa16339b75869b0051aee4a857d6feb3882a15047c0f62dce53c3de177f0f9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "f9a2d3b376f20a19a707ca89da258447b7e609c44f252371521d3f7f91ec92c4",
+      "recordHash": "4523d99c62c5ae7cf297a34eb7e948b0b155470ad1b1b7d8e7b6acd58f740188",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "71378bbe1db7df22c0b39865692573b2e71dbe73edca30d2c367350ca4bda0ee",
+      "recordHash": "e10a686d431fe7f258392abbfda1660648d90c117e4f5ae66ba3f6de2e8d34e4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ade12f2ebcc89229d483b7c2d770d0e9265f6aecd5fc2c1cf43203e3c3a80b2b",
+      "recordHash": "b466f031d1f844f3bb08f163a82fb782dbc4e8ec1d8752b271613bec90cffba6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5e0ef60eb13e2856c26d66f2950841e10a2444fc08d439f2434cc2c09d4b56eb",
+      "recordHash": "c0a40451ad65248aaa1558e813c17aaf2f101d6fd187412ff2ec10d61ca1bf94",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0c3b31816887cf79209c7e5bb0691cea5ddb0dc7be3510e18c2e1b66ad149478",
+      "recordHash": "34ea98f28472da0cf61aac06b41c3218b21c4446b336156a202ddaacf7a6f023",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2f95a8f48a3244850c657129af1f7d0698e53002a63df69ddce201b3c8d86003",
+      "recordHash": "0b733892852a47873619034cb9fefbb4a36775e54d836e66defc28bd6280689e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a232ff96bc9de04f586715eea64abdddc3455c13e6863fdee4a95762cfe85c34",
+      "recordHash": "0e09a33b445b13d7deae6888af772dca208a6270b7b4af2d58eeeefac90259dd",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "8a62f6c70058411980e6f82afd7cf8fd8f8f8c3a4d2dd96a71bf2b367c7a1fae",
+      "recordHash": "6f079affeb84e0dd85d0c8dbf8434ea2907f57ce23af733aff5dcf8d3c240533",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "56d3931ea4302fa96288ab1eed28f60d7435099d800ca7266f4ff4857ac33c6f",
+      "recordHash": "63da1fa9cc4027ea48e02da383c480c20a6b8af97687dcc57ada9a10b6bcb222",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "39dec1035e16e9a5d8362d0493dd2b467332e92c3dbade8f13ae5959913cc230",
+      "recordHash": "a4e22894803f9ad83a2d3230f158919ad089ea000446f389ea0d10f8b21f5f80",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "75ef6639278f38106c04c63a5d4fc4c6f904001e981710bb3f9e7a5b79daded5",
+      "recordHash": "492a9a516fabcdb36152a1e9da896b4dffd8f751ef9a2425f0daebfb533e5dec",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d937b8a1260fe8ad47df4fcbf016ba0d486c91dc697933e1a165df093d471149",
+      "recordHash": "70227b69c54a9428b3ebbd1cf6f92c47e4faa9a557ea11c41295e94899c89f29",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b23bc65555bead5ce9ab79c464af8af6b5d94adca388e78e9267f0eb7fe51d17",
+      "recordHash": "28e88803a017fbe46881a53ad06624429fabc38bf4db6e836b7c2dd6b2e59b85",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "334a32eff4cb93cb90fd55c010caffddb8da83775cb4fd38da2d7b7d95dc25f9",
+      "recordHash": "bef6f605e6d01694c9f83eb5b97f4a466283437abe3198e9ad66b0706caaae21",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1073f1cb8ce4e56dfe61d122421501159e7893e014c7c334fdc7d049ff526b42",
+      "recordHash": "e47d61f4e22e67dd13bb2fa76137e0f8cb04d8a9830a47d3f60385186560f19a",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5e320fc357c933306724f149ecec737823cce98b58d9d97757e105eef6235eeb",
+      "recordHash": "3635440019c30b493f2ecfef1b54806d1357157b8184b52e122edf1944938200",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e8b105d618f21027c071a597f906fbf94100527e60cf36f53a419220d07d2830",
+      "recordHash": "d838e7fcbe34fb8441015775f3e91f9b3ad3533128a884bd970ad6c56849d448",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "7a00e845f793b5ef391b381feb67678028042a108841900480fe8648161c09d1",
+      "recordHash": "67c4aa30693f9342b544c9d5cf633379bad11bd7e747a2b8d1f6c6734b504195",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0afd55d8816065a9136db3ed9d73cf1a6cdb797b858ee5b5130cbc3186874dad",
+      "recordHash": "c179c3c1f6957cf29cec613ce6e0660a8b6cfe4605c26203517ac3c69cdeae5a",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "aacb79c377391c7275b6c8d4e51cfbe2348acf6ad8717eb99321febc4b1c8509",
+      "recordHash": "bead1914abe734baeeb64cd4c2fd075b3a911ad928fad0d662029e3fea2cc5ac",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ed01ad32b04d6dc5b55a31fa1ad32b58f6517516c772d7d8529b28f01ef44c40",
+      "recordHash": "0956c397cbd82f76403427aa8938c63e31eecef18f580373aca1558082c84633",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "25bd245458b04cdc06305e34a6ebefd06b95b6687f62016597c4d6eb4f204ae7",
+      "recordHash": "c4d80c7d1ebffa36b454b364fb162965d6e388839b2af3de260d274bc676413e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "685507144175eb73f776acbf89d03835d306d2c999d2ec563be3be5148352120",
+      "recordHash": "e1c62bf4ba534edea3a752a3306713e03e3a84f04d9466988b4c6bcbb070021a",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cfa17626d8f9d2c29f68b2060a8c0b3386ccfa5e313a09a0c4622cf2102ebd5e",
+      "recordHash": "ed9a638580e079c23d95962023b17930f850db8b9858b2b89be374f74a4c7920",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2d8caa328d1422e0ffdde3c8758dba473d93a228e21bdaae53934a4ac448394d",
+      "recordHash": "a44a23e19f726fe3b97b09dfc0b5ee8f16adc27525617d7b484387bcea580bf9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5ff207f7a7e7cfa35380c47f57c52c6f9d1e2eb06de14a380d489cf2506fb451",
+      "recordHash": "ded651874ea5a72b98cf0f5deee95af2d6043c2d7abb716732c33c2e87c7c4d7",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "af2b058edc103a0db0e243c62cd8e33927c30bf61457a7c9ca3f7a4d14c94ebc",
+      "recordHash": "28676aea9452415411738d8999bd7f7efbbb810e6cc06a0890b552efa11ac1a1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5ef0588774a46375d88e4445549d30475ed35673b73711036f4f3b866aa1286c",
+      "recordHash": "47ae2865fbd5c2454cff27d7cb62993f659cfd737cf160c75f965cb65eaf315e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "fb40c7bcf5a61ade8e604e9cc8b59e97015df83dbfdab78375f16fe436787e8a",
+      "recordHash": "551ed3ad11592bccdf1c5e73d723d19e4bd669ba5d92bcb1c45a198edc682c34",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "977a2354f529a4ce4658582c48540727ef220d3b67d849a80368650d2133d0f6",
+      "recordHash": "c4aab352f31771fda49521e95f4529db027e725fd19085af79f2852c176799a1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5dab717d5bd0fcf8398a13e2b50779ce2690cbd62c5b282a66b3f14ea656a346",
+      "recordHash": "f00ba12a1b4c2245d7c479b3e93f1d57049605687a11e2ce4583a6ece6311f4c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "bf82ea4585f6bf5f694915cb1143f275f784dcd36d97c54a6cdb06e5d6fc7e46",
+      "recordHash": "2548b49cbf20429171ee233127773379342dc85cacacee711768a103d61ea927",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5abaad773cbb0c296a90dd224d3ad8b90ebebd21e79a72ab0a5650907f9f2dcb",
+      "recordHash": "0aba3faeaf17fd4441986b5af5a33fa0d8855d48d7756fbae6cdc3f4cf6bdfea",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e865b12ab59185453b28b89910872b3e0d966b8fc07d90d3c1b9036db79f6519",
+      "recordHash": "914743c57b2afd7015cbdd5b6acfed13a858acf35e9a98c38d3a668222ec0718",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "57370a6d9e83c97c14857fabccd69d57a32a2b05b826dce83f6f4bad7309c20d",
+      "recordHash": "20e83932790840031cf89714226f8e2f203935ab15b2240723258c5c550e35b8",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "6936ac4d3ad5759ad0d710561e594159425c535274b1c03f36d81d511ebb08da",
+      "recordHash": "4b1ff3da669fa89149724358e79b8f53e0f64d3b08d89e7b27126c3b99eb19ff",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1a46d67e26f8ed4bb9b56be40fdc055d3eb0ad2558743d9b89e90ce755db4e6a",
+      "recordHash": "1fde69a5c7c1ae0e5b1635e8ce9201afdca655908207b0d6ec4c2bf598a89177",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "daf16e17c2bd78be007dee5155bc44cab3728fda7401397ce5d63c2379f2ff73",
+      "recordHash": "63d95bcbc4f88c496ca2b9fc285f5337e64b80a6f811f0f84830d61ea86fb882",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "6c1291415e48ec116a64367edde2933f5f35c282c32866688765b8b4b467aac1",
+      "recordHash": "827cdbbba80b209c0e9a9304872dddf923676a50dc00c3cda9ec068b925aacbb",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2b96c48da49c0b6ff89e958be0a85b05647234fb94b9ea62a1cf981a795f3345",
+      "recordHash": "44ba1d62d246b30ed62ebce60aec911f4804024ea824dff1e7d223571f7f7cfc",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "8f88351899b67870f6f73727a143c9643fbf8509d2e302864140f5433d1a6c30",
+      "recordHash": "8240e993f26aef197102d8fc48106769df19db0f6ecbf8980aca3325b3bfd58e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1f3bddc11627a387133f5b5e690708b6e4362c5a0fbf89136aa432f8bf1674e2",
+      "recordHash": "ee444d8d9363a681596f591ba069dafc41777020d2919b12c89a09b59ddd9b12",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9e97fec3125146d07f8fd2e7500e4fa63caade9129bc0cf24c2dc56f71848ffa",
+      "recordHash": "d0042ed43540e7abc0971285d26099246e80117e2263ab50d77e11fb88d8ca21",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0621f760ec5af311d13267082716f6a5f73d82da76b670e66064ec614bfa0d46",
+      "recordHash": "048f3ea3dbddf096547bf37be5bde079ce09ce240b01ae92fe8cbadfa9ce10e8",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "f12f4360cbea68a9d2115210136b8738e857c37973a0bf676b5b22fe172d80dc",
+      "recordHash": "e9262b2d9234c587f7b1d1478b2d42bac2606bc4c31cad5f3fd90e4786386b1c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "c185d2c495d340317f9abc1a22f594a6dffd45c51a2a00f86a84c34c1341cf83",
+      "recordHash": "d25e696196f16f6d2650c8b6bc4c3368defd1d97ea482a24143f4b892d12f78f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "23f95bf5f94d9867f71fb841c2b2f9bb2f07b2481ceaab1b8f085ba7321ac1e5",
+      "recordHash": "c22a10d8dc5ab9bd503830340bcbd1839a3ce73638dd4e67b6a9e1a4098546c8",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a43dff8084650cae9db0ced3334a4fc10b9427e74815354365d1b271877ad2db",
+      "recordHash": "97bba331e95abf1547cd234114c63dbc49ce1192d8b36d93fc7c777e97c394cb",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "7d8d5be613e54c45086961107c7273e2a83f406895a98b1680a77f3849104324",
+      "recordHash": "c8f1f093f2b4f8b224d5aa25dd913fd58e54de4447d438285d9600a680273f2c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "4521b1f0f304648f37fead32d5f52d54d35f062d05229895f795ffa40de96259",
+      "recordHash": "32ace67182cb24e9f8e5efc13c3dc58b90e48e1685a5465f282fa5c080e0ec09",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "64cebc849248ab873edc9724499b00b47bc014fd47da2b2c09dc34710bfadadc",
+      "recordHash": "11039e15c8d9ba5ad329df06195220fec2fbc82929c036d74a9653c87bd9f550",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "423890c7d526963d7bccb69454e4019feca94146bb43f4e45c9f3c14ba491ad6",
+      "recordHash": "3c4556a56681ad6012f8b39a8a5fdd955c81aff9794b2e5bf6344fcbfb4db4a8",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "90bcff29e825c5d13a03f64458867707df9d019485ba162dd789e5e3445a722e",
+      "recordHash": "81b5f1f51d1b8bc3f56c81f56dba6de89dfef571032f43af0fa163b0494f5176",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "40483ebc7435c9ebcf2f9244800f6118aa3723b4398da468022e08b9f916d0f2",
+      "recordHash": "6a2a6a3c2ead043fd9e2a9f4241505aa09819c5fa2f61a0da81a9851554a4b98",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e7098aec6d2aa5b67c5741733da186916ea536f7a2e62beb0885ab535ba10c1f",
+      "recordHash": "a2d38bbed7d8c6037082fdea3410cdbbdb17153dfe0ca15d2198893930143f6d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "135d0d4c87556ca24600bf61759f1f50085d7f7a5b6b9f598973b212aff9a648",
+      "recordHash": "2921088581ba62b6ee3f3cb5b26cfd32c475b1f41245840a10940b8640c1eabe",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "4468024e4be4134dd0d2bdbd34d3625a71b6dca79bec0dd91a50f9d4d1d1d7c7",
+      "recordHash": "f51903aefc9867dec74ed940fe34e83a28e04902e261c83f78a02cfd67b85680",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9abb7037761cd22cae709dde65250989101a9c87da38131206085f91f7353dc8",
+      "recordHash": "e421d922358556f9bc5b66fb0f8d80bf5c47d0e0d7f6535444d4ec97e60a2ea3",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2d5f96725defa5e48e1219d72b7cc1098929f544c92230b121513a4a15d74d43",
+      "recordHash": "83e04147ce09cb79c96aea79864f639a9cf08201a1665ce7df24bbec06936fcf",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2e5cd98a4ad915216332cdd95115ec25cab8ddd0bacf81b4a79562730ccd3f47",
+      "recordHash": "696e9b5403c23f4e2641f56e578810e00a0466e17fc2689742848d83500bcf0a",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e5824a65e0903a3ebfb27955b0af12d14ebefddaa9168f13a22f1e7fde3a86ba",
+      "recordHash": "57f97d1a8a08f9ba383eb3cdb2546cdd0604c08af7270a6c6a2adc2734d20d83",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "643bfb7cdd7b886b1a6eb862af2ec416469acc8a123bb43d0d1fb513d1beb167",
+      "recordHash": "fa4b4d5f45747886d7e0e327bbe21904186a434055cbfcdd232e6cbd900a0c19",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "348853727460f4ee02af9b41f0d1e6f9b073ebf6f535525d0aa591e942a09026",
+      "recordHash": "c78abc233069533cfd0219a76fe591813c28f07d73542517057b98c9921773ac",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e2123127cc16838a3a4a99a742f99be49e740e092e01177ed93bb2777697ea8d",
+      "recordHash": "864c87620783ccf493be86b807af5a1372ee0353952061ca5108cfa196e144c4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cab9fda95a3a6db38ad87b912f5deba7ae07c95f2db5294a55e89deff4596424",
+      "recordHash": "a5862423e6c29e68a319e9885411075164ab82958630b03172d6547e6bdc1269",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "302af5af9b8e85383db1b79ada2656b788f690e64173c8ae53b08b579f97cd04",
+      "recordHash": "6cabe15ba73f490a190d6d05824cb3ef371f85b93ff6d67a8b5cbe3e1bb522c4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2ea4ea2cc290480aab47afcd48313f4679d7a0f71d9cf123a403cc80e6538922",
+      "recordHash": "bc90485847fa89c2e8eb14d33b0863ec512b0f7c4dfb9f1573a00f9e62a2e594",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "dd8e9317a8c7a0b32854f2fc6deeb166f12b496c1dad2112621e46859a5e1a1e",
+      "recordHash": "d2e5fb04edd2156847c83079f05c459f80b114af930dd3de2f9a08a8632b5ed6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "705b23d45306b855ea916fb1d6e45cbe6adf7d24eb6b9a77f8a541ddc81bc1f4",
+      "recordHash": "730d6fe7332e6b0c1e555feab3aedb6a200e55e2b9fa139124973a525245b730",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1713ebbd0f625d5a7e5b11bcefc1ca08cf271e3e778898d6ff4982c866d87982",
+      "recordHash": "7f835d7b9d5b872d174e07e1aab025009bb5d60eb0eb2ed62b1f58a74facddd4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cfaec146c60e6af5311d2f7ba69ef00e62b179f86bd5a1f95222fd0a1a0c9f23",
+      "recordHash": "773c9e5107a60542e7d7f8c9a3c30acdcfb1e756874b6ecbfa5b332d175ddb37",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "38d8d4842ebb3b2a2e1dd10c7a4f360d660ce39011512f0f61fbce94dd2eb68a",
+      "recordHash": "e0f781a81cb25125be801930be1541647f7b92f37207628767d80424d890cf28",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0fc0720aef3cd6eaf867989929a9bb9499150cb850d748f6d9459d38058e8a8e",
+      "recordHash": "0fcd8d4458ab794df35cb843b10afedf5d5e647e6bae3bcac8b2574d0ab4296b",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "bcdf4aa006bd6dff7ecce61fe1b9df257227644267e9fec63ad65ad020004906",
+      "recordHash": "60342afb314ab08256dd8cf07de6b59f600ff31ce6a56a5165a79f5b61d3caff",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "19365b09352f08bd5a3fb7761b8680045349dfc378c9744d96026c4453cbd4e7",
+      "recordHash": "5164a4fafa712ebea19ed699794ac35c1da069e16e27780e0b834ad42799f623",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d07eed09aae25d28dca79e662faee77bf12ceb71c5d8dd334da498616ed52e3c",
+      "recordHash": "087287ab855c9e8960589a5c6e777fdf77b6bfa248e74260d3243128343f6506",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "7f3b2a2dd52dd8ec444426f1f32a5202f19d11038a7b14da0597a25838a616f5",
+      "recordHash": "195c778da737792018be638eecd3cb38da93707406b90ba242d9d819338ebda7",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "737d999ff3859333a95464222ac36356d342d93dcc8091df0548d40738fd231a",
+      "recordHash": "3c9dd61e7143d0aa57159705b5dc0581ff399d3cbf40748fa1914a875b56f3df",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "40ababb2e738bff9c28603cda59f9943018117831e9cf99782dd9d3a5e311246",
+      "recordHash": "847f8f53018c8a3571c12b1cd0984a29cae37c20067d5e263e18d1ed86dea6fc",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "002792ecaaee8b8ca83c3e8566df20dd294edf7de8e71403a01d4b5285100ef0",
+      "recordHash": "2d99fe58f4584c5633011a8a33195da3dea28fc87c05bbada5c773fa31ed3dc2",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9a50743b96d70332cfe94c7ee9969f57472983fbb1eecb5a71bd8a6dc109080a",
+      "recordHash": "083aa8bc4d8f774ad4942a45b75c79d291447e8124e8ced0bfb1ab068670a7a9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "3d469dec3acc01e9540eb6bc5b4cc374d6da83553d03ddc0ce5e98dc4405a618",
+      "recordHash": "8e4e4806f2cfb232c04591969833254cf411413a1317d89d406b59533738fde6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "743df27b828e36010052f8d016231f846acafe6771b5c2ae5974135a04a0f8d0",
+      "recordHash": "f7a5b6ef0ad6a391bbe919fd45172fe788438665b19b0e7e18316f2605f740b0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "abccc1b36a028981aad5e2280cc4324b9c6214e0b1009c9131b2fd171c974c40",
+      "recordHash": "26aeae0eba70cc9f339e80fe3bcd924da5e34e0068c0ba5d8cf251d4cd75928a",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ae1162466bb5077d8719454bceac64e47d034aaefc16ea1f61debfa586d87168",
+      "recordHash": "4d6407fc697a4a34ddf42a78ccfe444446b405cfc437d21f76094c38a01b073e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "108a773ec6fe8e9d1541d44093c63efb5b1eb3feba35ec301c03001f2fe66fb8",
+      "recordHash": "fcee6278046e8a530855cedfb148b8cf4b98318ecd4281822fa37b7e5abff198",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a887ae2dbac0fb70d3b7612454704999fbbe5b70921dfad39990fa09f02d43b2",
+      "recordHash": "60c95241ada93078fcb213ed53597875509cd74723c096aa6c999f57145df948",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "99adfb5664a6a473f50b6243278e09a31b73f51bbb29b0fb0e25c9e519206b8c",
+      "recordHash": "adf60c57d754380703538b3349011826cd2d659a41b0ebb7262d6ef18454b2ce",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "8cbd787700ff458bf8fdefe70ddb001d58623f585be0cedf7b5be54c68066c6a",
+      "recordHash": "8adeff872c392e636d62ca43b7dacc9903789832d112af8d4fbdd09f74297dba",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "19f3d01fd2c08879596c7973befd4885689f5fdcb7145f3d8bf0d2d12a2fe5e4",
+      "recordHash": "bdf1fbbb6d5799286a59558a63ca91e7195213f3a2a5e7a24a2709dfdca412eb",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a82c8d48b740bc77b486e227b54e45927eb8d8f942e4a3f5c00a6786b5d16b42",
+      "recordHash": "327a33a5f3e7e090147a9f6f47f60290d8b06ec0d6ba148675ccc544cf5804c7",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e0438121bd04bc2e7bfeaa2abc14516aa2579393618e1760398c20c26805eb48",
+      "recordHash": "e9448ec4c6657ed8806dee51b600d3d0c8d33cde9ecfbe193e2a69be9254a1e4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9b408014a219b5854dc6c188924fbc54de73a0ab64a701903a5bc23465b4f83a",
+      "recordHash": "4ab37e5db090981e342f4e1a71201aff99718649104a54059d46a468f5c8b4a9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "55d182d79bd343056d87bea6168f3dfbec528c84ad9387201e960ef402d09aa7",
+      "recordHash": "96b8ba946faaf22c7edae0448f2730eeb441b35583c8e35ebb223d7842e20c61",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "14a1e5d3094dd67b2a859687db2137781f5c8a0423a2c29a8bfed0991941775a",
+      "recordHash": "24d97eccd855c092912ee9fa63592a19a73504dbbc8247f3e70088ce05d06aa4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "c5633d78cf77fc4090624a8e85fd7a0c9cd5c641729873006171a6ed3914b776",
+      "recordHash": "04992e92f377204e1d401f494f97cb1a11cbf5e3fdbbc7bdc04295a4ae9ae8f7",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "13135d802dc8d809c91475122354bf7c34b0eac223bb015c741897f14e536612",
+      "recordHash": "c033146954d25096f1ac06acd306f182b73b520e80dd9c3f5711fc9b4ddaeeaa",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "4126fbef40ad1d1b60c45a1da243bd6d4308029bf8776d9cb0d1fcd24daaa3d7",
+      "recordHash": "54e62dc41a2444dd1caad3be2c7f05897135372e77404469f55b84530bf187f8",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "efb97839de1a41e4fdf0f231ba743c7a79e3aee6aa4da168ead051fd8b1350fa",
+      "recordHash": "f6b48e455d57b56689f22f7c7661bb0564b512322eb6185d3d8711fd79905692",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d9809bb7c7bffe1fbd8f1f1256241b57563c7b8c8fc28185cf0b5eee35a7203a",
+      "recordHash": "8b6f6509e3a3efb5b7bc86d520267fe77d519c6e587ebe51e315834e06e85aac",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "93323ba184224cb5bdd59a391b3c7f615a36c3231858a7dcd1ff2ebdb7e8f329",
+      "recordHash": "2a1fb5be26973a0b3ec256c6128f6abf043066aa469b53247fedac0ac8649947",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "129e563aae40b6a8097e59c4f65ce7b4a9061f8e8029f65a2ca55fff0025d5b7",
+      "recordHash": "dc28b937fc01858d56802eb83113bc9057e38f72c7988991af83be3cd66fd5b9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b4a899a21d77c00a1208f068d004a133187afc58a1c0acfef3ce551e7637a4ee",
+      "recordHash": "8be085dfb41554c78df3c3353281858d7a588446bfaebb3e6b968b2da901f928",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b81b42b322ffc28580de07dae5cb46b228f1cff742f0c530cca4b51a9f6e47da",
+      "recordHash": "ea49482f57ca501e5051c26cc29d915eb62fbed043ae697087ffa6e146f06632",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "059636941364641d20eb2bf193bc27fcb348e6e324cbfbb909570f13a159537d",
+      "recordHash": "06ee105c8bdef4edae05b60594ccc811056b545e3c24157151c4bc07abed2893",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0232a8a521ebdf5b14688469906cc64ff9e1e7c4afb40ff558f9e0d7cbfac717",
+      "recordHash": "c3dc33300f9f7d2381a7b0583e37f514cf56edb0adb91b620a7135cbbdd831fa",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "fb9e5c8155e654c5ebe2334d4ff76e6619572574cea7e5083b6e23d350a93e67",
+      "recordHash": "f04d24a40190b0a9e94a52bf5443690a7ce9aa1e663632e8dd3013d4dbe5d20f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2fb834e4fcab6de856c55eacccb7240c9f801f5e6784458ea15731176191d5e2",
+      "recordHash": "b015d6c732c98080908bc08036da1d699ac0ffe0e697c33d268750e94e61e0f7",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9489875f5a06ce0b4dcb61612f99ad6959c677c60c7008ed8f3288d72a8b9e3a",
+      "recordHash": "cd9f19ae1d58fc2ec376a4d96af5d9810fb39057251287536369ce2411907f20",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "8bc0e56842a560e4e882471e68452da4ca38c19f62a3ba40360bf4ebd9c4cc6b",
+      "recordHash": "fe67feeca9c0971c8d1d388a27f59c0185e1d2b6567ae5eb58240c2fb03b37de",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "c312cee26bd5f4de32fcdfc56939806564a49d43c21aa21cb997be926a99bb84",
+      "recordHash": "c1f4c4f2e2204934af645c40d00dcffc7d02452ebdcf4b57d4086c92ccfeb62b",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cf98183d61ca8c1b9851faf56d2a022a9e5c36e583680d717a9cc7c95a0569a3",
+      "recordHash": "833935fa356608a8f2df3765e2a577ca0aa873f4ba772a14a25a3da763de8ee6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5057e462cca104aae9f036936bf8fa1606798a6d4f0921bcd40d008d52d87041",
+      "recordHash": "f6acce41fd90a6d49437b76cd54e835cdfb2c22057bfb11c1300b4bb5ee78021",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "20958281068cf3cc1cacef572d29a3a285618f3881046254fddd7ff0fb48a424",
+      "recordHash": "28565267dbad50b8bffe656a93ba115465c12eca4f562385790afbc7ff676fec",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "755bc7bd7f77100edc07b8b92f59ad0bceac7c9f8164ed561a0539ac03c5830c",
+      "recordHash": "ce942d99d3e118ee0173de0a3bf3d0ec5c1659168b68ec8c569a6679abd03dfc",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b14646cb6c8b1ed5708b9495ce2567e56dd49d678341fbb96529d2717d135594",
+      "recordHash": "c36087ccba5cda53895143c9b65e4265b01073083f5a519c1fd562557962a958",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "897f46546c55ec4264da25f72a84e0ee1664bf02a107658ad99966331ec36531",
+      "recordHash": "4eccf3d74d2f08dbc7441a0677c730586e1c36c334522c15f7dfe31ec8bac340",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "f2db4954696dbea487910b329a02be6c89f058c9d1951ab66a50e9e5d1266484",
+      "recordHash": "22c7233f2b910e6164fb519ca02efd43543d5fbc99a44aa5dbdca557ea50566e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "00a488fb5d3b1b65ca542f943e4235764ca7f42249ca27e101c3770f64af6c9b",
+      "recordHash": "10b15f5e3f6b87af55bb1095f53b5703870af186380fc11298b7b87901db05bc",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "85b69a7181813ba0f7f66498d3c82bb3fe5c7005ee1816d6cdd565b831058c9c",
+      "recordHash": "f5a18e938a81dbff2a579ef214a14b000e62a12345464ef2adb057453e66b730",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5fa8cfa37066d2889957ed81722d9228ca1b2cab2aa13be39170db60f9a15107",
+      "recordHash": "37a591e866ef8e1db21e6d923990dd086250d8034813224dec6c266c48ee5371",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "bc8fa239ab2e51e287e95c69f33fb62a8d5d83d22b1e7e5c82ef7a5e1b890590",
+      "recordHash": "45b0fe074d9c43d47cb991a7d2362a7b2f0c3b9085da931ddf9308cdae259481",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "68a73520b30d8943657bc7aa9d4258fbbe048726549956a5714a6cb3b770de86",
+      "recordHash": "9ceff6684bf585bbbdc039b348aa6a8ce96b5665543f11439137cc2fff6ad95c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5845acf57739ab811e80a0c86b226fc15f42db0cc681d0634fb0e715ce3d551f",
+      "recordHash": "2bd426ac6ef18df8d637a1af5b3d66269bc427aa8497fb5f4242708236c5b3c4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "bf8d55f43c52567da178f12526e06144c678c60a6a6772ceccdea33f04fcadc5",
+      "recordHash": "861309a3040c27ac34e92f2d4b5d1c4eabe471c90263b8903eee269c823f85db",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cc683aaaf484c4ffcffbb841a9a3c36e874a6a2ae5e0bd8fa737cf68e4ed2e8b",
+      "recordHash": "ac09fc4b991b80574402ec2e1d2be68318a86b42c4615cc378ddf2533ebe18ef",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a33ec5c9408e447cdfe95b3395e84985adfec906a568936b64881352a69e31f2",
+      "recordHash": "fa0414459b1f64b70eae0ee0c2a2d0030f6497dd3472dddc386135ad532e35c0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1fb4acdbdd5302f8c78a0cb3cf24bd6f29e44567045f94c9b4c1769daadd12a5",
+      "recordHash": "266e7766da8914eefd7b9334279611e5cfad3a7c2efea644714b2a8345f3d971",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0b3624ece0ed812ffa7c14f58ea42b368cb14716e9a9ff24567e81af483d8abb",
+      "recordHash": "b25b6ef0f4aff595e86ec174502ba65422d1928843e9f384735b8d62a7df3a33",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d0896d42ec908188047cece09e5f4779d3331ce7f5a953094a8d654fe2807b37",
+      "recordHash": "793287665cdea6c215be7ef7617ec9b80be53baac1871767b364fcf7c633dbcf",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "8a6198d9c321a2cada9f686605a057a37605495a91872de19ec13071abac5fcc",
+      "recordHash": "972971cc606325c8d28556bce3f5653da0cdb5efd7c18aefd7bb2a83e7f65807",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "fccd26db82d212a5220901aa858f4581cc9129098f168335e5cb008dd43c4e6e",
+      "recordHash": "c3fc6df61a92533e2ac14642be5e67ce180af33d1037701331d716f10071ec41",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "98aa4058a984da4a378d2c694406b55cc8c91fad8ef4bd3fa36aa5beb8417d1f",
+      "recordHash": "84d72b0fff64ae3f3f53bde9661d408bdad733af11b2ae7246b79c4e00ca5395",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "507dc69a65fd7bb00ffc8181b17e0e954470053160535b046425b6b4ca78da91",
+      "recordHash": "ca6c91ada2686428bd993ac80ec6f11f1fb0acbdb7a05923a4e6792b80d55dcb",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "562a793256ecd6bd05956af6c5bb7ef5d9034075228900ac0f9edc84aa6090ce",
+      "recordHash": "d411756d72367e4fe9aac19b6b7e1b9fb4a95727c3f28b8bc402544949936325",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "edc3f2fa02ffef6e0b830b6e67cc597d4ca1e8cfaa27d2d78c93470b73f7bfa0",
+      "recordHash": "03e395de06223c6b0368465c95e30269004c57cf72d81f651f1a83611035a41e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ff27cf3a5735dbc6f8b435880c91624289beca00a340ff4ae748dfdbf7fa7ee7",
+      "recordHash": "d2aebce61c36ea3d46f4377d96a057331e09808b00804a22fb772f3aee15f9d3",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "21857721883bda963010e1199e11d20cf3788b8787c04ce3faf707b998030ee4",
+      "recordHash": "4b258b8bfd6352d8a34d6aeb0f4b3e75a621a2abf23ab2a63dea41c9db73f1fb",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "6e88021be661cf2319d6bc59baf363dee3c012fdc6f347cc7044ec9b89d474a4",
+      "recordHash": "5365d39eba77c64300b0507546d8875e75daa4c87e195dd149566e95a3220db6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ea8d6b2b4950a2d1c2fdced21c69166ab0689a286509a178a5d8d997d8188983",
+      "recordHash": "728c87173460312165d6adf826bb05773081aaac93074dafdd9411e7e6c6aed5",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "411b106d2cc3f6f036da8f0189f2feb860e7b7ef44498fbe495cef135dc7976e",
+      "recordHash": "5f1fc45c9c3823b90621c52d87f8b72c9fe78ab813c9877b84b72f5dd247c200",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "784c7600e4f09afc0c63f677697b14a5e79aba5f15c9f2a936aa3b411a90a83a",
+      "recordHash": "870d50fbe804ccd27bb92d6393707bcb458b52a4795d2b7a07eefa35f8ef5d49",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b4f6e84bd320ed805495b0ddd2a0c75947dc1e532c4dedec5e9d2d14c61b544f",
+      "recordHash": "ff2db62443e6a42b8c878937d5b7c0c9e1d944fad08b73f2caf28e8e095fad50",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ae48c0001f751315ba8b5219d2dde795fe938e70b3e06f2f0a333b2a91e3be32",
+      "recordHash": "335e7c59fa64c522b01638fcba26acab5a7d47c7adf024e7aa50a6c5932d322c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "dfcfa19c23d5dc8e2c02fb5358ffc6f9200a77730463e6a4a727416e5a6a52a0",
+      "recordHash": "afa7f15ae7ab09f280bef08ab50ce30a70af00dc9d3f8da464d66dbdeae656cb",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "61dc2ec2469b3bdc123defd90cbe1e72e3f70d2a71d87943cd626fe7a747e7ea",
+      "recordHash": "ebafe2888a3819b8cf5fa2a95c1887bbe8d1e0ea9ebbf800631c567030635e05",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a9a1704ef6e4c930e18e0ac8a7f05be5e37ebe60637bb368c5ea81f3386488a0",
+      "recordHash": "f61b519f2e8acc1e7f726f0256c4b123abc060caa922c262788d95f4ad16d443",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "72f6d7fd9f7dd5c7c1613ae9c53fce3c88f7f72b890b00d909d64fc9bb4616a3",
+      "recordHash": "6ff57826773ee573a08825e919842437a04281860c3c4427c8d7b0e784909429",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "6063965375439e2f2b98162ada792a8215bdaa5e67b170c40c25c33acfeb717f",
+      "recordHash": "a58783adda4f3622562ce90e709777b55dd67c98a6adbf5f66937c6f6628c9fd",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "583392df1f3c74ca82e0d68df3b7d5fd3101edb3831c0887f7dc0f15736f60bc",
+      "recordHash": "1e9e1d7db19b7bed42a08b35c42786a7d4cbe4ae8a8ae0a0fd401a1279505960",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "62ef6d9989a78bc8963349544b0f75a39a96190947d7ead81a69810567d71805",
+      "recordHash": "1bf276eb70db922033aa12bd0d9b6a4424efcd2ef6a6185e9b548dcbfb51f7c0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "55e2dc97230537471e28fb4f6aafc5a95ab56767e7183c1590e16dc122eb26ce",
+      "recordHash": "8f5aea2a2b3212d2fd90fb18ee69a11400e80e11fc911374fa7757e855b99f3e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e3d7eb162bdcf113de8576b7c0128209e9d2c48e851c78e73d9e6a721ddb09e6",
+      "recordHash": "661efd611f4fa17b668a81238ea7ffcc75beb555012707e40611e575bbb6b0d1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "2243e70296fdce0f84fe11c5fe0275d9f1ec7e9f9032512d071f53d9165799b4",
+      "recordHash": "027ec65d628554bfc0cfac32edc0bfa9ffd03b3260f2a7193743dcd5d37381c5",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "3a382500892b5740c9b7a58ba4b66bacac3ca981a4dfcc79c02524b439ad7d96",
+      "recordHash": "d331fab13e71d4e40e42ee2d95276e236a3f076abecf186e2aa365f95d932794",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9e48347c5a929707ab6d5a5c2d6f2f3852fae9958a13ee9e392ebc8a9d094bb1",
+      "recordHash": "898624919bd007ed44b255c25111f2b8520dca48ad871ef9c066edb9c6d71013",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5410972828a9d2f8d970743084646779c2438d0e7a9a99b6bad10c2bd747d770",
+      "recordHash": "b5d0409d7ac7f6ce928414947a3e6deebe58ec7ee2b740d707816636b86e95f1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b7f742e74ff46494538c10f28f48edf3298f009810c4727ac875522a4ed05a68",
+      "recordHash": "c7be6668899f15d9035d96205b6d3f094fe7137a6b54a437f094bfc645fdb9ac",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "19b7c7f2d364cc5c4d74e1be7e8323104448b473b2ef35c718806733a87de8a9",
+      "recordHash": "92b9bea16b381ef76c3652c483f1ceb379223f53e14bd441c82e3aa0ea658ba6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "f9642acef61022d87bd9368eb4bbfbb6cb5b18432d4bcb4ce1d239ca0f66daaf",
+      "recordHash": "c5caadd5755eb6232debe830cb4bd803875a98f5713e807d6d2ccc40ed9a3e51",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "88c823786b09d7181040b1fe447c1f4966423808c400d790cc200b025557f363",
+      "recordHash": "a25b9fc70e93cfde84e12fa036dfe999bbe1333b6aec29d63caf80782b83d819",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e9458644848d15edc700c2622a168b24474e121fbc9c23b515d824690042c798",
+      "recordHash": "2d6f2218574e34a63300804dc3cd9a95df080b053193e21574ada0f0e7c95aea",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e3cbee1a0352bf43e0a164e20d6b5c968bc134164cb86ff023d6ba452097166f",
+      "recordHash": "b6ff566154404eac8ce362a87ec7d6fc9188f80f2d02279c486174174d84ad35",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "139e4e96c77b545614000a3a527c6025a1dfc4f899db34a7157592002fae311d",
+      "recordHash": "0e1efbfc5e67d972101cba3970589e7d738f9191ecd6b1c4963ac8a186403cb9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "54d7bb018133375e819132a569e0899f1e4aeaee5dbe46133ddf117f663c9b20",
+      "recordHash": "e150862cfd81d693235919ad2a8469e7fd3d2539de6bc4dca52cb363951377dc",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "aebf985575cb54ade8821fa79e41b1db691699a3288336874dfb54a011788a3e",
+      "recordHash": "22415fbfc0cf0fc17bdc867efc3bf7390c3fc6f046fa94574210d3fd3be70f47",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "94c9da666b00be0c747ea04ea02898093f7748e93f25a19b8d613f2627a7a91d",
+      "recordHash": "d55a60b5481c291d91918f7bdbc18954fe70062697cdaa760d82970fdcd6c1be",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "fe14ba467abba4a2ce991ebad06b9653ab6d6172185c081d80a4c11481e318a7",
+      "recordHash": "9eab144704d880f67c4a838bfc6ea5e28e30329742de33457c2395c2f47b9230",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "40e0b9354503bdaf3a5c7a48f948a2c0818bde6883f6ce8a2d2e8045a4f835d3",
+      "recordHash": "e3cf755a5a771613ed589a42fb00b6ed364c840ca0feb45d13e8e60c1abe4eac",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "8e00a764d2ce3cc0dc111d619872b9940251382b6e681e929463cfe626df1206",
+      "recordHash": "089ab98dc4f09231f25d411d50037c240c121e333fa888b11722b07787822aec",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "783868b6f552bc4349ea6f748c68233e4189e3bdf47719d6877b2303f10b32ce",
+      "recordHash": "70b944e80d3edbc86c9c6e621cf08b3746429018250a542052cafc93d630a640",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e66f1327ff6aded4fca8cca7b4df8b6641a2a6295e11017c979fd7dd98122529",
+      "recordHash": "2cc803d10828be1b158368eeb88426a006a252788b9ab8c7fa5d477cdc527043",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
     }
   ]
 }

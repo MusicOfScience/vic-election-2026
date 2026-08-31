@@ -22,3 +22,9 @@ Approved candidate evidence enters `metadata/candidates-2026.json`. Party eviden
 Approved poll evidence enters `metadata/accepted-polls-2026.json` with `modelEligible: false`. Acceptance of a source record is deliberately separate from permission to change forecast inputs.
 
 Every decision is appended to `metadata/discovery-review-decisions.json` with the evidence ID, record hash, reviewer, timestamp and note.
+
+## Candidate source-family approval
+
+When a deterministic dossier covers a complete set of official-party source families, the project owner may record one decision per family in `metadata/candidate-review-approval-2026.json`. Run `npm run candidates:review:apply` to materialise the endorsed records and their per-record audit entries. The verified build runs `npm run candidates:review:check` so later evidence drift cannot silently alter the accepted register.
+
+This approval records party endorsement only. It does not confer VEC nomination status, enable candidate effects in the forecast, or open the candidate-evidence gate unless all 88 Assembly districts are covered.

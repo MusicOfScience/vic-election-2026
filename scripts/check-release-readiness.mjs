@@ -132,8 +132,9 @@ export function buildReadiness({ asOf }) {
     findings: {
       demographicChallenger: validation.demographicChallenger,
       candidateDiscovery: {
-        status: "quarantined-awaiting-review",
+        status: assemblyContests.size > 0 ? "accepted-endorsed-evidence-incomplete-coverage" : "quarantined-awaiting-review",
         records: provisionalCandidates.records?.length ?? 0,
+        acceptedRecords: candidates.candidates?.length ?? 0,
         sourceFamilies: provisionalCandidates.summary?.sourceFamilies ?? 0,
         assemblyContests: stagedAssemblyContests.size,
         assemblyDistrictsTotal: 88,
@@ -142,7 +143,7 @@ export function buildReadiness({ asOf }) {
         acceptedAssemblyContests: assemblyContests.size,
         unclassifiedContests: unclassifiedCandidateContests,
         automaticPromotion: false,
-        label: `${stagedAssemblyContests.size}/88 Assembly districts have provisional candidate evidence staged for review`,
+        label: `${assemblyContests.size}/88 Assembly districts have accepted endorsed candidate evidence`,
       },
       validationEvidence: {
         scope: validationEvidence.scope,

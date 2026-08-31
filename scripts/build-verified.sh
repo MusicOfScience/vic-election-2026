@@ -24,6 +24,7 @@ node "${SITES_PROJECT_ROOT}/scripts/generate-poll-data.mjs" --check
 node "${SITES_PROJECT_ROOT}/scripts/generate-source-provenance.mjs" --check
 node "${SITES_PROJECT_ROOT}/scripts/check-release-readiness.mjs" --check
 node "${SITES_PROJECT_ROOT}/scripts/build-candidate-review-dossier.mjs" --check
+node "${SITES_PROJECT_ROOT}/scripts/apply-approved-candidate-review.mjs" --check
 node "${SITES_PROJECT_ROOT}/scripts/check-staged-poll-shadow.mjs"
 timeout \
   --signal=TERM \

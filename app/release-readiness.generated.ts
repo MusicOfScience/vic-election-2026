@@ -50,7 +50,7 @@ export const releaseReadiness = {
     },
     "candidateEvidence": {
       "passed": false,
-      "label": "2026 candidate evidence covers 0/88 Assembly districts"
+      "label": "2026 candidate evidence covers 82/88 Assembly districts"
     },
     "productionAuthorisation": {
       "passed": false,
@@ -76,17 +76,18 @@ export const releaseReadiness = {
       }
     },
     "candidateDiscovery": {
-      "status": "quarantined-awaiting-review",
+      "status": "accepted-endorsed-evidence-incomplete-coverage",
       "records": 188,
+      "acceptedRecords": 188,
       "sourceFamilies": 5,
       "assemblyContests": 82,
       "assemblyDistrictsTotal": 88,
       "councilRegions": 8,
       "councilRegionsTotal": 8,
-      "acceptedAssemblyContests": 0,
+      "acceptedAssemblyContests": 82,
       "unclassifiedContests": [],
       "automaticPromotion": false,
-      "label": "82/88 Assembly districts have provisional candidate evidence staged for review"
+      "label": "82/88 Assembly districts have accepted endorsed candidate evidence"
     },
     "validationEvidence": {
       "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",
