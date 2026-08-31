@@ -9,6 +9,9 @@ import {
   extractNationalsCandidates,
   extractLaborCandidates,
   extractLiberalCandidates,
+  extractVictorianSocialistsCandidates,
+  extractFamilyFirstCandidates,
+  extractMorningtonPeninsulaCandidates,
   findNextTeamPageUrl,
   extractRoyMorganStatePoll,
   extractRoyMorganUpperHouse,
@@ -69,6 +72,25 @@ test("Liberal API keeps only records explicitly marked as candidates", () => {
     kind: "candidate", name: "Alex Example", contest: "Footscray", party: "Liberal Party of Australia (Victorian Division)", candidateStatus: "endorsed", sourceAuthority: "Liberal Victoria", sourceUrl: "https://vic.liberal.org.au/team/alex-example",
   }]);
   assert.throws(() => extractLiberalCandidates(JSON.stringify({ Datas: [] })), /returned no candidates/);
+});
+
+test("coverage-gap party sources yield only the configured contests", () => {
+  const socialists = `<a href="/candidates/jack-mcmahon">Jack McMahon for Dandenong</a><a href="/candidates/other">Other Person for Footscray</a>`;
+  assert.deepEqual(extractVictorianSocialistsCandidates(socialists, "https://www.victoriansocialists.org.au/candidates", ["Dandenong"]), [{
+    kind: "candidate", name: "Jack McMahon", contest: "Dandenong", party: "Victorian Socialists", candidateStatus: "endorsed", sourceAuthority: "Victorian Socialists", sourceUrl: "https://www.victoriansocialists.org.au/candidates/jack-mcmahon",
+  }]);
+
+  const familyFirst = `<table><tr><td>Lowan - <a href="/elms_2026">Lee Ann Elms</a></td><td>Yan Yean</td></tr></table>`;
+  assert.deepEqual(extractFamilyFirstCandidates(familyFirst, "https://www.familyfirstparty.org.au/vic_2026", ["Lowan"]), [{
+    kind: "candidate", name: "Lee Ann Elms", contest: "Lowan", party: "Family First Party Australia", candidateStatus: "endorsed", sourceAuthority: "Family First Party Australia", sourceUrl: "https://www.familyfirstparty.org.au/elms_2026",
+  }]);
+});
+
+test("municipal candidate confirmation remains announced rather than endorsed", () => {
+  const html = `<h3>Electorate: Mornington</h3><table><tr><th>Candidate</th><th>Party</th></tr><tr><td>Chris Crewther</td><td>Liberal</td></tr></table><h3>Electorate: Hastings</h3><table><tr><th>Candidate</th><th>Party</th></tr><tr><td>Other Person</td><td>Labor</td></tr></table>`;
+  assert.deepEqual(extractMorningtonPeninsulaCandidates(html, "https://www.mornpen.vic.gov.au/The-candidates", ["Mornington"]), [{
+    kind: "candidate", name: "Chris Crewther", contest: "Mornington", party: "Liberal Party of Australia (Victorian Division)", candidateStatus: "announced", sourceAuthority: "Mornington Peninsula Shire", sourceUrl: "https://www.mornpen.vic.gov.au/The-candidates",
+  }]);
 });
 
 test("Roy Morgan statewide poll extracts fieldwork, sample and votes", () => {

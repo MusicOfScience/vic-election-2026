@@ -174,6 +174,57 @@
         "candidateStatus": "endorsed",
         "authority": "Liberal Victoria"
       }
+    },
+    {
+      "id": "victorian-socialists-coverage-gaps",
+      "publisher": "Victorian Socialists",
+      "url": "https://www.victoriansocialists.org.au/candidates",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "provisional-party-evidence-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "victorian-socialists-candidates",
+        "candidateStatus": "endorsed",
+        "authority": "Victorian Socialists",
+        "targetContests": ["Dandenong", "Kalkallo", "Thomastown", "Warrandyte"],
+        "policy": "coverage-gap collection; other contests remain available to later full-source review"
+      }
+    },
+    {
+      "id": "family-first-victoria-coverage-gaps",
+      "publisher": "Family First Party Australia",
+      "url": "https://www.familyfirstparty.org.au/vic_2026",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "provisional-party-evidence-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "family-first-victoria-candidates",
+        "candidateStatus": "endorsed",
+        "authority": "Family First Party Australia",
+        "targetContests": ["Lowan"],
+        "policy": "coverage-gap collection; other contests remain available to later full-source review"
+      }
+    },
+    {
+      "id": "mornington-peninsula-candidate-confirmations",
+      "publisher": "Mornington Peninsula Shire",
+      "url": "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/The-candidates",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "provisional-public-evidence-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "mornington-peninsula-candidates",
+        "candidateStatus": "announced",
+        "authority": "Mornington Peninsula Shire",
+        "targetContests": ["Mornington"],
+        "policy": "coverage-gap confirmation from the relevant municipal government; never treated as party endorsement or VEC nomination"
+      }
     }
   ]
 }

@@ -1,42 +1,38 @@
 {
   "schemaVersion": 1,
-  "generatedFromEvidenceAsOf": "2026-08-31T09:56:38.578Z",
-  "status": "approved-as-endorsed-evidence",
+  "generatedFromEvidenceAsOf": "2026-08-31T12:19:05Z",
+  "status": "approved-as-candidate-evidence",
   "policy": "Evidence acceptance is a separate human decision from candidate-model use and from official VEC nomination status.",
   "decision": {
-    "approvedAt": "2026-08-31T12:00:00Z",
+    "approvedAt": "2026-08-31T12:19:05Z",
     "reviewerRole": "project-owner",
-    "acceptedRecords": 188,
-    "acceptedStatus": "endorsed",
+    "acceptedRecords": 194,
+    "acceptedStatuses": {
+      "announced": 1,
+      "endorsed": 193
+    },
     "forecastUse": "excluded",
     "officialNomination": false
   },
   "summary": {
-    "stagedRecords": 188,
-    "sourceFamilies": 5,
-    "recommendEvidenceAcceptance": 5,
-    "recordsRecommendedForAcceptance": 188,
-    "acceptedRecords": 188,
-    "acceptedAssemblyContests": 82,
-    "assemblyContests": 82,
+    "stagedRecords": 194,
+    "sourceFamilies": 8,
+    "recommendEvidenceAcceptance": 8,
+    "recordsRecommendedForAcceptance": 194,
+    "acceptedRecords": 194,
+    "acceptedAssemblyContests": 88,
+    "assemblyContests": 88,
     "assemblyDistrictsTotal": 88,
-    "missingAssemblyContests": 6,
+    "missingAssemblyContests": 0,
     "councilRegions": 8,
     "councilRegionsTotal": 8,
     "duplicateIdentities": 0,
     "unclassifiedContests": 0
   },
-  "missingAssemblyContests": [
-    "Dandenong",
-    "Kalkallo",
-    "Lowan",
-    "Mornington",
-    "Thomastown",
-    "Warrandyte"
-  ],
+  "missingAssemblyContests": [],
   "knownScopeGaps": [
-    "Accepted endorsed evidence covers 82 Assembly districts; the candidate-evidence gate remains closed until all 88 are covered.",
-    "Six Assembly districts have no discovered party-endorsed candidate record in the current five-source collection.",
+    "Accepted candidate evidence covers 88 Assembly districts; the candidate-evidence coverage gate passes.",
+    "All 88 Assembly districts have at least one accepted announced or endorsed candidate record.",
     "Credible independents, teals, retirements, defections and candidate replacements require a separately sourced contest-intelligence layer.",
     "Only VEC evidence may confer nominated, withdrawn or result status after nominations open in November."
   ],
@@ -52,10 +48,31 @@
       "records": 78,
       "assemblyContests": 74,
       "councilRegions": 4,
+      "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
       "rationale": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
       "requiredChecks": [
-        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Accept only as endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    },
+    {
+      "authority": "Family First Party Australia",
+      "sourceIds": [
+        "family-first-victoria-coverage-gaps"
+      ],
+      "sourceUrls": [
+        "https://www.familyfirstparty.org.au/vic_2026"
+      ],
+      "records": 1,
+      "assemblyContests": 1,
+      "councilRegions": 0,
+      "recommendedStatus": "endorsed",
+      "evidenceRecommendation": "accept-as-endorsed-evidence",
+      "rationale": "The official Family First Victorian election page and candidate profile explicitly identify Lee Ann Elms as its candidate for Lowan.",
+      "requiredChecks": [
+        "Accept only as endorsed evidence; do not label the record an official nomination.",
         "Preserve the cited source URL, evidence fingerprint and review date.",
         "Reconcile replacements, withdrawals and official nominations against the VEC when published."
       ]
@@ -71,10 +88,31 @@
       "records": 51,
       "assemblyContests": 41,
       "councilRegions": 8,
+      "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
       "rationale": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
       "requiredChecks": [
-        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Accept only as endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    },
+    {
+      "authority": "Mornington Peninsula Shire",
+      "sourceIds": [
+        "mornington-peninsula-candidate-confirmations"
+      ],
+      "sourceUrls": [
+        "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/The-candidates"
+      ],
+      "records": 1,
+      "assemblyContests": 1,
+      "councilRegions": 0,
+      "recommendedStatus": "announced",
+      "evidenceRecommendation": "accept-as-announced-evidence",
+      "rationale": "The relevant municipal government lists Chris Crewther among candidates publicly announced, endorsed or otherwise confirmed for the November 2026 election; this supports announced status only.",
+      "requiredChecks": [
+        "Accept only as announced evidence; do not label the record an official nomination.",
         "Preserve the cited source URL, evidence fingerprint and review date.",
         "Reconcile replacements, withdrawals and official nominations against the VEC when published."
       ]
@@ -90,10 +128,11 @@
       "records": 23,
       "assemblyContests": 14,
       "councilRegions": 8,
+      "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
       "rationale": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "requiredChecks": [
-        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Accept only as endorsed evidence; do not label the record an official nomination.",
         "Preserve the cited source URL, evidence fingerprint and review date.",
         "Reconcile replacements, withdrawals and official nominations against the VEC when published."
       ]
@@ -109,10 +148,11 @@
       "records": 5,
       "assemblyContests": 5,
       "councilRegions": 0,
+      "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
       "rationale": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
       "requiredChecks": [
-        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Accept only as endorsed evidence; do not label the record an official nomination.",
         "Preserve the cited source URL, evidence fingerprint and review date.",
         "Reconcile replacements, withdrawals and official nominations against the VEC when published."
       ]
@@ -128,10 +168,31 @@
       "records": 31,
       "assemblyContests": 31,
       "councilRegions": 0,
+      "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
       "rationale": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
       "requiredChecks": [
-        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Accept only as endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    },
+    {
+      "authority": "Victorian Socialists",
+      "sourceIds": [
+        "victorian-socialists-coverage-gaps"
+      ],
+      "sourceUrls": [
+        "https://www.victoriansocialists.org.au/candidates"
+      ],
+      "records": 4,
+      "assemblyContests": 4,
+      "councilRegions": 0,
+      "recommendedStatus": "endorsed",
+      "evidenceRecommendation": "accept-as-endorsed-evidence",
+      "rationale": "The official Victorian Socialists candidate directory and profiles explicitly identify candidates for the four targeted coverage-gap districts.",
+      "requiredChecks": [
+        "Accept only as endorsed evidence; do not label the record an official nomination.",
         "Preserve the cited source URL, evidence fingerprint and review date.",
         "Reconcile replacements, withdrawals and official nominations against the VEC when published."
       ]

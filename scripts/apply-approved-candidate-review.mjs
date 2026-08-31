@@ -30,21 +30,22 @@ function buildExpected() {
   for (const decision of decisions) {
     const family = familyByAuthority.get(decision.authority);
     if (!family) throw new Error(`candidate approval: unknown source family ${decision.authority}`);
-    if (family.evidenceRecommendation !== "accept-as-endorsed-evidence" || decision.decision !== "approve") {
+    if (family.evidenceRecommendation !== `accept-as-${decision.acceptedStatus}-evidence` || decision.decision !== "approve") {
       throw new Error(`candidate approval: ${decision.authority} does not match the dossier recommendation`);
     }
-    if (decision.acceptedStatus !== "endorsed" || decision.officialNomination !== false || decision.forecastUse !== "excluded") {
-      throw new Error(`candidate approval: ${decision.authority} breaches the endorsement-only boundary`);
+    if (!["announced", "endorsed"].includes(decision.acceptedStatus) || decision.officialNomination !== false || decision.forecastUse !== "excluded") {
+      throw new Error(`candidate approval: ${decision.authority} breaches the provisional-evidence boundary`);
     }
   }
 
   const approvedAuthorities = new Set(decisions.map((item) => item.authority));
+  const decisionByAuthority = new Map(decisions.map((item) => [item.authority, item]));
   const approvedRecords = provisional.records.filter((record) => approvedAuthorities.has(record.sourceAuthority));
   if (approvedRecords.length !== approval.requiredAcceptedRecords || approvedRecords.length !== dossier.summary.recordsRecommendedForAcceptance) {
     throw new Error("candidate approval: accepted record count does not match the dossier");
   }
-  if (approvedRecords.some((record) => record.status !== "quarantined-awaiting-review" || record.candidateStatus !== "endorsed" || record.automaticPromotion !== false)) {
-    throw new Error("candidate approval: only endorsed, quarantined, non-promotable evidence may be accepted");
+  if (approvedRecords.some((record) => record.status !== "quarantined-awaiting-review" || record.candidateStatus !== decisionByAuthority.get(record.sourceAuthority)?.acceptedStatus || record.automaticPromotion !== false)) {
+    throw new Error("candidate approval: only status-matched, quarantined, non-promotable evidence may be accepted");
   }
 
   const approvedIds = new Set(approvedRecords.map((record) => record.id));
@@ -60,7 +61,7 @@ function buildExpected() {
       name: record.name,
       contest: record.contest,
       party: record.party,
-      status: "endorsed",
+      status: record.candidateStatus,
       sourceUrl: record.sourceUrl,
       sourceAuthority: record.sourceAuthority,
       sourceId: record.sourceId,
@@ -111,8 +112,7 @@ function main() {
     writeFileSync(candidatesPath, json(expectedRegistry));
     writeFileSync(reviewLogPath, json(expectedReviewLog));
   }
-  console.log(`Candidate approval: ${approvedRecords.length} endorsed records accepted; forecast use excluded; VEC nomination status unchanged.`);
+  console.log(`Candidate approval: ${approvedRecords.length} provisional records accepted; forecast use excluded; VEC nomination status unchanged.`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
-

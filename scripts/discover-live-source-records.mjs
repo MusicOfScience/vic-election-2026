@@ -142,6 +142,77 @@ export function extractLiberalCandidates(jsonText) {
   return records;
 }
 
+function contestWanted(contest, targetContests = []) {
+  return targetContests.length === 0 || targetContests.some((target) => target.toLowerCase() === contest.toLowerCase());
+}
+
+export function extractVictorianSocialistsCandidates(html, pageUrl, targetContests = []) {
+  const records = [];
+  for (const link of extractLinks(html, pageUrl)) {
+    const match = link.text.match(/^(.+?)\s+for\s+(.+)$/i);
+    if (!match || !contestWanted(match[2].trim(), targetContests)) continue;
+    records.push({
+      kind: "candidate",
+      name: match[1].trim(),
+      contest: match[2].trim(),
+      party: "Victorian Socialists",
+      candidateStatus: "endorsed",
+      sourceAuthority: "Victorian Socialists",
+      sourceUrl: link.url,
+    });
+  }
+  return records;
+}
+
+export function extractFamilyFirstCandidates(html, pageUrl, targetContests = []) {
+  const records = [];
+  const links = extractLinks(html, pageUrl);
+  for (const rows of parseHtmlTables(html)) {
+    for (const cell of rows.flat()) {
+      const match = cell.match(/^(.+?)\s*[-–]\s*(.+)$/);
+      if (!match || !contestWanted(match[1].trim(), targetContests)) continue;
+      const name = match[2].trim();
+      const profile = links.find((link) => link.text.toLowerCase() === name.toLowerCase());
+      records.push({
+        kind: "candidate",
+        name,
+        contest: match[1].trim(),
+        party: "Family First Party Australia",
+        candidateStatus: "endorsed",
+        sourceAuthority: "Family First Party Australia",
+        sourceUrl: profile?.url ?? pageUrl,
+      });
+    }
+  }
+  return records;
+}
+
+export function extractMorningtonPeninsulaCandidates(html, pageUrl, targetContests = []) {
+  const records = [];
+  const sections = html.split(/(?=<h3\b[^>]*>)/i);
+  for (const section of sections) {
+    const headingTag = section.match(/^<h3\b[^>]*>([\s\S]*?)<\/h3>/i);
+    const heading = headingTag && clean(headingTag[1]).match(/^Electorate:\s*(.+)$/i);
+    if (!heading) continue;
+    const contest = heading[1].trim();
+    if (!contestWanted(contest, targetContests)) continue;
+    for (const rows of parseHtmlTables(section)) {
+      const headers = rows[0].map((value) => value.toLowerCase());
+      const nameIdx = headerIndex(headers, /candidate|name/);
+      const partyIdx = headerIndex(headers, /party|affiliation/);
+      if (nameIdx < 0) continue;
+      for (const row of rows.slice(1)) {
+        const name = row[nameIdx]?.trim();
+        if (!name) continue;
+        const publishedParty = partyIdx >= 0 ? row[partyIdx]?.trim() || null : null;
+        const party = publishedParty === "Liberal" ? "Liberal Party of Australia (Victorian Division)" : publishedParty;
+        records.push({ kind: "candidate", name, contest, party, candidateStatus: "announced", sourceAuthority: "Mornington Peninsula Shire", sourceUrl: pageUrl });
+      }
+    }
+  }
+  return records;
+}
+
 export function findNextTeamPageUrl(html, pageUrl) {
   const link = extractLinks(html, pageUrl).find((item) => /^(next|next page)$/i.test(item.text) || /w-pagination-next/.test(item.url));
   if (link) return link.url;
@@ -286,6 +357,12 @@ async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, pol
     await discoverLaborCandidates(page, found);
   } else if (adapter.discovery.extractor === "liberal-victoria-candidates") {
     found.push(...extractLiberalCandidates(page.html));
+  } else if (adapter.discovery.extractor === "victorian-socialists-candidates") {
+    found.push(...extractVictorianSocialistsCandidates(page.html, page.finalUrl, adapter.discovery.targetContests));
+  } else if (adapter.discovery.extractor === "family-first-victoria-candidates") {
+    found.push(...extractFamilyFirstCandidates(page.html, page.finalUrl, adapter.discovery.targetContests));
+  } else if (adapter.discovery.extractor === "mornington-peninsula-candidates") {
+    found.push(...extractMorningtonPeninsulaCandidates(page.html, page.finalUrl, adapter.discovery.targetContests));
   }
 
   return found.map((record) => {

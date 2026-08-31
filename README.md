@@ -23,7 +23,7 @@ A responsive public-interest forecasting application for the 2026 Victorian stat
 - A statewide battleground board and five-cycle swing-history view with distributions, crossings, local extremes and boundary-method notes.
 - Multi-party, unstable-final-two and recent-by-election hotspot lenses, plus Upper House regional volatility rankings.
 - A plain-English four-cycle backtesting ledger showing average error, large-miss error and seat-winner accuracy while preserving the closed production gate.
-- An auditable candidate-evidence review covering 188 official-party endorsements across 82/88 Assembly districts and all eight Council regions, with VEC nomination status and forecast use kept separate.
+- An auditable candidate-evidence review covering 194 announced or endorsed records across all 88 Assembly districts and all eight Council regions, with VEC nomination status and forecast use kept separate.
 
 The forecast is explicitly experimental. It is a research estimate, not voting advice or an authorised production forecast.
 

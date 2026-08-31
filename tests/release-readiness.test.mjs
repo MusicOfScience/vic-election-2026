@@ -22,7 +22,7 @@ test("keeps production authorisation separate from technical integrity", () => {
   assert.equal(readiness.gates.historicalDataReadiness.passed, true);
   assert.equal(readiness.gates.completeForecastBacktest.passed, false);
   assert.equal(readiness.gates.probabilityCalibration.passed, false);
-  assert.equal(readiness.gates.candidateEvidence.passed, false);
+  assert.equal(readiness.gates.candidateEvidence.passed, true);
   assert.equal(readiness.gates.productionAuthorisation.passed, false);
   assert.equal(readiness.policy, "retain-last-valid-forecast");
 });
@@ -43,18 +43,18 @@ test("keeps newer staged polling separate from admitted model inputs", () => {
   assert.ok(readiness.summary.blockingGateIds.includes("modelInputFreshness"));
 });
 
-test("reports accepted candidate coverage without opening an incomplete gate", () => {
+test("opens the candidate evidence gate only at complete Assembly coverage", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
-  assert.equal(readiness.findings.candidateDiscovery.records, 188);
-  assert.equal(readiness.findings.candidateDiscovery.acceptedRecords, 188);
-  assert.equal(readiness.findings.candidateDiscovery.status, "accepted-endorsed-evidence-incomplete-coverage");
-  assert.equal(readiness.findings.candidateDiscovery.assemblyContests, 82);
+  assert.equal(readiness.findings.candidateDiscovery.records, 194);
+  assert.equal(readiness.findings.candidateDiscovery.acceptedRecords, 194);
+  assert.equal(readiness.findings.candidateDiscovery.status, "accepted-candidate-evidence-complete-coverage");
+  assert.equal(readiness.findings.candidateDiscovery.assemblyContests, 88);
   assert.equal(readiness.findings.candidateDiscovery.councilRegions, 8);
   assert.deepEqual(readiness.findings.candidateDiscovery.unclassifiedContests, []);
-  assert.equal(readiness.findings.candidateDiscovery.acceptedAssemblyContests, 82);
+  assert.equal(readiness.findings.candidateDiscovery.acceptedAssemblyContests, 88);
   assert.equal(readiness.findings.candidateDiscovery.automaticPromotion, false);
-  assert.equal(readiness.findings.candidateDiscovery.sourceFamilies, 5);
-  assert.equal(readiness.gates.candidateEvidence.passed, false);
+  assert.equal(readiness.findings.candidateDiscovery.sourceFamilies, 8);
+  assert.equal(readiness.gates.candidateEvidence.passed, true);
 });
 
 test("does not substitute a two-party residual ledger for complete-model evidence", () => {
