@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-31",
+  "status": "partial-unrunnable",
+  "productionCompatible": false,
+  "scope": "Leakage-safe walk-forward specifications for the complete five-party Assembly, preference-transfer, chamber and Council probability model",
+  "policy": "Each cycle may use only evidence published on or before its information cutoff. Election outcomes and later evidence are scoring-only and can never enter that cycle's forecast.",
+  "requiredOutputs": [
+    "statewide-five-party-primary-votes",
+    "district-five-party-primary-votes",
+    "district-final-two-pairs",
+    "district-winners-and-probabilities",
+    "assembly-seat-count-distribution",
+    "council-region-seat-distributions"
+  ],
+  "featurePolicy": {
+    "demographicChallenger": {
+      "included": false,
+      "centralWeight": 0,
+      "reason": "Failed sealed four-cycle promotion test"
+    }
+  },
+  "leakageRules": {
+    "enforcePublicationDateCutoff": true,
+    "electionOutcomes": "scoring-only",
+    "postCutoffPolls": "forbidden",
+    "postCutoffCandidateEvidence": "forbidden",
+    "postCutoffBallotEvidence": "forbidden",
+    "postCutoffCensusEvidence": "forbidden",
+    "laterCycleParameters": "forbidden"
+  },
+  "cycles": [
+    {
+      "id": "vic_la_2010",
+      "electionDate": "2010-11-27",
+      "informationCutoff": "2010-11-26",
+      "seed": 20101126,
+      "runnable": false,
+      "blockedBy": [
+        "pre-election-poll-vintages",
+        "district-primary-votes-and-party-crosswalk",
+        "ballot-and-contest-slates",
+        "preference-flows-and-final-pairs",
+        "council-results-and-count-rules"
+      ],
+      "inputPolicy": {
+        "publicationDateAtOrBeforeCutoff": true,
+        "outcomesAvailableToModel": false,
+        "outcomesAvailableForScoring": true
+      }
+    },
+    {
+      "id": "vic_la_2014",
+      "electionDate": "2014-11-29",
+      "informationCutoff": "2014-11-28",
+      "seed": 20141128,
+      "runnable": false,
+      "blockedBy": [
+        "pre-election-poll-vintages",
+        "district-primary-votes-and-party-crosswalk",
+        "ballot-and-contest-slates",
+        "preference-flows-and-final-pairs",
+        "council-results-and-count-rules"
+      ],
+      "inputPolicy": {
+        "publicationDateAtOrBeforeCutoff": true,
+        "outcomesAvailableToModel": false,
+        "outcomesAvailableForScoring": true
+      }
+    },
+    {
+      "id": "vic_la_2018",
+      "electionDate": "2018-11-24",
+      "informationCutoff": "2018-11-23",
+      "seed": 20181123,
+      "runnable": false,
+      "blockedBy": [
+        "pre-election-poll-vintages",
+        "district-primary-votes-and-party-crosswalk",
+        "ballot-and-contest-slates",
+        "preference-flows-and-final-pairs",
+        "council-results-and-count-rules"
+      ],
+      "inputPolicy": {
+        "publicationDateAtOrBeforeCutoff": true,
+        "outcomesAvailableToModel": false,
+        "outcomesAvailableForScoring": true
+      }
+    },
+    {
+      "id": "vic_la_2022",
+      "electionDate": "2022-11-26",
+      "informationCutoff": "2022-11-25",
+      "seed": 20221125,
+      "runnable": false,
+      "blockedBy": [
+        "pre-election-poll-vintages",
+        "district-primary-votes-and-party-crosswalk",
+        "ballot-and-contest-slates",
+        "preference-flows-and-final-pairs",
+        "council-results-and-count-rules"
+      ],
+      "inputPolicy": {
+        "publicationDateAtOrBeforeCutoff": true,
+        "outcomesAvailableToModel": false,
+        "outcomesAvailableForScoring": true
+      }
+    }
+  ]
+}

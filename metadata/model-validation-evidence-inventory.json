@@ -9,8 +9,8 @@
   ],
   "summary": {
     "complete": 1,
-    "partial": 4,
-    "missing": 2,
+    "partial": 5,
+    "missing": 1,
     "total": 7,
     "completeForecastBacktestReady": false,
     "probabilityCalibrationReady": false
@@ -132,12 +132,24 @@
     },
     {
       "id": "frozen-historical-model-configurations",
-      "status": "missing",
+      "status": "partial",
       "coverage": {
-        "cycles": []
+        "cycles": ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"],
+        "deterministicSeeds": 4,
+        "explicitInformationCutoffs": 4,
+        "runnableConfigs": 0
       },
-      "evidence": [],
-      "needed": "One deterministic, leakage-safe model configuration and information cutoff for each of the four target cycles."
+      "evidence": [
+        {
+          "path": "model/config/historical-validation-cycles.json",
+          "sha256": "c8ed0eb99ae1b9f04df91e43127fcf57c456ed6667d32e177f0598c5f53feba2"
+        }
+      ],
+      "limitations": [
+        "All four configurations are intentionally unrunnable while required historical inputs remain missing or partial.",
+        "Election outcomes are scoring-only and no post-cutoff evidence is permitted."
+      ],
+      "needed": "Complete cutoff-compliant historical inputs and an executable replay for each frozen cycle."
     }
   ],
   "negativeFeatureEvidence": {

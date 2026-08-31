@@ -43,8 +43,16 @@ export function validateModelValidationEvidence() {
   const inventory = readJson("metadata/model-validation-evidence-inventory.json");
   const contractById = new Map(contract.components.map((component) => [component.id, component]));
   const inventoryById = new Map(inventory.components.map((component) => [component.id, component]));
+  const statusCounts = inventory.components.reduce((counts, component) => {
+    counts[component.status] = (counts[component.status] ?? 0) + 1;
+    return counts;
+  }, {});
 
   assert(inventory.components.length === contract.components.length, "inventory must cover every contract component");
+  assert(inventory.summary.complete === (statusCounts.complete ?? 0), "complete summary count is stale");
+  assert(inventory.summary.partial === (statusCounts.partial ?? 0), "partial summary count is stale");
+  assert(inventory.summary.missing === (statusCounts.missing ?? 0), "missing summary count is stale");
+  assert(inventory.summary.total === inventory.components.length, "total summary count is stale");
   for (const [id, component] of inventoryById) {
     assert(contractById.has(id), `unknown inventory component ${id}`);
     assert(contractById.get(id).status === component.status, `${id} status differs from the contract`);
@@ -88,6 +96,49 @@ export function validateModelValidationEvidence() {
   for (const region of council.regions) {
     assert(region.quota === Math.floor(region.formal_votes / (council.vacancies_per_region + 1)) + 1, `invalid quota for ${region.region_name}`);
     assert(region.elected_order.length === council.vacancies_per_region, `invalid elected set for ${region.region_name}`);
+  }
+
+  const historicalConfigs = readJson("model/config/historical-validation-cycles.json");
+  const expectedCycleDates = new Map([
+    ["vic_la_2010", ["2010-11-27", "2010-11-26"]],
+    ["vic_la_2014", ["2014-11-29", "2014-11-28"]],
+    ["vic_la_2018", ["2018-11-24", "2018-11-23"]],
+    ["vic_la_2022", ["2022-11-26", "2022-11-25"]],
+  ]);
+  const expectedOutputs = new Set([
+    "statewide-five-party-primary-votes",
+    "district-five-party-primary-votes",
+    "district-final-two-pairs",
+    "district-winners-and-probabilities",
+    "assembly-seat-count-distribution",
+    "council-region-seat-distributions",
+  ]);
+  assert(historicalConfigs.status === "partial-unrunnable", "historical configurations must remain explicitly partial and unrunnable");
+  assert(historicalConfigs.productionCompatible === false, "historical configurations cannot authorise production");
+  assert(historicalConfigs.cycles.length === expectedCycleDates.size, "expected four frozen historical configurations");
+  assert(new Set(historicalConfigs.cycles.map((cycle) => cycle.id)).size === expectedCycleDates.size, "historical cycle ids must be unique");
+  assert(new Set(historicalConfigs.cycles.map((cycle) => cycle.seed)).size === expectedCycleDates.size, "historical seeds must be unique");
+  assert(historicalConfigs.requiredOutputs.length === expectedOutputs.size
+    && historicalConfigs.requiredOutputs.every((output) => expectedOutputs.has(output)), "historical configurations must target every published model output family");
+  assert(historicalConfigs.leakageRules.enforcePublicationDateCutoff === true, "publication-date cutoff must be enforced");
+  assert(historicalConfigs.leakageRules.electionOutcomes === "scoring-only", "election outcomes must be scoring-only");
+  assert(Object.entries(historicalConfigs.leakageRules)
+    .filter(([key]) => key !== "enforcePublicationDateCutoff" && key !== "electionOutcomes")
+    .every(([, value]) => value === "forbidden"), "all post-cutoff and later-cycle inputs must be forbidden");
+  assert(historicalConfigs.featurePolicy.demographicChallenger.included === false, "rejected demographic challenger cannot enter historical configurations");
+  assert(historicalConfigs.featurePolicy.demographicChallenger.centralWeight === 0, "rejected demographic challenger must retain zero weight");
+  for (const cycle of historicalConfigs.cycles) {
+    const expectedDates = expectedCycleDates.get(cycle.id);
+    assert(expectedDates, `unexpected historical cycle ${cycle.id}`);
+    assert(cycle.electionDate === expectedDates[0], `incorrect election date for ${cycle.id}`);
+    assert(cycle.informationCutoff === expectedDates[1], `incorrect information cutoff for ${cycle.id}`);
+    assert(Date.parse(`${cycle.informationCutoff}T00:00:00Z`) < Date.parse(`${cycle.electionDate}T00:00:00Z`), `cutoff must precede election day for ${cycle.id}`);
+    assert(Number.isSafeInteger(cycle.seed), `seed must be a safe integer for ${cycle.id}`);
+    assert(cycle.runnable === false, `${cycle.id} must remain unrunnable until its inputs are complete`);
+    assert(cycle.blockedBy.includes("pre-election-poll-vintages"), `${cycle.id} must disclose the missing polling vintages`);
+    assert(cycle.inputPolicy.publicationDateAtOrBeforeCutoff === true, `${cycle.id} must enforce its information cutoff`);
+    assert(cycle.inputPolicy.outcomesAvailableToModel === false, `${cycle.id} outcomes cannot enter the model`);
+    assert(cycle.inputPolicy.outcomesAvailableForScoring === true, `${cycle.id} outcomes must remain available for scoring`);
   }
 
   const negativeGate = readJson("model/data/processed/historical_structured_residual_validation_gate.json");
