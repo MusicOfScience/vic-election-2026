@@ -1,0 +1,53 @@
+{
+  "blocked_cycles": [],
+  "blocked_outcome_cycles": [],
+  "design_matrix_input_ready": true,
+  "forecast_error_distribution_authorised": false,
+  "four_cycle_backtest_input_ready": true,
+  "historical_structure_gate_ready": false,
+  "method_paths_identified": true,
+  "outcome_readiness": {
+    "all_four_outcomes_ready": true,
+    "blocked_method_cycles": [],
+    "canonical_checkpoint_recorded_cycles": [
+      "vic_la_2010",
+      "vic_la_2018",
+      "vic_la_2022"
+    ],
+    "forecast_error_distribution_authorised": false,
+    "historical_structure_gate_ready": false,
+    "implemented_method_cycles": [
+      "vic_la_2010",
+      "vic_la_2014",
+      "vic_la_2018",
+      "vic_la_2022"
+    ],
+    "local_validated_outcome_cycles": [
+      "vic_la_2010",
+      "vic_la_2014",
+      "vic_la_2018",
+      "vic_la_2022"
+    ],
+    "production_forecast_authorised": false,
+    "ready_cycle_count": 4,
+    "reason": "Historical outcome readiness requires a boundary-aligned method, a local payload and report, byte identity against an explicitly frozen canonical or working-patch product, and successful schema/residual-algebra validation. A working-patch digest may represent an intentional, audited primary-source rebuild; later-checkpoint provenance never substitutes for local bytes.",
+    "strict_cycles": [
+      "vic_la_2010",
+      "vic_la_2014",
+      "vic_la_2018",
+      "vic_la_2022"
+    ]
+  },
+  "outcome_readiness_included": true,
+  "outcome_ready_cycle_count": 4,
+  "production_forecast_authorised": false,
+  "ready_cycle_count": 4,
+  "reason": "The four-cycle design matrix is permitted only when both leakage-safe demographic feature surfaces and boundary-aligned election outcomes are locally complete and validated for every frozen target cycle. Schema fixtures, later-checkpoint provenance, or an identified method do not substitute for current validated payloads.",
+  "strict_cycles": [
+    "vic_la_2010",
+    "vic_la_2014",
+    "vic_la_2018",
+    "vic_la_2022"
+  ],
+  "workspace_cycle_payloads_ready": true
+}

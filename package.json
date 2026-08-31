@@ -24,6 +24,7 @@
     "candidates:review:apply": "node scripts/apply-approved-candidate-review.mjs",
     "candidates:review:check": "node scripts/apply-approved-candidate-review.mjs --check",
     "psephology:validate": "node scripts/validate-psephology-evidence.mjs",
+    "validation:evidence": "node scripts/validate-model-validation-evidence.mjs",
     "analysts:compare": "node scripts/build-analyst-comparison.mjs --output analyst-comparison-report.json",
     "shadow:check": "node scripts/check-staged-poll-shadow.mjs",
     "snapshot:create": "node scripts/create-forecast-snapshot.mjs",

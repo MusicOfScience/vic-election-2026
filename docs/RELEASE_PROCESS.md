@@ -42,4 +42,6 @@ Feature experiments are recorded separately. The demographic challenger failed i
 
 `metadata/model-validation-evidence-contract.json` records the evidence required to test the complete system. The existing four-cycle TPP residual ledger satisfies the two-party benchmark component only; historical polling vintages, party-primary/ballot coverage, preference/final-pair evidence, Council evidence and leakage-safe cycle configurations must be acquired and frozen before the complete-model gates can be evaluated.
 
+`metadata/model-validation-evidence-inventory.json` is the fingerprinted, machine-audited account of progress against that contract. It currently records one complete component, four partial components and two missing components. The partial evidence includes 2022 district-primary and ballot records, 39 indicative Assembly preference distributions and high-level anchors for all eight 2022 Council regions. These artefacts improve the validation substrate but do not open either complete-model gate.
+
 If any required gate fails, retain the last valid forecast and do not publish new probabilities as production-ready.

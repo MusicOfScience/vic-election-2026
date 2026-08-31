@@ -62,8 +62,8 @@ test("opens the candidate evidence gate only at complete Assembly coverage", () 
 test("does not substitute a two-party residual ledger for complete-model evidence", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
   assert.equal(readiness.findings.validationEvidence.complete, 1);
-  assert.equal(readiness.findings.validationEvidence.partial, 1);
-  assert.equal(readiness.findings.validationEvidence.missing, 5);
+  assert.equal(readiness.findings.validationEvidence.partial, 4);
+  assert.equal(readiness.findings.validationEvidence.missing, 2);
   assert.equal(readiness.findings.validationEvidence.total, 7);
   assert.equal(readiness.findings.validationEvidence.automaticGateOpening, false);
   assert.equal(readiness.gates.completeForecastBacktest.passed, false);

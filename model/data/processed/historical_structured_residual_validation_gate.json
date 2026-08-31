@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "cycle_macro_mae_improves": false,
+    "cycle_macro_rmse_improves": false,
+    "enough_cycles": true,
+    "interval_coverage_not_materially_worse": false,
+    "mae_improves": false,
+    "mae_improves_in_majority_of_folds": false,
+    "nested_interval_calibration_available_all_folds": true,
+    "no_material_single_fold_mae_collapse": true,
+    "no_material_single_fold_rmse_collapse": true,
+    "rmse_improves": false,
+    "rmse_improves_in_majority_of_folds": false,
+    "winner_errors_not_worse": false
+  },
+  "forecast_error_distribution_authorised": false,
+  "historical_structure_gate_passed": false,
+  "maximum_interval_coverage_degradation": 0.05,
+  "maximum_single_fold_relative_mae_degradation": 0.15,
+  "maximum_single_fold_relative_rmse_degradation": 0.15,
+  "minimum_cycles": 4,
+  "minimum_relative_mae_improvement": 0.02,
+  "minimum_relative_rmse_improvement": 0.02,
+  "production_forecast_authorised": false,
+  "require_cycle_macro_mae_improvement": true,
+  "require_cycle_macro_rmse_improvement": true,
+  "winner_errors_must_not_worsen": true
+}
