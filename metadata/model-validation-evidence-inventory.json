@@ -62,7 +62,7 @@
       "evidence": [
         {
           "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
-          "sha256": "d061234fdb3f86c10e0dafd407778e5f8108d2ee7cab462413dd3a9b4af68af0"
+          "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
         }
       ],
       "needed": "Official district primary votes and a frozen party-family crosswalk for every contest in all four cycles."
@@ -78,7 +78,7 @@
       "evidence": [
         {
           "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
-          "sha256": "d061234fdb3f86c10e0dafd407778e5f8108d2ee7cab462413dd3a9b4af68af0"
+          "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
         }
       ],
       "needed": "Complete historical ballot slates, party identities and incumbent/challenger states for all four cycles."
