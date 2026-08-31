@@ -78,6 +78,37 @@ export function validateModelValidationEvidence() {
   assert(validationInputs.expected_cycles.length === 4, "expected four historical outcome cycles");
   assert(nullReport.forecast_error_distribution_authorised === false, "null residuals must remain unauthorised");
 
+  const pollAudit = readJson("metadata/historical-poll-vintage-audit.json");
+  const expectedPollRows = new Map([
+    ["vic_la_2010", 37],
+    ["vic_la_2014", 68],
+    ["vic_la_2018", 59],
+    ["vic_la_2022", 36],
+  ]);
+  assert(pollAudit.status === "partial-quarantined-not-imported", "historical polling candidate must remain explicitly quarantined");
+  assert(pollAudit.source.repository === "d-j-hirst/aus-polling-analyser", "unexpected historical polling source repository");
+  assert(pollAudit.source.commit === "a244da459807a22284d569b0b7e95ce79dfc53ff", "historical polling source commit is not frozen");
+  assert(pollAudit.source.path === "analysis/Data/poll-data-vic.csv", "unexpected historical polling source path");
+  assert(pollAudit.source.blobSha === "ecacd306524de046ad23db9434dedae7dbb94acd", "historical polling source blob is not frozen");
+  assert(pollAudit.source.sha256 === "9d09af56c639151035b4b8b74bd216d92a916c3d374d2d15fbab70cb128fa720", "historical polling source fingerprint is not frozen");
+  assert(pollAudit.source.declaredLicence === null, "historical polling audit must not invent reuse authority");
+  assert(pollAudit.source.rawDataImported === false, "unlicensed historical polling data cannot be imported");
+  assert(pollAudit.coverage.cycles.length === expectedPollRows.size, "historical polling audit must cover four cycles");
+  assert(new Set(pollAudit.coverage.cycles.map((cycle) => cycle.id)).size === expectedPollRows.size, "historical polling cycle ids must be unique");
+  assert(pollAudit.coverage.cycles.reduce((sum, cycle) => sum + cycle.candidateRows, 0) === pollAudit.coverage.candidateRows, "historical polling cycle counts do not reconcile");
+  assert(pollAudit.coverage.candidateRows === 200, "expected 200 quarantined historical poll candidates");
+  assert(pollAudit.coverage.publicationDatedRows === 0, "fieldwork midpoint must not be relabelled as publication date");
+  assert(pollAudit.coverage.sampleSizeRows === 0, "historical polling audit must disclose missing sample sizes");
+  assert(pollAudit.coverage.explicitMethodRows === 0, "historical polling audit must disclose missing methods");
+  assert(pollAudit.coverage.importedRows === 0, "quarantined polling candidates cannot enter model inputs");
+  for (const cycle of pollAudit.coverage.cycles) {
+    assert(expectedPollRows.get(cycle.id) === cycle.candidateRows, `unexpected candidate poll count for ${cycle.id}`);
+    assert(Date.parse(`${cycle.latestMidDate}T00:00:00Z`) <= Date.parse(`${cycle.informationCutoff}T00:00:00Z`), `candidate polls exceed the frozen cutoff for ${cycle.id}`);
+  }
+  assert(pollAudit.decision.forecastEligible === false, "historical polling candidate cannot affect the 2026 forecast");
+  assert(pollAudit.decision.historicalReplayEligible === false, "historical polling candidate cannot enter a replay");
+  assert(pollAudit.decision.automaticPromotion === false, "historical polling candidate cannot promote automatically");
+
   const candidates = parseCsv(readFileSync(resolve(root, "model/data/processed/vec_2022_indicative_candidate_evidence.csv"), "utf8"));
   assert(candidates.length === 323, "expected 323 audited 2022 candidate-primary rows");
   assert(new Set(candidates.map((row) => row.district_id)).size === 39, "expected 39 districts with audited 2022 primary evidence");

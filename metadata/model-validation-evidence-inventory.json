@@ -9,8 +9,8 @@
   ],
   "summary": {
     "complete": 1,
-    "partial": 5,
-    "missing": 1,
+    "partial": 6,
+    "missing": 0,
     "total": 7,
     "completeForecastBacktestReady": false,
     "probabilityCalibrationReady": false
@@ -44,12 +44,27 @@
     },
     {
       "id": "pre-election-poll-vintages",
-      "status": "missing",
+      "status": "partial",
       "coverage": {
-        "cycles": []
+        "cycles": ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"],
+        "candidateRows": 200,
+        "publicationDatedRows": 0,
+        "sampleSizeRows": 0,
+        "explicitMethodRows": 0,
+        "importedRows": 0
       },
-      "evidence": [],
-      "needed": "Publication-dated Victorian poll vintages frozen to a pre-election information cutoff for 2010, 2014, 2018 and 2022."
+      "evidence": [
+        {
+          "path": "metadata/historical-poll-vintage-audit.json",
+          "sha256": "0553e05f738f3c0b7e9663c65c9f297e241f21bba08b53994a947e345b4bfeea"
+        }
+      ],
+      "limitations": [
+        "The upstream MidDate field is not an observation publication date.",
+        "Sample size, explicit method, observation-level source URL and a declared reuse licence are absent.",
+        "The raw candidate dataset is not imported and contributes zero rows to any forecast or historical replay."
+      ],
+      "needed": "Publication dates, sample sizes, explicit methods, observation-level sources and reuse authority for the 200 candidate records."
     },
     {
       "id": "district-primary-votes-and-party-crosswalk",
