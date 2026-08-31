@@ -33,3 +33,32 @@ test("accepted evidence remains distinct from model eligibility", () => {
   assert.equal(report.acceptedEvidence.latestPublicationDate, "2026-08-15");
   assert.equal(report.modelInput.latestPublicationDate, "2026-08-08");
 });
+
+test("explicit hold or defer decisions resolve newer evidence without model admission", () => {
+  const report = buildEvidenceFreshness({
+    asOf: "2026-08-29",
+    modelPolls: [{ poll_id: "old", pollster: "Roy Morgan", publication_date: "2026-08-08", model_eligible: "True" }],
+    acceptedPolls: [],
+    stagedPolls: [
+      { id: "demos-aug", pollster: "DemosAU", publicationDate: "2026-08-15", status: "quarantined-awaiting-review" },
+      { id: "resolve-aug", pollster: "Resolve Strategic", publicationDate: "2026-08-21", status: "quarantined-awaiting-review" },
+    ],
+    reviewDecisions: [
+      { evidenceId: "demos-aug", kind: "poll", decision: "defer" },
+      { evidenceId: "resolve-aug", kind: "poll", decision: "hold" },
+    ],
+  });
+  assert.equal(report.newerEvidenceAwaitingReview, false);
+  assert.equal(report.newerEvidenceExcludedByReview, true);
+  assert.deepEqual(report.reviewResolution, {
+    stagedRecords: 2,
+    resolvedRecords: 2,
+    unresolvedRecords: 0,
+    latestResolvedEvidence: {
+      evidenceId: "resolve-aug",
+      pollster: "Resolve Strategic",
+      latestPublicationDate: "2026-08-21",
+      decision: "hold",
+    },
+  });
+});

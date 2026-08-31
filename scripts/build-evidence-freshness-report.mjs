@@ -35,14 +35,23 @@ function latest(records, dateKey) {
     .sort((a, b) => String(b[dateKey]).localeCompare(String(a[dateKey])))[0] ?? null;
 }
 
-export function buildEvidenceFreshness({ modelPolls, acceptedPolls, stagedPolls, asOf }) {
+export function buildEvidenceFreshness({ modelPolls, acceptedPolls, stagedPolls, reviewDecisions = [], asOf }) {
   const modelEligible = modelPolls.filter((poll) => String(poll.model_eligible).toLowerCase() === "true");
   const latestModel = latest(modelEligible, "publication_date");
   const latestAccepted = latest(acceptedPolls, "publicationDate") ?? latest(acceptedPolls, "fieldworkEnd");
   const latestStaged = latest(stagedPolls, "publicationDate") ?? latest(stagedPolls, "fieldworkEnd");
+  const acceptedIds = new Set(acceptedPolls.map((poll) => poll.evidenceId).filter(Boolean));
+  const reviewById = new Map(reviewDecisions.map((decision) => [decision.evidenceId, decision]));
+  const resolvedDecisions = new Set(["approve", "defer", "hold", "reject"]);
+  const resolvedStaged = stagedPolls.filter((poll) => acceptedIds.has(poll.id) || resolvedDecisions.has(reviewById.get(poll.id)?.decision));
+  const unresolvedStaged = stagedPolls.filter((poll) => !resolvedStaged.includes(poll));
+  const latestResolved = latest(resolvedStaged, "publicationDate") ?? latest(resolvedStaged, "fieldworkEnd");
+  const latestUnresolved = latest(unresolvedStaged, "publicationDate") ?? latest(unresolvedStaged, "fieldworkEnd");
   const modelDate = latestModel?.publication_date ?? null;
   const acceptedDate = latestAccepted?.publicationDate ?? latestAccepted?.fieldworkEnd ?? null;
   const stagedDate = latestStaged?.publicationDate ?? latestStaged?.fieldworkEnd ?? null;
+  const resolvedDate = latestResolved?.publicationDate ?? latestResolved?.fieldworkEnd ?? null;
+  const unresolvedDate = latestUnresolved?.publicationDate ?? latestUnresolved?.fieldworkEnd ?? null;
   const newestEvidenceDate = [acceptedDate, stagedDate].filter(Boolean).sort().at(-1) ?? null;
 
   return {
@@ -68,8 +77,20 @@ export function buildEvidenceFreshness({ modelPolls, acceptedPolls, stagedPolls,
       sourceTier: latestStaged.sourceTier ?? "primary-or-manual-capture",
       verificationStatus: latestStaged.verificationStatus ?? "awaiting-review",
     } : null,
+    reviewResolution: {
+      stagedRecords: stagedPolls.length,
+      resolvedRecords: resolvedStaged.length,
+      unresolvedRecords: unresolvedStaged.length,
+      latestResolvedEvidence: latestResolved ? {
+        evidenceId: latestResolved.id,
+        pollster: latestResolved.pollster,
+        latestPublicationDate: resolvedDate,
+        decision: reviewById.get(latestResolved.id)?.decision ?? "accepted",
+      } : null,
+    },
     newestEvidenceDate,
-    newerEvidenceAwaitingReview: Boolean(stagedDate && (!modelDate || stagedDate > modelDate)),
+    newerEvidenceAwaitingReview: Boolean(unresolvedDate && (!modelDate || unresolvedDate > modelDate)),
+    newerEvidenceExcludedByReview: Boolean(resolvedDate && (!modelDate || resolvedDate > modelDate)),
     modelFreshnessUnchangedByStagedEvidence: true,
   };
 }
@@ -82,12 +103,14 @@ function main() {
   const manual = JSON.parse(readFileSync(resolve(root, "metadata/manual-source-evidence-2026.json"), "utf8"));
   const primary = JSON.parse(readFileSync(resolve(root, "metadata/primary-source-evidence-2026.json"), "utf8"));
   const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
+  const reviewLog = JSON.parse(readFileSync(resolve(root, "metadata/discovery-review-decisions.json"), "utf8"));
   const stagedPolls = [
     ...(manual.records ?? []),
     ...(primary.records ?? []).map((record) => ({ ...record, publicationDate: record.pollPublicationDate ?? record.publicationDate })),
     ...(research.records ?? []),
   ];
-  const report = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, asOf });
+  const reviewDecisions = (reviewLog.decisions ?? []).filter((decision) => decision.kind === "poll");
+  const report = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, reviewDecisions, asOf });
   writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
   console.log(`Evidence freshness: model=${report.modelInput?.latestPublicationDate ?? "none"}; newest evidence=${report.newestEvidenceDate ?? "none"}; awaiting review=${report.newerEvidenceAwaitingReview}.`);
 }

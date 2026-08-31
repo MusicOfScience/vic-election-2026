@@ -51,6 +51,7 @@ export function buildReadiness({ asOf }) {
   const candidates = readJson("metadata/candidates-2026.json");
   const provisionalCandidates = readJson("metadata/provisional-candidate-evidence-2026.json");
   const accepted = readJson("metadata/accepted-polls-2026.json");
+  const reviewLog = readJson("metadata/discovery-review-decisions.json");
   const manual = readJson("metadata/manual-source-evidence-2026.json");
   const primary = readJson("metadata/primary-source-evidence-2026.json");
   const research = readJson("metadata/research-source-evidence-2026.json");
@@ -82,7 +83,8 @@ export function buildReadiness({ asOf }) {
     ...(primary.records ?? []).map((record) => ({ ...record, publicationDate: record.pollPublicationDate ?? record.publicationDate })),
     ...(research.records ?? []),
   ];
-  const evidenceFreshness = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, asOf });
+  const reviewDecisions = (reviewLog.decisions ?? []).filter((decision) => decision.kind === "poll");
+  const evidenceFreshness = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, reviewDecisions, asOf });
   const modelInputCurrent = !evidenceFreshness.newerEvidenceAwaitingReview;
   const contestUniverse = loadContestUniverse(root);
   const assemblyContests = new Set(

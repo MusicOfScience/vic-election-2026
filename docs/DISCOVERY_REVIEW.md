@@ -21,6 +21,8 @@ Approved candidate evidence enters `metadata/candidates-2026.json` at the status
 
 Approved poll evidence enters `metadata/accepted-polls-2026.json` with `modelEligible: false`. Acceptance of a source record is deliberately separate from permission to change forecast inputs.
 
+For the model-input freshness gate, every staged poll must have an explicit review disposition. `approve`, `defer`, `hold` and `reject` all resolve the review obligation; only separately authorised model eligibility can change forecast inputs. Held, deferred and rejected evidence therefore remains excluded without leaving the freshness gate permanently blocked.
+
 Every decision is appended to `metadata/discovery-review-decisions.json` with the evidence ID, record hash, reviewer, timestamp and note.
 
 ## Candidate source-family approval
