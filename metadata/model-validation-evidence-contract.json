@@ -19,27 +19,30 @@
     },
     {
       "id": "district-primary-votes-and-party-crosswalk",
-      "status": "missing",
-      "needed": "Official district primary votes mapped reproducibly into ALP, Coalition, One Nation, Greens and Other/Independent for every historical cycle",
+      "status": "partial",
+      "available": "323 audited candidate-primary rows across 39 districts from the 2022 VEC indicative-distribution corpus",
+      "needed": "Official district primary votes mapped reproducibly into ALP, Coalition, One Nation, Greens and Other/Independent for every contest in all four historical cycles",
       "requiredFor": ["five-party-seat-model", "ballot-access-effects", "party-primary-error"]
     },
     {
       "id": "ballot-and-contest-slates",
-      "status": "missing",
-      "needed": "Party contest coverage, candidate/party identity and incumbent/challenger status as known at each historical election",
+      "status": "partial",
+      "available": "Candidate and party identities for 323 candidates across 39 audited 2022 district distributions",
+      "needed": "Complete party contest coverage, candidate/party identity and incumbent/challenger status as known at each historical election",
       "requiredFor": ["candidate-evidence-replay", "sparse-ballot-effects", "incumbency-tests"]
     },
     {
       "id": "preference-flows-and-final-pairs",
       "status": "partial",
-      "available": "Major-party TPP outcomes for eligible contests",
-      "needed": "Full distributions or defensible cycle-specific transfer evidence, final-two pair identities and non-major 2CP outcomes",
+      "available": "Major-party TPP outcomes plus 1,204 transfer rows from 39 audited 2022 indicative distributions; no source-party parameter is forecast-ready",
+      "needed": "Full distributions or defensible cycle-specific transfer evidence, final-two pair identities and non-major 2CP outcomes across all four cycles",
       "requiredFor": ["irv-replay", "final-pair-calibration", "three-party-contests"]
     },
     {
       "id": "council-results-and-count-rules",
-      "status": "missing",
-      "needed": "Historical region/group primary votes, candidate order, preference/count evidence and the electoral rules effective in each cycle",
+      "status": "partial",
+      "available": "Official 2022 high-level anchors for all eight regions: formal votes, quotas and 40 elected candidates",
+      "needed": "Historical region/group primary votes, full count sequences and the electoral rules effective in each cycle",
       "requiredFor": ["council-seat-model", "region-probability-calibration"]
     },
     {

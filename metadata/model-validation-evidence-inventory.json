@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-31",
+  "scope": "Audited evidence currently available for complete-model historical validation",
+  "policy": "Partial evidence documents real progress but cannot open a complete-model gate. Every complete component must cover all four frozen cycles and the same model outputs published for 2026.",
+  "sourceCheckpoints": [
+    "vic-election-2026-2026-08-10_04-18-AEST-FULL-PROJECT-PART-01-of-05(2).zip",
+    "vic-election-2026-2026-08-14_14-55-AEST-HISTORICAL-2010-SURFACE-FOUR-CYCLE-VALIDATION-NEGATIVE-WORKING-PATCH-CHECKPOINT.zip"
+  ],
+  "summary": {
+    "complete": 1,
+    "partial": 4,
+    "missing": 2,
+    "total": 7,
+    "completeForecastBacktestReady": false,
+    "probabilityCalibrationReady": false
+  },
+  "components": [
+    {
+      "id": "boundary-aligned-tpp-outcomes",
+      "status": "complete",
+      "coverage": {
+        "cycles": ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"],
+        "districtTransitions": 340
+      },
+      "evidence": [
+        {
+          "path": "model/data/processed/historical_four_cycle_readiness_report.json",
+          "sha256": "614806984bacdd5d3966b08f5c15bd0ab0c30d85944d886b1005ac3f79cf9bb5"
+        },
+        {
+          "path": "model/data/processed/historical_four_cycle_validation_inputs_report.json",
+          "sha256": "069b3775f073a442799ea2231e0b1aed4e2b916b084643f6bd7b918004be1306"
+        },
+        {
+          "path": "model/data/processed/historical_four_cycle_uniform_swing_null_report.json",
+          "sha256": "1b21c41bb825942ca2bfb735b395467afb178eb48f1c64cca85e929b15ee9130"
+        }
+      ],
+      "limitations": [
+        "This validates a two-party historical benchmark only.",
+        "The uniform-swing residual distribution remains unauthorised for 2026 forecast probabilities."
+      ]
+    },
+    {
+      "id": "pre-election-poll-vintages",
+      "status": "missing",
+      "coverage": {
+        "cycles": []
+      },
+      "evidence": [],
+      "needed": "Publication-dated Victorian poll vintages frozen to a pre-election information cutoff for 2010, 2014, 2018 and 2022."
+    },
+    {
+      "id": "district-primary-votes-and-party-crosswalk",
+      "status": "partial",
+      "coverage": {
+        "cycles": ["vic_la_2022"],
+        "districts": 39,
+        "candidateRows": 323
+      },
+      "evidence": [
+        {
+          "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
+          "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
+        }
+      ],
+      "needed": "Official district primary votes and a frozen party-family crosswalk for every contest in all four cycles."
+    },
+    {
+      "id": "ballot-and-contest-slates",
+      "status": "partial",
+      "coverage": {
+        "cycles": ["vic_la_2022"],
+        "districts": 39,
+        "candidateRows": 323
+      },
+      "evidence": [
+        {
+          "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
+          "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
+        }
+      ],
+      "needed": "Complete historical ballot slates, party identities and incumbent/challenger states for all four cycles."
+    },
+    {
+      "id": "preference-flows-and-final-pairs",
+      "status": "partial",
+      "coverage": {
+        "cycles": ["vic_la_2022"],
+        "districtsWithDistributions": 39,
+        "transferRows": 1204,
+        "pureOriginalParcelEvents": 39,
+        "forecastReadySourceParties": 0
+      },
+      "evidence": [
+        {
+          "path": "model/data/processed/vec_2022_preference_transfer_evidence.csv.gz",
+          "sha256": "83711b0dca2845188429061fd9a40028fb312a2895477351a74618255ee97859"
+        },
+        {
+          "path": "model/data/processed/vec_2022_preference_evidence_build_report.json",
+          "sha256": "8ee96174f8f7c32fe7f11f98320d629540af6816f65ca4991837665df6dc62e3"
+        },
+        {
+          "path": "model/data/processed/vec_2022_conditional_preference_validation_report.json",
+          "sha256": "171cc9f0b1b8ecdc9350b174c089ef5781f252f71110ecd219076885c9b6a4a7"
+        }
+      ],
+      "limitations": [
+        "Only 39 indicative 2022 district distributions are present.",
+        "No source-party transfer model passed both numerical and semantic promotion requirements."
+      ],
+      "needed": "Cycle-specific final-two identities and defensible preference evidence across all historical contests."
+    },
+    {
+      "id": "council-results-and-count-rules",
+      "status": "partial",
+      "coverage": {
+        "cycles": ["vic_lc_2022"],
+        "regions": 8,
+        "electedCandidates": 40,
+        "distributionSequenceAvailable": false
+      },
+      "evidence": [
+        {
+          "path": "model/data/seed/vec_2022_council_validation_targets.json",
+          "sha256": "c49657ae8d3304609e66765d1a242a8fc66d7889148ec86d62f218bd6740518e"
+        }
+      ],
+      "needed": "Official regional primaries, count sequences and the electoral rules effective in each historical cycle."
+    },
+    {
+      "id": "frozen-historical-model-configurations",
+      "status": "missing",
+      "coverage": {
+        "cycles": []
+      },
+      "evidence": [],
+      "needed": "One deterministic, leakage-safe model configuration and information cutoff for each of the four target cycles."
+    }
+  ],
+  "negativeFeatureEvidence": {
+    "demographicChallenger": {
+      "outcome": "rejected",
+      "centralWeight": 0,
+      "evidence": [
+        {
+          "path": "model/data/processed/historical_structured_residual_validation_gate.json",
+          "sha256": "a900c68807f52f0bcdfbe68a3270ee08c050344da720049373f53811f6ca557f"
+        },
+        {
+          "path": "model/data/processed/historical_structured_residual_validation_summary.json",
+          "sha256": "464e63dfb7885ed073b42709576469f60a2f37b95ce9d23558a6c78ce10a1152"
+        }
+      ]
+    }
+  }
+}

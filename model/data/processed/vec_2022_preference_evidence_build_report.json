@@ -1,0 +1,16 @@
+{
+  "candidate_registry_rows": 323,
+  "districts": 39,
+  "candidate_label_aliases": 2,
+  "candidates_with_result_page_vs_workbook_vote_delta": 95,
+  "max_abs_result_page_vs_workbook_vote_delta": 60,
+  "transfer_rows_enriched": 1204,
+  "exclusion_events": 244,
+  "pure_original_parcel_events": 39,
+  "mixed_parcel_events": 205,
+  "max_workbook_internal_reconstruction_abs_delta": 0,
+  "distribution_corpus_districts": 39,
+  "candidate_party_registry_coverage_districts": 39,
+  "distribution_districts_waiting_for_candidate_party_registry": 0,
+  "semantic_guard": "Only districts with authoritative candidate/party registry coverage are enriched. Only zero-inbound exclusion parcels are labelled pure original-vote evidence; later mixed parcels are retained but blocked from naive party-flow interpretation."
+}

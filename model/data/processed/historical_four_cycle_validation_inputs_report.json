@@ -1,0 +1,167 @@
+{
+  "expected_cycles": [
+    "vic_la_2010",
+    "vic_la_2014",
+    "vic_la_2018",
+    "vic_la_2022"
+  ],
+  "explicit_outcome_exclusion_count": 12,
+  "explicit_outcome_exclusions": [
+    {
+      "cycle_id": "vic_la_2018",
+      "district_name": "Richmond",
+      "exclusion_reason": "2018 all-district TPP workbook has no Richmond TPP row because the district had no Liberal/National candidate",
+      "source_report": "data/processed/vec_2014_2018_same_boundary_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Benambra",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Brunswick",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Melbourne",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Mildura",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Narracan",
+      "exclusion_reason": "missing_2022_ordinary_tpp",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Northcote",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Prahran",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Preston",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Richmond",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Shepparton",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    },
+    {
+      "cycle_id": "vic_la_2022",
+      "district_name": "Werribee",
+      "exclusion_reason": "non_major_2018_estimated_2cp_contest",
+      "source_report": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing_report.json"
+    }
+  ],
+  "feature_cell_count_per_cycle": 616,
+  "feature_district_cycle_rows": 352,
+  "feature_inputs": [
+    {
+      "cells": 616,
+      "complete": true,
+      "cycle_id": "vic_la_2010",
+      "districts": 88,
+      "features": 7,
+      "source_path": "data/processed/historical_2006_bcp_sed_core_features_long.csv",
+      "source_sha256": "7854512a8ed1241f0d37b8ff9f117ce6abff5451823f05874d52f26d5897ba5b"
+    },
+    {
+      "cells": 616,
+      "complete": true,
+      "cycle_id": "vic_la_2014",
+      "districts": 88,
+      "features": 7,
+      "source_path": "data/processed/historical_2014_crosswalk_core_features_long.csv",
+      "source_sha256": "61e510c16bd4fb3e5a6704476ad23b19946c3efeae0595dd1f21f908c4040f0b"
+    },
+    {
+      "cells": 616,
+      "complete": true,
+      "cycle_id": "vic_la_2018",
+      "districts": 88,
+      "features": 7,
+      "source_path": "data/processed/historical_2016_gcp_sed_core_features_long.csv",
+      "source_sha256": "73d96bf82c367d72e0577f2474ce547d70adf11843115eb188f7e767bc419630"
+    },
+    {
+      "cells": 616,
+      "complete": true,
+      "cycle_id": "vic_la_2022",
+      "districts": 88,
+      "features": 7,
+      "source_path": "data/processed/historical_2022_crosswalk_core_features_long.csv",
+      "source_sha256": "6c1aea8eeddc1c4ea63a5fb88f68df57692d1f99b850c75e83a8092a4e6e9e9a"
+    }
+  ],
+  "feature_registry_sha256": "9f297cbb0664beb8438bf3eed58aebcf7a4f0f823131dba9b53981df6e816c1c",
+  "forecast_error_distribution_authorised": false,
+  "full_feature_rows": 2464,
+  "full_features_output_sha256": "78537a7f39d7b749221243d9bdbf05fa4b7ced841eee83a293428327afa06a45",
+  "historical_structure_gate_passed": false,
+  "outcome_inputs": [
+    {
+      "boundary_alignment": "same_boundary",
+      "cycle_id": "vic_la_2010",
+      "source_authority": "VEC_Report_to_Parliament_exact_TPP_counts",
+      "source_path": "data/processed/vec_2006_2010_same_boundary_tpp_swing.csv",
+      "source_sha256": "dcf634b2611e0a37e9063362aab9af8f5f1e46a0dfbcf1f535869fa780b9bbab"
+    },
+    {
+      "boundary_alignment": "redistribution_adjusted",
+      "cycle_id": "vic_la_2014",
+      "source_authority": "ABC_Antony_Green_notional_redistribution_plus_VEC_2010_and_2014_official_TPP",
+      "source_path": "data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv",
+      "source_sha256": "90e67593d1eb4eb672558faf614bc024f874526e91295c2a013069e3d470fc6d"
+    },
+    {
+      "boundary_alignment": "same_boundary",
+      "cycle_id": "vic_la_2018",
+      "source_authority": "VEC_all_district_TPP_products",
+      "source_path": "data/processed/vec_2014_2018_same_boundary_tpp_swing.csv",
+      "source_sha256": "883015160851b04bab0971d6dbeff8d79a60915d33206310630e21b55f017f23"
+    },
+    {
+      "boundary_alignment": "redistribution_adjusted",
+      "cycle_id": "vic_la_2022",
+      "source_authority": "VEC_statistical_redistribution_estimate_plus_official_TPP",
+      "source_path": "data/processed/vec_2018_2022_redistribution_adjusted_tpp_swing.csv",
+      "source_sha256": "7b3e8c6d14ebce810bd877a364df54dc11ad09ee5ca5f852f023246592d0ead2"
+    }
+  ],
+  "outcome_registry_sha256": "87e64fe4ad549294e35e53925212f2e16bbe54e82b753480553b2af4b8ea0dd5",
+  "outcome_rows": 340,
+  "outcomes_output_sha256": "50e001145a99ffb696cf701ffac7ee40aec68e05f628cca2066cf8d3866d76e3",
+  "production_forecast_authorised": false,
+  "readiness_report_sha256": "614806984bacdd5d3966b08f5c15bd0ab0c30d85944d886b1005ac3f79cf9bb5",
+  "source_feature_surface_assembly_consulted_election_outcomes": false,
+  "validation_alignment_uses_only_canonical_outcome_eligibility": true,
+  "validation_feature_rows": 2380,
+  "validation_features_output_sha256": "10e51911af812b21d78a5be137a8d0ada323a8ae1b0a32558e492d50ff7f91b3"
+}

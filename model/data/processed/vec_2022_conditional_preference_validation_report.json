@@ -1,0 +1,106 @@
+{
+  "method": "leave-one-district-out ridge-shrunk destination attractiveness conditional on continuing candidate multiplicity",
+  "baseline": "equal attractiveness per continuing candidate",
+  "reports": [
+    {
+      "source_party_id": "IND",
+      "events": 21,
+      "districts": 21,
+      "source_votes": 7060,
+      "mean_log_gain_nats": 0.06920762269440799,
+      "mean_brier_gain": 0.023372155421399324,
+      "win_rate": 0.8095238095238095,
+      "max_one_fold_log_regret": 0.11671271950200117,
+      "mean_heldout_js_vs_full": 0.00019530215678371452,
+      "promotion_gate": {
+        "min_events": 12,
+        "min_districts": 8,
+        "min_mean_log_gain": 0.015,
+        "min_mean_brier_gain": 0.005,
+        "min_win_rate": 0.6,
+        "max_one_fold_log_regret": 0.25,
+        "max_mean_heldout_js": 0.005
+      },
+      "numerical_gates": {
+        "events": true,
+        "districts": true,
+        "mean_log_gain": true,
+        "mean_brier_gain": true,
+        "win_rate": true,
+        "max_one_fold_log_regret": true,
+        "mean_heldout_js": true
+      },
+      "numerical_gates_pass": true,
+      "semantic_block": "IND is a heterogeneous label spanning unrelated candidates; a pooled independent transfer model is not a coherent forecast parameter",
+      "forecast_ready": false,
+      "full_fit_destination_weights": {
+        "ALP": 0.047317164391345985,
+        "GRN": 0.0422425110084264,
+        "IND": 0.10073022507282571,
+        "LCV": 0.052877284814127665,
+        "LIB": 0.05505008962595006,
+        "ONP": 0.05503324105903759,
+        "PARTY_ANIMAL_JUSTICE_PARTY": 0.039065952618732434,
+        "PARTY_COMPANIONS_AND_PETS_PARTY": 0.054131583167479465,
+        "PARTY_DERRYN_HINCH_S_JUSTICE_PARTY": 0.05255484952197095,
+        "PARTY_FAMILY_FIRST_VICTORIA": 0.05175660327623057,
+        "PARTY_FIONA_PATTEN_S_REASON_PARTY": 0.05211797199292773,
+        "PARTY_FREEDOM_PARTY_OF_VICTORIA": 0.07523795588895522,
+        "PARTY_HEALTH_AUSTRALIA_PARTY": 0.05403497460734263,
+        "PARTY_LABOUR_DLP": 0.04747851183549981,
+        "PARTY_LIBERAL_DEMOCRATS": 0.05363785534171174,
+        "PARTY_NEW_DEMOCRATS": 0.05337710170415718,
+        "PARTY_TRANSPORT_MATTERS": 0.05414252351147694,
+        "PARTY_VICTORIAN_SOCIALISTS": 0.059213600561801805
+      }
+    },
+    {
+      "source_party_id": "PARTY_ANIMAL_JUSTICE_PARTY",
+      "events": 8,
+      "districts": 8,
+      "source_votes": 8683,
+      "mean_log_gain_nats": 0.03451917947350934,
+      "mean_brier_gain": 0.012105368916174546,
+      "win_rate": 1.0,
+      "max_one_fold_log_regret": 0.0,
+      "mean_heldout_js_vs_full": 0.0003391843048455185,
+      "promotion_gate": {
+        "min_events": 12,
+        "min_districts": 8,
+        "min_mean_log_gain": 0.015,
+        "min_mean_brier_gain": 0.005,
+        "min_win_rate": 0.6,
+        "max_one_fold_log_regret": 0.25,
+        "max_mean_heldout_js": 0.005
+      },
+      "numerical_gates": {
+        "events": false,
+        "districts": true,
+        "mean_log_gain": true,
+        "mean_brier_gain": true,
+        "win_rate": true,
+        "max_one_fold_log_regret": true,
+        "mean_heldout_js": true
+      },
+      "numerical_gates_pass": false,
+      "semantic_block": null,
+      "forecast_ready": false,
+      "full_fit_destination_weights": {
+        "ALP": 0.07184479658292778,
+        "GRN": 0.11892373939962152,
+        "IND": 0.06828309100128369,
+        "LIB": 0.08489452982930659,
+        "NAT": 0.08398159429156851,
+        "PARTY_ANGRY_VICTORIANS_PARTY": 0.08276979381853478,
+        "PARTY_FAMILY_FIRST_VICTORIA": 0.11992225851761223,
+        "PARTY_FREEDOM_PARTY_OF_VICTORIA": 0.07625945725700041,
+        "PARTY_LABOUR_DLP": 0.06861377974241867,
+        "PARTY_LIBERAL_DEMOCRATS": 0.07191718807045372,
+        "PARTY_SHOOTERS_FISHERS_AND_FARMERS_VIC": 0.07814041107100651,
+        "PARTY_VICTORIAN_SOCIALISTS": 0.07444936041826562
+      }
+    }
+  ],
+  "forecast_ready_source_parties": [],
+  "guardrail": "Validation can reject a model; it cannot override semantic incoherence such as pooling unrelated independents."
+}

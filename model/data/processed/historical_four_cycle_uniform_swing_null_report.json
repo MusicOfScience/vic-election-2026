@@ -1,0 +1,76 @@
+{
+  "status": "strict_four_cycle_uniform_swing_null_stability_diagnostic_only",
+  "cycle_count": 4,
+  "cycles": {
+    "vic_la_2010": {
+      "districts": 88,
+      "mae": 0.025381525710099783,
+      "rmse": 0.03340094989964307,
+      "sd_population": 0.03333748318119643,
+      "q05": -0.048623737318060814,
+      "q95": 0.0463532682644693
+    },
+    "vic_la_2014": {
+      "districts": 88,
+      "mae": 0.022526151360626648,
+      "rmse": 0.0301901631974918,
+      "sd_population": 0.030090873205213062,
+      "q05": -0.05185615604416265,
+      "q95": 0.04383937834631058
+    },
+    "vic_la_2018": {
+      "districts": 87,
+      "mae": 0.029906564987292356,
+      "rmse": 0.038284463607680314,
+      "sd_population": 0.03824427311063326,
+      "q05": -0.0672785271358775,
+      "q95": 0.055453257592608295
+    },
+    "vic_la_2022": {
+      "districts": 77,
+      "mae": 0.03423065272441428,
+      "rmse": 0.0452972047834986,
+      "sd_population": 0.045007763199737816,
+      "q05": -0.09310514843661032,
+      "q95": 0.06646303957033614
+    }
+  },
+  "district_transition_rows": 340,
+  "pooled_residual_mae": 0.027804432340877237,
+  "pooled_residual_rmse": 0.03693752483420963,
+  "pooled_residual_sd_population": 0.036833328172879105,
+  "pooled_residual_q05": -0.06134176039044753,
+  "pooled_residual_q50": -0.0025633308419994,
+  "pooled_residual_q95": 0.05574976689193941,
+  "max_cycle_sd_to_min_cycle_sd_ratio": 1.495728053247072,
+  "cross_cycle_mean_absolute_coverage_error": 0.0502721177290143,
+  "cross_cycle_max_absolute_coverage_error": 0.13376623376623376,
+  "cross_cycle_interval_rows": 12,
+  "forecast_error_distribution_authorised": false,
+  "production_forecast_authorised": false,
+  "production_block_reason": "outcome-only null stability is a benchmark for the later preregistered held-out demographic test; it cannot promote a structural model or probability distribution",
+  "strict_target_cycles": [
+    "vic_la_2010",
+    "vic_la_2014",
+    "vic_la_2018",
+    "vic_la_2022"
+  ],
+  "null_model": "uniform_statewide_alp_coalition_tpp_swing",
+  "boundary_alignment_by_cycle": {
+    "vic_la_2010": "same_boundary",
+    "vic_la_2014": "redistribution_adjusted",
+    "vic_la_2018": "same_boundary",
+    "vic_la_2022": "redistribution_adjusted"
+  },
+  "frozen_local_version_by_cycle": {
+    "vic_la_2010": "working_patch",
+    "vic_la_2014": "working_patch",
+    "vic_la_2018": "canonical_checkpoint",
+    "vic_la_2022": "canonical_checkpoint"
+  },
+  "outcome_readiness_gate_passed": true,
+  "demographic_features_consulted": false,
+  "candidate_structured_residual_model_evaluated": false,
+  "interval_semantics": "descriptive leave-one-cycle-out empirical absolute-residual transfer only; not the preregistered nested split-conformal candidate interval gate",
+  "historical_structure_gate_ready": false
+}

@@ -90,8 +90,8 @@ export const releaseReadiness = {
     "validationEvidence": {
       "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",
       "complete": 1,
-      "partial": 1,
-      "missing": 5,
+      "partial": 4,
+      "missing": 2,
       "total": 7,
       "automaticGateOpening": false,
       "label": "1/7 complete-model historical evidence components are complete"
