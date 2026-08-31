@@ -13,8 +13,9 @@
     },
     {
       "id": "pre-election-poll-vintages",
-      "status": "missing",
-      "needed": "Frozen, publication-dated Victorian poll observations that were available before each historical election, with sample, method and party-primary fields",
+      "status": "partial",
+      "available": "A quarantined, version-pinned candidate series contains 200 Victorian poll observations spanning all four cycles with fieldwork-midpoint and party-primary fields",
+      "needed": "Observation-level publication dates, sample sizes, explicit methods, source URLs and reuse authority before the candidate series can enter a historical replay",
       "requiredFor": ["polling-only-model", "latent-poll-replay", "information-cutoff-audit"]
     },
     {

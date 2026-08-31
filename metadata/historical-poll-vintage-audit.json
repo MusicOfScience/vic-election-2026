@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-31",
+  "status": "partial-quarantined-not-imported",
+  "scope": "Candidate pre-election Victorian poll vintages for the 2010, 2014, 2018 and 2022 walk-forward cycles",
+  "source": {
+    "repository": "d-j-hirst/aus-polling-analyser",
+    "commit": "a244da459807a22284d569b0b7e95ce79dfc53ff",
+    "path": "analysis/Data/poll-data-vic.csv",
+    "blobSha": "ecacd306524de046ad23db9434dedae7dbb94acd",
+    "sha256": "9d09af56c639151035b4b8b74bd216d92a916c3d374d2d15fbab70cb128fa720",
+    "sourceClass": "version-controlled-authored-secondary-dataset",
+    "declaredLicence": null,
+    "rawDataImported": false
+  },
+  "availableFields": [
+    "MidDate",
+    "Firm",
+    "Brand",
+    "@TPP",
+    "LNP FP",
+    "ALP FP",
+    "GRN FP",
+    "ONP FP",
+    "UAP FP",
+    "DEM FP",
+    "OTH FP",
+    "GLApp",
+    "GLDis",
+    "Comments"
+  ],
+  "missingRequiredFields": [
+    "publicationDate",
+    "sampleSize",
+    "explicitMethod",
+    "observationSourceUrl",
+    "declaredReuseLicence"
+  ],
+  "coverage": {
+    "candidateRows": 200,
+    "publicationDatedRows": 0,
+    "sampleSizeRows": 0,
+    "explicitMethodRows": 0,
+    "importedRows": 0,
+    "cycles": [
+      {
+        "id": "vic_la_2010",
+        "windowStart": "2006-11-26",
+        "informationCutoff": "2010-11-26",
+        "candidateRows": 37,
+        "earliestMidDate": "2007-10-01",
+        "latestMidDate": "2010-11-24",
+        "tppRows": 37,
+        "alpPrimaryRows": 37,
+        "coalitionPrimaryRows": 37,
+        "greensPrimaryRows": 37,
+        "oneNationPrimaryRows": 0,
+        "completeFivePartyRows": 0
+      },
+      {
+        "id": "vic_la_2014",
+        "windowStart": "2010-11-28",
+        "informationCutoff": "2014-11-28",
+        "candidateRows": 68,
+        "earliestMidDate": "2010-12-01",
+        "latestMidDate": "2014-11-27",
+        "tppRows": 64,
+        "alpPrimaryRows": 68,
+        "coalitionPrimaryRows": 68,
+        "greensPrimaryRows": 68,
+        "oneNationPrimaryRows": 0,
+        "completeFivePartyRows": 0
+      },
+      {
+        "id": "vic_la_2018",
+        "windowStart": "2014-11-30",
+        "informationCutoff": "2018-11-23",
+        "candidateRows": 59,
+        "earliestMidDate": "2015-01-27",
+        "latestMidDate": "2018-11-23",
+        "tppRows": 59,
+        "alpPrimaryRows": 59,
+        "coalitionPrimaryRows": 59,
+        "greensPrimaryRows": 59,
+        "oneNationPrimaryRows": 6,
+        "completeFivePartyRows": 6
+      },
+      {
+        "id": "vic_la_2022",
+        "windowStart": "2018-11-25",
+        "informationCutoff": "2022-11-25",
+        "candidateRows": 36,
+        "earliestMidDate": "2020-04-24",
+        "latestMidDate": "2022-11-23",
+        "tppRows": 24,
+        "alpPrimaryRows": 31,
+        "coalitionPrimaryRows": 31,
+        "greensPrimaryRows": 31,
+        "oneNationPrimaryRows": 3,
+        "completeFivePartyRows": 3
+      }
+    ]
+  },
+  "decision": {
+    "forecastEligible": false,
+    "historicalReplayEligible": false,
+    "automaticPromotion": false,
+    "reason": "The candidate series establishes four-cycle coverage but cannot prove that every observation was public by the frozen information cutoff, and it lacks sample, explicit method, observation-level source and reuse-licence fields."
+  }
+}

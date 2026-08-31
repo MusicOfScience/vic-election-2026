@@ -11,7 +11,7 @@ test("requires evidence matching the complete probability model", () => {
   assert.equal(contract.minimumWalkForwardCycles, 4);
   assert.equal(contract.automaticGateOpening, false);
   assert.equal(byId["boundary-aligned-tpp-outcomes"].status, "complete");
-  assert.equal(byId["pre-election-poll-vintages"].status, "missing");
+  assert.equal(byId["pre-election-poll-vintages"].status, "partial");
   assert.equal(byId["district-primary-votes-and-party-crosswalk"].status, "partial");
   assert.equal(byId["ballot-and-contest-slates"].status, "partial");
   assert.equal(byId["preference-flows-and-final-pairs"].status, "partial");
@@ -24,8 +24,8 @@ test("requires evidence matching the complete probability model", () => {
 test("fingerprints every available validation artefact and keeps partial evidence fail-closed", () => {
   assert.deepEqual(validateModelValidationEvidence(), {
     complete: 1,
-    partial: 5,
-    missing: 1,
+    partial: 6,
+    missing: 0,
     total: 7,
     completeForecastBacktestReady: false,
     probabilityCalibrationReady: false,
