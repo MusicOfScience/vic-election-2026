@@ -21,8 +21,8 @@
     {
       "id": "district-primary-votes-and-party-crosswalk",
       "status": "partial",
-      "available": "323 audited candidate-primary rows across 39 districts from the 2022 VEC indicative-distribution corpus",
-      "needed": "Official district primary votes mapped reproducibly into ALP, Coalition, One Nation, Greens and Other/Independent for every contest in all four historical cycles",
+      "available": "323 audited candidate-primary rows across 39 districts from the 2022 VEC indicative-distribution corpus, plus a frozen fail-closed five-family party crosswalk",
+      "needed": "Official district primary votes for every contest in all four cycles, with every source label explicitly mapped or adjudicated and district totals reconciled",
       "requiredFor": ["five-party-seat-model", "ballot-access-effects", "party-primary-error"]
     },
     {

@@ -72,15 +72,25 @@
       "coverage": {
         "cycles": ["vic_la_2022"],
         "districts": 39,
-        "candidateRows": 323
+        "candidateRows": 323,
+        "partyFamilies": 5,
+        "crosswalkStatus": "frozen-fail-closed"
       },
       "evidence": [
         {
           "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
           "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
+        },
+        {
+          "path": "model/config/historical-party-family-crosswalk.json",
+          "sha256": "ab5c9a697c6c435dccce17bff23d569e0f5ca87554d8b8b4c9c4df8b75f130e5"
         }
       ],
-      "needed": "Official district primary votes and a frozen party-family crosswalk for every contest in all four cycles."
+      "limitations": [
+        "Unknown party labels are rejected pending evidence-backed adjudication; they are never silently mapped to Other/Independent.",
+        "Official district primary inputs remain incomplete outside 39 audited 2022 districts."
+      ],
+      "needed": "Official district primary votes for every contest in all four cycles, with source labels adjudicated and formal-vote totals reconciled."
     },
     {
       "id": "ballot-and-contest-slates",
