@@ -76,16 +76,16 @@
     },
     "candidateDiscovery": {
       "status": "quarantined-awaiting-review",
-      "records": 104,
-      "sourceFamilies": 3,
-      "assemblyContests": 73,
+      "records": 188,
+      "sourceFamilies": 5,
+      "assemblyContests": 82,
       "assemblyDistrictsTotal": 88,
       "councilRegions": 8,
       "councilRegionsTotal": 8,
       "acceptedAssemblyContests": 0,
       "unclassifiedContests": [],
       "automaticPromotion": false,
-      "label": "73/88 Assembly districts have provisional candidate evidence staged for review"
+      "label": "82/88 Assembly districts have provisional candidate evidence staged for review"
     },
     "validationEvidence": {
       "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",

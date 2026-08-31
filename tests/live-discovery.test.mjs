@@ -7,6 +7,9 @@ import {
   extractGreensCandidates,
   extractOneNationCandidates,
   extractNationalsCandidates,
+  extractLaborCandidates,
+  extractLiberalCandidates,
+  findNextTeamPageUrl,
   extractRoyMorganStatePoll,
   extractRoyMorganUpperHouse,
   parseFieldworkRange,
@@ -47,6 +50,25 @@ test("Nationals team page yields endorsed provisional candidate evidence", () =>
   assert.deepEqual(extractNationalsCandidates(html, "https://vic.nationals.org.au/our-team/"), [
     { kind: "candidate", name: "Andrew Lethlean", contest: "Bendigo East", party: "The Nationals", candidateStatus: "endorsed", sourceAuthority: "The Nationals Victoria", sourceUrl: "https://vic.nationals.org.au/our-team/" },
   ]);
+});
+
+test("Labor roster extracts only explicitly labelled candidates", () => {
+  const html = `<div role="listitem" class="member_list-item"><div fs-list-field="member-type">Candidates</div><a href="/members/alex"><h4 fs-list-field="full-name">Alex Example</h4></a><div class="w-embed">Candidate for Footscray</div></div><div role="listitem" class="member_list-item"><div fs-list-field="member-type">State Team</div><h4 fs-list-field="full-name">Existing MP</h4><div class="w-embed">Member for Melbourne</div></div>`;
+  assert.deepEqual(extractLaborCandidates(html, "https://www.viclabor.org.au/our-team"), [{
+    kind: "candidate", name: "Alex Example", contest: "Footscray", party: "Australian Labor Party - Victorian Branch", candidateStatus: "endorsed", sourceAuthority: "Victorian Labor", sourceUrl: "https://www.viclabor.org.au/members/alex",
+  }]);
+  assert.equal(findNextTeamPageUrl(`<a class="w-pagination-next" href="?page=2">Next</a>`, "https://www.viclabor.org.au/our-team"), "https://www.viclabor.org.au/our-team?page=2");
+});
+
+test("Liberal API keeps only records explicitly marked as candidates", () => {
+  const json = JSON.stringify({ Datas: [
+    { IsCandidate: true, FirstName: "Alex", LastName: "Example", Electorate: "Footscray", Slug: "alex-example" },
+    { IsCandidate: false, FirstName: "Existing", LastName: "MP", Electorate: "Melbourne", Slug: "existing-mp" },
+  ] });
+  assert.deepEqual(extractLiberalCandidates(json), [{
+    kind: "candidate", name: "Alex Example", contest: "Footscray", party: "Liberal Party of Australia (Victorian Division)", candidateStatus: "endorsed", sourceAuthority: "Liberal Victoria", sourceUrl: "https://vic.liberal.org.au/team/alex-example",
+  }]);
+  assert.throws(() => extractLiberalCandidates(JSON.stringify({ Datas: [] })), /returned no candidates/);
 });
 
 test("Roy Morgan statewide poll extracts fieldwork, sample and votes", () => {

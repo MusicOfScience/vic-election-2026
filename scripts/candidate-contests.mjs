@@ -23,6 +23,7 @@ function parseCsv(text) {
 
 const COUNCIL_CONTEST_ALIASES = new Map([
   ["north-east metro", "north-eastern metropolitan"],
+  ["north eastern metropolitan", "north-eastern metropolitan"],
   ["northern metro", "northern metropolitan"],
   ["south-east metro", "south-eastern metropolitan"],
   ["southern metro", "southern metropolitan"],

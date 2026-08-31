@@ -109,6 +109,50 @@ export function extractNationalsCandidates(html, pageUrl) {
   return records;
 }
 
+export function extractLaborCandidates(html, pageUrl) {
+  const records = [];
+  const sections = html.split(/(?=<div\b[^>]*role=["']listitem["'][^>]*class=["']member_list-item(?:\s|["']))/i);
+  for (const section of sections) {
+    const type = section.match(/fs-list-field=["']member-type["'][^>]*>([\s\S]*?)<\//i);
+    if (!type || clean(type[1]) !== "Candidates") continue;
+    const name = section.match(/<h4\b[^>]*fs-list-field=["']full-name["'][^>]*>([\s\S]*?)<\/h4>/i);
+    const contest = section.match(/<div\b[^>]*class=["'][^"']*w-embed[^"']*["'][^>]*>\s*Candidate for\s+([^<]+)<\/div>/i);
+    if (!name || !contest) continue;
+    const profile = section.match(/<a\b[^>]*href=["']([^"']+)["']/i);
+    let sourceUrl = pageUrl;
+    try { if (profile) sourceUrl = new URL(profile[1], pageUrl).href; } catch {}
+    records.push({ kind: "candidate", name: clean(name[1]), contest: clean(contest[1]).replace(/\.$/, ""), party: "Australian Labor Party - Victorian Branch", candidateStatus: "endorsed", sourceAuthority: "Victorian Labor", sourceUrl });
+  }
+  return records;
+}
+
+export function extractLiberalCandidates(jsonText) {
+  const payload = JSON.parse(jsonText);
+  if (!Array.isArray(payload.Datas)) throw new Error("Liberal Victoria candidate API returned no Datas array");
+  const records = payload.Datas.filter((item) => item.IsCandidate === true && item.FirstName && item.LastName && item.Electorate).map((item) => ({
+    kind: "candidate",
+    name: clean(`${item.FirstName} ${item.LastName}`),
+    contest: clean(item.Electorate),
+    party: "Liberal Party of Australia (Victorian Division)",
+    candidateStatus: "endorsed",
+    sourceAuthority: "Liberal Victoria",
+    sourceUrl: `https://vic.liberal.org.au/team/${item.Slug}`,
+  }));
+  if (!records.length) throw new Error("Liberal Victoria candidate API returned no candidates");
+  return records;
+}
+
+export function findNextTeamPageUrl(html, pageUrl) {
+  const link = extractLinks(html, pageUrl).find((item) => /^(next|next page)$/i.test(item.text) || /w-pagination-next/.test(item.url));
+  if (link) return link.url;
+  for (const tag of html.matchAll(/<a\b[^>]*>/gi)) {
+    if (!/class=["'][^"']*w-pagination-next/i.test(tag[0]) && !/aria-label=["']Next Page["']/i.test(tag[0])) continue;
+    const href = tag[0].match(/href=["']([^"']+)["']/i);
+    try { if (href) return new URL(href[1], pageUrl).href; } catch {}
+  }
+  return null;
+}
+
 const MONTHS = { january: "01", february: "02", march: "03", april: "04", may: "05", june: "06", july: "07", august: "08", september: "09", october: "10", november: "11", december: "12" };
 
 export function parseFieldworkRange(text) {
@@ -197,6 +241,20 @@ async function discoverRoyMorganLinks(page, adapter, found) {
   }
 }
 
+async function discoverLaborCandidates(firstPage, found) {
+  const initialCount = found.length;
+  let page = firstPage;
+  const visited = new Set();
+  for (let i = 0; i < 12 && !visited.has(page.finalUrl); i++) {
+    visited.add(page.finalUrl);
+    found.push(...extractLaborCandidates(page.html, page.finalUrl));
+    const nextUrl = findNextTeamPageUrl(page.html, page.finalUrl);
+    if (!nextUrl || visited.has(nextUrl)) break;
+    page = await fetchPage(nextUrl);
+  }
+  if (found.length === initialCount) throw new Error("Victorian Labor roster returned no explicitly labelled candidates");
+}
+
 async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, polls) {
   const page = await fetchPage(adapter.url);
   const canonical = canonicaliseHtml(page.html);
@@ -224,6 +282,10 @@ async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, pol
     found.push(...extractOneNationCandidates(page.html, page.finalUrl));
   } else if (adapter.discovery.extractor === "nationals-victoria-candidates") {
     found.push(...extractNationalsCandidates(page.html, page.finalUrl));
+  } else if (adapter.discovery.extractor === "labor-victoria-candidates") {
+    await discoverLaborCandidates(page, found);
+  } else if (adapter.discovery.extractor === "liberal-victoria-candidates") {
+    found.push(...extractLiberalCandidates(page.html));
   }
 
   return found.map((record) => {
