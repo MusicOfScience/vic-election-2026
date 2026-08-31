@@ -483,6 +483,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "3daa789320897818e5a45f641bb12200915160868821402215efc064bab3548f",
+      "recordHash": "162ee53c51cacdcd17e6334e4477f027d962d08312e0dd125b67a03ce6d3a055",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:19:05Z",
+      "note": "The official Victorian Socialists candidate directory and profiles explicitly identify candidates for the four targeted coverage-gap districts.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "5ff207f7a7e7cfa35380c47f57c52c6f9d1e2eb06de14a380d489cf2506fb451",
       "recordHash": "ded651874ea5a72b98cf0f5deee95af2d6043c2d7abb716732c33c2e87c7c4d7",
       "kind": "candidate",
@@ -843,6 +853,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "15d3c9376adfac8a92bee58cae81482a18ff8d7b16f5a9b9098a7f3f359958b9",
+      "recordHash": "faab7001f78ef3c39578a00394a9aff0cec47e544d6262588e75d6ee4b78d680",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:19:05Z",
+      "note": "The official Victorian Socialists candidate directory and profiles explicitly identify candidates for the four targeted coverage-gap districts.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "643bfb7cdd7b886b1a6eb862af2ec416469acc8a123bb43d0d1fb513d1beb167",
       "recordHash": "fa4b4d5f45747886d7e0e327bbe21904186a434055cbfcdd232e6cbd900a0c19",
       "kind": "candidate",
@@ -900,6 +920,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "3a9900c843f202e0c456084e4812a6f99f44a9e5c0d598720901869791c8b90d",
+      "recordHash": "b0ae8832c92929befacc6374f129af3975ea2154b16fae6f9e5cc0186c89223f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:19:05Z",
+      "note": "The official Family First Victorian election page and candidate profile explicitly identify Lee Ann Elms as its candidate for Lowan.",
       "modelInputsChanged": false
     },
     {
@@ -1070,6 +1100,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "29ae0f24218ffb5ba212c2ae7d20d43343bd9489f422b543040ffec6433c3e6a",
+      "recordHash": "f860963990db3dffa6f96f51d91eb81fded64a86e0ae8b9cf6dbf5aa568ff4b6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:19:05Z",
+      "note": "The relevant municipal government lists Chris Crewther among candidates publicly announced, endorsed or otherwise confirmed for the November 2026 election; this supports announced status only.",
       "modelInputsChanged": false
     },
     {
@@ -1800,6 +1840,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e5d3c027f490d86db01c997fecab460d5ac108af4e866a50f24ccefee10d3108",
+      "recordHash": "61f9682a18d038f82e0988647e72efa638401585053f6fa43215407f5fd15b6b",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:19:05Z",
+      "note": "The official Victorian Socialists candidate directory and profiles explicitly identify candidates for the four targeted coverage-gap districts.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "4b1423d8025c0e18ca02fcfa6f2056ea4a913623bd30d89a1bc64c6f5bbf6058",
+      "recordHash": "499042b8a0cd98a84b612e2b64ce328534a52f6c896cec946e4a12675c9ca2bb",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-08-31T12:19:05Z",
+      "note": "The official Victorian Socialists candidate directory and profiles explicitly identify candidates for the four targeted coverage-gap districts.",
       "modelInputsChanged": false
     },
     {

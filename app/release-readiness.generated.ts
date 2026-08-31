@@ -9,13 +9,12 @@ export const releaseReadiness = {
     "automaticProductionPublish": false
   },
   "summary": {
-    "passedRequiredGates": 4,
+    "passedRequiredGates": 5,
     "requiredGateCount": 9,
     "blockingGateIds": [
       "modelInputFreshness",
       "completeForecastBacktest",
       "probabilityCalibration",
-      "candidateEvidence",
       "productionAuthorisation"
     ]
   },
@@ -49,8 +48,8 @@ export const releaseReadiness = {
       "label": "Published win probabilities pass reliability and coverage tests"
     },
     "candidateEvidence": {
-      "passed": false,
-      "label": "2026 candidate evidence covers 82/88 Assembly districts"
+      "passed": true,
+      "label": "2026 candidate evidence covers 88/88 Assembly districts"
     },
     "productionAuthorisation": {
       "passed": false,
@@ -76,18 +75,18 @@ export const releaseReadiness = {
       }
     },
     "candidateDiscovery": {
-      "status": "accepted-endorsed-evidence-incomplete-coverage",
-      "records": 188,
-      "acceptedRecords": 188,
-      "sourceFamilies": 5,
-      "assemblyContests": 82,
+      "status": "accepted-candidate-evidence-complete-coverage",
+      "records": 194,
+      "acceptedRecords": 194,
+      "sourceFamilies": 8,
+      "assemblyContests": 88,
       "assemblyDistrictsTotal": 88,
       "councilRegions": 8,
       "councilRegionsTotal": 8,
-      "acceptedAssemblyContests": 82,
+      "acceptedAssemblyContests": 88,
       "unclassifiedContests": [],
       "automaticPromotion": false,
-      "label": "82/88 Assembly districts have accepted endorsed candidate evidence"
+      "label": "88/88 Assembly districts have accepted candidate evidence"
     },
     "validationEvidence": {
       "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",

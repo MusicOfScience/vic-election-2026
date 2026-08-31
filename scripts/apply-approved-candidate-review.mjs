@@ -30,37 +30,54 @@ function buildExpected() {
   for (const decision of decisions) {
     const family = familyByAuthority.get(decision.authority);
     if (!family) throw new Error(`candidate approval: unknown source family ${decision.authority}`);
-    if (family.evidenceRecommendation !== "accept-as-endorsed-evidence" || decision.decision !== "approve") {
+    if (family.evidenceRecommendation !== `accept-as-${decision.acceptedStatus}-evidence` || decision.decision !== "approve") {
       throw new Error(`candidate approval: ${decision.authority} does not match the dossier recommendation`);
     }
-    if (decision.acceptedStatus !== "endorsed" || decision.officialNomination !== false || decision.forecastUse !== "excluded") {
-      throw new Error(`candidate approval: ${decision.authority} breaches the endorsement-only boundary`);
+    if (!["announced", "endorsed"].includes(decision.acceptedStatus) || decision.officialNomination !== false || decision.forecastUse !== "excluded") {
+      throw new Error(`candidate approval: ${decision.authority} breaches the provisional-evidence boundary`);
     }
   }
 
   const approvedAuthorities = new Set(decisions.map((item) => item.authority));
+  const decisionByAuthority = new Map(decisions.map((item) => [item.authority, item]));
   const approvedRecords = provisional.records.filter((record) => approvedAuthorities.has(record.sourceAuthority));
   if (approvedRecords.length !== approval.requiredAcceptedRecords || approvedRecords.length !== dossier.summary.recordsRecommendedForAcceptance) {
     throw new Error("candidate approval: accepted record count does not match the dossier");
   }
-  if (approvedRecords.some((record) => record.status !== "quarantined-awaiting-review" || record.candidateStatus !== "endorsed" || record.automaticPromotion !== false)) {
-    throw new Error("candidate approval: only endorsed, quarantined, non-promotable evidence may be accepted");
+  if (approvedRecords.some((record) => record.status !== "quarantined-awaiting-review" || record.candidateStatus !== decisionByAuthority.get(record.sourceAuthority)?.acceptedStatus || record.automaticPromotion !== false)) {
+    throw new Error("candidate approval: only status-matched, quarantined, non-promotable evidence may be accepted");
   }
 
   const approvedIds = new Set(approvedRecords.map((record) => record.id));
   if (approvedIds.size !== approvedRecords.length) throw new Error("candidate approval: duplicate evidence id");
   const retainedCandidates = (registry.candidates ?? []).filter((candidate) => !approvedIds.has(candidate.evidenceId));
+  const existingCandidateById = new Map((registry.candidates ?? []).map((candidate) => [candidate.evidenceId, candidate]));
   const seenIdentities = new Set(retainedCandidates.map(identity));
   const acceptedCandidates = approvedRecords.map((record) => {
     const key = identity(record);
     if (seenIdentities.has(key)) throw new Error(`candidate approval: duplicate accepted identity ${record.name} / ${record.contest}`);
     seenIdentities.add(key);
     const family = familyByAuthority.get(record.sourceAuthority);
+    const existing = existingCandidateById.get(record.id);
+    if (existing) {
+      const unchanged = existing.name === record.name
+        && existing.contest === record.contest
+        && existing.party === record.party
+        && existing.status === record.candidateStatus
+        && existing.sourceUrl === record.sourceUrl
+        && existing.sourceAuthority === record.sourceAuthority
+        && existing.sourceId === record.sourceId
+        && existing.evidenceHash === record.dataHash
+        && existing.forecastUse === "excluded"
+        && existing.officialNomination === false;
+      if (!unchanged) throw new Error(`candidate approval: accepted record drift for ${record.name} / ${record.contest}`);
+      return existing;
+    }
     return {
       name: record.name,
       contest: record.contest,
       party: record.party,
-      status: "endorsed",
+      status: record.candidateStatus,
       sourceUrl: record.sourceUrl,
       sourceAuthority: record.sourceAuthority,
       sourceId: record.sourceId,
@@ -77,18 +94,29 @@ function buildExpected() {
   const expectedRegistry = { ...registry, candidates: [...retainedCandidates, ...acceptedCandidates].sort(candidateSort) };
 
   const retainedDecisions = (reviewLog.decisions ?? []).filter((item) => !approvedIds.has(item.evidenceId));
+  const existingDecisionById = new Map((reviewLog.decisions ?? []).filter((item) => item.kind === "candidate").map((item) => [item.evidenceId, item]));
   const acceptedById = new Map(acceptedCandidates.map((candidate) => [candidate.evidenceId, candidate]));
   const candidateDecisions = approvedRecords
-    .map((record) => ({
-      evidenceId: record.id,
-      recordHash: hash(record),
-      kind: "candidate",
-      decision: "approve",
-      reviewer: approval.reviewerRole,
-      reviewedAt: approval.approvedAt,
-      note: acceptedById.get(record.id).reviewNote,
-      modelInputsChanged: false,
-    }))
+    .map((record) => {
+      const recordHash = hash(record);
+      const existing = existingDecisionById.get(record.id);
+      if (existing) {
+        if (existing.recordHash !== recordHash || existing.decision !== "approve" || existing.modelInputsChanged !== false) {
+          throw new Error(`candidate approval: review audit drift for ${record.name} / ${record.contest}`);
+        }
+        return existing;
+      }
+      return {
+        evidenceId: record.id,
+        recordHash,
+        kind: "candidate",
+        decision: "approve",
+        reviewer: approval.reviewerRole,
+        reviewedAt: approval.approvedAt,
+        note: acceptedById.get(record.id).reviewNote,
+        modelInputsChanged: false,
+      };
+    })
     .sort((a, b) => {
       const left = acceptedById.get(a.evidenceId);
       const right = acceptedById.get(b.evidenceId);
@@ -111,8 +139,7 @@ function main() {
     writeFileSync(candidatesPath, json(expectedRegistry));
     writeFileSync(reviewLogPath, json(expectedReviewLog));
   }
-  console.log(`Candidate approval: ${approvedRecords.length} endorsed records accepted; forecast use excluded; VEC nomination status unchanged.`);
+  console.log(`Candidate approval: ${approvedRecords.length} provisional records accepted; forecast use excluded; VEC nomination status unchanged.`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
-

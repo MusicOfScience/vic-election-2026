@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "evidenceAsOf": "2026-08-31T09:56:38.578Z",
-  "policy": "Discovered party-announced candidates are durable quarantined evidence only. They require explicit identity, contest and endorsement review before entering the accepted candidate registry; only VEC evidence may confer official nomination status.",
+  "evidenceAsOf": "2026-08-31T12:19:05Z",
+  "policy": "Discovered party-endorsed or publicly confirmed candidates are durable quarantined evidence only. They require explicit identity, contest and status review before entering the accepted candidate registry; only VEC evidence may confer official nomination status.",
   "automaticPromotion": false,
   "summary": {
-    "records": 188,
-    "assemblyContests": 82,
+    "records": 194,
+    "assemblyContests": 88,
     "assemblyDistrictsTotal": 88,
     "councilRegions": 8,
-    "sourceFamilies": 5
+    "sourceFamilies": 8
   },
   "records": [
     {
@@ -2642,6 +2642,90 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "One Nation Victoria",
       "sourceUrl": "https://vic.onenation.org.au/jeremy-johnson"
+    },
+    {
+      "id": "3daa789320897818e5a45f641bb12200915160868821402215efc064bab3548f",
+      "sourceId": "victorian-socialists-coverage-gaps",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "465dd1a1a558840b31d1f806dd740a9ca05dd014e5e71ad438804433403b0091",
+      "kind": "candidate",
+      "name": "Jack McMahon",
+      "contest": "Dandenong",
+      "party": "Victorian Socialists",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Socialists",
+      "sourceUrl": "https://www.victoriansocialists.org.au/candidates/jack-mcmahon"
+    },
+    {
+      "id": "15d3c9376adfac8a92bee58cae81482a18ff8d7b16f5a9b9098a7f3f359958b9",
+      "sourceId": "victorian-socialists-coverage-gaps",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "025d70ab5fef4afdbd990cab107518f256d12f69e1d6fcdb15bb40a4c86c8424",
+      "kind": "candidate",
+      "name": "Courtney Millett",
+      "contest": "Kalkallo",
+      "party": "Victorian Socialists",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Socialists",
+      "sourceUrl": "https://www.victoriansocialists.org.au/candidates/courtney-millett"
+    },
+    {
+      "id": "3a9900c843f202e0c456084e4812a6f99f44a9e5c0d598720901869791c8b90d",
+      "sourceId": "family-first-victoria-coverage-gaps",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "d7b5ccecc664c149fbf055b509be1ae554dd66d75d2ab7ca16ad5cca94e4fec1",
+      "kind": "candidate",
+      "name": "Lee Ann Elms",
+      "contest": "Lowan",
+      "party": "Family First Party Australia",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Family First Party Australia",
+      "sourceUrl": "https://www.familyfirstparty.org.au/elms_2026"
+    },
+    {
+      "id": "29ae0f24218ffb5ba212c2ae7d20d43343bd9489f422b543040ffec6433c3e6a",
+      "sourceId": "mornington-peninsula-candidate-confirmations",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "48c65b0efa31782a51394181d1dbd158af7323c418fc626e55481404478a695b",
+      "kind": "candidate",
+      "name": "Chris Crewther",
+      "contest": "Mornington",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "announced",
+      "sourceAuthority": "Mornington Peninsula Shire",
+      "sourceUrl": "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/The-candidates"
+    },
+    {
+      "id": "e5d3c027f490d86db01c997fecab460d5ac108af4e866a50f24ccefee10d3108",
+      "sourceId": "victorian-socialists-coverage-gaps",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "f7a918bef5d83e82a5f61ed8f78ebb4d22bb002a5dbad132db5d1294c46f53fa",
+      "kind": "candidate",
+      "name": "Priya Reddy",
+      "contest": "Thomastown",
+      "party": "Victorian Socialists",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Socialists",
+      "sourceUrl": "https://www.victoriansocialists.org.au/candidates/priya-reddy"
+    },
+    {
+      "id": "4b1423d8025c0e18ca02fcfa6f2056ea4a913623bd30d89a1bc64c6f5bbf6058",
+      "sourceId": "victorian-socialists-coverage-gaps",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "465e1db83731b28adcfc6896af8d50655d347c9a40a6e662c32cea6b460a3e68",
+      "kind": "candidate",
+      "name": "John Stanley",
+      "contest": "Warrandyte",
+      "party": "Victorian Socialists",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Socialists",
+      "sourceUrl": "https://www.victoriansocialists.org.au/candidates"
     }
   ]
 }

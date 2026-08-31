@@ -185,10 +185,10 @@ test("renders the governed candidate review dossier without implying nomination"
   );
   const html = renderToStaticMarkup(React.createElement(CandidateReviewDossier));
 
-  assert.match(html, /188 party-endorsed records have passed the evidence review/i);
+  assert.match(html, /194 candidate records now cover all 88 Assembly districts/i);
   assert.match(html, /Approval recorded/i);
-  assert.match(html, /82\/88/);
-  assert.match(html, /Dandenong, Kalkallo, Lowan, Mornington, Thomastown, Warrandyte/);
+  assert.match(html, /88\/88/);
+  assert.match(html, /Assembly coverage is complete/i);
   assert.match(html, /does not make a candidate VEC-nominated/i);
 });
 
