@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-31",
+  "status": "frozen-fail-closed",
+  "scope": "Historical Legislative Assembly primary-vote aggregation for the complete five-party model",
+  "targetFamilies": [
+    "ALP",
+    "Coalition",
+    "Greens",
+    "One Nation",
+    "Other/Independent"
+  ],
+  "normalisation": {
+    "trim": true,
+    "collapseWhitespace": true,
+    "caseFold": true,
+    "substringMatching": false
+  },
+  "aliases": {
+    "ALP": [
+      "Australian Labor Party - Victorian Branch",
+      "Australian Labor Party (Victorian Branch)",
+      "Australian Labor Party",
+      "ALP",
+      "Labor"
+    ],
+    "Coalition": [
+      "Liberal",
+      "Liberal Party",
+      "Liberal Party of Australia - Victorian Division",
+      "The Nationals",
+      "National Party",
+      "National Party of Australia - Victoria",
+      "Liberal / The Nationals",
+      "Liberal/The Nationals",
+      "LIB/NAT",
+      "LNP"
+    ],
+    "Greens": [
+      "Australian Greens",
+      "Australian Greens - Victoria",
+      "The Australian Greens - Victoria",
+      "Greens",
+      "GRN"
+    ],
+    "One Nation": [
+      "Pauline Hanson's One Nation",
+      "Pauline Hanson’s One Nation",
+      "One Nation",
+      "PHON",
+      "ONP"
+    ],
+    "Other/Independent": [
+      "Independent",
+      "IND",
+      "Other Candidates",
+      "OTH"
+    ]
+  },
+  "independentCandidateRule": {
+    "blankPartyMayMapToOtherIndependent": true,
+    "requiresExplicitIndependentStatus": true
+  },
+  "unknownPartyPolicy": {
+    "action": "reject-row-and-require-adjudication",
+    "automaticOtherMapping": false,
+    "requiresEvidenceLog": true
+  },
+  "absentFamilyPolicy": {
+    "action": "missing-until-no-contest-is-verified",
+    "automaticZero": false
+  },
+  "reconciliation": {
+    "requireEveryFormalVoteMappedExactlyOnce": true,
+    "requireDistrictFamilySumEqualsFormalVotes": true,
+    "allowNegativeVotes": false
+  },
+  "modelEligibility": {
+    "crosswalkFrozen": true,
+    "historicalPrimaryInputsComplete": false,
+    "automaticGateOpening": false
+  }
+}

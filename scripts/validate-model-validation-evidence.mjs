@@ -113,6 +113,38 @@ export function validateModelValidationEvidence() {
   assert(candidates.length === 323, "expected 323 audited 2022 candidate-primary rows");
   assert(new Set(candidates.map((row) => row.district_id)).size === 39, "expected 39 districts with audited 2022 primary evidence");
 
+  const crosswalk = readJson("model/config/historical-party-family-crosswalk.json");
+  const expectedFamilies = ["ALP", "Coalition", "Greens", "One Nation", "Other/Independent"];
+  assert(crosswalk.status === "frozen-fail-closed", "historical party crosswalk must be frozen and fail closed");
+  assert(JSON.stringify(crosswalk.targetFamilies) === JSON.stringify(expectedFamilies), "historical party families differ from the complete model");
+  assert(crosswalk.normalisation.trim === true, "party labels must be trimmed before exact matching");
+  assert(crosswalk.normalisation.collapseWhitespace === true, "party-label whitespace must be normalised");
+  assert(crosswalk.normalisation.caseFold === true, "party labels must be case folded");
+  assert(crosswalk.normalisation.substringMatching === false, "substring party matching is unsafe");
+  const normaliseAlias = (alias) => alias.trim().replace(/\s+/g, " ").toLocaleLowerCase("en-AU");
+  const aliasOwners = new Map();
+  for (const family of expectedFamilies) {
+    assert(Array.isArray(crosswalk.aliases[family]) && crosswalk.aliases[family].length > 0, `missing aliases for ${family}`);
+    for (const alias of crosswalk.aliases[family]) {
+      assert(alias !== "*", "wildcard party aliases are forbidden");
+      const normalised = normaliseAlias(alias);
+      assert(!aliasOwners.has(normalised), `party alias ${alias} is assigned to more than one family`);
+      aliasOwners.set(normalised, family);
+    }
+  }
+  assert(crosswalk.independentCandidateRule.requiresExplicitIndependentStatus === true, "blank-party candidates require explicit independent status");
+  assert(crosswalk.unknownPartyPolicy.action === "reject-row-and-require-adjudication", "unknown parties must fail closed");
+  assert(crosswalk.unknownPartyPolicy.automaticOtherMapping === false, "unknown parties cannot map automatically to Other/Independent");
+  assert(crosswalk.unknownPartyPolicy.requiresEvidenceLog === true, "party adjudications require an evidence log");
+  assert(crosswalk.absentFamilyPolicy.action === "missing-until-no-contest-is-verified", "absent party families cannot be assumed");
+  assert(crosswalk.absentFamilyPolicy.automaticZero === false, "missing party families cannot become automatic zeroes");
+  assert(crosswalk.reconciliation.requireEveryFormalVoteMappedExactlyOnce === true, "every formal vote must map exactly once");
+  assert(crosswalk.reconciliation.requireDistrictFamilySumEqualsFormalVotes === true, "district family totals must reconcile to formal votes");
+  assert(crosswalk.reconciliation.allowNegativeVotes === false, "negative historical primary votes are invalid");
+  assert(crosswalk.modelEligibility.crosswalkFrozen === true, "party crosswalk must be frozen before import");
+  assert(crosswalk.modelEligibility.historicalPrimaryInputsComplete === false, "partial historical primaries cannot be marked complete");
+  assert(crosswalk.modelEligibility.automaticGateOpening === false, "party crosswalk cannot open a gate automatically");
+
   const transfers = parseCsv(gunzipSync(readFileSync(resolve(root, "model/data/processed/vec_2022_preference_transfer_evidence.csv.gz"))).toString("utf8"));
   assert(transfers.length === 1204, "expected 1204 audited preference transfer rows");
   assert(new Set(transfers.map((row) => row.district_id)).size === 39, "expected 39 districts with preference distributions");
