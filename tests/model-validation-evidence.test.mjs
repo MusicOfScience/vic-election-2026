@@ -16,7 +16,7 @@ test("requires evidence matching the complete probability model", () => {
   assert.equal(byId["ballot-and-contest-slates"].status, "partial");
   assert.equal(byId["preference-flows-and-final-pairs"].status, "partial");
   assert.equal(byId["council-results-and-count-rules"].status, "partial");
-  assert.equal(byId["frozen-historical-model-configurations"].status, "missing");
+  assert.equal(byId["frozen-historical-model-configurations"].status, "partial");
   assert.ok(contract.promotionMetrics.includes("multi-class Brier score"));
   assert.ok(contract.promotionMetrics.includes("log loss"));
 });
@@ -24,8 +24,8 @@ test("requires evidence matching the complete probability model", () => {
 test("fingerprints every available validation artefact and keeps partial evidence fail-closed", () => {
   assert.deepEqual(validateModelValidationEvidence(), {
     complete: 1,
-    partial: 4,
-    missing: 2,
+    partial: 5,
+    missing: 1,
     total: 7,
     completeForecastBacktestReady: false,
     probabilityCalibrationReady: false,

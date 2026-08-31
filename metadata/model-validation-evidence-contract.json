@@ -47,8 +47,9 @@
     },
     {
       "id": "frozen-historical-model-configurations",
-      "status": "missing",
-      "needed": "One leakage-safe configuration per cycle with an explicit as-of date, only then-available inputs and deterministic seeds",
+      "status": "partial",
+      "available": "Four deterministic, leakage-safe cycle specifications with explicit election-eve information cutoffs and scoring-only outcomes",
+      "needed": "Complete cutoff-compliant historical inputs and an executable replay for each frozen cycle",
       "requiredFor": ["walk-forward-replay", "reproducibility", "anti-leakage-audit"]
     }
   ],
