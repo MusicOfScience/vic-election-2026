@@ -36,11 +36,13 @@ test("does not mislabel a four-cycle data ledger as complete model validation", 
   assert.ok(readiness.summary.blockingGateIds.includes("probabilityCalibration"));
 });
 
-test("keeps newer staged polling separate from admitted model inputs", () => {
+test("recognises reviewed staged polling as explicitly excluded from model inputs", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
-  assert.equal(readiness.evidenceFreshness.newerEvidenceAwaitingReview, true);
-  assert.equal(readiness.gates.modelInputFreshness.passed, false);
-  assert.ok(readiness.summary.blockingGateIds.includes("modelInputFreshness"));
+  assert.equal(readiness.evidenceFreshness.newerEvidenceAwaitingReview, false);
+  assert.equal(readiness.evidenceFreshness.newerEvidenceExcludedByReview, true);
+  assert.equal(readiness.evidenceFreshness.reviewResolution.unresolvedRecords, 0);
+  assert.equal(readiness.gates.modelInputFreshness.passed, true);
+  assert.ok(!readiness.summary.blockingGateIds.includes("modelInputFreshness"));
 });
 
 test("opens the candidate evidence gate only at complete Assembly coverage", () => {

@@ -9,10 +9,9 @@ export const releaseReadiness = {
     "automaticProductionPublish": false
   },
   "summary": {
-    "passedRequiredGates": 5,
+    "passedRequiredGates": 6,
     "requiredGateCount": 9,
     "blockingGateIds": [
-      "modelInputFreshness",
       "completeForecastBacktest",
       "probabilityCalibration",
       "productionAuthorisation"
@@ -28,7 +27,7 @@ export const releaseReadiness = {
       "label": "Critical sources are within age policy"
     },
     "modelInputFreshness": {
-      "passed": false,
+      "passed": true,
       "label": "Newer reviewed evidence is resolved into or excluded from model inputs"
     },
     "deterministicOutputs": {
@@ -121,8 +120,20 @@ export const releaseReadiness = {
       "sourceTier": "reputable_secondary",
       "verificationStatus": "corroborated-secondary-awaiting-primary"
     },
+    "reviewResolution": {
+      "stagedRecords": 7,
+      "resolvedRecords": 7,
+      "unresolvedRecords": 0,
+      "latestResolvedEvidence": {
+        "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
+        "pollster": "Resolve Strategic",
+        "latestPublicationDate": "2026-08-21",
+        "decision": "hold"
+      }
+    },
     "newestEvidenceDate": "2026-08-21",
-    "newerEvidenceAwaitingReview": true,
+    "newerEvidenceAwaitingReview": false,
+    "newerEvidenceExcludedByReview": true,
     "modelFreshnessUnchangedByStagedEvidence": true
   },
   "sources": [
