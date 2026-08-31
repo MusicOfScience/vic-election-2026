@@ -53,6 +53,32 @@ export function validateModelValidationEvidence() {
   assert(inventory.summary.partial === (statusCounts.partial ?? 0), "partial summary count is stale");
   assert(inventory.summary.missing === (statusCounts.missing ?? 0), "missing summary count is stale");
   assert(inventory.summary.total === inventory.components.length, "total summary count is stale");
+
+  const acquisition = readJson("metadata/historical-source-acquisition-plan.json");
+  assert(acquisition.status === "awaiting-external-source-completion", "historical source acquisition status is unexpected");
+  assert(acquisition.requests.length === 2, "expected exactly two priority historical source requests");
+  assert(new Set(acquisition.requests.map((request) => request.id)).size === acquisition.requests.length, "historical source request ids must be unique");
+  const vecRequest = acquisition.requests.find((request) => request.id === "vec-legislative-assembly-primaries-2010-2022");
+  const pollRequest = acquisition.requests.find((request) => request.id === "historical-poll-vintage-enrichment-and-reuse");
+  assert(vecRequest?.status === "not-sent", "VEC source request status must be explicit");
+  assert(vecRequest.recipient === "Victorian Electoral Commission", "VEC source request recipient is incorrect");
+  assert(vecRequest.cycles.length === 4, "VEC request must cover four Assembly cycles");
+  assert(vecRequest.cycles.every((cycle) => cycle.requiredDistricts === 88), "VEC request must seek every Assembly district");
+  assert(vecRequest.cycles.find((cycle) => cycle.id === "vic_la_2022")?.auditedDistricts === 39, "VEC request must preserve current 2022 audited coverage");
+  assert(vecRequest.acceptanceRules.districtFormalVoteReconciliationRequired === true, "VEC result imports must reconcile to formal votes");
+  assert(vecRequest.acceptanceRules.pdfOnlyAccepted === false, "PDF-only historical results are not reproducible inputs");
+  assert(pollRequest?.status === "not-sent", "polling source request status must be explicit");
+  assert(pollRequest.frozenCandidateSource.candidateRows === 200, "polling request must preserve the audited candidate-row count");
+  assert(pollRequest.frozenCandidateSource.currentlyReplayEligibleRows === 0, "unresolved polling rows cannot enter replay");
+  assert(pollRequest.requiredFields.includes("publicationDate"), "polling request must seek publication dates");
+  assert(pollRequest.requiredFields.includes("sampleSize"), "polling request must seek sample sizes");
+  assert(pollRequest.requiredFields.includes("explicitMethod"), "polling request must seek explicit methods");
+  assert(pollRequest.requiredFields.includes("observationSourceUrl"), "polling request must seek observation provenance");
+  assert(pollRequest.requiredFields.includes("declaredReuseLicence"), "polling request must seek reuse authority");
+  assert(pollRequest.acceptanceRules.fieldworkMidpointAsPublicationDateAccepted === false, "fieldwork midpoint cannot substitute for publication date");
+  assert(acquisition.modelImpact.changesCurrentForecast === false, "source requests cannot change the current forecast");
+  assert(acquisition.modelImpact.automaticPromotion === false, "source responses cannot promote automatically");
+  assert(acquisition.modelImpact.automaticGateOpening === false, "source requests cannot open gates");
   for (const [id, component] of inventoryById) {
     assert(contractById.has(id), `unknown inventory component ${id}`);
     assert(contractById.get(id).status === component.status, `${id} status differs from the contract`);

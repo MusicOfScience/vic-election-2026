@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-31",
+  "status": "awaiting-external-source-completion",
+  "policy": "Source requests may unlock evidence acquisition, but responses remain quarantined until provenance, structure, reconciliation and licensing checks pass.",
+  "requests": [
+    {
+      "id": "vec-legislative-assembly-primaries-2010-2022",
+      "status": "not-sent",
+      "priority": 1,
+      "recipient": "Victorian Electoral Commission",
+      "contactRoute": "https://www.vec.vic.gov.au/about-us/contact-us",
+      "blockedComponents": [
+        "district-primary-votes-and-party-crosswalk",
+        "ballot-and-contest-slates"
+      ],
+      "cycles": [
+        {
+          "id": "vic_la_2010",
+          "requiredDistricts": 88,
+          "auditedDistricts": 0
+        },
+        {
+          "id": "vic_la_2014",
+          "requiredDistricts": 88,
+          "auditedDistricts": 0
+        },
+        {
+          "id": "vic_la_2018",
+          "requiredDistricts": 88,
+          "auditedDistricts": 0
+        },
+        {
+          "id": "vic_la_2022",
+          "requiredDistricts": 88,
+          "auditedDistricts": 39
+        }
+      ],
+      "requiredFields": [
+        "electionId",
+        "electionDate",
+        "districtName",
+        "candidateName",
+        "partyLabel",
+        "firstPreferenceVotes",
+        "formalVotes",
+        "sourceFileMetadata",
+        "reuseTerms"
+      ],
+      "acceptedFormats": [
+        "csv",
+        "xlsx",
+        "xls"
+      ],
+      "acceptanceRules": {
+        "officialPublisherRequired": true,
+        "candidateRowsRequired": true,
+        "districtFormalVoteReconciliationRequired": true,
+        "allFourCyclesRequired": true,
+        "pdfOnlyAccepted": false
+      }
+    },
+    {
+      "id": "historical-poll-vintage-enrichment-and-reuse",
+      "status": "not-sent",
+      "priority": 2,
+      "recipient": "Maintainer of d-j-hirst/aus-polling-analyser",
+      "contactRoute": "https://github.com/d-j-hirst/aus-polling-analyser/issues",
+      "blockedComponents": [
+        "pre-election-poll-vintages"
+      ],
+      "frozenCandidateSource": {
+        "commit": "a244da459807a22284d569b0b7e95ce79dfc53ff",
+        "path": "analysis/Data/poll-data-vic.csv",
+        "candidateRows": 200,
+        "currentlyReplayEligibleRows": 0
+      },
+      "requiredFields": [
+        "publicationDate",
+        "sampleSize",
+        "explicitMethod",
+        "observationSourceUrl",
+        "declaredReuseLicence"
+      ],
+      "acceptanceRules": {
+        "observationLevelProvenanceRequired": true,
+        "publicationDateAtOrBeforeCycleCutoffRequired": true,
+        "explicitReuseAuthorityRequired": true,
+        "fieldworkMidpointAsPublicationDateAccepted": false
+      }
+    }
+  ],
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "automaticPromotion": false,
+    "automaticGateOpening": false
+  }
+}
