@@ -146,23 +146,33 @@
       }
     },
     {
-      "id": "liberal-victoria-candidates",
-      "publisher": "Liberal Victoria",
-      "url": "https://vic.liberal.org.au/our-team/state/legislative-assembly",
+      "id": "labor-victoria-candidates",
+      "publisher": "Victorian Labor",
+      "url": "https://www.viclabor.org.au/our-team",
       "monitor": false,
       "critical": false,
       "promotionPolicy": "provisional-party-evidence-manual-review",
       "discovery": {
-        "enabled": false,
+        "enabled": true,
         "kind": "candidate",
-        "extractor": "liberal-victoria-team-pages",
+        "extractor": "labor-victoria-candidates",
         "candidateStatus": "endorsed",
-        "authority": "Liberal Victoria",
-        "urls": [
-          "https://vic.liberal.org.au/our-team/state/legislative-assembly",
-          "https://vic.liberal.org.au/our-team/state/legislative-council"
-        ],
-        "policy": "dedicated-source-extractor-quarantines-party-endorsed-candidates"
+        "authority": "Victorian Labor"
+      }
+    },
+    {
+      "id": "liberal-victoria-candidates",
+      "publisher": "Liberal Victoria",
+      "url": "https://vic.liberal.org.au/api/public/teams/?category=&totalPerPage=0&search=",
+      "monitor": false,
+      "critical": false,
+      "promotionPolicy": "provisional-party-evidence-manual-review",
+      "discovery": {
+        "enabled": true,
+        "kind": "candidate",
+        "extractor": "liberal-victoria-candidates",
+        "candidateStatus": "endorsed",
+        "authority": "Liberal Victoria"
       }
     }
   ]

@@ -9,6 +9,7 @@ const universe = loadContestUniverse(resolve(import.meta.dirname, ".."));
 test("canonicalises party shorthand for metropolitan Council regions", () => {
   const aliases = new Map([
     ["North-East Metro Region", "North-Eastern Metropolitan"],
+    ["North Eastern Metropolitan Region", "North-Eastern Metropolitan"],
     ["Northern Metro", "Northern Metropolitan"],
     ["South-East Metro", "South-Eastern Metropolitan"],
     ["Southern Metro", "Southern Metropolitan"],

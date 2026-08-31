@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "evidenceAsOf": "2026-08-30T18:05:00Z",
+  "evidenceAsOf": "2026-08-31T09:56:38.578Z",
   "policy": "Discovered party-announced candidates are durable quarantined evidence only. They require explicit identity, contest and endorsement review before entering the accepted candidate registry; only VEC evidence may confer official nomination status.",
   "automaticPromotion": false,
   "summary": {
-    "records": 104,
-    "assemblyContests": 73,
+    "records": 188,
+    "assemblyContests": 82,
     "assemblyDistrictsTotal": 88,
     "councilRegions": 8,
-    "sourceFamilies": 3
+    "sourceFamilies": 5
   },
   "records": [
     {
@@ -40,6 +40,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/tim-randall"
     },
     {
+      "id": "2f077361bff0778509131e0baa3783031ebef57e5da87e46f92106e07852e41d",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "05f18bfb0f3f1556dee33f772af274876989420edd86cc2432a71d851282c804",
+      "kind": "candidate",
+      "name": "Theo Zographos",
+      "contest": "Ashwood",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/theo-zographos"
+    },
+    {
       "id": "4bf30f19fa304d67d2f39b68c5e5c003e4a29c267f5f4eabb33fb043d087f046",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -52,6 +66,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/sophie-thorn"
+    },
+    {
+      "id": "6778369bc75d60e0e896ec0a782bb778667098b4577f40e46d3be80b7285ba47",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "258898dbc8973d132036a2711531f386a61b11a5e7ba2c74a0198c53b3628a14",
+      "kind": "candidate",
+      "name": "Chris Buckingham",
+      "contest": "Bass",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/chris-buckingham"
+    },
+    {
+      "id": "e0bf14561f67f2dc5035ed3725bbf3467e8a92dfcf4f69c31eafc2f6198bfd3c",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "3fd4bf187c330fca808894ccefee86d0a4a7079dd9c86a3efa5e32d258360223",
+      "kind": "candidate",
+      "name": "Rochelle Halstead",
+      "contest": "Bass",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/rochelle-halstead"
     },
     {
       "id": "b672c07c94c123e9fa120f80b5b3151c70adfbf536d456ffb9c38e8ae1e399d8",
@@ -68,6 +110,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/jess-kennedy"
     },
     {
+      "id": "bd8ae45fa387844c4ea57eb8fd5fd38efb67474618d2712b40aaef88969a87dc",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "2f6ebb95ad740e4a72dceea82933c14707dc45d664befcff44fd555196084fb4",
+      "kind": "candidate",
+      "name": "Julie Buxton",
+      "contest": "Bayswater",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/julie-buxton"
+    },
+    {
+      "id": "92082f8d7883429af563fb48586a810e281638f68773fb77dbdb0c952f6f039a",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "a7e22b1d8d1346f9345b3a2e4f0c791775c3f819bad749dc4398d8d77cbefb3e",
+      "kind": "candidate",
+      "name": "David Kitchen",
+      "contest": "Bayswater",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/david-kitchen"
+    },
+    {
       "id": "081b189e4717b1493b65c25939ca7d984802023a75b5b9d8493e35fe1b43edf2",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -82,6 +152,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/mitch-pope"
     },
     {
+      "id": "d1e67f8cd4600585d9d0fb1cddcba5ca74136a2f79ee42f9c839b4b7ac14a564",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "54b0b4dfeaf9f2ff7d80cc6c3c9e6d3fb8771119da6fb149b62cddc510c9c849",
+      "kind": "candidate",
+      "name": "Callum Whitehead",
+      "contest": "Bellarine",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/callum-whitehead"
+    },
+    {
       "id": "2e41f90f5f35d5b0e02e98176b81827d8dc299d53fdd304c1e57c011346a17f2",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -94,6 +178,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/graham-parton"
+    },
+    {
+      "id": "eaa7609e40faf57b30ef4f0573e781c3648d6a1c5259761c6ce8103db26b3e61",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "95b86b5a977f3293406ef3e97962db603bfefb73b94e48f1109f6f01fef70f03",
+      "kind": "candidate",
+      "name": "Steve Martin",
+      "contest": "Benambra",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/steve-martin"
     },
     {
       "id": "0968bd79d8e2ebc5d41363b40bed4cbd29263f5f9268f8796671d75b752f86cb",
@@ -152,6 +250,20 @@
       "sourceUrl": "https://vic.nationals.org.au/our-team/"
     },
     {
+      "id": "71378bbe1db7df22c0b39865692573b2e71dbe73edca30d2c367350ca4bda0ee",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "7f378d66f4e0a84b2ef0dd22621e6495fef9c34d021755f63cf76631db61d8f2",
+      "kind": "candidate",
+      "name": "Tynan Putt",
+      "contest": "Bentleigh",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/tynan-putt"
+    },
+    {
       "id": "ade12f2ebcc89229d483b7c2d770d0e9265f6aecd5fc2c1cf43203e3c3a80b2b",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -164,6 +276,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/roshan-de-silva"
+    },
+    {
+      "id": "5e0ef60eb13e2856c26d66f2950841e10a2444fc08d439f2434cc2c09d4b56eb",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "6d59f4ed07dec31602d1f7cc91bba2f9c7eb9fce50273f98e97dc3cbca84d6ed",
+      "kind": "candidate",
+      "name": "Rana Khan",
+      "contest": "Berwick",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/rana-khan"
     },
     {
       "id": "0c3b31816887cf79209c7e5bb0691cea5ddb0dc7be3510e18c2e1b66ad149478",
@@ -194,6 +320,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/aaron-qin"
     },
     {
+      "id": "a232ff96bc9de04f586715eea64abdddc3455c13e6863fdee4a95762cfe85c34",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "87dd84dc9cf2bfd5cb9391c505969d284c1f71ff87a89f9e41ad5cab17bf021a",
+      "kind": "candidate",
+      "name": "Sally Houguet",
+      "contest": "Box Hill",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/sally-houguet"
+    },
+    {
       "id": "8a62f6c70058411980e6f82afd7cf8fd8f8f8c3a4d2dd96a71bf2b367c7a1fae",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -206,6 +346,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/ebony-bain"
+    },
+    {
+      "id": "56d3931ea4302fa96288ab1eed28f60d7435099d800ca7266f4ff4857ac33c6f",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "7a2f0642e7ebed0354472355fe5cdaf85dc49ec899b9108c387e9e18e3f8cd3f",
+      "kind": "candidate",
+      "name": "Bridget Mullahy",
+      "contest": "Brighton",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/bridget-mullahy"
     },
     {
       "id": "39dec1035e16e9a5d8362d0493dd2b467332e92c3dbade8f13ae5959913cc230",
@@ -236,6 +390,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/adam-pulford"
     },
     {
+      "id": "d937b8a1260fe8ad47df4fcbf016ba0d486c91dc697933e1a165df093d471149",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "04b3a6594db734125f22a64d300ae2cdc8cd794507fe957cca434a60097ef17a",
+      "kind": "candidate",
+      "name": "Gabe Steger",
+      "contest": "Brunswick",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/gabe-steger"
+    },
+    {
       "id": "b23bc65555bead5ce9ab79c464af8af6b5d94adca388e78e9267f0eb7fe51d17",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -264,6 +432,48 @@
       "sourceUrl": "https://greens.org.au/vic/person/nina-laitala"
     },
     {
+      "id": "1073f1cb8ce4e56dfe61d122421501159e7893e014c7c334fdc7d049ff526b42",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "d8cb1f821663d1b77c766ed7f19ec6541a450658b01ae1d0672c42234892a585",
+      "kind": "candidate",
+      "name": "Chris Parr",
+      "contest": "Bundoora",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/chris-parr"
+    },
+    {
+      "id": "5e320fc357c933306724f149ecec737823cce98b58d9d97757e105eef6235eeb",
+      "sourceId": "greens-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "e876bb57fbf75b3f6724ef1ca1aa3d08dc24420f8961dfa99d5ef67723140502",
+      "kind": "candidate",
+      "name": "Zoe Pegrum",
+      "contest": "Carrum",
+      "party": "Australian Greens Victoria",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Australian Greens Victoria",
+      "sourceUrl": "https://greens.org.au/vic/person/zoe-pegrum"
+    },
+    {
+      "id": "e8b105d618f21027c071a597f906fbf94100527e60cf36f53a419220d07d2830",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ae026980d221f56661818fbfca3aa9391d93af586d7c173ef76e817bd5cb708f",
+      "kind": "candidate",
+      "name": "Jeff Shelley",
+      "contest": "Carrum",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/jeff-shelley"
+    },
+    {
       "id": "7a00e845f793b5ef391b381feb67678028042a108841900480fe8648161c09d1",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -276,6 +486,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/angel-dolejsi"
+    },
+    {
+      "id": "0afd55d8816065a9136db3ed9d73cf1a6cdb797b858ee5b5130cbc3186874dad",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "7c1bd640c1d4e2942ac586b91f69fd11d58c423b1f88a6437247b016aa97127f",
+      "kind": "candidate",
+      "name": "Mikaela Stafrace",
+      "contest": "Caulfield",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/mikaela-stafrace"
     },
     {
       "id": "aacb79c377391c7275b6c8d4e51cfbe2348acf6ad8717eb99321febc4b1c8509",
@@ -306,6 +530,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/annalise-mercer"
     },
     {
+      "id": "25bd245458b04cdc06305e34a6ebefd06b95b6687f62016597c4d6eb4f204ae7",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "e29d8520b3930b1257976459f9371939084db3fc33b1c5f0786520aae872af8c",
+      "kind": "candidate",
+      "name": "Gino Tripodi",
+      "contest": "Cranbourne",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/gino-tripodi"
+    },
+    {
       "id": "685507144175eb73f776acbf89d03835d306d2c999d2ec563be3be5148352120",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -320,6 +558,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/lini-fernando"
     },
     {
+      "id": "cfa17626d8f9d2c29f68b2060a8c0b3386ccfa5e313a09a0c4622cf2102ebd5e",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "bac639e236eb994d23d342683836a2999dbe0ba97f5418536010cbfd9f7612c7",
+      "kind": "candidate",
+      "name": "Richard Farr",
+      "contest": "Croydon",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/richard-farr"
+    },
+    {
+      "id": "2d8caa328d1422e0ffdde3c8758dba473d93a228e21bdaae53934a4ac448394d",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "1cad961fc84357f3bed67cc02a6a74a5ede7e00a3960986734e7a768b1da93bc",
+      "kind": "candidate",
+      "name": "Grant Hutchinson",
+      "contest": "Croydon",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/grant-hutchinson"
+    },
+    {
       "id": "5ff207f7a7e7cfa35380c47f57c52c6f9d1e2eb06de14a380d489cf2506fb451",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -332,6 +598,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/mat-morgan"
+    },
+    {
+      "id": "af2b058edc103a0db0e243c62cd8e33927c30bf61457a7c9ca3f7a4d14c94ebc",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "72e3045b00986e995d42ea1b3926da83491d80fbccd6ae7e878c6ed19973e205",
+      "kind": "candidate",
+      "name": "Matt Green",
+      "contest": "Eastern Victoria Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/matt-green"
     },
     {
       "id": "5ef0588774a46375d88e4445549d30475ed35673b73711036f4f3b866aa1286c",
@@ -362,6 +642,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/talia-gulpilil"
     },
     {
+      "id": "977a2354f529a4ce4658582c48540727ef220d3b67d849a80368650d2133d0f6",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "942e83b8d37f717235029a4c21268ff0026299236751527dfde3fa61f86587c1",
+      "kind": "candidate",
+      "name": "Kevin Gibson",
+      "contest": "Eildon",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/kevin-gibson"
+    },
+    {
       "id": "5dab717d5bd0fcf8398a13e2b50779ce2690cbd62c5b282a66b3f14ea656a346",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -374,6 +668,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/rachel-busbridge"
+    },
+    {
+      "id": "bf82ea4585f6bf5f694915cb1143f275f784dcd36d97c54a6cdb06e5d6fc7e46",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "aacd397fa00ddbefef96273782d33e7e13fad810121a4e4874fedc2718f21116",
+      "kind": "candidate",
+      "name": "Paul Byrnes",
+      "contest": "Eltham",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/paul-byrnes"
     },
     {
       "id": "5abaad773cbb0c296a90dd224d3ad8b90ebebd21e79a72ab0a5650907f9f2dcb",
@@ -404,6 +712,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/james-williams"
     },
     {
+      "id": "57370a6d9e83c97c14857fabccd69d57a32a2b05b826dce83f6f4bad7309c20d",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "1de45ecaf9a22ac499abf055a385ca499f0cb0371d1b8f2dc0f5e5bcd4a6ae54",
+      "kind": "candidate",
+      "name": "Kat Theodosis",
+      "contest": "Essendon",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/kat-theodosis"
+    },
+    {
+      "id": "6936ac4d3ad5759ad0d710561e594159425c535274b1c03f36d81d511ebb08da",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ebb75e0abbef39c40885aba2abcbbb245629d1d427f63dd33d17cd97688ff7ac",
+      "kind": "candidate",
+      "name": "Tommy Le Deux",
+      "contest": "Essendon",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/tommy-le-deux"
+    },
+    {
       "id": "1a46d67e26f8ed4bb9b56be40fdc055d3eb0ad2558743d9b89e90ce755db4e6a",
       "sourceId": "one-nation-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -430,6 +766,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/sam-mccoll"
+    },
+    {
+      "id": "6c1291415e48ec116a64367edde2933f5f35c282c32866688765b8b4b467aac1",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "424382d6f1d14fbd39c742a8eead3a3802413e534847c6b9de1d7698567a0e8e",
+      "kind": "candidate",
+      "name": "Emma Muir",
+      "contest": "Eureka",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/emma-muir"
     },
     {
       "id": "2b96c48da49c0b6ff89e958be0a85b05647234fb94b9ea62a1cf981a795f3345",
@@ -474,6 +824,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/andrew-henley"
     },
     {
+      "id": "9e97fec3125146d07f8fd2e7500e4fa63caade9129bc0cf24c2dc56f71848ffa",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "5d1addfeaa51ff39f681ba2ca669c560c4818b9c6a5cf795de48e3bcae879c16",
+      "kind": "candidate",
+      "name": "Analise Sherlock",
+      "contest": "Evelyn",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/analise-sherlock"
+    },
+    {
       "id": "0621f760ec5af311d13267082716f6a5f73d82da76b670e66064ec614bfa0d46",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -502,6 +866,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/katie-goulas"
     },
     {
+      "id": "c185d2c495d340317f9abc1a22f594a6dffd45c51a2a00f86a84c34c1341cf83",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "89c0bc414842ff81e66ca6a747ca44fd5f88299a2b69dad617bf8ae680ffb120",
+      "kind": "candidate",
+      "name": "Bree Ambry",
+      "contest": "Frankston",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/bree-ambry"
+    },
+    {
       "id": "23f95bf5f94d9867f71fb841c2b2f9bb2f07b2481ceaab1b8f085ba7321ac1e5",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -516,6 +894,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/emilie-flynn"
     },
     {
+      "id": "a43dff8084650cae9db0ced3334a4fc10b9427e74815354365d1b271877ad2db",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "20109afa92f84123cd8392669174703c168da50d68292aef5c89d433b5795eb8",
+      "kind": "candidate",
+      "name": "Andy Pobjoy",
+      "contest": "Geelong",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/andy-pobjoy"
+    },
+    {
       "id": "7d8d5be613e54c45086961107c7273e2a83f406895a98b1680a77f3849104324",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -528,6 +920,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/ash-munro"
+    },
+    {
+      "id": "4521b1f0f304648f37fead32d5f52d54d35f062d05229895f795ffa40de96259",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "3082033e2d3c1516b762e0d21393ce7d921570572aac479cf33f00e5321b7e80",
+      "kind": "candidate",
+      "name": "Sonny Stephens",
+      "contest": "Gippsland East",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/sonny-stephens"
     },
     {
       "id": "64cebc849248ab873edc9724499b00b47bc014fd47da2b2c09dc34710bfadadc",
@@ -572,6 +978,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/toyo-white"
     },
     {
+      "id": "40483ebc7435c9ebcf2f9244800f6118aa3723b4398da468022e08b9f916d0f2",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "dd7a00ddd2e71749840c3630417e9aa4472d5fbc3b35e2517ec00ad47861203d",
+      "kind": "candidate",
+      "name": "Jacky Sun",
+      "contest": "Glen Waverley",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/jacky-sun"
+    },
+    {
+      "id": "e7098aec6d2aa5b67c5741733da186916ea536f7a2e62beb0885ab535ba10c1f",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "b47c015915ccb2355418d7949189425e1304e0cef1dfcfa0b658a977cbd5c5b4",
+      "kind": "candidate",
+      "name": "Jim Overend",
+      "contest": "Greenvale",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/jim-overend"
+    },
+    {
       "id": "135d0d4c87556ca24600bf61759f1f50085d7f7a5b6b9f598973b212aff9a648",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -584,6 +1018,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/isaac-willoughby"
+    },
+    {
+      "id": "4468024e4be4134dd0d2bdbd34d3625a71b6dca79bec0dd91a50f9d4d1d1d7c7",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "7a982859334b6c9473640196b5441bc7b92694d982993abf8722c50138cde159",
+      "kind": "candidate",
+      "name": "Frank Schiefler",
+      "contest": "Hastings",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/frank-schiefler"
     },
     {
       "id": "9abb7037761cd22cae709dde65250989101a9c87da38131206085f91f7353dc8",
@@ -600,6 +1048,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/kylie-rocha"
     },
     {
+      "id": "2d5f96725defa5e48e1219d72b7cc1098929f544c92230b121513a4a15d74d43",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "9e20410cfe499cedd706c1d6d90d1c85d421df8872725c87b2f50215099d293d",
+      "kind": "candidate",
+      "name": "Clive Crosby",
+      "contest": "Hawthorn",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/clive-crosby"
+    },
+    {
       "id": "2e5cd98a4ad915216332cdd95115ec25cab8ddd0bacf81b4a79562730ccd3f47",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -614,6 +1076,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/nina-crawley"
     },
     {
+      "id": "e5824a65e0903a3ebfb27955b0af12d14ebefddaa9168f13a22f1e7fde3a86ba",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "a9d81b339a429a850d86e8a94d354277b3dd4358afe7c8d38d7d1b8e400f309d",
+      "kind": "candidate",
+      "name": "Oscar Lopez",
+      "contest": "Ivanhoe",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/oscar-lopez"
+    },
+    {
       "id": "643bfb7cdd7b886b1a6eb862af2ec416469acc8a123bb43d0d1fb513d1beb167",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -626,6 +1102,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/jackie-carter"
+    },
+    {
+      "id": "348853727460f4ee02af9b41f0d1e6f9b073ebf6f535525d0aa591e942a09026",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "a8e5d02959ac8ccb4302a5d167e93630f387d3495332a9b65949a56e11531b9b",
+      "kind": "candidate",
+      "name": "David Sun",
+      "contest": "Kew",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/david-sun"
     },
     {
       "id": "e2123127cc16838a3a4a99a742f99be49e740e092e01177ed93bb2777697ea8d",
@@ -670,6 +1160,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/lucy-nguyen"
     },
     {
+      "id": "2ea4ea2cc290480aab47afcd48313f4679d7a0f71d9cf123a403cc80e6538922",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "50a91b11741a23c1062840993169ac4b111c7e0be6506e0f2e2fa9c5a883128b",
+      "kind": "candidate",
+      "name": "Ghada Noune",
+      "contest": "Laverton",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/ghada-noune"
+    },
+    {
       "id": "dd8e9317a8c7a0b32854f2fc6deeb166f12b496c1dad2112621e46859a5e1a1e",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -682,6 +1186,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/marley-mcrae-mcleod"
+    },
+    {
+      "id": "705b23d45306b855ea916fb1d6e45cbe6adf7d24eb6b9a77f8a541ddc81bc1f4",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "9216fd6b34ec808209f861bcd75f2ddd9e2498821f7b8cf6da9ea4962a7ecaa3",
+      "kind": "candidate",
+      "name": "Annette Death",
+      "contest": "Macedon",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/annette-death"
+    },
+    {
+      "id": "1713ebbd0f625d5a7e5b11bcefc1ca08cf271e3e778898d6ff4982c866d87982",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "1818f13a8dda46b1ddeacf5b8d2b4411e13372a148dd637bbd0353666af31bd1",
+      "kind": "candidate",
+      "name": "Kate Kendall",
+      "contest": "Macedon",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/kate-kendall"
     },
     {
       "id": "cfaec146c60e6af5311d2f7ba69ef00e62b179f86bd5a1f95222fd0a1a0c9f23",
@@ -698,6 +1230,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/georgia-katsikis"
     },
     {
+      "id": "38d8d4842ebb3b2a2e1dd10c7a4f360d660ce39011512f0f61fbce94dd2eb68a",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "e318443312f0adf3bcaad3722dc3523cd949997d48dcbf3e345a09ca4dd74c8c",
+      "kind": "candidate",
+      "name": "Amelia Hamer",
+      "contest": "Malvern",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/amelia-hamer"
+    },
+    {
+      "id": "0fc0720aef3cd6eaf867989929a9bb9499150cb850d748f6d9459d38058e8a8e",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "6597bf01089d6ca1ec9f39d82442dfb74bf247fe7e858f9a708c70aabf186762",
+      "kind": "candidate",
+      "name": "Davydd Griffiths",
+      "contest": "Melbourne",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/davydd-griffiths"
+    },
+    {
       "id": "bcdf4aa006bd6dff7ecce61fe1b9df257227644267e9fec63ad65ad020004906",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -710,6 +1270,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/veronika-levchenkova"
+    },
+    {
+      "id": "19365b09352f08bd5a3fb7761b8680045349dfc378c9744d96026c4453cbd4e7",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ffa8cead72610c2f6976c9a9de796607bc412ad9d3c00cf534b3c64e7b64c76a",
+      "kind": "candidate",
+      "name": "Broden Borg",
+      "contest": "Melton",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/broden-borg"
+    },
+    {
+      "id": "d07eed09aae25d28dca79e662faee77bf12ceb71c5d8dd334da498616ed52e3c",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "da8d9e87abee199104b5e3fe3bd2660a12122683ef58b4f85fff1bbaa8078057",
+      "kind": "candidate",
+      "name": "Jarrod Bingham",
+      "contest": "Melton",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/jarrod-bingham"
     },
     {
       "id": "7f3b2a2dd52dd8ec444426f1f32a5202f19d11038a7b14da0597a25838a616f5",
@@ -740,6 +1328,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/katie-clements"
     },
     {
+      "id": "40ababb2e738bff9c28603cda59f9943018117831e9cf99782dd9d3a5e311246",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "e437dad0d61996b1352d5be5cfd8523a81e24b9e01938d9b1ce7a3f8e2d05480",
+      "kind": "candidate",
+      "name": "Elizabeth Nealy",
+      "contest": "Mill Park",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/elizabeth-nealy"
+    },
+    {
+      "id": "002792ecaaee8b8ca83c3e8566df20dd294edf7de8e71403a01d4b5285100ef0",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "6a160a45c192ff3ff74799e77589f84757f0040d8c03a9a8caf8596681ce1c8e",
+      "kind": "candidate",
+      "name": "Joel Drysdale",
+      "contest": "Mill Park",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/joel-drysdale"
+    },
+    {
       "id": "9a50743b96d70332cfe94c7ee9969f57472983fbb1eecb5a71bd8a6dc109080a",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -752,6 +1368,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/dr-merran-blair"
+    },
+    {
+      "id": "3d469dec3acc01e9540eb6bc5b4cc374d6da83553d03ddc0ce5e98dc4405a618",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "256916a54a5ae473ef0bc08e367128575fa871e813d1c70f36f2303c733b8a4f",
+      "kind": "candidate",
+      "name": "Clare Fitzmaurice",
+      "contest": "Monbulk",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/clare-fitzmaurice"
     },
     {
       "id": "743df27b828e36010052f8d016231f846acafe6771b5c2ae5974135a04a0f8d0",
@@ -768,6 +1398,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/alex-breskin"
     },
     {
+      "id": "abccc1b36a028981aad5e2280cc4324b9c6214e0b1009c9131b2fd171c974c40",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "a45ee0d32d177b8ac5ed5a80bc49d3b66735b2369af12ecd413e05c0ff93f4cd",
+      "kind": "candidate",
+      "name": "Paul O'Halloran",
+      "contest": "Mordialloc",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/paul-ohalloran"
+    },
+    {
       "id": "ae1162466bb5077d8719454bceac64e47d034aaefc16ea1f61debfa586d87168",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -782,6 +1426,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/rochelle-hine"
     },
     {
+      "id": "108a773ec6fe8e9d1541d44093c63efb5b1eb3feba35ec301c03001f2fe66fb8",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "bb0214b7f3a3ee1d173a8d2a4ef2b1c483579d607574efb75551daca8fa150e4",
+      "kind": "candidate",
+      "name": "Tracie Lund",
+      "contest": "Morwell",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/tracie-lund"
+    },
+    {
       "id": "a887ae2dbac0fb70d3b7612454704999fbbe5b70921dfad39990fa09f02d43b2",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -794,6 +1452,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/paul-schofield"
+    },
+    {
+      "id": "99adfb5664a6a473f50b6243278e09a31b73f51bbb29b0fb0e25c9e519206b8c",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ee147d251008897e32fa2ed9ad550bb5c9c9e6224b7e0a730ce644c471b920c2",
+      "kind": "candidate",
+      "name": "Charles Tran",
+      "contest": "Mulgrave",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/charles-tran"
     },
     {
       "id": "8cbd787700ff458bf8fdefe70ddb001d58623f585be0cedf7b5be54c68066c6a",
@@ -852,6 +1524,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/alyssa-weaver"
     },
     {
+      "id": "9b408014a219b5854dc6c188924fbc54de73a0ab64a701903a5bc23465b4f83a",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "df59bd634dd19e5b19e8c0fa2a42f8f39d99407181c46b607a9cf4db8f3f28e9",
+      "kind": "candidate",
+      "name": "Jannette Langley",
+      "contest": "Narracan",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/jannette-langley"
+    },
+    {
       "id": "55d182d79bd343056d87bea6168f3dfbec528c84ad9387201e960ef402d09aa7",
       "sourceId": "one-nation-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -892,6 +1578,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/jill-nambu"
+    },
+    {
+      "id": "13135d802dc8d809c91475122354bf7c34b0eac223bb015c741897f14e536612",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "1d23a97f32d77668b499697b19c231398b9b1edb9fccade40eb20710a984705f",
+      "kind": "candidate",
+      "name": "Stefan Koomen",
+      "contest": "Narre Warren South",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/stefan-koomen"
+    },
+    {
+      "id": "4126fbef40ad1d1b60c45a1da243bd6d4308029bf8776d9cb0d1fcd24daaa3d7",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "854a5f017c06eedfd1223ddd2fe17cc3045d0556580359ff509a7bc042f14053",
+      "kind": "candidate",
+      "name": "Norliah Peterson",
+      "contest": "Narre Warren South",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/norliah-peterson"
     },
     {
       "id": "efb97839de1a41e4fdf0f231ba743c7a79e3aee6aa4da168ead051fd8b1350fa",
@@ -936,6 +1650,34 @@
       "sourceUrl": "https://vic.onenation.org.au/darren-hercus"
     },
     {
+      "id": "129e563aae40b6a8097e59c4f65ce7b4a9061f8e8029f65a2ca55fff0025d5b7",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "44d67368ca8c370dabce469826d6e03f305685ff812fbe71fd484200833fee1f",
+      "kind": "candidate",
+      "name": "Samantha Byrne",
+      "contest": "Niddrie",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/samantha-byrne"
+    },
+    {
+      "id": "b4a899a21d77c00a1208f068d004a133187afc58a1c0acfef3ce551e7637a4ee",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "2a8160dc2ee347ced65f3ee48cc99353daa698f450858d0600d6c799f961c1b8",
+      "kind": "candidate",
+      "name": "John Pyrros",
+      "contest": "North Eastern Metropolitan Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/john-pyrros"
+    },
+    {
       "id": "b81b42b322ffc28580de07dae5cb46b228f1cff742f0c530cca4b51a9f6e47da",
       "sourceId": "one-nation-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -948,6 +1690,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "One Nation Victoria",
       "sourceUrl": "https://vic.onenation.org.au/natalie-adams"
+    },
+    {
+      "id": "059636941364641d20eb2bf193bc27fcb348e6e324cbfbb909570f13a159537d",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "0db272692a5811e098e5769341ac8960092bc6eaefe2c6773420f0dfc2122777",
+      "kind": "candidate",
+      "name": "Deirdre Diamante",
+      "contest": "North-Eastern Metropolitan Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/deirdre-diamante"
     },
     {
       "id": "0232a8a521ebdf5b14688469906cc64ff9e1e7c4afb40ff558f9e0d7cbfac717",
@@ -964,6 +1720,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/campbell-gome"
     },
     {
+      "id": "fb9e5c8155e654c5ebe2334d4ff76e6619572574cea7e5083b6e23d350a93e67",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "5ea103762e736e62fba063b2cbbe1279a626a13edae66f35da12a5af8638ce37",
+      "kind": "candidate",
+      "name": "Lynda Awad",
+      "contest": "Northcote",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/lynda-awad"
+    },
+    {
       "id": "2fb834e4fcab6de856c55eacccb7240c9f801f5e6784458ea15731176191d5e2",
       "sourceId": "one-nation-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -978,6 +1748,20 @@
       "sourceUrl": "https://vic.onenation.org.au/mark-nicholson"
     },
     {
+      "id": "9489875f5a06ce0b4dcb61612f99ad6959c677c60c7008ed8f3288d72a8b9e3a",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "bebae57716eae375aec3093f21a0a300c462a1f51bbb7b134d651417b2c44369",
+      "kind": "candidate",
+      "name": "Bernadette Khoury",
+      "contest": "Northern Metropolitan Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/bernadette-khoury"
+    },
+    {
       "id": "8bc0e56842a560e4e882471e68452da4ca38c19f62a3ba40360bf4ebd9c4cc6b",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -990,6 +1774,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/cate-sinclair"
+    },
+    {
+      "id": "c312cee26bd5f4de32fcdfc56939806564a49d43c21aa21cb997be926a99bb84",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "f474e1accc06ab1f54011a80279aafdf95e5441b11821336ba0d29743438bb60",
+      "kind": "candidate",
+      "name": "Amanda Millar",
+      "contest": "Northern Victoria Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/amanda-millar"
+    },
+    {
+      "id": "cf98183d61ca8c1b9851faf56d2a022a9e5c36e583680d717a9cc7c95a0569a3",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "2a5fc75888ec7294d864fcca61fda03b42d1337868960f3a29aea2461dbd7cbe",
+      "kind": "candidate",
+      "name": "Steve Brooks",
+      "contest": "Northern Victoria Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/steve-brooks"
     },
     {
       "id": "5057e462cca104aae9f036936bf8fa1606798a6d4f0921bcd40d008d52d87041",
@@ -1020,6 +1832,34 @@
       "sourceUrl": "https://greens.org.au/vic/person/hsiang-han-hsieh"
     },
     {
+      "id": "755bc7bd7f77100edc07b8b92f59ad0bceac7c9f8164ed561a0539ac03c5830c",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "43553e0599dea84d2eeccb0f3704a40cebe727fd3cf80dc4fbb1f6fa1c4b08c1",
+      "kind": "candidate",
+      "name": "Martin Jung",
+      "contest": "Oakleigh",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/martin-jung"
+    },
+    {
+      "id": "b14646cb6c8b1ed5708b9495ce2567e56dd49d678341fbb96529d2717d135594",
+      "sourceId": "greens-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "7aee5be5c64d19f62b5ff145c2a9c0f3ba13c9c90a3b0a1281cd4dfc70919dba",
+      "kind": "candidate",
+      "name": "Ben Gilbert",
+      "contest": "Ovens Valley",
+      "party": "Australian Greens Victoria",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Australian Greens Victoria",
+      "sourceUrl": "https://greens.org.au/vic/person/ben-gilbert"
+    },
+    {
       "id": "897f46546c55ec4264da25f72a84e0ee1664bf02a107658ad99966331ec36531",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1032,6 +1872,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/nasser-yawari"
+    },
+    {
+      "id": "f2db4954696dbea487910b329a02be6c89f058c9d1951ab66a50e9e5d1266484",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ef7e825b7ba5fc7e060f086f2e1215caa39e7222f9abf8f4a7bbc69102287a75",
+      "kind": "candidate",
+      "name": "Alessandra Soliven",
+      "contest": "Pakenham",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/alessandra-soliven"
+    },
+    {
+      "id": "00a488fb5d3b1b65ca542f943e4235764ca7f42249ca27e101c3770f64af6c9b",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "be05a83121bdb1271ed7914785d21ba1f0f90f2f7507bd0b5ee914caac8d3ac8",
+      "kind": "candidate",
+      "name": "Radmila Dyson",
+      "contest": "Pakenham",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/radmila-dyson"
     },
     {
       "id": "85b69a7181813ba0f7f66498d3c82bb3fe5c7005ee1816d6cdd565b831058c9c",
@@ -1090,6 +1958,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/jesse-holden"
     },
     {
+      "id": "5845acf57739ab811e80a0c86b226fc15f42db0cc681d0634fb0e715ce3d551f",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "aa8dcc43e4f92ae17c9a2fb9c0a38dbdd37e61178ad7719c74ec0acd3d75becf",
+      "kind": "candidate",
+      "name": "Hutch Hussein",
+      "contest": "Polwarth",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/hutch-hussein"
+    },
+    {
       "id": "bf8d55f43c52567da178f12526e06144c678c60a6a6772ceccdea33f04fcadc5",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1102,6 +1984,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/angelica-di-camillo"
+    },
+    {
+      "id": "cc683aaaf484c4ffcffbb841a9a3c36e874a6a2ae5e0bd8fa737cf68e4ed2e8b",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "41e74051e8ef49e27f24d23f71a4c837cf7faf88c899dc0d2136f2cc911b41b6",
+      "kind": "candidate",
+      "name": "Meghan Hopper",
+      "contest": "Prahran",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/meghan-hopper"
     },
     {
       "id": "a33ec5c9408e447cdfe95b3395e84985adfec906a568936b64881352a69e31f2",
@@ -1118,6 +2014,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/loki-sangarya"
     },
     {
+      "id": "1fb4acdbdd5302f8c78a0cb3cf24bd6f29e44567045f94c9b4c1769daadd12a5",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "0161208ba82d370437461f8bb86d5ae5448747746a70e440c6b0e44bdc489af7",
+      "kind": "candidate",
+      "name": "Sarah McKenzie",
+      "contest": "Richmond",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/sarah-mckenzie"
+    },
+    {
       "id": "0b3624ece0ed812ffa7c14f58ea42b368cb14716e9a9ff24567e81af483d8abb",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1132,6 +2042,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/amy-mills"
     },
     {
+      "id": "d0896d42ec908188047cece09e5f4779d3331ce7f5a953094a8d654fe2807b37",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "9a1d4e64a78d054f64a6ab4dc9d2e7aa28e5a29f0ad4d0e70ceb05a3202c3b18",
+      "kind": "candidate",
+      "name": "Rachel Halse",
+      "contest": "Ringwood",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/rachel-halse"
+    },
+    {
       "id": "8a6198d9c321a2cada9f686605a057a37605495a91872de19ec13071abac5fcc",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1144,6 +2068,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/tim-drylie"
+    },
+    {
+      "id": "fccd26db82d212a5220901aa858f4581cc9129098f168335e5cb008dd43c4e6e",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "5da0a37253647a1401b621bf6fd84e0a85c8f8347f5bb74400128121af3116e3",
+      "kind": "candidate",
+      "name": "Megan Read",
+      "contest": "Ripon",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/megan-read"
     },
     {
       "id": "98aa4058a984da4a378d2c694406b55cc8c91fad8ef4bd3fa36aa5beb8417d1f",
@@ -1174,6 +2112,34 @@
       "sourceUrl": "https://vic.nationals.org.au/our-team/"
     },
     {
+      "id": "562a793256ecd6bd05956af6c5bb7ef5d9034075228900ac0f9edc84aa6090ce",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "6ede135fa716b4a7e28c5942c0c51ad5443edd8609d9c0b75c76a2beb3874e8e",
+      "kind": "candidate",
+      "name": "Dr Muhammad Shahbaz",
+      "contest": "Rowville",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/muhammad-shahbaz"
+    },
+    {
+      "id": "edc3f2fa02ffef6e0b830b6e67cc597d4ca1e8cfaa27d2d78c93470b73f7bfa0",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "1393182e701aa179fe1c995e680186f61ae1c5dda9013aa8b1b3f181768fa240",
+      "kind": "candidate",
+      "name": "Max Williams",
+      "contest": "Rowville",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/max-williams"
+    },
+    {
       "id": "ff27cf3a5735dbc6f8b435880c91624289beca00a340ff4ae748dfdbf7fa7ee7",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1186,6 +2152,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/timon-fotakis"
+    },
+    {
+      "id": "21857721883bda963010e1199e11d20cf3788b8787c04ce3faf707b998030ee4",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ccd00ef3b3076440a8c4cc19a6e75bb38c8b8e19c0b3d3481925b95de43cb107",
+      "kind": "candidate",
+      "name": "Anastasia Sagris-Desmond",
+      "contest": "Sandringham",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/anastasia-sagris-desmond"
     },
     {
       "id": "6e88021be661cf2319d6bc59baf363dee3c012fdc6f347cc7044ec9b89d474a4",
@@ -1202,6 +2182,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/grace-verney"
     },
     {
+      "id": "ea8d6b2b4950a2d1c2fdced21c69166ab0689a286509a178a5d8d997d8188983",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "4b9ec9fb9ff6b688c7da857563ee2bc306d92ebb1c1e0364c4311670176f12aa",
+      "kind": "candidate",
+      "name": "Cayla Fin",
+      "contest": "Shepparton",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/cayla-fin"
+    },
+    {
       "id": "411b106d2cc3f6f036da8f0189f2feb860e7b7ef44498fbe495cef135dc7976e",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1214,6 +2208,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/izzy-scherrer"
+    },
+    {
+      "id": "784c7600e4f09afc0c63f677697b14a5e79aba5f15c9f2a936aa3b411a90a83a",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "4f692acd7f8f8c480809ee708d346328728fa3dec9a3453ffc79027a335fe336",
+      "kind": "candidate",
+      "name": "Rebecca Thistleton",
+      "contest": "South Barwon",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/rebecca-thistleton"
+    },
+    {
+      "id": "b4f6e84bd320ed805495b0ddd2a0c75947dc1e532c4dedec5e9d2d14c61b544f",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "81e4d5b48f70ca05c681000d971b62fe6fef028e5ca6493011114933f4d7d308",
+      "kind": "candidate",
+      "name": "Libby Pettit",
+      "contest": "South Barwon",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/libby-pettit"
     },
     {
       "id": "ae48c0001f751315ba8b5219d2dde795fe938e70b3e06f2f0a333b2a91e3be32",
@@ -1244,6 +2266,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/matthew-kirwan"
     },
     {
+      "id": "61dc2ec2469b3bdc123defd90cbe1e72e3f70d2a71d87943cd626fe7a747e7ea",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "0eed1fa6edae31e0e9d99db0a282dca2c09ec23236aaf2576e2630578986911c",
+      "kind": "candidate",
+      "name": "Phillip Pease",
+      "contest": "South-Eastern Metropolitan Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/phillip-pease"
+    },
+    {
       "id": "a9a1704ef6e4c930e18e0ac8a7f05be5e37ebe60637bb368c5ea81f3386488a0",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1256,6 +2292,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/silver-rose"
+    },
+    {
+      "id": "72f6d7fd9f7dd5c7c1613ae9c53fce3c88f7f72b890b00d909d64fc9bb4616a3",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "dfde0f0d3972f10624d674e7d51b140b5500d429149c933acc7fe35522e68209",
+      "kind": "candidate",
+      "name": "Andrew Govanstone",
+      "contest": "South-West Coast",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/andrew-govanstone"
     },
     {
       "id": "6063965375439e2f2b98162ada792a8215bdaa5e67b170c40c25c33acfeb717f",
@@ -1272,6 +2322,20 @@
       "sourceUrl": "https://vic.onenation.org.au/aaron-sanford"
     },
     {
+      "id": "583392df1f3c74ca82e0d68df3b7d5fd3101edb3831c0887f7dc0f15736f60bc",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "54b6871bd2672cad872013ebd112f80b10707de9304c05a1b85065116ebb6b44",
+      "kind": "candidate",
+      "name": "Xavier Boffa",
+      "contest": "Southern Metropolitan Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/xavier-boffa"
+    },
+    {
       "id": "62ef6d9989a78bc8963349544b0f75a39a96190947d7ead81a69810567d71805",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1284,6 +2348,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/bao-huynh"
+    },
+    {
+      "id": "55e2dc97230537471e28fb4f6aafc5a95ab56767e7183c1590e16dc122eb26ce",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "0b3804221521b39b2c447a48342c03e0f0df9650c087a0f76b703276d6fcb3e2",
+      "kind": "candidate",
+      "name": "Simmone Cottom",
+      "contest": "Sunbury",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/simmone-cottom"
     },
     {
       "id": "e3d7eb162bdcf113de8576b7c0128209e9d2c48e851c78e73d9e6a721ddb09e6",
@@ -1312,6 +2390,34 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/maggie-jane"
+    },
+    {
+      "id": "3a382500892b5740c9b7a58ba4b66bacac3ca981a4dfcc79c02524b439ad7d96",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "e6e6370332225dcd7a1663374e30f42cc9b553cca162afd01c5d95f6f127a242",
+      "kind": "candidate",
+      "name": "Uros Rasic",
+      "contest": "Sydenham",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/uros-rasic"
+    },
+    {
+      "id": "9e48347c5a929707ab6d5a5c2d6f2f3852fae9958a13ee9e392ebc8a9d094bb1",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "4a213526067b0d07396c9e067a8ef6e7b845a224b131f78f480190fed4acc2d9",
+      "kind": "candidate",
+      "name": "Nathalie Moussi",
+      "contest": "Sydenham",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/nathalie-moussi"
     },
     {
       "id": "5410972828a9d2f8d970743084646779c2438d0e7a9a99b6bad10c2bd747d770",
@@ -1370,6 +2476,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/tushar-kumar"
     },
     {
+      "id": "88c823786b09d7181040b1fe447c1f4966423808c400d790cc200b025557f363",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "98b4cfdf52e0ff30f312aacd4ab1443469e0f6cb1a3b6b9e7dec6ce5d497f45d",
+      "kind": "candidate",
+      "name": "Reece Clark",
+      "contest": "Werribee",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/reece-clark"
+    },
+    {
       "id": "e9458644848d15edc700c2622a168b24474e121fbc9c23b515d824690042c798",
       "sourceId": "one-nation-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1398,6 +2518,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/brittney-henderson"
     },
     {
+      "id": "139e4e96c77b545614000a3a527c6025a1dfc4f899db34a7157592002fae311d",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "bc8cbc4c083de582f16172e8bdbf023aaa742176abb663f1246bc6d4ad837cfa",
+      "kind": "candidate",
+      "name": "Roshena Campbell",
+      "contest": "Western Metropolitan Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/roshena-campbell"
+    },
+    {
       "id": "54d7bb018133375e819132a569e0899f1e4aeaee5dbe46133ddf117f663c9b20",
       "sourceId": "one-nation-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1410,6 +2544,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "One Nation Victoria",
       "sourceUrl": "https://vic.onenation.org.au/chris-burson"
+    },
+    {
+      "id": "aebf985575cb54ade8821fa79e41b1db691699a3288336874dfb54a011788a3e",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "c6449be35d74a61eef74ad8da793dc98d9398006328e58b430cd61d6b6a36c98",
+      "kind": "candidate",
+      "name": "Graham Watt",
+      "contest": "Western Victoria Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/graham-watt"
     },
     {
       "id": "94c9da666b00be0c747ea04ea02898093f7748e93f25a19b8d613f2627a7a91d",
@@ -1440,6 +2588,20 @@
       "sourceUrl": "https://greens.org.au/vic/person/ben-hocking"
     },
     {
+      "id": "40e0b9354503bdaf3a5c7a48f948a2c0818bde6883f6ce8a2d2e8045a4f835d3",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "d304d9053abee2766ddb43f411fe5d975ac67b56cb97aef40b47a79929f38b54",
+      "kind": "candidate",
+      "name": "Paul Lindemann",
+      "contest": "Williamstown",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/paul-lindemann"
+    },
+    {
       "id": "8e00a764d2ce3cc0dc111d619872b9940251382b6e681e929463cfe626df1206",
       "sourceId": "greens-victoria-candidates",
       "status": "quarantined-awaiting-review",
@@ -1452,6 +2614,20 @@
       "candidateStatus": "endorsed",
       "sourceAuthority": "Australian Greens Victoria",
       "sourceUrl": "https://greens.org.au/vic/person/gufran-mohammed"
+    },
+    {
+      "id": "783868b6f552bc4349ea6f748c68233e4189e3bdf47719d6877b2303f10b32ce",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "463f5a8170ff4b24811d31873d1d7d9f7c2c0f2b23fa4f5275d285da88a0acf9",
+      "kind": "candidate",
+      "name": "Amanda Dow",
+      "contest": "Yan Yean",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/amanda-dow"
     },
     {
       "id": "e66f1327ff6aded4fca8cca7b4df8b6641a2a6295e11017c979fd7dd98122529",
