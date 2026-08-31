@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "parliament-victoria-assembly-members",
+  "publisher": "Parliament of Victoria",
+  "authorityType": "official-current-members",
+  "landingPageUrl": "https://www.parliament.vic.gov.au/contacting-members/download-member-contacts/",
+  "csvUrl": "https://povwebsiteresourcestore.blob.core.windows.net/lists/assemblymembers.csv",
+  "house": "Legislative Assembly",
+  "expectedDistricts": 88,
+  "expectedCurrentMembers": {
+    "minimum": 80,
+    "maximum": 88
+  },
+  "policy": "incumbency-evidence-only-no-candidate-promotion",
+  "automaticPromotion": false
+}
