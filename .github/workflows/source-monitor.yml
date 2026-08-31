@@ -34,6 +34,9 @@ jobs:
       - name: Discover structured candidate and poll records
         if: always()
         run: node scripts/discover-live-source-records.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
+      - name: Discover Liberal Victoria candidates
+        if: always()
+        run: node scripts/discover-liberal-victoria-candidates.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
       - name: Discover DemosAU Victorian state polls
         if: always()
         run: node scripts/discover-demosau-victoria-polls.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
