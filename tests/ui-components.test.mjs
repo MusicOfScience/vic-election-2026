@@ -179,6 +179,18 @@ test("ships explicit fail-closed release gates", async () => {
   assert.match(html, /Experimental · gate closed/i);
 });
 
+test("renders the governed candidate review dossier without implying nomination", async () => {
+  const { CandidateReviewDossier } = await vite.ssrLoadModule(
+    "/app/candidate-review-dossier.tsx",
+  );
+  const html = renderToStaticMarkup(React.createElement(CandidateReviewDossier));
+
+  assert.match(html, /188 party-endorsed records are ready for a human evidence decision/i);
+  assert.match(html, /82\/88/);
+  assert.match(html, /Dandenong, Kalkallo, Lowan, Mornington, Thomastown, Warrandyte/);
+  assert.match(html, /would not make a candidate VEC-nominated/i);
+});
+
 test("generates the public poll series from the canonical model registry", async () => {
   const { pollSeries } = await vite.ssrLoadModule("/app/poll-data.generated.ts");
 
