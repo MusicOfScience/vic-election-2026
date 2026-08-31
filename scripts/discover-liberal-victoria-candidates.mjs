@@ -101,14 +101,24 @@ function recompute(report) {
   };
 }
 
+const MODERN_BROWSER_UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36";
+
 async function fetchPage(url) {
   const response = await fetch(url, {
-    headers: { "user-agent": "vic-election-forecast-discovery/1.0 (+https://github.com/MusicOfScience/vic-election-2026)" },
+    headers: {
+      "user-agent": MODERN_BROWSER_UA,
+      accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "accept-language": "en-AU,en;q=0.9",
+    },
     redirect: "follow",
     signal: AbortSignal.timeout(20_000),
   });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return { html: await response.text(), finalUrl: response.url };
+  const html = await response.text();
+  if (/This browser is no longer supported/i.test(clean(html)) && !/(?:Candidate|Liberal)\s+for\s+/i.test(clean(html))) {
+    throw new Error("compatibility shell returned instead of candidate roster");
+  }
+  return { html, finalUrl: response.url };
 }
 
 async function main() {
@@ -153,6 +163,7 @@ async function main() {
     extracted: uniqueExtracted.length,
     added,
     pagesScanned: urls.length,
+    retrievalProfile: "modern-browser-html",
     ...(errors.length ? { errors } : {}),
   });
   recompute(report);
