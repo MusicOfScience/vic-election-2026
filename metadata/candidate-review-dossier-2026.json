@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "generatedFromEvidenceAsOf": "2026-08-31T09:56:38.578Z",
+  "status": "recommendations-awaiting-human-decision",
+  "policy": "Evidence acceptance is a separate human decision from candidate-model use and from official VEC nomination status.",
+  "summary": {
+    "stagedRecords": 188,
+    "sourceFamilies": 5,
+    "recommendEvidenceAcceptance": 5,
+    "recordsRecommendedForAcceptance": 188,
+    "assemblyContests": 82,
+    "assemblyDistrictsTotal": 88,
+    "missingAssemblyContests": 6,
+    "councilRegions": 8,
+    "councilRegionsTotal": 8,
+    "duplicateIdentities": 0,
+    "unclassifiedContests": 0
+  },
+  "missingAssemblyContests": [
+    "Dandenong",
+    "Kalkallo",
+    "Lowan",
+    "Mornington",
+    "Thomastown",
+    "Warrandyte"
+  ],
+  "knownScopeGaps": [
+    "No accepted 2026 candidate evidence yet exists in the canonical registry.",
+    "Six Assembly districts have no discovered party-endorsed candidate record in the current five-source collection.",
+    "Credible independents, teals, retirements, defections and candidate replacements require a separately sourced contest-intelligence layer.",
+    "Only VEC evidence may confer nominated, withdrawn or result status after nominations open in November."
+  ],
+  "families": [
+    {
+      "authority": "Australian Greens Victoria",
+      "sourceIds": [
+        "greens-victoria-candidates"
+      ],
+      "sourceUrls": [
+        "https://greens.org.au/vic/candidates"
+      ],
+      "records": 78,
+      "assemblyContests": 74,
+      "councilRegions": 4,
+      "evidenceRecommendation": "accept-as-endorsed-evidence",
+      "rationale": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "requiredChecks": [
+        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    },
+    {
+      "authority": "Liberal Victoria",
+      "sourceIds": [
+        "liberal-victoria-candidates"
+      ],
+      "sourceUrls": [
+        "https://vic.liberal.org.au/api/public/teams/?category=&totalPerPage=0&search="
+      ],
+      "records": 51,
+      "assemblyContests": 41,
+      "councilRegions": 8,
+      "evidenceRecommendation": "accept-as-endorsed-evidence",
+      "rationale": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "requiredChecks": [
+        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    },
+    {
+      "authority": "One Nation Victoria",
+      "sourceIds": [
+        "one-nation-victoria-candidates"
+      ],
+      "sourceUrls": [
+        "https://vic.onenation.org.au/candidates"
+      ],
+      "records": 23,
+      "assemblyContests": 14,
+      "councilRegions": 8,
+      "evidenceRecommendation": "accept-as-endorsed-evidence",
+      "rationale": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "requiredChecks": [
+        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    },
+    {
+      "authority": "The Nationals Victoria",
+      "sourceIds": [
+        "nationals-victoria-candidates"
+      ],
+      "sourceUrls": [
+        "https://vic.nationals.org.au/our-team/"
+      ],
+      "records": 5,
+      "assemblyContests": 5,
+      "councilRegions": 0,
+      "evidenceRecommendation": "accept-as-endorsed-evidence",
+      "rationale": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
+      "requiredChecks": [
+        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    },
+    {
+      "authority": "Victorian Labor",
+      "sourceIds": [
+        "labor-victoria-candidates"
+      ],
+      "sourceUrls": [
+        "https://www.viclabor.org.au/our-team"
+      ],
+      "records": 31,
+      "assemblyContests": 31,
+      "councilRegions": 0,
+      "evidenceRecommendation": "accept-as-endorsed-evidence",
+      "rationale": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "requiredChecks": [
+        "Accept only as party-endorsed evidence; do not label the record an official nomination.",
+        "Preserve the cited source URL, evidence fingerprint and review date.",
+        "Reconcile replacements, withdrawals and official nominations against the VEC when published."
+      ]
+    }
+  ]
+}

@@ -19,6 +19,7 @@ import { pollSeries } from "./poll-data.generated";
 import { releaseReadiness } from "./release-readiness.generated";
 import { sourceProvenance } from "./source-provenance.generated";
 import { PollReviewDossier } from "./poll-review-dossier";
+import { CandidateReviewDossier } from "./candidate-review-dossier";
 
 type District = (typeof modelOutput.districts)[number];
 type Party = "ALP" | "LIB_NAT" | "ONP" | "GRN" | "OTH_IND";
@@ -381,6 +382,7 @@ export function DataSources() {
       <div className="release-finding" role="note"><ChartNoAxesCombined size={17} /><div><strong>Backtest evidence—not a proxy pass</strong><p>{releaseReadiness.findings.validationEvidence.label}. The existing four-cycle TPP ledger is valuable baseline evidence, but it cannot validate five-party votes, IRV final pairs, seat probabilities or the Council model.</p></div></div>
       <p className="release-policy"><strong>No automatic production publishing.</strong> {releaseReadiness.summary.passedRequiredGates}/{releaseReadiness.summary.requiredGateCount} required gates currently pass. Historical data being ready is not the same as the complete 2026 probability model being validated.</p>
     </section>
+    <CandidateReviewDossier />
     <PollReviewDossier />
     <section className="source-library">
       <div className="section-heading"><div><p className="eyebrow">Canonical source library</p><h3>What is used, why, and with what caveat</h3></div><Badge variant="outline">{sources.length} source groups</Badge></div>
