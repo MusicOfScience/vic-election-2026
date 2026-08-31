@@ -20,8 +20,12 @@ test("candidate dossier preserves the exact coverage gaps", () => {
   assert.deepEqual(dossier.missingAssemblyContests, ["Dandenong", "Kalkallo", "Lowan", "Mornington", "Thomastown", "Warrandyte"]);
 });
 
-test("candidate evidence acceptance remains separate from nomination and model use", () => {
-  assert.equal(dossier.status, "recommendations-awaiting-human-decision");
+test("candidate evidence approval remains separate from nomination and model use", () => {
+  assert.equal(dossier.status, "approved-as-endorsed-evidence");
+  assert.equal(dossier.summary.acceptedRecords, 188);
+  assert.equal(dossier.summary.acceptedAssemblyContests, 82);
+  assert.equal(dossier.decision.officialNomination, false);
+  assert.equal(dossier.decision.forecastUse, "excluded");
   assert.match(dossier.policy, /separate human decision/i);
   assert.ok(dossier.families.every((family) => family.evidenceRecommendation === "accept-as-endorsed-evidence"));
   assert.ok(dossier.families.every((family) => family.requiredChecks.some((check) => /official nomination/i.test(check))));

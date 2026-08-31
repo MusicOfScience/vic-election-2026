@@ -43,13 +43,15 @@ test("keeps newer staged polling separate from admitted model inputs", () => {
   assert.ok(readiness.summary.blockingGateIds.includes("modelInputFreshness"));
 });
 
-test("reports provisional candidate discovery without treating it as accepted coverage", () => {
+test("reports accepted candidate coverage without opening an incomplete gate", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
   assert.equal(readiness.findings.candidateDiscovery.records, 188);
+  assert.equal(readiness.findings.candidateDiscovery.acceptedRecords, 188);
+  assert.equal(readiness.findings.candidateDiscovery.status, "accepted-endorsed-evidence-incomplete-coverage");
   assert.equal(readiness.findings.candidateDiscovery.assemblyContests, 82);
   assert.equal(readiness.findings.candidateDiscovery.councilRegions, 8);
   assert.deepEqual(readiness.findings.candidateDiscovery.unclassifiedContests, []);
-  assert.equal(readiness.findings.candidateDiscovery.acceptedAssemblyContests, 0);
+  assert.equal(readiness.findings.candidateDiscovery.acceptedAssemblyContests, 82);
   assert.equal(readiness.findings.candidateDiscovery.automaticPromotion, false);
   assert.equal(readiness.findings.candidateDiscovery.sourceFamilies, 5);
   assert.equal(readiness.gates.candidateEvidence.passed, false);

@@ -8,7 +8,8 @@ import reviewDecisions from "../metadata/discovery-review-decisions.json" with {
 test("project-owner approval records every dossier recommendation", () => {
   assert.equal(approval.reviewerRole, "project-owner");
   assert.equal(approval.evidenceDecisions.length, 7);
-  assert.equal(reviewDecisions.decisions.length, 7);
+  const pollDecisions = reviewDecisions.decisions.filter((item) => item.kind === "poll");
+  assert.equal(pollDecisions.length, 7);
   assert.deepEqual(approval.evidenceDecisions.map((item) => item.decision), ["defer", "approve", "approve", "approve", "approve", "hold", "hold"]);
 });
 

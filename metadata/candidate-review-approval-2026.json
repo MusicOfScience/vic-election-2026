@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "approvedAt": "2026-08-31T12:00:00Z",
+  "reviewerRole": "project-owner",
+  "evidenceAsOf": "2026-08-31T09:56:38.578Z",
+  "scope": "Approval of the five official-party source-family recommendations in metadata/candidate-review-dossier-2026.json. Records enter the accepted candidate registry only as endorsed evidence; VEC nomination status and forecast use remain separate.",
+  "requiredAcceptedRecords": 188,
+  "familyDecisions": [
+    {
+      "authority": "Australian Greens Victoria",
+      "decision": "approve",
+      "acceptedStatus": "endorsed",
+      "officialNomination": false,
+      "forecastUse": "excluded"
+    },
+    {
+      "authority": "Liberal Victoria",
+      "decision": "approve",
+      "acceptedStatus": "endorsed",
+      "officialNomination": false,
+      "forecastUse": "excluded"
+    },
+    {
+      "authority": "One Nation Victoria",
+      "decision": "approve",
+      "acceptedStatus": "endorsed",
+      "officialNomination": false,
+      "forecastUse": "excluded"
+    },
+    {
+      "authority": "The Nationals Victoria",
+      "decision": "approve",
+      "acceptedStatus": "endorsed",
+      "officialNomination": false,
+      "forecastUse": "excluded"
+    },
+    {
+      "authority": "Victorian Labor",
+      "decision": "approve",
+      "acceptedStatus": "endorsed",
+      "officialNomination": false,
+      "forecastUse": "excluded"
+    }
+  ]
+}
+

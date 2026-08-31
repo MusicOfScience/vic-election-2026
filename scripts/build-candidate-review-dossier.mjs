@@ -21,6 +21,8 @@ function readJson(path) {
 
 function buildDossier() {
   const provisional = readJson("metadata/provisional-candidate-evidence-2026.json");
+  const accepted = readJson("metadata/candidates-2026.json");
+  const approval = readJson("metadata/candidate-review-approval-2026.json");
   const adapters = readJson("metadata/live-source-adapters.json");
   const universe = loadContestUniverse(root);
   const adapterById = new Map(adapters.adapters.map((adapter) => [adapter.id, adapter]));
@@ -30,6 +32,9 @@ function buildDossier() {
   const unclassified = classified.filter((item) => !item.contest).map((item) => item.record.contest);
   const identities = provisional.records.map((record) => `${record.contest}|${record.name}`.toLowerCase());
   const duplicateIdentities = identities.filter((identity, index) => identities.indexOf(identity) !== index);
+  const acceptedEvidenceIds = new Set((accepted.candidates ?? []).map((record) => record.evidenceId).filter(Boolean));
+  const acceptedClassified = (accepted.candidates ?? []).map((record) => ({ record, contest: classifyContest(record.contest, universe) }));
+  const acceptedAssemblyContests = new Set(acceptedClassified.filter((item) => item.contest?.chamber === "assembly").map((item) => item.contest.canonicalContest));
   const sourceAuthorities = [...new Set(provisional.records.map((record) => record.sourceAuthority))].sort();
   const families = sourceAuthorities.map((authority) => {
     const records = classified.filter((item) => item.record.sourceAuthority === authority);
@@ -55,16 +60,30 @@ function buildDossier() {
     };
   });
   const missingAssemblyContests = [...universe.assembly.values()].filter((contest) => !assemblyContests.has(contest));
+  const approvedFamilies = new Set((approval.familyDecisions ?? []).filter((item) => item.decision === "approve").map((item) => item.authority));
+  const fullyApproved = approval.evidenceAsOf === provisional.evidenceAsOf
+    && sourceAuthorities.every((authority) => approvedFamilies.has(authority))
+    && provisional.records.every((record) => acceptedEvidenceIds.has(record.id));
   return {
     schemaVersion: 1,
     generatedFromEvidenceAsOf: provisional.evidenceAsOf,
-    status: "recommendations-awaiting-human-decision",
+    status: fullyApproved ? "approved-as-endorsed-evidence" : "recommendations-awaiting-human-decision",
     policy: "Evidence acceptance is a separate human decision from candidate-model use and from official VEC nomination status.",
+    decision: fullyApproved ? {
+      approvedAt: approval.approvedAt,
+      reviewerRole: approval.reviewerRole,
+      acceptedRecords: provisional.records.length,
+      acceptedStatus: "endorsed",
+      forecastUse: "excluded",
+      officialNomination: false,
+    } : null,
     summary: {
       stagedRecords: provisional.records.length,
       sourceFamilies: families.length,
       recommendEvidenceAcceptance: families.filter((family) => family.evidenceRecommendation === "accept-as-endorsed-evidence").length,
       recordsRecommendedForAcceptance: families.filter((family) => family.evidenceRecommendation === "accept-as-endorsed-evidence").reduce((sum, family) => sum + family.records, 0),
+      acceptedRecords: provisional.records.filter((record) => acceptedEvidenceIds.has(record.id)).length,
+      acceptedAssemblyContests: acceptedAssemblyContests.size,
       assemblyContests: assemblyContests.size,
       assemblyDistrictsTotal: universe.assembly.size,
       missingAssemblyContests: missingAssemblyContests.length,
@@ -75,7 +94,9 @@ function buildDossier() {
     },
     missingAssemblyContests,
     knownScopeGaps: [
-      "No accepted 2026 candidate evidence yet exists in the canonical registry.",
+      fullyApproved
+        ? "Accepted endorsed evidence covers 82 Assembly districts; the candidate-evidence gate remains closed until all 88 are covered."
+        : "No accepted 2026 candidate evidence yet exists in the canonical registry.",
       "Six Assembly districts have no discovered party-endorsed candidate record in the current five-source collection.",
       "Credible independents, teals, retirements, defections and candidate replacements require a separately sourced contest-intelligence layer.",
       "Only VEC evidence may confer nominated, withdrawn or result status after nominations open in November.",

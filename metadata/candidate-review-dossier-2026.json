@@ -1,13 +1,23 @@
 {
   "schemaVersion": 1,
   "generatedFromEvidenceAsOf": "2026-08-31T09:56:38.578Z",
-  "status": "recommendations-awaiting-human-decision",
+  "status": "approved-as-endorsed-evidence",
   "policy": "Evidence acceptance is a separate human decision from candidate-model use and from official VEC nomination status.",
+  "decision": {
+    "approvedAt": "2026-08-31T12:00:00Z",
+    "reviewerRole": "project-owner",
+    "acceptedRecords": 188,
+    "acceptedStatus": "endorsed",
+    "forecastUse": "excluded",
+    "officialNomination": false
+  },
   "summary": {
     "stagedRecords": 188,
     "sourceFamilies": 5,
     "recommendEvidenceAcceptance": 5,
     "recordsRecommendedForAcceptance": 188,
+    "acceptedRecords": 188,
+    "acceptedAssemblyContests": 82,
     "assemblyContests": 82,
     "assemblyDistrictsTotal": 88,
     "missingAssemblyContests": 6,
@@ -25,7 +35,7 @@
     "Warrandyte"
   ],
   "knownScopeGaps": [
-    "No accepted 2026 candidate evidence yet exists in the canonical registry.",
+    "Accepted endorsed evidence covers 82 Assembly districts; the candidate-evidence gate remains closed until all 88 are covered.",
     "Six Assembly districts have no discovered party-endorsed candidate record in the current five-source collection.",
     "Credible independents, teals, retirements, defections and candidate replacements require a separately sourced contest-intelligence layer.",
     "Only VEC evidence may confer nominated, withdrawn or result status after nominations open in November."
