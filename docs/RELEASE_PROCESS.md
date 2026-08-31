@@ -46,4 +46,6 @@ Feature experiments are recorded separately. The demographic challenger failed i
 
 `model/config/historical-party-family-crosswalk.json` freezes the only five historical primary families accepted by the complete model: ALP, Coalition, Greens, One Nation and Other/Independent. Matching is exact after conservative whitespace and case normalisation. Unknown labels fail closed and require an evidence-backed adjudication; missing parties remain missing until non-contestation is verified, rather than being silently converted to zero. Every completed district import must map each formal vote exactly once and reconcile family totals to the official formal-vote total.
 
+`metadata/historical-source-acquisition-plan.json` records the two external requests with the greatest immediate value: complete machine-readable VEC Assembly primary results for 2010–2022, and provenance/licensing enrichment for the frozen 200-row polling candidate series. Copy-ready request text is maintained in `docs/HISTORICAL_SOURCE_REQUESTS.md`. Responses remain quarantined until every acceptance rule passes.
+
 If any required gate fails, retain the last valid forecast and do not publish new probabilities as production-ready.
