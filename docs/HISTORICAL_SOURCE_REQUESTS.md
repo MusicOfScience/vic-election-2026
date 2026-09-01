@@ -48,7 +48,7 @@ Hello VEC team,
 
 I am maintaining a reproducible, non-commercial research project examining Victorian state-election forecasting and historical model validation.
 
-After reviewing our supplied records and the VEC's public result pages and downloads, we identified the attached residual gaps in candidate-level Legislative Assembly first-preference results for the 2010, 2014, 2018 and 2022 elections.
+This template was retained only for audit history. No residual candidate-level Legislative Assembly first-preference gaps remain for the 2010, 2014, 2018 or 2022 elections, so this request must not be sent.
 
 Could you please provide, or direct me to, machine-readable records covering those specific gaps? CSV, XLSX or XLS would be ideal. Required fields are the election and district, candidate name, party or independent status, first-preference votes, district formal-vote total, source revision metadata and applicable reuse terms.
 
@@ -71,4 +71,3 @@ We have attempted to reconstruct the observations from original pollster and pub
 Until those points are resolved, our project treats the file only as a lead list and imports zero rows.
 
 Many thanks for maintaining the resource.
-

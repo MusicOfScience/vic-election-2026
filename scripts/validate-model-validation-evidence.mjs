@@ -226,6 +226,37 @@ export function validateModelValidationEvidence() {
     assert(region.elected_order.length === council.vacancies_per_region, `invalid elected set for ${region.region_name}`);
   }
 
+  const councilEvidence = readJson("metadata/vec-2014-2022-council-evidence-audit.json");
+  assert(councilEvidence.status === "partial-three-cycle-official-council-evidence", "Council evidence status is unexpected");
+  assert(councilEvidence.coverage.cycles.length === 3, "Council evidence must cover the 2014, 2018 and 2022 cycles");
+  assert(councilEvidence.coverage.regionCycleContests === 24, "expected 24 Council region-cycle contests");
+  assert(councilEvidence.coverage.regionsPerCycle === 8, "expected eight Council regions per harvested cycle");
+  assert(councilEvidence.coverage.candidateRows === 1185, "Council candidate-primary count is stale");
+  assert(councilEvidence.coverage.countEvents === 5066, "Council count-event total is stale");
+  assert(councilEvidence.coverage.countTotalRows === 268994, "Council count-total row count is stale");
+  assert(councilEvidence.coverage.electedCandidates === 120, "Council elected-member total is stale");
+  assert(councilEvidence.coverage.fingerprintedSources === 48, "Council source-manifest count is stale");
+  assert(Object.values(councilEvidence.acceptance).every(Boolean), "Council evidence acceptance checks must all pass");
+  assert(councilEvidence.regions.length === 24, "Council audit must contain one record per region-cycle contest");
+  for (const year of [2014, 2018, 2022]) {
+    const electionId = `vic_lc_${year}`;
+    const regions = councilEvidence.regions.filter((region) => region.electionId === electionId);
+    assert(regions.length === 8, `expected eight Council regions for ${year}`);
+    const primaries = parseCsv(readFileSync(resolve(root, `model/data/processed/vec_${year}_council_candidate_primaries.csv`), "utf8"));
+    assert(primaries.length === regions.reduce((sum, region) => sum + region.candidateRows, 0), `Council primary count differs for ${year}`);
+    assert(new Set(primaries.map((row) => row.region_id)).size === 8, `Council primary regions differ for ${year}`);
+    for (const region of regions) {
+      const rows = primaries.filter((row) => row.region_id === region.regionId);
+      assert(rows.reduce((sum, row) => sum + Number(row.first_preference_votes), 0) === region.formalVotes, `Council primaries do not reconcile for ${year} ${region.regionName}`);
+      assert(region.quota === Math.floor(region.formalVotes / 6) + 1, `Council quota does not reconcile for ${year} ${region.regionName}`);
+      assert(region.elected.length === 5, `Council elected set differs for ${year} ${region.regionName}`);
+    }
+    const countBuffer = gunzipSync(readFileSync(resolve(root, `model/data/processed/vec_${year}_council_preference_counts.csv.gz`)));
+    let newlines = 0;
+    for (const byte of countBuffer) if (byte === 10) newlines++;
+    assert(newlines - 1 === regions.reduce((sum, region) => sum + region.countTotalRows, 0), `Council count-total rows differ for ${year}`);
+  }
+
   const historicalConfigs = readJson("model/config/historical-validation-cycles.json");
   const expectedCycleDates = new Map([
     ["vic_la_2010", ["2010-11-27", "2010-11-26"]],
