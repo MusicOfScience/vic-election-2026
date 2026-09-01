@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-01",
+  "status": "complete-2014-2022-assembly-primary-evidence",
+  "authority": "Victorian Electoral Commission",
+  "cycles": {
+    "2014": {
+      "districts": 88,
+      "candidateRows": 545,
+      "familyRows": 440,
+      "generalElectionFormalVotes": 3355707,
+      "supplementaryFormalVotes": 0,
+      "allDistrictFormalVotes": 3355707
+    },
+    "2018": {
+      "districts": 88,
+      "candidateRows": 507,
+      "familyRows": 440,
+      "generalElectionFormalVotes": 3514474,
+      "supplementaryFormalVotes": 0,
+      "allDistrictFormalVotes": 3514474
+    },
+    "2022": {
+      "districts": 88,
+      "candidateRows": 742,
+      "familyRows": 440,
+      "generalElectionFormalVotes": 3617000,
+      "supplementaryFormalVotes": 37205,
+      "allDistrictFormalVotes": 3654205
+    }
+  },
+  "sourceManifest": "metadata/vec-historical-assembly-primary-source-manifest.csv",
+  "checks": {
+    "allDistrictsDiscovered": true,
+    "allCandidateTotalsReconciled": true,
+    "allFamilyTotalsReconciled": true,
+    "allPartyLabelsAdjudicated": true,
+    "mainElectionStatewideTotalsReconciled": true,
+    "narracanSupplementaryTotalReconciled": true,
+    "existing2022IndicativeOverlap": {
+      "rowsChecked": 323,
+      "districtsChecked": 39,
+      "mismatches": 0
+    }
+  },
+  "use": {
+    "historicalOutcomeScoring": "eligible",
+    "currentForecast": "excluded",
+    "historicalReplayInput": "outcome-only-not-pre-election-information",
+    "automaticGateOpening": false,
+    "productionAuthorisation": false
+  },
+  "outputs": [
+    {
+      "path": "model/data/processed/vec_2014_assembly_candidate_primaries.csv",
+      "sha256": "c85e014ff268f61448076736bcf4f862145caa476ed6c2c30233e28952cd3910",
+      "rows": 545
+    },
+    {
+      "path": "model/data/processed/vec_2014_assembly_family_primaries.csv",
+      "sha256": "d5de2156b503755293024e2ad1d84385bef535a730246505b910575bd2837475",
+      "rows": 440
+    },
+    {
+      "path": "model/data/processed/vec_2018_assembly_candidate_primaries.csv",
+      "sha256": "7d14a5e96c8c99aa28b44dbd5f15f992db27e1ad7bdbda65774dd438399c6668",
+      "rows": 507
+    },
+    {
+      "path": "model/data/processed/vec_2018_assembly_family_primaries.csv",
+      "sha256": "119b91f9cd49bb1ad0cca9c502ccb5a7f698653ca29b36359590c1537b9a7013",
+      "rows": 440
+    },
+    {
+      "path": "model/data/processed/vec_2022_assembly_candidate_primaries.csv",
+      "sha256": "2aeffd039842ee8366c7272458e34173379578a934312aa2e5e26696bb2f3d02",
+      "rows": 742
+    },
+    {
+      "path": "model/data/processed/vec_2022_assembly_family_primaries.csv",
+      "sha256": "ce955169d19eb015c2e3c60b24cd7a74a9771608ea689c13a1251c6e6a56414d",
+      "rows": 440
+    },
+    {
+      "path": "metadata/vec-historical-assembly-primary-source-manifest.csv",
+      "sha256": "aa47f31be9c072b4d2a104f167070741dfc8261888048a42ae4373d5f9f10912",
+      "rows": 267
+    }
+  ]
+}

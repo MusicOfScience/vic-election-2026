@@ -1,0 +1,441 @@
+election_id,district_name,district_id,contest,party_family,contest_status,candidate_count,first_preference_votes,formal_votes,district_reconciled
+vic_la_2018,Albert Park,albert-park,general-election,ALP,contested,1,17287,39858,True
+vic_la_2018,Albert Park,albert-park,general-election,Coalition,contested,1,12457,39858,True
+vic_la_2018,Albert Park,albert-park,general-election,Greens,contested,1,6601,39858,True
+vic_la_2018,Albert Park,albert-park,general-election,One Nation,verified_no_contest,0,0,39858,True
+vic_la_2018,Albert Park,albert-park,general-election,Other/Independent,contested,4,3513,39858,True
+vic_la_2018,Altona,altona,general-election,ALP,contested,1,24112,46906,True
+vic_la_2018,Altona,altona,general-election,Coalition,contested,1,11194,46906,True
+vic_la_2018,Altona,altona,general-election,Greens,contested,1,4217,46906,True
+vic_la_2018,Altona,altona,general-election,One Nation,verified_no_contest,0,0,46906,True
+vic_la_2018,Altona,altona,general-election,Other/Independent,contested,2,7383,46906,True
+vic_la_2018,Bass,bass,general-election,ALP,contested,1,19954,49589,True
+vic_la_2018,Bass,bass,general-election,Coalition,contested,1,20315,49589,True
+vic_la_2018,Bass,bass,general-election,Greens,contested,1,2821,49589,True
+vic_la_2018,Bass,bass,general-election,One Nation,verified_no_contest,0,0,49589,True
+vic_la_2018,Bass,bass,general-election,Other/Independent,contested,5,6499,49589,True
+vic_la_2018,Bayswater,bayswater,general-election,ALP,contested,1,15548,38126,True
+vic_la_2018,Bayswater,bayswater,general-election,Coalition,contested,1,17650,38126,True
+vic_la_2018,Bayswater,bayswater,general-election,Greens,contested,1,3228,38126,True
+vic_la_2018,Bayswater,bayswater,general-election,One Nation,verified_no_contest,0,0,38126,True
+vic_la_2018,Bayswater,bayswater,general-election,Other/Independent,contested,1,1700,38126,True
+vic_la_2018,Bellarine,bellarine,general-election,ALP,contested,1,21948,44013,True
+vic_la_2018,Bellarine,bellarine,general-election,Coalition,contested,1,15619,44013,True
+vic_la_2018,Bellarine,bellarine,general-election,Greens,contested,1,3957,44013,True
+vic_la_2018,Bellarine,bellarine,general-election,One Nation,verified_no_contest,0,0,44013,True
+vic_la_2018,Bellarine,bellarine,general-election,Other/Independent,contested,2,2489,44013,True
+vic_la_2018,Benambra,benambra,general-election,ALP,contested,1,7467,41435,True
+vic_la_2018,Benambra,benambra,general-election,Coalition,contested,1,16515,41435,True
+vic_la_2018,Benambra,benambra,general-election,Greens,contested,1,1565,41435,True
+vic_la_2018,Benambra,benambra,general-election,One Nation,verified_no_contest,0,0,41435,True
+vic_la_2018,Benambra,benambra,general-election,Other/Independent,contested,3,15888,41435,True
+vic_la_2018,Bendigo East,bendigo-east,general-election,ALP,contested,1,21693,43088,True
+vic_la_2018,Bendigo East,bendigo-east,general-election,Coalition,contested,2,15851,43088,True
+vic_la_2018,Bendigo East,bendigo-east,general-election,Greens,contested,1,3465,43088,True
+vic_la_2018,Bendigo East,bendigo-east,general-election,One Nation,verified_no_contest,0,0,43088,True
+vic_la_2018,Bendigo East,bendigo-east,general-election,Other/Independent,contested,2,2079,43088,True
+vic_la_2018,Bendigo West,bendigo-west,general-election,ALP,contested,1,21004,39276,True
+vic_la_2018,Bendigo West,bendigo-west,general-election,Coalition,contested,1,10641,39276,True
+vic_la_2018,Bendigo West,bendigo-west,general-election,Greens,contested,1,5127,39276,True
+vic_la_2018,Bendigo West,bendigo-west,general-election,One Nation,verified_no_contest,0,0,39276,True
+vic_la_2018,Bendigo West,bendigo-west,general-election,Other/Independent,contested,1,2504,39276,True
+vic_la_2018,Bentleigh,bentleigh,general-election,ALP,contested,1,18443,36739,True
+vic_la_2018,Bentleigh,bentleigh,general-election,Coalition,contested,1,12232,36739,True
+vic_la_2018,Bentleigh,bentleigh,general-election,Greens,contested,1,2763,36739,True
+vic_la_2018,Bentleigh,bentleigh,general-election,One Nation,verified_no_contest,0,0,36739,True
+vic_la_2018,Bentleigh,bentleigh,general-election,Other/Independent,contested,7,3301,36739,True
+vic_la_2018,Box Hill,box-hill,general-election,ALP,contested,1,15360,38351,True
+vic_la_2018,Box Hill,box-hill,general-election,Coalition,contested,1,17352,38351,True
+vic_la_2018,Box Hill,box-hill,general-election,Greens,contested,1,5639,38351,True
+vic_la_2018,Box Hill,box-hill,general-election,One Nation,verified_no_contest,0,0,38351,True
+vic_la_2018,Box Hill,box-hill,general-election,Other/Independent,verified_no_contest,0,0,38351,True
+vic_la_2018,Brighton,brighton,general-election,ALP,contested,1,12193,38759,True
+vic_la_2018,Brighton,brighton,general-election,Coalition,contested,1,17597,38759,True
+vic_la_2018,Brighton,brighton,general-election,Greens,contested,1,5854,38759,True
+vic_la_2018,Brighton,brighton,general-election,One Nation,verified_no_contest,0,0,38759,True
+vic_la_2018,Brighton,brighton,general-election,Other/Independent,contested,3,3115,38759,True
+vic_la_2018,Broadmeadows,broadmeadows,general-election,ALP,contested,1,22047,32287,True
+vic_la_2018,Broadmeadows,broadmeadows,general-election,Coalition,contested,1,5321,32287,True
+vic_la_2018,Broadmeadows,broadmeadows,general-election,Greens,contested,1,2612,32287,True
+vic_la_2018,Broadmeadows,broadmeadows,general-election,One Nation,verified_no_contest,0,0,32287,True
+vic_la_2018,Broadmeadows,broadmeadows,general-election,Other/Independent,contested,1,2307,32287,True
+vic_la_2018,Brunswick,brunswick,general-election,ALP,contested,1,16701,43927,True
+vic_la_2018,Brunswick,brunswick,general-election,Coalition,contested,1,4450,43927,True
+vic_la_2018,Brunswick,brunswick,general-election,Greens,contested,1,17599,43927,True
+vic_la_2018,Brunswick,brunswick,general-election,One Nation,verified_no_contest,0,0,43927,True
+vic_la_2018,Brunswick,brunswick,general-election,Other/Independent,contested,6,5177,43927,True
+vic_la_2018,Bulleen,bulleen,general-election,ALP,contested,1,13597,37257,True
+vic_la_2018,Bulleen,bulleen,general-election,Coalition,contested,1,19441,37257,True
+vic_la_2018,Bulleen,bulleen,general-election,Greens,contested,1,4219,37257,True
+vic_la_2018,Bulleen,bulleen,general-election,One Nation,verified_no_contest,0,0,37257,True
+vic_la_2018,Bulleen,bulleen,general-election,Other/Independent,verified_no_contest,0,0,37257,True
+vic_la_2018,Bundoora,bundoora,general-election,ALP,contested,1,19716,35098,True
+vic_la_2018,Bundoora,bundoora,general-election,Coalition,contested,1,9958,35098,True
+vic_la_2018,Bundoora,bundoora,general-election,Greens,contested,1,2790,35098,True
+vic_la_2018,Bundoora,bundoora,general-election,One Nation,verified_no_contest,0,0,35098,True
+vic_la_2018,Bundoora,bundoora,general-election,Other/Independent,contested,3,2634,35098,True
+vic_la_2018,Buninyong,buninyong,general-election,ALP,contested,1,18965,38594,True
+vic_la_2018,Buninyong,buninyong,general-election,Coalition,contested,1,11921,38594,True
+vic_la_2018,Buninyong,buninyong,general-election,Greens,contested,1,3542,38594,True
+vic_la_2018,Buninyong,buninyong,general-election,One Nation,verified_no_contest,0,0,38594,True
+vic_la_2018,Buninyong,buninyong,general-election,Other/Independent,contested,5,4166,38594,True
+vic_la_2018,Burwood,burwood,general-election,ALP,contested,1,14924,37767,True
+vic_la_2018,Burwood,burwood,general-election,Coalition,contested,1,16138,37767,True
+vic_la_2018,Burwood,burwood,general-election,Greens,contested,1,4604,37767,True
+vic_la_2018,Burwood,burwood,general-election,One Nation,verified_no_contest,0,0,37767,True
+vic_la_2018,Burwood,burwood,general-election,Other/Independent,contested,2,2101,37767,True
+vic_la_2018,Carrum,carrum,general-election,ALP,contested,1,21844,41420,True
+vic_la_2018,Carrum,carrum,general-election,Coalition,contested,1,13608,41420,True
+vic_la_2018,Carrum,carrum,general-election,Greens,contested,1,2432,41420,True
+vic_la_2018,Carrum,carrum,general-election,One Nation,verified_no_contest,0,0,41420,True
+vic_la_2018,Carrum,carrum,general-election,Other/Independent,contested,4,3536,41420,True
+vic_la_2018,Caulfield,caulfield,general-election,ALP,contested,1,13054,38120,True
+vic_la_2018,Caulfield,caulfield,general-election,Coalition,contested,1,17861,38120,True
+vic_la_2018,Caulfield,caulfield,general-election,Greens,contested,1,5387,38120,True
+vic_la_2018,Caulfield,caulfield,general-election,One Nation,verified_no_contest,0,0,38120,True
+vic_la_2018,Caulfield,caulfield,general-election,Other/Independent,contested,2,1818,38120,True
+vic_la_2018,Clarinda,clarinda,general-election,ALP,contested,1,20421,36761,True
+vic_la_2018,Clarinda,clarinda,general-election,Coalition,contested,1,9083,36761,True
+vic_la_2018,Clarinda,clarinda,general-election,Greens,contested,1,3870,36761,True
+vic_la_2018,Clarinda,clarinda,general-election,One Nation,verified_no_contest,0,0,36761,True
+vic_la_2018,Clarinda,clarinda,general-election,Other/Independent,contested,2,3387,36761,True
+vic_la_2018,Cranbourne,cranbourne,general-election,ALP,contested,1,25725,51158,True
+vic_la_2018,Cranbourne,cranbourne,general-election,Coalition,contested,1,16483,51158,True
+vic_la_2018,Cranbourne,cranbourne,general-election,Greens,contested,1,2008,51158,True
+vic_la_2018,Cranbourne,cranbourne,general-election,One Nation,verified_no_contest,0,0,51158,True
+vic_la_2018,Cranbourne,cranbourne,general-election,Other/Independent,contested,6,6942,51158,True
+vic_la_2018,Croydon,croydon,general-election,ALP,contested,1,14307,37746,True
+vic_la_2018,Croydon,croydon,general-election,Coalition,contested,1,18108,37746,True
+vic_la_2018,Croydon,croydon,general-election,Greens,contested,1,3468,37746,True
+vic_la_2018,Croydon,croydon,general-election,One Nation,verified_no_contest,0,0,37746,True
+vic_la_2018,Croydon,croydon,general-election,Other/Independent,contested,1,1863,37746,True
+vic_la_2018,Dandenong,dandenong,general-election,ALP,contested,1,21823,33064,True
+vic_la_2018,Dandenong,dandenong,general-election,Coalition,contested,1,7608,33064,True
+vic_la_2018,Dandenong,dandenong,general-election,Greens,contested,1,2483,33064,True
+vic_la_2018,Dandenong,dandenong,general-election,One Nation,verified_no_contest,0,0,33064,True
+vic_la_2018,Dandenong,dandenong,general-election,Other/Independent,contested,1,1150,33064,True
+vic_la_2018,Eildon,eildon,general-election,ALP,contested,1,13850,38715,True
+vic_la_2018,Eildon,eildon,general-election,Coalition,contested,1,18717,38715,True
+vic_la_2018,Eildon,eildon,general-election,Greens,contested,1,4035,38715,True
+vic_la_2018,Eildon,eildon,general-election,One Nation,verified_no_contest,0,0,38715,True
+vic_la_2018,Eildon,eildon,general-election,Other/Independent,contested,1,2113,38715,True
+vic_la_2018,Eltham,eltham,general-election,ALP,contested,1,19831,40292,True
+vic_la_2018,Eltham,eltham,general-election,Coalition,contested,1,15639,40292,True
+vic_la_2018,Eltham,eltham,general-election,Greens,contested,1,4208,40292,True
+vic_la_2018,Eltham,eltham,general-election,One Nation,verified_no_contest,0,0,40292,True
+vic_la_2018,Eltham,eltham,general-election,Other/Independent,contested,1,614,40292,True
+vic_la_2018,Essendon,essendon,general-election,ALP,contested,1,19173,41472,True
+vic_la_2018,Essendon,essendon,general-election,Coalition,contested,1,11414,41472,True
+vic_la_2018,Essendon,essendon,general-election,Greens,contested,1,6971,41472,True
+vic_la_2018,Essendon,essendon,general-election,One Nation,verified_no_contest,0,0,41472,True
+vic_la_2018,Essendon,essendon,general-election,Other/Independent,contested,3,3914,41472,True
+vic_la_2018,Euroa,euroa,general-election,ALP,contested,1,12003,41985,True
+vic_la_2018,Euroa,euroa,general-election,Coalition,contested,1,24749,41985,True
+vic_la_2018,Euroa,euroa,general-election,Greens,contested,1,2198,41985,True
+vic_la_2018,Euroa,euroa,general-election,One Nation,verified_no_contest,0,0,41985,True
+vic_la_2018,Euroa,euroa,general-election,Other/Independent,contested,1,3035,41985,True
+vic_la_2018,Evelyn,evelyn,general-election,ALP,contested,1,15166,37518,True
+vic_la_2018,Evelyn,evelyn,general-election,Coalition,contested,1,18566,37518,True
+vic_la_2018,Evelyn,evelyn,general-election,Greens,contested,1,3786,37518,True
+vic_la_2018,Evelyn,evelyn,general-election,One Nation,verified_no_contest,0,0,37518,True
+vic_la_2018,Evelyn,evelyn,general-election,Other/Independent,verified_no_contest,0,0,37518,True
+vic_la_2018,Ferntree Gully,ferntree-gully,general-election,ALP,contested,1,14618,35646,True
+vic_la_2018,Ferntree Gully,ferntree-gully,general-election,Coalition,contested,1,17614,35646,True
+vic_la_2018,Ferntree Gully,ferntree-gully,general-election,Greens,contested,1,3414,35646,True
+vic_la_2018,Ferntree Gully,ferntree-gully,general-election,One Nation,verified_no_contest,0,0,35646,True
+vic_la_2018,Ferntree Gully,ferntree-gully,general-election,Other/Independent,verified_no_contest,0,0,35646,True
+vic_la_2018,Footscray,footscray,general-election,ALP,contested,1,23877,41803,True
+vic_la_2018,Footscray,footscray,general-election,Coalition,contested,1,7753,41803,True
+vic_la_2018,Footscray,footscray,general-election,Greens,contested,1,6996,41803,True
+vic_la_2018,Footscray,footscray,general-election,One Nation,verified_no_contest,0,0,41803,True
+vic_la_2018,Footscray,footscray,general-election,Other/Independent,contested,1,3177,41803,True
+vic_la_2018,Forest Hill,forest-hill,general-election,ALP,contested,1,14164,34913,True
+vic_la_2018,Forest Hill,forest-hill,general-election,Coalition,contested,1,16970,34913,True
+vic_la_2018,Forest Hill,forest-hill,general-election,Greens,contested,1,3083,34913,True
+vic_la_2018,Forest Hill,forest-hill,general-election,One Nation,verified_no_contest,0,0,34913,True
+vic_la_2018,Forest Hill,forest-hill,general-election,Other/Independent,contested,1,696,34913,True
+vic_la_2018,Frankston,frankston,general-election,ALP,contested,1,16844,36734,True
+vic_la_2018,Frankston,frankston,general-election,Coalition,contested,1,12005,36734,True
+vic_la_2018,Frankston,frankston,general-election,Greens,contested,1,2781,36734,True
+vic_la_2018,Frankston,frankston,general-election,One Nation,verified_no_contest,0,0,36734,True
+vic_la_2018,Frankston,frankston,general-election,Other/Independent,contested,5,5104,36734,True
+vic_la_2018,Geelong,geelong,general-election,ALP,contested,1,16680,41316,True
+vic_la_2018,Geelong,geelong,general-election,Coalition,contested,1,8327,41316,True
+vic_la_2018,Geelong,geelong,general-election,Greens,contested,1,3922,41316,True
+vic_la_2018,Geelong,geelong,general-election,One Nation,verified_no_contest,0,0,41316,True
+vic_la_2018,Geelong,geelong,general-election,Other/Independent,contested,5,12387,41316,True
+vic_la_2018,Gembrook,gembrook,general-election,ALP,contested,1,18065,43934,True
+vic_la_2018,Gembrook,gembrook,general-election,Coalition,contested,1,21202,43934,True
+vic_la_2018,Gembrook,gembrook,general-election,Greens,contested,1,4667,43934,True
+vic_la_2018,Gembrook,gembrook,general-election,One Nation,verified_no_contest,0,0,43934,True
+vic_la_2018,Gembrook,gembrook,general-election,Other/Independent,verified_no_contest,0,0,43934,True
+vic_la_2018,Gippsland East,gippsland-east,general-election,ALP,contested,1,8589,39550,True
+vic_la_2018,Gippsland East,gippsland-east,general-election,Coalition,contested,1,22438,39550,True
+vic_la_2018,Gippsland East,gippsland-east,general-election,Greens,contested,1,2455,39550,True
+vic_la_2018,Gippsland East,gippsland-east,general-election,One Nation,verified_no_contest,0,0,39550,True
+vic_la_2018,Gippsland East,gippsland-east,general-election,Other/Independent,contested,4,6068,39550,True
+vic_la_2018,Gippsland South,gippsland-south,general-election,ALP,contested,1,10464,36850,True
+vic_la_2018,Gippsland South,gippsland-south,general-election,Coalition,contested,1,22813,36850,True
+vic_la_2018,Gippsland South,gippsland-south,general-election,Greens,contested,1,3573,36850,True
+vic_la_2018,Gippsland South,gippsland-south,general-election,One Nation,verified_no_contest,0,0,36850,True
+vic_la_2018,Gippsland South,gippsland-south,general-election,Other/Independent,verified_no_contest,0,0,36850,True
+vic_la_2018,Hastings,hastings,general-election,ALP,contested,1,16916,43968,True
+vic_la_2018,Hastings,hastings,general-election,Coalition,contested,1,20361,43968,True
+vic_la_2018,Hastings,hastings,general-election,Greens,contested,1,3811,43968,True
+vic_la_2018,Hastings,hastings,general-election,One Nation,verified_no_contest,0,0,43968,True
+vic_la_2018,Hastings,hastings,general-election,Other/Independent,contested,1,2880,43968,True
+vic_la_2018,Hawthorn,hawthorn,general-election,ALP,contested,1,12646,39256,True
+vic_la_2018,Hawthorn,hawthorn,general-election,Coalition,contested,1,17231,39256,True
+vic_la_2018,Hawthorn,hawthorn,general-election,Greens,contested,1,7167,39256,True
+vic_la_2018,Hawthorn,hawthorn,general-election,One Nation,verified_no_contest,0,0,39256,True
+vic_la_2018,Hawthorn,hawthorn,general-election,Other/Independent,contested,3,2212,39256,True
+vic_la_2018,Ivanhoe,ivanhoe,general-election,ALP,contested,1,18800,40475,True
+vic_la_2018,Ivanhoe,ivanhoe,general-election,Coalition,contested,1,13084,40475,True
+vic_la_2018,Ivanhoe,ivanhoe,general-election,Greens,contested,1,5962,40475,True
+vic_la_2018,Ivanhoe,ivanhoe,general-election,One Nation,verified_no_contest,0,0,40475,True
+vic_la_2018,Ivanhoe,ivanhoe,general-election,Other/Independent,contested,2,2629,40475,True
+vic_la_2018,Kew,kew,general-election,ALP,contested,1,11960,38769,True
+vic_la_2018,Kew,kew,general-election,Coalition,contested,1,19098,38769,True
+vic_la_2018,Kew,kew,general-election,Greens,contested,1,5961,38769,True
+vic_la_2018,Kew,kew,general-election,One Nation,verified_no_contest,0,0,38769,True
+vic_la_2018,Kew,kew,general-election,Other/Independent,contested,2,1750,38769,True
+vic_la_2018,Keysborough,keysborough,general-election,ALP,contested,1,20800,38089,True
+vic_la_2018,Keysborough,keysborough,general-election,Coalition,contested,1,10919,38089,True
+vic_la_2018,Keysborough,keysborough,general-election,Greens,contested,1,1882,38089,True
+vic_la_2018,Keysborough,keysborough,general-election,One Nation,verified_no_contest,0,0,38089,True
+vic_la_2018,Keysborough,keysborough,general-election,Other/Independent,contested,3,4488,38089,True
+vic_la_2018,Kororoit,kororoit,general-election,ALP,contested,1,26769,42148,True
+vic_la_2018,Kororoit,kororoit,general-election,Coalition,contested,1,8584,42148,True
+vic_la_2018,Kororoit,kororoit,general-election,Greens,contested,1,3615,42148,True
+vic_la_2018,Kororoit,kororoit,general-election,One Nation,verified_no_contest,0,0,42148,True
+vic_la_2018,Kororoit,kororoit,general-election,Other/Independent,contested,1,3180,42148,True
+vic_la_2018,Lara,lara,general-election,ALP,contested,1,22951,39624,True
+vic_la_2018,Lara,lara,general-election,Coalition,contested,1,9559,39624,True
+vic_la_2018,Lara,lara,general-election,Greens,contested,1,2966,39624,True
+vic_la_2018,Lara,lara,general-election,One Nation,verified_no_contest,0,0,39624,True
+vic_la_2018,Lara,lara,general-election,Other/Independent,contested,2,4148,39624,True
+vic_la_2018,Lowan,lowan,general-election,ALP,contested,1,7681,38187,True
+vic_la_2018,Lowan,lowan,general-election,Coalition,contested,1,25562,38187,True
+vic_la_2018,Lowan,lowan,general-election,Greens,contested,1,2040,38187,True
+vic_la_2018,Lowan,lowan,general-election,One Nation,verified_no_contest,0,0,38187,True
+vic_la_2018,Lowan,lowan,general-election,Other/Independent,contested,2,2904,38187,True
+vic_la_2018,Macedon,macedon,general-election,ALP,contested,1,19251,40133,True
+vic_la_2018,Macedon,macedon,general-election,Coalition,contested,1,12836,40133,True
+vic_la_2018,Macedon,macedon,general-election,Greens,contested,1,3936,40133,True
+vic_la_2018,Macedon,macedon,general-election,One Nation,verified_no_contest,0,0,40133,True
+vic_la_2018,Macedon,macedon,general-election,Other/Independent,contested,3,4110,40133,True
+vic_la_2018,Malvern,malvern,general-election,ALP,contested,1,11141,37080,True
+vic_la_2018,Malvern,malvern,general-election,Coalition,contested,1,19003,37080,True
+vic_la_2018,Malvern,malvern,general-election,Greens,contested,1,4659,37080,True
+vic_la_2018,Malvern,malvern,general-election,One Nation,verified_no_contest,0,0,37080,True
+vic_la_2018,Malvern,malvern,general-election,Other/Independent,contested,2,2277,37080,True
+vic_la_2018,Melbourne,melbourne,general-election,ALP,contested,1,14568,40557,True
+vic_la_2018,Melbourne,melbourne,general-election,Coalition,contested,1,6920,40557,True
+vic_la_2018,Melbourne,melbourne,general-election,Greens,contested,1,15755,40557,True
+vic_la_2018,Melbourne,melbourne,general-election,One Nation,verified_no_contest,0,0,40557,True
+vic_la_2018,Melbourne,melbourne,general-election,Other/Independent,contested,5,3314,40557,True
+vic_la_2018,Melton,melton,general-election,ALP,contested,1,14691,42055,True
+vic_la_2018,Melton,melton,general-election,Coalition,contested,1,7844,42055,True
+vic_la_2018,Melton,melton,general-election,Greens,contested,1,1980,42055,True
+vic_la_2018,Melton,melton,general-election,One Nation,verified_no_contest,0,0,42055,True
+vic_la_2018,Melton,melton,general-election,Other/Independent,contested,9,17540,42055,True
+vic_la_2018,Mildura,mildura,general-election,ALP,contested,1,6404,37207,True
+vic_la_2018,Mildura,mildura,general-election,Coalition,contested,1,14654,37207,True
+vic_la_2018,Mildura,mildura,general-election,Greens,contested,1,1414,37207,True
+vic_la_2018,Mildura,mildura,general-election,One Nation,verified_no_contest,0,0,37207,True
+vic_la_2018,Mildura,mildura,general-election,Other/Independent,contested,2,14735,37207,True
+vic_la_2018,Mill Park,mill-park,general-election,ALP,contested,1,24729,39433,True
+vic_la_2018,Mill Park,mill-park,general-election,Coalition,contested,1,8421,39433,True
+vic_la_2018,Mill Park,mill-park,general-election,Greens,contested,1,2088,39433,True
+vic_la_2018,Mill Park,mill-park,general-election,One Nation,verified_no_contest,0,0,39433,True
+vic_la_2018,Mill Park,mill-park,general-election,Other/Independent,contested,2,4195,39433,True
+vic_la_2018,Monbulk,monbulk,general-election,ALP,contested,1,15912,37988,True
+vic_la_2018,Monbulk,monbulk,general-election,Coalition,contested,1,13823,37988,True
+vic_la_2018,Monbulk,monbulk,general-election,Greens,contested,1,5826,37988,True
+vic_la_2018,Monbulk,monbulk,general-election,One Nation,verified_no_contest,0,0,37988,True
+vic_la_2018,Monbulk,monbulk,general-election,Other/Independent,contested,2,2427,37988,True
+vic_la_2018,Mordialloc,mordialloc,general-election,ALP,contested,1,19991,39859,True
+vic_la_2018,Mordialloc,mordialloc,general-election,Coalition,contested,1,12535,39859,True
+vic_la_2018,Mordialloc,mordialloc,general-election,Greens,contested,1,3135,39859,True
+vic_la_2018,Mordialloc,mordialloc,general-election,One Nation,verified_no_contest,0,0,39859,True
+vic_la_2018,Mordialloc,mordialloc,general-election,Other/Independent,contested,7,4198,39859,True
+vic_la_2018,Mornington,mornington,general-election,ALP,contested,1,14204,41435,True
+vic_la_2018,Mornington,mornington,general-election,Coalition,contested,1,20963,41435,True
+vic_la_2018,Mornington,mornington,general-election,Greens,contested,1,4060,41435,True
+vic_la_2018,Mornington,mornington,general-election,One Nation,verified_no_contest,0,0,41435,True
+vic_la_2018,Mornington,mornington,general-election,Other/Independent,contested,1,2208,41435,True
+vic_la_2018,Morwell,morwell,general-election,ALP,contested,1,13725,40142,True
+vic_la_2018,Morwell,morwell,general-election,Coalition,contested,2,9238,40142,True
+vic_la_2018,Morwell,morwell,general-election,Greens,contested,1,1460,40142,True
+vic_la_2018,Morwell,morwell,general-election,One Nation,verified_no_contest,0,0,40142,True
+vic_la_2018,Morwell,morwell,general-election,Other/Independent,contested,7,15719,40142,True
+vic_la_2018,Mount Waverley,mount-waverley,general-election,ALP,contested,1,14722,33661,True
+vic_la_2018,Mount Waverley,mount-waverley,general-election,Coalition,contested,1,15495,33661,True
+vic_la_2018,Mount Waverley,mount-waverley,general-election,Greens,contested,1,3444,33661,True
+vic_la_2018,Mount Waverley,mount-waverley,general-election,One Nation,verified_no_contest,0,0,33661,True
+vic_la_2018,Mount Waverley,mount-waverley,general-election,Other/Independent,verified_no_contest,0,0,33661,True
+vic_la_2018,Mulgrave,mulgrave,general-election,ALP,contested,1,19649,34634,True
+vic_la_2018,Mulgrave,mulgrave,general-election,Coalition,contested,1,11390,34634,True
+vic_la_2018,Mulgrave,mulgrave,general-election,Greens,contested,1,2154,34634,True
+vic_la_2018,Mulgrave,mulgrave,general-election,One Nation,verified_no_contest,0,0,34634,True
+vic_la_2018,Mulgrave,mulgrave,general-election,Other/Independent,contested,2,1441,34634,True
+vic_la_2018,Murray Plains,murray-plains,general-election,ALP,contested,1,7790,40168,True
+vic_la_2018,Murray Plains,murray-plains,general-election,Coalition,contested,1,24234,40168,True
+vic_la_2018,Murray Plains,murray-plains,general-election,Greens,contested,1,1706,40168,True
+vic_la_2018,Murray Plains,murray-plains,general-election,One Nation,verified_no_contest,0,0,40168,True
+vic_la_2018,Murray Plains,murray-plains,general-election,Other/Independent,contested,1,6438,40168,True
+vic_la_2018,Narracan,narracan,general-election,ALP,contested,1,15946,44870,True
+vic_la_2018,Narracan,narracan,general-election,Coalition,contested,1,23207,44870,True
+vic_la_2018,Narracan,narracan,general-election,Greens,contested,1,2679,44870,True
+vic_la_2018,Narracan,narracan,general-election,One Nation,verified_no_contest,0,0,44870,True
+vic_la_2018,Narracan,narracan,general-election,Other/Independent,contested,2,3038,44870,True
+vic_la_2018,Narre Warren North,narre-warren-north,general-election,ALP,contested,1,18790,37491,True
+vic_la_2018,Narre Warren North,narre-warren-north,general-election,Coalition,contested,1,13474,37491,True
+vic_la_2018,Narre Warren North,narre-warren-north,general-election,Greens,contested,1,2313,37491,True
+vic_la_2018,Narre Warren North,narre-warren-north,general-election,One Nation,verified_no_contest,0,0,37491,True
+vic_la_2018,Narre Warren North,narre-warren-north,general-election,Other/Independent,contested,2,2914,37491,True
+vic_la_2018,Narre Warren South,narre-warren-south,general-election,ALP,contested,1,20797,41650,True
+vic_la_2018,Narre Warren South,narre-warren-south,general-election,Coalition,contested,1,15822,41650,True
+vic_la_2018,Narre Warren South,narre-warren-south,general-election,Greens,contested,1,2714,41650,True
+vic_la_2018,Narre Warren South,narre-warren-south,general-election,One Nation,verified_no_contest,0,0,41650,True
+vic_la_2018,Narre Warren South,narre-warren-south,general-election,Other/Independent,contested,1,2317,41650,True
+vic_la_2018,Nepean,nepean,general-election,ALP,contested,1,15835,42257,True
+vic_la_2018,Nepean,nepean,general-election,Coalition,contested,1,18570,42257,True
+vic_la_2018,Nepean,nepean,general-election,Greens,contested,1,5080,42257,True
+vic_la_2018,Nepean,nepean,general-election,One Nation,verified_no_contest,0,0,42257,True
+vic_la_2018,Nepean,nepean,general-election,Other/Independent,contested,2,2772,42257,True
+vic_la_2018,Niddrie,niddrie,general-election,ALP,contested,1,21042,38407,True
+vic_la_2018,Niddrie,niddrie,general-election,Coalition,contested,1,13121,38407,True
+vic_la_2018,Niddrie,niddrie,general-election,Greens,contested,1,2629,38407,True
+vic_la_2018,Niddrie,niddrie,general-election,One Nation,verified_no_contest,0,0,38407,True
+vic_la_2018,Niddrie,niddrie,general-election,Other/Independent,contested,1,1615,38407,True
+vic_la_2018,Northcote,northcote,general-election,ALP,contested,1,17748,42552,True
+vic_la_2018,Northcote,northcote,general-election,Coalition,contested,1,4570,42552,True
+vic_la_2018,Northcote,northcote,general-election,Greens,contested,1,16816,42552,True
+vic_la_2018,Northcote,northcote,general-election,One Nation,verified_no_contest,0,0,42552,True
+vic_la_2018,Northcote,northcote,general-election,Other/Independent,contested,4,3418,42552,True
+vic_la_2018,Oakleigh,oakleigh,general-election,ALP,contested,1,19202,35847,True
+vic_la_2018,Oakleigh,oakleigh,general-election,Coalition,contested,1,10946,35847,True
+vic_la_2018,Oakleigh,oakleigh,general-election,Greens,contested,1,3897,35847,True
+vic_la_2018,Oakleigh,oakleigh,general-election,One Nation,verified_no_contest,0,0,35847,True
+vic_la_2018,Oakleigh,oakleigh,general-election,Other/Independent,contested,3,1802,35847,True
+vic_la_2018,Ovens Valley,ovens-valley,general-election,ALP,contested,1,7703,37437,True
+vic_la_2018,Ovens Valley,ovens-valley,general-election,Coalition,contested,1,16646,37437,True
+vic_la_2018,Ovens Valley,ovens-valley,general-election,Greens,contested,1,1687,37437,True
+vic_la_2018,Ovens Valley,ovens-valley,general-election,One Nation,verified_no_contest,0,0,37437,True
+vic_la_2018,Ovens Valley,ovens-valley,general-election,Other/Independent,contested,3,11401,37437,True
+vic_la_2018,Pascoe Vale,pascoe-vale,general-election,ALP,contested,1,15904,42140,True
+vic_la_2018,Pascoe Vale,pascoe-vale,general-election,Coalition,contested,1,4812,42140,True
+vic_la_2018,Pascoe Vale,pascoe-vale,general-election,Greens,contested,1,5451,42140,True
+vic_la_2018,Pascoe Vale,pascoe-vale,general-election,One Nation,verified_no_contest,0,0,42140,True
+vic_la_2018,Pascoe Vale,pascoe-vale,general-election,Other/Independent,contested,5,15973,42140,True
+vic_la_2018,Polwarth,polwarth,general-election,ALP,contested,1,13338,40340,True
+vic_la_2018,Polwarth,polwarth,general-election,Coalition,contested,1,20629,40340,True
+vic_la_2018,Polwarth,polwarth,general-election,Greens,contested,1,3949,40340,True
+vic_la_2018,Polwarth,polwarth,general-election,One Nation,verified_no_contest,0,0,40340,True
+vic_la_2018,Polwarth,polwarth,general-election,Other/Independent,contested,2,2424,40340,True
+vic_la_2018,Prahran,prahran,general-election,ALP,contested,1,11702,40422,True
+vic_la_2018,Prahran,prahran,general-election,Coalition,contested,1,13956,40422,True
+vic_la_2018,Prahran,prahran,general-election,Greens,contested,1,11347,40422,True
+vic_la_2018,Prahran,prahran,general-election,One Nation,verified_no_contest,0,0,40422,True
+vic_la_2018,Prahran,prahran,general-election,Other/Independent,contested,6,3417,40422,True
+vic_la_2018,Preston,preston,general-election,ALP,contested,1,19409,37346,True
+vic_la_2018,Preston,preston,general-election,Coalition,contested,1,6083,37346,True
+vic_la_2018,Preston,preston,general-election,Greens,contested,1,5636,37346,True
+vic_la_2018,Preston,preston,general-election,One Nation,verified_no_contest,0,0,37346,True
+vic_la_2018,Preston,preston,general-election,Other/Independent,contested,4,6218,37346,True
+vic_la_2018,Richmond,richmond,general-election,ALP,contested,1,19705,44394,True
+vic_la_2018,Richmond,richmond,general-election,Coalition,verified_no_contest,0,0,44394,True
+vic_la_2018,Richmond,richmond,general-election,Greens,contested,1,15197,44394,True
+vic_la_2018,Richmond,richmond,general-election,One Nation,verified_no_contest,0,0,44394,True
+vic_la_2018,Richmond,richmond,general-election,Other/Independent,contested,6,9492,44394,True
+vic_la_2018,Ringwood,ringwood,general-election,ALP,contested,1,15121,35930,True
+vic_la_2018,Ringwood,ringwood,general-election,Coalition,contested,1,15883,35930,True
+vic_la_2018,Ringwood,ringwood,general-election,Greens,contested,1,4926,35930,True
+vic_la_2018,Ringwood,ringwood,general-election,One Nation,verified_no_contest,0,0,35930,True
+vic_la_2018,Ringwood,ringwood,general-election,Other/Independent,verified_no_contest,0,0,35930,True
+vic_la_2018,Ripon,ripon,general-election,ALP,contested,1,15280,40055,True
+vic_la_2018,Ripon,ripon,general-election,Coalition,contested,1,15594,40055,True
+vic_la_2018,Ripon,ripon,general-election,Greens,contested,1,1667,40055,True
+vic_la_2018,Ripon,ripon,general-election,One Nation,verified_no_contest,0,0,40055,True
+vic_la_2018,Ripon,ripon,general-election,Other/Independent,contested,7,7514,40055,True
+vic_la_2018,Rowville,rowville,general-election,ALP,contested,1,11940,34832,True
+vic_la_2018,Rowville,rowville,general-election,Coalition,contested,1,17551,34832,True
+vic_la_2018,Rowville,rowville,general-election,Greens,contested,1,3483,34832,True
+vic_la_2018,Rowville,rowville,general-election,One Nation,verified_no_contest,0,0,34832,True
+vic_la_2018,Rowville,rowville,general-election,Other/Independent,contested,1,1858,34832,True
+vic_la_2018,Sandringham,sandringham,general-election,ALP,contested,1,12918,39274,True
+vic_la_2018,Sandringham,sandringham,general-election,Coalition,contested,1,16770,39274,True
+vic_la_2018,Sandringham,sandringham,general-election,Greens,contested,1,3201,39274,True
+vic_la_2018,Sandringham,sandringham,general-election,One Nation,verified_no_contest,0,0,39274,True
+vic_la_2018,Sandringham,sandringham,general-election,Other/Independent,contested,4,6385,39274,True
+vic_la_2018,Shepparton,shepparton,general-election,ALP,contested,1,4772,41290,True
+vic_la_2018,Shepparton,shepparton,general-election,Coalition,contested,2,16349,41290,True
+vic_la_2018,Shepparton,shepparton,general-election,Greens,contested,1,999,41290,True
+vic_la_2018,Shepparton,shepparton,general-election,One Nation,verified_no_contest,0,0,41290,True
+vic_la_2018,Shepparton,shepparton,general-election,Other/Independent,contested,2,19170,41290,True
+vic_la_2018,South Barwon,south-barwon,general-election,ALP,contested,1,18003,48334,True
+vic_la_2018,South Barwon,south-barwon,general-election,Coalition,contested,1,18180,48334,True
+vic_la_2018,South Barwon,south-barwon,general-election,Greens,contested,1,4164,48334,True
+vic_la_2018,South Barwon,south-barwon,general-election,One Nation,verified_no_contest,0,0,48334,True
+vic_la_2018,South Barwon,south-barwon,general-election,Other/Independent,contested,5,7987,48334,True
+vic_la_2018,South-West Coast,south-west-coast,general-election,ALP,contested,1,10074,41065,True
+vic_la_2018,South-West Coast,south-west-coast,general-election,Coalition,contested,1,13297,41065,True
+vic_la_2018,South-West Coast,south-west-coast,general-election,Greens,contested,1,2540,41065,True
+vic_la_2018,South-West Coast,south-west-coast,general-election,One Nation,verified_no_contest,0,0,41065,True
+vic_la_2018,South-West Coast,south-west-coast,general-election,Other/Independent,contested,6,15154,41065,True
+vic_la_2018,St Albans,st-albans,general-election,ALP,contested,1,22355,37464,True
+vic_la_2018,St Albans,st-albans,general-election,Coalition,contested,1,9116,37464,True
+vic_la_2018,St Albans,st-albans,general-election,Greens,contested,1,4600,37464,True
+vic_la_2018,St Albans,st-albans,general-election,One Nation,verified_no_contest,0,0,37464,True
+vic_la_2018,St Albans,st-albans,general-election,Other/Independent,contested,1,1393,37464,True
+vic_la_2018,Sunbury,sunbury,general-election,ALP,contested,1,22749,38955,True
+vic_la_2018,Sunbury,sunbury,general-election,Coalition,contested,1,13178,38955,True
+vic_la_2018,Sunbury,sunbury,general-election,Greens,contested,1,3028,38955,True
+vic_la_2018,Sunbury,sunbury,general-election,One Nation,verified_no_contest,0,0,38955,True
+vic_la_2018,Sunbury,sunbury,general-election,Other/Independent,verified_no_contest,0,0,38955,True
+vic_la_2018,Sydenham,sydenham,general-election,ALP,contested,1,26264,43101,True
+vic_la_2018,Sydenham,sydenham,general-election,Coalition,contested,1,12303,43101,True
+vic_la_2018,Sydenham,sydenham,general-election,Greens,contested,1,2754,43101,True
+vic_la_2018,Sydenham,sydenham,general-election,One Nation,verified_no_contest,0,0,43101,True
+vic_la_2018,Sydenham,sydenham,general-election,Other/Independent,contested,1,1780,43101,True
+vic_la_2018,Tarneit,tarneit,general-election,ALP,contested,1,25084,44635,True
+vic_la_2018,Tarneit,tarneit,general-election,Coalition,contested,1,11460,44635,True
+vic_la_2018,Tarneit,tarneit,general-election,Greens,contested,1,3398,44635,True
+vic_la_2018,Tarneit,tarneit,general-election,One Nation,verified_no_contest,0,0,44635,True
+vic_la_2018,Tarneit,tarneit,general-election,Other/Independent,contested,4,4693,44635,True
+vic_la_2018,Thomastown,thomastown,general-election,ALP,contested,1,21397,34685,True
+vic_la_2018,Thomastown,thomastown,general-election,Coalition,contested,1,5420,34685,True
+vic_la_2018,Thomastown,thomastown,general-election,Greens,contested,1,1474,34685,True
+vic_la_2018,Thomastown,thomastown,general-election,One Nation,verified_no_contest,0,0,34685,True
+vic_la_2018,Thomastown,thomastown,general-election,Other/Independent,contested,6,6394,34685,True
+vic_la_2018,Warrandyte,warrandyte,general-election,ALP,contested,1,13395,37884,True
+vic_la_2018,Warrandyte,warrandyte,general-election,Coalition,contested,1,18852,37884,True
+vic_la_2018,Warrandyte,warrandyte,general-election,Greens,contested,1,3927,37884,True
+vic_la_2018,Warrandyte,warrandyte,general-election,One Nation,verified_no_contest,0,0,37884,True
+vic_la_2018,Warrandyte,warrandyte,general-election,Other/Independent,contested,1,1710,37884,True
+vic_la_2018,Wendouree,wendouree,general-election,ALP,contested,1,18616,37691,True
+vic_la_2018,Wendouree,wendouree,general-election,Coalition,contested,1,13270,37691,True
+vic_la_2018,Wendouree,wendouree,general-election,Greens,contested,1,3647,37691,True
+vic_la_2018,Wendouree,wendouree,general-election,One Nation,verified_no_contest,0,0,37691,True
+vic_la_2018,Wendouree,wendouree,general-election,Other/Independent,contested,3,2158,37691,True
+vic_la_2018,Werribee,werribee,general-election,ALP,contested,1,17539,38622,True
+vic_la_2018,Werribee,werribee,general-election,Coalition,contested,1,6641,38622,True
+vic_la_2018,Werribee,werribee,general-election,Greens,contested,1,2522,38622,True
+vic_la_2018,Werribee,werribee,general-election,One Nation,verified_no_contest,0,0,38622,True
+vic_la_2018,Werribee,werribee,general-election,Other/Independent,contested,5,11920,38622,True
+vic_la_2018,Williamstown,williamstown,general-election,ALP,contested,1,21839,43370,True
+vic_la_2018,Williamstown,williamstown,general-election,Coalition,contested,1,7832,43370,True
+vic_la_2018,Williamstown,williamstown,general-election,Greens,contested,1,6960,43370,True
+vic_la_2018,Williamstown,williamstown,general-election,One Nation,verified_no_contest,0,0,43370,True
+vic_la_2018,Williamstown,williamstown,general-election,Other/Independent,contested,3,6739,43370,True
+vic_la_2018,Yan Yean,yan-yean,general-election,ALP,contested,1,26717,49204,True
+vic_la_2018,Yan Yean,yan-yean,general-election,Coalition,contested,1,13324,49204,True
+vic_la_2018,Yan Yean,yan-yean,general-election,Greens,contested,1,3354,49204,True
+vic_la_2018,Yan Yean,yan-yean,general-election,One Nation,verified_no_contest,0,0,49204,True
+vic_la_2018,Yan Yean,yan-yean,general-election,Other/Independent,contested,5,5809,49204,True
+vic_la_2018,Yuroke,yuroke,general-election,ALP,contested,1,28519,47995,True
+vic_la_2018,Yuroke,yuroke,general-election,Coalition,contested,1,12692,47995,True
+vic_la_2018,Yuroke,yuroke,general-election,Greens,contested,1,3070,47995,True
+vic_la_2018,Yuroke,yuroke,general-election,One Nation,verified_no_contest,0,0,47995,True
+vic_la_2018,Yuroke,yuroke,general-election,Other/Independent,contested,2,3714,47995,True

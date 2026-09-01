@@ -1,25 +1,22 @@
 {
   "schemaVersion": 2,
   "reviewedAt": "2026-09-01",
-  "status": "public-source-reconstruction-first",
+  "status": "assembly-primary-harvest-complete-residual-reconstruction-continues",
   "policy": "Supplied checkpoints and public first-party sources must be exhausted before external contact. Any acquired material remains quarantined until provenance, structure, reconciliation and licensing checks pass.",
   "publicSourceAudit": {
     "path": "metadata/historical-public-source-audit.json",
-    "status": "public-source-reconstruction-required"
+    "status": "assembly-primary-public-harvest-complete"
   },
   "userActionRequired": false,
   "requests": [
     {
       "id": "vec-legislative-assembly-primaries-2010-2022",
-      "status": "deferred-pending-public-harvest",
+      "status": "not-required-public-harvest-complete",
       "priority": 1,
       "recipient": "Victorian Electoral Commission",
       "contactRoute": "https://www.vec.vic.gov.au/about-us/contact-us",
       "userActionRequired": false,
-      "blockedComponents": [
-        "district-primary-votes-and-party-crosswalk",
-        "ballot-and-contest-slates"
-      ],
+      "blockedComponents": [],
       "preContactWork": [
         "audit-supplied-project-checkpoints",
         "harvest-public-vec-district-pages-and-spreadsheets",
@@ -36,22 +33,29 @@
         {
           "id": "vic_la_2014",
           "requiredDistricts": 88,
-          "auditedDistricts": 0
+          "auditedDistricts": 88,
+          "candidateRows": 545,
+          "status": "complete-from-public-official-pages"
         },
         {
           "id": "vic_la_2018",
           "requiredDistricts": 88,
-          "auditedDistricts": 0
+          "auditedDistricts": 88,
+          "candidateRows": 507,
+          "status": "complete-from-public-official-pages"
         },
         {
           "id": "vic_la_2022",
           "requiredDistricts": 88,
-          "auditedDistricts": 39
+          "auditedDistricts": 88,
+          "candidateRows": 742,
+          "status": "complete-from-public-official-pages-including-narracan-supplementary"
         }
       ],
       "publishedAvailability": {
         "resultIndexUrl": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results",
-        "listed2022Districts": 88,
+        "listed2022GeneralElectionDistricts": 87,
+        "narracanSupplementaryDistricts": 1,
         "candidateFirstPreferenceTablesAvailable": true,
         "perDistrictPrimaryExcelLinksAvailable": true,
         "indicativePreferenceDistributionDistricts": 39,
@@ -63,7 +67,7 @@
           "candidateRows": 502
         }
       },
-      "contactTrigger": "residual-gaps-confirmed-after-public-harvest",
+      "contactTrigger": null,
       "requiredFields": [
         "electionId",
         "electionDate",

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "reviewedAt": "2026-09-01",
-  "status": "public-source-reconstruction-required",
-  "decision": "Do not send external source requests until supplied checkpoints and public first-party sources have been exhausted and a residual-gap report exists.",
+  "status": "assembly-primary-public-harvest-complete",
+  "decision": "The public first-party harvest completes 2010-2022 Assembly primary outcomes, so no VEC request is required for this component; residual reconstruction continues for other validation components.",
   "userActionRequired": false,
   "sources": [
     {
@@ -25,27 +25,32 @@
             },
             {
               "id": "vic_la_2014",
-              "districts": 0,
-              "candidateRows": 0,
-              "status": "not-processed"
+              "districts": 88,
+              "candidateRows": 545,
+              "status": "complete"
             },
             {
               "id": "vic_la_2018",
-              "districts": 0,
-              "candidateRows": 0,
-              "status": "not-processed"
+              "districts": 88,
+              "candidateRows": 507,
+              "status": "complete"
             },
             {
               "id": "vic_la_2022",
-              "districts": 39,
-              "candidateRows": 323,
-              "status": "partial"
+              "districts": 88,
+              "candidateRows": 742,
+              "status": "complete"
             }
-          ]
+          ],
+          "districtCycleContests": 352,
+          "candidateRows": 2296,
+          "familyRows": 1760,
+          "status": "complete"
         },
         "public2022DistrictIndex": {
           "url": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results",
-          "districtsListed": 88,
+          "generalElectionDistrictsListed": 87,
+          "narracanSupplementaryDistricts": 1,
           "candidateFirstPreferenceTablesAvailable": true,
           "perDistrictPrimaryExcelLinksAvailable": true
         },
@@ -69,12 +74,23 @@
           "familyRows": 440,
           "statewideFormalVotes": 3164729,
           "auditPath": "metadata/vec-2010-assembly-primary-audit.json"
+        },
+        "public2014To2022Harvest": {
+          "status": "complete",
+          "districtCycleContests": 264,
+          "candidateRows": 1794,
+          "familyRows": 1320,
+          "sourceManifest": "metadata/vec-historical-assembly-primary-source-manifest.csv",
+          "auditPath": "metadata/vec-2014-2022-assembly-primary-audit.json",
+          "existing2022IndicativeOverlapRows": 323,
+          "existing2022IndicativeOverlapDistricts": 39,
+          "overlapMismatches": 0
         }
       },
-      "nextAction": "harvest-public-2014-and-2018-results-and-complete-2022-district-primaries",
+      "nextAction": "retain-complete-primary-outcomes-as-scoring-only-evidence-and-continue-residual-component-reconstruction",
       "externalContact": {
-        "status": "deferred",
-        "trigger": "Only after a machine-readable residual-gap report identifies records unavailable from supplied or public first-party sources."
+        "status": "not-required",
+        "trigger": null
       }
     },
     {
