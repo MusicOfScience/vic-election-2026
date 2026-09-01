@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-31",
+  "status": "public-source-reconstruction-required",
+  "decision": "Do not send external source requests until supplied checkpoints and public first-party sources have been exhausted and a residual-gap report exists.",
+  "userActionRequired": false,
+  "sources": [
+    {
+      "id": "vec-historical-assembly-results",
+      "authority": "Victorian Electoral Commission",
+      "suppliedMaterialStatus": "substantial-official-material-already-incorporated",
+      "findings": {
+        "fourCycleTppOutcomes": {
+          "status": "complete",
+          "boundaryAlignedRows": 340
+        },
+        "processedCandidatePrimaryEvidence": {
+          "semantics": "Audit-ready processed coverage, not a count of files supplied by the project owner.",
+          "cycles": [
+            {
+              "id": "vic_la_2010",
+              "districts": 0
+            },
+            {
+              "id": "vic_la_2014",
+              "districts": 0
+            },
+            {
+              "id": "vic_la_2018",
+              "districts": 0
+            },
+            {
+              "id": "vic_la_2022",
+              "districts": 39
+            }
+          ]
+        },
+        "public2022DistrictIndex": {
+          "url": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results",
+          "districtsListed": 88,
+          "candidateFirstPreferenceTablesAvailable": true,
+          "perDistrictPrimaryExcelLinksAvailable": true
+        },
+        "publicIndicativePreferenceDistributions": {
+          "url": "https://www.vec.vic.gov.au/results/electoral-statistics/state-election-statistics/full-preference-distributions",
+          "districts": 39,
+          "semantics": "These 39 distributions are distinct from complete 2022 candidate-primary availability."
+        },
+        "historicalResultLandingPages": [
+          "https://www.vec.vic.gov.au/results/state-election-results/2010-state-election",
+          "https://www.vec.vic.gov.au/results/state-election-results/2014-state-election",
+          "https://www.vec.vic.gov.au/results/state-election-results/2018-state-election"
+        ]
+      },
+      "nextAction": "harvest-supplied-checkpoints-and-public-first-party-files",
+      "externalContact": {
+        "status": "deferred",
+        "trigger": "Only after a machine-readable residual-gap report identifies records unavailable from supplied or public first-party sources."
+      }
+    },
+    {
+      "id": "historical-poll-provenance",
+      "candidateSource": {
+        "repository": "d-j-hirst/aus-polling-analyser",
+        "ownerAccount": "d-j-hirst",
+        "publicNameVerified": false,
+        "commit": "a244da459807a22284d569b0b7e95ce79dfc53ff",
+        "path": "analysis/Data/poll-data-vic.csv",
+        "candidateRows": 200,
+        "declaredLicence": null,
+        "currentlyReplayEligibleRows": 0
+      },
+      "role": "lead-list-only",
+      "nextAction": "reconstruct-observations-from-original-pollster-or-publisher-sources",
+      "externalContact": {
+        "status": "deferred",
+        "route": "https://github.com/d-j-hirst/aus-polling-analyser/issues",
+        "trigger": "Only after first-party reconstruction leaves material provenance or licensing gaps."
+      }
+    }
+  ],
+  "quarantinePolicy": {
+    "candidateDataImported": false,
+    "automaticPromotion": false,
+    "residualGapsMustBeMachineReported": true
+  },
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "automaticGateOpening": false,
+    "productionAuthorisation": false
+  }
+}

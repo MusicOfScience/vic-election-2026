@@ -55,30 +55,65 @@ export function validateModelValidationEvidence() {
   assert(inventory.summary.total === inventory.components.length, "total summary count is stale");
 
   const acquisition = readJson("metadata/historical-source-acquisition-plan.json");
-  assert(acquisition.status === "awaiting-external-source-completion", "historical source acquisition status is unexpected");
-  assert(acquisition.requests.length === 2, "expected exactly two priority historical source requests");
+  const publicAudit = readJson("metadata/historical-public-source-audit.json");
+  assert(acquisition.schemaVersion === 2, "historical source acquisition schema is stale");
+  assert(acquisition.status === "public-source-reconstruction-first", "historical source acquisition must prefer supplied and first-party material");
+  assert(acquisition.userActionRequired === false, "historical source acquisition must not assign premature external contact to the project owner");
+  assert(acquisition.publicSourceAudit.path === "metadata/historical-public-source-audit.json", "public source audit path is incorrect");
+  assert(acquisition.requests.length === 2, "expected exactly two deferred historical source requests");
   assert(new Set(acquisition.requests.map((request) => request.id)).size === acquisition.requests.length, "historical source request ids must be unique");
+  assert(publicAudit.status === "public-source-reconstruction-required", "public source audit status is unexpected");
+  assert(publicAudit.userActionRequired === false, "public source audit must require no owner action");
+  assert(publicAudit.quarantinePolicy.candidateDataImported === false, "public source discovery cannot import candidate data");
+  assert(publicAudit.quarantinePolicy.residualGapsMustBeMachineReported === true, "external contact requires a machine-readable residual-gap report");
+
   const vecRequest = acquisition.requests.find((request) => request.id === "vec-legislative-assembly-primaries-2010-2022");
   const pollRequest = acquisition.requests.find((request) => request.id === "historical-poll-vintage-enrichment-and-reuse");
-  assert(vecRequest?.status === "not-sent", "VEC source request status must be explicit");
-  assert(vecRequest.recipient === "Victorian Electoral Commission", "VEC source request recipient is incorrect");
-  assert(vecRequest.cycles.length === 4, "VEC request must cover four Assembly cycles");
-  assert(vecRequest.cycles.every((cycle) => cycle.requiredDistricts === 88), "VEC request must seek every Assembly district");
-  assert(vecRequest.cycles.find((cycle) => cycle.id === "vic_la_2022")?.auditedDistricts === 39, "VEC request must preserve current 2022 audited coverage");
+  assert(vecRequest?.status === "deferred-pending-public-harvest", "VEC contact must remain deferred");
+  assert(vecRequest.userActionRequired === false, "VEC acquisition cannot require premature owner action");
+  assert(vecRequest.preContactWork.includes("audit-supplied-project-checkpoints"), "VEC acquisition must re-audit supplied checkpoints");
+  assert(vecRequest.preContactWork.includes("harvest-public-vec-district-pages-and-spreadsheets"), "VEC acquisition must harvest public first-party results");
+  assert(vecRequest.contactTrigger === "residual-gaps-confirmed-after-public-harvest", "VEC contact trigger is too broad");
+  assert(vecRequest.cycles.length === 4, "VEC acquisition must cover four Assembly cycles");
+  assert(vecRequest.cycles.every((cycle) => cycle.requiredDistricts === 88), "VEC acquisition must cover every Assembly district");
+  assert(vecRequest.cycles.find((cycle) => cycle.id === "vic_la_2022")?.auditedDistricts === 39, "VEC acquisition must preserve current processed 2022 coverage");
+  assert(vecRequest.publishedAvailability.listed2022Districts === 88, "VEC public 2022 index must record all districts");
+  assert(vecRequest.publishedAvailability.candidateFirstPreferenceTablesAvailable === true, "VEC public first-preference tables must be acknowledged");
+  assert(vecRequest.publishedAvailability.perDistrictPrimaryExcelLinksAvailable === true, "VEC public district spreadsheets must be acknowledged");
+  assert(vecRequest.publishedAvailability.indicativePreferenceDistributionDistricts === 39, "VEC indicative preference count is unexpected");
   assert(vecRequest.acceptanceRules.districtFormalVoteReconciliationRequired === true, "VEC result imports must reconcile to formal votes");
   assert(vecRequest.acceptanceRules.pdfOnlyAccepted === false, "PDF-only historical results are not reproducible inputs");
-  assert(pollRequest?.status === "not-sent", "polling source request status must be explicit");
-  assert(pollRequest.frozenCandidateSource.candidateRows === 200, "polling request must preserve the audited candidate-row count");
+
+  const vecAudit = publicAudit.sources.find((source) => source.id === "vec-historical-assembly-results");
+  assert(vecAudit?.findings.fourCycleTppOutcomes.boundaryAlignedRows === 340, "public audit must preserve the complete TPP benchmark");
+  assert(vecAudit.findings.processedCandidatePrimaryEvidence.semantics.includes("not a count of files supplied"), "processed coverage must not be misrepresented as supplied-file coverage");
+  assert(vecAudit.externalContact.status === "deferred", "VEC contact must remain deferred in the public audit");
+
+  assert(pollRequest?.status === "deferred-pending-first-party-reconstruction", "polling repository contact must remain deferred");
+  assert(pollRequest.userActionRequired === false, "polling provenance work cannot require premature owner action");
+  assert(pollRequest.maintainerIdentity.account === "d-j-hirst", "polling repository owner account is incorrect");
+  assert(pollRequest.maintainerIdentity.verifiedPublicName === null, "polling repository owner name must not be invented");
+  assert(pollRequest.preContactWork.includes("search-original-pollster-and-publisher-sources"), "polling acquisition must prefer original sources");
+  assert(pollRequest.frozenCandidateSource.candidateRows === 200, "polling acquisition must preserve the audited lead-list count");
   assert(pollRequest.frozenCandidateSource.currentlyReplayEligibleRows === 0, "unresolved polling rows cannot enter replay");
-  assert(pollRequest.requiredFields.includes("publicationDate"), "polling request must seek publication dates");
-  assert(pollRequest.requiredFields.includes("sampleSize"), "polling request must seek sample sizes");
-  assert(pollRequest.requiredFields.includes("explicitMethod"), "polling request must seek explicit methods");
-  assert(pollRequest.requiredFields.includes("observationSourceUrl"), "polling request must seek observation provenance");
-  assert(pollRequest.requiredFields.includes("declaredReuseLicence"), "polling request must seek reuse authority");
+  assert(pollRequest.requiredFields.includes("publicationDate"), "polling acquisition must seek publication dates");
+  assert(pollRequest.requiredFields.includes("sampleSize"), "polling acquisition must seek sample sizes");
+  assert(pollRequest.requiredFields.includes("explicitMethod"), "polling acquisition must seek explicit methods");
+  assert(pollRequest.requiredFields.includes("observationSourceUrl"), "polling acquisition must seek observation provenance");
+  assert(pollRequest.requiredFields.includes("declaredReuseLicence"), "polling acquisition must seek reuse authority");
   assert(pollRequest.acceptanceRules.fieldworkMidpointAsPublicationDateAccepted === false, "fieldwork midpoint cannot substitute for publication date");
-  assert(acquisition.modelImpact.changesCurrentForecast === false, "source requests cannot change the current forecast");
+
+  const pollPublicAudit = publicAudit.sources.find((source) => source.id === "historical-poll-provenance");
+  assert(pollPublicAudit?.candidateSource.publicNameVerified === false, "polling repository owner identity must remain conservative");
+  assert(pollPublicAudit.candidateSource.declaredLicence === null, "public audit must not invent polling reuse authority");
+  assert(pollPublicAudit.role === "lead-list-only", "unlicensed polling data must remain a lead list");
+  assert(pollPublicAudit.externalContact.status === "deferred", "polling repository contact must remain deferred");
+
+  assert(acquisition.modelImpact.changesCurrentForecast === false, "source acquisition cannot change the current forecast");
   assert(acquisition.modelImpact.automaticPromotion === false, "source responses cannot promote automatically");
-  assert(acquisition.modelImpact.automaticGateOpening === false, "source requests cannot open gates");
+  assert(acquisition.modelImpact.automaticGateOpening === false, "source acquisition cannot open gates");
+  assert(publicAudit.modelImpact.changesCurrentForecast === false, "public source audit cannot change the current forecast");
+  assert(publicAudit.modelImpact.productionAuthorisation === false, "public source audit cannot authorise production");
   for (const [id, component] of inventoryById) {
     assert(contractById.has(id), `unknown inventory component ${id}`);
     assert(contractById.get(id).status === component.status, `${id} status differs from the contract`);

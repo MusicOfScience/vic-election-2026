@@ -1,18 +1,29 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "reviewedAt": "2026-08-31",
-  "status": "awaiting-external-source-completion",
-  "policy": "Source requests may unlock evidence acquisition, but responses remain quarantined until provenance, structure, reconciliation and licensing checks pass.",
+  "status": "public-source-reconstruction-first",
+  "policy": "Supplied checkpoints and public first-party sources must be exhausted before external contact. Any acquired material remains quarantined until provenance, structure, reconciliation and licensing checks pass.",
+  "publicSourceAudit": {
+    "path": "metadata/historical-public-source-audit.json",
+    "status": "public-source-reconstruction-required"
+  },
+  "userActionRequired": false,
   "requests": [
     {
       "id": "vec-legislative-assembly-primaries-2010-2022",
-      "status": "not-sent",
+      "status": "deferred-pending-public-harvest",
       "priority": 1,
       "recipient": "Victorian Electoral Commission",
       "contactRoute": "https://www.vec.vic.gov.au/about-us/contact-us",
+      "userActionRequired": false,
       "blockedComponents": [
         "district-primary-votes-and-party-crosswalk",
         "ballot-and-contest-slates"
+      ],
+      "preContactWork": [
+        "audit-supplied-project-checkpoints",
+        "harvest-public-vec-district-pages-and-spreadsheets",
+        "produce-machine-readable-residual-gap-report"
       ],
       "cycles": [
         {
@@ -36,6 +47,14 @@
           "auditedDistricts": 39
         }
       ],
+      "publishedAvailability": {
+        "resultIndexUrl": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results",
+        "listed2022Districts": 88,
+        "candidateFirstPreferenceTablesAvailable": true,
+        "perDistrictPrimaryExcelLinksAvailable": true,
+        "indicativePreferenceDistributionDistricts": 39
+      },
+      "contactTrigger": "residual-gaps-confirmed-after-public-harvest",
       "requiredFields": [
         "electionId",
         "electionDate",
@@ -62,12 +81,23 @@
     },
     {
       "id": "historical-poll-vintage-enrichment-and-reuse",
-      "status": "not-sent",
+      "status": "deferred-pending-first-party-reconstruction",
       "priority": 2,
       "recipient": "Maintainer of d-j-hirst/aus-polling-analyser",
       "contactRoute": "https://github.com/d-j-hirst/aus-polling-analyser/issues",
+      "userActionRequired": false,
+      "maintainerIdentity": {
+        "account": "d-j-hirst",
+        "verifiedPublicName": null,
+        "personalRelationshipRequired": false
+      },
       "blockedComponents": [
         "pre-election-poll-vintages"
+      ],
+      "preContactWork": [
+        "treat-third-party-file-as-lead-list-only",
+        "search-original-pollster-and-publisher-sources",
+        "produce-machine-readable-residual-provenance-gap-report"
       ],
       "frozenCandidateSource": {
         "commit": "a244da459807a22284d569b0b7e95ce79dfc53ff",
@@ -75,6 +105,7 @@
         "candidateRows": 200,
         "currentlyReplayEligibleRows": 0
       },
+      "contactTrigger": "material-provenance-or-licensing-gaps-remain-after-first-party-reconstruction",
       "requiredFields": [
         "publicationDate",
         "sampleSize",
