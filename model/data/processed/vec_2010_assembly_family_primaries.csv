@@ -1,0 +1,441 @@
+election_id,district_name,district_id,source_page,party_family,contest_status,candidate_count,first_preference_votes,formal_votes,district_reconciled
+vic_la_2010,Albert Park,albert-park,153,ALP,contested,1,12012,39790,True
+vic_la_2010,Albert Park,albert-park,153,Coalition,contested,1,15234,39790,True
+vic_la_2010,Albert Park,albert-park,153,Greens,contested,1,7218,39790,True
+vic_la_2010,Albert Park,albert-park,153,One Nation,verified_no_contest,0,0,39790,True
+vic_la_2010,Albert Park,albert-park,153,Other/Independent,contested,3,5326,39790,True
+vic_la_2010,Altona,altona,156,ALP,contested,1,22954,44987,True
+vic_la_2010,Altona,altona,156,Coalition,contested,1,14944,44987,True
+vic_la_2010,Altona,altona,156,Greens,contested,1,4516,44987,True
+vic_la_2010,Altona,altona,156,One Nation,verified_no_contest,0,0,44987,True
+vic_la_2010,Altona,altona,156,Other/Independent,contested,2,2573,44987,True
+vic_la_2010,Ballarat East,ballarat-east,158,ALP,contested,1,14076,36306,True
+vic_la_2010,Ballarat East,ballarat-east,158,Coalition,contested,1,15758,36306,True
+vic_la_2010,Ballarat East,ballarat-east,158,Greens,contested,1,5363,36306,True
+vic_la_2010,Ballarat East,ballarat-east,158,One Nation,verified_no_contest,0,0,36306,True
+vic_la_2010,Ballarat East,ballarat-east,158,Other/Independent,contested,1,1109,36306,True
+vic_la_2010,Ballarat West,ballarat-west,161,ALP,contested,1,16446,39517,True
+vic_la_2010,Ballarat West,ballarat-west,161,Coalition,contested,1,17230,39517,True
+vic_la_2010,Ballarat West,ballarat-west,161,Greens,contested,1,3876,39517,True
+vic_la_2010,Ballarat West,ballarat-west,161,One Nation,verified_no_contest,0,0,39517,True
+vic_la_2010,Ballarat West,ballarat-west,161,Other/Independent,contested,2,1965,39517,True
+vic_la_2010,Bass,bass,164,ALP,contested,1,12962,44451,True
+vic_la_2010,Bass,bass,164,Coalition,contested,1,25098,44451,True
+vic_la_2010,Bass,bass,164,Greens,contested,1,4845,44451,True
+vic_la_2010,Bass,bass,164,One Nation,verified_no_contest,0,0,44451,True
+vic_la_2010,Bass,bass,164,Other/Independent,contested,1,1546,44451,True
+vic_la_2010,Bayswater,bayswater,166,ALP,contested,1,10138,33293,True
+vic_la_2010,Bayswater,bayswater,166,Coalition,contested,1,17597,33293,True
+vic_la_2010,Bayswater,bayswater,166,Greens,contested,1,2873,33293,True
+vic_la_2010,Bayswater,bayswater,166,One Nation,verified_no_contest,0,0,33293,True
+vic_la_2010,Bayswater,bayswater,166,Other/Independent,contested,3,2685,33293,True
+vic_la_2010,Bellarine,bellarine,168,ALP,contested,1,16324,39811,True
+vic_la_2010,Bellarine,bellarine,168,Coalition,contested,1,17140,39811,True
+vic_la_2010,Bellarine,bellarine,168,Greens,contested,1,3123,39811,True
+vic_la_2010,Bellarine,bellarine,168,One Nation,verified_no_contest,0,0,39811,True
+vic_la_2010,Bellarine,bellarine,168,Other/Independent,contested,5,3224,39811,True
+vic_la_2010,Benalla,benalla,171,ALP,contested,1,6124,33302,True
+vic_la_2010,Benalla,benalla,171,Coalition,contested,1,21072,33302,True
+vic_la_2010,Benalla,benalla,171,Greens,contested,1,2756,33302,True
+vic_la_2010,Benalla,benalla,171,One Nation,verified_no_contest,0,0,33302,True
+vic_la_2010,Benalla,benalla,171,Other/Independent,contested,2,3350,33302,True
+vic_la_2010,Benambra,benambra,173,ALP,contested,1,7537,32985,True
+vic_la_2010,Benambra,benambra,173,Coalition,contested,1,18424,32985,True
+vic_la_2010,Benambra,benambra,173,Greens,contested,1,3658,32985,True
+vic_la_2010,Benambra,benambra,173,One Nation,verified_no_contest,0,0,32985,True
+vic_la_2010,Benambra,benambra,173,Other/Independent,contested,2,3366,32985,True
+vic_la_2010,Bendigo East,bendigo-east,175,ALP,contested,1,16079,36667,True
+vic_la_2010,Bendigo East,bendigo-east,175,Coalition,contested,2,15060,36667,True
+vic_la_2010,Bendigo East,bendigo-east,175,Greens,contested,1,2295,36667,True
+vic_la_2010,Bendigo East,bendigo-east,175,One Nation,verified_no_contest,0,0,36667,True
+vic_la_2010,Bendigo East,bendigo-east,175,Other/Independent,contested,5,3233,36667,True
+vic_la_2010,Bendigo West,bendigo-west,178,ALP,contested,1,14431,36682,True
+vic_la_2010,Bendigo West,bendigo-west,178,Coalition,contested,2,15308,36682,True
+vic_la_2010,Bendigo West,bendigo-west,178,Greens,contested,1,3999,36682,True
+vic_la_2010,Bendigo West,bendigo-west,178,One Nation,verified_no_contest,0,0,36682,True
+vic_la_2010,Bendigo West,bendigo-west,178,Other/Independent,contested,4,2944,36682,True
+vic_la_2010,Bentleigh,bentleigh,181,ALP,contested,1,13643,34672,True
+vic_la_2010,Bentleigh,bentleigh,181,Coalition,contested,1,16296,34672,True
+vic_la_2010,Bentleigh,bentleigh,181,Greens,contested,1,3545,34672,True
+vic_la_2010,Bentleigh,bentleigh,181,One Nation,verified_no_contest,0,0,34672,True
+vic_la_2010,Bentleigh,bentleigh,181,Other/Independent,contested,3,1188,34672,True
+vic_la_2010,Box Hill,box-hill,184,ALP,contested,1,8978,35011,True
+vic_la_2010,Box Hill,box-hill,184,Coalition,contested,1,20415,35011,True
+vic_la_2010,Box Hill,box-hill,184,Greens,contested,1,4952,35011,True
+vic_la_2010,Box Hill,box-hill,184,One Nation,verified_no_contest,0,0,35011,True
+vic_la_2010,Box Hill,box-hill,184,Other/Independent,contested,1,666,35011,True
+vic_la_2010,Brighton,brighton,186,ALP,contested,1,6661,34197,True
+vic_la_2010,Brighton,brighton,186,Coalition,contested,1,21375,34197,True
+vic_la_2010,Brighton,brighton,186,Greens,contested,1,5465,34197,True
+vic_la_2010,Brighton,brighton,186,One Nation,verified_no_contest,0,0,34197,True
+vic_la_2010,Brighton,brighton,186,Other/Independent,contested,2,696,34197,True
+vic_la_2010,Broadmeadows,broadmeadows,188,ALP,contested,1,19125,30705,True
+vic_la_2010,Broadmeadows,broadmeadows,188,Coalition,contested,1,7761,30705,True
+vic_la_2010,Broadmeadows,broadmeadows,188,Greens,contested,1,2304,30705,True
+vic_la_2010,Broadmeadows,broadmeadows,188,One Nation,verified_no_contest,0,0,30705,True
+vic_la_2010,Broadmeadows,broadmeadows,188,Other/Independent,contested,2,1515,30705,True
+vic_la_2010,Brunswick,brunswick,190,ALP,contested,1,13129,36446,True
+vic_la_2010,Brunswick,brunswick,190,Coalition,contested,1,6209,36446,True
+vic_la_2010,Brunswick,brunswick,190,Greens,contested,1,11023,36446,True
+vic_la_2010,Brunswick,brunswick,190,One Nation,verified_no_contest,0,0,36446,True
+vic_la_2010,Brunswick,brunswick,190,Other/Independent,contested,4,6085,36446,True
+vic_la_2010,Bulleen,bulleen,194,ALP,contested,1,8533,31666,True
+vic_la_2010,Bulleen,bulleen,194,Coalition,contested,1,18849,31666,True
+vic_la_2010,Bulleen,bulleen,194,Greens,contested,1,2712,31666,True
+vic_la_2010,Bulleen,bulleen,194,One Nation,verified_no_contest,0,0,31666,True
+vic_la_2010,Bulleen,bulleen,194,Other/Independent,contested,2,1572,31666,True
+vic_la_2010,Bundoora,bundoora,196,ALP,contested,1,14967,32497,True
+vic_la_2010,Bundoora,bundoora,196,Coalition,contested,1,11859,32497,True
+vic_la_2010,Bundoora,bundoora,196,Greens,contested,1,3285,32497,True
+vic_la_2010,Bundoora,bundoora,196,One Nation,verified_no_contest,0,0,32497,True
+vic_la_2010,Bundoora,bundoora,196,Other/Independent,contested,3,2386,32497,True
+vic_la_2010,Burwood,burwood,199,ALP,contested,1,11732,35210,True
+vic_la_2010,Burwood,burwood,199,Coalition,contested,1,17500,35210,True
+vic_la_2010,Burwood,burwood,199,Greens,contested,1,4146,35210,True
+vic_la_2010,Burwood,burwood,199,One Nation,verified_no_contest,0,0,35210,True
+vic_la_2010,Burwood,burwood,199,Other/Independent,contested,3,1832,35210,True
+vic_la_2010,Carrum,carrum,202,ALP,contested,1,14430,37821,True
+vic_la_2010,Carrum,carrum,202,Coalition,contested,1,17539,37821,True
+vic_la_2010,Carrum,carrum,202,Greens,contested,1,3593,37821,True
+vic_la_2010,Carrum,carrum,202,One Nation,verified_no_contest,0,0,37821,True
+vic_la_2010,Carrum,carrum,202,Other/Independent,contested,3,2259,37821,True
+vic_la_2010,Caulfield,caulfield,205,ALP,contested,1,7729,32934,True
+vic_la_2010,Caulfield,caulfield,205,Coalition,contested,1,19018,32934,True
+vic_la_2010,Caulfield,caulfield,205,Greens,contested,1,5307,32934,True
+vic_la_2010,Caulfield,caulfield,205,One Nation,verified_no_contest,0,0,32934,True
+vic_la_2010,Caulfield,caulfield,205,Other/Independent,contested,3,880,32934,True
+vic_la_2010,Clayton,clayton,207,ALP,contested,1,15843,29157,True
+vic_la_2010,Clayton,clayton,207,Coalition,contested,1,8833,29157,True
+vic_la_2010,Clayton,clayton,207,Greens,contested,1,2782,29157,True
+vic_la_2010,Clayton,clayton,207,One Nation,verified_no_contest,0,0,29157,True
+vic_la_2010,Clayton,clayton,207,Other/Independent,contested,2,1699,29157,True
+vic_la_2010,Cranbourne,cranbourne,209,ALP,contested,1,17803,41904,True
+vic_la_2010,Cranbourne,cranbourne,209,Coalition,contested,1,16565,41904,True
+vic_la_2010,Cranbourne,cranbourne,209,Greens,contested,1,3475,41904,True
+vic_la_2010,Cranbourne,cranbourne,209,One Nation,verified_no_contest,0,0,41904,True
+vic_la_2010,Cranbourne,cranbourne,209,Other/Independent,contested,4,4061,41904,True
+vic_la_2010,Dandenong,dandenong,212,ALP,contested,1,14934,29557,True
+vic_la_2010,Dandenong,dandenong,212,Coalition,contested,1,8658,29557,True
+vic_la_2010,Dandenong,dandenong,212,Greens,contested,1,2591,29557,True
+vic_la_2010,Dandenong,dandenong,212,One Nation,verified_no_contest,0,0,29557,True
+vic_la_2010,Dandenong,dandenong,212,Other/Independent,contested,2,3374,29557,True
+vic_la_2010,Derrimut,derrimut,214,ALP,contested,1,17076,34267,True
+vic_la_2010,Derrimut,derrimut,214,Coalition,contested,1,7971,34267,True
+vic_la_2010,Derrimut,derrimut,214,Greens,contested,1,5783,34267,True
+vic_la_2010,Derrimut,derrimut,214,One Nation,verified_no_contest,0,0,34267,True
+vic_la_2010,Derrimut,derrimut,214,Other/Independent,contested,2,3437,34267,True
+vic_la_2010,Doncaster,doncaster,217,ALP,contested,1,8500,32548,True
+vic_la_2010,Doncaster,doncaster,217,Coalition,contested,1,20417,32548,True
+vic_la_2010,Doncaster,doncaster,217,Greens,contested,1,2616,32548,True
+vic_la_2010,Doncaster,doncaster,217,One Nation,verified_no_contest,0,0,32548,True
+vic_la_2010,Doncaster,doncaster,217,Other/Independent,contested,1,1015,32548,True
+vic_la_2010,Eltham,eltham,219,ALP,contested,1,13792,35762,True
+vic_la_2010,Eltham,eltham,219,Coalition,contested,1,16047,35762,True
+vic_la_2010,Eltham,eltham,219,Greens,contested,1,4747,35762,True
+vic_la_2010,Eltham,eltham,219,One Nation,verified_no_contest,0,0,35762,True
+vic_la_2010,Eltham,eltham,219,Other/Independent,contested,2,1176,35762,True
+vic_la_2010,Essendon,essendon,222,ALP,contested,1,12867,35253,True
+vic_la_2010,Essendon,essendon,222,Coalition,contested,1,12983,35253,True
+vic_la_2010,Essendon,essendon,222,Greens,contested,1,5816,35253,True
+vic_la_2010,Essendon,essendon,222,One Nation,verified_no_contest,0,0,35253,True
+vic_la_2010,Essendon,essendon,222,Other/Independent,contested,2,3587,35253,True
+vic_la_2010,Evelyn,evelyn,225,ALP,contested,1,10677,36305,True
+vic_la_2010,Evelyn,evelyn,225,Coalition,contested,1,20612,36305,True
+vic_la_2010,Evelyn,evelyn,225,Greens,contested,1,2799,36305,True
+vic_la_2010,Evelyn,evelyn,225,One Nation,verified_no_contest,0,0,36305,True
+vic_la_2010,Evelyn,evelyn,225,Other/Independent,contested,2,2217,36305,True
+vic_la_2010,Ferntree Gully,ferntree-gully,227,ALP,contested,1,11768,39647,True
+vic_la_2010,Ferntree Gully,ferntree-gully,227,Coalition,contested,1,22020,39647,True
+vic_la_2010,Ferntree Gully,ferntree-gully,227,Greens,contested,1,2850,39647,True
+vic_la_2010,Ferntree Gully,ferntree-gully,227,One Nation,verified_no_contest,0,0,39647,True
+vic_la_2010,Ferntree Gully,ferntree-gully,227,Other/Independent,contested,3,3009,39647,True
+vic_la_2010,Footscray,footscray,229,ALP,contested,1,14611,34294,True
+vic_la_2010,Footscray,footscray,229,Coalition,contested,1,8703,34294,True
+vic_la_2010,Footscray,footscray,229,Greens,contested,1,7126,34294,True
+vic_la_2010,Footscray,footscray,229,One Nation,verified_no_contest,0,0,34294,True
+vic_la_2010,Footscray,footscray,229,Other/Independent,contested,2,3854,34294,True
+vic_la_2010,Forest Hill,forest-hill,232,ALP,contested,1,12796,32997,True
+vic_la_2010,Forest Hill,forest-hill,232,Coalition,contested,1,16043,32997,True
+vic_la_2010,Forest Hill,forest-hill,232,Greens,contested,1,2501,32997,True
+vic_la_2010,Forest Hill,forest-hill,232,One Nation,verified_no_contest,0,0,32997,True
+vic_la_2010,Forest Hill,forest-hill,232,Other/Independent,contested,3,1657,32997,True
+vic_la_2010,Frankston,frankston,235,ALP,contested,1,11603,31844,True
+vic_la_2010,Frankston,frankston,235,Coalition,contested,1,14899,31844,True
+vic_la_2010,Frankston,frankston,235,Greens,contested,1,2673,31844,True
+vic_la_2010,Frankston,frankston,235,One Nation,verified_no_contest,0,0,31844,True
+vic_la_2010,Frankston,frankston,235,Other/Independent,contested,4,2669,31844,True
+vic_la_2010,Geelong,geelong,238,ALP,contested,1,14809,35974,True
+vic_la_2010,Geelong,geelong,238,Coalition,contested,1,15472,35974,True
+vic_la_2010,Geelong,geelong,238,Greens,contested,1,4131,35974,True
+vic_la_2010,Geelong,geelong,238,One Nation,verified_no_contest,0,0,35974,True
+vic_la_2010,Geelong,geelong,238,Other/Independent,contested,3,1562,35974,True
+vic_la_2010,Gembrook,gembrook,241,ALP,contested,1,12638,38447,True
+vic_la_2010,Gembrook,gembrook,241,Coalition,contested,2,19331,38447,True
+vic_la_2010,Gembrook,gembrook,241,Greens,contested,1,3689,38447,True
+vic_la_2010,Gembrook,gembrook,241,One Nation,verified_no_contest,0,0,38447,True
+vic_la_2010,Gembrook,gembrook,241,Other/Independent,contested,6,2789,38447,True
+vic_la_2010,Gippsland East,gippsland-east,244,ALP,contested,1,2821,37652,True
+vic_la_2010,Gippsland East,gippsland-east,244,Coalition,contested,2,22355,37652,True
+vic_la_2010,Gippsland East,gippsland-east,244,Greens,contested,1,1976,37652,True
+vic_la_2010,Gippsland East,gippsland-east,244,One Nation,verified_no_contest,0,0,37652,True
+vic_la_2010,Gippsland East,gippsland-east,244,Other/Independent,contested,2,10500,37652,True
+vic_la_2010,Gippsland South,gippsland-south,248,ALP,contested,1,6647,35223,True
+vic_la_2010,Gippsland South,gippsland-south,248,Coalition,contested,1,22479,35223,True
+vic_la_2010,Gippsland South,gippsland-south,248,Greens,contested,1,3495,35223,True
+vic_la_2010,Gippsland South,gippsland-south,248,One Nation,verified_no_contest,0,0,35223,True
+vic_la_2010,Gippsland South,gippsland-south,248,Other/Independent,contested,1,2602,35223,True
+vic_la_2010,Hastings,hastings,250,ALP,contested,1,12262,40029,True
+vic_la_2010,Hastings,hastings,250,Coalition,contested,1,21656,40029,True
+vic_la_2010,Hastings,hastings,250,Greens,contested,1,3073,40029,True
+vic_la_2010,Hastings,hastings,250,One Nation,verified_no_contest,0,0,40029,True
+vic_la_2010,Hastings,hastings,250,Other/Independent,contested,5,3038,40029,True
+vic_la_2010,Hawthorn,hawthorn,252,ALP,contested,1,7218,34546,True
+vic_la_2010,Hawthorn,hawthorn,252,Coalition,contested,1,21036,34546,True
+vic_la_2010,Hawthorn,hawthorn,252,Greens,contested,1,5883,34546,True
+vic_la_2010,Hawthorn,hawthorn,252,One Nation,verified_no_contest,0,0,34546,True
+vic_la_2010,Hawthorn,hawthorn,252,Other/Independent,contested,1,409,34546,True
+vic_la_2010,Ivanhoe,ivanhoe,254,ALP,contested,1,12140,34329,True
+vic_la_2010,Ivanhoe,ivanhoe,254,Coalition,contested,1,14413,34329,True
+vic_la_2010,Ivanhoe,ivanhoe,254,Greens,contested,1,6240,34329,True
+vic_la_2010,Ivanhoe,ivanhoe,254,One Nation,verified_no_contest,0,0,34329,True
+vic_la_2010,Ivanhoe,ivanhoe,254,Other/Independent,contested,2,1536,34329,True
+vic_la_2010,Keilor,keilor,257,ALP,contested,1,22943,46030,True
+vic_la_2010,Keilor,keilor,257,Coalition,contested,1,14367,46030,True
+vic_la_2010,Keilor,keilor,257,Greens,contested,1,3625,46030,True
+vic_la_2010,Keilor,keilor,257,One Nation,verified_no_contest,0,0,46030,True
+vic_la_2010,Keilor,keilor,257,Other/Independent,contested,2,5095,46030,True
+vic_la_2010,Kew,kew,260,ALP,contested,1,7750,33083,True
+vic_la_2010,Kew,kew,260,Coalition,contested,1,19878,33083,True
+vic_la_2010,Kew,kew,260,Greens,contested,1,4879,33083,True
+vic_la_2010,Kew,kew,260,One Nation,verified_no_contest,0,0,33083,True
+vic_la_2010,Kew,kew,260,Other/Independent,contested,1,576,33083,True
+vic_la_2010,Kilsyth,kilsyth,262,ALP,contested,1,11172,36608,True
+vic_la_2010,Kilsyth,kilsyth,262,Coalition,contested,1,19348,36608,True
+vic_la_2010,Kilsyth,kilsyth,262,Greens,contested,1,2913,36608,True
+vic_la_2010,Kilsyth,kilsyth,262,One Nation,verified_no_contest,0,0,36608,True
+vic_la_2010,Kilsyth,kilsyth,262,Other/Independent,contested,4,3175,36608,True
+vic_la_2010,Kororoit,kororoit,264,ALP,contested,1,19891,35636,True
+vic_la_2010,Kororoit,kororoit,264,Coalition,contested,1,8912,35636,True
+vic_la_2010,Kororoit,kororoit,264,Greens,contested,1,3513,35636,True
+vic_la_2010,Kororoit,kororoit,264,One Nation,verified_no_contest,0,0,35636,True
+vic_la_2010,Kororoit,kororoit,264,Other/Independent,contested,2,3320,35636,True
+vic_la_2010,Lara,lara,266,ALP,contested,1,20778,38758,True
+vic_la_2010,Lara,lara,266,Coalition,contested,1,11366,38758,True
+vic_la_2010,Lara,lara,266,Greens,contested,1,3401,38758,True
+vic_la_2010,Lara,lara,266,One Nation,verified_no_contest,0,0,38758,True
+vic_la_2010,Lara,lara,266,Other/Independent,contested,2,3213,38758,True
+vic_la_2010,Lowan,lowan,268,ALP,contested,1,7783,35155,True
+vic_la_2010,Lowan,lowan,268,Coalition,contested,1,23702,35155,True
+vic_la_2010,Lowan,lowan,268,Greens,contested,1,1966,35155,True
+vic_la_2010,Lowan,lowan,268,One Nation,verified_no_contest,0,0,35155,True
+vic_la_2010,Lowan,lowan,268,Other/Independent,contested,1,1704,35155,True
+vic_la_2010,Lyndhurst,lyndhurst,270,ALP,contested,1,19820,35733,True
+vic_la_2010,Lyndhurst,lyndhurst,270,Coalition,contested,1,9946,35733,True
+vic_la_2010,Lyndhurst,lyndhurst,270,Greens,contested,1,2191,35733,True
+vic_la_2010,Lyndhurst,lyndhurst,270,One Nation,verified_no_contest,0,0,35733,True
+vic_la_2010,Lyndhurst,lyndhurst,270,Other/Independent,contested,4,3776,35733,True
+vic_la_2010,Macedon,macedon,272,ALP,contested,1,17282,42870,True
+vic_la_2010,Macedon,macedon,272,Coalition,contested,1,18141,42870,True
+vic_la_2010,Macedon,macedon,272,Greens,contested,1,3613,42870,True
+vic_la_2010,Macedon,macedon,272,One Nation,verified_no_contest,0,0,42870,True
+vic_la_2010,Macedon,macedon,272,Other/Independent,contested,5,3834,42870,True
+vic_la_2010,Malvern,malvern,275,ALP,contested,1,6584,33941,True
+vic_la_2010,Malvern,malvern,275,Coalition,contested,1,22160,33941,True
+vic_la_2010,Malvern,malvern,275,Greens,contested,1,4807,33941,True
+vic_la_2010,Malvern,malvern,275,One Nation,verified_no_contest,0,0,33941,True
+vic_la_2010,Malvern,malvern,275,Other/Independent,contested,1,390,33941,True
+vic_la_2010,Melbourne,melbourne,277,ALP,contested,1,13116,36767,True
+vic_la_2010,Melbourne,melbourne,277,Coalition,contested,1,10281,36767,True
+vic_la_2010,Melbourne,melbourne,277,Greens,contested,1,11735,36767,True
+vic_la_2010,Melbourne,melbourne,277,One Nation,verified_no_contest,0,0,36767,True
+vic_la_2010,Melbourne,melbourne,277,Other/Independent,contested,4,1635,36767,True
+vic_la_2010,Melton,melton,281,ALP,contested,1,18520,37460,True
+vic_la_2010,Melton,melton,281,Coalition,contested,1,11615,37460,True
+vic_la_2010,Melton,melton,281,Greens,contested,1,3247,37460,True
+vic_la_2010,Melton,melton,281,One Nation,verified_no_contest,0,0,37460,True
+vic_la_2010,Melton,melton,281,Other/Independent,contested,4,4078,37460,True
+vic_la_2010,Mildura,mildura,284,ALP,contested,1,4943,32512,True
+vic_la_2010,Mildura,mildura,284,Coalition,contested,1,15170,32512,True
+vic_la_2010,Mildura,mildura,284,Greens,contested,1,563,32512,True
+vic_la_2010,Mildura,mildura,284,One Nation,verified_no_contest,0,0,32512,True
+vic_la_2010,Mildura,mildura,284,Other/Independent,contested,5,11836,32512,True
+vic_la_2010,Mill Park,mill-park,288,ALP,contested,1,21861,35904,True
+vic_la_2010,Mill Park,mill-park,288,Coalition,contested,1,9537,35904,True
+vic_la_2010,Mill Park,mill-park,288,Greens,contested,1,2605,35904,True
+vic_la_2010,Mill Park,mill-park,288,One Nation,verified_no_contest,0,0,35904,True
+vic_la_2010,Mill Park,mill-park,288,Other/Independent,contested,1,1901,35904,True
+vic_la_2010,Mitcham,mitcham,290,ALP,contested,1,11669,33763,True
+vic_la_2010,Mitcham,mitcham,290,Coalition,contested,1,15717,33763,True
+vic_la_2010,Mitcham,mitcham,290,Greens,contested,1,4024,33763,True
+vic_la_2010,Mitcham,mitcham,290,One Nation,verified_no_contest,0,0,33763,True
+vic_la_2010,Mitcham,mitcham,290,Other/Independent,contested,3,2353,33763,True
+vic_la_2010,Monbulk,monbulk,293,ALP,contested,1,12318,34088,True
+vic_la_2010,Monbulk,monbulk,293,Coalition,contested,1,14506,34088,True
+vic_la_2010,Monbulk,monbulk,293,Greens,contested,1,5244,34088,True
+vic_la_2010,Monbulk,monbulk,293,One Nation,verified_no_contest,0,0,34088,True
+vic_la_2010,Monbulk,monbulk,293,Other/Independent,contested,4,2020,34088,True
+vic_la_2010,Mordialloc,mordialloc,296,ALP,contested,1,13778,36753,True
+vic_la_2010,Mordialloc,mordialloc,296,Coalition,contested,1,17223,36753,True
+vic_la_2010,Mordialloc,mordialloc,296,Greens,contested,1,3443,36753,True
+vic_la_2010,Mordialloc,mordialloc,296,One Nation,verified_no_contest,0,0,36753,True
+vic_la_2010,Mordialloc,mordialloc,296,Other/Independent,contested,6,2309,36753,True
+vic_la_2010,Mornington,mornington,299,ALP,contested,1,9119,36197,True
+vic_la_2010,Mornington,mornington,299,Coalition,contested,1,22238,36197,True
+vic_la_2010,Mornington,mornington,299,Greens,contested,1,3823,36197,True
+vic_la_2010,Mornington,mornington,299,One Nation,verified_no_contest,0,0,36197,True
+vic_la_2010,Mornington,mornington,299,Other/Independent,contested,2,1017,36197,True
+vic_la_2010,Morwell,morwell,301,ALP,contested,1,9752,34216,True
+vic_la_2010,Morwell,morwell,301,Coalition,contested,1,19200,34216,True
+vic_la_2010,Morwell,morwell,301,Greens,contested,1,1645,34216,True
+vic_la_2010,Morwell,morwell,301,One Nation,verified_no_contest,0,0,34216,True
+vic_la_2010,Morwell,morwell,301,Other/Independent,contested,4,3619,34216,True
+vic_la_2010,Mount Waverley,mount-waverley,303,ALP,contested,1,11420,33358,True
+vic_la_2010,Mount Waverley,mount-waverley,303,Coalition,contested,1,17126,33358,True
+vic_la_2010,Mount Waverley,mount-waverley,303,Greens,contested,1,2548,33358,True
+vic_la_2010,Mount Waverley,mount-waverley,303,One Nation,verified_no_contest,0,0,33358,True
+vic_la_2010,Mount Waverley,mount-waverley,303,Other/Independent,contested,4,2264,33358,True
+vic_la_2010,Mulgrave,mulgrave,305,ALP,contested,1,15392,30368,True
+vic_la_2010,Mulgrave,mulgrave,305,Coalition,contested,1,11166,30368,True
+vic_la_2010,Mulgrave,mulgrave,305,Greens,contested,1,2173,30368,True
+vic_la_2010,Mulgrave,mulgrave,305,One Nation,verified_no_contest,0,0,30368,True
+vic_la_2010,Mulgrave,mulgrave,305,Other/Independent,contested,2,1637,30368,True
+vic_la_2010,Murray Valley,murray-valley,307,ALP,contested,1,7065,34100,True
+vic_la_2010,Murray Valley,murray-valley,307,Coalition,contested,1,18357,34100,True
+vic_la_2010,Murray Valley,murray-valley,307,Greens,contested,1,1598,34100,True
+vic_la_2010,Murray Valley,murray-valley,307,One Nation,verified_no_contest,0,0,34100,True
+vic_la_2010,Murray Valley,murray-valley,307,Other/Independent,contested,3,7080,34100,True
+vic_la_2010,Narracan,narracan,309,ALP,contested,1,11161,38179,True
+vic_la_2010,Narracan,narracan,309,Coalition,contested,1,21636,38179,True
+vic_la_2010,Narracan,narracan,309,Greens,contested,1,2967,38179,True
+vic_la_2010,Narracan,narracan,309,One Nation,verified_no_contest,0,0,38179,True
+vic_la_2010,Narracan,narracan,309,Other/Independent,contested,2,2415,38179,True
+vic_la_2010,Narre Warren North,narre-warren-north,311,ALP,contested,1,15043,35377,True
+vic_la_2010,Narre Warren North,narre-warren-north,311,Coalition,contested,1,14743,35377,True
+vic_la_2010,Narre Warren North,narre-warren-north,311,Greens,contested,1,2443,35377,True
+vic_la_2010,Narre Warren North,narre-warren-north,311,One Nation,verified_no_contest,0,0,35377,True
+vic_la_2010,Narre Warren North,narre-warren-north,311,Other/Independent,contested,4,3148,35377,True
+vic_la_2010,Narre Warren South,narre-warren-south,314,ALP,contested,1,22007,45892,True
+vic_la_2010,Narre Warren South,narre-warren-south,314,Coalition,contested,1,17402,45892,True
+vic_la_2010,Narre Warren South,narre-warren-south,314,Greens,contested,1,3244,45892,True
+vic_la_2010,Narre Warren South,narre-warren-south,314,One Nation,verified_no_contest,0,0,45892,True
+vic_la_2010,Narre Warren South,narre-warren-south,314,Other/Independent,contested,4,3239,45892,True
+vic_la_2010,Nepean,nepean,317,ALP,contested,1,9333,34648,True
+vic_la_2010,Nepean,nepean,317,Coalition,contested,1,20700,34648,True
+vic_la_2010,Nepean,nepean,317,Greens,contested,1,4176,34648,True
+vic_la_2010,Nepean,nepean,317,One Nation,verified_no_contest,0,0,34648,True
+vic_la_2010,Nepean,nepean,317,Other/Independent,contested,1,439,34648,True
+vic_la_2010,Niddrie,niddrie,319,ALP,contested,1,14435,31597,True
+vic_la_2010,Niddrie,niddrie,319,Coalition,contested,1,11000,31597,True
+vic_la_2010,Niddrie,niddrie,319,Greens,contested,1,2451,31597,True
+vic_la_2010,Niddrie,niddrie,319,One Nation,verified_no_contest,0,0,31597,True
+vic_la_2010,Niddrie,niddrie,319,Other/Independent,contested,6,3711,31597,True
+vic_la_2010,Northcote,northcote,322,ALP,contested,1,15917,35422,True
+vic_la_2010,Northcote,northcote,322,Coalition,contested,1,6863,35422,True
+vic_la_2010,Northcote,northcote,322,Greens,contested,1,10927,35422,True
+vic_la_2010,Northcote,northcote,322,One Nation,verified_no_contest,0,0,35422,True
+vic_la_2010,Northcote,northcote,322,Other/Independent,contested,3,1715,35422,True
+vic_la_2010,Oakleigh,oakleigh,326,ALP,contested,1,12888,31457,True
+vic_la_2010,Oakleigh,oakleigh,326,Coalition,contested,1,12616,31457,True
+vic_la_2010,Oakleigh,oakleigh,326,Greens,contested,1,4719,31457,True
+vic_la_2010,Oakleigh,oakleigh,326,One Nation,verified_no_contest,0,0,31457,True
+vic_la_2010,Oakleigh,oakleigh,326,Other/Independent,contested,3,1234,31457,True
+vic_la_2010,Pascoe Vale,pascoe-vale,329,ALP,contested,1,18795,34980,True
+vic_la_2010,Pascoe Vale,pascoe-vale,329,Coalition,contested,1,9823,34980,True
+vic_la_2010,Pascoe Vale,pascoe-vale,329,Greens,contested,1,5683,34980,True
+vic_la_2010,Pascoe Vale,pascoe-vale,329,One Nation,verified_no_contest,0,0,34980,True
+vic_la_2010,Pascoe Vale,pascoe-vale,329,Other/Independent,contested,1,679,34980,True
+vic_la_2010,Polwarth,polwarth,331,ALP,contested,1,10432,38409,True
+vic_la_2010,Polwarth,polwarth,331,Coalition,contested,1,21245,38409,True
+vic_la_2010,Polwarth,polwarth,331,Greens,contested,1,3235,38409,True
+vic_la_2010,Polwarth,polwarth,331,One Nation,verified_no_contest,0,0,38409,True
+vic_la_2010,Polwarth,polwarth,331,Other/Independent,contested,3,3497,38409,True
+vic_la_2010,Prahran,prahran,333,ALP,contested,1,9384,33776,True
+vic_la_2010,Prahran,prahran,333,Coalition,contested,1,16197,33776,True
+vic_la_2010,Prahran,prahran,333,Greens,contested,1,6685,33776,True
+vic_la_2010,Prahran,prahran,333,One Nation,verified_no_contest,0,0,33776,True
+vic_la_2010,Prahran,prahran,333,Other/Independent,contested,3,1510,33776,True
+vic_la_2010,Preston,preston,336,ALP,contested,1,17400,33051,True
+vic_la_2010,Preston,preston,336,Coalition,contested,1,8593,33051,True
+vic_la_2010,Preston,preston,336,Greens,contested,1,7058,33051,True
+vic_la_2010,Preston,preston,336,One Nation,verified_no_contest,0,0,33051,True
+vic_la_2010,Preston,preston,336,Other/Independent,verified_no_contest,0,0,33051,True
+vic_la_2010,Richmond,richmond,338,ALP,contested,1,13328,35773,True
+vic_la_2010,Richmond,richmond,338,Coalition,contested,1,8154,35773,True
+vic_la_2010,Richmond,richmond,338,Greens,contested,1,10174,35773,True
+vic_la_2010,Richmond,richmond,338,One Nation,verified_no_contest,0,0,35773,True
+vic_la_2010,Richmond,richmond,338,Other/Independent,contested,2,4117,35773,True
+vic_la_2010,Ripon,ripon,342,ALP,contested,1,14169,33686,True
+vic_la_2010,Ripon,ripon,342,Coalition,contested,2,15446,33686,True
+vic_la_2010,Ripon,ripon,342,Greens,contested,1,2084,33686,True
+vic_la_2010,Ripon,ripon,342,One Nation,verified_no_contest,0,0,33686,True
+vic_la_2010,Ripon,ripon,342,Other/Independent,contested,2,1987,33686,True
+vic_la_2010,Rodney,rodney,345,ALP,contested,1,5290,32731,True
+vic_la_2010,Rodney,rodney,345,Coalition,contested,1,20524,32731,True
+vic_la_2010,Rodney,rodney,345,Greens,contested,1,1348,32731,True
+vic_la_2010,Rodney,rodney,345,One Nation,verified_no_contest,0,0,32731,True
+vic_la_2010,Rodney,rodney,345,Other/Independent,contested,2,5569,32731,True
+vic_la_2010,Sandringham,sandringham,347,ALP,contested,1,7313,33995,True
+vic_la_2010,Sandringham,sandringham,347,Coalition,contested,1,20704,33995,True
+vic_la_2010,Sandringham,sandringham,347,Greens,contested,1,5430,33995,True
+vic_la_2010,Sandringham,sandringham,347,One Nation,verified_no_contest,0,0,33995,True
+vic_la_2010,Sandringham,sandringham,347,Other/Independent,contested,1,548,33995,True
+vic_la_2010,Scoresby,scoresby,349,ALP,contested,1,10388,35132,True
+vic_la_2010,Scoresby,scoresby,349,Coalition,contested,1,20745,35132,True
+vic_la_2010,Scoresby,scoresby,349,Greens,contested,1,2821,35132,True
+vic_la_2010,Scoresby,scoresby,349,One Nation,verified_no_contest,0,0,35132,True
+vic_la_2010,Scoresby,scoresby,349,Other/Independent,contested,1,1178,35132,True
+vic_la_2010,Seymour,seymour,351,ALP,contested,1,12813,36462,True
+vic_la_2010,Seymour,seymour,351,Coalition,contested,2,14383,36462,True
+vic_la_2010,Seymour,seymour,351,Greens,contested,1,3230,36462,True
+vic_la_2010,Seymour,seymour,351,One Nation,verified_no_contest,0,0,36462,True
+vic_la_2010,Seymour,seymour,351,Other/Independent,contested,3,6036,36462,True
+vic_la_2010,Shepparton,shepparton,354,ALP,contested,1,5245,33270,True
+vic_la_2010,Shepparton,shepparton,354,Coalition,contested,1,17609,33270,True
+vic_la_2010,Shepparton,shepparton,354,Greens,contested,1,1631,33270,True
+vic_la_2010,Shepparton,shepparton,354,One Nation,verified_no_contest,0,0,33270,True
+vic_la_2010,Shepparton,shepparton,354,Other/Independent,contested,4,8785,33270,True
+vic_la_2010,South Barwon,south-barwon,356,ALP,contested,1,15759,43837,True
+vic_la_2010,South Barwon,south-barwon,356,Coalition,contested,1,20133,43837,True
+vic_la_2010,South Barwon,south-barwon,356,Greens,contested,1,4208,43837,True
+vic_la_2010,South Barwon,south-barwon,356,One Nation,verified_no_contest,0,0,43837,True
+vic_la_2010,South Barwon,south-barwon,356,Other/Independent,contested,6,3737,43837,True
+vic_la_2010,South-West Coast,south-west-coast,359,ALP,contested,1,9658,39196,True
+vic_la_2010,South-West Coast,south-west-coast,359,Coalition,contested,1,19316,39196,True
+vic_la_2010,South-West Coast,south-west-coast,359,Greens,contested,1,3228,39196,True
+vic_la_2010,South-West Coast,south-west-coast,359,One Nation,verified_no_contest,0,0,39196,True
+vic_la_2010,South-West Coast,south-west-coast,359,Other/Independent,contested,3,6994,39196,True
+vic_la_2010,Swan Hill,swan-hill,362,ALP,contested,1,4802,29433,True
+vic_la_2010,Swan Hill,swan-hill,362,Coalition,contested,1,22086,29433,True
+vic_la_2010,Swan Hill,swan-hill,362,Greens,contested,1,1326,29433,True
+vic_la_2010,Swan Hill,swan-hill,362,One Nation,verified_no_contest,0,0,29433,True
+vic_la_2010,Swan Hill,swan-hill,362,Other/Independent,contested,1,1219,29433,True
+vic_la_2010,Tarneit,tarneit,364,ALP,contested,1,20521,41811,True
+vic_la_2010,Tarneit,tarneit,364,Coalition,contested,1,13458,41811,True
+vic_la_2010,Tarneit,tarneit,364,Greens,contested,1,3716,41811,True
+vic_la_2010,Tarneit,tarneit,364,One Nation,verified_no_contest,0,0,41811,True
+vic_la_2010,Tarneit,tarneit,364,Other/Independent,contested,2,4116,41811,True
+vic_la_2010,Thomastown,thomastown,367,ALP,contested,1,19190,31309,True
+vic_la_2010,Thomastown,thomastown,367,Coalition,contested,1,7591,31309,True
+vic_la_2010,Thomastown,thomastown,367,Greens,contested,1,2952,31309,True
+vic_la_2010,Thomastown,thomastown,367,One Nation,verified_no_contest,0,0,31309,True
+vic_la_2010,Thomastown,thomastown,367,Other/Independent,contested,1,1576,31309,True
+vic_la_2010,Warrandyte,warrandyte,369,ALP,contested,1,9920,37843,True
+vic_la_2010,Warrandyte,warrandyte,369,Coalition,contested,1,22150,37843,True
+vic_la_2010,Warrandyte,warrandyte,369,Greens,contested,1,4221,37843,True
+vic_la_2010,Warrandyte,warrandyte,369,One Nation,verified_no_contest,0,0,37843,True
+vic_la_2010,Warrandyte,warrandyte,369,Other/Independent,contested,2,1552,37843,True
+vic_la_2010,Williamstown,williamstown,371,ALP,contested,1,15859,33922,True
+vic_la_2010,Williamstown,williamstown,371,Coalition,contested,1,11023,33922,True
+vic_la_2010,Williamstown,williamstown,371,Greens,contested,1,7040,33922,True
+vic_la_2010,Williamstown,williamstown,371,One Nation,verified_no_contest,0,0,33922,True
+vic_la_2010,Williamstown,williamstown,371,Other/Independent,verified_no_contest,0,0,33922,True
+vic_la_2010,Yan Yean,yan-yean,374,ALP,contested,1,20990,48930,True
+vic_la_2010,Yan Yean,yan-yean,374,Coalition,contested,1,19612,48930,True
+vic_la_2010,Yan Yean,yan-yean,374,Greens,contested,1,4916,48930,True
+vic_la_2010,Yan Yean,yan-yean,374,One Nation,verified_no_contest,0,0,48930,True
+vic_la_2010,Yan Yean,yan-yean,374,Other/Independent,contested,2,3412,48930,True
+vic_la_2010,Yuroke,yuroke,377,ALP,contested,1,23537,42626,True
+vic_la_2010,Yuroke,yuroke,377,Coalition,contested,1,13259,42626,True
+vic_la_2010,Yuroke,yuroke,377,Greens,contested,1,4128,42626,True
+vic_la_2010,Yuroke,yuroke,377,One Nation,verified_no_contest,0,0,42626,True
+vic_la_2010,Yuroke,yuroke,377,Other/Independent,contested,1,1702,42626,True

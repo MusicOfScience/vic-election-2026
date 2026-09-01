@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-31",
+  "reviewedAt": "2026-09-01",
   "scope": "Audited evidence currently available for complete-model historical validation",
   "policy": "Partial evidence documents real progress but cannot open a complete-model gate. Every complete component must cover all four frozen cycles and the same model outputs published for 2026.",
   "sourceCheckpoints": [
     "vic-election-2026-2026-08-10_04-18-AEST-FULL-PROJECT-PART-01-of-05(2).zip",
-    "vic-election-2026-2026-08-14_14-55-AEST-HISTORICAL-2010-SURFACE-FOUR-CYCLE-VALIDATION-NEGATIVE-WORKING-PATCH-CHECKPOINT.zip"
+    "vic-election-2026-2026-08-14_14-55-AEST-HISTORICAL-2010-SURFACE-FOUR-CYCLE-VALIDATION-NEGATIVE-WORKING-PATCH-CHECKPOINT.zip",
+    "08680c0035b34af4b6ea2074edc763a4(1).pdf"
   ],
   "summary": {
     "complete": 1,
@@ -20,7 +21,12 @@
       "id": "boundary-aligned-tpp-outcomes",
       "status": "complete",
       "coverage": {
-        "cycles": ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"],
+        "cycles": [
+          "vic_la_2010",
+          "vic_la_2014",
+          "vic_la_2018",
+          "vic_la_2022"
+        ],
         "districtTransitions": 340
       },
       "evidence": [
@@ -46,7 +52,12 @@
       "id": "pre-election-poll-vintages",
       "status": "partial",
       "coverage": {
-        "cycles": ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"],
+        "cycles": [
+          "vic_la_2010",
+          "vic_la_2014",
+          "vic_la_2018",
+          "vic_la_2022"
+        ],
         "candidateRows": 200,
         "publicationDatedRows": 0,
         "sampleSizeRows": 0,
@@ -70,49 +81,107 @@
       "id": "district-primary-votes-and-party-crosswalk",
       "status": "partial",
       "coverage": {
-        "cycles": ["vic_la_2022"],
-        "districts": 39,
-        "candidateRows": 323,
+        "cycles": [
+          "vic_la_2010",
+          "vic_la_2022"
+        ],
+        "districtCycleContests": 127,
+        "districtsByCycle": [
+          {
+            "id": "vic_la_2010",
+            "districts": 88,
+            "candidateRows": 502,
+            "status": "complete"
+          },
+          {
+            "id": "vic_la_2022",
+            "districts": 39,
+            "candidateRows": 323,
+            "status": "partial"
+          }
+        ],
+        "candidateRows": 825,
+        "familyRows2010": 440,
         "partyFamilies": 5,
         "crosswalkStatus": "frozen-fail-closed"
       },
       "evidence": [
+        {
+          "path": "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+          "sha256": "42b6bc386faf2cb2258be17af3303a5388e6612e86804bf628d1354b6e5d888b"
+        },
+        {
+          "path": "model/data/processed/vec_2010_assembly_family_primaries.csv",
+          "sha256": "cc0782232979b88ef4c2c3ea0c9fa4346d9561d51ce4708ba4473a97ae48e199"
+        },
+        {
+          "path": "metadata/vec-2010-assembly-primary-audit.json",
+          "sha256": "8c37931a3a8aeda1bc96a94530055618985da20276546c8117bb4cf5fb662a58"
+        },
         {
           "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
           "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
         },
         {
           "path": "model/config/historical-party-family-crosswalk.json",
-          "sha256": "ab5c9a697c6c435dccce17bff23d569e0f5ca87554d8b8b4c9c4df8b75f130e5"
+          "sha256": "563f731d8229d36d6f05e1036fc9988835d6dfee494a3e8b6022d79d20968554"
         }
       ],
       "limitations": [
-        "Unknown party labels are rejected pending evidence-backed adjudication; they are never silently mapped to Other/Independent.",
-        "Official district primary inputs remain incomplete outside 39 audited 2022 districts."
+        "The complete 2010 source is outcome evidence for scoring and cannot enter a pre-election information set.",
+        "Unknown party labels remain rejected pending evidence-backed adjudication; they are never silently mapped to Other/Independent.",
+        "Official district primary inputs remain incomplete for 2014, 2018 and 49 districts in 2022."
       ],
-      "needed": "Official district primary votes for every contest in all four cycles, with source labels adjudicated and formal-vote totals reconciled."
+      "needed": "Official district primary votes for all 88 contests in 2014 and 2018 and the remaining 49 contests in 2022, with source labels adjudicated and formal-vote totals reconciled."
     },
     {
       "id": "ballot-and-contest-slates",
       "status": "partial",
       "coverage": {
-        "cycles": ["vic_la_2022"],
-        "districts": 39,
-        "candidateRows": 323
+        "cycles": [
+          "vic_la_2010",
+          "vic_la_2022"
+        ],
+        "districtCycleContests": 127,
+        "districtsByCycle": [
+          {
+            "id": "vic_la_2010",
+            "districts": 88,
+            "candidateRows": 502,
+            "status": "complete"
+          },
+          {
+            "id": "vic_la_2022",
+            "districts": 39,
+            "candidateRows": 323,
+            "status": "partial"
+          }
+        ],
+        "candidateRows": 825
       },
       "evidence": [
+        {
+          "path": "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+          "sha256": "42b6bc386faf2cb2258be17af3303a5388e6612e86804bf628d1354b6e5d888b"
+        },
+        {
+          "path": "metadata/vec-2010-assembly-primary-audit.json",
+          "sha256": "8c37931a3a8aeda1bc96a94530055618985da20276546c8117bb4cf5fb662a58"
+        },
         {
           "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
           "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
         }
       ],
-      "needed": "Complete historical ballot slates, party identities and incumbent/challenger states for all four cycles."
+      "needed": "Complete historical ballot slates, party identities and incumbent/challenger states for 2014, 2018 and the remaining 2022 districts."
     },
     {
       "id": "preference-flows-and-final-pairs",
       "status": "partial",
       "coverage": {
-        "cycles": ["vic_la_2022"],
+        "cycles": [
+          "vic_la_2022"
+        ],
         "districtsWithDistributions": 39,
         "transferRows": 1204,
         "pureOriginalParcelEvents": 39,
@@ -142,7 +211,9 @@
       "id": "council-results-and-count-rules",
       "status": "partial",
       "coverage": {
-        "cycles": ["vic_lc_2022"],
+        "cycles": [
+          "vic_lc_2022"
+        ],
         "regions": 8,
         "electedCandidates": 40,
         "distributionSequenceAvailable": false
@@ -159,7 +230,12 @@
       "id": "frozen-historical-model-configurations",
       "status": "partial",
       "coverage": {
-        "cycles": ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"],
+        "cycles": [
+          "vic_la_2010",
+          "vic_la_2014",
+          "vic_la_2018",
+          "vic_la_2022"
+        ],
         "deterministicSeeds": 4,
         "explicitInformationCutoffs": 4,
         "runnableConfigs": 0
@@ -194,3 +270,4 @@
     }
   }
 }
+

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-31",
+  "reviewedAt": "2026-09-01",
   "status": "public-source-reconstruction-required",
   "decision": "Do not send external source requests until supplied checkpoints and public first-party sources have been exhausted and a residual-gap report exists.",
   "userActionRequired": false,
@@ -8,7 +8,7 @@
     {
       "id": "vec-historical-assembly-results",
       "authority": "Victorian Electoral Commission",
-      "suppliedMaterialStatus": "substantial-official-material-already-incorporated",
+      "suppliedMaterialStatus": "complete-2010-report-and-substantial-other-official-material-incorporated",
       "findings": {
         "fourCycleTppOutcomes": {
           "status": "complete",
@@ -19,19 +19,27 @@
           "cycles": [
             {
               "id": "vic_la_2010",
-              "districts": 0
+              "districts": 88,
+              "candidateRows": 502,
+              "status": "complete"
             },
             {
               "id": "vic_la_2014",
-              "districts": 0
+              "districts": 0,
+              "candidateRows": 0,
+              "status": "not-processed"
             },
             {
               "id": "vic_la_2018",
-              "districts": 0
+              "districts": 0,
+              "candidateRows": 0,
+              "status": "not-processed"
             },
             {
               "id": "vic_la_2022",
-              "districts": 39
+              "districts": 39,
+              "candidateRows": 323,
+              "status": "partial"
             }
           ]
         },
@@ -50,9 +58,20 @@
           "https://www.vec.vic.gov.au/results/state-election-results/2010-state-election",
           "https://www.vec.vic.gov.au/results/state-election-results/2014-state-election",
           "https://www.vec.vic.gov.au/results/state-election-results/2018-state-election"
-        ]
+        ],
+        "supplied2010Report": {
+          "status": "complete-machine-readable-extraction",
+          "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+          "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+          "reportPages": 1088,
+          "assemblyDistricts": 88,
+          "candidateRows": 502,
+          "familyRows": 440,
+          "statewideFormalVotes": 3164729,
+          "auditPath": "metadata/vec-2010-assembly-primary-audit.json"
+        }
       },
-      "nextAction": "harvest-supplied-checkpoints-and-public-first-party-files",
+      "nextAction": "harvest-public-2014-and-2018-results-and-complete-2022-district-primaries",
       "externalContact": {
         "status": "deferred",
         "trigger": "Only after a machine-readable residual-gap report identifies records unavailable from supplied or public first-party sources."
@@ -90,3 +109,4 @@
     "productionAuthorisation": false
   }
 }
+
