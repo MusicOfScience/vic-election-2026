@@ -278,23 +278,40 @@
       "status": "partial",
       "coverage": {
         "cycles": [
+          "vic_lc_2010",
           "vic_lc_2014",
           "vic_lc_2018",
           "vic_lc_2022"
         ],
-        "regionCycleContests": 24,
+        "regionCycleContests": 32,
         "regionsPerCycle": 8,
-        "candidateRows": 1185,
-        "countEvents": 5066,
-        "countTotalRows": 268994,
-        "electedCandidates": 120,
-        "fingerprintedSources": 48,
+        "candidateRows": 1394,
+        "countEvents": 5975,
+        "countTotalRows": 296087,
+        "electedCandidates": 160,
+        "fingerprintedSources": 64,
         "distributionSequenceAvailable": true
       },
       "evidence": [
         {
           "path": "model/data/seed/vec_2022_council_validation_targets.json",
           "sha256": "c49657ae8d3304609e66765d1a242a8fc66d7889148ec86d62f218bd6740518e"
+        },
+        {
+          "path": "model/data/processed/vec_2010_council_candidate_primaries.csv",
+          "sha256": "cef38d0ff0467b703fb554d3c294b7dbce11787061d6a798aa0aef5b24b790fd"
+        },
+        {
+          "path": "model/data/processed/vec_2010_council_preference_counts.csv.gz",
+          "sha256": "316f565c7b22d8abaaba8105cd228d5a5dad5f468678a4bf545b4da80c19b0a0"
+        },
+        {
+          "path": "metadata/vec-2010-council-evidence-audit.json",
+          "sha256": "06c0d07c7061fe17efabb646ed14dd3185361dc52f290a5f6b24762ff8367274"
+        },
+        {
+          "path": "metadata/vec-2010-council-source-manifest.csv",
+          "sha256": "60015e2b99284a484fd09f68c4e9e4d54c99aa2694478f51482a86b28e475896"
         },
         {
           "path": "model/data/processed/vec_2014_council_candidate_primaries.csv",
@@ -330,11 +347,10 @@
         }
       ],
       "limitations": [
-        "The 2010 Legislative Council cycle is not included in this harvest.",
         "Cycle-specific electoral-rule configuration remains unresolved.",
         "Election results are scoring-only outcomes and cannot enter a pre-election information set."
       ],
-      "needed": "Official 2010 Council evidence and the electoral rules effective in each historical cycle."
+      "needed": "The electoral rules effective in each historical cycle."
     },
     {
       "id": "frozen-historical-model-configurations",

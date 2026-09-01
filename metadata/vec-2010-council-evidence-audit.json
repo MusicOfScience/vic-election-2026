@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-01",
+  "status": "complete-official-2010-council-outcome-evidence",
+  "scope": "Official VEC 2010 Legislative Council result pages and preference-distribution workbooks",
+  "coverage": {
+    "cycles": [
+      "vic_lc_2010"
+    ],
+    "regionCycleContests": 8,
+    "regionsPerCycle": 8,
+    "candidateRows": 209,
+    "countEvents": 909,
+    "countTotalRows": 27093,
+    "electedCandidates": 40,
+    "fingerprintedSources": 16
+  },
+  "acceptance": {
+    "allRegionPagesPresent": true,
+    "fiveMembersPerRegion": true,
+    "candidatePrimariesReconcileToFormalVotes": true,
+    "pagePrimariesMatchWorkbookCountOne": true,
+    "quotaFormulaReconciles": true,
+    "countSequencesContiguous": true,
+    "allSourcesFingerprinted": true
+  },
+  "regions": [
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "eastern-metropolitan-region",
+      "regionName": "Eastern Metropolitan Region",
+      "formalVotes": 389611,
+      "informalVotes": 11465,
+      "quota": 64936,
+      "candidateRows": 28,
+      "countEvents": 128,
+      "countTotalRows": 3966,
+      "electedCandidates": 5,
+      "elected": [
+        "DALLA-RIVA, Richard",
+        "LEANE, Shaun",
+        "ATKINSON, Bruce",
+        "KRONBERG, Jan",
+        "TEE, Brian"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "eastern-victoria-region",
+      "regionName": "Eastern Victoria Region",
+      "formalVotes": 416457,
+      "informalVotes": 12295,
+      "quota": 69410,
+      "candidateRows": 21,
+      "countEvents": 88,
+      "countTotalRows": 2110,
+      "electedCandidates": 5,
+      "elected": [
+        "DAVIS, Philip",
+        "VINEY, Matt",
+        "HALL, Peter",
+        "O'DONOHUE, Edward",
+        "SCHEFFER, Johan"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "northern-metropolitan-region",
+      "regionName": "Northern Metropolitan Region",
+      "formalVotes": 394035,
+      "informalVotes": 19235,
+      "quota": 65673,
+      "candidateRows": 34,
+      "countEvents": 163,
+      "countTotalRows": 6029,
+      "electedCandidates": 5,
+      "elected": [
+        "MIKAKOS, Jenny",
+        "GUY, Matthew",
+        "BARBER, Greg",
+        "ELASMAR, Nazih",
+        "ONDARCHIE, Craig"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "northern-victoria-region",
+      "regionName": "Northern Victoria Region",
+      "formalVotes": 389673,
+      "informalVotes": 11220,
+      "quota": 64946,
+      "candidateRows": 25,
+      "countEvents": 98,
+      "countTotalRows": 2742,
+      "electedCandidates": 5,
+      "elected": [
+        "LOVELL, Wendy",
+        "BROAD, Candy",
+        "DRUM, Damian",
+        "DARVENIZA, Kaye",
+        "PETROVICH, Donna"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "south-eastern-metropolitan-region",
+      "regionName": "South Eastern Metropolitan Region",
+      "formalVotes": 396939,
+      "informalVotes": 14758,
+      "quota": 66157,
+      "candidateRows": 24,
+      "countEvents": 105,
+      "countTotalRows": 2833,
+      "electedCandidates": 5,
+      "elected": [
+        "JENNINGS, Gavin",
+        "RICH-PHILLIPS, Gordon",
+        "SOMYUREK, Adem",
+        "PEULICH, Inga",
+        "TARLAMIS, Lee"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "southern-metropolitan-region",
+      "regionName": "Southern Metropolitan Region",
+      "formalVotes": 381369,
+      "informalVotes": 10071,
+      "quota": 63562,
+      "candidateRows": 26,
+      "countEvents": 109,
+      "countTotalRows": 3159,
+      "electedCandidates": 5,
+      "elected": [
+        "DAVIS, David",
+        "LENDERS, John",
+        "COOTE, Andrea",
+        "CROZIER, Georgie",
+        "PENNICUIK, Sue"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "western-metropolitan-region",
+      "regionName": "Western Metropolitan Region",
+      "formalVotes": 422708,
+      "informalVotes": 20549,
+      "quota": 70452,
+      "candidateRows": 24,
+      "countEvents": 94,
+      "countTotalRows": 2536,
+      "electedCandidates": 5,
+      "elected": [
+        "PAKULA, Martin",
+        "FINN, Bernie",
+        "EIDEH, Khalil",
+        "ELSBURY, Andrew",
+        "HARTLAND, Colleen"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2010",
+      "regionId": "western-victoria-region",
+      "regionName": "Western Victoria Region",
+      "formalVotes": 425594,
+      "informalVotes": 12882,
+      "quota": 70933,
+      "candidateRows": 27,
+      "countEvents": 124,
+      "countTotalRows": 3718,
+      "electedCandidates": 5,
+      "elected": [
+        "KOCH, David",
+        "PULFORD, Jaala",
+        "RAMSAY, Simon",
+        "TIERNEY, Gayle",
+        "O'BRIEN, David"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    }
+  ],
+  "limitations": [
+    "Cycle-specific electoral-rule configuration remains unresolved.",
+    "These election outcomes are scoring-only and cannot enter a pre-election information set."
+  ],
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "historicalReplayEligible": false,
+    "probabilityCalibrationReady": false,
+    "automaticGateOpening": false
+  }
+}
