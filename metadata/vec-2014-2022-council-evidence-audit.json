@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-01",
+  "status": "partial-three-cycle-official-council-evidence",
+  "scope": "Official VEC Legislative Council result pages and preference-distribution workbooks for 2014, 2018 and 2022",
+  "coverage": {
+    "cycles": [
+      "vic_lc_2014",
+      "vic_lc_2018",
+      "vic_lc_2022"
+    ],
+    "regionCycleContests": 24,
+    "regionsPerCycle": 8,
+    "electedCandidates": 120,
+    "candidateRows": 1185,
+    "countEvents": 5066,
+    "countTotalRows": 268994,
+    "fingerprintedSources": 48
+  },
+  "acceptance": {
+    "allRegionPagesPresent": true,
+    "fiveMembersPerRegion": true,
+    "candidatePrimariesReconcileToFormalVotes": true,
+    "pagePrimariesMatchWorkbookCountOne": true,
+    "quotaFormulaReconciles": true,
+    "countSequencesContiguous": true,
+    "allSourcesFingerprinted": true
+  },
+  "regions": [
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "eastern-metropolitan-region",
+      "regionName": "Eastern Metropolitan Region",
+      "formalVotes": 423854,
+      "informalVotes": 12237,
+      "quota": 70643,
+      "candidateRows": 40,
+      "countEvents": 168,
+      "countTotalRows": 7223,
+      "electedCandidates": 5,
+      "elected": [
+        "WOOLDRIDGE, Mary",
+        "LEANE, Shaun",
+        "ATKINSON, Bruce",
+        "DALLA-RIVA, Richard",
+        "DUNN, Samantha"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "eastern-victoria-region",
+      "regionName": "Eastern Victoria Region",
+      "formalVotes": 436788,
+      "informalVotes": 13335,
+      "quota": 72799,
+      "candidateRows": 46,
+      "countEvents": 185,
+      "countTotalRows": 9064,
+      "electedCandidates": 5,
+      "elected": [
+        "O'DONOHUE, Edward",
+        "SHING, Harriet",
+        "O'BRIEN, Danny",
+        "BOURMAN, Jeffrey",
+        "MULINO, Daniel"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "northern-metropolitan-region",
+      "regionName": "Northern Metropolitan Region",
+      "formalVotes": 411998,
+      "informalVotes": 22932,
+      "quota": 68667,
+      "candidateRows": 52,
+      "countEvents": 263,
+      "countTotalRows": 14464,
+      "electedCandidates": 5,
+      "elected": [
+        "MIKAKOS, Jenny",
+        "ONDARCHIE, Craig",
+        "BARBER, Greg",
+        "ELASMAR, Nazih",
+        "PATTEN, Fiona"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "northern-victoria-region",
+      "regionName": "Northern Victoria Region",
+      "formalVotes": 437614,
+      "informalVotes": 12375,
+      "quota": 72936,
+      "candidateRows": 37,
+      "countEvents": 154,
+      "countTotalRows": 6159,
+      "electedCandidates": 5,
+      "elected": [
+        "LOVELL, Wendy",
+        "HERBERT, Steven",
+        "DRUM, Damian",
+        "YOUNG, Daniel",
+        "SYMES, Jaclyn"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "south-eastern-metropolitan-region",
+      "regionName": "South-Eastern Metropolitan Region",
+      "formalVotes": 420951,
+      "informalVotes": 17121,
+      "quota": 70159,
+      "candidateRows": 41,
+      "countEvents": 200,
+      "countTotalRows": 8799,
+      "electedCandidates": 5,
+      "elected": [
+        "JENNINGS, Gavin Wayne",
+        "RICH-PHILLIPS, Gordon",
+        "SOMYUREK, Adem",
+        "PEULICH, Inga",
+        "SPRINGLE, Nina"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "southern-metropolitan-region",
+      "regionName": "Southern Metropolitan Region",
+      "formalVotes": 414196,
+      "informalVotes": 10912,
+      "quota": 69033,
+      "candidateRows": 48,
+      "countEvents": 194,
+      "countTotalRows": 9893,
+      "electedCandidates": 5,
+      "elected": [
+        "DAVIS, David",
+        "DALIDAKIS, Philip Alexander",
+        "CROZIER, Georgie",
+        "PENNICUIK, Sue",
+        "FITZHERBERT, Margaret"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "western-metropolitan-region",
+      "regionName": "Western Metropolitan Region",
+      "formalVotes": 435633,
+      "informalVotes": 19197,
+      "quota": 72606,
+      "candidateRows": 42,
+      "countEvents": 174,
+      "countTotalRows": 7829,
+      "electedCandidates": 5,
+      "elected": [
+        "MELHEM, Cesar",
+        "FINN, Bernie",
+        "EIDEH, Khalil",
+        "HARTLAND, Colleen",
+        "CARLING-JENKINS, Rachel"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2014",
+      "regionId": "western-victoria-region",
+      "regionName": "Western Victoria Region",
+      "formalVotes": 437637,
+      "informalVotes": 13388,
+      "quota": 72940,
+      "candidateRows": 45,
+      "countEvents": 223,
+      "countTotalRows": 10703,
+      "electedCandidates": 5,
+      "elected": [
+        "RAMSAY, Simon",
+        "PULFORD, Jaala",
+        "MORRIS, Josh",
+        "TIERNEY, Gayle Anne",
+        "PURCELL, James"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "eastern-metropolitan-region",
+      "regionName": "Eastern Metropolitan Region",
+      "formalVotes": 418532,
+      "informalVotes": 13484,
+      "quota": 69756,
+      "candidateRows": 45,
+      "countEvents": 226,
+      "countTotalRows": 10847,
+      "electedCandidates": 5,
+      "elected": [
+        "LEANE, Shaun",
+        "WOOLDRIDGE, Mary",
+        "TERPSTRA, Sonja",
+        "ATKINSON, Bruce",
+        "BARTON, Rodney Brian"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "eastern-victoria-region",
+      "regionName": "Eastern Victoria Region",
+      "formalVotes": 467611,
+      "informalVotes": 18419,
+      "quota": 77936,
+      "candidateRows": 46,
+      "countEvents": 188,
+      "countTotalRows": 9211,
+      "electedCandidates": 5,
+      "elected": [
+        "O'DONOHUE, Edward",
+        "GARRETT, Jane Furneaux",
+        "BATH, Melina",
+        "SHING, Harriet",
+        "BOURMAN, Jeff"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "northern-metropolitan-region",
+      "regionName": "Northern Metropolitan Region",
+      "formalVotes": 450239,
+      "informalVotes": 22717,
+      "quota": 75040,
+      "candidateRows": 52,
+      "countEvents": 192,
+      "countTotalRows": 10559,
+      "electedCandidates": 5,
+      "elected": [
+        "MIKAKOS, Jenny",
+        "ELASMAR, Nazih",
+        "RATNAM, Samantha",
+        "ONDARCHIE, Craig",
+        "PATTEN, Fiona"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "northern-victoria-region",
+      "regionName": "Northern Victoria Region",
+      "formalVotes": 456706,
+      "informalVotes": 18905,
+      "quota": 76118,
+      "candidateRows": 45,
+      "countEvents": 156,
+      "countTotalRows": 7487,
+      "electedCandidates": 5,
+      "elected": [
+        "GEPP, Mark",
+        "LOVELL, Wendy",
+        "QUILTY, Tim",
+        "MAXWELL, Tania Maree",
+        "SYMES, Jaclyn"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "south-eastern-metropolitan-region",
+      "regionName": "South-Eastern Metropolitan Region",
+      "formalVotes": 436977,
+      "informalVotes": 18962,
+      "quota": 72830,
+      "candidateRows": 53,
+      "countEvents": 219,
+      "countTotalRows": 12263,
+      "electedCandidates": 5,
+      "elected": [
+        "JENNINGS, Gavin Wayne",
+        "RICH-PHILLIPS, Gordon",
+        "SOMYUREK, Adem",
+        "KIEU, Tien Dung",
+        "LIMBRICK, David"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "southern-metropolitan-region",
+      "regionName": "Southern Metropolitan Region",
+      "formalVotes": 429657,
+      "informalVotes": 11801,
+      "quota": 71610,
+      "candidateRows": 45,
+      "countEvents": 227,
+      "countTotalRows": 10895,
+      "electedCandidates": 5,
+      "elected": [
+        "DAVIS, David",
+        "DALIDAKIS, Philip",
+        "CROZIER, Georgie",
+        "TAYLOR, Nina",
+        "HAYES, Clifford"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "western-metropolitan-region",
+      "regionName": "Western Metropolitan Region",
+      "formalVotes": 463258,
+      "informalVotes": 23606,
+      "quota": 77210,
+      "candidateRows": 48,
+      "countEvents": 204,
+      "countTotalRows": 10403,
+      "electedCandidates": 5,
+      "elected": [
+        "MELHEM, Cesar",
+        "FINN, Bernie",
+        "STITT, Ingrid",
+        "VAGHELA, Kaushaliya Virjibhai",
+        "CUMMING, Catherine Rebecca"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2018",
+      "regionId": "western-victoria-region",
+      "regionName": "Western Victoria Region",
+      "formalVotes": 460498,
+      "informalVotes": 19819,
+      "quota": 76750,
+      "candidateRows": 46,
+      "countEvents": 192,
+      "countTotalRows": 9407,
+      "electedCandidates": 5,
+      "elected": [
+        "PULFORD, Jaala",
+        "McARTHUR, Beverley",
+        "TIERNEY, Gayle",
+        "GRIMLEY, Stuart James",
+        "MEDDICK, Andy"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "eastern-victoria-region",
+      "regionName": "Eastern Victoria Region",
+      "formalVotes": 473318,
+      "informalVotes": 14948,
+      "quota": 78887,
+      "candidateRows": 56,
+      "countEvents": 248,
+      "countTotalRows": 14631,
+      "electedCandidates": 5,
+      "elected": [
+        "HEATH, Renee",
+        "McINTOSH, Tom",
+        "BATH, Melina",
+        "SHING, Harriet",
+        "BOURMAN, Jeff"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "north-eastern-metropolitan-region",
+      "regionName": "North-Eastern Metropolitan Region",
+      "formalVotes": 480878,
+      "informalVotes": 13794,
+      "quota": 80147,
+      "candidateRows": 56,
+      "countEvents": 205,
+      "countTotalRows": 12094,
+      "electedCandidates": 5,
+      "elected": [
+        "LEANE, Shaun",
+        "BACH, Matthew",
+        "TERPSTRA, Sonja",
+        "McGOWAN, Nick",
+        "PUGLIELLI, Aiv"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "northern-metropolitan-region",
+      "regionName": "Northern Metropolitan Region",
+      "formalVotes": 452430,
+      "informalVotes": 17223,
+      "quota": 75406,
+      "candidateRows": 58,
+      "countEvents": 254,
+      "countTotalRows": 15493,
+      "electedCandidates": 5,
+      "elected": [
+        "WATT, Sheena",
+        "MULHOLLAND, Evan",
+        "RATNAM, Samantha",
+        "ERDOGAN, Enver",
+        "SOMYUREK, Adem"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "northern-victoria-region",
+      "regionName": "Northern Victoria Region",
+      "formalVotes": 464784,
+      "informalVotes": 14734,
+      "quota": 77465,
+      "candidateRows": 55,
+      "countEvents": 240,
+      "countTotalRows": 13919,
+      "electedCandidates": 5,
+      "elected": [
+        "LOVELL, Wendy",
+        "SYMES, Jaclyn",
+        "BROAD, Gaelle",
+        "PURCELL, Georgie",
+        "TYRRELL, Rikkie-Lee"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "south-eastern-metropolitan-region",
+      "regionName": "South-Eastern Metropolitan Region",
+      "formalVotes": 469775,
+      "informalVotes": 18076,
+      "quota": 78296,
+      "candidateRows": 56,
+      "countEvents": 228,
+      "countTotalRows": 13451,
+      "electedCandidates": 5,
+      "elected": [
+        "TARLAMIS, Lee",
+        "HERMANS, Ann-Marie",
+        "GALEA, Michael",
+        "PAYNE, Rachel",
+        "LIMBRICK, David"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "southern-metropolitan-region",
+      "regionName": "Southern Metropolitan Region",
+      "formalVotes": 469853,
+      "informalVotes": 9702,
+      "quota": 78309,
+      "candidateRows": 54,
+      "countEvents": 219,
+      "countTotalRows": 12482,
+      "electedCandidates": 5,
+      "elected": [
+        "DAVIS, David",
+        "BERGER, John",
+        "CROZIER, Georgie",
+        "COPSEY, Katherine",
+        "BATCHELOR, Ryan"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "western-metropolitan-region",
+      "regionName": "Western Metropolitan Region",
+      "formalVotes": 449155,
+      "informalVotes": 19025,
+      "quota": 74860,
+      "candidateRows": 62,
+      "countEvents": 260,
+      "countTotalRows": 16899,
+      "electedCandidates": 5,
+      "elected": [
+        "BLANDTHORN, Lizzie",
+        "DEEMING, Moira",
+        "STITT, Ingrid",
+        "ETTERSHANK, David",
+        "LUU, Trung"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    },
+    {
+      "electionId": "vic_lc_2022",
+      "regionId": "western-victoria-region",
+      "regionName": "Western Victoria Region",
+      "formalVotes": 492213,
+      "informalVotes": 17224,
+      "quota": 82036,
+      "candidateRows": 57,
+      "countEvents": 247,
+      "countTotalRows": 14819,
+      "electedCandidates": 5,
+      "elected": [
+        "ERMACORA, Jacinta",
+        "McARTHUR, Bev",
+        "TIERNEY, Gayle",
+        "MANSFIELD, Sarah",
+        "McCRACKEN, Joe"
+      ],
+      "pagePrimaryMatchesWorkbookCountOne": true
+    }
+  ],
+  "limitations": [
+    "The 2010 Legislative Council cycle is not included in this harvest.",
+    "Cycle-specific electoral-rule configuration remains unresolved.",
+    "These election outcomes are scoring-only and cannot enter a pre-election information set."
+  ],
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "historicalReplayEligible": false,
+    "probabilityCalibrationReady": false,
+    "automaticGateOpening": false
+  }
+}

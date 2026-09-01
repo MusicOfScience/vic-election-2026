@@ -10,11 +10,21 @@
     "familyRows": 1760,
     "vecContactRequired": false
   },
+  "councilEvidence": {
+    "status": "partial",
+    "cycles": 3,
+    "regionCycleContests": 24,
+    "candidateRows": 1185,
+    "countEvents": 5066,
+    "countTotalRows": 268994,
+    "electedCandidates": 120,
+    "residual": "2010 Council evidence and cycle-specific rules"
+  },
   "residualComponents": [
     "pre-election-poll-vintages",
     "cutoff-compliant-ballot-timing-and-incumbency",
     "preference-flows-and-final-pairs",
-    "council-results-and-count-rules",
+    "2010-council-results-and-cycle-specific-count-rules",
     "runnable-frozen-historical-model-configurations"
   ],
   "userActionRequired": false,

@@ -278,19 +278,63 @@
       "status": "partial",
       "coverage": {
         "cycles": [
+          "vic_lc_2014",
+          "vic_lc_2018",
           "vic_lc_2022"
         ],
-        "regions": 8,
-        "electedCandidates": 40,
-        "distributionSequenceAvailable": false
+        "regionCycleContests": 24,
+        "regionsPerCycle": 8,
+        "candidateRows": 1185,
+        "countEvents": 5066,
+        "countTotalRows": 268994,
+        "electedCandidates": 120,
+        "fingerprintedSources": 48,
+        "distributionSequenceAvailable": true
       },
       "evidence": [
         {
           "path": "model/data/seed/vec_2022_council_validation_targets.json",
           "sha256": "c49657ae8d3304609e66765d1a242a8fc66d7889148ec86d62f218bd6740518e"
+        },
+        {
+          "path": "model/data/processed/vec_2014_council_candidate_primaries.csv",
+          "sha256": "e9d2d6dbefc16d72256dcecb37861b346b73660ced615bb2e64eefeadda4d7a7"
+        },
+        {
+          "path": "model/data/processed/vec_2014_council_preference_counts.csv.gz",
+          "sha256": "453bcc5cab778004ee53cd860c0df85d8ab483d7030e84e70b08b925a4e4bab3"
+        },
+        {
+          "path": "model/data/processed/vec_2018_council_candidate_primaries.csv",
+          "sha256": "cf0f2c5dcac47e7375d1a54269a9ded4f02bfa6ea5cbb17c20361499ce6fe607"
+        },
+        {
+          "path": "model/data/processed/vec_2018_council_preference_counts.csv.gz",
+          "sha256": "8edb86660e4a44d8a949dfa5465971859af561f41709d24782fcb6018cecde25"
+        },
+        {
+          "path": "model/data/processed/vec_2022_council_candidate_primaries.csv",
+          "sha256": "6612b035aec9bdcc56f22bad15423b7eb184ca151ae1ecf54ad4358afe74ca85"
+        },
+        {
+          "path": "model/data/processed/vec_2022_council_preference_counts.csv.gz",
+          "sha256": "8dd7dca708b0e16e03683b6c4b81277eea2e4e86c60107579b048283ac8c8bea"
+        },
+        {
+          "path": "metadata/vec-2014-2022-council-evidence-audit.json",
+          "sha256": "260a832dd3ba07ad37685d539f900c476d4b060958800bc39733ff36e22b48e4"
+        },
+        {
+          "path": "metadata/vec-2014-2022-council-source-manifest.csv",
+          "sha256": "5641d20424fce253c84b9d45b804ad492ea5cc3cc68da4c338f6ddad1f2679b5"
         }
       ],
-      "needed": "Official regional primaries, count sequences and the electoral rules effective in each historical cycle."
+      "limitations": [
+        "The 2010 Legislative Council cycle is not included in this harvest.",
+        "Cycle-specific electoral-rule configuration remains unresolved.",
+        "Election results are scoring-only outcomes and cannot enter a pre-election information set."
+      ],
+      "needed": "Official 2010 Council evidence and the electoral rules effective in each historical cycle."
     },
     {
       "id": "frozen-historical-model-configurations",
@@ -336,4 +380,3 @@
     }
   }
 }
-

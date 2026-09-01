@@ -61,8 +61,8 @@
     {
       "id": "council-results-and-count-rules",
       "status": "partial",
-      "available": "Official 2022 high-level anchors for all eight regions: formal votes, quotas and 40 elected candidates",
-      "needed": "Historical region/group primary votes, full count sequences and the electoral rules effective in each cycle",
+      "available": "Official candidate primaries and complete published count-total sequences for all 24 region-cycle contests in 2014, 2018 and 2022: 1,185 candidate rows, 5,066 count events and 120 elected candidates",
+      "needed": "Official 2010 Council evidence and the electoral rules effective in each historical cycle",
       "requiredFor": [
         "council-seat-model",
         "region-probability-calibration"
@@ -94,4 +94,3 @@
   ],
   "automaticGateOpening": false
 }
-
