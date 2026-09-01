@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "reviewedAt": "2026-08-31",
+  "schemaVersion": 2,
+  "reviewedAt": "2026-09-01",
   "status": "frozen-fail-closed",
   "scope": "Historical Legislative Assembly primary-vote aggregation for the complete five-party model",
   "targetFamilies": [
@@ -29,6 +29,7 @@
       "Liberal Party",
       "Liberal Party of Australia - Victorian Division",
       "The Nationals",
+      "Nationals",
       "National Party",
       "National Party of Australia - Victoria",
       "Liberal / The Nationals",
@@ -54,9 +55,33 @@
       "Independent",
       "IND",
       "Other Candidates",
-      "OTH"
+      "OTH",
+      "Australian Party",
+      "Christian Party",
+      "Country Alliance",
+      "D.L.P. - Democratic Labor Party",
+      "Family First",
+      "Sex Party",
+      "Socialist Alliance"
     ]
   },
+  "sourceAdjudications": [
+    {
+      "source": "VEC Report to Parliament on the 2010 Victorian State Election",
+      "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+      "partyLabelsMappedToOtherIndependent": [
+        "AUSTRALIAN PARTY",
+        "CHRISTIAN PARTY",
+        "COUNTRY ALLIANCE",
+        "D.L.P. - DEMOCRATIC LABOR PARTY",
+        "FAMILY FIRST",
+        "SEX PARTY",
+        "SOCIALIST ALLIANCE"
+      ],
+      "blankPartyMeaning": "The official candidate table prints no registered-party affiliation; the row is retained as an independent candidate.",
+      "adjudicationEvidence": "metadata/vec-2010-assembly-primary-audit.json"
+    }
+  ],
   "independentCandidateRule": {
     "blankPartyMayMapToOtherIndependent": true,
     "requiresExplicitIndependentStatus": true

@@ -16,13 +16,13 @@ The decision and source findings are recorded in `metadata/historical-public-sou
 
 The existing project already incorporates substantial official VEC evidence, including a complete 340-row four-cycle boundary-aligned TPP benchmark.
 
-For candidate-level primaries, the current processed ledger contains 39 districts from the 2022 indicative preference-distribution workbooks. Those 39 workbooks are not the limit of public 2022 primary data: the VEC result index lists all 88 districts, and individual district pages publish first-preference tables and primary-result spreadsheets.
+For candidate-level primaries, the supplied 2010 VEC Report to Parliament has now been fingerprinted and converted into 502 candidate rows covering all 88 districts, plus 440 reconciled five-family target rows. The processed ledger also retains 323 candidate rows across 39 districts from the 2022 indicative preference-distribution workbooks. Those 39 workbooks are not the limit of public 2022 primary data: the VEC result index lists all 88 districts, and individual district pages publish first-preference tables and primary-result spreadsheets. The remaining processed gaps are therefore all 88 districts in 2014 and 2018, plus 49 districts in 2022.
 
 The acquisition order is therefore:
 
-1. re-audit the supplied project checkpoints;
+1. retain the completed audit of the supplied 2010 official report;
 2. harvest and reconcile public VEC district tables and spreadsheets;
-3. resolve the historical 2010, 2014 and 2018 result routes and reports;
+3. resolve the historical 2014 and 2018 result routes and reports;
 4. produce a residual-gap report; and
 5. contact the VEC only for confirmed residual gaps or a more convenient official bulk export.
 
@@ -71,3 +71,4 @@ We have attempted to reconstruct the observations from original pollster and pub
 Until those points are resolved, our project treats the file only as a lead list and imports zero rows.
 
 Many thanks for maintaining the resource.
+

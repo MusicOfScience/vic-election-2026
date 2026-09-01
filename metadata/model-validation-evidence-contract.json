@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-30",
+  "reviewedAt": "2026-09-01",
   "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",
   "policy": "A two-party historical residual test may validate a benchmark or reject a feature, but it cannot certify the complete multi-party probability model.",
   "minimumWalkForwardCycles": 4,
@@ -9,49 +9,75 @@
       "id": "boundary-aligned-tpp-outcomes",
       "status": "complete",
       "available": "340 district transitions across the 2010, 2014, 2018 and 2022 cycles",
-      "requiredFor": ["uniform-swing-baseline", "two-party-error-benchmark"]
+      "requiredFor": [
+        "uniform-swing-baseline",
+        "two-party-error-benchmark"
+      ]
     },
     {
       "id": "pre-election-poll-vintages",
       "status": "partial",
       "available": "A quarantined, version-pinned candidate series contains 200 Victorian poll observations spanning all four cycles with fieldwork-midpoint and party-primary fields",
       "needed": "Observation-level publication dates, sample sizes, explicit methods, source URLs and reuse authority before the candidate series can enter a historical replay",
-      "requiredFor": ["polling-only-model", "latent-poll-replay", "information-cutoff-audit"]
+      "requiredFor": [
+        "polling-only-model",
+        "latent-poll-replay",
+        "information-cutoff-audit"
+      ]
     },
     {
       "id": "district-primary-votes-and-party-crosswalk",
       "status": "partial",
-      "available": "323 audited candidate-primary rows across 39 districts from the 2022 VEC indicative-distribution corpus, plus a frozen fail-closed five-family party crosswalk",
-      "needed": "Official district primary votes for every contest in all four cycles, with every source label explicitly mapped or adjudicated and district totals reconciled",
-      "requiredFor": ["five-party-seat-model", "ballot-access-effects", "party-primary-error"]
+      "available": "502 official candidate-primary rows covering all 88 districts in 2010 plus 323 audited candidate-primary rows across 39 districts in 2022: 825 rows across 127 district-cycle contests, with a frozen fail-closed five-family party crosswalk",
+      "needed": "Official district primary votes for all 88 contests in 2014 and 2018 and the remaining 49 contests in 2022, with every source label explicitly mapped or adjudicated and district totals reconciled",
+      "requiredFor": [
+        "five-party-seat-model",
+        "ballot-access-effects",
+        "party-primary-error"
+      ]
     },
     {
       "id": "ballot-and-contest-slates",
       "status": "partial",
-      "available": "Candidate and party identities for 323 candidates across 39 audited 2022 district distributions",
-      "needed": "Complete party contest coverage, candidate/party identity and incumbent/challenger status as known at each historical election",
-      "requiredFor": ["candidate-evidence-replay", "sparse-ballot-effects", "incumbency-tests"]
+      "available": "Complete official candidate and party identities for 502 candidates across all 88 districts in 2010, plus 323 candidates across 39 audited 2022 district distributions",
+      "needed": "Complete party contest coverage, candidate/party identity and incumbent/challenger status for 2014, 2018 and the remaining 2022 districts, as known at each historical election",
+      "requiredFor": [
+        "candidate-evidence-replay",
+        "sparse-ballot-effects",
+        "incumbency-tests"
+      ]
     },
     {
       "id": "preference-flows-and-final-pairs",
       "status": "partial",
       "available": "Major-party TPP outcomes plus 1,204 transfer rows from 39 audited 2022 indicative distributions; no source-party parameter is forecast-ready",
       "needed": "Full distributions or defensible cycle-specific transfer evidence, final-two pair identities and non-major 2CP outcomes across all four cycles",
-      "requiredFor": ["irv-replay", "final-pair-calibration", "three-party-contests"]
+      "requiredFor": [
+        "irv-replay",
+        "final-pair-calibration",
+        "three-party-contests"
+      ]
     },
     {
       "id": "council-results-and-count-rules",
       "status": "partial",
       "available": "Official 2022 high-level anchors for all eight regions: formal votes, quotas and 40 elected candidates",
       "needed": "Historical region/group primary votes, full count sequences and the electoral rules effective in each cycle",
-      "requiredFor": ["council-seat-model", "region-probability-calibration"]
+      "requiredFor": [
+        "council-seat-model",
+        "region-probability-calibration"
+      ]
     },
     {
       "id": "frozen-historical-model-configurations",
       "status": "partial",
       "available": "Four deterministic, leakage-safe cycle specifications with explicit election-eve information cutoffs and scoring-only outcomes",
       "needed": "Complete cutoff-compliant historical inputs and an executable replay for each frozen cycle",
-      "requiredFor": ["walk-forward-replay", "reproducibility", "anti-leakage-audit"]
+      "requiredFor": [
+        "walk-forward-replay",
+        "reproducibility",
+        "anti-leakage-audit"
+      ]
     }
   ],
   "promotionMetrics": [
@@ -68,3 +94,4 @@
   ],
   "automaticGateOpening": false
 }
+

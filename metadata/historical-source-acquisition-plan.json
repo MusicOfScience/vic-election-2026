@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "reviewedAt": "2026-08-31",
+  "reviewedAt": "2026-09-01",
   "status": "public-source-reconstruction-first",
   "policy": "Supplied checkpoints and public first-party sources must be exhausted before external contact. Any acquired material remains quarantined until provenance, structure, reconciliation and licensing checks pass.",
   "publicSourceAudit": {
@@ -29,7 +29,9 @@
         {
           "id": "vic_la_2010",
           "requiredDistricts": 88,
-          "auditedDistricts": 0
+          "auditedDistricts": 88,
+          "candidateRows": 502,
+          "status": "complete-from-supplied-official-report"
         },
         {
           "id": "vic_la_2014",
@@ -52,7 +54,14 @@
         "listed2022Districts": 88,
         "candidateFirstPreferenceTablesAvailable": true,
         "perDistrictPrimaryExcelLinksAvailable": true,
-        "indicativePreferenceDistributionDistricts": 39
+        "indicativePreferenceDistributionDistricts": 39,
+        "supplied2010Report": {
+          "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+          "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+          "machineReadableExtractionStatus": "complete",
+          "districts": 88,
+          "candidateRows": 502
+        }
       },
       "contactTrigger": "residual-gaps-confirmed-after-public-harvest",
       "requiredFields": [
@@ -127,3 +136,4 @@
     "automaticGateOpening": false
   }
 }
+
