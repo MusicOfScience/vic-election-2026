@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-01",
+  "status": "complete-cycle-pinned-authorised-legislation",
+  "scope": "Victorian Legislative Council election and count rules effective on election day in 2010, 2014, 2018 and 2022",
+  "materialRuleSetId": "electoral-act-2002-s93a-s112a-s112b-s114a-v1",
+  "vacanciesPerRegion": 5,
+  "sections": {
+    "ballotMarking": "93A",
+    "belowLineFormalitySavings": "112A",
+    "groupVotingTicketDeeming": "112B",
+    "councilCount": "114A"
+  },
+  "rules": {
+    "ballot": {
+      "aboveTheLine": {
+        "firstPreferenceMark": 1,
+        "tickOrCrossTreatedAsFirstPreference": true,
+        "minimumRegisteredGroupVotingTickets": 1,
+        "maximumRegisteredGroupVotingTickets": 3,
+        "ticketAllocation": "equal shares; any one- or two-ballot remainder is assigned by lot as prescribed in section 112B"
+      },
+      "belowTheLine": {
+        "minimumConsecutivePreferences": 5,
+        "sequenceStartsAt": 1,
+        "countedUntilFirstBreak": true
+      },
+      "validAboveAndBelowLineMarking": "below-the-line preferences prevail",
+      "onlyOneMethodValid": "the valid method prevails"
+    },
+    "quota": {
+      "formula": "floor(firstPreferenceVotes / (vacancies + 1)) + 1",
+      "firstPreferenceVotesMeaning": "total formal first preference votes in the region",
+      "candidateElectedAtOrAboveQuota": true
+    },
+    "surplusTransfer": {
+      "surplusFormula": "candidateVotes - quota",
+      "transferValueFormula": "surplusVotes / ballotPapersTreatedAsFirstPreferenceForElectedCandidate",
+      "nextAvailablePreference": true,
+      "parcelCreditFormula": "floor(ballotPapersInParcel * transferValue)",
+      "allBallotPapersInParcelMove": true,
+      "candidateStopsReceivingAfterElectionDuringTransfer": true,
+      "transferredBallotsRetainedAsCandidateFirstPreferenceForLaterSurplus": true
+    },
+    "exclusionTransfer": {
+      "trigger": "after first preferences or completed surplus transfers, fewer candidates than required have reached quota",
+      "exclude": "continuing candidate with fewest votes",
+      "originalBallotsTransferValue": 1,
+      "transferredParcelOrder": "highest transfer value to lowest transfer value",
+      "parcelCreditFormula": "floor(ballotPapersInParcel * retainedTransferValue)",
+      "completeCurrentExclusionBeforeNewSurplus": true,
+      "stopFurtherParcelsToCandidateAfterElection": true
+    },
+    "orderingAndTies": {
+      "surplusOrder": "largest surplus first; equal surpluses use the last count with different totals; earlier-created surplus precedes later-created surplus",
+      "equalLowestExclusion": "exclude the candidate with fewer votes at the last count where totals differed; otherwise decide by lot",
+      "finalEqualTotals": "decide by lot"
+    },
+    "termination": {
+      "lastVacancyTwoCandidates": "elect the candidate with the larger total even below quota",
+      "continuingCandidatesEqualVacancies": "declare every continuing candidate elected",
+      "exactQuotaBallots": "set aside as finally dealt with"
+    },
+    "exhaustedBallots": "ballot papers without a next available preference do not credit a continuing candidate"
+  },
+  "cycles": [
+    {
+      "id": "vic_lc_2010",
+      "electionDate": "2010-11-27",
+      "actVersion": "030",
+      "effectiveFrom": "2010-08-20",
+      "effectiveThrough": "2011-07-31",
+      "sourceUrl": "https://content.legislation.vic.gov.au/sites/default/files/97de4f49-0e6d-3168-bb9f-5af55aba4246_02-23a030.pdf",
+      "sha256": "a1c1ce1467a767cad14c6ef82d6c099bef4299892c38fc60dc1b505bdf83f9a6",
+      "bytes": 1312031
+    },
+    {
+      "id": "vic_lc_2014",
+      "electionDate": "2014-11-29",
+      "actVersion": "040",
+      "effectiveFrom": "2014-11-03",
+      "effectiveThrough": "2015-06-16",
+      "sourceUrl": "https://content.legislation.vic.gov.au/sites/default/files/9e5a471c-d816-306c-ab93-e507dd48ac5d_02-23aa040%20authorised.pdf",
+      "sha256": "0bda8940750dfd0c0c29118e930d49e70936f31dfae77f67a3089592cf8c131e",
+      "bytes": 1189205
+    },
+    {
+      "id": "vic_lc_2018",
+      "electionDate": "2018-11-24",
+      "actVersion": "050",
+      "effectiveFrom": "2018-08-01",
+      "effectiveThrough": "2018-11-24",
+      "sourceUrl": "https://content.legislation.vic.gov.au/sites/default/files/6a14905f-2fa1-314d-8558-aedd953e9c0e_02-23aa050%20authorised.pdf",
+      "sha256": "62a911e2d19ffc2dafa52d1ca49a63df2481ec5c9c3870b8fa145421d7c0c850",
+      "bytes": 1012854
+    },
+    {
+      "id": "vic_lc_2022",
+      "electionDate": "2022-11-26",
+      "actVersion": "064",
+      "effectiveFrom": "2022-06-01",
+      "effectiveThrough": "2025-02-09",
+      "sourceUrl": "https://content.legislation.vic.gov.au/sites/default/files/2022-06/02-23aa064%20authorised.pdf",
+      "sha256": "3fd44b2225c241b182c63def73346034870b68f20e3c941bd3d69e327cc683ff",
+      "bytes": 1958900
+    }
+  ],
+  "supportingOfficialPages": [
+    "https://www.vec.vic.gov.au/electoral-boundaries/state-regions",
+    "https://www.vec.vic.gov.au/voting/learn-to-vote/how-to-fill-out-state-ballot-papers",
+    "https://www.vec.vic.gov.au/voting/how-voting-works/counting-votes"
+  ],
+  "modelEligibility": {
+    "historicalCouncilOutcomeScoring": true,
+    "historicalReplayEligible": false,
+    "probabilityCalibrationReady": false,
+    "changesCurrentForecast": false,
+    "automaticGateOpening": false
+  }
+}

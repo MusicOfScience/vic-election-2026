@@ -60,13 +60,13 @@
     },
     {
       "id": "council-results-and-count-rules",
-      "status": "partial",
-      "available": "Official candidate primaries and complete published count-total sequences for all 32 region-cycle contests in 2010, 2014, 2018 and 2022: 1,394 candidate rows, 5,975 count events and 160 elected candidates",
-      "needed": "The electoral rules effective in each historical cycle",
+      "status": "complete",
+      "available": "Official candidate primaries and complete published count-total sequences for all 32 region-cycle contests in 2010, 2014, 2018 and 2022, plus cycle-pinned authorised Electoral Act 2002 count rules for every historical election",
       "requiredFor": [
         "council-seat-model",
         "region-probability-calibration"
-      ]
+      ],
+      "limitations": "Election outcomes are scoring-only; completing Council evidence does not itself authorise a historical replay, probability calibration or production release"
     },
     {
       "id": "frozen-historical-model-configurations",

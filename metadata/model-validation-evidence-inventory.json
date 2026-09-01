@@ -9,8 +9,8 @@
     "08680c0035b34af4b6ea2074edc763a4(1).pdf"
   ],
   "summary": {
-    "complete": 2,
-    "partial": 5,
+    "complete": 3,
+    "partial": 4,
     "missing": 0,
     "total": 7,
     "completeForecastBacktestReady": false,
@@ -275,7 +275,7 @@
     },
     {
       "id": "council-results-and-count-rules",
-      "status": "partial",
+      "status": "complete",
       "coverage": {
         "cycles": [
           "vic_lc_2010",
@@ -290,7 +290,9 @@
         "countTotalRows": 296087,
         "electedCandidates": 160,
         "fingerprintedSources": 64,
-        "distributionSequenceAvailable": true
+        "distributionSequenceAvailable": true,
+        "ruleConfigurationComplete": true,
+        "fingerprintedRuleSources": 4
       },
       "evidence": [
         {
@@ -344,13 +346,25 @@
         {
           "path": "metadata/vec-2014-2022-council-source-manifest.csv",
           "sha256": "5641d20424fce253c84b9d45b804ad492ea5cc3cc68da4c338f6ddad1f2679b5"
+        },
+        {
+          "path": "model/config/historical-council-count-rules.json",
+          "sha256": "e190365027b1f936027401f674fcd1d65052e125bfab7ffcc3bc696694999db1"
+        },
+        {
+          "path": "metadata/historical-council-count-rules-audit.json",
+          "sha256": "319f9c0bb46e9065e7743af3ab8e6d884e7d18d8a480debc1ec7296ba43de8b7"
+        },
+        {
+          "path": "metadata/historical-council-count-rule-source-manifest.csv",
+          "sha256": "ca0fd707752bbecda53c977183b320decf01667f9d0bd8a0c91c3f434c2c7209"
         }
       ],
       "limitations": [
-        "Cycle-specific electoral-rule configuration remains unresolved.",
-        "Election results are scoring-only outcomes and cannot enter a pre-election information set."
-      ],
-      "needed": "The electoral rules effective in each historical cycle."
+        "Election results are scoring-only outcomes and cannot enter a pre-election information set.",
+        "The outcome-harvest audits preserve their original note that rule configuration was outside those harvests; this separate cycle-pinned configuration closes that residual.",
+        "Completion of Council evidence does not itself authorise a historical replay, probability calibration or production release."
+      ]
     },
     {
       "id": "frozen-historical-model-configurations",
