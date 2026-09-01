@@ -281,6 +281,46 @@ export function validateModelValidationEvidence() {
   for (const byte of council2010CountBuffer) if (byte === 10) council2010Newlines++;
   assert(council2010Newlines - 1 === 27093, "2010 Council count-total rows differ");
 
+  const councilRules = readJson("model/config/historical-council-count-rules.json");
+  const councilRuleAudit = readJson("metadata/historical-council-count-rules-audit.json");
+  const councilRuleSources = parseCsv(readFileSync(resolve(root, "metadata/historical-council-count-rule-source-manifest.csv"), "utf8"));
+  assert(councilRules.status === "complete-cycle-pinned-authorised-legislation", "historical Council rule status is unexpected");
+  assert(councilRules.vacanciesPerRegion === 5, "historical Council vacancy count must remain five per region");
+  assert(councilRules.cycles.length === 4, "historical Council rules must cover four cycles");
+  assert(councilRuleSources.length === 4, "historical Council rule manifest must contain four authorised Act versions");
+  assert(councilRuleAudit.status === "complete-four-cycle-council-count-rule-evidence", "historical Council rule audit status is unexpected");
+  assert(Object.values(councilRuleAudit.acceptance).every(Boolean), "historical Council rule acceptance checks must all pass");
+  assert(councilRuleAudit.modelImpact.changesCurrentForecast === false, "historical Council rules cannot change the current forecast");
+  assert(councilRuleAudit.modelImpact.historicalReplayEligible === false, "historical Council rules cannot independently authorise replay");
+  assert(councilRuleAudit.modelImpact.probabilityCalibrationReady === false, "historical Council rules cannot independently authorise calibration");
+  assert(councilRuleAudit.modelImpact.automaticGateOpening === false, "historical Council rules cannot open a gate");
+  const expectedCouncilRuleCycles = new Map([
+    ["vic_lc_2010", ["2010-11-27", "030"]],
+    ["vic_lc_2014", ["2014-11-29", "040"]],
+    ["vic_lc_2018", ["2018-11-24", "050"]],
+    ["vic_lc_2022", ["2022-11-26", "064"]],
+  ]);
+  for (const cycle of councilRules.cycles) {
+    const expected = expectedCouncilRuleCycles.get(cycle.id);
+    assert(expected, `unexpected historical Council rule cycle ${cycle.id}`);
+    assert(cycle.electionDate === expected[0], `incorrect Council election date for ${cycle.id}`);
+    assert(cycle.actVersion === expected[1], `incorrect Electoral Act version for ${cycle.id}`);
+    assert(Date.parse(`${cycle.effectiveFrom}T00:00:00Z`) <= Date.parse(`${cycle.electionDate}T00:00:00Z`), `Act version starts after election day for ${cycle.id}`);
+    assert(Date.parse(`${cycle.effectiveThrough}T00:00:00Z`) >= Date.parse(`${cycle.electionDate}T00:00:00Z`), `Act version ended before election day for ${cycle.id}`);
+    const source = councilRuleSources.find((row) => row.election_id === cycle.id);
+    assert(source, `missing Council rule source for ${cycle.id}`);
+    assert(source.act_version === cycle.actVersion, `Council rule manifest version differs for ${cycle.id}`);
+    assert(source.sha256 === cycle.sha256, `Council rule manifest hash differs for ${cycle.id}`);
+    assert(Number(source.bytes) === cycle.bytes, `Council rule manifest byte count differs for ${cycle.id}`);
+    assert(source.material_rule_set_id === councilRules.materialRuleSetId, `Council rule-set id differs for ${cycle.id}`);
+  }
+  const allCouncilRegions = [...council2010.regions, ...councilEvidence.regions];
+  assert(allCouncilRegions.length === 32, "Council rule reconciliation must cover 32 region-cycle contests");
+  for (const region of allCouncilRegions) {
+    assert(region.quota === Math.floor(region.formalVotes / (councilRules.vacanciesPerRegion + 1)) + 1, `Council rule quota does not reconcile for ${region.electionId} ${region.regionName}`);
+    assert(region.elected.length === councilRules.vacanciesPerRegion, `Council rule vacancy count does not reconcile for ${region.electionId} ${region.regionName}`);
+  }
+
   const historicalConfigs = readJson("model/config/historical-validation-cycles.json");
   const expectedCycleDates = new Map([
     ["vic_la_2010", ["2010-11-27", "2010-11-26"]],

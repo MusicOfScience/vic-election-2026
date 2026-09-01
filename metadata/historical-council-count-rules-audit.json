@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-01",
+  "status": "complete-four-cycle-council-count-rule-evidence",
+  "scope": "Authorised Electoral Act 2002 versions effective on the 2010, 2014, 2018 and 2022 Victorian State election dates",
+  "coverage": {
+    "cycles": 4,
+    "regionCycleContests": 32,
+    "regionsPerCycle": 8,
+    "vacanciesPerRegion": 5,
+    "authorisedActVersions": [
+      "030",
+      "040",
+      "050",
+      "064"
+    ],
+    "fingerprintedSources": 4
+  },
+  "acceptance": {
+    "exactElectionDayActVersionPinned": true,
+    "sourcePdfFingerprintRecorded": true,
+    "ballotFormalityRulesEncoded": true,
+    "groupVotingTicketRulesEncoded": true,
+    "quotaRuleEncoded": true,
+    "surplusTransferRuleEncoded": true,
+    "exclusionTransferRuleEncoded": true,
+    "tieAndTerminationRulesEncoded": true,
+    "materialRulesIdenticalAcrossFourCycles": true,
+    "allPublishedRegionQuotasReconcile": true,
+    "fiveElectedMembersPerRegionReconcile": true
+  },
+  "materialRuleComparison": {
+    "result": "no material difference across the four historical cycles",
+    "sectionsCompared": [
+      "93A",
+      "112A",
+      "112B",
+      "114A"
+    ],
+    "note": "Pagination, typography and unrelated amendments differ between authorised Act versions; the encoded Council ballot and count provisions do not."
+  },
+  "evidence": {
+    "configPath": "model/config/historical-council-count-rules.json",
+    "sourceManifestPath": "metadata/historical-council-count-rule-source-manifest.csv",
+    "outcomeAudits": [
+      "metadata/vec-2010-council-evidence-audit.json",
+      "metadata/vec-2014-2022-council-evidence-audit.json"
+    ]
+  },
+  "limitations": [
+    "The configuration specifies the historical legal count method; it does not create missing pre-election model inputs.",
+    "Council election results remain scoring-only outcomes and cannot enter a pre-election information set.",
+    "Completion of this component does not authorise a historical replay, probability calibration or production release."
+  ],
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "historicalReplayEligible": false,
+    "probabilityCalibrationReady": false,
+    "automaticGateOpening": false
+  }
+}

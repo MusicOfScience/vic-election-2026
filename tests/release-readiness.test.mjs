@@ -59,10 +59,10 @@ test("opens the candidate evidence gate only at complete Assembly coverage", () 
   assert.equal(readiness.gates.candidateEvidence.passed, true);
 });
 
-test("does not substitute two completed components for complete-model evidence", () => {
+test("does not substitute three completed components for complete-model evidence", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
-  assert.equal(readiness.findings.validationEvidence.complete, 2);
-  assert.equal(readiness.findings.validationEvidence.partial, 5);
+  assert.equal(readiness.findings.validationEvidence.complete, 3);
+  assert.equal(readiness.findings.validationEvidence.partial, 4);
   assert.equal(readiness.findings.validationEvidence.missing, 0);
   assert.equal(readiness.findings.validationEvidence.total, 7);
   assert.equal(readiness.findings.validationEvidence.automaticGateOpening, false);
