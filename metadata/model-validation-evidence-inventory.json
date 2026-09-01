@@ -9,8 +9,8 @@
     "08680c0035b34af4b6ea2074edc763a4(1).pdf"
   ],
   "summary": {
-    "complete": 1,
-    "partial": 6,
+    "complete": 2,
+    "partial": 5,
     "missing": 0,
     "total": 7,
     "completeForecastBacktestReady": false,
@@ -79,13 +79,15 @@
     },
     {
       "id": "district-primary-votes-and-party-crosswalk",
-      "status": "partial",
+      "status": "complete",
       "coverage": {
         "cycles": [
           "vic_la_2010",
+          "vic_la_2014",
+          "vic_la_2018",
           "vic_la_2022"
         ],
-        "districtCycleContests": 127,
+        "districtCycleContests": 352,
         "districtsByCycle": [
           {
             "id": "vic_la_2010",
@@ -94,14 +96,26 @@
             "status": "complete"
           },
           {
+            "id": "vic_la_2014",
+            "districts": 88,
+            "candidateRows": 545,
+            "status": "complete"
+          },
+          {
+            "id": "vic_la_2018",
+            "districts": 88,
+            "candidateRows": 507,
+            "status": "complete"
+          },
+          {
             "id": "vic_la_2022",
-            "districts": 39,
-            "candidateRows": 323,
-            "status": "partial"
+            "districts": 88,
+            "candidateRows": 742,
+            "status": "complete"
           }
         ],
-        "candidateRows": 825,
-        "familyRows2010": 440,
+        "candidateRows": 2296,
+        "familyRows": 1760,
         "partyFamilies": 5,
         "crosswalkStatus": "frozen-fail-closed"
       },
@@ -119,20 +133,47 @@
           "sha256": "8c37931a3a8aeda1bc96a94530055618985da20276546c8117bb4cf5fb662a58"
         },
         {
-          "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
-          "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
+          "path": "model/data/processed/vec_2014_assembly_candidate_primaries.csv",
+          "sha256": "c85e014ff268f61448076736bcf4f862145caa476ed6c2c30233e28952cd3910"
+        },
+        {
+          "path": "model/data/processed/vec_2014_assembly_family_primaries.csv",
+          "sha256": "d5de2156b503755293024e2ad1d84385bef535a730246505b910575bd2837475"
+        },
+        {
+          "path": "model/data/processed/vec_2018_assembly_candidate_primaries.csv",
+          "sha256": "7d14a5e96c8c99aa28b44dbd5f15f992db27e1ad7bdbda65774dd438399c6668"
+        },
+        {
+          "path": "model/data/processed/vec_2018_assembly_family_primaries.csv",
+          "sha256": "119b91f9cd49bb1ad0cca9c502ccb5a7f698653ca29b36359590c1537b9a7013"
+        },
+        {
+          "path": "model/data/processed/vec_2022_assembly_candidate_primaries.csv",
+          "sha256": "2aeffd039842ee8366c7272458e34173379578a934312aa2e5e26696bb2f3d02"
+        },
+        {
+          "path": "model/data/processed/vec_2022_assembly_family_primaries.csv",
+          "sha256": "ce955169d19eb015c2e3c60b24cd7a74a9771608ea689c13a1251c6e6a56414d"
+        },
+        {
+          "path": "metadata/vec-2014-2022-assembly-primary-audit.json",
+          "sha256": "1cabf285c284b7a05f6c1a924df09a5a93e1f41a3f2aad13aa7347cd2401a583"
+        },
+        {
+          "path": "metadata/vec-historical-assembly-primary-source-manifest.csv",
+          "sha256": "aa47f31be9c072b4d2a104f167070741dfc8261888048a42ae4373d5f9f10912"
         },
         {
           "path": "model/config/historical-party-family-crosswalk.json",
-          "sha256": "563f731d8229d36d6f05e1036fc9988835d6dfee494a3e8b6022d79d20968554"
+          "sha256": "d77070af51db92fcac33e119c9d32ba75959a4de95a4ed64e666d6fa9f438b8b"
         }
       ],
       "limitations": [
-        "The complete 2010 source is outcome evidence for scoring and cannot enter a pre-election information set.",
+        "Election results are outcome evidence for scoring and cannot enter a pre-election information set.",
         "Unknown party labels remain rejected pending evidence-backed adjudication; they are never silently mapped to Other/Independent.",
-        "Official district primary inputs remain incomplete for 2014, 2018 and 49 districts in 2022."
-      ],
-      "needed": "Official district primary votes for all 88 contests in 2014 and 2018 and the remaining 49 contests in 2022, with source labels adjudicated and formal-vote totals reconciled."
+        "Completing this component does not by itself authorise a historical replay, probability calibration or a production gate."
+      ]
     },
     {
       "id": "ballot-and-contest-slates",
@@ -140,9 +181,11 @@
       "coverage": {
         "cycles": [
           "vic_la_2010",
+          "vic_la_2014",
+          "vic_la_2018",
           "vic_la_2022"
         ],
-        "districtCycleContests": 127,
+        "districtCycleContests": 352,
         "districtsByCycle": [
           {
             "id": "vic_la_2010",
@@ -151,13 +194,25 @@
             "status": "complete"
           },
           {
+            "id": "vic_la_2014",
+            "districts": 88,
+            "candidateRows": 545,
+            "status": "complete-final-slate"
+          },
+          {
+            "id": "vic_la_2018",
+            "districts": 88,
+            "candidateRows": 507,
+            "status": "complete-final-slate"
+          },
+          {
             "id": "vic_la_2022",
-            "districts": 39,
-            "candidateRows": 323,
-            "status": "partial"
+            "districts": 88,
+            "candidateRows": 742,
+            "status": "complete-final-slate"
           }
         ],
-        "candidateRows": 825
+        "candidateRows": 2296
       },
       "evidence": [
         {
@@ -169,11 +224,22 @@
           "sha256": "8c37931a3a8aeda1bc96a94530055618985da20276546c8117bb4cf5fb662a58"
         },
         {
-          "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
-          "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa"
+          "path": "model/data/processed/vec_2014_assembly_candidate_primaries.csv",
+          "sha256": "c85e014ff268f61448076736bcf4f862145caa476ed6c2c30233e28952cd3910"
+        },
+        {
+          "path": "model/data/processed/vec_2018_assembly_candidate_primaries.csv",
+          "sha256": "7d14a5e96c8c99aa28b44dbd5f15f992db27e1ad7bdbda65774dd438399c6668"
+        },
+        {
+          "path": "model/data/processed/vec_2022_assembly_candidate_primaries.csv",
+          "sha256": "2aeffd039842ee8366c7272458e34173379578a934312aa2e5e26696bb2f3d02"
         }
       ],
-      "needed": "Complete historical ballot slates, party identities and incumbent/challenger states for 2014, 2018 and the remaining 2022 districts."
+      "limitations": [
+        "The result pages prove the final ballot, but not when every identity became available before each frozen cutoff."
+      ],
+      "needed": "Cutoff-compliant slate timing plus incumbent/challenger status as known at each historical election."
     },
     {
       "id": "preference-flows-and-final-pairs",

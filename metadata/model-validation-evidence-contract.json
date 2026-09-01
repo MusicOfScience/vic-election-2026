@@ -27,9 +27,9 @@
     },
     {
       "id": "district-primary-votes-and-party-crosswalk",
-      "status": "partial",
-      "available": "502 official candidate-primary rows covering all 88 districts in 2010 plus 323 audited candidate-primary rows across 39 districts in 2022: 825 rows across 127 district-cycle contests, with a frozen fail-closed five-family party crosswalk",
-      "needed": "Official district primary votes for all 88 contests in 2014 and 2018 and the remaining 49 contests in 2022, with every source label explicitly mapped or adjudicated and district totals reconciled",
+      "status": "complete",
+      "available": "2,296 official candidate-primary rows and 1,760 reconciled five-family rows covering all 352 district-cycle contests in 2010, 2014, 2018 and 2022, with a frozen fail-closed party crosswalk",
+      "limitations": "These are election outcomes for scoring only; they cannot enter a pre-election information set or open a production gate automatically",
       "requiredFor": [
         "five-party-seat-model",
         "ballot-access-effects",
@@ -39,8 +39,8 @@
     {
       "id": "ballot-and-contest-slates",
       "status": "partial",
-      "available": "Complete official candidate and party identities for 502 candidates across all 88 districts in 2010, plus 323 candidates across 39 audited 2022 district distributions",
-      "needed": "Complete party contest coverage, candidate/party identity and incumbent/challenger status for 2014, 2018 and the remaining 2022 districts, as known at each historical election",
+      "available": "Complete official final candidate and party identities for 2,296 candidates across all 352 district-cycle contests in 2010, 2014, 2018 and 2022",
+      "needed": "Cutoff-compliant evidence of when each final slate was known, plus incumbent/challenger status as known at each historical election",
       "requiredFor": [
         "candidate-evidence-replay",
         "sparse-ballot-effects",

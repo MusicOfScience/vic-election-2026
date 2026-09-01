@@ -1,6 +1,6 @@
 # Historical validation source acquisition
 
-## Current instruction: do not send external requests
+## Current instruction: no VEC primary request required
 
 No action is required from the project owner. The project must first exhaust:
 
@@ -8,7 +8,7 @@ No action is required from the project owner. The project must first exhaust:
 2. public first-party VEC pages, reports and spreadsheets; and
 3. original pollster or publisher records.
 
-Only a machine-readable residual-gap report may activate an external request. The processed coverage figures below describe audit-ready model rows; they are not a claim that the project owner failed to supply official material.
+The public VEC harvest has closed the Assembly primary-result gap. Other historical components remain under first-party reconstruction. The processed coverage figures below describe audit-ready model rows; they are not a claim that the project owner failed to supply official material.
 
 The decision and source findings are recorded in `metadata/historical-public-source-audit.json`. Request state is tracked in `metadata/historical-source-acquisition-plan.json`.
 
@@ -16,15 +16,15 @@ The decision and source findings are recorded in `metadata/historical-public-sou
 
 The existing project already incorporates substantial official VEC evidence, including a complete 340-row four-cycle boundary-aligned TPP benchmark.
 
-For candidate-level primaries, the supplied 2010 VEC Report to Parliament has now been fingerprinted and converted into 502 candidate rows covering all 88 districts, plus 440 reconciled five-family target rows. The processed ledger also retains 323 candidate rows across 39 districts from the 2022 indicative preference-distribution workbooks. Those 39 workbooks are not the limit of public 2022 primary data: the VEC result index lists all 88 districts, and individual district pages publish first-preference tables and primary-result spreadsheets. The remaining processed gaps are therefore all 88 districts in 2014 and 2018, plus 49 districts in 2022.
+Candidate-level Assembly primaries are complete for all four frozen cycles. The supplied 2010 VEC Report to Parliament and the official public 2014, 2018 and 2022 district pages yield 2,296 candidate rows across all 352 district-cycle contests, plus 1,760 reconciled five-family target rows. The separate 2022 Narracan supplementary election is included and reconciled. All 323 rows retained from the 39 indicative preference-distribution workbooks match the new complete 2022 extraction exactly.
 
 The acquisition order is therefore:
 
 1. retain the completed audit of the supplied 2010 official report;
-2. harvest and reconcile public VEC district tables and spreadsheets;
-3. resolve the historical 2014 and 2018 result routes and reports;
-4. produce a residual-gap report; and
-5. contact the VEC only for confirmed residual gaps or a more convenient official bulk export.
+2. retain the fingerprinted 267-source public manifest and reconciled 2014-2022 extraction;
+3. treat election results as scoring-only outcomes, never as pre-election inputs;
+4. keep unknown party labels fail-closed; and
+5. do not contact the VEC for Assembly primary results because no residual gap remains.
 
 ## Historical polling acquisition order
 
@@ -38,9 +38,9 @@ The acquisition order is:
 4. produce a residual provenance and licensing report; and
 5. use the repository's GitHub Issues route only if material gaps remain.
 
-## Deferred fallback request — Victorian Electoral Commission
+## Retired fallback request — Victorian Electoral Commission
 
-**Do not send unless the residual-gap trigger is met.**
+**Do not send for 2010-2022 Assembly primary results: the public harvest is complete.**
 
 **Subject:** Request for residual machine-readable Victorian Legislative Assembly candidate results
 

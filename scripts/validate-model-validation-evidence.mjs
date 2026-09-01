@@ -57,27 +57,28 @@ export function validateModelValidationEvidence() {
   const acquisition = readJson("metadata/historical-source-acquisition-plan.json");
   const publicAudit = readJson("metadata/historical-public-source-audit.json");
   assert(acquisition.schemaVersion === 2, "historical source acquisition schema is stale");
-  assert(acquisition.status === "public-source-reconstruction-first", "historical source acquisition must prefer supplied and first-party material");
+  assert(acquisition.status === "assembly-primary-harvest-complete-residual-reconstruction-continues", "historical source acquisition status is stale");
   assert(acquisition.userActionRequired === false, "historical source acquisition must not assign premature external contact to the project owner");
   assert(acquisition.publicSourceAudit.path === "metadata/historical-public-source-audit.json", "public source audit path is incorrect");
   assert(acquisition.requests.length === 2, "expected exactly two deferred historical source requests");
   assert(new Set(acquisition.requests.map((request) => request.id)).size === acquisition.requests.length, "historical source request ids must be unique");
-  assert(publicAudit.status === "public-source-reconstruction-required", "public source audit status is unexpected");
+  assert(publicAudit.status === "assembly-primary-public-harvest-complete", "public source audit status is unexpected");
   assert(publicAudit.userActionRequired === false, "public source audit must require no owner action");
   assert(publicAudit.quarantinePolicy.candidateDataImported === false, "public source discovery cannot import candidate data");
   assert(publicAudit.quarantinePolicy.residualGapsMustBeMachineReported === true, "external contact requires a machine-readable residual-gap report");
 
   const vecRequest = acquisition.requests.find((request) => request.id === "vec-legislative-assembly-primaries-2010-2022");
   const pollRequest = acquisition.requests.find((request) => request.id === "historical-poll-vintage-enrichment-and-reuse");
-  assert(vecRequest?.status === "deferred-pending-public-harvest", "VEC contact must remain deferred");
+  assert(vecRequest?.status === "not-required-public-harvest-complete", "VEC contact must be retired after the complete public harvest");
   assert(vecRequest.userActionRequired === false, "VEC acquisition cannot require premature owner action");
   assert(vecRequest.preContactWork.includes("audit-supplied-project-checkpoints"), "VEC acquisition must re-audit supplied checkpoints");
   assert(vecRequest.preContactWork.includes("harvest-public-vec-district-pages-and-spreadsheets"), "VEC acquisition must harvest public first-party results");
-  assert(vecRequest.contactTrigger === "residual-gaps-confirmed-after-public-harvest", "VEC contact trigger is too broad");
+  assert(vecRequest.contactTrigger === null, "complete Assembly primary evidence must not retain a VEC contact trigger");
   assert(vecRequest.cycles.length === 4, "VEC acquisition must cover four Assembly cycles");
   assert(vecRequest.cycles.every((cycle) => cycle.requiredDistricts === 88), "VEC acquisition must cover every Assembly district");
-  assert(vecRequest.cycles.find((cycle) => cycle.id === "vic_la_2022")?.auditedDistricts === 39, "VEC acquisition must preserve current processed 2022 coverage");
-  assert(vecRequest.publishedAvailability.listed2022Districts === 88, "VEC public 2022 index must record all districts");
+  assert(vecRequest.cycles.every((cycle) => cycle.auditedDistricts === 88), "VEC acquisition must record complete four-cycle district coverage");
+  assert(vecRequest.publishedAvailability.listed2022GeneralElectionDistricts === 87, "VEC public 2022 index must distinguish the general election districts");
+  assert(vecRequest.publishedAvailability.narracanSupplementaryDistricts === 1, "VEC public 2022 index must record the Narracan supplementary election");
   assert(vecRequest.publishedAvailability.candidateFirstPreferenceTablesAvailable === true, "VEC public first-preference tables must be acknowledged");
   assert(vecRequest.publishedAvailability.perDistrictPrimaryExcelLinksAvailable === true, "VEC public district spreadsheets must be acknowledged");
   assert(vecRequest.publishedAvailability.indicativePreferenceDistributionDistricts === 39, "VEC indicative preference count is unexpected");
@@ -87,7 +88,10 @@ export function validateModelValidationEvidence() {
   const vecAudit = publicAudit.sources.find((source) => source.id === "vec-historical-assembly-results");
   assert(vecAudit?.findings.fourCycleTppOutcomes.boundaryAlignedRows === 340, "public audit must preserve the complete TPP benchmark");
   assert(vecAudit.findings.processedCandidatePrimaryEvidence.semantics.includes("not a count of files supplied"), "processed coverage must not be misrepresented as supplied-file coverage");
-  assert(vecAudit.externalContact.status === "deferred", "VEC contact must remain deferred in the public audit");
+  assert(vecAudit.findings.processedCandidatePrimaryEvidence.status === "complete", "public audit must record complete Assembly primary evidence");
+  assert(vecAudit.findings.processedCandidatePrimaryEvidence.districtCycleContests === 352, "public audit Assembly contest count is stale");
+  assert(vecAudit.findings.processedCandidatePrimaryEvidence.candidateRows === 2296, "public audit Assembly candidate count is stale");
+  assert(vecAudit.externalContact.status === "not-required", "VEC contact must be retired in the public audit");
 
   assert(pollRequest?.status === "deferred-pending-first-party-reconstruction", "polling repository contact must remain deferred");
   assert(pollRequest.userActionRequired === false, "polling provenance work cannot require premature owner action");
@@ -203,7 +207,7 @@ export function validateModelValidationEvidence() {
   assert(crosswalk.reconciliation.requireDistrictFamilySumEqualsFormalVotes === true, "district family totals must reconcile to formal votes");
   assert(crosswalk.reconciliation.allowNegativeVotes === false, "negative historical primary votes are invalid");
   assert(crosswalk.modelEligibility.crosswalkFrozen === true, "party crosswalk must be frozen before import");
-  assert(crosswalk.modelEligibility.historicalPrimaryInputsComplete === false, "partial historical primaries cannot be marked complete");
+  assert(crosswalk.modelEligibility.historicalPrimaryInputsComplete === true, "complete historical primaries must be marked complete");
   assert(crosswalk.modelEligibility.automaticGateOpening === false, "party crosswalk cannot open a gate automatically");
 
   const transfers = parseCsv(gunzipSync(readFileSync(resolve(root, "model/data/processed/vec_2022_preference_transfer_evidence.csv.gz"))).toString("utf8"));

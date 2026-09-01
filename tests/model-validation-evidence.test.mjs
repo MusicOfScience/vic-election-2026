@@ -13,7 +13,7 @@ test("requires evidence matching the complete probability model", () => {
   assert.equal(contract.automaticGateOpening, false);
   assert.equal(byId["boundary-aligned-tpp-outcomes"].status, "complete");
   assert.equal(byId["pre-election-poll-vintages"].status, "partial");
-  assert.equal(byId["district-primary-votes-and-party-crosswalk"].status, "partial");
+  assert.equal(byId["district-primary-votes-and-party-crosswalk"].status, "complete");
   assert.equal(byId["ballot-and-contest-slates"].status, "partial");
   assert.equal(byId["preference-flows-and-final-pairs"].status, "partial");
   assert.equal(byId["council-results-and-count-rules"].status, "partial");
@@ -22,13 +22,13 @@ test("requires evidence matching the complete probability model", () => {
   assert.ok(contract.promotionMetrics.includes("log loss"));
   assert.deepEqual(crosswalk.targetFamilies, ["ALP", "Coalition", "Greens", "One Nation", "Other/Independent"]);
   assert.equal(crosswalk.unknownPartyPolicy.automaticOtherMapping, false);
-  assert.equal(crosswalk.modelEligibility.historicalPrimaryInputsComplete, false);
+  assert.equal(crosswalk.modelEligibility.historicalPrimaryInputsComplete, true);
 });
 
 test("fingerprints every available validation artefact and keeps partial evidence fail-closed", () => {
   assert.deepEqual(validateModelValidationEvidence(), {
-    complete: 1,
-    partial: 6,
+    complete: 2,
+    partial: 5,
     missing: 0,
     total: 7,
     completeForecastBacktestReady: false,

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "reviewedAt": "2026-09-01",
   "status": "frozen-fail-closed",
   "scope": "Historical Legislative Assembly primary-vote aggregation for the complete five-party model",
@@ -57,12 +57,39 @@
       "Other Candidates",
       "OTH",
       "Australian Party",
+      "Angry Victorians Party",
+      "Animal Justice Party",
+      "Aussie Battler Party",
+      "Australian Christians",
+      "Australian Country Alliance",
+      "Australian Country Party",
+      "Australian Liberty Alliance",
       "Christian Party",
+      "Companions and Pets Party",
       "Country Alliance",
       "D.L.P. - Democratic Labor Party",
+      "Democratic Labour Party (DLP)",
+      "Derryn Hinch's Justice Party",
       "Family First",
+      "Family First Victoria",
+      "Fiona Patten's Reason Party",
+      "Freedom Party of Victoria",
+      "Health Australia Party",
+      "Labour DLP",
+      "Legalise Cannabis Victoria",
+      "Liberal Democrats",
+      "New Democrats",
+      "People Power Victoria/No Smart Meters",
+      "Rise Up Australia Party",
       "Sex Party",
-      "Socialist Alliance"
+      "Shooters and Fishers Party Victoria",
+      "Shooters, Fishers & Farmers Vic",
+      "Socialist Alliance",
+      "Sustainable Australia",
+      "The Basics Rock 'N' Roll Party",
+      "Transport Matters",
+      "Victorian Socialists",
+      "Voice for the West"
     ]
   },
   "sourceAdjudications": [
@@ -80,6 +107,41 @@
       ],
       "blankPartyMeaning": "The official candidate table prints no registered-party affiliation; the row is retained as an independent candidate.",
       "adjudicationEvidence": "metadata/vec-2010-assembly-primary-audit.json"
+    },
+    {
+      "source": "VEC official 2014, 2018 and 2022 Assembly district result pages",
+      "sourceManifest": "metadata/vec-historical-assembly-primary-source-manifest.csv",
+      "partyLabelsMappedToOtherIndependent": [
+        "Angry Victorians Party",
+        "Animal Justice Party",
+        "Aussie Battler Party",
+        "Australian Christians",
+        "Australian Country Alliance",
+        "Australian Country Party",
+        "Australian Liberty Alliance",
+        "Companions and Pets Party",
+        "Democratic Labour Party (DLP)",
+        "Derryn Hinch's Justice Party",
+        "Family First Victoria",
+        "Fiona Patten's Reason Party",
+        "Freedom Party of Victoria",
+        "Health Australia Party",
+        "Labour DLP",
+        "Legalise Cannabis Victoria",
+        "Liberal Democrats",
+        "New Democrats",
+        "People Power Victoria/No Smart Meters",
+        "Rise Up Australia Party",
+        "Shooters and Fishers Party Victoria",
+        "Shooters, Fishers & Farmers Vic",
+        "Sustainable Australia",
+        "The Basics Rock 'N' Roll Party",
+        "Transport Matters",
+        "Victorian Socialists",
+        "Voice for the West"
+      ],
+      "blankPartyMeaning": "The official candidate table prints no registered-party affiliation; the row is retained as an independent candidate.",
+      "adjudicationEvidence": "metadata/vec-2014-2022-assembly-primary-audit.json"
     }
   ],
   "independentCandidateRule": {
@@ -102,7 +164,7 @@
   },
   "modelEligibility": {
     "crosswalkFrozen": true,
-    "historicalPrimaryInputsComplete": false,
+    "historicalPrimaryInputsComplete": true,
     "automaticGateOpening": false
   }
 }

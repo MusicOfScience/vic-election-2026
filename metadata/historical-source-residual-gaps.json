@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-01",
+  "status": "assembly-primary-gap-closed-other-components-remain",
+  "assemblyPrimaryEvidence": {
+    "status": "complete",
+    "cycles": 4,
+    "districtCycleContests": 352,
+    "candidateRows": 2296,
+    "familyRows": 1760,
+    "vecContactRequired": false
+  },
+  "residualComponents": [
+    "pre-election-poll-vintages",
+    "cutoff-compliant-ballot-timing-and-incumbency",
+    "preference-flows-and-final-pairs",
+    "council-results-and-count-rules",
+    "runnable-frozen-historical-model-configurations"
+  ],
+  "userActionRequired": false,
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "completeForecastBacktestReady": false,
+    "probabilityCalibrationReady": false,
+    "automaticGateOpening": false
+  }
+}

@@ -88,8 +88,8 @@ test("reconciles all 88 districts to the frozen five-party family crosswalk", ()
   assert.equal(new Set(families.map((row) => row.district_id)).size, 88);
   assert.deepEqual(crosswalk.targetFamilies, expectedFamilies);
   assert.equal(crosswalk.status, "frozen-fail-closed");
-  assert.equal(crosswalk.schemaVersion, 2);
-  assert.equal(crosswalk.sourceAdjudications.length, 1);
+  assert.equal(crosswalk.schemaVersion, 3);
+  assert.equal(crosswalk.sourceAdjudications.length, 2);
   assert.equal(crosswalk.sourceAdjudications[0].sourceSha256, audit.source.sha256);
 
   for (const districtId of new Set(families.map((row) => row.district_id))) {
