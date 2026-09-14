@@ -7,6 +7,8 @@ const contract = JSON.parse(readFileSync(new URL("../metadata/model-validation-e
 const inventory = JSON.parse(readFileSync(new URL("../metadata/model-validation-evidence-inventory.json", import.meta.url), "utf8"));
 const crosswalk = JSON.parse(readFileSync(new URL("../model/config/historical-party-family-crosswalk.json", import.meta.url), "utf8"));
 const councilRules = JSON.parse(readFileSync(new URL("../model/config/historical-council-count-rules.json", import.meta.url), "utf8"));
+const historicalCycles = JSON.parse(readFileSync(new URL("../model/config/historical-validation-cycles.json", import.meta.url), "utf8"));
+const outcomeAvailability = JSON.parse(readFileSync(new URL("../metadata/historical-assembly-outcome-availability.json", import.meta.url), "utf8"));
 
 test("requires evidence matching the complete probability model", () => {
   const byId = Object.fromEntries(contract.components.map((component) => [component.id, component]));
@@ -27,6 +29,24 @@ test("requires evidence matching the complete probability model", () => {
   assert.equal(councilRules.status, "complete-cycle-pinned-authorised-legislation");
   assert.equal(councilRules.cycles.length, 4);
   assert.equal(councilRules.modelEligibility.automaticGateOpening, false);
+});
+
+test("separates the delayed Narracan contest from the November 2022 replay", () => {
+  const cycle2022 = outcomeAvailability.cycles.find((cycle) => cycle.id === "vic_la_2022");
+  const narracan = cycle2022.separatePostCycleContests[0];
+  assert.equal(cycle2022.generalElectionDistricts, 87);
+  assert.deepEqual(cycle2022.districtsWithoutGeneralElectionOutcome, ["Narracan"]);
+  assert.equal(narracan.eventDate, "2023-01-28");
+  assert.equal(narracan.resultEvidencePublicationDate, null);
+  assert.equal(narracan.preCutoffInputEligible, false);
+  assert.equal(narracan.includedInGeneralElectionScoring, false);
+  assert.equal(outcomeAvailability.modelImpact.changesCurrentForecast, false);
+  assert.equal(outcomeAvailability.modelImpact.automaticGateOpening, false);
+  assert.deepEqual(historicalCycles.cycles.find((cycle) => cycle.id === "vic_la_2022").blockedBy, [
+    "pre-election-poll-vintages",
+    "ballot-and-contest-slates",
+    "preference-flows-and-final-pairs",
+  ]);
 });
 
 test("fingerprints every available validation artefact and keeps partial evidence fail-closed", () => {

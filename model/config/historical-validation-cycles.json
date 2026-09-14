@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-31",
+  "reviewedAt": "2026-09-14",
   "status": "partial-unrunnable",
   "productionCompatible": false,
   "scope": "Leakage-safe walk-forward specifications for the complete five-party Assembly, preference-transfer, chamber and Council probability model",
@@ -29,6 +29,12 @@
     "postCutoffCensusEvidence": "forbidden",
     "laterCycleParameters": "forbidden"
   },
+  "outcomeScoringPolicy": {
+    "audit": "metadata/historical-assembly-outcome-availability.json",
+    "generalElectionScope": "contests-held-on-cycle-election-date",
+    "postCycleContests": "separate-scoring-only",
+    "unknownEvidencePublicationDate": "not-pre-cutoff-eligible"
+  },
   "cycles": [
     {
       "id": "vic_la_2010",
@@ -38,10 +44,8 @@
       "runnable": false,
       "blockedBy": [
         "pre-election-poll-vintages",
-        "district-primary-votes-and-party-crosswalk",
         "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs",
-        "council-results-and-count-rules"
+        "preference-flows-and-final-pairs"
       ],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
@@ -57,10 +61,8 @@
       "runnable": false,
       "blockedBy": [
         "pre-election-poll-vintages",
-        "district-primary-votes-and-party-crosswalk",
         "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs",
-        "council-results-and-count-rules"
+        "preference-flows-and-final-pairs"
       ],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
@@ -76,10 +78,8 @@
       "runnable": false,
       "blockedBy": [
         "pre-election-poll-vintages",
-        "district-primary-votes-and-party-crosswalk",
         "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs",
-        "council-results-and-count-rules"
+        "preference-flows-and-final-pairs"
       ],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
@@ -95,10 +95,8 @@
       "runnable": false,
       "blockedBy": [
         "pre-election-poll-vintages",
-        "district-primary-votes-and-party-crosswalk",
         "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs",
-        "council-results-and-count-rules"
+        "preference-flows-and-final-pairs"
       ],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,

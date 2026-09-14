@@ -90,3 +90,14 @@ test("keeps the four-cycle primary evidence fail-closed and forecast-excluded", 
   assert.equal(audit.use.automaticGateOpening, false);
   assert.equal(audit.use.productionAuthorisation, false);
 });
+
+test("keeps Narracan supplementary evidence out of the November 2022 score", () => {
+  const candidates = parseCsv(load("model/data/processed/vec_2022_assembly_candidate_primaries.csv").toString("utf8"));
+  const general = candidates.filter((row) => row.contest === "general-election");
+  const supplementary = candidates.filter((row) => row.contest === "supplementary-election");
+  assert.equal(new Set(general.map((row) => row.district_id)).size, 87);
+  assert.equal(new Set(supplementary.map((row) => row.district_id)).size, 1);
+  assert.equal(supplementary.length, 11);
+  assert.ok(supplementary.every((row) => row.district_name === "Narracan"));
+  assert.equal(supplementary.reduce((sum, row) => sum + Number(row.first_preference_votes), 0), 37_205);
+});

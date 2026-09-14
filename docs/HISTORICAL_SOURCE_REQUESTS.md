@@ -16,7 +16,7 @@ The decision and source findings are recorded in `metadata/historical-public-sou
 
 The existing project already incorporates substantial official VEC evidence, including a complete 340-row four-cycle boundary-aligned TPP benchmark.
 
-Candidate-level Assembly primaries are complete for all four frozen cycles. The supplied 2010 VEC Report to Parliament and the official public 2014, 2018 and 2022 district pages yield 2,296 candidate rows across all 352 district-cycle contests, plus 1,760 reconciled five-family target rows. The separate 2022 Narracan supplementary election is included and reconciled. All 323 rows retained from the 39 indicative preference-distribution workbooks match the new complete 2022 extraction exactly.
+Candidate-level Assembly outcomes are complete for all four frozen cycles. The supplied 2010 VEC Report to Parliament and the official public 2014, 2018 and 2022 district pages yield 2,296 candidate rows across 351 general-election district-cycle outcomes plus the separate Narracan supplementary contest, with 1,760 reconciled five-family target rows. Narracan was held on 28 January 2023: its result is retained for separate scoring but excluded from the November 2022 cycle score and from every pre-cutoff input. All 323 rows retained from the 39 indicative preference-distribution workbooks match the complete extraction exactly.
 
 The acquisition order is therefore:
 
