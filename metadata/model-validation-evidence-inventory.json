@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-01",
+  "reviewedAt": "2026-09-14",
   "scope": "Audited evidence currently available for complete-model historical validation",
   "policy": "Partial evidence documents real progress but cannot open a complete-model gate. Every complete component must cover all four frozen cycles and the same model outputs published for 2026.",
   "sourceCheckpoints": [
@@ -88,6 +88,8 @@
           "vic_la_2022"
         ],
         "districtCycleContests": 352,
+        "generalElectionDistrictCycleOutcomes": 351,
+        "separatePostCycleOutcomes": 1,
         "districtsByCycle": [
           {
             "id": "vic_la_2010",
@@ -111,7 +113,7 @@
             "id": "vic_la_2022",
             "districts": 88,
             "candidateRows": 742,
-            "status": "complete"
+            "status": "complete-87-general-plus-separate-supplementary"
           }
         ],
         "candidateRows": 2296,
@@ -167,10 +169,15 @@
         {
           "path": "model/config/historical-party-family-crosswalk.json",
           "sha256": "d77070af51db92fcac33e119c9d32ba75959a4de95a4ed64e666d6fa9f438b8b"
+        },
+        {
+          "path": "metadata/historical-assembly-outcome-availability.json",
+          "sha256": "f33d45f470560c01ff940cedde7ef8e34cfa7530d725945a866508b2d0512e1d"
         }
       ],
       "limitations": [
         "Election results are outcome evidence for scoring and cannot enter a pre-election information set.",
+        "Narracan's 28 January 2023 supplementary result is a separate post-cycle outcome and cannot score the November 2022 general-election cycle.",
         "Unknown party labels remain rejected pending evidence-backed adjudication; they are never silently mapped to Other/Independent.",
         "Completing this component does not by itself authorise a historical replay, probability calibration or a production gate."
       ]
@@ -186,6 +193,8 @@
           "vic_la_2022"
         ],
         "districtCycleContests": 352,
+        "generalElectionDistrictCycleOutcomes": 351,
+        "separatePostCycleOutcomes": 1,
         "districtsByCycle": [
           {
             "id": "vic_la_2010",
@@ -209,7 +218,7 @@
             "id": "vic_la_2022",
             "districts": 88,
             "candidateRows": 742,
-            "status": "complete-final-slate"
+            "status": "complete-final-slates-with-narracan-post-cycle"
           }
         ],
         "candidateRows": 2296
@@ -234,10 +243,15 @@
         {
           "path": "model/data/processed/vec_2022_assembly_candidate_primaries.csv",
           "sha256": "2aeffd039842ee8366c7272458e34173379578a934312aa2e5e26696bb2f3d02"
+        },
+        {
+          "path": "metadata/historical-assembly-outcome-availability.json",
+          "sha256": "f33d45f470560c01ff940cedde7ef8e34cfa7530d725945a866508b2d0512e1d"
         }
       ],
       "limitations": [
-        "The result pages prove the final ballot, but not when every identity became available before each frozen cutoff."
+        "The result pages prove the final ballot, but not when every identity became available before each frozen cutoff.",
+        "Narracan's supplementary slate and outcome postdate the 2022 cutoff and remain excluded from that cycle's prediction and score."
       ],
       "needed": "Cutoff-compliant slate timing plus incumbent/challenger status as known at each historical election."
     },
@@ -383,7 +397,7 @@
       "evidence": [
         {
           "path": "model/config/historical-validation-cycles.json",
-          "sha256": "c8ed0eb99ae1b9f04df91e43127fcf57c456ed6667d32e177f0598c5f53feba2"
+          "sha256": "adc20e7105d40871f739e6380eabcd5bb4161d75bb93eb7948bdfca79bf9b244"
         }
       ],
       "limitations": [

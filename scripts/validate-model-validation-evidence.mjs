@@ -118,6 +118,45 @@ export function validateModelValidationEvidence() {
   assert(acquisition.modelImpact.automaticGateOpening === false, "source acquisition cannot open gates");
   assert(publicAudit.modelImpact.changesCurrentForecast === false, "public source audit cannot change the current forecast");
   assert(publicAudit.modelImpact.productionAuthorisation === false, "public source audit cannot authorise production");
+
+  const outcomeAvailability = readJson("metadata/historical-assembly-outcome-availability.json");
+  assert(outcomeAvailability.status === "complete-outcome-date-separation", "Assembly outcome-date separation is incomplete");
+  assert(outcomeAvailability.cycles.length === contract.minimumWalkForwardCycles, "Assembly outcome-date audit must cover four cycles");
+  assert(new Set(outcomeAvailability.cycles.map((cycle) => cycle.id)).size === contract.minimumWalkForwardCycles, "Assembly outcome-date cycle ids must be unique");
+  assert(outcomeAvailability.checks.eventDatesSeparatedFromEvidencePublicationDates === true, "event dates and evidence publication dates must remain distinct");
+  assert(outcomeAvailability.checks.unknownPublicationDatesCannotProvePreCutoffAvailability === true, "unknown publication dates cannot prove pre-cutoff availability");
+  assert(outcomeAvailability.modelImpact.changesCurrentForecast === false, "outcome-date audit cannot change the current forecast");
+  assert(outcomeAvailability.modelImpact.historicalReplayEligible === false, "outcome-date audit cannot independently authorise replay");
+  assert(outcomeAvailability.modelImpact.probabilityCalibrationReady === false, "outcome-date audit cannot independently authorise calibration");
+  assert(outcomeAvailability.modelImpact.automaticGateOpening === false, "outcome-date audit cannot open a gate");
+  assert(outcomeAvailability.modelImpact.productionAuthorisation === false, "outcome-date audit cannot authorise production");
+
+  const outcome2022 = outcomeAvailability.cycles.find((cycle) => cycle.id === "vic_la_2022");
+  assert(outcome2022?.generalElectionDate === "2022-11-26", "2022 general-election date is incorrect");
+  assert(outcome2022.informationCutoff === "2022-11-25", "2022 information cutoff is incorrect");
+  assert(outcome2022.generalElectionDistricts === 87, "2022 general-election scoring must contain 87 districts");
+  assert(JSON.stringify(outcome2022.districtsWithoutGeneralElectionOutcome) === JSON.stringify(["Narracan"]), "Narracan must be the only district without a November 2022 outcome");
+  assert(outcome2022.separatePostCycleContests.length === 1, "expected one post-cycle 2022 contest");
+  const narracan = outcome2022.separatePostCycleContests[0];
+  assert(narracan.id === "vic_la_2023_narracan_supplementary", "Narracan supplementary contest id is incorrect");
+  assert(narracan.district === "Narracan" && narracan.contest === "supplementary-election", "Narracan supplementary contest classification is incorrect");
+  assert(narracan.eventDate === "2023-01-28", "Narracan supplementary event date is incorrect");
+  assert(Date.parse(`${narracan.eventDate}T00:00:00Z`) > Date.parse(`${outcome2022.generalElectionDate}T00:00:00Z`), "Narracan must postdate the 2022 general election");
+  assert(narracan.resultEvidencePublicationDate === null, "Narracan evidence publication date must not be invented");
+  assert(narracan.publicationDateStatus === "exact-publication-date-not-established", "Narracan publication-date limitation must be explicit");
+  assert(narracan.preCutoffInputEligible === false, "Narracan supplementary evidence cannot enter the November 2022 information set");
+  assert(narracan.includedInGeneralElectionScoring === false, "Narracan supplementary outcome cannot score the November 2022 cycle");
+  assert(narracan.scoringUse === "separate-post-cycle-outcome-only", "Narracan scoring use is incorrect");
+
+  const assembly2022Candidates = parseCsv(readFileSync(resolve(root, "model/data/processed/vec_2022_assembly_candidate_primaries.csv"), "utf8"));
+  const assembly2022General = assembly2022Candidates.filter((row) => row.contest === "general-election");
+  const narracanSupplementary = assembly2022Candidates.filter((row) => row.contest === "supplementary-election");
+  assert(new Set(assembly2022General.map((row) => row.district_id)).size === 87, "2022 general-election outcome rows must cover 87 districts");
+  assert(assembly2022General.reduce((sum, row) => sum + Number(row.first_preference_votes), 0) === 3617000, "2022 general-election formal votes do not reconcile");
+  assert(new Set(narracanSupplementary.map((row) => row.district_id)).size === 1, "supplementary rows must cover exactly one district");
+  assert(narracanSupplementary.length === 11 && narracanSupplementary.every((row) => row.district_name === "Narracan"), "Narracan supplementary candidate rows are incomplete");
+  assert(narracanSupplementary.reduce((sum, row) => sum + Number(row.first_preference_votes), 0) === 37205, "Narracan supplementary formal votes do not reconcile");
+
   for (const [id, component] of inventoryById) {
     assert(contractById.has(id), `unknown inventory component ${id}`);
     assert(contractById.get(id).status === component.status, `${id} status differs from the contract`);
@@ -141,6 +180,9 @@ export function validateModelValidationEvidence() {
   assert(readiness.production_forecast_authorised === false, "historical substrate must not authorise production");
   assert(validationInputs.outcome_rows === 340, "expected 340 boundary-aligned TPP transitions");
   assert(validationInputs.expected_cycles.length === 4, "expected four historical outcome cycles");
+  assert(validationInputs.explicit_outcome_exclusions.some((entry) => entry.cycle_id === "vic_la_2022"
+    && entry.district_name === "Narracan"
+    && entry.exclusion_reason === "missing_2022_ordinary_tpp"), "Narracan must remain excluded from the November 2022 TPP score");
   assert(nullReport.forecast_error_distribution_authorised === false, "null residuals must remain unauthorised");
 
   const pollAudit = readJson("metadata/historical-poll-vintage-audit.json");
@@ -350,6 +392,11 @@ export function validateModelValidationEvidence() {
     .every(([, value]) => value === "forbidden"), "all post-cutoff and later-cycle inputs must be forbidden");
   assert(historicalConfigs.featurePolicy.demographicChallenger.included === false, "rejected demographic challenger cannot enter historical configurations");
   assert(historicalConfigs.featurePolicy.demographicChallenger.centralWeight === 0, "rejected demographic challenger must retain zero weight");
+  assert(historicalConfigs.outcomeScoringPolicy.audit === "metadata/historical-assembly-outcome-availability.json", "historical configurations must use the outcome-date audit");
+  assert(historicalConfigs.outcomeScoringPolicy.generalElectionScope === "contests-held-on-cycle-election-date", "cycle scores must be limited to election-day contests");
+  assert(historicalConfigs.outcomeScoringPolicy.postCycleContests === "separate-scoring-only", "post-cycle contests must be scored separately");
+  assert(historicalConfigs.outcomeScoringPolicy.unknownEvidencePublicationDate === "not-pre-cutoff-eligible", "unknown evidence dates cannot enter historical inputs");
+  const expectedReplayBlockers = ["pre-election-poll-vintages", "ballot-and-contest-slates", "preference-flows-and-final-pairs"];
   for (const cycle of historicalConfigs.cycles) {
     const expectedDates = expectedCycleDates.get(cycle.id);
     assert(expectedDates, `unexpected historical cycle ${cycle.id}`);
@@ -358,7 +405,8 @@ export function validateModelValidationEvidence() {
     assert(Date.parse(`${cycle.informationCutoff}T00:00:00Z`) < Date.parse(`${cycle.electionDate}T00:00:00Z`), `cutoff must precede election day for ${cycle.id}`);
     assert(Number.isSafeInteger(cycle.seed), `seed must be a safe integer for ${cycle.id}`);
     assert(cycle.runnable === false, `${cycle.id} must remain unrunnable until its inputs are complete`);
-    assert(cycle.blockedBy.includes("pre-election-poll-vintages"), `${cycle.id} must disclose the missing polling vintages`);
+    assert(JSON.stringify(cycle.blockedBy) === JSON.stringify(expectedReplayBlockers), `${cycle.id} blockers must match the remaining partial evidence`);
+    assert(cycle.blockedBy.every((id) => contractById.get(id)?.status === "partial"), `${cycle.id} cannot list completed evidence as a blocker`);
     assert(cycle.inputPolicy.publicationDateAtOrBeforeCutoff === true, `${cycle.id} must enforce its information cutoff`);
     assert(cycle.inputPolicy.outcomesAvailableToModel === false, `${cycle.id} outcomes cannot enter the model`);
     assert(cycle.inputPolicy.outcomesAvailableForScoring === true, `${cycle.id} outcomes must remain available for scoring`);

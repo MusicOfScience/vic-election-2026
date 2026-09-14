@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-01",
+  "reviewedAt": "2026-09-14",
   "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",
   "policy": "A two-party historical residual test may validate a benchmark or reject a feature, but it cannot certify the complete multi-party probability model.",
   "minimumWalkForwardCycles": 4,
@@ -28,7 +28,7 @@
     {
       "id": "district-primary-votes-and-party-crosswalk",
       "status": "complete",
-      "available": "2,296 official candidate-primary rows and 1,760 reconciled five-family rows covering all 352 district-cycle contests in 2010, 2014, 2018 and 2022, with a frozen fail-closed party crosswalk",
+      "available": "2,296 official candidate-primary rows and 1,760 reconciled five-family rows covering 351 general-election district-cycle outcomes plus the separate January 2023 Narracan supplementary outcome, with a frozen fail-closed party crosswalk",
       "limitations": "These are election outcomes for scoring only; they cannot enter a pre-election information set or open a production gate automatically",
       "requiredFor": [
         "five-party-seat-model",
@@ -39,7 +39,7 @@
     {
       "id": "ballot-and-contest-slates",
       "status": "partial",
-      "available": "Complete official final candidate and party identities for 2,296 candidates across all 352 district-cycle contests in 2010, 2014, 2018 and 2022",
+      "available": "Complete official final candidate and party identities for 2,296 candidates across 351 general-election district-cycle outcomes and the separately dated Narracan supplementary contest",
       "needed": "Cutoff-compliant evidence of when each final slate was known, plus incumbent/challenger status as known at each historical election",
       "requiredFor": [
         "candidate-evidence-replay",

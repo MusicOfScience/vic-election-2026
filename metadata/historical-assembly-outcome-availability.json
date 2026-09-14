@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14",
+  "status": "complete-outcome-date-separation",
+  "authority": "Victorian Electoral Commission",
+  "policy": "A result may be used only to score the contest held on its event date. A later supplementary result cannot score, calibrate or supply inputs to an earlier general-election prediction.",
+  "cycles": [
+    {
+      "id": "vic_la_2010",
+      "generalElectionDate": "2010-11-27",
+      "informationCutoff": "2010-11-26",
+      "generalElectionDistricts": 88,
+      "separatePostCycleContests": []
+    },
+    {
+      "id": "vic_la_2014",
+      "generalElectionDate": "2014-11-29",
+      "informationCutoff": "2014-11-28",
+      "generalElectionDistricts": 88,
+      "separatePostCycleContests": []
+    },
+    {
+      "id": "vic_la_2018",
+      "generalElectionDate": "2018-11-24",
+      "informationCutoff": "2018-11-23",
+      "generalElectionDistricts": 88,
+      "separatePostCycleContests": []
+    },
+    {
+      "id": "vic_la_2022",
+      "generalElectionDate": "2022-11-26",
+      "informationCutoff": "2022-11-25",
+      "generalElectionDistricts": 87,
+      "districtsWithoutGeneralElectionOutcome": [
+        "Narracan"
+      ],
+      "separatePostCycleContests": [
+        {
+          "id": "vic_la_2023_narracan_supplementary",
+          "district": "Narracan",
+          "contest": "supplementary-election",
+          "eventDate": "2023-01-28",
+          "eventDateSourceUrl": "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline",
+          "resultSourceUrl": "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline/narracan-district-supplementary-election-results",
+          "resultEvidencePublicationDate": null,
+          "publicationDateStatus": "exact-publication-date-not-established",
+          "preCutoffInputEligible": false,
+          "includedInGeneralElectionScoring": false,
+          "scoringUse": "separate-post-cycle-outcome-only"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "eventDatesSeparatedFromEvidencePublicationDates": true,
+    "narracanExcludedFromNovember2022Scoring": true,
+    "narracanSupplementaryResultRetainedForSeparateScoring": true,
+    "unknownPublicationDatesCannotProvePreCutoffAvailability": true
+  },
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "historicalReplayEligible": false,
+    "probabilityCalibrationReady": false,
+    "automaticGateOpening": false,
+    "productionAuthorisation": false
+  }
+}
