@@ -64,7 +64,7 @@ test("fingerprints every available validation artefact and keeps partial evidenc
   assert.equal(inventory.negativeFeatureEvidence.demographicChallenger.centralWeight, 0);
   assert.equal(pollQueue.coverage.candidateRows, 200);
   assert.equal(pollQueue.coverage.sourceFamilies, 18);
-  assert.equal(pollQueue.coverage.sourceMatchedRows, 43);
+  assert.equal(pollQueue.coverage.sourceMatchedRows, 46);
   assert.equal(pollQueue.coverage.replayEligibleRows, 0);
   assert.equal(pollQueue.candidateSource.observationVoteRowsWritten, false);
   assert.equal(pollQueue.modelImpact.productionAuthorisation, false);
@@ -72,8 +72,8 @@ test("fingerprints every available validation artefact and keeps partial evidenc
   assert.equal(pollEvidence.sourceFamilies[0].unresolvedObservations.length, 8);
   assert.equal(pollEvidence.sourceFamilies[0].coverage.explicitMethodRows, 12);
   assert.equal(pollEvidence.sourceFamilies[0].coverage.replayEligibleRows, 0);
-  assert.equal(pollEvidence.sourceFamilies[1].matchedObservations.length, 10);
-  assert.equal(pollEvidence.sourceFamilies[1].unresolvedObservations.length, 23);
-  assert.equal(pollEvidence.sourceFamilies[1].coverage.explicitMethodRows, 9);
+  assert.equal(pollEvidence.sourceFamilies[1].matchedObservations.length, 13);
+  assert.equal(pollEvidence.sourceFamilies[1].unresolvedObservations.length, 20);
+  assert.equal(pollEvidence.sourceFamilies[1].coverage.explicitMethodRows, 12);
   assert.equal(pollEvidence.sourceFamilies[1].coverage.replayEligibleRows, 0);
 });

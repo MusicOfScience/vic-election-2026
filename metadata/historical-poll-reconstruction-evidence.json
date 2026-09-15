@@ -186,6 +186,39 @@
       "candidateRows": 33,
       "sources": [
         {
+          "id": "roy-morgan-5836-2014-10-01-archive",
+          "sourceType": "archived-first-party-pollster-web-page",
+          "url": "https://web.archive.org/web/20141104142857id_/http://www.roymorgan.com/findings/5836-morgan-poll-state-voting-intention-nsw-vic-qld-qa-sa-tas-201410010501",
+          "publishedAt": "2014-10-01",
+          "archivedAt": "2014-11-04",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "3c86a4eeecce9d865b5c1895de1105fcdc07c6111c6d1ae9f4a91038f220d018",
+          "explicitMethod": "SMS Morgan Poll; the article reports fieldwork and the 1,706-elector Victorian subsample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-5896-2014-10-27-archive",
+          "sourceType": "archived-first-party-pollster-web-page",
+          "url": "https://web.archive.org/web/20141104110436id_/http://www.roymorgan.com/findings/5896-victorian-state-voting-intention-october-2014-201410270725",
+          "publishedAt": "2014-10-27",
+          "archivedAt": "2014-11-04",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "593a3b7fbd1734256e233995dbe26b411489a96d7a5ff953efcf5c4bce852490",
+          "explicitMethod": "SMS Morgan Poll; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-5919-2014-11-10-archive",
+          "sourceType": "archived-first-party-pollster-web-page",
+          "url": "https://web.archive.org/web/20141127115220id_/http://www.roymorgan.com/findings/5919-morgan-poll-victorian-voting-intention-november-10-2014-201411100547",
+          "publishedAt": "2014-11-10",
+          "archivedAt": "2014-11-27",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "ff7b4504c47e3b0e3909a776e66e67c1a4338bc09d3663966f10e0cd1d3196ae",
+          "explicitMethod": "SMS Morgan Poll; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
           "id": "roy-morgan-8526-2020-09-22-web",
           "sourceType": "first-party-pollster-web-page",
           "url": "https://www.roymorgan.com/findings/australia-covid-19-the-economic-story-so-far-including-a-focus-on-victorias-second-wave",
@@ -287,6 +320,9 @@
         }
       ],
       "matchedObservations": [
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-09-28", "sourcePeriodLabel": "26-29 Sep 2014; lead note says Victorian National Parks Association poll, but the cited Roy Morgan page does not identify that commissioning relationship", "sampleSize": 1706, "sourceId": "roy-morgan-5836-2014-10-01-archive", "evidenceAvailableByDate": "2014-11-04", "explicitMethodSourceId": "roy-morgan-5836-2014-10-01-archive", "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-10-26", "sourcePeriodLabel": "24-27 Oct 2014", "sampleSize": 1700, "sourceId": "roy-morgan-5896-2014-10-27-archive", "evidenceAvailableByDate": "2014-11-04", "explicitMethodSourceId": "roy-morgan-5896-2014-10-27-archive", "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-11", "sourcePeriodLabel": "7-10 Nov 2014; lead midpoint label is one day after the first-party publication date", "sampleSize": 1847, "sourceId": "roy-morgan-5919-2014-11-10-archive", "evidenceAvailableByDate": "2014-11-27", "explicitMethodSourceId": "roy-morgan-5919-2014-11-10-archive", "replayEligible": false },
         { "cycleId": "vic_la_2022", "leadMidDate": "2020-09-16", "sourcePeriodLabel": "15-17 Sep 2020", "sampleSize": 1147, "sourceId": "roy-morgan-8526-2020-09-22-web", "evidenceAvailableByDate": "2020-09-22", "explicitMethodSourceId": null, "replayEligible": false },
         { "cycleId": "vic_la_2022", "leadMidDate": "2020-09-30", "sourcePeriodLabel": "28-29 Sep 2020 table/source note; article prose says 29-30 Sep", "sampleSize": 2223, "sourceId": "roy-morgan-8531-2020-10-01-web", "evidenceAvailableByDate": "2020-10-01", "explicitMethodSourceId": "roy-morgan-8531-2020-10-01-web", "replayEligible": false },
         { "cycleId": "vic_la_2022", "leadMidDate": "2020-10-13", "sourcePeriodLabel": "12-13 Oct 2020 table label; article prose says 13-14 Oct", "sampleSize": 899, "sourceId": "roy-morgan-8542-2020-10-14-web", "evidenceAvailableByDate": "2020-10-14", "explicitMethodSourceId": "roy-morgan-8542-2020-10-14-web", "replayEligible": false },
@@ -299,12 +335,9 @@
         { "cycleId": "vic_la_2022", "leadMidDate": "2022-11-23", "sourcePeriodLabel": "22-23 Nov 2022", "sampleSize": 1195, "sourceId": "roy-morgan-9128-2022-11-23-web", "evidenceAvailableByDate": "2022-11-23", "explicitMethodSourceId": "roy-morgan-9128-2022-11-23-web", "replayEligible": false }
       ],
       "unresolvedObservations": [
-        { "cycleId": "vic_la_2014", "leadMidDate": "2014-09-28", "reason": "No observation-specific first-party publication has been identified." },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2014-10-26", "reason": "No observation-specific first-party publication has been identified." },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-11", "reason": "No observation-specific first-party publication has been identified." },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-14", "reason": "No observation-specific first-party publication has been identified." },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-23", "reason": "No observation-specific first-party publication has been identified." },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-27", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-14", "reason": "An archived first-party page was identified, but an archive capture or other reliable availability record by the 2014-11-28 cutoff has not yet been established." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-23", "reason": "An archived first-party page was identified, but its earliest verified archive capture is after the 2014-11-28 cutoff." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-27", "reason": "An archived first-party page was identified, but its earliest verified archive capture is 2014-12-05, after the 2014-11-28 cutoff." },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-01-27", "reason": "No observation-specific first-party publication has been identified." },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-02-14", "reason": "No observation-specific first-party publication has been identified." },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-03-26", "reason": "No observation-specific first-party publication has been identified." },
@@ -324,13 +357,13 @@
         { "cycleId": "vic_la_2022", "leadMidDate": "2020-09-09", "reason": "The lead contains approval figures only and no voting-intention observation to reconstruct." }
       ],
       "coverage": {
-        "sourceDocuments": 10,
-        "sourceMatchedRows": 10,
-        "unresolvedRows": 23,
-        "publicationDatedRows": 10,
-        "sampleSizeRows": 10,
-        "explicitMethodRows": 9,
-        "observationSourceUrlRows": 10,
+        "sourceDocuments": 13,
+        "sourceMatchedRows": 13,
+        "unresolvedRows": 20,
+        "publicationDatedRows": 13,
+        "sampleSizeRows": 13,
+        "explicitMethodRows": 12,
+        "observationSourceUrlRows": 13,
         "declaredReuseLicenceRows": 0,
         "fullyReconstructedRows": 0,
         "replayEligibleRows": 0
@@ -339,7 +372,7 @@
         "forecastEligible": false,
         "historicalReplayEligible": false,
         "automaticPromotion": false,
-        "reason": "First-party Roy Morgan pages materially improve 10 leads, but 23 remain unresolved, one page does not explicitly identify the voting poll mode, reported methodology is incomplete and no source declares reuse authority."
+        "reason": "First-party Roy Morgan pages materially improve 13 leads, but 20 remain unresolved, one page does not explicitly identify the voting poll mode, reported methodology is incomplete and no source declares reuse authority."
       }
     }
   ],
