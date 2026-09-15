@@ -98,6 +98,9 @@ export function validateModelValidationEvidence() {
   assert(pollRequest.maintainerIdentity.account === "d-j-hirst", "polling repository owner account is incorrect");
   assert(pollRequest.maintainerIdentity.verifiedPublicName === null, "polling repository owner name must not be invented");
   assert(pollRequest.preContactWork.includes("search-original-pollster-and-publisher-sources"), "polling acquisition must prefer original sources");
+  assert(pollRequest.completedPreContactWork.includes("produce-machine-readable-residual-provenance-gap-report"), "polling acquisition must record the completed residual-gap report");
+  assert(pollRequest.residualGapReport.path === "metadata/historical-poll-reconstruction-queue.json", "polling residual-gap report path is incorrect");
+  assert(pollRequest.residualGapReport.candidateRows === 200 && pollRequest.residualGapReport.replayEligibleRows === 0, "polling residual-gap summary is stale");
   assert(pollRequest.frozenCandidateSource.candidateRows === 200, "polling acquisition must preserve the audited lead-list count");
   assert(pollRequest.frozenCandidateSource.currentlyReplayEligibleRows === 0, "unresolved polling rows cannot enter replay");
   assert(pollRequest.requiredFields.includes("publicationDate"), "polling acquisition must seek publication dates");
@@ -215,6 +218,29 @@ export function validateModelValidationEvidence() {
   assert(pollAudit.decision.forecastEligible === false, "historical polling candidate cannot affect the 2026 forecast");
   assert(pollAudit.decision.historicalReplayEligible === false, "historical polling candidate cannot enter a replay");
   assert(pollAudit.decision.automaticPromotion === false, "historical polling candidate cannot promote automatically");
+
+  const pollQueue = readJson("metadata/historical-poll-reconstruction-queue.json");
+  assert(pollQueue.status === "reconstruction-queue-defined-first-party-evidence-missing", "historical polling reconstruction status is stale");
+  assert(pollQueue.candidateSource.sha256 === pollAudit.source.sha256, "polling queue and audit fingerprints differ");
+  assert(pollQueue.candidateSource.declaredLicence === null, "polling queue must not invent reuse authority");
+  assert(pollQueue.candidateSource.rawDataImported === false, "polling queue cannot import the unlicensed candidate data");
+  assert(pollQueue.candidateSource.observationRowsWritten === false, "polling queue must contain aggregates only");
+  assert(pollQueue.coverage.candidateRows === 200, "polling queue candidate count is stale");
+  assert(pollQueue.coverage.sourceFamilies === 18, "polling queue source-family count is stale");
+  assert(pollQueue.coverage.reconstructedRows === 0 && pollQueue.coverage.replayEligibleRows === 0, "unverified polling leads cannot be reconstructed or replay-eligible");
+  assert(pollQueue.coverage.residualRows === 200, "polling queue residual count is stale");
+  assert(Object.values(pollQueue.coverage.requiredFieldCoverage).every((count) => count === 0), "polling queue cannot claim unverified required fields");
+  assert(pollQueue.reconstructionQueue.length === pollQueue.coverage.sourceFamilies, "polling queue family count does not reconcile");
+  assert(new Set(pollQueue.reconstructionQueue.map((family) => family.id)).size === pollQueue.coverage.sourceFamilies, "polling queue family ids must be unique");
+  assert(pollQueue.reconstructionQueue.every((family, index) => family.priority === index + 1), "polling queue priorities must be contiguous");
+  assert(pollQueue.reconstructionQueue.reduce((sum, family) => sum + family.candidateRows, 0) === pollQueue.coverage.candidateRows, "polling queue rows do not reconcile");
+  assert(pollQueue.reconstructionQueue.reduce((sum, family) => sum + family.residualRows, 0) === pollQueue.coverage.residualRows, "polling queue residual rows do not reconcile");
+  assert(pollQueue.reconstructionQueue.slice(0, 5).reduce((sum, family) => sum + family.candidateRows, 0) === 142, "polling queue high-priority coverage is stale");
+  assert(pollQueue.coverage.cycles.every((cycle) => expectedPollRows.get(cycle.id) === cycle.candidateRows && cycle.residualRows === cycle.candidateRows), "polling queue cycle coverage is stale");
+  assert(pollQueue.acceptanceRules.fieldworkMidpointAsPublicationDateAccepted === false, "polling queue cannot treat MidDate as publication date");
+  assert(pollQueue.acceptanceRules.explicitReuseAuthorityRequired === true, "polling queue must require explicit reuse authority");
+  assert(pollQueue.externalContact.status === "deferred", "polling repository contact must remain deferred while first-party reconstruction is pending");
+  assert(Object.values(pollQueue.modelImpact).every((value) => value === false), "polling reconstruction queue cannot change forecasts or gates");
 
   const candidates = parseCsv(readFileSync(resolve(root, "model/data/processed/vec_2022_indicative_candidate_evidence.csv"), "utf8"));
   assert(candidates.length === 323, "expected 323 audited 2022 candidate-primary rows");

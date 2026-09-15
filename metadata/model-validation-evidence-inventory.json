@@ -68,12 +68,17 @@
         {
           "path": "metadata/historical-poll-vintage-audit.json",
           "sha256": "0553e05f738f3c0b7e9663c65c9f297e241f21bba08b53994a947e345b4bfeea"
+        },
+        {
+          "path": "metadata/historical-poll-reconstruction-queue.json",
+          "sha256": "20f51c82a66d57936940cc9231def780715c53415af9db016100c2e75a9cb3bb"
         }
       ],
       "limitations": [
         "The upstream MidDate field is not an observation publication date.",
         "Sample size, explicit method, observation-level source URL and a declared reuse licence are absent.",
-        "The raw candidate dataset is not imported and contributes zero rows to any forecast or historical replay."
+        "The raw candidate dataset is not imported and contributes zero rows to any forecast or historical replay.",
+        "The aggregate queue prioritises 18 source families but does not itself establish observation-level provenance or reuse authority."
       ],
       "needed": "Publication dates, sample sizes, explicit methods, observation-level sources and reuse authority for the 200 candidate records."
     },

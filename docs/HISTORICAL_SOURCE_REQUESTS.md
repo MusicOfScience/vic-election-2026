@@ -30,6 +30,8 @@ The acquisition order is therefore:
 
 The pinned `d-j-hirst/aus-polling-analyser` file is a quarantined 200-row lead list, not a model input. The repository owner is the GitHub account `d-j-hirst`; no verified personal name is asserted.
 
+The fingerprint-checked aggregate report at `metadata/historical-poll-reconstruction-queue.json` divides those leads into 18 source families without storing observation rows. The first five families cover 142 of 200 leads, giving the reconstruction a finite high-value starting point. All 200 still lack the full required evidence and remain quarantined.
+
 The acquisition order is:
 
 1. search original pollster and publisher records for publication dates, sample sizes, methods and observation URLs;
@@ -37,6 +39,14 @@ The acquisition order is:
 3. keep every unresolved row quarantined;
 4. produce a residual provenance and licensing report; and
 5. use the repository's GitHub Issues route only if material gaps remain.
+
+To reproduce the aggregate queue, obtain the exact commit-pinned file named in the audit and run:
+
+```sh
+node scripts/build-historical-poll-reconstruction-queue.mjs --source /path/to/poll-data-vic.csv --reviewed-at YYYY-MM-DD
+```
+
+The command rejects any source whose SHA-256 differs from the frozen audit and writes aggregates only.
 
 ## Retired fallback request — Victorian Electoral Commission
 
