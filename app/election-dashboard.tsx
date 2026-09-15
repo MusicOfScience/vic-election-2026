@@ -61,6 +61,7 @@ const forecastDate = readableDate(modelOutput.manifest.as_of);
 const forecastDateUpper = forecastDate.toLocaleUpperCase("en-AU");
 const latestPollDate = readableDate(pollSeries.at(-1)?.fieldworkEnd ?? modelOutput.manifest.as_of);
 const sourcesReviewedDate = readableDate(sourceProvenance.registryReviewedAt);
+const stableSvgNumber = (value: number) => Number(value.toFixed(6));
 
 export function MajorityMarkerLabel({ viewBox }: LabelProps) {
   if (!viewBox || !("x" in viewBox) || !("y" in viewBox) || typeof viewBox.x !== "number" || typeof viewBox.y !== "number") return <g />;
@@ -154,11 +155,11 @@ function SeatArc() {
     const radius = 76 + rowIndex * 23;
     for (let index = 0; index < count; index += 1) {
       const angle = Math.PI + (Math.PI * index) / Math.max(1, count - 1);
-      points.push({ x: 260 + Math.cos(angle) * radius, y: 250 + Math.sin(angle) * radius, seat: seats[cursor] });
+      points.push({ x: stableSvgNumber(260 + Math.cos(angle) * radius), y: stableSvgNumber(250 + Math.sin(angle) * radius), seat: seats[cursor] });
       cursor += 1;
     }
   });
-  return <svg className="seat-arc" viewBox="0 0 520 280" role="img" aria-label="The 88 Legislative Assembly electorates, coloured by the party most often winning each seat; 45 seats are needed for a majority"><line x1="260" y1="248" x2="260" y2="265" className="majority-line" />{points.map(({ x, y, seat }) => { const party = seat.favoured_party as Party; return <circle key={seat.district_id} cx={x} cy={y} r="7.3" fill={partyMeta[party].colour} opacity={.42 + seat.favoured_probability * .58}><title>{`${seat.district_name}: ${partyMeta[party].label} ${pct(seat.favoured_probability)}`}</title></circle>; })}</svg>;
+  return <svg className="seat-arc" viewBox="0 0 520 280" role="img" aria-label="The 88 Legislative Assembly electorates, coloured by the party most often winning each seat; 45 seats are needed for a majority"><line x1="260" y1="248" x2="260" y2="265" className="majority-line" />{points.map(({ x, y, seat }) => { const party = seat.favoured_party as Party; return <circle key={seat.district_id} cx={x} cy={y} r="7.3" fill={partyMeta[party].colour} opacity={stableSvgNumber(.42 + seat.favoured_probability * .58)}><title>{`${seat.district_name}: ${partyMeta[party].label} ${pct(seat.favoured_probability)}`}</title></circle>; })}</svg>;
 }
 
 function Forecast() {

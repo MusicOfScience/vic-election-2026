@@ -18,7 +18,7 @@
       "url": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
       "critical": true,
       "minimumCanonicalBytes": 1000,
-      "expectedMarkers": ["Electoral roll statistics", "District statistics", "Region statistics", "July 2026"],
+      "expectedMarkers": ["Electoral roll statistics", "District statistics", "Region statistics", "August 2026"],
       "promotionPolicy": "manual-review"
     },
     {

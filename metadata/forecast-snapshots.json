@@ -11,6 +11,19 @@
       "passedGates": 4,
       "totalGates": 5,
       "note": "Baseline operational-readiness snapshot created from the post-Batch-6 merged main branch."
+    },
+    {
+      "id": "vec-enrolment-2026-09-04",
+      "capturedAt": "2026-09-15T12:02:43+10:00",
+      "commitSha": "d5c33f92bff375f46cab2c8bad6fb7c7e5fb5f94",
+      "forecastAsOf": "2026-08-26",
+      "status": "experimental-blocked",
+      "passedGates": 5,
+      "totalGates": 9,
+      "forecastSha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab",
+      "configSha256": "57fbc079258a13b600afc6dbd244c5ceaca5219ccc5697e0ffaba2b7145ae0b0",
+      "sourcesSha256": "7139076498c0277d522a86f849b290bb35ae17212d00f3004d2f7a9ece9cb433",
+      "candidatesSha256": "854501f430afdf496c2d93d44b3645a082b86a628f510975f5123375348d13fd"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "registryReviewedAt": "2026-08-28T01:30:00Z",
+  "registryReviewedAt": "2026-09-15T01:40:21.178Z",
   "sources": [
     {
       "id": "vec-2022-district-results",
@@ -69,16 +69,17 @@
       "useStatus": "accepted",
       "modelRole": "District and Upper House region weighting",
       "canonicalUrl": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
-      "dataEffectiveDate": "2026-06-30",
-      "lastCheckedAt": "2026-08-28T00:30:00Z",
+      "dataEffectiveDate": "2026-09-04",
+      "lastCheckedAt": "2026-09-15T01:40:21.178Z",
       "updateFrequency": "monthly",
       "stalenessThresholdDays": 62,
       "criticalToForecast": true,
       "localArtifacts": [
-        "model/data/processed/vec_enrolment_district_2026-06.csv",
-        "model/data/processed/vec_enrolment_region_2026-06.csv"
+        "model/data/processed/vec_enrolment_district_2026-09-04.csv",
+        "model/data/processed/vec_enrolment_region_2026-09-04.csv",
+        "metadata/vec-enrolment-validation-2026-09-04.json"
       ],
-      "notes": "The current model bundle uses the June 2026 district and region releases. A later automation phase will detect and validate newer releases before promotion."
+      "notes": "The current model bundle uses the VEC August 2026 district and region workbooks, extracted on 4 September. The validation record retains workbook URLs, hashes, coverage and district-region total reconciliation."
     },
     {
       "id": "ebc-2021-boundaries",

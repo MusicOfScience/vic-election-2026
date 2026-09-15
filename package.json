@@ -11,6 +11,8 @@
     "build": "bash scripts/build-verified.sh",
     "data:provenance": "node scripts/generate-source-provenance.mjs",
     "data:provenance:check": "node scripts/generate-source-provenance.mjs --check",
+    "data:enrolment:extract": "python3 model/scripts/extract_vec_enrolment.py",
+    "data:enrolment:dashboard": "node scripts/refresh-dashboard-enrolment.mjs",
     "data:polls": "node scripts/generate-poll-data.mjs",
     "data:polls:check": "node scripts/generate-poll-data.mjs --check",
     "release:readiness": "node scripts/check-release-readiness.mjs",

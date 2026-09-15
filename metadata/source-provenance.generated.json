@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "registryReviewedAt": "2026-08-28T01:30:00Z",
+  "registryReviewedAt": "2026-09-15T01:40:21.178Z",
   "summary": {
     "sourceGroups": 9,
     "officialSourceGroups": 7,
     "criticalSourceGroups": 6,
-    "tracedArtifacts": 21,
+    "tracedArtifacts": 22,
     "automationStatus": "scheduled-freshness-monitoring"
   },
   "sources": [
@@ -37,8 +37,8 @@
         },
         {
           "path": "app/data.generated.ts",
-          "sha256": "d648940f25a1e5f65293f300028e1861f49c41b15053137383a52e3cb0a4f3ac",
-          "bytes": 25466,
+          "sha256": "442ab2cb5cc255ab8e398364c2827d57bdbe57ccb3ed378e099164f2105431f9",
+          "bytes": 25459,
           "records": null
         }
       ]
@@ -106,28 +106,35 @@
       "useStatus": "accepted",
       "modelRole": "District and Upper House region weighting",
       "canonicalUrl": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
-      "dataEffectiveDate": "2026-06-30",
-      "lastCheckedAt": "2026-08-28T00:30:00Z",
+      "dataEffectiveDate": "2026-09-04",
+      "lastCheckedAt": "2026-09-15T01:40:21.178Z",
       "updateFrequency": "monthly",
       "stalenessThresholdDays": 62,
       "criticalToForecast": true,
       "localArtifacts": [
-        "model/data/processed/vec_enrolment_district_2026-06.csv",
-        "model/data/processed/vec_enrolment_region_2026-06.csv"
+        "model/data/processed/vec_enrolment_district_2026-09-04.csv",
+        "model/data/processed/vec_enrolment_region_2026-09-04.csv",
+        "metadata/vec-enrolment-validation-2026-09-04.json"
       ],
-      "notes": "The current model bundle uses the June 2026 district and region releases. A later automation phase will detect and validate newer releases before promotion.",
+      "notes": "The current model bundle uses the VEC August 2026 district and region workbooks, extracted on 4 September. The validation record retains workbook URLs, hashes, coverage and district-region total reconciliation.",
       "artifacts": [
         {
-          "path": "model/data/processed/vec_enrolment_district_2026-06.csv",
-          "sha256": "ce4af13b5082134d0b7fb165abf991e14b35f7a2b9e317ef7f87a3f662764b28",
-          "bytes": 5109,
+          "path": "model/data/processed/vec_enrolment_district_2026-09-04.csv",
+          "sha256": "d553eaa6a071794300ba83db551836f4b8f06d36b8084db97a28903ef3f8ea44",
+          "bytes": 5103,
           "records": 88
         },
         {
-          "path": "model/data/processed/vec_enrolment_region_2026-06.csv",
-          "sha256": "1c0ae644efb45cd14044b5b69528cb3af7cd15166d1dcaabd1763bd9e5087f85",
-          "bytes": 676,
+          "path": "model/data/processed/vec_enrolment_region_2026-09-04.csv",
+          "sha256": "0c8b32460eba5078d05add48ebd17a9794c24dc77e471918e0299435223f986a",
+          "bytes": 673,
           "records": 8
+        },
+        {
+          "path": "metadata/vec-enrolment-validation-2026-09-04.json",
+          "sha256": "7bcd0c2ae92d9cbf5f99ce438e801d2a0b0de49a518ade43da63b47ae64a1810",
+          "bytes": 1940,
+          "records": null
         }
       ]
     },
@@ -294,44 +301,44 @@
       "artifacts": [
         {
           "path": "model/data/processed/experimental_forecast_2026.json",
-          "sha256": "abc915428fb521f32ab463cc76b8e15b9f18c21bb47b1efba593a5cf5f612d7d",
-          "bytes": 6291,
+          "sha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab",
+          "bytes": 6289,
           "records": null
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_districts.csv",
-          "sha256": "0908b755e60f6d67e9dd94f5c439c95077f13ec54b129e46ef380c9cb8c55834",
-          "bytes": 38023,
+          "sha256": "cca02adb6d8c7c347225358e2851799f9795ff8eac5d444f0f06b72f6e98b768",
+          "bytes": 38069,
           "records": 88
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_chamber.csv",
-          "sha256": "9c7580b68d27d0cacdad1d93d6265f26559ef5adb82eb28bff61e98bee34f4e8",
-          "bytes": 266,
+          "sha256": "0876eda8009011309ba0f734b3410ec824254769b97edf0623b36559fe9a529d",
+          "bytes": 267,
           "records": 5
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
-          "sha256": "f2b5070563791c50fcdc74bf1a52009bc753fbfd676044208bb22e3892188ce3",
+          "sha256": "ac7bfedb322c0047e94b54ae8654953d139281a9f57f76defe6b8964bc53e6d8",
           "bytes": 762,
           "records": 89
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council_regions.csv",
-          "sha256": "120f3f8d7c72fee48907f63f3ad875b833dd555e38e166d9064521df676f4c4c",
-          "bytes": 4301,
+          "sha256": "f55df453186d9a1854ccae79cb68c5e9bb70be8f46bdf3e33988f0554c61e9e7",
+          "bytes": 4292,
           "records": 8
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council.csv",
-          "sha256": "f0b8446e94172222998505d940d60067bb49ae48a828e68ca1f9f774614d4b85",
-          "bytes": 264,
+          "sha256": "b6f3feac80a354f8ec8fa699dab70df768c0d774f0747b82dbc7d932a86139b9",
+          "bytes": 261,
           "records": 5
         },
         {
           "path": "app/model-output.generated.ts",
-          "sha256": "b686d09083c7484ac37978a7f8c5f413757aa47f7cfce8b1e8e30b5123c0b515",
-          "bytes": 134418,
+          "sha256": "375ff2b0e4401c0ecf07b8e65c2997305b6af007f3bbd31207f6c93aaf024fc3",
+          "bytes": 134451,
           "records": null
         }
       ]

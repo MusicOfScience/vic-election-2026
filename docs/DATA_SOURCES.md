@@ -50,6 +50,25 @@ Every declared local artefact receives a SHA-256 checksum, byte count and—wher
 
 Routine validated data refreshes may later be automated. Parser changes, schema migrations and uncertain corrections must not silently rewrite production data.
 
+## VEC enrolment refresh
+
+The active enrolment inputs come from the VEC district and region workbooks listed on the canonical electoral-roll statistics page. The repository does not need Excel or a third-party workbook package to validate them: `model/scripts/extract_vec_enrolment.py` reads the XLSX container directly, checks the VEC area type and column contract, requires 88 districts and eight regions, preserves the extraction date, and fails unless district and region elector totals reconcile.
+
+Download both official workbooks outside the repository, then run:
+
+```bash
+npm run data:enrolment:extract -- \
+  --district-workbook <district.xlsx> \
+  --region-workbook <region.xlsx> \
+  --output-dir model/data/processed \
+  --baseline-district model/data/processed/vec_enrolment_district_2026-06.csv \
+  --baseline-region model/data/processed/vec_enrolment_region_2026-06.csv \
+  --report metadata/vec-enrolment-validation-2026-09-04.json
+npm run data:enrolment:dashboard
+```
+
+The 4 September 2026 extract reconciles at 4,683,403 electors in both workbooks. Its validation record retains the official URLs, upstream hashes, output hashes, coverage and comparison with the June inputs. Extraction never promotes a workbook automatically; active paths, provenance, forecasts and the live-source fingerprint still require review together.
+
 ## Current limitations
 
 - GitHub-native source-freshness monitoring now runs twice weekly. Acquisition remains guarded and source-specific rather than silently scraping or replacing canonical inputs.
