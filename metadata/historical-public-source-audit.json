@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-01",
+  "reviewedAt": "2026-09-15",
   "status": "assembly-primary-public-harvest-complete",
   "decision": "The public first-party harvest completes 2010-2022 Assembly primary outcomes, so no VEC request is required for this component; residual reconstruction continues for other validation components.",
   "userActionRequired": false,
@@ -112,10 +112,10 @@
         "status": "partial-first-party-reconstruction",
         "sourceFamilies": 18,
         "candidateRows": 200,
-        "sourceMatchedRows": 33,
+        "sourceMatchedRows": 43,
         "replayEligibleRows": 0
       },
-      "nextAction": "close-eight-essential-observation-gaps-then-reconstruct-newspoll",
+      "nextAction": "close-sms-morgan-and-essential-observation-gaps-then-reconstruct-newspoll",
       "externalContact": {
         "status": "deferred",
         "route": "https://github.com/d-j-hirst/aus-polling-analyser/issues",
