@@ -32,7 +32,7 @@ The pinned `d-j-hirst/aus-polling-analyser` file is a quarantined 200-row lead l
 
 The fingerprint-checked aggregate report at `metadata/historical-poll-reconstruction-queue.json` divides those leads into 18 source families without storing vote values. The first five families cover 142 of 200 leads, giving the reconstruction a finite high-value starting point.
 
-The first-party Essential archive reconstruction in `metadata/historical-poll-reconstruction-evidence.json` now matches 33 of 41 Essential leads to dated observation sources with samples; 12 have observation-specific method evidence. Eight Essential leads remain unresolved. No identified source declares reuse authority, so fully reconstructed and replay-eligible counts remain zero and all 200 leads stay quarantined.
+The first-party reconstruction in `metadata/historical-poll-reconstruction-evidence.json` now matches 43 of 200 leads to dated observation sources with samples: 33 of 41 Essential leads and 10 of 33 SMS Morgan leads. Twenty-one matched observations have explicit method evidence. Eight Essential and 23 SMS Morgan leads remain unresolved. No identified source declares reuse authority, so fully reconstructed and replay-eligible counts remain zero and all 200 leads stay quarantined.
 
 The acquisition order is:
 

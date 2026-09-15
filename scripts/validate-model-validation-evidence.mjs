@@ -101,7 +101,7 @@ export function validateModelValidationEvidence() {
   assert(pollRequest.completedPreContactWork.includes("produce-machine-readable-residual-provenance-gap-report"), "polling acquisition must record the completed residual-gap report");
   assert(pollRequest.residualGapReport.path === "metadata/historical-poll-reconstruction-queue.json", "polling residual-gap report path is incorrect");
   assert(pollRequest.residualGapReport.evidencePath === "metadata/historical-poll-reconstruction-evidence.json", "polling reconstruction evidence path is incorrect");
-  assert(pollRequest.residualGapReport.candidateRows === 200 && pollRequest.residualGapReport.sourceMatchedRows === 33
+  assert(pollRequest.residualGapReport.candidateRows === 200 && pollRequest.residualGapReport.sourceMatchedRows === 43
     && pollRequest.residualGapReport.replayEligibleRows === 0, "polling residual-gap summary is stale");
   assert(pollRequest.frozenCandidateSource.candidateRows === 200, "polling acquisition must preserve the audited lead-list count");
   assert(pollRequest.frozenCandidateSource.currentlyReplayEligibleRows === 0, "unresolved polling rows cannot enter replay");
@@ -116,7 +116,7 @@ export function validateModelValidationEvidence() {
   assert(pollPublicAudit?.candidateSource.publicNameVerified === false, "polling repository owner identity must remain conservative");
   assert(pollPublicAudit.candidateSource.declaredLicence === null, "public audit must not invent polling reuse authority");
   assert(pollPublicAudit.role === "lead-list-only", "unlicensed polling data must remain a lead list");
-  assert(pollPublicAudit.residualGapReport.sourceMatchedRows === 33, "public audit polling reconstruction count is stale");
+  assert(pollPublicAudit.residualGapReport.sourceMatchedRows === 43, "public audit polling reconstruction count is stale");
   assert(pollPublicAudit.externalContact.status === "deferred", "polling repository contact must remain deferred");
 
   assert(acquisition.modelImpact.changesCurrentForecast === false, "source acquisition cannot change the current forecast");
@@ -224,39 +224,55 @@ export function validateModelValidationEvidence() {
 
   const pollEvidence = readJson("metadata/historical-poll-reconstruction-evidence.json");
   const essentialEvidence = pollEvidence.sourceFamilies.find((family) => family.id === "essential");
-  assert(pollEvidence.schemaVersion === 1 && pollEvidence.sourceFamilies.length === 1, "historical polling evidence schema or family count is unexpected");
+  const smsMorganEvidence = pollEvidence.sourceFamilies.find((family) => family.id === "sms-morgan");
+  assert(pollEvidence.schemaVersion === 1 && pollEvidence.sourceFamilies.length === 2, "historical polling evidence schema or family count is unexpected");
   assert(pollEvidence.availabilityDateSemantics.includes("may be later")
     && pollEvidence.availabilityDateSemantics.includes("must not be represented as that original release date"), "historical polling evidence must distinguish corroborated availability from original publication");
-  assert(essentialEvidence?.status === "partial-first-party-reconstruction", "Essential polling evidence status is stale");
-  assert(essentialEvidence.candidateRows === 41, "Essential candidate count is stale");
-  assert(essentialEvidence.sources.length === 10, "Essential source document count is stale");
-  assert(new Set(essentialEvidence.sources.map((source) => source.id)).size === essentialEvidence.sources.length, "Essential source ids must be unique");
-  assert(essentialEvidence.sources.every((source) => source.url.startsWith("https://") && source.declaredReuseLicence === null), "Essential sources must retain HTTPS provenance and unresolved reuse authority");
-  const essentialSourceById = new Map(essentialEvidence.sources.map((source) => [source.id, source]));
-  const essentialRows = [...essentialEvidence.matchedObservations, ...essentialEvidence.unresolvedObservations];
-  assert(essentialRows.length === essentialEvidence.candidateRows, "Essential observation inventory does not reconcile");
-  assert(new Set(essentialRows.map((row) => `${row.cycleId}\u0000${row.leadMidDate}`)).size === essentialEvidence.candidateRows, "Essential observation inventory contains duplicates");
-  assert(essentialEvidence.matchedObservations.length === 33 && essentialEvidence.unresolvedObservations.length === 8, "Essential matched and unresolved counts are stale");
-  for (const observation of essentialEvidence.matchedObservations) {
-    const source = essentialSourceById.get(observation.sourceId);
-    const cycle = pollAudit.coverage.cycles.find((entry) => entry.id === observation.cycleId);
-    assert(source, `Essential observation ${observation.leadMidDate} has an unknown source`);
-    assert(Number.isSafeInteger(observation.sampleSize) && observation.sampleSize > 0, `Essential observation ${observation.leadMidDate} lacks a valid sample`);
-    const sourceAvailableDate = source.publishedDateAustraliaMelbourne ?? source.publishedAt.slice(0, 10);
-    assert(observation.evidenceAvailableByDate === sourceAvailableDate, `Essential observation ${observation.leadMidDate} availability date differs from its cited source`);
-    assert(cycle && observation.evidenceAvailableByDate <= cycle.informationCutoff, `Essential observation ${observation.leadMidDate} was not evidenced by its frozen cutoff`);
-    assert(observation.explicitMethodSourceId === null || essentialSourceById.get(observation.explicitMethodSourceId)?.explicitMethod, `Essential observation ${observation.leadMidDate} has invalid method evidence`);
-    assert(observation.replayEligible === false, `Essential observation ${observation.leadMidDate} cannot be replay-eligible without reuse authority`);
-    assert(!("primaryVote" in observation) && !("twoPartyPreferred" in observation), "Essential reconstruction evidence must not copy vote values from the quarantined lead list");
+  const sourceIds = pollEvidence.sourceFamilies.flatMap((family) => family.sources.map((source) => source.id));
+  assert(new Set(sourceIds).size === sourceIds.length, "historical polling source ids must be globally unique");
+  for (const family of pollEvidence.sourceFamilies) {
+    assert(family.status === "partial-first-party-reconstruction", `${family.label} polling evidence status is stale`);
+    assert(family.coverage.sourceDocuments === family.sources.length, `${family.label} source document count does not reconcile`);
+    assert(family.sources.every((source) => source.url.startsWith("https://") && source.declaredReuseLicence === null), `${family.label} sources must retain HTTPS provenance and unresolved reuse authority`);
+    assert(family.sources.every((source) => /^[a-f0-9]{64}$/.test(source.sha256 ?? source.contentSha256 ?? source.retrievedSha256)), `${family.label} sources must retain a SHA-256 fingerprint`);
+    const sourceById = new Map(family.sources.map((source) => [source.id, source]));
+    const rows = [...family.matchedObservations, ...family.unresolvedObservations];
+    assert(rows.length === family.candidateRows, `${family.label} observation inventory does not reconcile`);
+    assert(new Set(rows.map((row) => `${row.cycleId}\u0000${row.leadMidDate}`)).size === family.candidateRows, `${family.label} observation inventory contains duplicates`);
+    for (const observation of family.matchedObservations) {
+      const source = sourceById.get(observation.sourceId);
+      const cycle = pollAudit.coverage.cycles.find((entry) => entry.id === observation.cycleId);
+      assert(source, `${family.label} observation ${observation.leadMidDate} has an unknown source`);
+      assert(Number.isSafeInteger(observation.sampleSize) && observation.sampleSize > 0, `${family.label} observation ${observation.leadMidDate} lacks a valid sample`);
+      const sourceAvailableDate = source.publishedDateAustraliaMelbourne ?? source.publishedAt.slice(0, 10);
+      assert(observation.evidenceAvailableByDate === sourceAvailableDate, `${family.label} observation ${observation.leadMidDate} availability date differs from its cited source`);
+      assert(cycle && observation.evidenceAvailableByDate <= cycle.informationCutoff, `${family.label} observation ${observation.leadMidDate} was not evidenced by its frozen cutoff`);
+      assert(observation.explicitMethodSourceId === null || sourceById.get(observation.explicitMethodSourceId)?.explicitMethod, `${family.label} observation ${observation.leadMidDate} has invalid method evidence`);
+      assert(observation.replayEligible === false, `${family.label} observation ${observation.leadMidDate} cannot be replay-eligible without reuse authority`);
+      assert(!("primaryVote" in observation) && !("twoPartyPreferred" in observation), `${family.label} reconstruction evidence must not copy vote values from the quarantined lead list`);
+    }
+    assert(family.coverage.sourceMatchedRows === family.matchedObservations.length
+      && family.coverage.unresolvedRows === family.unresolvedObservations.length, `${family.label} source coverage does not reconcile`);
+    assert(family.coverage.publicationDatedRows === family.matchedObservations.length
+      && family.coverage.sampleSizeRows === family.matchedObservations.length
+      && family.coverage.observationSourceUrlRows === family.matchedObservations.length, `${family.label} provenance field coverage does not reconcile`);
+    assert(family.coverage.explicitMethodRows === family.matchedObservations.filter((row) => row.explicitMethodSourceId !== null).length, `${family.label} method coverage does not reconcile`);
+    assert(family.coverage.declaredReuseLicenceRows === 0 && family.coverage.fullyReconstructedRows === 0
+      && family.coverage.replayEligibleRows === 0, `${family.label} evidence must remain fail-closed`);
+    assert(Object.values(family.decision).filter((value) => typeof value === "boolean").every((value) => value === false), `${family.label} decision must remain fail-closed`);
   }
+  assert(essentialEvidence?.candidateRows === 41 && essentialEvidence.sources.length === 10, "Essential candidate or source count is stale");
+  assert(essentialEvidence.matchedObservations.length === 33 && essentialEvidence.unresolvedObservations.length === 8, "Essential matched and unresolved counts are stale");
   const essentialCoverage = essentialEvidence.coverage;
-  assert(essentialCoverage.sourceMatchedRows === 33 && essentialCoverage.unresolvedRows === 8, "Essential source coverage is stale");
-  assert(essentialCoverage.publicationDatedRows === 33 && essentialCoverage.sampleSizeRows === 33
-    && essentialCoverage.observationSourceUrlRows === 33, "Essential provenance field coverage is stale");
-  assert(essentialCoverage.explicitMethodRows === essentialEvidence.matchedObservations.filter((row) => row.explicitMethodSourceId !== null).length
-    && essentialCoverage.explicitMethodRows === 12, "Essential method coverage is stale");
-  assert(essentialCoverage.declaredReuseLicenceRows === 0 && essentialCoverage.fullyReconstructedRows === 0
-    && essentialCoverage.replayEligibleRows === 0, "Essential evidence must remain fail-closed");
+  assert(essentialCoverage.explicitMethodRows === 12, "Essential method coverage is stale");
+  assert(smsMorganEvidence?.candidateRows === 33 && smsMorganEvidence.sources.length === 10, "SMS Morgan candidate or source count is stale");
+  assert(smsMorganEvidence.matchedObservations.length === 10 && smsMorganEvidence.unresolvedObservations.length === 23, "SMS Morgan matched and unresolved counts are stale");
+  assert(smsMorganEvidence.coverage.explicitMethodRows === 9, "SMS Morgan method coverage is stale");
+  assert(smsMorganEvidence.unresolvedObservations.some((row) => row.leadMidDate === "2020-09-09" && row.reason.includes("approval figures only")), "SMS Morgan approval-only lead must remain unresolved");
+  assert(smsMorganEvidence.matchedObservations.some((row) => row.leadMidDate === "2020-09-30" && row.sourcePeriodLabel.includes("article prose says")), "SMS Morgan September 2020 date discrepancy must remain explicit");
+  assert(smsMorganEvidence.matchedObservations.some((row) => row.leadMidDate === "2020-10-13" && row.sourcePeriodLabel.includes("article prose says")), "SMS Morgan October 2020 date discrepancy must remain explicit");
+  assert(smsMorganEvidence.matchedObservations.some((row) => row.leadMidDate === "2021-11-11" && row.sourcePeriodLabel.includes("table labels")), "SMS Morgan November 2021 date discrepancy must remain explicit");
+  assert(smsMorganEvidence.matchedObservations.some((row) => row.leadMidDate === "2022-07-01" && row.sourcePeriodLabel.includes("misprints 2021")), "SMS Morgan source date discrepancy must remain explicit");
   assert(Object.values(pollEvidence.modelImpact).every((value) => value === false), "historical polling evidence cannot change forecasts or gates");
 
   const pollQueue = readJson("metadata/historical-poll-reconstruction-queue.json");
@@ -268,14 +284,14 @@ export function validateModelValidationEvidence() {
   assert(pollQueue.candidateSource.reconstructionMetadataWritten === true, "polling queue must record first-party reconstruction progress");
   assert(pollQueue.coverage.candidateRows === 200, "polling queue candidate count is stale");
   assert(pollQueue.coverage.sourceFamilies === 18, "polling queue source-family count is stale");
-  assert(pollQueue.coverage.sourceMatchedRows === 33, "historical polling source-matched count is stale");
+  assert(pollQueue.coverage.sourceMatchedRows === 43, "historical polling source-matched count is stale");
   assert(pollQueue.coverage.reconstructedRows === 0 && pollQueue.coverage.replayEligibleRows === 0, "unverified polling leads cannot be reconstructed or replay-eligible");
   assert(pollQueue.coverage.residualRows === 200, "polling queue residual count is stale");
   assert(JSON.stringify(pollQueue.coverage.requiredFieldCoverage) === JSON.stringify({
-    publicationDate: 33,
-    sampleSize: 33,
-    explicitMethod: 12,
-    observationSourceUrl: 33,
+    publicationDate: 43,
+    sampleSize: 43,
+    explicitMethod: 21,
+    observationSourceUrl: 43,
     declaredReuseLicence: 0,
   }), "polling queue required-field coverage is stale");
   assert(pollQueue.reconstructionQueue.length === pollQueue.coverage.sourceFamilies, "polling queue family count does not reconcile");
@@ -287,6 +303,9 @@ export function validateModelValidationEvidence() {
   const essentialQueue = pollQueue.reconstructionQueue.find((family) => family.id === "essential");
   assert(essentialQueue?.sourceMatchedRows === 33 && essentialQueue.reconstructedRows === 0
     && essentialQueue.replayEligibleRows === 0 && essentialQueue.residualRows === 41, "Essential queue progress is stale or unsafe");
+  const smsMorganQueue = pollQueue.reconstructionQueue.find((family) => family.id === "sms-morgan");
+  assert(smsMorganQueue?.sourceMatchedRows === 10 && smsMorganQueue.reconstructedRows === 0
+    && smsMorganQueue.replayEligibleRows === 0 && smsMorganQueue.residualRows === 33, "SMS Morgan queue progress is stale or unsafe");
   assert(pollQueue.coverage.cycles.every((cycle) => expectedPollRows.get(cycle.id) === cycle.candidateRows && cycle.residualRows === cycle.candidateRows), "polling queue cycle coverage is stale");
   assert(pollQueue.acceptanceRules.fieldworkMidpointAsPublicationDateAccepted === false, "polling queue cannot treat MidDate as publication date");
   assert(pollQueue.acceptanceRules.explicitReuseAuthorityRequired === true, "polling queue must require explicit reuse authority");

@@ -178,6 +178,169 @@
         "automaticPromotion": false,
         "reason": "First-party provenance materially improves 33 leads, but eight remain unmatched, only 12 have observation-specific method evidence, and no source declares reuse authority for the extracted polling data."
       }
+    },
+    {
+      "id": "sms-morgan",
+      "label": "SMS Morgan",
+      "status": "partial-first-party-reconstruction",
+      "candidateRows": 33,
+      "sources": [
+        {
+          "id": "roy-morgan-8526-2020-09-22-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/australia-covid-19-the-economic-story-so-far-including-a-focus-on-victorias-second-wave",
+          "publishedAt": "2020-09-22",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "139a82abef6dd401139a0e66e43eebec818d77e08293cc57de32eb76b0850db9",
+          "explicitMethod": null,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-8531-2020-10-01-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/victorians-now-against-stage-4-covid-restrictions",
+          "publishedAt": "2020-10-01",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "0c2d6817f4d4541c472e8842c4c75d0180b0f4a53493f013a648a83c428951d0",
+          "explicitMethod": "Roy Morgan Snap SMS survey; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-8542-2020-10-14-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/victorian-alp-still-ahead-of-the-l-np-at-51-5-vs-48-5-premier-andrews-approval-down-2-to-59",
+          "publishedAt": "2020-10-14",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "ae853395b983a6f4db52d2a51fe166f0d400906370a6127bf8f2beb8f44a8eea",
+          "explicitMethod": "Roy Morgan Snap SMS survey; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-8568-2020-11-12-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/victorian-alp-58-5-streaks-ahead-of-l-np-41-5-premier-daniel-andrews-approval-jumps-12-to-71",
+          "publishedAt": "2020-11-12",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "1d1ff6264b4add7dbacb586e6f59ec6bdf1bdee32727f38cdd47e8a9fc17402f",
+          "explicitMethod": "Roy Morgan Snap SMS survey; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-8858-2021-11-12-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/victorias-major-parties-both-lose-support-to-minor-parties-while-premier-daniel-andrews-job-approval-is-over-10-points-lower-than-a-year-ago",
+          "publishedAt": "2021-11-12",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "2a47ab2fdd9318a2ac3b88ff93e89eb2091ceb14e5dc0a881061b0041a54ea52",
+          "explicitMethod": "Roy Morgan Snap SMS survey; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-8868-2021-11-25-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/over-three-quarters-of-victorians-76-agree-that-an-employed-worker-in-victoria-is-not-allowed-to-enter-their-employers-workplace-unless-fully-vaccinated",
+          "publishedAt": "2021-11-25",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "1dad472e93ee4b3c297a7f9c5a18a9a73c9c445d234f0c8ecb5a2ed5cec3332d",
+          "explicitMethod": "Roy Morgan SMS survey; the article reports the total survey base and its 1,105-elector voting base but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-8998-2022-07-03-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/the-alp-in-victoria-holds-a-large-election-winning-lead-only-months-before-the-state-election-alp-59-5-cf-l-np-40-5",
+          "publishedAt": "2022-07-03",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "6b4bcbf5f24d997f42b9d7d73ac050c1fb18ef1402ace92bcb9d45768f336d1b",
+          "explicitMethod": "Roy Morgan Snap SMS poll; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-9038-2022-08-14-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/the-alp-in-victoria-increases-its-large-election-winning-lead-from-a-month-ago-alp-60-5-cf-l-np-39-5",
+          "publishedAt": "2022-08-14",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "d6a3a371a311f81698a3bfdce070f7c67c89b4735b37761683904afe7d9bfeb6",
+          "explicitMethod": "Roy Morgan Snap SMS poll; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-9108-2022-11-11-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/9108-roy-morgan-survey-on-voting-intention-in-victoria-november-10-2022",
+          "publishedAt": "2022-11-11",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "5a3ac27a14f2b9ee890f0e843d43fd7b85516d2e9734a77d7a4b9468d16aed72",
+          "explicitMethod": "Roy Morgan Snap SMS poll; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "roy-morgan-9128-2022-11-23-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://www.roymorgan.com/findings/alp-government-of-daniel-andrews-set-to-win-with-a-reduced-majority-as-support-for-l-np-grows-but-will-the-trend-continue",
+          "publishedAt": "2022-11-23",
+          "retrievedAt": "2026-09-15",
+          "retrievedSha256": "3bd5a2e8bc97e81a7c8a0e01068579290d364b30b2f018d3436994453eb1b004",
+          "explicitMethod": "Roy Morgan Snap SMS poll; the article reports fieldwork and sample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        }
+      ],
+      "matchedObservations": [
+        { "cycleId": "vic_la_2022", "leadMidDate": "2020-09-16", "sourcePeriodLabel": "15-17 Sep 2020", "sampleSize": 1147, "sourceId": "roy-morgan-8526-2020-09-22-web", "evidenceAvailableByDate": "2020-09-22", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2020-09-30", "sourcePeriodLabel": "28-29 Sep 2020 table/source note; article prose says 29-30 Sep", "sampleSize": 2223, "sourceId": "roy-morgan-8531-2020-10-01-web", "evidenceAvailableByDate": "2020-10-01", "explicitMethodSourceId": "roy-morgan-8531-2020-10-01-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2020-10-13", "sourcePeriodLabel": "12-13 Oct 2020 table label; article prose says 13-14 Oct", "sampleSize": 899, "sourceId": "roy-morgan-8542-2020-10-14-web", "evidenceAvailableByDate": "2020-10-14", "explicitMethodSourceId": "roy-morgan-8542-2020-10-14-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2020-11-10", "sourcePeriodLabel": "9-10 Nov 2020", "sampleSize": 818, "sourceId": "roy-morgan-8568-2020-11-12-web", "evidenceAvailableByDate": "2020-11-12", "explicitMethodSourceId": "roy-morgan-8568-2020-11-12-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2021-11-11", "sourcePeriodLabel": "10 Nov 2021; published table labels 11 Nov", "sampleSize": 1357, "sourceId": "roy-morgan-8858-2021-11-12-web", "evidenceAvailableByDate": "2021-11-12", "explicitMethodSourceId": "roy-morgan-8858-2021-11-12-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2021-11-24", "sourcePeriodLabel": "24 Nov 2021", "sampleSize": 1105, "sourceId": "roy-morgan-8868-2021-11-25-web", "evidenceAvailableByDate": "2021-11-25", "explicitMethodSourceId": "roy-morgan-8868-2021-11-25-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2022-07-01", "sourcePeriodLabel": "30 Jun-2 Jul 2022; article prose misprints 2021", "sampleSize": 1710, "sourceId": "roy-morgan-8998-2022-07-03-web", "evidenceAvailableByDate": "2022-07-03", "explicitMethodSourceId": "roy-morgan-8998-2022-07-03-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2022-08-12", "sourcePeriodLabel": "11-13 Aug 2022", "sampleSize": 1097, "sourceId": "roy-morgan-9038-2022-08-14-web", "evidenceAvailableByDate": "2022-08-14", "explicitMethodSourceId": "roy-morgan-9038-2022-08-14-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2022-11-10", "sourcePeriodLabel": "9-10 Nov 2022", "sampleSize": 1030, "sourceId": "roy-morgan-9108-2022-11-11-web", "evidenceAvailableByDate": "2022-11-11", "explicitMethodSourceId": "roy-morgan-9108-2022-11-11-web", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2022-11-23", "sourcePeriodLabel": "22-23 Nov 2022", "sampleSize": 1195, "sourceId": "roy-morgan-9128-2022-11-23-web", "evidenceAvailableByDate": "2022-11-23", "explicitMethodSourceId": "roy-morgan-9128-2022-11-23-web", "replayEligible": false }
+      ],
+      "unresolvedObservations": [
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-09-28", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-10-26", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-11", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-14", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-23", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-27", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-01-27", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-02-14", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-03-26", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-04-12", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-05-23", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-06-20", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-08-01", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-08-30", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-10-12", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-12-04", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-01-31", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-03-27", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-05-27", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-08-21", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-10-01", "reason": "No observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2018-11-23", "reason": "The lead marks its date as estimated, and no observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2020-09-09", "reason": "The lead contains approval figures only and no voting-intention observation to reconstruct." }
+      ],
+      "coverage": {
+        "sourceDocuments": 10,
+        "sourceMatchedRows": 10,
+        "unresolvedRows": 23,
+        "publicationDatedRows": 10,
+        "sampleSizeRows": 10,
+        "explicitMethodRows": 9,
+        "observationSourceUrlRows": 10,
+        "declaredReuseLicenceRows": 0,
+        "fullyReconstructedRows": 0,
+        "replayEligibleRows": 0
+      },
+      "decision": {
+        "forecastEligible": false,
+        "historicalReplayEligible": false,
+        "automaticPromotion": false,
+        "reason": "First-party Roy Morgan pages materially improve 10 leads, but 23 remain unresolved, one page does not explicitly identify the voting poll mode, reported methodology is incomplete and no source declares reuse authority."
+      }
     }
   ],
   "modelImpact": {
