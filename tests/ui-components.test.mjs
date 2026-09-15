@@ -156,9 +156,9 @@ test("ships a complete checksummed source-provenance registry", async () => {
 
   assert.equal(sourceProvenance.summary.sourceGroups, 9);
   assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
-  assert.equal(sourceProvenance.summary.tracedArtifacts, 21);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 22);
   assert.equal(sourceProvenance.summary.automationStatus, "scheduled-freshness-monitoring");
-  assert.equal(artifacts.length, 21);
+  assert.equal(artifacts.length, 22);
   assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
   assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 9);
 });
@@ -172,7 +172,9 @@ test("ships explicit fail-closed release gates", async () => {
 
   assert.equal(releaseReadiness.status, "experimental-blocked");
   assert.equal(releaseReadiness.gates.sourceIntegrity.passed, true);
-  assert.equal(releaseReadiness.gates.criticalSourceFreshness.passed, true);
+  assert.equal(releaseReadiness.gates.criticalSourceFreshness.passed, false);
+  assert.equal(releaseReadiness.sources.find((source) => source.id === "vec-2026-enrolment")?.stale, false);
+  assert.equal(releaseReadiness.sources.find((source) => source.id === "vic-2026-poll-registry")?.stale, true);
   assert.equal(releaseReadiness.gates.productionAuthorisation.passed, false);
   assert.equal(releaseReadiness.automation.automaticProductionPublish, false);
   assert.match(html, /Automation may check the work/i);

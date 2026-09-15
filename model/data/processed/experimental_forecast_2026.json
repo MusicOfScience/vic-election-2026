@@ -15,37 +15,37 @@
   "polling": {
     "poll_count": 12,
     "mean": {
-      "ALP": 25.640302589320253,
-      "LIB_NAT": 27.672443108904552,
-      "ONP": 23.27224962363894,
+      "ALP": 25.640302589320257,
+      "LIB_NAT": 27.67244310890456,
+      "ONP": 23.27224962363893,
       "GRN": 13.373699575458694,
       "OTH_IND": 10.041305102677631
     },
     "median": {
-      "ALP": 25.638921245187035,
-      "LIB_NAT": 27.654236002944856,
+      "ALP": 25.63892124518704,
+      "LIB_NAT": 27.654236002944863,
       "ONP": 23.243223251811976,
-      "GRN": 13.360888134547807,
+      "GRN": 13.360888134547809,
       "OTH_IND": 10.032514747565834
     },
     "lower80": {
-      "ALP": 24.340310883360225,
+      "ALP": 24.340310883360218,
       "LIB_NAT": 26.221448262725236,
-      "ONP": 21.848587051418253,
-      "GRN": 12.704849284688803,
+      "ONP": 21.848587051418257,
+      "GRN": 12.704849284688807,
       "OTH_IND": 9.360803670848528
     },
     "upper80": {
       "ALP": 26.89772744150097,
       "LIB_NAT": 29.15572127919733,
-      "ONP": 24.71697151441491,
+      "ONP": 24.716971514414908,
       "GRN": 14.068820160287537,
       "OTH_IND": 10.758172903000114
     },
     "house_effects": {
       "DemosAU": {
         "ALP": -0.42212171367746976,
-        "LIB_NAT": 0.21126402503868036,
+        "LIB_NAT": 0.2112640250386839,
         "ONP": -0.057834061888769384,
         "GRN": 0.15559910279289113,
         "OTH_IND": 0.11309264773467653
@@ -82,15 +82,15 @@
     "sensitivity_by_half_life_days": {
       "21": {
         "ALP": 25.87396027747078,
-        "LIB_NAT": 27.92247669401773,
+        "LIB_NAT": 27.922476694017725,
         "ONP": 22.80269755895893,
-        "GRN": 13.232274783961838,
+        "GRN": 13.232274783961836,
         "OTH_IND": 10.168590685590742
       },
       "45": {
-        "ALP": 25.640302589320253,
-        "LIB_NAT": 27.672443108904552,
-        "ONP": 23.27224962363894,
+        "ALP": 25.640302589320257,
+        "LIB_NAT": 27.67244310890456,
+        "ONP": 23.27224962363893,
         "GRN": 13.373699575458694,
         "OTH_IND": 10.041305102677631
       },
@@ -98,7 +98,7 @@
         "ALP": 25.553796499174812,
         "LIB_NAT": 27.441645871353206,
         "ONP": 23.375987000763605,
-        "GRN": 13.480847470995714,
+        "GRN": 13.480847470995716,
         "OTH_IND": 10.14772315771264
       }
     },
@@ -107,7 +107,7 @@
   "assembly": {
     "model": "correlated_multi_party_irv",
     "districts": 88,
-    "hung_probability": 0.7638
+    "hung_probability": 0.7648
   },
   "council": {
     "model": "voter_directed_group_stv_approximation",
@@ -179,23 +179,23 @@
   "outputs": {
     "districts": {
       "path": "data/processed/experimental_forecast_2026_districts.csv",
-      "sha256": "0908b755e60f6d67e9dd94f5c439c95077f13ec54b129e46ef380c9cb8c55834"
+      "sha256": "cca02adb6d8c7c347225358e2851799f9795ff8eac5d444f0f06b72f6e98b768"
     },
     "chamber": {
       "path": "data/processed/experimental_forecast_2026_chamber.csv",
-      "sha256": "9c7580b68d27d0cacdad1d93d6265f26559ef5adb82eb28bff61e98bee34f4e8"
+      "sha256": "0876eda8009011309ba0f734b3410ec824254769b97edf0623b36559fe9a529d"
     },
     "seat_distribution": {
       "path": "data/processed/experimental_forecast_2026_seat_distribution.csv",
-      "sha256": "f2b5070563791c50fcdc74bf1a52009bc753fbfd676044208bb22e3892188ce3"
+      "sha256": "ac7bfedb322c0047e94b54ae8654953d139281a9f57f76defe6b8964bc53e6d8"
     },
     "council_regions": {
       "path": "data/processed/experimental_forecast_2026_council_regions.csv",
-      "sha256": "120f3f8d7c72fee48907f63f3ad875b833dd555e38e166d9064521df676f4c4c"
+      "sha256": "f55df453186d9a1854ccae79cb68c5e9bb70be8f46bdf3e33988f0554c61e9e7"
     },
     "council": {
       "path": "data/processed/experimental_forecast_2026_council.csv",
-      "sha256": "f0b8446e94172222998505d940d60067bb49ae48a828e68ca1f9f774614d4b85"
+      "sha256": "b6f3feac80a354f8ec8fa699dab70df768c0d774f0747b82dbc7d932a86139b9"
     }
   }
 }

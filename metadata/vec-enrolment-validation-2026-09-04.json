@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "validationStatus": "passed",
+  "automaticPromotion": false,
+  "publisher": "Victorian Electoral Commission",
+  "canonicalListingUrl": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
+  "effectiveDate": "2026-09-04",
+  "workbooks": {
+    "district": {
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/9a3266f985484f069c25b00618da2deb.xlsx",
+      "sha256": "2548fd993020e97f004ce8d4da47b1fb7601230ee557575e700c31c0eae6bac1",
+      "rows": 88
+    },
+    "region": {
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/019821e1781940c38b1735fb0d6c1f96.xlsx",
+      "sha256": "6f95b5421ae2b2f8a83a564b39abbfc1589dbf0b46ee3c34659dcfc9c8a8ef8b",
+      "rows": 8
+    }
+  },
+  "baselines": {
+    "district": {
+      "path": "model/data/processed/vec_enrolment_district_2026-06.csv",
+      "sha256": "ce4af13b5082134d0b7fb165abf991e14b35f7a2b9e317ef7f87a3f662764b28",
+      "rows": 88
+    },
+    "region": {
+      "path": "model/data/processed/vec_enrolment_region_2026-06.csv",
+      "sha256": "1c0ae644efb45cd14044b5b69528cb3af7cd15166d1dcaabd1763bd9e5087f85",
+      "rows": 8
+    }
+  },
+  "outputs": {
+    "district": {
+      "path": "model/data/processed/vec_enrolment_district_2026-09-04.csv",
+      "sha256": "d553eaa6a071794300ba83db551836f4b8f06d36b8084db97a28903ef3f8ea44",
+      "rows": 88
+    },
+    "region": {
+      "path": "model/data/processed/vec_enrolment_region_2026-09-04.csv",
+      "sha256": "0c8b32460eba5078d05add48ebd17a9794c24dc77e471918e0299435223f986a",
+      "rows": 8
+    }
+  },
+  "reconciliation": {
+    "districtTotal": 4683403,
+    "regionTotal": 4683403,
+    "previousDistrictTotal": 4661213,
+    "electorChange": 22190,
+    "electorChangePercent": 0.4761,
+    "districtNamesUnchanged": true,
+    "regionNamesUnchanged": true,
+    "smallestDistrictChange": [
+      "Nepean",
+      31
+    ],
+    "largestDistrictChange": [
+      "Kalkallo",
+      1057
+    ]
+  }
+}

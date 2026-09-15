@@ -129,7 +129,7 @@ def build_assembly_seed(root: str | Path, config: dict | None = None) -> pd.Data
         blended = direct_weight * observed + (1.0 - direct_weight) * auxiliary
         pivot.loc[i, list(PARTIES)] = blended / blended.sum()
 
-    enrol = pd.read_csv(root / "data/processed/vec_enrolment_district_2026-06.csv")
+    enrol = pd.read_csv(root / "data/processed/vec_enrolment_district_2026-09-04.csv")
     weights = dict(zip(enrol.geography_name.map(_slug), enrol.enrolled_electors))
     pivot["enrolled_electors"] = pivot.district_id.map(weights).fillna(enrol.enrolled_electors.mean())
     pivot = _rake(pivot, ASSEMBLY_2022_TARGET, pivot.enrolled_electors.to_numpy(float))
@@ -157,7 +157,7 @@ def build_council_seed(root: str | Path, config: dict | None = None) -> pd.DataF
     local = np.log(np.clip(vals, .002, None)) - np.log(np.clip(state, .002, None))
     pivot.loc[:, PARTIES] = np.exp(np.log(COUNCIL_2022_TARGET / 100) + float(council["aec_local_pattern_shrinkage"]) * local)
     pivot.loc[:, PARTIES] = pivot.loc[:, PARTIES].div(pivot.loc[:, PARTIES].sum(axis=1), axis=0)
-    enrol = pd.read_csv(root / "data/processed/vec_enrolment_region_2026-06.csv")
+    enrol = pd.read_csv(root / "data/processed/vec_enrolment_region_2026-09-04.csv")
     weights = dict(zip(enrol.geography_name, enrol.enrolled_electors))
     pivot["enrolled_electors"] = pivot.region_name.map(weights)
     pivot["region_id"] = pivot.region_name.map(_slug)
