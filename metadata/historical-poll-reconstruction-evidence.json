@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-15",
+  "policy": "Record observation-level first-party provenance without copying the quarantined candidate file's vote values. A matched source is progress, not replay eligibility; every required field and reuse authority must pass separately.",
+  "availabilityDateSemantics": "evidenceAvailableByDate is the date the cited source proves that an observation was public. It may be later than the observation's original release and must not be represented as that original release date.",
+  "sourceFamilies": [
+    {
+      "id": "essential",
+      "label": "Essential",
+      "status": "partial-first-party-reconstruction",
+      "candidateRows": 41,
+      "sources": [
+        {
+          "id": "essential-vic-2010-11-05-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://essentialvision.com.au/victoria-%e2%80%93-voting-intention",
+          "wordpressPostId": 1186,
+          "publishedAt": "2010-11-05T00:17:14",
+          "contentSha256": "675bc711d7cae6a73f4a0c5d574d51102f12043dd7735d2dc7dd54c5dc955285",
+          "explicitMethod": null,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2014-05-30-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://essentialvision.com.au/state-voting-intention-victoria-2",
+          "wordpressPostId": 8283,
+          "publishedAt": "2014-05-30T18:02:25",
+          "contentSha256": "a3712e47b81ca98f458f82e83b6e1557aad8c18c02af830de700417a5805a9dc",
+          "explicitMethod": null,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2014-11-26-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://essentialvision.com.au/state-voting-intention",
+          "wordpressPostId": 8906,
+          "publishedAt": "2014-11-26T15:31:30",
+          "contentSha256": "35aef6f35dbb52f29e2f2c53cc83a4fd4937b895aae1a6fe47f3f9b9454b3768",
+          "explicitMethod": null,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2016-01-13-pdf",
+          "sourceType": "first-party-pollster-pdf",
+          "url": "https://www.essentialvision.com.au/wp-content/uploads/2016/01/Essential-Report_statevoting_Dec2015.pdf",
+          "publishedAt": "2016-01-13T13:01:40",
+          "sha256": "48828ef3fc4c9a12feeca881dff668c2cb5c465cc0b5b7480950eb5ea58e993d",
+          "explicitMethod": "Weekly online omnibus using the Your Source panel; panel members randomly selected, invitations sent to approximately 7,000-8,000 members, results weighted against ABS data; Wednesday-to-Sunday weekly fieldwork.",
+          "methodPages": [3, 9],
+          "resultsPage": 6,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2016-04-04-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://essentialvision.com.au/state-voting-intention-victoria-4",
+          "wordpressPostId": 10321,
+          "publishedAt": "2016-04-04T16:35:22",
+          "contentSha256": "831a3c83b7195d03c67896b470ee9ec099fe5027077a9a701ad70a0af3bd95f0",
+          "explicitMethod": null,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2016-10-11-web",
+          "sourceType": "first-party-pollster-web-page",
+          "url": "https://essentialvision.com.au/state-voting-intention-2",
+          "wordpressPostId": 11104,
+          "publishedAt": "2016-10-11T13:01:39",
+          "contentSha256": "8fa259a7d160f10dde8b8ed2e7312037587d711923c7bbe4970bad5e8aa5248c",
+          "explicitMethod": null,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2016-12-21-pdf",
+          "sourceType": "first-party-pollster-pdf",
+          "url": "https://www.essentialvision.com.au/wp-content/uploads/2016/12/Essential-Report_statevoting_Dec2016.pdf",
+          "publishedAt": "2016-12-21T14:53:16",
+          "sha256": "f9373b9c477302a72335ab4fb6f11133525827e7a1ed0281b8e9e23a74844cd4",
+          "explicitMethod": "Weekly online omnibus using the Your Source panel; panel members randomly selected, invitations sent to approximately 7,000-8,000 members, results weighted against ABS data; Wednesday-to-Sunday weekly fieldwork.",
+          "methodPages": [3, 9],
+          "resultsPage": 6,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2017-10-12-pdf",
+          "sourceType": "first-party-pollster-pdf",
+          "url": "https://www.essentialvision.com.au/wp-content/uploads/2017/10/Essential-Report_statevoting_Sep2017.pdf",
+          "publishedAt": "2017-10-12T10:51:25",
+          "sha256": "db31ac4bdb4d1f01ca501d831d19ccc0661f646676d7496c2acaad48f7b9cf3e",
+          "explicitMethod": "Weekly online omnibus using the Your Source panel; panel members randomly selected, invitations sent to approximately 7,000-8,000 members, results weighted against ABS data; Wednesday-to-Sunday weekly fieldwork.",
+          "methodPages": [3, 9],
+          "resultsPage": 6,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "essential-vic-2018-01-09-pdf",
+          "sourceType": "first-party-pollster-pdf",
+          "url": "https://www.essentialvision.com.au/wp-content/uploads/2018/01/Essential-Report_statevoting_Dec2017.pdf",
+          "publishedAt": "2018-01-09T10:25:46",
+          "sha256": "6b56782514b104584521aabb9143d416ccabdc67cbc7016f5a6bb0c78385d063",
+          "explicitMethod": "Weekly online omnibus using the Your Source panel; panel members randomly selected, invitations sent to approximately 7,000-8,000 members, results weighted against ABS data; Wednesday-to-Sunday weekly fieldwork.",
+          "methodPages": [3, 9],
+          "resultsPage": 6,
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "guardian-essential-vic-2022-09-11-web",
+          "sourceType": "first-party-commissioning-publisher-web-page",
+          "url": "https://www.theguardian.com/australia-news/2022/sep/11/guardian-essential-poll-daniel-andrews-in-strong-position-for-labor-victory-in-victorian-election",
+          "publishedAt": "2022-09-10T20:00:13Z",
+          "publishedDateAustraliaMelbourne": "2022-09-11",
+          "retrievedSha256": "06b1cdca55680eb35fcb1b1f60e64b836c68a795410bbde64b75e1693d044487",
+          "explicitMethod": null,
+          "declaredReuseLicence": null
+        }
+      ],
+      "matchedObservations": [
+        { "cycleId": "vic_la_2010", "leadMidDate": "2010-10-01", "sourcePeriodLabel": "six-week average", "sampleSize": 1465, "sourceId": "essential-vic-2010-11-05-web", "evidenceAvailableByDate": "2010-11-05", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2012-11-24", "sourcePeriodLabel": "Nov-Dec 2012", "sampleSize": 1170, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2013-03-15", "sourcePeriodLabel": "Mar 2013", "sampleSize": 849, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2013-11-16", "sourcePeriodLabel": "Nov 2013", "sampleSize": 930, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2013-12-15", "sourcePeriodLabel": "Dec 2013", "sampleSize": 734, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-01-15", "sourcePeriodLabel": "Jan 2014", "sampleSize": 798, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-02-15", "sourcePeriodLabel": "Feb 2014", "sampleSize": 1039, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-03-15", "sourcePeriodLabel": "Mar 2014", "sampleSize": 962, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-04-15", "sourcePeriodLabel": "Apr 2014", "sampleSize": 1226, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-05-15", "sourcePeriodLabel": "May 2014", "sampleSize": 1005, "sourceId": "essential-vic-2014-05-30-web", "evidenceAvailableByDate": "2014-05-30", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-06-15", "sourcePeriodLabel": "Jun 2014", "sampleSize": 1184, "sourceId": "essential-vic-2014-11-26-web", "evidenceAvailableByDate": "2014-11-26", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-09-15", "sourcePeriodLabel": "Sep 2014", "sampleSize": 1084, "sourceId": "essential-vic-2014-11-26-web", "evidenceAvailableByDate": "2014-11-26", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-10-15", "sourcePeriodLabel": "Oct 2014", "sampleSize": 899, "sourceId": "essential-vic-2014-11-26-web", "evidenceAvailableByDate": "2014-11-26", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-13", "sourcePeriodLabel": "7-24 Nov 2014 three-week aggregate", "sampleSize": 794, "sourceId": "essential-vic-2014-11-26-web", "evidenceAvailableByDate": "2014-11-26", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-10-15", "sourcePeriodLabel": "Oct 2015", "sampleSize": 882, "sourceId": "essential-vic-2016-01-13-pdf", "evidenceAvailableByDate": "2016-01-13", "explicitMethodSourceId": "essential-vic-2016-01-13-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-11-15", "sourcePeriodLabel": "Nov 2015", "sampleSize": 870, "sourceId": "essential-vic-2016-01-13-pdf", "evidenceAvailableByDate": "2016-01-13", "explicitMethodSourceId": "essential-vic-2016-01-13-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-12-15", "sourcePeriodLabel": "Dec 2015", "sampleSize": 650, "sourceId": "essential-vic-2016-01-13-pdf", "evidenceAvailableByDate": "2016-01-13", "explicitMethodSourceId": "essential-vic-2016-01-13-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-01-15", "sourcePeriodLabel": "Jan 2016", "sampleSize": 657, "sourceId": "essential-vic-2016-04-04-web", "evidenceAvailableByDate": "2016-04-04", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-02-15", "sourcePeriodLabel": "Feb 2016", "sampleSize": 886, "sourceId": "essential-vic-2016-04-04-web", "evidenceAvailableByDate": "2016-04-04", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-03-15", "sourcePeriodLabel": "Mar 2016", "sampleSize": 840, "sourceId": "essential-vic-2016-04-04-web", "evidenceAvailableByDate": "2016-04-04", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-08-15", "sourcePeriodLabel": "Aug 2016", "sampleSize": 1093, "sourceId": "essential-vic-2016-10-11-web", "evidenceAvailableByDate": "2016-10-11", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-10-15", "sourcePeriodLabel": "Oct 2016", "sampleSize": 886, "sourceId": "essential-vic-2016-12-21-pdf", "evidenceAvailableByDate": "2016-12-21", "explicitMethodSourceId": "essential-vic-2016-12-21-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-11-15", "sourcePeriodLabel": "Nov 2016", "sampleSize": 1104, "sourceId": "essential-vic-2016-12-21-pdf", "evidenceAvailableByDate": "2016-12-21", "explicitMethodSourceId": "essential-vic-2016-12-21-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-12-15", "sourcePeriodLabel": "Dec 2016", "sampleSize": 641, "sourceId": "essential-vic-2016-12-21-pdf", "evidenceAvailableByDate": "2016-12-21", "explicitMethodSourceId": "essential-vic-2016-12-21-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-02-15", "sourcePeriodLabel": "Jan-Mar 2017 aggregate", "sampleSize": 2413, "sourceId": "essential-vic-2017-10-12-pdf", "evidenceAvailableByDate": "2017-10-12", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-05-15", "sourcePeriodLabel": "Apr-Jun 2017 aggregate", "sampleSize": 2838, "sourceId": "essential-vic-2017-10-12-pdf", "evidenceAvailableByDate": "2017-10-12", "explicitMethodSourceId": null, "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-07-15", "sourcePeriodLabel": "Jul 2017", "sampleSize": 882, "sourceId": "essential-vic-2017-10-12-pdf", "evidenceAvailableByDate": "2017-10-12", "explicitMethodSourceId": "essential-vic-2017-10-12-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-08-15", "sourcePeriodLabel": "Aug 2017", "sampleSize": 1130, "sourceId": "essential-vic-2017-10-12-pdf", "evidenceAvailableByDate": "2017-10-12", "explicitMethodSourceId": "essential-vic-2017-10-12-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-09-15", "sourcePeriodLabel": "Sep 2017", "sampleSize": 847, "sourceId": "essential-vic-2017-10-12-pdf", "evidenceAvailableByDate": "2017-10-12", "explicitMethodSourceId": "essential-vic-2017-10-12-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-10-15", "sourcePeriodLabel": "Oct 2017", "sampleSize": 1096, "sourceId": "essential-vic-2018-01-09-pdf", "evidenceAvailableByDate": "2018-01-09", "explicitMethodSourceId": "essential-vic-2018-01-09-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-11-15", "sourcePeriodLabel": "Nov 2017", "sampleSize": 870, "sourceId": "essential-vic-2018-01-09-pdf", "evidenceAvailableByDate": "2018-01-09", "explicitMethodSourceId": "essential-vic-2018-01-09-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2017-12-15", "sourcePeriodLabel": "Dec 2017", "sampleSize": 667, "sourceId": "essential-vic-2018-01-09-pdf", "evidenceAvailableByDate": "2018-01-09", "explicitMethodSourceId": "essential-vic-2018-01-09-pdf", "replayEligible": false },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2022-09-03", "sourcePeriodLabel": "31 Aug-7 Sep 2022", "sampleSize": 536, "sourceId": "guardian-essential-vic-2022-09-11-web", "evidenceAvailableByDate": "2022-09-11", "explicitMethodSourceId": null, "replayEligible": false }
+      ],
+      "unresolvedObservations": [
+        { "cycleId": "vic_la_2014", "leadMidDate": "2013-05-16", "reason": "No matching first-party table was identified in the surviving Essential archive pages." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-07-16", "reason": "No matching first-party table was identified in the surviving Essential archive pages." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-08-16", "reason": "No matching first-party table was identified in the surviving Essential archive pages." },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-10-12", "reason": "The half-point primary values do not match the standard October table and require a separate original release." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-04-15", "reason": "No observation-specific first-party publication was identified; later quarterly tables are insufficient to assert the monthly sample." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-05-15", "reason": "No observation-specific first-party publication was identified; later quarterly tables are insufficient to assert the monthly sample." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2016-06-16", "reason": "No observation-specific first-party publication was identified; later quarterly tables are insufficient to assert the monthly sample." },
+        { "cycleId": "vic_la_2022", "leadMidDate": "2020-10-17", "reason": "The lead row contains no voting-intention or TPP values, and no matching Victorian state voting-intention publication was identified." }
+      ],
+      "coverage": {
+        "sourceDocuments": 10,
+        "sourceMatchedRows": 33,
+        "unresolvedRows": 8,
+        "publicationDatedRows": 33,
+        "sampleSizeRows": 33,
+        "explicitMethodRows": 12,
+        "observationSourceUrlRows": 33,
+        "declaredReuseLicenceRows": 0,
+        "fullyReconstructedRows": 0,
+        "replayEligibleRows": 0
+      },
+      "decision": {
+        "forecastEligible": false,
+        "historicalReplayEligible": false,
+        "automaticPromotion": false,
+        "reason": "First-party provenance materially improves 33 leads, but eight remain unmatched, only 12 have observation-specific method evidence, and no source declares reuse authority for the extracted polling data."
+      }
+    }
+  ],
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "automaticPromotion": false,
+    "automaticGateOpening": false,
+    "productionAuthorisation": false
+  }
+}

@@ -44,7 +44,7 @@ test("builds an aggregate reconstruction queue without emitting observation rows
     ["beta-publisher", 2],
     ["alpha", 1],
   ]);
-  assert.equal(report.candidateSource.observationRowsWritten, false);
+  assert.equal(report.candidateSource.observationVoteRowsWritten, false);
   assert.equal("observations" in report, false);
   assert.equal(report.modelImpact.productionAuthorisation, false);
 });
@@ -56,4 +56,40 @@ test("fails closed when the supplied lead-list fingerprint differs", () => {
     () => buildHistoricalPollReconstructionQueue({ ...input, reviewedAt: "2026-09-15" }),
     /fingerprint mismatch/,
   );
+});
+
+test("records partial first-party progress without making a lead replay-eligible", () => {
+  const input = fixture();
+  const report = buildHistoricalPollReconstructionQueue({
+    ...input,
+    reviewedAt: "2026-09-15",
+    reconstructionEvidence: {
+      sourceFamilies: [{
+        id: "alpha",
+        candidateRows: 1,
+        matchedObservations: [{ cycleId: "cycle-a", leadMidDate: "2010-11-20" }],
+        unresolvedObservations: [],
+        coverage: {
+          sourceMatchedRows: 1,
+          unresolvedRows: 0,
+          publicationDatedRows: 1,
+          sampleSizeRows: 1,
+          explicitMethodRows: 0,
+          observationSourceUrlRows: 1,
+          declaredReuseLicenceRows: 0,
+          fullyReconstructedRows: 0,
+          replayEligibleRows: 0,
+        },
+      }],
+    },
+  });
+  const alpha = report.reconstructionQueue.find((family) => family.id === "alpha");
+  assert.equal(report.status, "partial-first-party-reconstruction");
+  assert.equal(report.coverage.sourceMatchedRows, 1);
+  assert.equal(report.candidateSource.reconstructionMetadataWritten, true);
+  assert.equal(report.coverage.requiredFieldCoverage.publicationDate, 1);
+  assert.equal(alpha.sourceMatchedRows, 1);
+  assert.equal(alpha.reconstructedRows, 0);
+  assert.equal(alpha.replayEligibleRows, 0);
+  assert.equal(alpha.residualRows, 1);
 });
