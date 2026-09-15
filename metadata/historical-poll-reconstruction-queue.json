@@ -17,15 +17,15 @@
   "coverage": {
     "candidateRows": 200,
     "sourceFamilies": 18,
-    "sourceMatchedRows": 46,
+    "sourceMatchedRows": 56,
     "reconstructedRows": 0,
     "replayEligibleRows": 0,
     "residualRows": 200,
     "requiredFieldCoverage": {
-      "publicationDate": 46,
-      "sampleSize": 46,
-      "explicitMethod": 24,
-      "observationSourceUrl": 46,
+      "publicationDate": 56,
+      "sampleSize": 56,
+      "explicitMethod": 34,
+      "observationSourceUrl": 56,
       "declaredReuseLicence": 0
     },
     "cycles": [
@@ -51,7 +51,7 @@
         "id": "vic_la_2018",
         "informationCutoff": "2018-11-23",
         "candidateRows": 59,
-        "sourceMatchedRows": 18,
+        "sourceMatchedRows": 28,
         "reconstructedRows": 0,
         "replayEligibleRows": 0,
         "residualRows": 59
@@ -135,12 +135,12 @@
         "vic_la_2022": 11
       },
       "shareOfCandidateRows": 0.165,
-      "sourceMatchedRows": 13,
+      "sourceMatchedRows": 23,
       "requiredFieldCoverage": {
-        "publicationDate": 13,
-        "sampleSize": 13,
-        "explicitMethod": 12,
-        "observationSourceUrl": 13,
+        "publicationDate": 23,
+        "sampleSize": 23,
+        "explicitMethod": 22,
+        "observationSourceUrl": 23,
         "declaredReuseLicence": 0
       },
       "reconstructedRows": 0,

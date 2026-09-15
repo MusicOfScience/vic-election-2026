@@ -122,11 +122,11 @@
         "status": "partial-first-party-reconstruction",
         "sourceFamilies": 18,
         "candidateRows": 200,
-        "sourceMatchedRows": 46,
+        "sourceMatchedRows": 56,
         "reconstructedRows": 0,
         "replayEligibleRows": 0
       },
-      "nextAction": "Resolve the 20 remaining SMS Morgan and eight Essential gaps from original or contemporaneously archived sources, then continue with Newspoll; retain all rows in quarantine until reuse authority and every required field pass.",
+      "nextAction": "Resolve the ten remaining SMS Morgan and eight Essential gaps from original or contemporaneously archived sources, then continue with Newspoll; retain all rows in quarantine until reuse authority and every required field pass.",
       "frozenCandidateSource": {
         "commit": "a244da459807a22284d569b0b7e95ce79dfc53ff",
         "path": "analysis/Data/poll-data-vic.csv",
