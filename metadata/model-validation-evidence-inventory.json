@@ -59,11 +59,11 @@
           "vic_la_2022"
         ],
         "candidateRows": 200,
-        "sourceMatchedRows": 46,
-        "publicationDatedRows": 46,
-        "sampleSizeRows": 46,
-        "explicitMethodRows": 24,
-        "observationSourceUrlRows": 46,
+        "sourceMatchedRows": 56,
+        "publicationDatedRows": 56,
+        "sampleSizeRows": 56,
+        "explicitMethodRows": 34,
+        "observationSourceUrlRows": 56,
         "declaredReuseLicenceRows": 0,
         "importedRows": 0
       },
@@ -74,18 +74,18 @@
         },
         {
           "path": "metadata/historical-poll-reconstruction-queue.json",
-          "sha256": "4f74aab7e59e6be76534cb5082f823a52d0b5102c608a55012ca1bf9b207a4b1"
+          "sha256": "e4fd087d76ef4fba2ebcdb04ddebf495032e1edcc10e0035301b02bd67d5e7d1"
         },
         {
           "path": "metadata/historical-poll-reconstruction-evidence.json",
-          "sha256": "e2ebef79a7b240efe91616237c980c00ab949531182e7af88ef943623cfecbdd"
+          "sha256": "96463af6871d2d460b9904005fe255d848c94997b6503de515308b3ad1ff4f25"
         }
       ],
       "limitations": [
         "The upstream MidDate field is not an observation publication date.",
         "A reconstruction evidence date records when the cited source proves an observation was public; it may be later than the original release and is not relabelled as that release date.",
         "The raw candidate dataset is not imported and contributes zero rows to any forecast or historical replay.",
-        "Eight of 41 Essential leads and 20 of 33 SMS Morgan leads remain unmatched; archived 2014 pages use capture dates for availability, and source discrepancies remain explicit.",
+        "Eight of 41 Essential leads and ten of 33 SMS Morgan leads remain unmatched; archived pages use capture dates for availability, and source discrepancies remain explicit.",
         "No reconstructed source declares reuse authority, so all 200 candidate leads remain replay-ineligible."
       ],
       "needed": "Continue first-party reconstruction across the remaining source families, close the SMS Morgan and Essential observation gaps and establish reuse authority before any row enters replay."

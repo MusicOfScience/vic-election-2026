@@ -112,7 +112,7 @@
         "status": "partial-first-party-reconstruction",
         "sourceFamilies": 18,
         "candidateRows": 200,
-        "sourceMatchedRows": 46,
+        "sourceMatchedRows": 56,
         "replayEligibleRows": 0
       },
       "nextAction": "close-sms-morgan-and-essential-observation-gaps-then-reconstruct-newspoll",
