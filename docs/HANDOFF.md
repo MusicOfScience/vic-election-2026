@@ -11,7 +11,7 @@ Updated: 2026-09-15
 - Safeguards: archive capture dates, rather than the pages' self-reported publication dates, determine evidence availability. Three later-November 2014 pages remain unresolved because availability by the cutoff is unproved. The September commissioning discrepancy and the existing fieldwork/table discrepancies remain explicit. No quarantined vote values were copied and no source declares reuse authority, so fully reconstructed, imported and replay-eligible counts remain zero and all 200 leads stay quarantined.
 - Forecast effect: none. The current forecast, candidate and poll registries, complete-model backtest/calibration gates, and production authorisation are unchanged. Release readiness remains `experimental-blocked` with 5/9 gates passing.
 - Validation: Vinext build, lint, all 125 JavaScript tests, provenance, release-readiness, psephology and model-validation evidence checks passed. Existing non-blocking Recharts hidden-size and sandbox WebSocket warnings remain.
-- Pull request: ready locally; publication is the next action. GitHub-hosted checks are expected to fail before execution while the account Actions billing/spending limit remains in effect.
+- Pull request: [#69](https://github.com/MusicOfScience/vic-election-2026/pull/69) is open and mergeable. The quality job was not started because GitHub reported failed account payments or a spending-limit restriction; this is an account-level Actions block, not a test failure.
 
 ## Remaining work
 
@@ -20,4 +20,4 @@ Updated: 2026-09-15
 - Establish cutoff-compliant ballot timing and incumbent/challenger status without inferring unmatched names.
 - Extend defensible historical final-pair and preference evidence, then implement leakage-safe executable replays and calibration.
 
-Exact next action: publish the tested branch once and create its review pull request. After the project owner merges it, verify the merge, fast-forward local `main`, and continue the historical polling evidence queue without changing the forecast.
+Exact next action: the project owner may merge PR #69 based on the complete local validation above. After merge, verify it, fast-forward local `main`, and continue the historical polling evidence queue without changing the forecast.
