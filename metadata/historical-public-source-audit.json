@@ -106,7 +106,14 @@
         "currentlyReplayEligibleRows": 0
       },
       "role": "lead-list-only",
-      "nextAction": "reconstruct-observations-from-original-pollster-or-publisher-sources",
+      "residualGapReport": {
+        "path": "metadata/historical-poll-reconstruction-queue.json",
+        "status": "aggregate-queue-complete",
+        "sourceFamilies": 18,
+        "candidateRows": 200,
+        "replayEligibleRows": 0
+      },
+      "nextAction": "work-prioritised-source-families-against-original-pollster-or-publisher-sources",
       "externalContact": {
         "status": "deferred",
         "route": "https://github.com/d-j-hirst/aus-polling-analyser/issues",
@@ -125,4 +132,3 @@
     "productionAuthorisation": false
   }
 }
-

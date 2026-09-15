@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-15",
+  "status": "reconstruction-queue-defined-first-party-evidence-missing",
+  "scope": "Candidate pre-election Victorian poll vintages for the 2010, 2014, 2018 and 2022 walk-forward cycles",
+  "purpose": "Aggregate the frozen lead list into a bounded first-party reconstruction queue without copying observation rows into the repository.",
+  "candidateSource": {
+    "repository": "d-j-hirst/aus-polling-analyser",
+    "commit": "a244da459807a22284d569b0b7e95ce79dfc53ff",
+    "path": "analysis/Data/poll-data-vic.csv",
+    "sha256": "9d09af56c639151035b4b8b74bd216d92a916c3d374d2d15fbab70cb128fa720",
+    "declaredLicence": null,
+    "rawDataImported": false,
+    "observationRowsWritten": false
+  },
+  "coverage": {
+    "candidateRows": 200,
+    "sourceFamilies": 18,
+    "reconstructedRows": 0,
+    "replayEligibleRows": 0,
+    "residualRows": 200,
+    "requiredFieldCoverage": {
+      "publicationDate": 0,
+      "sampleSize": 0,
+      "explicitMethod": 0,
+      "observationSourceUrl": 0,
+      "declaredReuseLicence": 0
+    },
+    "cycles": [
+      {
+        "id": "vic_la_2010",
+        "informationCutoff": "2010-11-26",
+        "candidateRows": 37,
+        "reconstructedRows": 0,
+        "residualRows": 37
+      },
+      {
+        "id": "vic_la_2014",
+        "informationCutoff": "2014-11-28",
+        "candidateRows": 68,
+        "reconstructedRows": 0,
+        "residualRows": 68
+      },
+      {
+        "id": "vic_la_2018",
+        "informationCutoff": "2018-11-23",
+        "candidateRows": 59,
+        "reconstructedRows": 0,
+        "residualRows": 59
+      },
+      {
+        "id": "vic_la_2022",
+        "informationCutoff": "2022-11-25",
+        "candidateRows": 36,
+        "reconstructedRows": 0,
+        "residualRows": 36
+      }
+    ]
+  },
+  "reconstructionQueue": [
+    {
+      "priority": 1,
+      "id": "essential",
+      "firmLabel": "Essential",
+      "brandLabel": null,
+      "candidateRows": 41,
+      "earliestMidDate": "2010-10-01",
+      "latestMidDate": "2022-09-03",
+      "cycles": {
+        "vic_la_2010": 1,
+        "vic_la_2014": 17,
+        "vic_la_2018": 21,
+        "vic_la_2022": 2
+      },
+      "shareOfCandidateRows": 0.205,
+      "reconstructedRows": 0,
+      "residualRows": 41
+    },
+    {
+      "priority": 2,
+      "id": "newspoll",
+      "firmLabel": "Newspoll",
+      "brandLabel": null,
+      "candidateRows": 39,
+      "earliestMidDate": "2007-10-01",
+      "latestMidDate": "2015-06-01",
+      "cycles": {
+        "vic_la_2010": 20,
+        "vic_la_2014": 18,
+        "vic_la_2018": 1
+      },
+      "shareOfCandidateRows": 0.195,
+      "reconstructedRows": 0,
+      "residualRows": 39
+    },
+    {
+      "priority": 3,
+      "id": "sms-morgan",
+      "firmLabel": "SMS Morgan",
+      "brandLabel": null,
+      "candidateRows": 33,
+      "earliestMidDate": "2014-09-28",
+      "latestMidDate": "2022-11-23",
+      "cycles": {
+        "vic_la_2014": 6,
+        "vic_la_2018": 16,
+        "vic_la_2022": 11
+      },
+      "shareOfCandidateRows": 0.165,
+      "reconstructedRows": 0,
+      "residualRows": 33
+    },
+    {
+      "priority": 4,
+      "id": "galaxy",
+      "firmLabel": "Galaxy",
+      "brandLabel": null,
+      "candidateRows": 16,
+      "earliestMidDate": "2010-10-06",
+      "latestMidDate": "2018-11-21",
+      "cycles": {
+        "vic_la_2010": 3,
+        "vic_la_2014": 5,
+        "vic_la_2018": 8
+      },
+      "shareOfCandidateRows": 0.08,
+      "reconstructedRows": 0,
+      "residualRows": 16
+    },
+    {
+      "priority": 5,
+      "id": "newspoll2",
+      "firmLabel": "Newspoll2",
+      "brandLabel": null,
+      "candidateRows": 13,
+      "earliestMidDate": "2015-12-01",
+      "latestMidDate": "2022-11-23",
+      "cycles": {
+        "vic_la_2018": 7,
+        "vic_la_2022": 6
+      },
+      "shareOfCandidateRows": 0.065,
+      "reconstructedRows": 0,
+      "residualRows": 13
+    },
+    {
+      "priority": 6,
+      "id": "reachtel",
+      "firmLabel": "ReachTEL",
+      "brandLabel": null,
+      "candidateRows": 12,
+      "earliestMidDate": "2013-01-25",
+      "latestMidDate": "2018-10-03",
+      "cycles": {
+        "vic_la_2014": 8,
+        "vic_la_2018": 4
+      },
+      "shareOfCandidateRows": 0.06,
+      "reconstructedRows": 0,
+      "residualRows": 12
+    },
+    {
+      "priority": 7,
+      "id": "nielsen",
+      "firmLabel": "Nielsen",
+      "brandLabel": null,
+      "candidateRows": 11,
+      "earliestMidDate": "2008-02-25",
+      "latestMidDate": "2014-07-19",
+      "cycles": {
+        "vic_la_2010": 6,
+        "vic_la_2014": 5
+      },
+      "shareOfCandidateRows": 0.055,
+      "reconstructedRows": 0,
+      "residualRows": 11
+    },
+    {
+      "priority": 8,
+      "id": "morgan-phone",
+      "firmLabel": "Morgan Phone",
+      "brandLabel": null,
+      "candidateRows": 10,
+      "earliestMidDate": "2010-02-23",
+      "latestMidDate": "2012-08-11",
+      "cycles": {
+        "vic_la_2010": 5,
+        "vic_la_2014": 5
+      },
+      "shareOfCandidateRows": 0.05,
+      "reconstructedRows": 0,
+      "residualRows": 10
+    },
+    {
+      "priority": 9,
+      "id": "resolvepm",
+      "firmLabel": "ResolvePM",
+      "brandLabel": null,
+      "candidateRows": 7,
+      "earliestMidDate": "2021-06-04",
+      "latestMidDate": "2022-10-23",
+      "cycles": {
+        "vic_la_2022": 7
+      },
+      "shareOfCandidateRows": 0.035,
+      "reconstructedRows": 0,
+      "residualRows": 7
+    },
+    {
+      "priority": 10,
+      "id": "ipsos",
+      "firmLabel": "Ipsos",
+      "brandLabel": null,
+      "candidateRows": 4,
+      "earliestMidDate": "2014-10-27",
+      "latestMidDate": "2020-10-22",
+      "cycles": {
+        "vic_la_2014": 3,
+        "vic_la_2022": 1
+      },
+      "shareOfCandidateRows": 0.02,
+      "reconstructedRows": 0,
+      "residualRows": 4
+    },
+    {
+      "priority": 11,
+      "id": "morgan-multi-mode",
+      "firmLabel": "Morgan multi-mode",
+      "brandLabel": null,
+      "candidateRows": 3,
+      "earliestMidDate": "2022-08-15",
+      "latestMidDate": "2022-10-15",
+      "cycles": {
+        "vic_la_2022": 3
+      },
+      "shareOfCandidateRows": 0.015,
+      "reconstructedRows": 0,
+      "residualRows": 3
+    },
+    {
+      "priority": 12,
+      "id": "redbridge",
+      "firmLabel": "Redbridge",
+      "brandLabel": null,
+      "candidateRows": 3,
+      "earliestMidDate": "2020-09-15",
+      "latestMidDate": "2022-11-03",
+      "cycles": {
+        "vic_la_2022": 3
+      },
+      "shareOfCandidateRows": 0.015,
+      "reconstructedRows": 0,
+      "residualRows": 3
+    },
+    {
+      "priority": 13,
+      "id": "jws-research",
+      "firmLabel": "JWS Research",
+      "brandLabel": null,
+      "candidateRows": 2,
+      "earliestMidDate": "2010-11-21",
+      "latestMidDate": "2012-11-21",
+      "cycles": {
+        "vic_la_2010": 1,
+        "vic_la_2014": 1
+      },
+      "shareOfCandidateRows": 0.01,
+      "reconstructedRows": 0,
+      "residualRows": 2
+    },
+    {
+      "priority": 14,
+      "id": "ucomms",
+      "firmLabel": "uComms",
+      "brandLabel": null,
+      "candidateRows": 2,
+      "earliestMidDate": "2018-11-13",
+      "latestMidDate": "2018-11-21",
+      "cycles": {
+        "vic_la_2018": 2
+      },
+      "shareOfCandidateRows": 0.01,
+      "reconstructedRows": 0,
+      "residualRows": 2
+    },
+    {
+      "priority": 15,
+      "id": "freshwater",
+      "firmLabel": "Freshwater",
+      "brandLabel": null,
+      "candidateRows": 1,
+      "earliestMidDate": "2022-11-05",
+      "latestMidDate": "2022-11-05",
+      "cycles": {
+        "vic_la_2022": 1
+      },
+      "shareOfCandidateRows": 0.005,
+      "reconstructedRows": 0,
+      "residualRows": 1
+    },
+    {
+      "priority": 16,
+      "id": "newspoll2-yougov",
+      "firmLabel": "Newspoll2",
+      "brandLabel": "YouGov",
+      "candidateRows": 1,
+      "earliestMidDate": "2020-11-07",
+      "latestMidDate": "2020-11-07",
+      "cycles": {
+        "vic_la_2022": 1
+      },
+      "shareOfCandidateRows": 0.005,
+      "reconstructedRows": 0,
+      "residualRows": 1
+    },
+    {
+      "priority": 17,
+      "id": "resolvepm2",
+      "firmLabel": "ResolvePM2",
+      "brandLabel": null,
+      "candidateRows": 1,
+      "earliestMidDate": "2022-11-18",
+      "latestMidDate": "2022-11-18",
+      "cycles": {
+        "vic_la_2022": 1
+      },
+      "shareOfCandidateRows": 0.005,
+      "reconstructedRows": 0,
+      "residualRows": 1
+    },
+    {
+      "priority": 18,
+      "id": "saulwick",
+      "firmLabel": "Saulwick",
+      "brandLabel": null,
+      "candidateRows": 1,
+      "earliestMidDate": "2009-11-20",
+      "latestMidDate": "2009-11-20",
+      "cycles": {
+        "vic_la_2010": 1
+      },
+      "shareOfCandidateRows": 0.005,
+      "reconstructedRows": 0,
+      "residualRows": 1
+    }
+  ],
+  "acceptanceRules": {
+    "originalPollsterOrPublisherSourceRequired": true,
+    "publicationDateAtOrBeforeCycleCutoffRequired": true,
+    "fieldworkMidpointAsPublicationDateAccepted": false,
+    "sampleSizeRequired": true,
+    "explicitMethodRequired": true,
+    "observationSourceUrlRequired": true,
+    "explicitReuseAuthorityRequired": true,
+    "unresolvedRowsRemainQuarantined": true
+  },
+  "externalContact": {
+    "status": "deferred",
+    "trigger": "Only after the aggregate queue has been worked against original sources and material provenance or licensing gaps remain."
+  },
+  "modelImpact": {
+    "changesCurrentForecast": false,
+    "historicalReplayEligible": false,
+    "automaticPromotion": false,
+    "automaticGateOpening": false,
+    "productionAuthorisation": false
+  }
+}

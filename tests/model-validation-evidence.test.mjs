@@ -9,6 +9,7 @@ const crosswalk = JSON.parse(readFileSync(new URL("../model/config/historical-pa
 const councilRules = JSON.parse(readFileSync(new URL("../model/config/historical-council-count-rules.json", import.meta.url), "utf8"));
 const historicalCycles = JSON.parse(readFileSync(new URL("../model/config/historical-validation-cycles.json", import.meta.url), "utf8"));
 const outcomeAvailability = JSON.parse(readFileSync(new URL("../metadata/historical-assembly-outcome-availability.json", import.meta.url), "utf8"));
+const pollQueue = JSON.parse(readFileSync(new URL("../metadata/historical-poll-reconstruction-queue.json", import.meta.url), "utf8"));
 
 test("requires evidence matching the complete probability model", () => {
   const byId = Object.fromEntries(contract.components.map((component) => [component.id, component]));
@@ -60,4 +61,9 @@ test("fingerprints every available validation artefact and keeps partial evidenc
   });
   assert.equal(inventory.negativeFeatureEvidence.demographicChallenger.outcome, "rejected");
   assert.equal(inventory.negativeFeatureEvidence.demographicChallenger.centralWeight, 0);
+  assert.equal(pollQueue.coverage.candidateRows, 200);
+  assert.equal(pollQueue.coverage.sourceFamilies, 18);
+  assert.equal(pollQueue.coverage.replayEligibleRows, 0);
+  assert.equal(pollQueue.candidateSource.observationRowsWritten, false);
+  assert.equal(pollQueue.modelImpact.productionAuthorisation, false);
 });

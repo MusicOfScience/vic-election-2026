@@ -21,6 +21,16 @@
     "ruleConfigurationComplete": true,
     "fingerprintedRuleSources": 4
   },
+  "pollVintageEvidence": {
+    "status": "aggregate-reconstruction-queue-complete-observation-evidence-missing",
+    "report": "metadata/historical-poll-reconstruction-queue.json",
+    "candidateRows": 200,
+    "sourceFamilies": 18,
+    "reconstructedRows": 0,
+    "replayEligibleRows": 0,
+    "topFiveSourceFamilyRows": 142,
+    "externalContactStatus": "deferred-pending-first-party-reconstruction"
+  },
   "residualComponents": [
     "pre-election-poll-vintages",
     "cutoff-compliant-ballot-timing-and-incumbency",
