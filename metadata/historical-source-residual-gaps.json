@@ -22,10 +22,16 @@
     "fingerprintedRuleSources": 4
   },
   "pollVintageEvidence": {
-    "status": "aggregate-reconstruction-queue-complete-observation-evidence-missing",
+    "status": "partial-first-party-reconstruction",
     "report": "metadata/historical-poll-reconstruction-queue.json",
+    "evidence": "metadata/historical-poll-reconstruction-evidence.json",
     "candidateRows": 200,
     "sourceFamilies": 18,
+    "sourceMatchedRows": 33,
+    "publicationDatedRows": 33,
+    "sampleSizeRows": 33,
+    "explicitMethodRows": 12,
+    "declaredReuseLicenceRows": 0,
     "reconstructedRows": 0,
     "replayEligibleRows": 0,
     "topFiveSourceFamilyRows": 142,

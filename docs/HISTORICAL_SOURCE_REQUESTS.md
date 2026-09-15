@@ -30,7 +30,9 @@ The acquisition order is therefore:
 
 The pinned `d-j-hirst/aus-polling-analyser` file is a quarantined 200-row lead list, not a model input. The repository owner is the GitHub account `d-j-hirst`; no verified personal name is asserted.
 
-The fingerprint-checked aggregate report at `metadata/historical-poll-reconstruction-queue.json` divides those leads into 18 source families without storing observation rows. The first five families cover 142 of 200 leads, giving the reconstruction a finite high-value starting point. All 200 still lack the full required evidence and remain quarantined.
+The fingerprint-checked aggregate report at `metadata/historical-poll-reconstruction-queue.json` divides those leads into 18 source families without storing vote values. The first five families cover 142 of 200 leads, giving the reconstruction a finite high-value starting point.
+
+The first-party Essential archive reconstruction in `metadata/historical-poll-reconstruction-evidence.json` now matches 33 of 41 Essential leads to dated observation sources with samples; 12 have observation-specific method evidence. Eight Essential leads remain unresolved. No identified source declares reuse authority, so fully reconstructed and replay-eligible counts remain zero and all 200 leads stay quarantined.
 
 The acquisition order is:
 
@@ -43,7 +45,7 @@ The acquisition order is:
 To reproduce the aggregate queue, obtain the exact commit-pinned file named in the audit and run:
 
 ```sh
-node scripts/build-historical-poll-reconstruction-queue.mjs --source /path/to/poll-data-vic.csv --reviewed-at YYYY-MM-DD
+node scripts/build-historical-poll-reconstruction-queue.mjs --source /path/to/poll-data-vic.csv --evidence metadata/historical-poll-reconstruction-evidence.json --reviewed-at YYYY-MM-DD
 ```
 
 The command rejects any source whose SHA-256 differs from the frozen audit and writes aggregates only.

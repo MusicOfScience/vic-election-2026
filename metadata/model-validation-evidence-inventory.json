@@ -59,9 +59,12 @@
           "vic_la_2022"
         ],
         "candidateRows": 200,
-        "publicationDatedRows": 0,
-        "sampleSizeRows": 0,
-        "explicitMethodRows": 0,
+        "sourceMatchedRows": 33,
+        "publicationDatedRows": 33,
+        "sampleSizeRows": 33,
+        "explicitMethodRows": 12,
+        "observationSourceUrlRows": 33,
+        "declaredReuseLicenceRows": 0,
         "importedRows": 0
       },
       "evidence": [
@@ -71,16 +74,21 @@
         },
         {
           "path": "metadata/historical-poll-reconstruction-queue.json",
-          "sha256": "20f51c82a66d57936940cc9231def780715c53415af9db016100c2e75a9cb3bb"
+          "sha256": "3245060f19d5732fb224649eec69f566f02d0705b20999952412f08a2bc8f814"
+        },
+        {
+          "path": "metadata/historical-poll-reconstruction-evidence.json",
+          "sha256": "6d9ddf03fccc55df6804549ac95ea460e0a29660bb4e52b9c482ead927e4eda0"
         }
       ],
       "limitations": [
         "The upstream MidDate field is not an observation publication date.",
-        "Sample size, explicit method, observation-level source URL and a declared reuse licence are absent.",
+        "A reconstruction evidence date records when the cited source proves an observation was public; it may be later than the original release and is not relabelled as that release date.",
         "The raw candidate dataset is not imported and contributes zero rows to any forecast or historical replay.",
-        "The aggregate queue prioritises 18 source families but does not itself establish observation-level provenance or reuse authority."
+        "Eight of 41 Essential leads remain unmatched, and only 12 have observation-specific method evidence.",
+        "No reconstructed Essential source declares reuse authority, so all 200 candidate leads remain replay-ineligible."
       ],
-      "needed": "Publication dates, sample sizes, explicit methods, observation-level sources and reuse authority for the 200 candidate records."
+      "needed": "Continue first-party reconstruction across the remaining source families, close Essential's eight observation gaps and establish reuse authority before any row enters replay."
     },
     {
       "id": "district-primary-votes-and-party-crosswalk",

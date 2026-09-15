@@ -108,12 +108,14 @@
       "role": "lead-list-only",
       "residualGapReport": {
         "path": "metadata/historical-poll-reconstruction-queue.json",
-        "status": "aggregate-queue-complete",
+        "evidencePath": "metadata/historical-poll-reconstruction-evidence.json",
+        "status": "partial-first-party-reconstruction",
         "sourceFamilies": 18,
         "candidateRows": 200,
+        "sourceMatchedRows": 33,
         "replayEligibleRows": 0
       },
-      "nextAction": "work-prioritised-source-families-against-original-pollster-or-publisher-sources",
+      "nextAction": "close-eight-essential-observation-gaps-then-reconstruct-newspoll",
       "externalContact": {
         "status": "deferred",
         "route": "https://github.com/d-j-hirst/aus-polling-analyser/issues",

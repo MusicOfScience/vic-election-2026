@@ -17,8 +17,8 @@
     {
       "id": "pre-election-poll-vintages",
       "status": "partial",
-      "available": "A quarantined, version-pinned candidate series contains 200 Victorian poll observations spanning all four cycles with fieldwork-midpoint and party-primary fields",
-      "needed": "Observation-level publication dates, sample sizes, explicit methods, source URLs and reuse authority before the candidate series can enter a historical replay",
+      "available": "A quarantined, version-pinned candidate series contains 200 Victorian poll leads spanning all four cycles. First-party Essential sources now provide dated observation URLs and samples for 33 leads, including explicit observation-specific methods for 12.",
+      "needed": "Complete first-party reconstruction for the remaining leads, close the eight unresolved Essential observations, and establish explicit reuse authority before any row can enter a historical replay",
       "requiredFor": [
         "polling-only-model",
         "latent-poll-replay",
