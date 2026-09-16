@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-15",
+  "reviewedAt": "2026-09-16",
   "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",
   "policy": "A two-party historical residual test may validate a benchmark or reject a feature, but it cannot certify the complete multi-party probability model.",
   "minimumWalkForwardCycles": 4,
@@ -17,7 +17,7 @@
     {
       "id": "pre-election-poll-vintages",
       "status": "partial",
-      "available": "A quarantined, version-pinned candidate series contains 200 Victorian poll leads spanning all four cycles. First-party Essential and Roy Morgan sources now provide dated observation URLs and samples for 56 leads, including explicit method evidence for 34.",
+      "available": "A quarantined, version-pinned candidate series contains 200 Victorian poll leads spanning all four cycles. First-party Essential and Roy Morgan sources now provide dated observation URLs and samples for 57 leads, including explicit method evidence for 35.",
       "needed": "Complete first-party reconstruction for the remaining leads, close ten unresolved SMS Morgan and eight unresolved Essential observations, and establish explicit reuse authority before any row can enter a historical replay",
       "requiredFor": [
         "polling-only-model",
