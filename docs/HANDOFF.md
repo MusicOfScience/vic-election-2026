@@ -11,7 +11,7 @@ Updated: 2026-09-16
 - Safeguards: the archived 2018 election-eve page was deliberately rejected because its `2018-11-23T17:22:56Z` capture was already 24 November in Melbourne, after the 23 November local cutoff. Nine Morgan gaps remain precisely recorded. No quarantined vote values were copied and no source declares reuse authority, so fully reconstructed, imported and replay-eligible counts remain zero and all 200 leads stay quarantined.
 - Forecast effect: none. The current forecast, candidate and poll registries, complete-model backtest/calibration gates, and production authorisation are unchanged. Release readiness remains `experimental-blocked` with 5/9 gates passing.
 - Validation: Vinext build, lint, all 125 JavaScript tests, provenance, release-readiness, psephology and model-validation evidence checks passed. Existing non-blocking Recharts hidden-size and sandbox WebSocket warnings remain.
-- Pull request: ready for publication from the tested local branch; link and remote check state must be recorded after creation.
+- Pull request: [#71](https://github.com/MusicOfScience/vic-election-2026/pull/71) is open and mergeable. The quality job was not started because GitHub reported failed account payments or a spending-limit restriction; this is an account-level Actions block, not a code failure.
 
 ## Remaining work
 
@@ -20,4 +20,4 @@ Updated: 2026-09-16
 - Establish cutoff-compliant ballot timing and incumbent/challenger status without inferring unmatched names.
 - Extend defensible historical final-pair and preference evidence, then implement leakage-safe executable replays and calibration.
 
-Exact next action: publish the tested branch and create a reviewable pull request. After the project owner merges it, verify the merge, fast-forward local `main`, and continue the historical polling evidence queue without changing the forecast.
+Exact next action: the project owner may merge PR #71 based on the complete local validation above. After merge, verify it, fast-forward local `main`, and continue the historical polling evidence queue without changing the forecast.
