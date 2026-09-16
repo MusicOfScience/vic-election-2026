@@ -32,7 +32,7 @@ The pinned `d-j-hirst/aus-polling-analyser` file is a quarantined 200-row lead l
 
 The fingerprint-checked aggregate report at `metadata/historical-poll-reconstruction-queue.json` divides those leads into 18 source families without storing vote values. The first five families cover 142 of 200 leads, giving the reconstruction a finite high-value starting point.
 
-The first-party reconstruction in `metadata/historical-poll-reconstruction-evidence.json` now matches 56 of 200 leads to dated observation sources with samples: 33 of 41 Essential leads and 23 of 33 SMS Morgan leads. Thirty-four matched observations have explicit method evidence. Eight Essential and ten SMS Morgan leads remain unresolved. Archived Roy Morgan matches use capture dates—not self-reported publication dates—as evidence availability dates. No identified source declares reuse authority, so fully reconstructed and replay-eligible counts remain zero and all 200 leads stay quarantined.
+The first-party reconstruction in `metadata/historical-poll-reconstruction-evidence.json` now matches 57 of 200 leads to dated observation sources with samples: 33 of 41 Essential leads and 24 of 33 SMS Morgan leads. Thirty-five matched observations have explicit method evidence. Eight Essential and nine SMS Morgan leads remain unresolved. Archived Roy Morgan matches use capture dates—not self-reported publication dates—as evidence availability dates. A 2018 election-eve page remains unresolved because its archive timestamp falls on 24 November in Melbourne, after the 23 November local cutoff. No identified source declares reuse authority, so fully reconstructed and replay-eligible counts remain zero and all 200 leads stay quarantined.
 
 The acquisition order is:
 

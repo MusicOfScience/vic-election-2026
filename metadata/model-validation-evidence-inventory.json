@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-15",
+  "reviewedAt": "2026-09-16",
   "scope": "Audited evidence currently available for complete-model historical validation",
   "policy": "Partial evidence documents real progress but cannot open a complete-model gate. Every complete component must cover all four frozen cycles and the same model outputs published for 2026.",
   "sourceCheckpoints": [
@@ -59,11 +59,11 @@
           "vic_la_2022"
         ],
         "candidateRows": 200,
-        "sourceMatchedRows": 56,
-        "publicationDatedRows": 56,
-        "sampleSizeRows": 56,
-        "explicitMethodRows": 34,
-        "observationSourceUrlRows": 56,
+        "sourceMatchedRows": 57,
+        "publicationDatedRows": 57,
+        "sampleSizeRows": 57,
+        "explicitMethodRows": 35,
+        "observationSourceUrlRows": 57,
         "declaredReuseLicenceRows": 0,
         "importedRows": 0
       },
@@ -74,11 +74,11 @@
         },
         {
           "path": "metadata/historical-poll-reconstruction-queue.json",
-          "sha256": "e4fd087d76ef4fba2ebcdb04ddebf495032e1edcc10e0035301b02bd67d5e7d1"
+          "sha256": "404c8088a3133aa2a1e8c24a1857300c31f8ec300f280e1a9d0790405220e4d3"
         },
         {
           "path": "metadata/historical-poll-reconstruction-evidence.json",
-          "sha256": "96463af6871d2d460b9904005fe255d848c94997b6503de515308b3ad1ff4f25"
+          "sha256": "a5b5be07437b43e26ce6344cc28f2f5d8057713e1b174cb74599bf206162aab8"
         }
       ],
       "limitations": [

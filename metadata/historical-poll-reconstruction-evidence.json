@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-15",
+  "reviewedAt": "2026-09-16",
   "policy": "Record observation-level first-party provenance without copying the quarantined candidate file's vote values. A matched source is progress, not replay eligibility; every required field and reuse authority must pass separately.",
   "availabilityDateSemantics": "evidenceAvailableByDate is the date the cited source proves that an observation was public. It may be later than the observation's original release and must not be represented as that original release date.",
   "sourceFamilies": [
@@ -263,6 +263,17 @@
           "declaredReuseLicence": null
         },
         {
+          "id": "roy-morgan-6381-2015-08-10-archive",
+          "sourceType": "archived-first-party-pollster-web-page",
+          "url": "https://web.archive.org/web/20150924092302id_/http://www.roymorgan.com.au/findings/6381-morgan-poll-state-voting-intention-july-2015-201508100535",
+          "publishedAt": "2015-08-10",
+          "archivedAt": "2015-09-24",
+          "retrievedAt": "2026-09-16",
+          "retrievedSha256": "684c60c78f0c7c9a14e862efa1d9c04e71327405512f4ee3e8924a637790e850",
+          "explicitMethod": "SMS Morgan Poll; the article reports fieldwork and the 1,089-elector Victorian subsample but not the sampling frame, weighting or response rate.",
+          "declaredReuseLicence": null
+        },
+        {
           "id": "roy-morgan-6429-2015-09-02-archive",
           "sourceType": "archived-first-party-pollster-web-page",
           "url": "https://web.archive.org/web/20150905002129id_/http://www.roymorgan.com/findings/6429-morgan-poll-state-voting-intention-september-2015-201509020510",
@@ -437,6 +448,7 @@
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-02-14", "sourcePeriodLabel": "14-16 Feb 2015 source note; metadata says 13-16 Feb and conflicts on the Australian total sample", "sampleSize": 1152, "sourceId": "roy-morgan-6068-2015-02-20-archive", "evidenceAvailableByDate": "2015-03-29", "explicitMethodSourceId": "roy-morgan-6068-2015-02-20-archive", "replayEligible": false },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-03-26", "sourcePeriodLabel": "13-15 Mar 2015; upstream lead date is eight days after the first-party publication date", "sampleSize": 1260, "sourceId": "roy-morgan-6125-2015-03-18-archive", "evidenceAvailableByDate": "2015-03-21", "explicitMethodSourceId": "roy-morgan-6125-2015-03-18-archive", "replayEligible": false },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-05-23", "sourcePeriodLabel": "22-24 May 2015", "sampleSize": 1164, "sourceId": "roy-morgan-6261-2015-05-27-archive", "evidenceAvailableByDate": "2018-11-22", "explicitMethodSourceId": "roy-morgan-6261-2015-05-27-archive", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-08-01", "sourcePeriodLabel": "31 Jul-3 Aug 2015", "sampleSize": 1089, "sourceId": "roy-morgan-6381-2015-08-10-archive", "evidenceAvailableByDate": "2015-09-24", "explicitMethodSourceId": "roy-morgan-6381-2015-08-10-archive", "replayEligible": false },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-08-30", "sourcePeriodLabel": "28-31 Aug 2015", "sampleSize": 1123, "sourceId": "roy-morgan-6429-2015-09-02-archive", "evidenceAvailableByDate": "2015-09-05", "explicitMethodSourceId": "roy-morgan-6429-2015-09-02-archive", "replayEligible": false },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-10-12", "sourcePeriodLabel": "9-15 Oct 2015", "sampleSize": 918, "sourceId": "roy-morgan-6498-2015-10-16-archive", "evidenceAvailableByDate": "2015-10-17", "explicitMethodSourceId": "roy-morgan-6498-2015-10-16-archive", "replayEligible": false },
         { "cycleId": "vic_la_2018", "leadMidDate": "2016-03-27", "sourcePeriodLabel": "25-28 Mar 2016", "sampleSize": 1071, "sourceId": "roy-morgan-6737-2016-04-01-archive", "evidenceAvailableByDate": "2016-09-14", "explicitMethodSourceId": "roy-morgan-6737-2016-04-01-archive", "replayEligible": false },
@@ -460,20 +472,19 @@
         { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-27", "reason": "An archived first-party page was identified, but its earliest verified archive capture is 2014-12-05, after the 2014-11-28 cutoff." },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-04-12", "reason": "An archived first-party page was identified, but the verified archive capture is after the 2018-11-23 cutoff." },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-06-20", "reason": "No observation-specific first-party publication has been identified." },
-        { "cycleId": "vic_la_2018", "leadMidDate": "2015-08-01", "reason": "A matching first-party page was identified, but its exact archive capture date could not be verified against the 2018-11-23 cutoff." },
         { "cycleId": "vic_la_2018", "leadMidDate": "2015-12-04", "reason": "No observation-specific first-party publication has been identified." },
         { "cycleId": "vic_la_2018", "leadMidDate": "2016-01-31", "reason": "No observation-specific first-party publication has been identified." },
-        { "cycleId": "vic_la_2018", "leadMidDate": "2018-11-23", "reason": "The lead marks its date as estimated, and no observation-specific first-party publication has been identified." },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2018-11-23", "reason": "The lead marks its date as estimated. An archived first-party election-eve page was found, but its 2018-11-23T17:22:56Z capture was 2018-11-24 in Melbourne, after the 2018-11-23 local information cutoff." },
         { "cycleId": "vic_la_2022", "leadMidDate": "2020-09-09", "reason": "The lead contains approval figures only and no voting-intention observation to reconstruct." }
       ],
       "coverage": {
-        "sourceDocuments": 23,
-        "sourceMatchedRows": 23,
-        "unresolvedRows": 10,
-        "publicationDatedRows": 23,
-        "sampleSizeRows": 23,
-        "explicitMethodRows": 22,
-        "observationSourceUrlRows": 23,
+        "sourceDocuments": 24,
+        "sourceMatchedRows": 24,
+        "unresolvedRows": 9,
+        "publicationDatedRows": 24,
+        "sampleSizeRows": 24,
+        "explicitMethodRows": 23,
+        "observationSourceUrlRows": 24,
         "declaredReuseLicenceRows": 0,
         "fullyReconstructedRows": 0,
         "replayEligibleRows": 0
@@ -482,7 +493,7 @@
         "forecastEligible": false,
         "historicalReplayEligible": false,
         "automaticPromotion": false,
-        "reason": "First-party Roy Morgan pages materially improve 23 leads, but ten remain unresolved, one page does not explicitly identify the voting poll mode, reported methodology is incomplete and no source declares reuse authority."
+        "reason": "First-party Roy Morgan pages materially improve 24 leads, but nine remain unresolved, one page does not explicitly identify the voting poll mode, reported methodology is incomplete and no source declares reuse authority."
       }
     }
   ],

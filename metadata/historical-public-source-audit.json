@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-15",
+  "reviewedAt": "2026-09-16",
   "status": "assembly-primary-public-harvest-complete",
   "decision": "The public first-party harvest completes 2010-2022 Assembly primary outcomes, so no VEC request is required for this component; residual reconstruction continues for other validation components.",
   "userActionRequired": false,
@@ -112,7 +112,7 @@
         "status": "partial-first-party-reconstruction",
         "sourceFamilies": 18,
         "candidateRows": 200,
-        "sourceMatchedRows": 56,
+        "sourceMatchedRows": 57,
         "replayEligibleRows": 0
       },
       "nextAction": "close-sms-morgan-and-essential-observation-gaps-then-reconstruct-newspoll",

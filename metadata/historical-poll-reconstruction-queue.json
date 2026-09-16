@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-15",
+  "reviewedAt": "2026-09-16",
   "status": "partial-first-party-reconstruction",
   "scope": "Candidate pre-election Victorian poll vintages for the 2010, 2014, 2018 and 2022 walk-forward cycles",
   "purpose": "Aggregate the frozen lead list into a bounded first-party reconstruction queue without copying observation rows into the repository.",
@@ -17,15 +17,15 @@
   "coverage": {
     "candidateRows": 200,
     "sourceFamilies": 18,
-    "sourceMatchedRows": 56,
+    "sourceMatchedRows": 57,
     "reconstructedRows": 0,
     "replayEligibleRows": 0,
     "residualRows": 200,
     "requiredFieldCoverage": {
-      "publicationDate": 56,
-      "sampleSize": 56,
-      "explicitMethod": 34,
-      "observationSourceUrl": 56,
+      "publicationDate": 57,
+      "sampleSize": 57,
+      "explicitMethod": 35,
+      "observationSourceUrl": 57,
       "declaredReuseLicence": 0
     },
     "cycles": [
@@ -51,7 +51,7 @@
         "id": "vic_la_2018",
         "informationCutoff": "2018-11-23",
         "candidateRows": 59,
-        "sourceMatchedRows": 28,
+        "sourceMatchedRows": 29,
         "reconstructedRows": 0,
         "replayEligibleRows": 0,
         "residualRows": 59
@@ -135,12 +135,12 @@
         "vic_la_2022": 11
       },
       "shareOfCandidateRows": 0.165,
-      "sourceMatchedRows": 23,
+      "sourceMatchedRows": 24,
       "requiredFieldCoverage": {
-        "publicationDate": 23,
-        "sampleSize": 23,
-        "explicitMethod": 22,
-        "observationSourceUrl": 23,
+        "publicationDate": 24,
+        "sampleSize": 24,
+        "explicitMethod": 23,
+        "observationSourceUrl": 24,
         "declaredReuseLicence": 0
       },
       "reconstructedRows": 0,
