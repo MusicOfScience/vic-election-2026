@@ -101,7 +101,7 @@ export function validateModelValidationEvidence() {
   assert(pollRequest.completedPreContactWork.includes("produce-machine-readable-residual-provenance-gap-report"), "polling acquisition must record the completed residual-gap report");
   assert(pollRequest.residualGapReport.path === "metadata/historical-poll-reconstruction-queue.json", "polling residual-gap report path is incorrect");
   assert(pollRequest.residualGapReport.evidencePath === "metadata/historical-poll-reconstruction-evidence.json", "polling reconstruction evidence path is incorrect");
-  assert(pollRequest.residualGapReport.candidateRows === 200 && pollRequest.residualGapReport.sourceMatchedRows === 57
+  assert(pollRequest.residualGapReport.candidateRows === 200 && pollRequest.residualGapReport.sourceMatchedRows === 62
     && pollRequest.residualGapReport.replayEligibleRows === 0, "polling residual-gap summary is stale");
   assert(pollRequest.frozenCandidateSource.candidateRows === 200, "polling acquisition must preserve the audited lead-list count");
   assert(pollRequest.frozenCandidateSource.currentlyReplayEligibleRows === 0, "unresolved polling rows cannot enter replay");
@@ -116,7 +116,7 @@ export function validateModelValidationEvidence() {
   assert(pollPublicAudit?.candidateSource.publicNameVerified === false, "polling repository owner identity must remain conservative");
   assert(pollPublicAudit.candidateSource.declaredLicence === null, "public audit must not invent polling reuse authority");
   assert(pollPublicAudit.role === "lead-list-only", "unlicensed polling data must remain a lead list");
-  assert(pollPublicAudit.residualGapReport.sourceMatchedRows === 57, "public audit polling reconstruction count is stale");
+  assert(pollPublicAudit.residualGapReport.sourceMatchedRows === 62, "public audit polling reconstruction count is stale");
   assert(pollPublicAudit.externalContact.status === "deferred", "polling repository contact must remain deferred");
 
   assert(acquisition.modelImpact.changesCurrentForecast === false, "source acquisition cannot change the current forecast");
@@ -224,8 +224,9 @@ export function validateModelValidationEvidence() {
 
   const pollEvidence = readJson("metadata/historical-poll-reconstruction-evidence.json");
   const essentialEvidence = pollEvidence.sourceFamilies.find((family) => family.id === "essential");
+  const newspollEvidence = pollEvidence.sourceFamilies.find((family) => family.id === "newspoll");
   const smsMorganEvidence = pollEvidence.sourceFamilies.find((family) => family.id === "sms-morgan");
-  assert(pollEvidence.schemaVersion === 1 && pollEvidence.sourceFamilies.length === 2, "historical polling evidence schema or family count is unexpected");
+  assert(pollEvidence.schemaVersion === 1 && pollEvidence.sourceFamilies.length === 3, "historical polling evidence schema or family count is unexpected");
   assert(pollEvidence.availabilityDateSemantics.includes("may be later")
     && pollEvidence.availabilityDateSemantics.includes("must not be represented as that original release date"), "historical polling evidence must distinguish corroborated availability from original publication");
   const sourceIds = pollEvidence.sourceFamilies.flatMap((family) => family.sources.map((source) => source.id));
@@ -235,7 +236,7 @@ export function validateModelValidationEvidence() {
     assert(family.coverage.sourceDocuments === family.sources.length, `${family.label} source document count does not reconcile`);
     assert(family.sources.every((source) => source.url.startsWith("https://") && source.declaredReuseLicence === null), `${family.label} sources must retain HTTPS provenance and unresolved reuse authority`);
     assert(family.sources.every((source) => /^[a-f0-9]{64}$/.test(source.sha256 ?? source.contentSha256 ?? source.retrievedSha256)), `${family.label} sources must retain a SHA-256 fingerprint`);
-    for (const source of family.sources.filter((entry) => entry.sourceType === "archived-first-party-pollster-web-page")) {
+    for (const source of family.sources.filter((entry) => entry.sourceType.startsWith("archived-first-party-pollster-"))) {
       const capture = source.url.match(/\/web\/(\d{4})(\d{2})(\d{2})\d{6}/);
       assert(capture, `${family.label} archived source ${source.id} lacks a timestamped capture URL`);
       assert(source.archivedAt === `${capture[1]}-${capture[2]}-${capture[3]}`, `${family.label} archived source ${source.id} capture date is inconsistent`);
@@ -271,6 +272,13 @@ export function validateModelValidationEvidence() {
   assert(essentialEvidence.matchedObservations.length === 33 && essentialEvidence.unresolvedObservations.length === 8, "Essential matched and unresolved counts are stale");
   const essentialCoverage = essentialEvidence.coverage;
   assert(essentialCoverage.explicitMethodRows === 12, "Essential method coverage is stale");
+  assert(newspollEvidence?.candidateRows === 39 && newspollEvidence.sources.length === 5, "Newspoll candidate or source count is stale");
+  assert(newspollEvidence.matchedObservations.length === 5 && newspollEvidence.unresolvedObservations.length === 34, "Newspoll matched and unresolved counts are stale");
+  assert(newspollEvidence.coverage.explicitMethodRows === 5, "Newspoll method coverage is stale");
+  assert(newspollEvidence.sources.every((source) => source.sourceType === "archived-first-party-pollster-pdf"
+    && source.documentDateBasis.includes("PDF CreationDate") && source.reuseNotice.includes("no formal reusable-data licence")), "Newspoll sources must retain document-date and copyright limitations");
+  assert(newspollEvidence.unresolvedObservations.some((row) => row.leadMidDate === "2007-10-01" && row.reason.includes("sample size")), "Newspoll cumulative rows without samples must remain unresolved");
+  assert(newspollEvidence.unresolvedObservations.some((row) => row.leadMidDate === "2010-11-24" && row.reason.includes("2010-12-14") && row.reason.includes("after")), "Newspoll election-eve source must remain excluded after the cutoff");
   assert(smsMorganEvidence?.candidateRows === 33 && smsMorganEvidence.sources.length === 24, "SMS Morgan candidate or source count is stale");
   assert(smsMorganEvidence.matchedObservations.length === 24 && smsMorganEvidence.unresolvedObservations.length === 9, "SMS Morgan matched and unresolved counts are stale");
   assert(smsMorganEvidence.coverage.explicitMethodRows === 23, "SMS Morgan method coverage is stale");
@@ -295,14 +303,14 @@ export function validateModelValidationEvidence() {
   assert(pollQueue.candidateSource.reconstructionMetadataWritten === true, "polling queue must record first-party reconstruction progress");
   assert(pollQueue.coverage.candidateRows === 200, "polling queue candidate count is stale");
   assert(pollQueue.coverage.sourceFamilies === 18, "polling queue source-family count is stale");
-  assert(pollQueue.coverage.sourceMatchedRows === 57, "historical polling source-matched count is stale");
+  assert(pollQueue.coverage.sourceMatchedRows === 62, "historical polling source-matched count is stale");
   assert(pollQueue.coverage.reconstructedRows === 0 && pollQueue.coverage.replayEligibleRows === 0, "unverified polling leads cannot be reconstructed or replay-eligible");
   assert(pollQueue.coverage.residualRows === 200, "polling queue residual count is stale");
   assert(JSON.stringify(pollQueue.coverage.requiredFieldCoverage) === JSON.stringify({
-    publicationDate: 57,
-    sampleSize: 57,
-    explicitMethod: 35,
-    observationSourceUrl: 57,
+    publicationDate: 62,
+    sampleSize: 62,
+    explicitMethod: 40,
+    observationSourceUrl: 62,
     declaredReuseLicence: 0,
   }), "polling queue required-field coverage is stale");
   assert(pollQueue.reconstructionQueue.length === pollQueue.coverage.sourceFamilies, "polling queue family count does not reconcile");
@@ -314,6 +322,9 @@ export function validateModelValidationEvidence() {
   const essentialQueue = pollQueue.reconstructionQueue.find((family) => family.id === "essential");
   assert(essentialQueue?.sourceMatchedRows === 33 && essentialQueue.reconstructedRows === 0
     && essentialQueue.replayEligibleRows === 0 && essentialQueue.residualRows === 41, "Essential queue progress is stale or unsafe");
+  const newspollQueue = pollQueue.reconstructionQueue.find((family) => family.id === "newspoll");
+  assert(newspollQueue?.sourceMatchedRows === 5 && newspollQueue.reconstructedRows === 0
+    && newspollQueue.replayEligibleRows === 0 && newspollQueue.residualRows === 39, "Newspoll queue progress is stale or unsafe");
   const smsMorganQueue = pollQueue.reconstructionQueue.find((family) => family.id === "sms-morgan");
   assert(smsMorganQueue?.sourceMatchedRows === 24 && smsMorganQueue.reconstructedRows === 0
     && smsMorganQueue.replayEligibleRows === 0 && smsMorganQueue.residualRows === 33, "SMS Morgan queue progress is stale or unsafe");

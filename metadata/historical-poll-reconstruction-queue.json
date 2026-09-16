@@ -17,15 +17,15 @@
   "coverage": {
     "candidateRows": 200,
     "sourceFamilies": 18,
-    "sourceMatchedRows": 57,
+    "sourceMatchedRows": 62,
     "reconstructedRows": 0,
     "replayEligibleRows": 0,
     "residualRows": 200,
     "requiredFieldCoverage": {
-      "publicationDate": 57,
-      "sampleSize": 57,
-      "explicitMethod": 35,
-      "observationSourceUrl": 57,
+      "publicationDate": 62,
+      "sampleSize": 62,
+      "explicitMethod": 40,
+      "observationSourceUrl": 62,
       "declaredReuseLicence": 0
     },
     "cycles": [
@@ -33,7 +33,7 @@
         "id": "vic_la_2010",
         "informationCutoff": "2010-11-26",
         "candidateRows": 37,
-        "sourceMatchedRows": 1,
+        "sourceMatchedRows": 4,
         "reconstructedRows": 0,
         "replayEligibleRows": 0,
         "residualRows": 37
@@ -42,7 +42,7 @@
         "id": "vic_la_2014",
         "informationCutoff": "2014-11-28",
         "candidateRows": 68,
-        "sourceMatchedRows": 16,
+        "sourceMatchedRows": 18,
         "reconstructedRows": 0,
         "replayEligibleRows": 0,
         "residualRows": 68
@@ -109,12 +109,12 @@
         "vic_la_2018": 1
       },
       "shareOfCandidateRows": 0.195,
-      "sourceMatchedRows": 0,
+      "sourceMatchedRows": 5,
       "requiredFieldCoverage": {
-        "publicationDate": 0,
-        "sampleSize": 0,
-        "explicitMethod": 0,
-        "observationSourceUrl": 0,
+        "publicationDate": 5,
+        "sampleSize": 5,
+        "explicitMethod": 5,
+        "observationSourceUrl": 5,
         "declaredReuseLicence": 0
       },
       "reconstructedRows": 0,
