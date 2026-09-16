@@ -112,10 +112,10 @@
         "status": "partial-first-party-reconstruction",
         "sourceFamilies": 18,
         "candidateRows": 200,
-        "sourceMatchedRows": 57,
+        "sourceMatchedRows": 62,
         "replayEligibleRows": 0
       },
-      "nextAction": "close-sms-morgan-and-essential-observation-gaps-then-reconstruct-newspoll",
+      "nextAction": "continue-cutoff-safe-newspoll-reconstruction-then-reconstruct-galaxy",
       "externalContact": {
         "status": "deferred",
         "route": "https://github.com/d-j-hirst/aus-polling-analyser/issues",

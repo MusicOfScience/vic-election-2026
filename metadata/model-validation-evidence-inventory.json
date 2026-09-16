@@ -59,11 +59,11 @@
           "vic_la_2022"
         ],
         "candidateRows": 200,
-        "sourceMatchedRows": 57,
-        "publicationDatedRows": 57,
-        "sampleSizeRows": 57,
-        "explicitMethodRows": 35,
-        "observationSourceUrlRows": 57,
+        "sourceMatchedRows": 62,
+        "publicationDatedRows": 62,
+        "sampleSizeRows": 62,
+        "explicitMethodRows": 40,
+        "observationSourceUrlRows": 62,
         "declaredReuseLicenceRows": 0,
         "importedRows": 0
       },
@@ -74,11 +74,11 @@
         },
         {
           "path": "metadata/historical-poll-reconstruction-queue.json",
-          "sha256": "404c8088a3133aa2a1e8c24a1857300c31f8ec300f280e1a9d0790405220e4d3"
+          "sha256": "ff3d91bab027da6938747ff6f289a839f630666eb503291d9b3da92187e900c9"
         },
         {
           "path": "metadata/historical-poll-reconstruction-evidence.json",
-          "sha256": "a5b5be07437b43e26ce6344cc28f2f5d8057713e1b174cb74599bf206162aab8"
+          "sha256": "93e1a1fa43b4e9135c21b51c0b65e7b4c643d57d790a19f1e7b33876ed97ad74"
         }
       ],
       "limitations": [
