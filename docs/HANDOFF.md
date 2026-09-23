@@ -1,23 +1,23 @@
 # Project handoff
 
-Updated: 2026-09-16
+Updated: 2026-09-23
 
 ## Current batch
 
-- Branch: `codex/reconstruct-newspoll-archive`
-- Base commit: `65cc47d` (`main` / `origin/main`, PR #71 merged)
-- Implementation commit: `d14a501` (`Reconstruct cutoff-safe Newspoll evidence`)
-- Outcome: five Newspoll leads are newly matched to timestamped, archived first-party PDFs with observation-specific samples and explicit telephone-survey methods. Across the evidence queue, 62 of 200 leads are now source-matched and 40 have explicit method evidence; 34 Newspoll gaps remain precisely recorded.
-- Safeguards: only archive captures available before each historical cutoff were accepted. Cumulative tables without observation-specific samples and election-eve files first captured after their cutoff remain unresolved. The PDFs' attribution and copyright statements are not treated as a formal reusable-data licence. No quarantined vote values were copied, fully reconstructed/imported/replay-eligible counts remain zero, and all 200 leads stay quarantined.
-- Forecast effect: none. The current forecast, candidate and poll registries, complete-model backtest/calibration gates, and production authorisation are unchanged. Release readiness remains `experimental-blocked` with 5/9 gates passing.
-- Validation: Vinext build, lint, all 125 JavaScript tests, provenance, release-readiness, psephology and model-validation evidence checks passed. All ten pages of the five archived PDFs were also rendered and visually inspected. Existing non-blocking Recharts hidden-size and sandbox WebSocket warnings remain.
-- Pull request: [#72](https://github.com/MusicOfScience/vic-election-2026/pull/72) is open and mergeable. The quality job was not started because GitHub reported failed account payments or a spending-limit restriction; this is an account-level Actions block, not a code failure.
+- Branch: `codex/continue-newspoll-archive`
+- Base commit: `3886a44381009d973a1ad94a8c25440290857af5` (PR #72 merged; remote main verified unchanged on 23 September). Implementation: the commit containing this handoff, titled `Extend Newspoll evidence with explicit archive limitations`.
+- Completed: two more Newspoll observations matched, bringing the total to 64/200 source matches and 41 cutoff-verified methods. Newspoll has seven matches, six verified methods and 32 unmatched leads. Queue and inventory hashes reconcile.
+- Evidence: the Nov-Dec 2011 branded PDF survives in a contemporaneous third-party archive. The May-Jun 2015 publisher graphic is linked from a cutoff-safe archived article confirming its sample. That article does not preserve the graphic binary; its current method text is corroborating only and excluded from verified method coverage. Retrieval dates and fingerprints retain the 16 September inspection; the review and queue are dated 23 September.
+- Safeguards: all 200 polling leads remain quarantined and none is replay-eligible. Missing reuse authority and historical evidence still block promotion. Forecast code, inputs, outputs, candidate/poll registries and authorisation files are unchanged. Readiness remains `experimental-blocked`, 5/9 gates passing.
+- Validation: build, all 126 JavaScript tests, lint, candidate and psephology checks passed. The build also verified model output, poll/provenance/readiness artefacts, historical evidence, candidate review and staged-poll safeguards. The queue was regenerated from the hash-verified pinned lead file. Diff check passed with no generated forecast drift. Model simulations were not rerun because model code and inputs did not change. Existing non-blocking build size, dependency deprecation, Recharts and sandbox WebSocket warnings remain. No interface changes.
+- Publication: locally ready; push and PR creation are the next operation. No PR exists at the time of this commit. Previous PR #72 had an Actions account payments/spending-limit failure; do not assume the new run will share it. Branch push has no matching workflow trigger; PR creation runs quality checks. Merging to main normally triggers Pages deployment and source monitoring. Do not merge or deploy manually.
+- Preserved user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` remain untracked and untouched.
 
-## Remaining work
+## Remaining work and blockers
 
-- Close the 34 remaining Newspoll observation gaps only if surviving original or contemporaneously archived publications establish cutoff-safe evidence; then continue with Galaxy and Newspoll2. Do not contact the secondary repository owner until material gaps remain after first-party reconstruction.
-- Poll freshness remains blocked by missing newer model-eligible evidence; do not advance the registry date without a complete source.
-- Establish cutoff-compliant ballot timing and incumbent/challenger status without inferring unmatched names.
-- Extend defensible historical final-pair and preference evidence, then implement leakage-safe executable replays and calibration.
+- Continue the finite historical polling queue with Galaxy and Newspoll2 after this batch; 32 Newspoll matches remain unresolved. Several publisher PDF retrieval attempts returned 403 and the tested archive alternatives were empty. Do not repeat unchanged requests or treat all discovered links as individually tested.
+- Historical polling reuse authority is unestablished. No owner contact is required yet; complete the existing first-party reconstruction before escalating residual gaps.
+- Newer model-eligible polling is still needed for freshness. Do not advance registry dates without complete evidence.
+- Ballot availability, alias-aware incumbency, final-pair and preference evidence remain prerequisites for leakage-safe complete-model replay and calibration. Keep Narracan's January 2023 contest separate.
 
-Exact next action: the project owner may review and merge PR #72 based on the complete local validation above. After merge, verify it, fast-forward local `main`, and continue the historical polling evidence queue without changing the forecast.
+Exact next action: publish this tested branch and create its PR, then inspect the actual check result once. The owner merges. After verified merge, fast-forward main safely and work on the existing Galaxy/Newspoll2 queue without changing active forecasts.

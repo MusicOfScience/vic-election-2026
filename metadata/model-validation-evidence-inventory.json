@@ -59,11 +59,11 @@
           "vic_la_2022"
         ],
         "candidateRows": 200,
-        "sourceMatchedRows": 62,
-        "publicationDatedRows": 62,
-        "sampleSizeRows": 62,
-        "explicitMethodRows": 40,
-        "observationSourceUrlRows": 62,
+        "sourceMatchedRows": 64,
+        "publicationDatedRows": 64,
+        "sampleSizeRows": 64,
+        "explicitMethodRows": 41,
+        "observationSourceUrlRows": 64,
         "declaredReuseLicenceRows": 0,
         "importedRows": 0
       },
@@ -74,18 +74,19 @@
         },
         {
           "path": "metadata/historical-poll-reconstruction-queue.json",
-          "sha256": "ff3d91bab027da6938747ff6f289a839f630666eb503291d9b3da92187e900c9"
+          "sha256": "151f5e6c0e75d6591b8a8db16fbec408a7519e1f4f1e651dd015738fdbbe964b"
         },
         {
           "path": "metadata/historical-poll-reconstruction-evidence.json",
-          "sha256": "93e1a1fa43b4e9135c21b51c0b65e7b4c643d57d790a19f1e7b33876ed97ad74"
+          "sha256": "a83c9c6c3f0a409db63087c8696ee18fa9089f251d7c028be71475f51e341dc4"
         }
       ],
       "limitations": [
         "The upstream MidDate field is not an observation publication date.",
         "A reconstruction evidence date records when the cited source proves an observation was public; it may be later than the original release and is not relabelled as that release date.",
         "The raw candidate dataset is not imported and contributes zero rows to any forecast or historical replay.",
-        "Eight of 41 Essential leads and ten of 33 SMS Morgan leads remain unmatched; archived pages use capture dates for availability, and source discrepancies remain explicit.",
+        "Eight of 41 Essential leads, 32 of 39 Newspoll leads and nine of 33 SMS Morgan leads remain unmatched; archived pages use capture dates for availability, and source discrepancies remain explicit.",
+        "The May-June 2015 Newspoll graphic is linked by a cutoff-safe archived article that confirms its sample, but does not preserve the graphic binary; its current method text is not counted as cutoff-verified method evidence.",
         "No reconstructed source declares reuse authority, so all 200 candidate leads remain replay-ineligible."
       ],
       "needed": "Continue first-party reconstruction across the remaining source families, close the SMS Morgan and Essential observation gaps and establish reuse authority before any row enters replay."
