@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-16",
+  "reviewedAt": "2026-09-23",
   "status": "partial-first-party-reconstruction",
   "scope": "Candidate pre-election Victorian poll vintages for the 2010, 2014, 2018 and 2022 walk-forward cycles",
   "purpose": "Aggregate the frozen lead list into a bounded first-party reconstruction queue without copying observation rows into the repository.",
@@ -17,15 +17,15 @@
   "coverage": {
     "candidateRows": 200,
     "sourceFamilies": 18,
-    "sourceMatchedRows": 62,
+    "sourceMatchedRows": 64,
     "reconstructedRows": 0,
     "replayEligibleRows": 0,
     "residualRows": 200,
     "requiredFieldCoverage": {
-      "publicationDate": 62,
-      "sampleSize": 62,
-      "explicitMethod": 40,
-      "observationSourceUrl": 62,
+      "publicationDate": 64,
+      "sampleSize": 64,
+      "explicitMethod": 41,
+      "observationSourceUrl": 64,
       "declaredReuseLicence": 0
     },
     "cycles": [
@@ -42,7 +42,7 @@
         "id": "vic_la_2014",
         "informationCutoff": "2014-11-28",
         "candidateRows": 68,
-        "sourceMatchedRows": 18,
+        "sourceMatchedRows": 19,
         "reconstructedRows": 0,
         "replayEligibleRows": 0,
         "residualRows": 68
@@ -51,7 +51,7 @@
         "id": "vic_la_2018",
         "informationCutoff": "2018-11-23",
         "candidateRows": 59,
-        "sourceMatchedRows": 29,
+        "sourceMatchedRows": 30,
         "reconstructedRows": 0,
         "replayEligibleRows": 0,
         "residualRows": 59
@@ -109,12 +109,12 @@
         "vic_la_2018": 1
       },
       "shareOfCandidateRows": 0.195,
-      "sourceMatchedRows": 5,
+      "sourceMatchedRows": 7,
       "requiredFieldCoverage": {
-        "publicationDate": 5,
-        "sampleSize": 5,
-        "explicitMethod": 5,
-        "observationSourceUrl": 5,
+        "publicationDate": 7,
+        "sampleSize": 7,
+        "explicitMethod": 6,
+        "observationSourceUrl": 7,
         "declaredReuseLicence": 0
       },
       "reconstructedRows": 0,

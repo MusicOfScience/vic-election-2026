@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-16",
+  "reviewedAt": "2026-09-23",
   "policy": "Record observation-level first-party provenance without copying the quarantined candidate file's vote values. A matched source is progress, not replay eligibility; every required field and reuse authority must pass separately.",
   "availabilityDateSemantics": "evidenceAvailableByDate is the date the cited source proves that an observation was public. It may be later than the observation's original release and must not be represented as that original release date.",
   "sourceFamilies": [
@@ -249,6 +249,40 @@
           "explicitMethod": "Telephone survey by trained interviewers among voters throughout Victoria; telephone numbers and the household respondent were selected at random, results were weighted to Victoria's population distribution, the latest survey used 1,160 voter interviews and the stated maximum sampling error was plus or minus 3 percentage points.",
           "reuseNotice": "The PDF requires attribution to Newspoll and The Australian and separately retains copyright in Newspoll; no formal reusable-data licence is identified.",
           "declaredReuseLicence": null
+        },
+        {
+          "id": "newspoll-vic-120104-2012-01-03-mirror-archive",
+          "sourceType": "archived-contemporaneous-mirror-of-first-party-pollster-pdf",
+          "url": "https://web.archive.org/web/20120205135544id_/http://ghostwhovotes.files.wordpress.com/2012/01/newspoll-120104-vic.pdf",
+          "publishedAt": "2012-01-03",
+          "documentDateBasis": "PDF CreationDate metadata; the archived file is a contemporaneous mirror of the branded Newspoll document",
+          "archivedAt": "2012-02-05",
+          "retrievedAt": "2026-09-16",
+          "retrievedSha256": "ff22555cefbbe9f764a4bdbfcc04ce2c4d6afd00fd05c6891e2189c69419245f",
+          "explicitMethod": "Telephone survey by trained interviewers among voters throughout Victoria; telephone numbers and the household respondent were selected at random, results were weighted to Victoria's population distribution, the latest survey used 1,142 voter interviews and the stated maximum sampling error was plus or minus 3 percentage points.",
+          "reuseNotice": "The PDF states that copyright at all times remains with Newspoll; no formal reusable-data licence is identified.",
+          "declaredReuseLicence": null
+        },
+        {
+          "id": "newspoll-vic-2015-06-22-publisher-graphic",
+          "sourceType": "first-party-pollster-publisher-graphic",
+          "url": "https://resources1.news.com.au/images/2015/06/22/1227410/113549-40130458-18c4-11e5-a5d7-748605b6db23.jpg",
+          "publishedAt": "2015-06-23",
+          "documentDateBasis": "Original News Corp asset path dated 22 June 2015; a contemporaneous article dated 23 June links the exact asset",
+          "availabilityEvidence": {
+            "sourceType": "archived-contemporaneous-index-to-first-party-publisher-asset",
+            "url": "https://web.archive.org/web/20150628012805id_/http://blogs.crikey.com.au:80/pollbludger/2015/06/23/newspoll-58-42-to-labor-in-victoria-2",
+            "publishedAt": "2015-06-23",
+            "archivedAt": "2015-06-28",
+            "retrievedAt": "2026-09-16",
+            "retrievedSha256": "c97e0800950d9c88c88f6d77c881bca77711ba81c8509638bf7e471cc2c10cdc",
+            "limitation": "The archived article establishes the exact asset link, poll results and 1,154 sample, but does not preserve the graphic binary or its method text. The currently retrieved graphic has a 2019 Last-Modified header; its method is corroborating evidence only, not verified pre-cutoff method evidence."
+          },
+          "retrievedAt": "2026-09-16",
+          "retrievedSha256": "c7220cb2c42103a182b924b6e6b2e5b6ec7552997ffea5e18274f6593c019297",
+          "explicitMethod": "Telephone survey by trained interviewers among voters throughout Victoria; telephone numbers and the household respondent were selected at random, results were weighted to Victoria's population distribution, the survey used 1,154 voter interviews and the stated maximum sampling error was plus or minus 3 percentage points.",
+          "reuseNotice": "The graphic states that copyright at all times remains with Newspoll; no formal reusable-data licence is identified.",
+          "declaredReuseLicence": null
         }
       ],
       "matchedObservations": [
@@ -256,7 +290,9 @@
         { "cycleId": "vic_la_2010", "leadMidDate": "2008-12-01", "sourcePeriodLabel": "Nov-Dec 2008", "sampleSize": 1157, "sourceId": "newspoll-vic-1204-2008-12-18-archive", "evidenceAvailableByDate": "2009-10-24", "explicitMethodSourceId": "newspoll-vic-1204-2008-12-18-archive", "replayEligible": false },
         { "cycleId": "vic_la_2010", "leadMidDate": "2009-02-01", "sourcePeriodLabel": "Jan-Feb 2009", "sampleSize": 1142, "sourceId": "newspoll-vic-0208-2009-06-03-archive", "evidenceAvailableByDate": "2009-10-24", "explicitMethodSourceId": "newspoll-vic-0208-2009-06-03-archive", "replayEligible": false },
         { "cycleId": "vic_la_2014", "leadMidDate": "2011-08-01", "sourcePeriodLabel": "Jul-Aug 2011", "sampleSize": 1137, "sourceId": "newspoll-vic-110808-2011-08-30-archive", "evidenceAvailableByDate": "2011-10-05", "explicitMethodSourceId": "newspoll-vic-110808-2011-08-30-archive", "replayEligible": false },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2012-02-01", "sourcePeriodLabel": "Jan-Feb 2012", "sampleSize": 1160, "sourceId": "newspoll-vic-120207-2012-02-20-archive", "evidenceAvailableByDate": "2012-04-17", "explicitMethodSourceId": "newspoll-vic-120207-2012-02-20-archive", "replayEligible": false }
+        { "cycleId": "vic_la_2014", "leadMidDate": "2011-12-01", "sourcePeriodLabel": "Nov-Dec 2011", "sampleSize": 1142, "sourceId": "newspoll-vic-120104-2012-01-03-mirror-archive", "evidenceAvailableByDate": "2012-02-05", "explicitMethodSourceId": "newspoll-vic-120104-2012-01-03-mirror-archive", "replayEligible": false },
+        { "cycleId": "vic_la_2014", "leadMidDate": "2012-02-01", "sourcePeriodLabel": "Jan-Feb 2012", "sampleSize": 1160, "sourceId": "newspoll-vic-120207-2012-02-20-archive", "evidenceAvailableByDate": "2012-04-17", "explicitMethodSourceId": "newspoll-vic-120207-2012-02-20-archive", "replayEligible": false },
+        { "cycleId": "vic_la_2018", "leadMidDate": "2015-06-01", "sourcePeriodLabel": "May-Jun 2015", "sampleSize": 1154, "sourceId": "newspoll-vic-2015-06-22-publisher-graphic", "evidenceAvailableByDate": "2015-06-28", "explicitMethodSourceId": null, "replayEligible": false }
       ],
       "unresolvedObservations": [
         { "cycleId": "vic_la_2010", "leadMidDate": "2007-10-01", "reason": "A cutoff-safe first-party cumulative PDF reports this aggregate's values but not its observation-specific sample size." },
@@ -277,7 +313,6 @@
         { "cycleId": "vic_la_2010", "leadMidDate": "2010-11-10", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
         { "cycleId": "vic_la_2010", "leadMidDate": "2010-11-24", "reason": "An archived first-party election-eve PDF was identified, but its earliest verified capture is 2010-12-14, after the 2010-11-26 cutoff." },
         { "cycleId": "vic_la_2014", "leadMidDate": "2011-10-01", "reason": "A cutoff-safe first-party cumulative PDF reports this aggregate's values but not its observation-specific sample size." },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2011-12-01", "reason": "A cutoff-safe first-party cumulative PDF reports this aggregate's values but not its observation-specific sample size." },
         { "cycleId": "vic_la_2014", "leadMidDate": "2012-04-01", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
         { "cycleId": "vic_la_2014", "leadMidDate": "2012-08-01", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
         { "cycleId": "vic_la_2014", "leadMidDate": "2012-10-01", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
@@ -291,17 +326,16 @@
         { "cycleId": "vic_la_2014", "leadMidDate": "2014-06-01", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
         { "cycleId": "vic_la_2014", "leadMidDate": "2014-08-01", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
         { "cycleId": "vic_la_2014", "leadMidDate": "2014-10-29", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
-        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-26", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." },
-        { "cycleId": "vic_la_2018", "leadMidDate": "2015-06-01", "reason": "Secondary contemporary reporting was identified, but no first-party pollster or publisher record with a sample size, method and cutoff-safe provenance has been verified." }
+        { "cycleId": "vic_la_2014", "leadMidDate": "2014-11-26", "reason": "No observation-specific first-party publication with a sample size and cutoff-safe availability record has been identified." }
       ],
       "coverage": {
-        "sourceDocuments": 5,
-        "sourceMatchedRows": 5,
-        "unresolvedRows": 34,
-        "publicationDatedRows": 5,
-        "sampleSizeRows": 5,
-        "explicitMethodRows": 5,
-        "observationSourceUrlRows": 5,
+        "sourceDocuments": 7,
+        "sourceMatchedRows": 7,
+        "unresolvedRows": 32,
+        "publicationDatedRows": 7,
+        "sampleSizeRows": 7,
+        "explicitMethodRows": 6,
+        "observationSourceUrlRows": 7,
         "declaredReuseLicenceRows": 0,
         "fullyReconstructedRows": 0,
         "replayEligibleRows": 0
@@ -310,7 +344,7 @@
         "forecastEligible": false,
         "historicalReplayEligible": false,
         "automaticPromotion": false,
-        "reason": "Five cutoff-safe first-party PDFs provide observation-specific samples and telephone methodology, but 34 leads remain unresolved and the attribution/copyright notice is not treated as a formal reusable-data licence."
+        "reason": "Seven Newspoll observations have cutoff-safe source and sample evidence, including one archived contemporaneous mirror and one publisher graphic linked from an archived article. Six have cutoff-verified telephone methodology; the current publisher graphic's method text is corroborating only because its binary was not preserved by that article capture. Thirty-two leads remain unmatched and the copyright notices are not treated as a formal reusable-data licence."
       }
     },
     {

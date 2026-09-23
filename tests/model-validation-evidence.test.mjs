@@ -64,7 +64,7 @@ test("fingerprints every available validation artefact and keeps partial evidenc
   assert.equal(inventory.negativeFeatureEvidence.demographicChallenger.centralWeight, 0);
   assert.equal(pollQueue.coverage.candidateRows, 200);
   assert.equal(pollQueue.coverage.sourceFamilies, 18);
-  assert.equal(pollQueue.coverage.sourceMatchedRows, 62);
+  assert.equal(pollQueue.coverage.sourceMatchedRows, 64);
   assert.equal(pollQueue.coverage.replayEligibleRows, 0);
   assert.equal(pollQueue.candidateSource.observationVoteRowsWritten, false);
   assert.equal(pollQueue.modelImpact.productionAuthorisation, false);
@@ -75,12 +75,30 @@ test("fingerprints every available validation artefact and keeps partial evidenc
   assert.equal(essentialEvidence.unresolvedObservations.length, 8);
   assert.equal(essentialEvidence.coverage.explicitMethodRows, 12);
   assert.equal(essentialEvidence.coverage.replayEligibleRows, 0);
-  assert.equal(newspollEvidence.matchedObservations.length, 5);
-  assert.equal(newspollEvidence.unresolvedObservations.length, 34);
-  assert.equal(newspollEvidence.coverage.explicitMethodRows, 5);
+  assert.equal(newspollEvidence.matchedObservations.length, 7);
+  assert.equal(newspollEvidence.unresolvedObservations.length, 32);
+  assert.equal(newspollEvidence.coverage.explicitMethodRows, 6);
   assert.equal(newspollEvidence.coverage.replayEligibleRows, 0);
   assert.equal(smsMorganEvidence.matchedObservations.length, 24);
   assert.equal(smsMorganEvidence.unresolvedObservations.length, 9);
   assert.equal(smsMorganEvidence.coverage.explicitMethodRows, 23);
   assert.equal(smsMorganEvidence.coverage.replayEligibleRows, 0);
+});
+
+test("distinguishes archived poll documents from a historical link to a current graphic", () => {
+  const family = pollEvidence.sourceFamilies.find((entry) => entry.id === "newspoll");
+  const mirrorRow = family.matchedObservations.find((row) => row.leadMidDate === "2011-12-01");
+  const mirror = family.sources.find((source) => source.id === mirrorRow.sourceId);
+  assert.equal(mirror.sourceType, "archived-contemporaneous-mirror-of-first-party-pollster-pdf");
+  assert.equal(mirrorRow.evidenceAvailableByDate, mirror.archivedAt);
+  assert.notEqual(mirrorRow.evidenceAvailableByDate, mirror.publishedAt);
+  assert.equal(mirrorRow.explicitMethodSourceId, mirror.id);
+
+  const graphicRow = family.matchedObservations.find((row) => row.leadMidDate === "2015-06-01");
+  const graphic = family.sources.find((source) => source.id === graphicRow.sourceId);
+  assert.equal(graphicRow.evidenceAvailableByDate, graphic.availabilityEvidence.archivedAt);
+  assert.equal(graphicRow.sampleSize, 1154);
+  assert.match(graphic.availabilityEvidence.limitation, /does not preserve the graphic binary/);
+  assert.equal(graphicRow.explicitMethodSourceId, null);
+  assert.equal(graphicRow.replayEligible, false);
 });
