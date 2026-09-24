@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2018",
+  "targetFamily": "newspoll",
+  "status": "blocked-source-fields-unavailable",
+  "selectionBasis": "bounded queue family with contemporaneous pre-cutoff publication evidence and independent telephone methodology",
+  "sourceId": "newspoll-vic-2015-06-22-publisher-graphic",
+  "sourceUrl": "https://resources1.news.com.au/images/2015/06/22/1227410/113549-40130458-18c4-11e5-a5d7-748605b6db23.jpg",
+  "availabilityEvidence": "metadata/historical-poll-reconstruction-evidence.json",
+  "availabilityDate": "2015-06-28",
+  "knownFields": ["pollster", "sampleSize", "telephoneMethod", "publicationAvailability", "twoPartyPreferred"],
+  "missingRequiredFields": ["cutoff-safe structured primary shares", "preserved method/report binary for independent factual transcription"],
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "replayEligible": false,
+  "reason": "The archived contemporaneous article confirms the asset link, sample and poll result, but does not preserve the graphic binary or its method text; no safe primary-share transcription was added from a secondary compilation.",
+  "quarantineBoundary": "No values copied from d-j-hirst/aus-polling-analyser and no search-result values promoted.",
+  "nextAction": "Only revisit if the original first-party graphic/report or an equivalent attributable primary publication can be captured with the model-required structured fields."
+}

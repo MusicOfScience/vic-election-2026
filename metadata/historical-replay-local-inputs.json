@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "scripts/build-historical-local-inputs.mjs",
+  "cycleId": "vic_la_2018",
+  "status": "blocked",
+  "cutoff": "2018-11-23",
+  "requiredArtefact": "model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv",
+  "requiredReport": "model/data/processed/vec_2014_2018_same_boundary_tpp_swing_report.json",
+  "reason": "boundary-aligned pre-cycle local pattern artefact is absent; target-cycle outcomes cannot substitute it",
+  "sourceOutcomeUse": "forbidden"
+}
