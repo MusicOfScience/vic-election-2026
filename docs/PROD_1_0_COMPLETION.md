@@ -1,9 +1,9 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-25
-Branch: `codex/freeze-2022-v2-prediction`
-Base: `1a6c07fe` (PR #103 merged)
-Current batch: owner-approved Resolve promotion, cycle-aware v2 refactor and sealed 2022 prediction; outcomes remain unloaded. PR #104 is open for review.
+Branch: `codex/repair-2022-comparators`
+Base: `4acf3133` (PR #104 merged)
+Current batch: repair and freeze the five preregistered 2022 v2 comparators before outcome loading.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -32,10 +32,10 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately.
 - Cycle-aware ballot review: 2010, 2014 and 2018 have no One Nation Assembly candidates; 2022 has four. The 2018 Essential case passes provenance and methodological adequacy because its grouped Other residual is sufficient for the active four-family ballot universe, and owner approval has promoted only its structured replay input.
 - Owner decisions recorded: Essential, uComms/ReachTEL, Roy Morgan and Resolve reviews; the approved replay input contains 7 structured observations overall, including 3 2022 observations from 2 independent source families. Legacy queue replay-eligible rows remain 0.
-- Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before scoring. The 2022 v2 prediction and comparator bundle are frozen before outcome loading; release readiness remains unchanged.
+- Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before scoring. The 2022 v2 prediction remains immutable. The original comparator bundle (`1492dc93…`) was found defective before scoring and is preserved; the replacement spec/bundle are frozen without loading outcomes. Release readiness remains unchanged.
 - Focus cycle: `vic_la_2018`. V1 local-family mapping, Assembly seat aggregation and Council top-two defects are preserved as a negative implementation result. V2 uses `metadata/historical-party-family-mapping.json`, per-simulation chamber draws and a non-certifying diagnostic output.
 - V2 diagnostic artefact: `model/data/validation/historical-replays/vic_la_2018-v2-diagnostic.json` (SHA `3aa4ce84…`); comparator limitations are recorded in `metadata/historical-replay-v1-comparator-audit.json`.
-- Next certifying cycle selected before scoring: `vic_la_2022`. Resolve is owner-approved and promoted, producing 3 observations from 2 independent families. The cycle-aware v2 adapter preserves a four-bucket polling state (`OTH_RESIDUAL`) and allocates that residual only at the model layer using pre-cutoff district propensity and ballot masks; Assembly simulations cover 87 November-election districts and Council simulations cover 8×5 seats. Freshwater and RedBridge remain quarantined. The sealed prediction is `model/data/validation/historical-replays/vic_la_2022-v2-prediction.json` (SHA `f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0`); no 2022 outcomes were loaded.
+- Next certifying cycle selected before scoring: `vic_la_2022`. Resolve is owner-approved and promoted, producing 3 observations from 2 independent families. The cycle-aware v2 adapter preserves a four-bucket polling state (`OTH_RESIDUAL`) and allocates that residual only at the model layer using pre-cutoff district propensity and ballot masks; Assembly simulations cover 87 November-election districts and Council simulations cover 8×5 seats. Freshwater and RedBridge remain quarantined. The sealed prediction is `model/data/validation/historical-replays/vic_la_2022-v2-prediction.json` (SHA `f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0`); no 2022 outcomes were loaded. Comparator repair is recorded in `metadata/historical-replay-v2-comparator-defect-audit.json`; the new bundle is `model/data/validation/historical-replays/vic_la_2022-v2-comparators-v2.json`.
 - Verification: JavaScript, build, lint, source provenance, psephology and isolated Python validation pass; the official 2018 outcome extractor validates 88/88 districts.
 
-Exact next action: score the immutable 2022 v2 prediction in a separate outcome-loading batch. Do not regenerate or tune it; complete backtest, calibration and production authorisation remain closed.
+Exact next action: review and publish the pre-score comparator repair, then score the immutable 2022 v2 prediction and comparator bundle in a separate outcome-loading batch. Do not regenerate or tune it; complete backtest, calibration and production authorisation remain closed.
