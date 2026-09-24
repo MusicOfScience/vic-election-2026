@@ -79,10 +79,9 @@
     {
       "cycleId": "vic_la_2018",
       "pollEvidence": {
-        "status": "blocked",
-        "reason": "uComms/ReachTEL factual reconstruction is admissible but awaiting project-owner approval; approved input still has only 1 independent source family",
-        "artefact": "model/data/validation/historical-replay-poll-observations.json",
-        "pendingReview": "metadata/historical-poll-reuse-case-2018-ucomms.json"
+        "status": "pass",
+        "reason": "4 approved observations from 2 independent source families satisfy the fixed sparse-poll rule",
+        "artefact": "model/data/validation/historical-replay-poll-observations.json"
       },
       "ballotContest": {
         "status": "pass",
@@ -115,7 +114,11 @@
         "status": "pass",
         "reason": "guarded runner rejects outcomes before prediction freeze"
       },
-      "runnable": false
+      "scoringOutcome": {
+        "status": "blocked",
+        "reason": "separate IRV final-pair/winner artefact is not present; primary leaders cannot substitute scoring outcomes"
+      },
+      "runnable": true
     },
     {
       "cycleId": "vic_la_2022",
@@ -154,7 +157,7 @@
       "runnable": false
     }
   ],
-  "runnableCycles": 0,
+  "runnableCycles": 1,
   "modelImpact": {
     "forecast2026": false,
     "productionAuthorisation": false

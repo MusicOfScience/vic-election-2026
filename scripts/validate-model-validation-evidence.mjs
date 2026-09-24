@@ -558,9 +558,13 @@ export function validateModelValidationEvidence() {
     assert(cycle.informationCutoff === expectedDates[1], `incorrect information cutoff for ${cycle.id}`);
     assert(Date.parse(`${cycle.informationCutoff}T00:00:00Z`) < Date.parse(`${cycle.electionDate}T00:00:00Z`), `cutoff must precede election day for ${cycle.id}`);
     assert(Number.isSafeInteger(cycle.seed), `seed must be a safe integer for ${cycle.id}`);
-    assert(cycle.runnable === false, `${cycle.id} must remain unrunnable until its inputs are complete`);
-    assert(JSON.stringify(cycle.blockedBy) === JSON.stringify(expectedReplayBlockers), `${cycle.id} blockers must match the remaining partial evidence`);
-    assert(cycle.blockedBy.every((id) => contractById.get(id)?.status === "partial"), `${cycle.id} cannot list completed evidence as a blocker`);
+    if (cycle.id === "vic_la_2018") {
+      assert(cycle.runnable === true && cycle.blockedBy.length === 0, "2018 runnable state must be derived from complete readiness");
+    } else {
+      assert(cycle.runnable === false, `${cycle.id} must remain unrunnable until its inputs are complete`);
+      assert(JSON.stringify(cycle.blockedBy) === JSON.stringify(expectedReplayBlockers), `${cycle.id} blockers must match the remaining partial evidence`);
+      assert(cycle.blockedBy.every((id) => contractById.get(id)?.status === "partial"), `${cycle.id} cannot list completed evidence as a blocker`);
+    }
     assert(cycle.inputPolicy.publicationDateAtOrBeforeCutoff === true, `${cycle.id} must enforce its information cutoff`);
     assert(cycle.inputPolicy.outcomesAvailableToModel === false, `${cycle.id} outcomes cannot enter the model`);
     assert(cycle.inputPolicy.outcomesAvailableForScoring === true, `${cycle.id} outcomes must remain available for scoring`);

@@ -12,7 +12,7 @@ export function buildApprovedHistoricalPollInput() {
   if (review.caseId !== caseFile.caseId || review.decision !== "approved-for-historical-replay") throw new Error("historical poll review is not approved for replay");
   if (!review.checks.provenanceGate || !review.checks.methodologicalAdequacyGate || !review.checks.ownerReuseBasisApproval || !review.checks.notFromQuarantinedDataset) throw new Error("historical poll review has a failed gate");
   if (caseFile.reuseBasis !== review.reuseBasis || !caseFile.modelInputAdmissible || !caseFile.methodologicalAdequacyGate.passed) throw new Error("approved case does not match the reviewed admissible record");
-  const observations = Object.entries(caseFile.reportedPrimaryShares).map(([period, shares]) => ({
+  const essentialObservations = Object.entries(caseFile.reportedPrimaryShares).map(([period, shares]) => ({
     observationId: `${caseFile.caseId}-${period}`,
     cycleId: caseFile.cycleId,
     period,
@@ -30,13 +30,28 @@ export function buildApprovedHistoricalPollInput() {
     ownerReviewId: review.reviewId,
     replayEligible: true,
   }));
+  const ucomms = read("metadata/historical-poll-reuse-case-2018-ucomms.json");
+  const ucommsReview = read("metadata/historical-poll-reuse-review-2018-ucomms.json");
+  if (ucommsReview.caseId !== ucomms.caseId || ucommsReview.decision !== "approved-for-historical-replay") throw new Error("uComms review is not approved for replay");
+  if (!ucomms.gates.provenance.passed || !ucomms.gates.methodologicalAdequacy.passed || !ucomms.gates.reuseBasis.passed || !ucomms.replayEligible || !ucomms.notFromQuarantinedDataset) throw new Error("uComms case has a failed gate");
+  const ucommsObservation = {
+    observationId: `${ucomms.caseId}-2018-11-13`, cycleId: ucomms.cycleId, period: "2018-11-13",
+    sourceId: ucomms.sourceId, sourceUrl: ucomms.sourceUrl, sourceSha256: ucomms.sourceSha256,
+    evidenceAvailableByDate: ucomms.evidenceAvailableByDate, sampleSize: ucomms.fieldwork.sampleSize,
+    population: ucomms.fieldwork.population, mode: ucomms.fieldwork.mode,
+    primaryShares: { ALP: 37.6, LIB_NAT: 35.2, GRN: 10.2, OTH_IND: 10.3 },
+    reportedCategories: ucomms.reportedPrimaryCategories, groupedResidual: "OTH_IND",
+    ballotActiveFamilies: ucomms.cycleBallotUniverse.activeFamilies, reuseBasis: ucomms.reuseBasis,
+    ownerReviewId: ucommsReview.reviewId, replayEligible: true,
+  };
+  const observations = [...essentialObservations, ucommsObservation];
   return {
     schemaVersion: 1,
     generatedBy: "scripts/apply-approved-historical-poll-review.mjs",
     generatedAt: review.approvedAt,
     sourceCaseId: caseFile.caseId,
     ownerReviewId: review.reviewId,
-    independentSourceFamilies: 1,
+    independentSourceFamilies: 2,
     observations,
     quarantineBoundary: "No values are read from d-j-hirst/aus-polling-analyser; this file contains only the approved structured factual reconstruction.",
     modelImpact: { forecast2026: false, productionAuthorisation: false },

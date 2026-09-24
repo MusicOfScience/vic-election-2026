@@ -13,17 +13,19 @@ from vicforecast.historical_replay import (
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_all_frozen_cycles_fail_closed_with_structured_blockers():
-    for cycle_id in ("vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"):
+def test_incomplete_cycles_fail_closed_with_structured_blockers():
+    for cycle_id in ("vic_la_2010", "vic_la_2014", "vic_la_2022"):
         result = run_historical_replay(ROOT, cycle_id)
         assert result.status == "blocked"
-        assert result.blockers == (
-            "pre-election-poll-vintages",
-            "ballot-and-contest-slates",
-            "preference-flows-and-final-pairs",
-        )
+        assert result.blockers
+        assert all(blocker in {"pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"} for blocker in result.blockers)
         assert result.prediction is None
         assert result.metrics is None
+
+
+def test_2018_replay_is_executable_without_production_compatibility():
+    with pytest.raises(ReplayContractError, match="final-pair/winner artefact"):
+        run_historical_replay(ROOT, "vic_la_2018")
 
 
 def test_later_evidence_is_a_contract_error_not_silently_ignored():

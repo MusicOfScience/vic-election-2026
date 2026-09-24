@@ -15,12 +15,12 @@ export function validateHistoricalReplayInputReadiness() {
   const targeted = read("metadata/historical-poll-targeted-recovery-2018.json");
   const local = buildHistoricalLocalInputs("vic_la_2018");
   const council = buildHistoricalCouncilInputs("vic_la_2018");
-  if (readiness.cycles.length !== 4 || readiness.runnableCycles !== 0 || readiness.archiveCompleteIsNotRequiredForRunnable !== true) throw new Error("historical replay readiness: cycle inventory is unsafe");
+  if (readiness.cycles.length !== 4 || readiness.runnableCycles !== 1 || readiness.archiveCompleteIsNotRequiredForRunnable !== true) throw new Error("historical replay readiness: cycle inventory is unsafe");
   if (sparse.minimumEligibleObservations !== 3 || sparse.minimumIndependentSourceFamilies !== 2 || !sparse.decisionBeforeScores || sparse.scoreDependentTuning) throw new Error("historical replay readiness: sparse-poll rule is not preregistered");
-  if (generated.observations.length !== 3 || canonical.observations.length !== 3 || canonical.independentSourceFamilies !== 1) throw new Error("historical replay readiness: approved Essential input is incomplete");
-  if (canonical.observations.some((row) => !row.replayEligible || row.reuseBasis !== "independently_reconstructed_factual_observation" || row.ownerReviewId !== canonical.ownerReviewId)) throw new Error("historical replay readiness: approved input lost its governance boundary");
+  if (generated.observations.length !== 4 || canonical.observations.length !== 4 || canonical.independentSourceFamilies < sparse.minimumIndependentSourceFamilies) throw new Error("historical replay readiness: approved poll input does not satisfy the registered sparse rule");
+  if (canonical.observations.some((row) => !row.replayEligible || row.reuseBasis !== "independently_reconstructed_factual_observation" || !row.ownerReviewId)) throw new Error("historical replay readiness: approved input lost its governance boundary");
   const cycle2018 = readiness.cycles.find((cycle) => cycle.cycleId === "vic_la_2018");
-  if (cycle2018?.pollEvidence.status !== "blocked" || !cycle2018.pollEvidence.reason.includes("1 independent source family")) throw new Error("historical replay readiness: 2018 sparse-poll blocker is missing");
+  if (cycle2018?.pollEvidence.status !== "pass" || !cycle2018.pollEvidence.reason.includes("2 independent source families")) throw new Error("historical replay readiness: 2018 poll sufficiency is not derived from promoted evidence");
   if (targeted.status !== "blocked-source-fields-unavailable" || targeted.replayEligible || targeted.missingRequiredFields.length < 1) throw new Error("historical replay readiness: targeted second-family recovery was overstated");
   if (local.status !== "pass" || council.status !== "pass-with-broad-fallback") throw new Error("historical replay readiness: governed historical fallback inputs are not assembled");
   if (local.inputPath.includes("2014_2018") || local.forbiddenPredictionInput === local.inputPath) throw new Error("historical replay readiness: target outcome file leaked into local input");

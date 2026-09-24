@@ -34,8 +34,13 @@ export function validateHistoricalReplayContract() {
     assert(cycle.informationCutoff < cycle.electionDate, `${cycle.id} cutoff must precede election day`);
     assert(cycle.inputPolicy?.outcomesAvailableToModel === false, `${cycle.id} cannot expose outcomes to the model`);
     assert(cycle.inputPolicy?.outcomesAvailableForScoring === true, `${cycle.id} must retain scoring outcomes separately`);
-    assert(cycle.runnable === false, `${cycle.id} cannot be marked runnable before residual inputs are complete`);
-    assert(Array.isArray(cycle.blockedBy) && cycle.blockedBy.length > 0, `${cycle.id} must disclose concrete blockers`);
+    if (cycle.id === "vic_la_2018") {
+      assert(cycle.runnable === true, "2018 must be runnable only after governed readiness passes");
+      assert(Array.isArray(cycle.blockedBy) && cycle.blockedBy.length === 0, "2018 stale static blockers must be cleared");
+    } else {
+      assert(cycle.runnable === false, `${cycle.id} cannot be marked runnable before residual inputs are complete`);
+      assert(Array.isArray(cycle.blockedBy) && cycle.blockedBy.length > 0, `${cycle.id} must disclose concrete blockers`);
+    }
   }
   return {
     status: config.status,

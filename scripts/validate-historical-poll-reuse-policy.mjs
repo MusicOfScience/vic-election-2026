@@ -7,6 +7,7 @@ const readJson = (name) => JSON.parse(readFileSync(resolve(root, name), "utf8"))
 export function validateHistoricalPollReusePolicy() {
   const policy = readJson("metadata/historical-poll-reuse-policy.json");
   const caseFile = readJson("metadata/historical-poll-reuse-case-2018-essential.json");
+  const ucomms = readJson("metadata/historical-poll-reuse-case-2018-ucomms.json");
   const classes = policy.classes;
   const required = ["explicit_open_licence", "permission_obtained", "official_open_data", "independently_reconstructed_factual_observation", "research_only", "third_party_dataset_unlicensed", "unknown"];
   if (required.some((id) => !classes[id])) throw new Error("historical poll reuse policy: class inventory is incomplete");
@@ -22,7 +23,10 @@ export function validateHistoricalPollReusePolicy() {
   if (!caseFile.methodologicalAdequacyGate.passed || !caseFile.replayEligible || !caseFile.modelInputAdmissible || caseFile.decision !== "approved-for-historical-replay") {
     throw new Error("historical poll reuse policy: ballot-aware 2018 case adjudication is inconsistent");
   }
-  return { policyClasses: required.length, adjudicatedCases: 1, replayEligibleCases: 1 };
+  if (!ucomms.gates.provenance.passed || !ucomms.gates.methodologicalAdequacy.passed || !ucomms.gates.reuseBasis.passed || !ucomms.replayEligible || ucomms.ownerReviewStatus !== "approved-for-historical-replay" || !ucomms.ownerReviewId) {
+    throw new Error("historical poll reuse policy: approved uComms case is inconsistent");
+  }
+  return { policyClasses: required.length, adjudicatedCases: 2, replayEligibleCases: 2 };
 }
 
 if (process.argv[1]?.endsWith("validate-historical-poll-reuse-policy.mjs")) {

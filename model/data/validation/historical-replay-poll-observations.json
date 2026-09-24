@@ -4,7 +4,7 @@
   "generatedAt": "2026-09-24",
   "sourceCaseId": "vic_la_2018-essential-2015-q4",
   "ownerReviewId": "historical-poll-review-2018-essential-2026-09-24",
-  "independentSourceFamilies": 1,
+  "independentSourceFamilies": 2,
   "observations": [
     {
       "observationId": "vic_la_2018-essential-2015-q4-2015-10",
@@ -88,6 +88,42 @@
       ],
       "reuseBasis": "independently_reconstructed_factual_observation",
       "ownerReviewId": "historical-poll-review-2018-essential-2026-09-24",
+      "replayEligible": true
+    },
+    {
+      "observationId": "historical-poll-2018-ucomms-2018-11-13-2018-11-13",
+      "cycleId": "vic_la_2018",
+      "period": "2018-11-13",
+      "sourceId": "ucomms-reachtel-vic-2018-11-13",
+      "sourceUrl": "https://www.vnpa.org.au/wp-content/uploads/2018/11/Polling-13-Nov-2018.pdf",
+      "sourceSha256": "007cec4f30982d7ef0351537a492c81fc5ebd0402f06cbfd301535e4e12fdfc0",
+      "evidenceAvailableByDate": "2018-11-13",
+      "sampleSize": 1527,
+      "population": "Victorian residents",
+      "mode": "automated telephone survey; random telephone and within-household selection; weighted by gender and age to ABS population",
+      "primaryShares": {
+        "ALP": 37.6,
+        "LIB_NAT": 35.2,
+        "GRN": 10.2,
+        "OTH_IND": 10.3
+      },
+      "reportedCategories": {
+        "ALP": 37.6,
+        "LIB_NAT": 35.2,
+        "GRN": 10.2,
+        "INDEPENDENT": 5.7,
+        "OTHER_MINOR": 4.6,
+        "UNDECIDED": 6.7
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2018-ucomms-2026-09-25",
       "replayEligible": true
     }
   ],
