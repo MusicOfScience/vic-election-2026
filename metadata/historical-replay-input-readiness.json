@@ -115,8 +115,11 @@
         "reason": "guarded runner rejects outcomes before prediction freeze"
       },
       "scoringOutcome": {
-        "status": "blocked",
-        "reason": "separate IRV final-pair/winner artefact is not present; primary leaders cannot substitute scoring outcomes"
+        "status": "pass",
+        "reason": "88 official VEC final-pair/winner rows validated after the frozen prediction boundary",
+        "artefact": "model/data/processed/vec_2018_assembly_final_pairs.csv",
+        "scoreArtefact": "model/data/validation/historical-replays/vic_la_2018-score.json",
+        "scoreManifest": "model/data/validation/historical-replays/vic_la_2018-score-manifest.json"
       },
       "runnable": true
     },
@@ -158,6 +161,8 @@
     }
   ],
   "runnableCycles": 1,
+  "predictedCycles": 1,
+  "scoredCycles": 1,
   "modelImpact": {
     "forecast2026": false,
     "productionAuthorisation": false

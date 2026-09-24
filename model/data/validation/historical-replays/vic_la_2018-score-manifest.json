@@ -1,0 +1,9 @@
+{
+  "cycleId": "vic_la_2018",
+  "predictionSha256": "424552f6ad8fe362044543bb966d2642e34267c32a89b44c47ff390037a4c115",
+  "outcomeSha256": "170c685784f1e339d8e1dd95c03cabfb18727f89b8253085991ba45401ba0dc3",
+  "criteriaSha256": "0fe66e8080dfcf48d6b9bab7c7568b8dfdee825a239e6ff9cbffd8a39ae3d22f",
+  "scoringCommit": "c9679b039b3534b3c6616393771823c726972694",
+  "scoreSha256": "fe6734e265e7bef0aa4be63c8dcdf4ca063b2fa33597f799852d99d7c22fbf81",
+  "scorePath": "model/data/validation/historical-replays/vic_la_2018-score.json"
+}

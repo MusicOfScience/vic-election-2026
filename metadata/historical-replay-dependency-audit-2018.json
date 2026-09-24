@@ -7,7 +7,7 @@
     {"path": "model/data/processed/vec_2014_council_candidate_primaries.csv", "classification": "pre-cutoff input"},
     {"path": "model/data/validation/historical-replay-poll-observations.json", "classification": "approved pre-cutoff poll facts"}
   ],
-  "scoringOnly": ["model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv", "2018 election outcomes and preference counts"],
+  "scoringOnly": ["model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv", "model/data/processed/vec_2018_assembly_final_pairs.csv", "2018 election outcomes and preference counts"],
   "forbiddenPredictionDependencies": ["model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv", "any 2018 outcome-derived feature"],
   "assertion": "prediction construction must fail if a scoring-only or target-cycle outcome dependency is loaded"
 }

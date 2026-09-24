@@ -1,0 +1,86 @@
+{
+  "assembly": {
+    "actualSeatTotals": {
+      "ALP": 55,
+      "GRN": 3,
+      "LIB_NAT": 27,
+      "OTH_IND": 3
+    },
+    "predictedSeatMeans": {
+      "ALP": 71944,
+      "GRN": 0,
+      "LIB_NAT": 33656,
+      "OTH_IND": 0
+    },
+    "seatCountAbsoluteErrors": null,
+    "seatScoring": "invalid-frozen-output-seat-scale"
+  },
+  "comparators": {
+    "completeEnsemble": {
+      "brierALPEvent": 0.2381945707070707,
+      "logLossALPEvent": 0.6701518723850358
+    },
+    "pollingOnly": {
+      "brierALPEvent": 0.2461070501059868,
+      "logLossALPEvent": 0.685358492119038
+    },
+    "pollingPlusFundamentals": {
+      "brierALPEvent": 0.20831478023871047,
+      "logLossALPEvent": 0.608811706347316
+    },
+    "seatLevel": {
+      "brierALPEvent": 0.2381945707070707,
+      "logLossALPEvent": 0.6701518723850358
+    },
+    "uniformSwing": {
+      "brierALPEvent": 0.1813856525468063,
+      "logLossALPEvent": 0.5493509006967606
+    }
+  },
+  "council": {
+    "primaryScoring": "deferred-to-region-outcome-comparator",
+    "reason": "frozen prediction contains governed broad-prior regional outputs; Council final-seat outcome adapter is a separate follow-up",
+    "seatScoring": "deferred"
+  },
+  "cycleId": "vic_la_2018",
+  "districtPrimary": {
+    "meanAbsoluteError": 8.330016413758562
+  },
+  "finalPair": {
+    "accuracy": 0.8522727272727273
+  },
+  "interpretation": {
+    "completeBacktestGate": "closed",
+    "fourCycleCalibration": false,
+    "probabilityCalibrationGate": "closed",
+    "productionAuthorisation": "closed",
+    "singleCycleMetrics": true
+  },
+  "outcomeSha256": "170c685784f1e339d8e1dd95c03cabfb18727f89b8253085991ba45401ba0dc3",
+  "predictionSha256": "424552f6ad8fe362044543bb966d2642e34267c32a89b44c47ff390037a4c115",
+  "winner": {
+    "accuracy": 0.625,
+    "brierALPEvent": 0.2381945707070707,
+    "calibrationInterceptALPEvent": 0.9178079683193131,
+    "calibrationSlopeALPEvent": -0.3851550069736726,
+    "logLossALPEvent": 0.6701518723850358,
+    "reliabilityALPEvent": [
+      {
+        "bin": 6,
+        "count": 84,
+        "lower": 0.6000000000000001,
+        "meanPredicted": 0.6802579365079365,
+        "observedRate": 0.6190476190476191,
+        "upper": 0.7000000000000001
+      },
+      {
+        "bin": 7,
+        "count": 4,
+        "lower": 0.7000000000000001,
+        "meanPredicted": 0.7029166666666667,
+        "observedRate": 0.75,
+        "upper": 0.8
+      }
+    ]
+  }
+}
