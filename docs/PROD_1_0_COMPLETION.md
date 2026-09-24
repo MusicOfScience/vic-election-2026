@@ -3,7 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/repair-historical-adapter-v2`
 Base: `5cdd8dd` (PR #99 merged)
-Current batch: historical adapter v2 repair; v1 remains immutable and non-certifying.
+Current batch: PR #100 historical adapter v2 repair; v1 remains immutable and non-certifying.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 

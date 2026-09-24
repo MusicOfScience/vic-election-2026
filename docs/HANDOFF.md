@@ -12,7 +12,7 @@ Updated: 2026-09-25
 - V2 diagnostic: `model/data/validation/historical-replays/vic_la_2018-v2-diagnostic.json`, SHA `3aa4ce84…`; v1 remains the only historical score and is excluded from certification.
 - Safeguards: no current 2026 poll, candidate record, forecast output or production gate changed. Historical progress is 1/4 runnable, 1/4 predicted and 1/4 scored; certifying scored cycles remain 0.
 - Validation: thresholds remain `preregistered-thresholds-fixed`; JavaScript/build/lint/provenance/psephology and isolated Python tests pass. The score is single-cycle evidence; complete backtest and calibration remain closed.
-- Publication: PR #99 is open at https://github.com/MusicOfScience/vic-election-2026/pull/99; checks are queued. Do not merge or deploy manually.
+- Publication: PR #100 is open at https://github.com/MusicOfScience/vic-election-2026/pull/100; checks are pending. Do not merge or deploy manually.
 - Preserved user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` remain untracked and untouched.
 
 ## Remaining work and blockers
