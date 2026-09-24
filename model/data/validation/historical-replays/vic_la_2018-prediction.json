@@ -2,7 +2,7 @@
   "cycleId": "vic_la_2018",
   "informationCutoff": "2018-11-23",
   "seed": 20181123,
-  "commit": "627fd5f9d88c5ad27bdcc1dc3e56b05987b398ae",
+  "commit": "1885bd83656869364428fa2575182f70007f2bb0",
   "inputFingerprints": {
     "data/validation/historical-replay-poll-observations.json": "b856b1cef8e2f52afc3bcc7f66cc258a2284dbc8a8955f8310108229e0f346c3",
     "data/processed/vec_2014_assembly_family_primaries.csv": "d5de2156b503755293024e2ad1d84385bef535a730246505b910575bd2837475",
