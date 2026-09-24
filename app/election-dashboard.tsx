@@ -18,6 +18,7 @@ import { modelOutput } from "./model-output.generated";
 import { pollSeries } from "./poll-data.generated";
 import { releaseReadiness } from "./release-readiness.generated";
 import { sourceProvenance } from "./source-provenance.generated";
+import forecastSnapshots from "../metadata/forecast-snapshots.json";
 import { PollReviewDossier } from "./poll-review-dossier";
 import { CandidateReviewDossier } from "./candidate-review-dossier";
 
@@ -355,6 +356,7 @@ function readableDate(value: string) {
 
 export function DataSources() {
   const { summary, sources } = sourceProvenance;
+  const snapshots = [...forecastSnapshots.snapshots].sort((a, b) => b.capturedAt.localeCompare(a.capturedAt));
   return <div className="tab-stack provenance-stack">
     <section className="provenance-hero">
       <div><p className="eyebrow">Trace every important input</p><h2>What the numbers rest on.</h2><p>Official results, boundaries and enrolment are kept separate from polling, experimental predictors and display-only evidence. “We have the data” does not automatically mean “the model uses it”.</p></div>
@@ -374,6 +376,10 @@ export function DataSources() {
         <article><Database size={17} /><span>Latest model run</span><strong>{forecastDate}</strong><small>5,000 whole-election simulations</small></article>
         <article><ShieldCheck size={17} /><span>Automated monitoring</span><strong>Twice weekly</strong><small>freshness checks also run on demand</small></article>
       </div>
+    </section>
+    <section className="surface snapshot-history" aria-label="Immutable forecast snapshot history">
+      <div className="section-heading"><div><p className="eyebrow">Reproducibility ledger</p><h3>Immutable forecast snapshots</h3><p className="section-subcopy">Each snapshot records the forecast date, gate state and source fingerprints used for that release. A newer snapshot does not rewrite an older one.</p></div><Badge variant="outline">{snapshots.length} recorded</Badge></div>
+      <div className="snapshot-history-list">{snapshots.map((snapshot) => <article key={snapshot.id}><div><strong>{readableDate(snapshot.forecastAsOf)}</strong><span>Forecast as of</span></div><div><strong>{snapshot.passedGates}/{snapshot.totalGates}</strong><span>Gates passed</span></div><div><strong>{snapshot.status === "experimental-blocked" ? "Experimental" : snapshot.status}</strong><span>{readableDate(snapshot.capturedAt)} capture</span></div><code title={snapshot.commitSha}>Commit {snapshot.commitSha.slice(0, 8)}…</code></article>)}</div>
     </section>
     <section className="surface release-ledger">
       <div className="section-heading"><div><p className="eyebrow">Release gates</p><h3>Automation may check the work. It cannot overrule the evidence.</h3><p className="section-subcopy">Every update is regenerated from canonical inputs, compared by content and held behind review. A failed gate retains the last valid forecast.</p></div><Badge variant="outline">{releaseReadiness.status === "production-ready" ? "Production ready" : "Experimental · gate closed"}</Badge></div>

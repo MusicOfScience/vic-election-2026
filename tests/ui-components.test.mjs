@@ -181,6 +181,8 @@ test("ships explicit fail-closed release gates", async () => {
   assert.equal(releaseReadiness.automation.automaticProductionPublish, false);
   assert.match(html, /Automation may check the work/i);
   assert.match(html, /Experimental · gate closed/i);
+  assert.match(html, /Immutable forecast snapshots/);
+  assert.match(html, /2 recorded/);
 });
 
 test("renders the governed candidate review dossier without implying nomination", async () => {
