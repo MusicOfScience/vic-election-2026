@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "informationCutoff": "2014-11-28",
+  "status": "preparation-blocked-no-prediction-generated",
+  "selectionBasis": "pre-score evidence completeness only",
+  "polling": {
+    "automatedGatePassingCases": 3,
+    "approvedReplayObservations": 0,
+    "independentFamiliesApproved": 0,
+    "pendingOwnerReview": "metadata/historical-poll-reuse-review-2014.json",
+    "fixedRule": {"minimumObservations": 3, "minimumIndependentFamilies": 2},
+    "secondFamilyStatus": "Essential and Newspoll bounded checks remain methodologically incomplete; no second family is promoted",
+    "secondFamilyAssessment": "metadata/historical-poll-2014-second-family-assessment.json"
+  },
+  "localAssembly": {
+    "priorFamilyBaseline": "model/data/processed/vec_2010_assembly_family_primaries.csv",
+    "priorFamilyBaselineAvailable": true,
+    "translationSurface": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
+    "translationSurfaceAvailable": false,
+    "targetOutcomeTransition": "model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv",
+    "targetOutcomeTransitionRole": "scoring-only-forbidden-in-prediction",
+    "predictionSafeTppBaseline": null,
+    "status": "blocked-until-pre-cutoff-geography-and-baseline-provenance-are-established"
+  },
+  "ballotContest": {
+    "finalOutcomeRowsAvailable": true,
+    "cutoffSafeCandidateAvailability": false,
+    "status": "blocked; final outcome pages are not proof of pre-cutoff candidate availability"
+  },
+  "council": {
+    "priorEvidence": "model/data/processed/vec_2010_council_candidate_primaries.csv",
+    "priorEvidenceAvailable": true,
+    "regionContinuityAudit": null,
+    "targetOutcomeUse": "forbidden",
+    "status": "blocked-until-2010-to-2014-region-continuity-is-audited"
+  },
+  "preferencePrior": {"status": "pass-with-broad-fallback", "targetOutcomeUse": "forbidden"},
+  "predictionGenerated": false,
+  "targetOutcomeLoaded": false,
+  "current2026ForecastImpact": false
+}

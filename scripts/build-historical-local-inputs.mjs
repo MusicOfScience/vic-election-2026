@@ -4,6 +4,12 @@ import { resolve } from "node:path";
 const root = resolve(new URL("..", import.meta.url).pathname);
 
 const CYCLE_REQUIREMENTS = {
+  vic_la_2014: {
+    cutoff: "2014-11-28",
+    baselinePath: "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
+    forbiddenPaths: ["model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"],
+    baselineDescription: "2010 Assembly family baseline translated through a cutoff-safe 2014 geography surface",
+  },
   vic_la_2018: {
     cutoff: "2018-11-23",
     baselinePath: "model/data/processed/vec_2014_assembly_family_primaries.csv",
