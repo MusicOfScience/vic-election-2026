@@ -82,6 +82,33 @@ def eligible_pre_cutoff_records(records: Iterable[Mapping[str, Any]], cutoff: st
     return eligible
 
 
+def _score_prediction(prediction: Mapping[str, Any], outcomes: Iterable[Mapping[str, Any]]) -> dict[str, Any]:
+    """Score a frozen binary prediction against separately loaded outcomes."""
+    probabilities = prediction.get("probabilities")
+    observed = [record.get("outcome") for record in outcomes]
+    if probabilities is None or not observed or any(value is None for value in observed):
+        raise ReplayContractError("scoring requires prediction probabilities and outcome values")
+    if len(probabilities) != len(observed):
+        raise ReplayContractError("prediction probabilities and scoring outcomes must have equal length")
+    # Keep NumPy-dependent scoring out of the blocked/minimal CLI path.
+    from .validation_metrics import (
+        brier_score,
+        calibration_slope_intercept,
+        log_loss,
+        reliability_bins,
+    )
+
+    slope, intercept = calibration_slope_intercept(probabilities, observed)
+    return {
+        "brierScore": brier_score(probabilities, observed),
+        "logLoss": log_loss(probabilities, observed),
+        "reliabilityCurve": reliability_bins(probabilities, observed),
+        "calibrationSlope": slope,
+        "calibrationIntercept": intercept,
+        "scoringOutcomeCount": len(observed),
+    }
+
+
 def run_historical_replay(
     root: str | Path,
     cycle_id: str,
@@ -133,7 +160,7 @@ def run_historical_replay(
     prediction = dict(forecast_runner(root_path, cycle, seed=seed, preference_prior=preference_prior))
     if not prediction:
         raise ReplayContractError("forecast runner returned an empty prediction")
-    metrics = {"scoringPending": True}
+    metrics = _score_prediction(prediction, outcomes)
     return ReplayResult(cycle_id, "scored", cutoff, seed, prediction=prediction, metrics=metrics)
 
 

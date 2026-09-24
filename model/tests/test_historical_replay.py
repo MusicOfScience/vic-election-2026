@@ -4,6 +4,7 @@ import pytest
 
 from vicforecast.historical_replay import (
     ReplayContractError,
+    _score_prediction,
     eligible_pre_cutoff_records,
     run_historical_replay,
 )
@@ -41,3 +42,13 @@ def test_missing_availability_date_cannot_prove_cutoff_eligibility():
 def test_outcomes_cannot_enter_prediction_phase():
     with pytest.raises(ReplayContractError, match="before prediction is frozen"):
         run_historical_replay(ROOT, "vic_la_2022", outcomes=[{"district": "Example"}])
+
+
+def test_scoring_requires_frozen_probabilities_and_outcomes():
+    with pytest.raises(ReplayContractError, match="scoring requires"):
+        _score_prediction({}, [{"outcome": 1}])
+
+
+def test_scoring_rejects_length_mismatch_before_metric_import():
+    with pytest.raises(ReplayContractError, match="equal length"):
+        _score_prediction({"probabilities": [0.5, 0.6]}, [{"outcome": 1}])
