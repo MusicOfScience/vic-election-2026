@@ -167,16 +167,7 @@ def run_historical_replay(
     if not config.get("replayExecutable", False):
         raise ReplayContractError("historical replay is not marked executable")
     if forecast_runner is None and cycle_id == "vic_la_2018":
-        from .historical_forecast import run_historical_2018_forecast, freeze_prediction
-        prediction = run_historical_2018_forecast(root_path, seed=seed)
-        inputs = ["data/validation/historical-replay-poll-observations.json", "data/processed/vec_2014_assembly_family_primaries.csv", "data/processed/vec_2014_council_candidate_primaries.csv"]
-        frozen = freeze_prediction(root_path, prediction, inputs)
-        prediction = dict(prediction); prediction["predictionSha256"] = frozen["predictionSha256"]; prediction["predictionFrozen"] = True
-        outcomes = _load_2018_outcomes(root_path)
-        probabilities = [row["winProbabilities"]["ALP"] for row in prediction["assemblyDistricts"]]
-        score = _score_prediction({"probabilities": probabilities}, outcomes)
-        score["comparators"] = {"uniformSwing": "pending shared comparator implementation", "pollingOnly": "same frozen polling state; district local term omitted"}
-        return ReplayResult(cycle_id, "scored", cutoff, seed, prediction=prediction, metrics=score)
+        raise ReplayContractError("2018 v1 prediction is immutable; use the explicit versioned diagnostic or frozen scorer")
     if forecast_runner is None:
         raise ReplayContractError("runnable cycle requires an explicit forecast runner")
     if outcomes is None:

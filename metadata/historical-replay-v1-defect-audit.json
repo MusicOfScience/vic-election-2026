@@ -1,0 +1,12 @@
+{
+  "modelVersion": "historical_replay_v1",
+  "status": "scored-implementation-defect-discovered",
+  "predictionSha256": "424552f6ad8fe362044543bb966d2642e34267c32a89b44c47ff390037a4c115",
+  "scoreSha256": "fe6734e265e7bef0aa4be63c8dcdf4ca063b2fa33597f799852d99d7c22fbf81",
+  "defects": [
+    "Historical Coalition, Greens and Other/Independent labels were not mapped to LIB_NAT, GRN and OTH_IND, so local vectors collapsed toward a common composition.",
+    "Assembly seat means summed district wins across simulations rather than averaging per-simulation chamber vectors.",
+    "Council output used a deterministic top-two 3/2 assignment rather than simulated cycle-aware count distributions."
+  ],
+  "certification": "The score is valid evidence of the code that ran, but is non-certifying for the intended complete seat-level architecture. It must not be relabelled as a corrected-model result."
+}

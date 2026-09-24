@@ -1,0 +1,16 @@
+{
+  "modelVersion": "historical_replay_v2",
+  "status": "implementation-frozen-post-hoc-diagnostic",
+  "v1PredictionPath": "model/data/validation/historical-replays/vic_la_2018-prediction.json",
+  "v1PredictionSha256": "424552f6ad8fe362044543bb966d2642e34267c32a89b44c47ff390037a4c115",
+  "v1ScorePath": "model/data/validation/historical-replays/vic_la_2018-score.json",
+  "v1ScoreRemainsImmutable": true,
+  "configuration": {"familyMapping": "metadata/historical-party-family-mapping.json", "parityAudit": "metadata/historical-replay-v2-parity-audit.json", "cycle": "vic_la_2018", "seed": 20181123, "simulations": 1200},
+  "fingerprints": {
+    "metadata/historical-party-family-mapping.json": "1fa9fc59b90245d100a65372f2b27e015da1580250e594df5c63e2a2b316e30c",
+    "metadata/historical-replay-v2-parity-audit.json": "247d7eca5e86d511b72cf531fa801c0b8d9387e58f68918cf056ef1084e6e151",
+    "model/src/vicforecast/historical_forecast.py": "6db3a243c9562d239d603933b987b2484a12be005070b7ba1ebadff9856dc72f",
+    "model/src/vicforecast/historical_families.py": "ac4093cfa73461d6dbc823b8ce47a606689556e9dcdfee17207391a11154a2c8"
+  },
+  "certificationRule": "v2 2018 is post-hoc and non-certifying; select the next certifying cycle before viewing its score"
+}
