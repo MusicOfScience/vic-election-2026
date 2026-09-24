@@ -299,11 +299,20 @@
           "finding": "The VEC 2014 candidate information records party nominations closing 13 November 2014 and non-party nominations closing 14 November 2014; late nominations could not be accepted.",
           "availabilityUse": "timing-framework-only",
           "limitation": "This establishes the nomination timing framework but is not an archived candidate-list capture and does not prove candidate-specific acceptance or publication timestamps."
+        },
+        {
+          "url": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+          "sha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+          "retrievedAt": "2026-09-24",
+          "scope": "vic_la_2010",
+          "finding": "The VEC 2010 election report records party nominations closing 11 November 2010 and other candidates’ nominations closing 12 November 2010; its Appendix 14 lists the election candidates.",
+          "availabilityUse": "timing-framework-and-outcome-report-only",
+          "limitation": "This is a post-election report and cannot prove that the Appendix 14 identities or incumbent states were publicly available by the 26 November 2010 information cutoff."
         }
       ],
       "limitations": [
         "The result pages prove the final ballot, but not when every identity became available before each frozen cutoff.",
-        "The VEC 2014, 2018 and 2022 handbooks establish nomination and ballot-publication timing frameworks, but candidate-specific acceptance and archived publication timing remain unresolved and the component stays partial.",
+        "The VEC 2010, 2014, 2018 and 2022 material establishes nomination and ballot-publication timing frameworks, but candidate-specific acceptance and archived publication timing remain unresolved and the component stays partial.",
         "Narracan's supplementary slate and outcome postdate the 2022 cutoff and remain excluded from that cycle's prediction and score."
       ],
       "needed": "Cutoff-compliant slate timing plus incumbent/challenger status as known at each historical election."
