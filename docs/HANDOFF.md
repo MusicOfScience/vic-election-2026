@@ -4,9 +4,9 @@ Updated: 2026-09-24
 
 ## Current batch
 
-- Branch: `codex/historical-slate-2014-timing`
-- Base commit: `2aca523` (PR #85 merged; remote main verified on 24 September). This batch adds the official VEC 2014 candidate-information timing framework.
-- Completed: the VEC 2014 material is fingerprinted and records party nominations closing 13 November 2014 and non-party nominations 14 November 2014, with late nominations excluded. This narrows the 2014 slate-timing gap but does not prove archived candidate-specific publication.
+- Branch: `codex/historical-slate-2010-timing`
+- Base commit: `499aab0` (PR #86 merged; remote main verified on 24 September). This batch records the official VEC 2010 election report’s nomination timing and candidate-list limitation.
+- Completed: the VEC 2010 report is fingerprinted and records party nominations closing 11 November 2010 and other candidates’ nominations closing 12 November 2010, with Appendix 14 candidate identities. Because it is a post-election report, it does not prove pre-cutoff availability.
 - Previous batch retained: `vicforecast.historical_replay.run_historical_replay` remains fail-closed, enforces publication cutoffs and returns structured blockers for all four currently unrunnable cycles. No replay or gate is opened.
 - Safeguards: RedBridge remains quarantined and model-ineligible pending explicit owner review; no poll rows, forecast outputs, candidate data, historical outcomes or authorisation gates changed. Runnable historical cycles remain 0/4.
 - Validation: `npm run validation:evidence`, JSON parsing and `git diff --check` passed. Forecast outputs and readiness gates are unchanged.
@@ -20,4 +20,4 @@ Updated: 2026-09-24
 - Newer model-eligible polling is still needed for freshness. Do not advance registry dates without complete evidence.
 - Ballot availability, alias-aware incumbency, final-pair and preference evidence remain prerequisites for leakage-safe complete-model replay and calibration. Keep Narracan's January 2023 contest separate.
 
-Exact next action: commit this focused evidence batch, run the required checks, and publish one reviewable PR. Then locate archived candidate-list captures or equivalent primary records for 2014/2018/2022 candidate-specific timing; RedBridge owner acceptance remains a separate decision-dependent blocker.
+Exact next action: commit this focused evidence batch, run the required checks, and publish one reviewable PR. The timing-framework pass now covers all four cycles; next locate archived candidate-list captures or equivalent primary records proving candidate-specific timing, while RedBridge owner acceptance remains a separate decision-dependent blocker.
