@@ -19,6 +19,7 @@ import { pollSeries } from "./poll-data.generated";
 import { releaseReadiness } from "./release-readiness.generated";
 import { sourceProvenance } from "./source-provenance.generated";
 import forecastSnapshots from "../metadata/forecast-snapshots.json";
+import historicalReplayConfig from "../model/config/historical-validation-cycles.json";
 import { PollReviewDossier } from "./poll-review-dossier";
 import { CandidateReviewDossier } from "./candidate-review-dossier";
 
@@ -357,6 +358,7 @@ function readableDate(value: string) {
 export function DataSources() {
   const { summary, sources } = sourceProvenance;
   const snapshots = [...forecastSnapshots.snapshots].sort((a, b) => b.capturedAt.localeCompare(a.capturedAt));
+  const replayCycles = historicalReplayConfig.cycles;
   return <div className="tab-stack provenance-stack">
     <section className="provenance-hero">
       <div><p className="eyebrow">Trace every important input</p><h2>What the numbers rest on.</h2><p>Official results, boundaries and enrolment are kept separate from polling, experimental predictors and display-only evidence. “We have the data” does not automatically mean “the model uses it”.</p></div>
@@ -381,6 +383,10 @@ export function DataSources() {
     <section className="surface snapshot-history" aria-label="Immutable forecast snapshot history">
       <div className="section-heading"><div><p className="eyebrow">Reproducibility ledger</p><h3>Immutable forecast snapshots</h3><p className="section-subcopy">Each snapshot records the forecast date, gate state and source fingerprints used for that release. A newer snapshot does not rewrite an older one.</p></div><Badge variant="outline">{snapshots.length} recorded</Badge></div>
       <div className="snapshot-history-list">{snapshots.map((snapshot) => <article key={snapshot.id}><div><strong>{readableDate(snapshot.forecastAsOf)}</strong><span>Forecast as of</span></div><div><strong>{snapshot.passedGates}/{snapshot.totalGates}</strong><span>Gates passed</span></div><div><strong>{snapshot.status === "experimental-blocked" ? "Experimental" : snapshot.status}</strong><span>{readableDate(snapshot.capturedAt)} capture</span></div><code title={snapshot.commitSha}>Commit {snapshot.commitSha.slice(0, 8)}…</code></article>)}</div>
+    </section>
+    <section className="surface replay-readiness" aria-label="Historical replay readiness">
+      <div className="section-heading"><div><p className="eyebrow">Validation engine</p><h3>Historical replay readiness</h3><p className="section-subcopy">These cycle specifications are guarded and leakage-safe, but remain closed until the missing pre-cutoff evidence is reconstructed.</p></div><Badge variant="outline">{replayCycles.filter((cycle) => cycle.runnable).length}/{replayCycles.length} cycles runnable</Badge></div>
+      <div className="replay-cycle-list">{replayCycles.map((cycle) => <article key={cycle.id}><div><strong>{cycle.id.replace("vic_la_", "Victorian ")}</strong><span>Information cutoff {readableDate(cycle.informationCutoff)}</span></div><span className="replay-status">Not runnable</span><ul>{cycle.blockedBy.map((blocker) => <li key={blocker}>{blocker.replaceAll("-", " ")}</li>)}</ul></article>)}</div>
     </section>
     <section className="surface release-ledger">
       <div className="section-heading"><div><p className="eyebrow">Release gates</p><h3>Automation may check the work. It cannot overrule the evidence.</h3><p className="section-subcopy">Every update is regenerated from canonical inputs, compared by content and held behind review. A failed gate retains the last valid forecast.</p></div><Badge variant="outline">{releaseReadiness.status === "production-ready" ? "Production ready" : "Experimental · gate closed"}</Badge></div>
