@@ -183,6 +183,8 @@ test("ships explicit fail-closed release gates", async () => {
   assert.match(html, /Experimental · gate closed/i);
   assert.match(html, /Immutable forecast snapshots/);
   assert.match(html, /2 recorded/);
+  assert.match(html, /Historical VEC results are available—but they are outcomes/);
+  assert.match(html, /Narracan supplementary result stays outside the November 2022 cycle/);
 });
 
 test("renders the governed candidate review dossier without implying nomination", async () => {
