@@ -9,7 +9,7 @@
       "simulations": 1200,
       "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
       "pollInput": "model/data/validation/historical-replay-2014-poll-observations.json",
-      "localInput": "model/data/validation/historical-replay-2014-assembly-notional-baseline.csv",
+      "localInput": "model/data/validation/historical-replay-2014-local-inputs.csv",
       "requiredLocalTranslation": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
       "councilInput": "model/data/validation/historical-replay-2014-council-prior.csv",
       "councilRegions": 8,
@@ -18,7 +18,9 @@
       "ballotAvailability": "model/data/validation/historical-replay-2014-ballot-mask.csv",
       "preferencePrior": "broad-fallback-v2",
       "councilRules": "vic-2014-five-seat-stv",
-      "predictionStatus": "not-frozen-input-substrate-incomplete"
+      "predictionStatus": "held-out-certifying-prediction-frozen",
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2014-v2-prediction.json",
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2014-v2-comparators.json"
     },
     "vic_la_2018": {
       "electionDate": "2018-11-24",

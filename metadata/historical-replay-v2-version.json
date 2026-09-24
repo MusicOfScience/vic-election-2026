@@ -1,6 +1,8 @@
 {
   "modelVersion": "historical_replay_v2",
-  "status": "implementation-frozen-post-hoc-diagnostic",
+  "status": "implementation-frozen-with-certifying-2014-and-2022-holdouts",
+  "certifyingPredictionPaths": ["model/data/validation/historical-replays/vic_la_2014-v2-prediction.json", "model/data/validation/historical-replays/vic_la_2022-v2-prediction.json"],
+  "certifyingScoresRemainSeparate": true,
   "v1PredictionPath": "model/data/validation/historical-replays/vic_la_2018-prediction.json",
   "v1PredictionSha256": "424552f6ad8fe362044543bb966d2642e34267c32a89b44c47ff390037a4c115",
   "v1ScorePath": "model/data/validation/historical-replays/vic_la_2018-score.json",

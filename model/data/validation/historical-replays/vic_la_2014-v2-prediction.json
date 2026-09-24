@@ -1,0 +1,1842 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "historical_replay_v2",
+  "cycleId": "vic_la_2014",
+  "informationCutoff": "2014-11-28",
+  "seed": 20141128,
+  "simulations": 1200,
+  "commit": "8bc89cc2a7c6a1dfa70c1510e9854946d71199a5",
+  "inputFingerprints": {
+    "model/data/validation/historical-replay-2014-poll-observations.json": "53b0758eaa02b9319118c554507a34ec7095cf76d6746a0770ec7e0b6d29f80f",
+    "model/data/validation/historical-replay-2014-local-inputs.csv": "5aab7e9d8998674770845b41720f7b4219967d194cf99eaf8c012aba01b20f64",
+    "model/data/processed/historical_2014_crosswalk_core_features_long.csv": "2b2a1612c631eba1a7a782f9147e90745d1d8fdf1c3a13bd8ebd7e276a4f0398",
+    "model/data/validation/historical-replay-2014-council-prior.csv": "b04baf24b80c3c9344d0f697e12a9a0ff51f09a24d83299e1dd0482afa76e7a1",
+    "model/data/validation/historical-replay-2014-ballot-mask.csv": "631565592105e06a126fe009784a2949065eda12f98cdc59bba3f0cbb4b2b240",
+    "metadata/historical-replay-v2-cycle-specs.json": "8e8e8677c5e1319166c934a49323ea9f0b41f3484663f399cae5ae3b0a9bc4f7"
+  },
+  "forbiddenDependencies": [
+    "model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv",
+    "2014 Victorian election outcomes",
+    "model/data/processed/vec_2014_assembly_final_pairs.csv"
+  ],
+  "targetOutcomeLoaded": false,
+  "predictionSha256": "7621cd120c9efdd7f891d0d69fbd711b8d5316af632547df6035e3ea096b38b0",
+  "prediction": {
+    "modelVersion": "historical_replay_v2",
+    "cycleId": "vic_la_2014",
+    "informationCutoff": "2014-11-28",
+    "seed": 20141128,
+    "activeFamilies": [
+      "ALP",
+      "LIB_NAT",
+      "GRN",
+      "OTH_IND"
+    ],
+    "simulations": 1200,
+    "pollObservationState": {
+      "buckets": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
+      "unreportedFamilies": [],
+      "residualDecomposition": "none"
+    },
+    "statewidePrimaryEstimates": {
+      "ALP": 34.963510511943646,
+      "LIB_NAT": 37.69852320926532,
+      "GRN": 18.247785035065185,
+      "OTH_IND": 9.090181243725851
+    },
+    "assemblyDistricts": [
+      {
+        "districtId": "albert-park",
+        "districtName": "Albert Park",
+        "primaryEstimates": {
+          "ALP": 30.979465092637685,
+          "LIB_NAT": 34.05157559135366,
+          "GRN": 22.744453849710947,
+          "OTH_IND": 12.2245054662976
+        },
+        "winProbabilities": {
+          "ALP": 0.2575,
+          "LIB_NAT": 0.7425,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7316666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "altona",
+        "districtName": "Altona",
+        "primaryEstimates": {
+          "ALP": 42.679675211789956,
+          "LIB_NAT": 32.46998907115218,
+          "GRN": 16.96236992777991,
+          "OTH_IND": 7.887965789277927
+        },
+        "winProbabilities": {
+          "ALP": 0.9733333333333334,
+          "LIB_NAT": 0.02666666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9733333333333334,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "bass",
+        "districtName": "Bass",
+        "primaryEstimates": {
+          "ALP": 31.765699126969434,
+          "LIB_NAT": 44.04042596716173,
+          "GRN": 18.062518898569692,
+          "OTH_IND": 6.131356007299016
+        },
+        "winProbabilities": {
+          "ALP": 0.009166666666666667,
+          "LIB_NAT": 0.9908333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9908333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "bayswater",
+        "districtName": "Bayswater",
+        "primaryEstimates": {
+          "ALP": 32.23979817700221,
+          "LIB_NAT": 42.26648517037962,
+          "GRN": 15.80488296696663,
+          "OTH_IND": 9.688833685651575
+        },
+        "winProbabilities": {
+          "ALP": 0.025833333333333333,
+          "LIB_NAT": 0.9741666666666666,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9741666666666666,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "bellarine",
+        "districtName": "Bellarine",
+        "primaryEstimates": {
+          "ALP": 37.98355159327264,
+          "LIB_NAT": 37.553726745342786,
+          "GRN": 14.855565634093898,
+          "OTH_IND": 9.6071560272906
+        },
+        "winProbabilities": {
+          "ALP": 0.545,
+          "LIB_NAT": 0.455,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.545,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "benambra",
+        "districtName": "Benambra",
+        "primaryEstimates": {
+          "ALP": 27.658046213677533,
+          "LIB_NAT": 43.28229436772503,
+          "GRN": 18.083492315309087,
+          "OTH_IND": 10.976167103288349
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9983333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "bendigo-east",
+        "districtName": "Bendigo East",
+        "primaryEstimates": {
+          "ALP": 39.59914207068798,
+          "LIB_NAT": 36.93049220152994,
+          "GRN": 13.258274671027253,
+          "OTH_IND": 10.212091056754847
+        },
+        "winProbabilities": {
+          "ALP": 0.6916666666666667,
+          "LIB_NAT": 0.30833333333333335,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.6916666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "bendigo-west",
+        "districtName": "Bendigo West",
+        "primaryEstimates": {
+          "ALP": 36.55119558947526,
+          "LIB_NAT": 36.4003334963464,
+          "GRN": 17.556142124213217,
+          "OTH_IND": 9.492328789965072
+        },
+        "winProbabilities": {
+          "ALP": 0.5066666666666667,
+          "LIB_NAT": 0.49333333333333335,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.5066666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "bentleigh",
+        "districtName": "Bentleigh",
+        "primaryEstimates": {
+          "ALP": 37.24671840360651,
+          "LIB_NAT": 39.42784177374936,
+          "GRN": 17.297957567306653,
+          "OTH_IND": 6.02748225533745
+        },
+        "winProbabilities": {
+          "ALP": 0.3625,
+          "LIB_NAT": 0.6375,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.6375,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "box-hill",
+        "districtName": "Box Hill",
+        "primaryEstimates": {
+          "ALP": 29.718575357992794,
+          "LIB_NAT": 44.97272477391795,
+          "GRN": 20.889887841832884,
+          "OTH_IND": 4.418812026256509
+        },
+        "winProbabilities": {
+          "ALP": 0.0016666666666666668,
+          "LIB_NAT": 0.9983333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.99,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "brighton",
+        "districtName": "Brighton",
+        "primaryEstimates": {
+          "ALP": 25.71599760322944,
+          "LIB_NAT": 47.06131678478539,
+          "GRN": 22.587148979362475,
+          "OTH_IND": 4.635536632622811
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.8083333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "broadmeadows",
+        "districtName": "Broadmeadows",
+        "primaryEstimates": {
+          "ALP": 48.834608901423024,
+          "LIB_NAT": 28.71777555805165,
+          "GRN": 14.939167733969203,
+          "OTH_IND": 7.508447806556112
+        },
+        "winProbabilities": {
+          "ALP": 0.9991666666666666,
+          "LIB_NAT": 0.0008333333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9991666666666666,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "brunswick",
+        "districtName": "Brunswick",
+        "primaryEstimates": {
+          "ALP": 34.18282104236606,
+          "LIB_NAT": 21.715256352753894,
+          "GRN": 30.198507204352442,
+          "OTH_IND": 13.903415400527521
+        },
+        "winProbabilities": {
+          "ALP": 0.7933333333333333,
+          "LIB_NAT": 0.0,
+          "GRN": 0.20666666666666667,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-GRN",
+        "finalPairProbability": 0.7783333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "bulleen",
+        "districtName": "Bulleen",
+        "primaryEstimates": {
+          "ALP": 30.67202994977627,
+          "LIB_NAT": 45.80669138619079,
+          "GRN": 16.014453925797977,
+          "OTH_IND": 7.506824738234988
+        },
+        "winProbabilities": {
+          "ALP": 0.0008333333333333334,
+          "LIB_NAT": 0.9991666666666666,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9991666666666666,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "bundoora",
+        "districtName": "Bundoora",
+        "primaryEstimates": {
+          "ALP": 40.17244969526813,
+          "LIB_NAT": 33.85392764373128,
+          "GRN": 16.91181112874148,
+          "OTH_IND": 9.061811532259096
+        },
+        "winProbabilities": {
+          "ALP": 0.8908333333333334,
+          "LIB_NAT": 0.10916666666666666,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.8908333333333334,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "buninyong",
+        "districtName": "Buninyong",
+        "primaryEstimates": {
+          "ALP": 34.810348753769595,
+          "LIB_NAT": 37.99212008821078,
+          "GRN": 17.93704812807094,
+          "OTH_IND": 9.260483029948665
+        },
+        "winProbabilities": {
+          "ALP": 0.26416666666666666,
+          "LIB_NAT": 0.7358333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7358333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "burwood",
+        "districtName": "Burwood",
+        "primaryEstimates": {
+          "ALP": 33.481744724417055,
+          "LIB_NAT": 40.48934251330438,
+          "GRN": 18.529281296461882,
+          "OTH_IND": 7.499631465816703
+        },
+        "winProbabilities": {
+          "ALP": 0.09,
+          "LIB_NAT": 0.91,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.91,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "carrum",
+        "districtName": "Carrum",
+        "primaryEstimates": {
+          "ALP": 36.3118368766221,
+          "LIB_NAT": 38.9506819337647,
+          "GRN": 16.58681367025821,
+          "OTH_IND": 8.150667519355014
+        },
+        "winProbabilities": {
+          "ALP": 0.30833333333333335,
+          "LIB_NAT": 0.6916666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.6916666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "caulfield",
+        "districtName": "Caulfield",
+        "primaryEstimates": {
+          "ALP": 28.130645180920684,
+          "LIB_NAT": 44.42569631927966,
+          "GRN": 22.1575632645649,
+          "OTH_IND": 5.286095235234697
+        },
+        "winProbabilities": {
+          "ALP": 0.0008333333333333334,
+          "LIB_NAT": 0.9991666666666666,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9533333333333334,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "clarinda",
+        "districtName": "Clarinda",
+        "primaryEstimates": {
+          "ALP": 34.947168610953824,
+          "LIB_NAT": 37.93032051249281,
+          "GRN": 17.862376275380264,
+          "OTH_IND": 9.260134601173158
+        },
+        "winProbabilities": {
+          "ALP": 0.2841666666666667,
+          "LIB_NAT": 0.7158333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7158333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "cranbourne",
+        "districtName": "Cranbourne",
+        "primaryEstimates": {
+          "ALP": 38.42367495104184,
+          "LIB_NAT": 35.77697535387797,
+          "GRN": 15.270783762427104,
+          "OTH_IND": 10.528565932653052
+        },
+        "winProbabilities": {
+          "ALP": 0.6958333333333333,
+          "LIB_NAT": 0.30416666666666664,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.6958333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "croydon",
+        "districtName": "Croydon",
+        "primaryEstimates": {
+          "ALP": 34.8797507622439,
+          "LIB_NAT": 37.937987121661635,
+          "GRN": 17.898638113621,
+          "OTH_IND": 9.283624002473516
+        },
+        "winProbabilities": {
+          "ALP": 0.27666666666666667,
+          "LIB_NAT": 0.7233333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7233333333333334,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "dandenong",
+        "districtName": "Dandenong",
+        "primaryEstimates": {
+          "ALP": 42.30656981262986,
+          "LIB_NAT": 30.28523593877937,
+          "GRN": 15.783695476147724,
+          "OTH_IND": 11.62449877244308
+        },
+        "winProbabilities": {
+          "ALP": 0.9916666666666667,
+          "LIB_NAT": 0.008333333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9916666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "eildon",
+        "districtName": "Eildon",
+        "primaryEstimates": {
+          "ALP": 34.797893696954254,
+          "LIB_NAT": 38.01385392254063,
+          "GRN": 17.904605644463118,
+          "OTH_IND": 9.283646736041996
+        },
+        "winProbabilities": {
+          "ALP": 0.24416666666666667,
+          "LIB_NAT": 0.7558333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7558333333333334,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "eltham",
+        "districtName": "Eltham",
+        "primaryEstimates": {
+          "ALP": 36.45891954247425,
+          "LIB_NAT": 37.979482987392146,
+          "GRN": 19.72752657573242,
+          "OTH_IND": 5.834070894401116
+        },
+        "winProbabilities": {
+          "ALP": 0.38333333333333336,
+          "LIB_NAT": 0.6166666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.6166666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "essendon",
+        "districtName": "Essendon",
+        "primaryEstimates": {
+          "ALP": 34.42892050045067,
+          "LIB_NAT": 33.404040957777866,
+          "GRN": 21.603542047011686,
+          "OTH_IND": 10.563496494759692
+        },
+        "winProbabilities": {
+          "ALP": 0.58,
+          "LIB_NAT": 0.42,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.5775,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "euroa",
+        "districtName": "Euroa",
+        "primaryEstimates": {
+          "ALP": 34.793835501633566,
+          "LIB_NAT": 37.987903200136216,
+          "GRN": 17.9457390204308,
+          "OTH_IND": 9.272522277799341
+        },
+        "winProbabilities": {
+          "ALP": 0.25,
+          "LIB_NAT": 0.75,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.75,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "evelyn",
+        "districtName": "Evelyn",
+        "primaryEstimates": {
+          "ALP": 32.05066449028607,
+          "LIB_NAT": 44.50443113413695,
+          "GRN": 15.018357416394569,
+          "OTH_IND": 8.426546959182456
+        },
+        "winProbabilities": {
+          "ALP": 0.01,
+          "LIB_NAT": 0.99,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.99,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "ferntree-gully",
+        "districtName": "Ferntree Gully",
+        "primaryEstimates": {
+          "ALP": 32.03355660012246,
+          "LIB_NAT": 44.06437133804768,
+          "GRN": 14.413222086713958,
+          "OTH_IND": 9.488849975116027
+        },
+        "winProbabilities": {
+          "ALP": 0.014166666666666666,
+          "LIB_NAT": 0.9858333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9858333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "footscray",
+        "districtName": "Footscray",
+        "primaryEstimates": {
+          "ALP": 37.34039549994141,
+          "LIB_NAT": 27.15963986430321,
+          "GRN": 24.407611628881426,
+          "OTH_IND": 11.09235300687398
+        },
+        "winProbabilities": {
+          "ALP": 0.9866666666666667,
+          "LIB_NAT": 0.0125,
+          "GRN": 0.0008333333333333334,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.7691666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "forest-hill",
+        "districtName": "Forest Hill",
+        "primaryEstimates": {
+          "ALP": 37.154069217212296,
+          "LIB_NAT": 40.68974676303731,
+          "GRN": 14.675603728267761,
+          "OTH_IND": 7.48058029148258
+        },
+        "winProbabilities": {
+          "ALP": 0.2525,
+          "LIB_NAT": 0.7475,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7475,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "frankston",
+        "districtName": "Frankston",
+        "primaryEstimates": {
+          "ALP": 35.37105279438882,
+          "LIB_NAT": 39.24127989738542,
+          "GRN": 15.561048964559932,
+          "OTH_IND": 9.82661834366586
+        },
+        "winProbabilities": {
+          "ALP": 0.23083333333333333,
+          "LIB_NAT": 0.7691666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7691666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "geelong",
+        "districtName": "Geelong",
+        "primaryEstimates": {
+          "ALP": 37.69383395452453,
+          "LIB_NAT": 37.348376990238684,
+          "GRN": 18.198558145924984,
+          "OTH_IND": 6.759230909311746
+        },
+        "winProbabilities": {
+          "ALP": 0.5433333333333333,
+          "LIB_NAT": 0.45666666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.5433333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "gembrook",
+        "districtName": "Gembrook",
+        "primaryEstimates": {
+          "ALP": 33.51148960372219,
+          "LIB_NAT": 40.902465401632085,
+          "GRN": 16.572919671230583,
+          "OTH_IND": 9.01312532341523
+        },
+        "winProbabilities": {
+          "ALP": 0.065,
+          "LIB_NAT": 0.935,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.935,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "gippsland-east",
+        "districtName": "Gippsland East",
+        "primaryEstimates": {
+          "ALP": 16.39931460715961,
+          "LIB_NAT": 49.427597636558076,
+          "GRN": 13.21053376339817,
+          "OTH_IND": 20.962553992884107
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-OTH_IND",
+        "finalPairProbability": 0.9616666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "gippsland-south",
+        "districtName": "Gippsland South",
+        "primaryEstimates": {
+          "ALP": 25.43876904674583,
+          "LIB_NAT": 47.7562241625173,
+          "GRN": 17.397565167899074,
+          "OTH_IND": 9.407441622837712
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9966666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "hastings",
+        "districtName": "Hastings",
+        "primaryEstimates": {
+          "ALP": 32.69786586543103,
+          "LIB_NAT": 42.99069647413681,
+          "GRN": 14.900981346939437,
+          "OTH_IND": 9.410456313492691
+        },
+        "winProbabilities": {
+          "ALP": 0.025,
+          "LIB_NAT": 0.975,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.975,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "hawthorn",
+        "districtName": "Hawthorn",
+        "primaryEstimates": {
+          "ALP": 27.742687632797068,
+          "LIB_NAT": 48.08285780350259,
+          "GRN": 24.17441906345176,
+          "OTH_IND": 3.55002485586344e-05
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.835,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "ivanhoe",
+        "districtName": "Ivanhoe",
+        "primaryEstimates": {
+          "ALP": 33.98858126073461,
+          "LIB_NAT": 36.185963429393794,
+          "GRN": 23.035863700732158,
+          "OTH_IND": 6.789591609139442
+        },
+        "winProbabilities": {
+          "ALP": 0.32416666666666666,
+          "LIB_NAT": 0.6758333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.6741666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "kew",
+        "districtName": "Kew",
+        "primaryEstimates": {
+          "ALP": 29.64238227156922,
+          "LIB_NAT": 47.892717872187504,
+          "GRN": 22.464855916236647,
+          "OTH_IND": 4.394000658431587e-05
+        },
+        "winProbabilities": {
+          "ALP": 0.0008333333333333334,
+          "LIB_NAT": 0.9991666666666666,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9741666666666666,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "keysborough",
+        "districtName": "Keysborough",
+        "primaryEstimates": {
+          "ALP": 34.82169258806059,
+          "LIB_NAT": 37.98203993944412,
+          "GRN": 17.93609808786646,
+          "OTH_IND": 9.260169384628737
+        },
+        "winProbabilities": {
+          "ALP": 0.2608333333333333,
+          "LIB_NAT": 0.7391666666666666,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7391666666666666,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "kororoit",
+        "districtName": "Kororoit",
+        "primaryEstimates": {
+          "ALP": 44.700701597313646,
+          "LIB_NAT": 27.92543833351947,
+          "GRN": 16.94106329451027,
+          "OTH_IND": 10.432796774656627
+        },
+        "winProbabilities": {
+          "ALP": 0.9991666666666666,
+          "LIB_NAT": 0.0008333333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9991666666666666,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "lara",
+        "districtName": "Lara",
+        "primaryEstimates": {
+          "ALP": 43.89988564921401,
+          "LIB_NAT": 30.465942767809278,
+          "GRN": 15.92814254453842,
+          "OTH_IND": 9.706029038438164
+        },
+        "winProbabilities": {
+          "ALP": 0.9966666666666667,
+          "LIB_NAT": 0.0033333333333333335,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9966666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "lowan",
+        "districtName": "Lowan",
+        "primaryEstimates": {
+          "ALP": 28.450290369462916,
+          "LIB_NAT": 50.79378967321577,
+          "GRN": 13.073871752978935,
+          "OTH_IND": 7.6820482043423635
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 1.0,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "macedon",
+        "districtName": "Macedon",
+        "primaryEstimates": {
+          "ALP": 37.31047892542207,
+          "LIB_NAT": 37.07186357848871,
+          "GRN": 15.469190824195964,
+          "OTH_IND": 10.148466671893255
+        },
+        "winProbabilities": {
+          "ALP": 0.5241666666666667,
+          "LIB_NAT": 0.47583333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.5241666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "malvern",
+        "districtName": "Malvern",
+        "primaryEstimates": {
+          "ALP": 27.128328732487915,
+          "LIB_NAT": 50.78427229569781,
+          "GRN": 22.08736353370492,
+          "OTH_IND": 3.543810927289483e-05
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9325,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "melbourne",
+        "districtName": "Melbourne",
+        "primaryEstimates": {
+          "ALP": 33.837305874131616,
+          "LIB_NAT": 28.550679492716945,
+          "GRN": 30.9607591687226,
+          "OTH_IND": 6.651255464428774
+        },
+        "winProbabilities": {
+          "ALP": 0.69,
+          "LIB_NAT": 0.08083333333333333,
+          "GRN": 0.22916666666666666,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-GRN",
+        "finalPairProbability": 0.47833333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "melton",
+        "districtName": "Melton",
+        "primaryEstimates": {
+          "ALP": 41.82236280725559,
+          "LIB_NAT": 31.226949360124262,
+          "GRN": 15.656366483240818,
+          "OTH_IND": 11.29432134937936
+        },
+        "winProbabilities": {
+          "ALP": 0.9816666666666667,
+          "LIB_NAT": 0.018333333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9816666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "mildura",
+        "districtName": "Mildura",
+        "primaryEstimates": {
+          "ALP": 24.45503956542781,
+          "LIB_NAT": 43.74527253372742,
+          "GRN": 7.272542380720768,
+          "OTH_IND": 24.52714552012394
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.5083333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "mill-park",
+        "districtName": "Mill Park",
+        "primaryEstimates": {
+          "ALP": 48.13951207381201,
+          "LIB_NAT": 29.46727397080161,
+          "GRN": 14.585536802311477,
+          "OTH_IND": 7.8076771530748506
+        },
+        "winProbabilities": {
+          "ALP": 1.0,
+          "LIB_NAT": 0.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 1.0,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "monbulk",
+        "districtName": "Monbulk",
+        "primaryEstimates": {
+          "ALP": 34.6023761387568,
+          "LIB_NAT": 36.460113539105585,
+          "GRN": 21.038966534613788,
+          "OTH_IND": 7.8985437875238125
+        },
+        "winProbabilities": {
+          "ALP": 0.3416666666666667,
+          "LIB_NAT": 0.6583333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.6583333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "mordialloc",
+        "districtName": "Mordialloc",
+        "primaryEstimates": {
+          "ALP": 35.93839133851156,
+          "LIB_NAT": 39.17939144840687,
+          "GRN": 16.501850932943206,
+          "OTH_IND": 8.380366280138357
+        },
+        "winProbabilities": {
+          "ALP": 0.2783333333333333,
+          "LIB_NAT": 0.7216666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7216666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "mornington",
+        "districtName": "Mornington",
+        "primaryEstimates": {
+          "ALP": 29.79362911726144,
+          "LIB_NAT": 46.70970202247972,
+          "GRN": 17.98204673381048,
+          "OTH_IND": 5.514622126448512
+        },
+        "winProbabilities": {
+          "ALP": 0.0025,
+          "LIB_NAT": 0.9975,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9975,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "morwell",
+        "districtName": "Morwell",
+        "primaryEstimates": {
+          "ALP": 31.9766009784487,
+          "LIB_NAT": 44.73859225201759,
+          "GRN": 11.775199569846336,
+          "OTH_IND": 11.509607199687306
+        },
+        "winProbabilities": {
+          "ALP": 0.008333333333333333,
+          "LIB_NAT": 0.9916666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9916666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "mount-waverley",
+        "districtName": "Mount Waverley",
+        "primaryEstimates": {
+          "ALP": 34.61904368279232,
+          "LIB_NAT": 41.66625512015915,
+          "GRN": 14.841507967446052,
+          "OTH_IND": 8.873193229602446
+        },
+        "winProbabilities": {
+          "ALP": 0.10083333333333333,
+          "LIB_NAT": 0.8991666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.8991666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "mulgrave",
+        "districtName": "Mulgrave",
+        "primaryEstimates": {
+          "ALP": 42.956398719409776,
+          "LIB_NAT": 34.87790814195133,
+          "GRN": 14.37612734296254,
+          "OTH_IND": 7.789565795676351
+        },
+        "winProbabilities": {
+          "ALP": 0.9441666666666667,
+          "LIB_NAT": 0.05583333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9441666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "murray-plains",
+        "districtName": "Murray Plains",
+        "primaryEstimates": {
+          "ALP": 34.90147205938188,
+          "LIB_NAT": 37.906793876285704,
+          "GRN": 17.94504271740774,
+          "OTH_IND": 9.24669134692459
+        },
+        "winProbabilities": {
+          "ALP": 0.28,
+          "LIB_NAT": 0.72,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.72,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "narracan",
+        "districtName": "Narracan",
+        "primaryEstimates": {
+          "ALP": 31.91956899722399,
+          "LIB_NAT": 44.4736558810372,
+          "GRN": 15.025907646593794,
+          "OTH_IND": 8.580867475144967
+        },
+        "winProbabilities": {
+          "ALP": 0.01,
+          "LIB_NAT": 0.99,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.99,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "narre-warren-north",
+        "districtName": "Narre Warren North",
+        "primaryEstimates": {
+          "ALP": 38.770336198620996,
+          "LIB_NAT": 37.03210874027235,
+          "GRN": 13.951810594729963,
+          "OTH_IND": 10.245744466376786
+        },
+        "winProbabilities": {
+          "ALP": 0.6416666666666667,
+          "LIB_NAT": 0.35833333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.6416666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "narre-warren-south",
+        "districtName": "Narre Warren South",
+        "primaryEstimates": {
+          "ALP": 41.541706494175756,
+          "LIB_NAT": 35.26891589773399,
+          "GRN": 14.173106343439976,
+          "OTH_IND": 9.016271264650392
+        },
+        "winProbabilities": {
+          "ALP": 0.8733333333333333,
+          "LIB_NAT": 0.12666666666666668,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.8733333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "nepean",
+        "districtName": "Nepean",
+        "primaryEstimates": {
+          "ALP": 30.88556290786535,
+          "LIB_NAT": 46.196647884322545,
+          "GRN": 19.354924729684843,
+          "OTH_IND": 3.5628644781272674
+        },
+        "winProbabilities": {
+          "ALP": 0.0033333333333333335,
+          "LIB_NAT": 0.9966666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9958333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "niddrie",
+        "districtName": "Niddrie",
+        "primaryEstimates": {
+          "ALP": 40.12357549897898,
+          "LIB_NAT": 33.29608374257618,
+          "GRN": 14.777457226702175,
+          "OTH_IND": 11.802883531742564
+        },
+        "winProbabilities": {
+          "ALP": 0.9016666666666666,
+          "LIB_NAT": 0.09833333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9016666666666666,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "northcote",
+        "districtName": "Northcote",
+        "primaryEstimates": {
+          "ALP": 38.853687021389824,
+          "LIB_NAT": 23.35625386796209,
+          "GRN": 30.745480965420658,
+          "OTH_IND": 7.044578145227498
+        },
+        "winProbabilities": {
+          "ALP": 0.9466666666666667,
+          "LIB_NAT": 0.0,
+          "GRN": 0.05333333333333334,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-GRN",
+        "finalPairProbability": 0.9133333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "oakleigh",
+        "districtName": "Oakleigh",
+        "primaryEstimates": {
+          "ALP": 37.22694901706684,
+          "LIB_NAT": 35.361026235762004,
+          "GRN": 21.028891384683607,
+          "OTH_IND": 6.38313336248754
+        },
+        "winProbabilities": {
+          "ALP": 0.6266666666666667,
+          "LIB_NAT": 0.37333333333333335,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.6266666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "ovens-valley",
+        "districtName": "Ovens Valley",
+        "primaryEstimates": {
+          "ALP": 34.79199436539471,
+          "LIB_NAT": 37.98323096107919,
+          "GRN": 17.9693396778266,
+          "OTH_IND": 9.255434995699547
+        },
+        "winProbabilities": {
+          "ALP": 0.2633333333333333,
+          "LIB_NAT": 0.7366666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7366666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "pascoe-vale",
+        "districtName": "Pascoe Vale",
+        "primaryEstimates": {
+          "ALP": 43.882092071908865,
+          "LIB_NAT": 29.604826931820327,
+          "GRN": 22.11367557792337,
+          "OTH_IND": 4.399405418347426
+        },
+        "winProbabilities": {
+          "ALP": 0.9975,
+          "LIB_NAT": 0.0025,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9816666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "polwarth",
+        "districtName": "Polwarth",
+        "primaryEstimates": {
+          "ALP": 30.49232151923484,
+          "LIB_NAT": 43.556196669520666,
+          "GRN": 15.589044722330367,
+          "OTH_IND": 10.362437088914119
+        },
+        "winProbabilities": {
+          "ALP": 0.004166666666666667,
+          "LIB_NAT": 0.9958333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9958333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "prahran",
+        "districtName": "Prahran",
+        "primaryEstimates": {
+          "ALP": 29.918603338187815,
+          "LIB_NAT": 38.99840508437291,
+          "GRN": 24.298020843503934,
+          "OTH_IND": 6.784970733935407
+        },
+        "winProbabilities": {
+          "ALP": 0.0225,
+          "LIB_NAT": 0.9775,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9041666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "preston",
+        "districtName": "Preston",
+        "primaryEstimates": {
+          "ALP": 43.862133603115,
+          "LIB_NAT": 28.817979567348047,
+          "GRN": 26.045480005575456,
+          "OTH_IND": 1.2744068239614703
+        },
+        "winProbabilities": {
+          "ALP": 0.9991666666666666,
+          "LIB_NAT": 0.0008333333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.7783333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "richmond",
+        "districtName": "Richmond",
+        "primaryEstimates": {
+          "ALP": 34.34085647306735,
+          "LIB_NAT": 25.46613114010453,
+          "GRN": 29.001525178691278,
+          "OTH_IND": 11.19148720813687
+        },
+        "winProbabilities": {
+          "ALP": 0.8766666666666667,
+          "LIB_NAT": 0.015,
+          "GRN": 0.10833333333333334,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-GRN",
+        "finalPairProbability": 0.7125,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "ringwood",
+        "districtName": "Ringwood",
+        "primaryEstimates": {
+          "ALP": 34.906567650424236,
+          "LIB_NAT": 37.893920167309034,
+          "GRN": 17.936941298597304,
+          "OTH_IND": 9.262570883669438
+        },
+        "winProbabilities": {
+          "ALP": 0.2791666666666667,
+          "LIB_NAT": 0.7208333333333333,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7208333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "ripon",
+        "districtName": "Ripon",
+        "primaryEstimates": {
+          "ALP": 38.90990777045129,
+          "LIB_NAT": 39.62785796669701,
+          "GRN": 13.273093987493334,
+          "OTH_IND": 8.189140275358458
+        },
+        "winProbabilities": {
+          "ALP": 0.4483333333333333,
+          "LIB_NAT": 0.5516666666666666,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.5516666666666666,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "rowville",
+        "districtName": "Rowville",
+        "primaryEstimates": {
+          "ALP": 34.871065235250256,
+          "LIB_NAT": 37.946120852697476,
+          "GRN": 17.903654669656095,
+          "OTH_IND": 9.279159242396219
+        },
+        "winProbabilities": {
+          "ALP": 0.2825,
+          "LIB_NAT": 0.7175,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7175,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "sandringham",
+        "districtName": "Sandringham",
+        "primaryEstimates": {
+          "ALP": 27.166504161330707,
+          "LIB_NAT": 46.229222756705376,
+          "GRN": 22.533671067650275,
+          "OTH_IND": 4.07060201431369
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.8983333333333333,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "shepparton",
+        "districtName": "Shepparton",
+        "primaryEstimates": {
+          "ALP": 23.846058447447565,
+          "LIB_NAT": 44.488508093319666,
+          "GRN": 12.179725517757928,
+          "OTH_IND": 19.48570794147486
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9191666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "south-barwon",
+        "districtName": "South Barwon",
+        "primaryEstimates": {
+          "ALP": 34.840702428647575,
+          "LIB_NAT": 38.7114369078257,
+          "GRN": 16.581022910657815,
+          "OTH_IND": 9.86683775286887
+        },
+        "winProbabilities": {
+          "ALP": 0.22583333333333333,
+          "LIB_NAT": 0.7741666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7741666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "south-west-coast",
+        "districtName": "South-West Coast",
+        "primaryEstimates": {
+          "ALP": 28.87765871984848,
+          "LIB_NAT": 40.75945604992622,
+          "GRN": 15.419173035696174,
+          "OTH_IND": 14.943712194529162
+        },
+        "winProbabilities": {
+          "ALP": 0.0033333333333333335,
+          "LIB_NAT": 0.9966666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.9966666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "st-albans",
+        "districtName": "St Albans",
+        "primaryEstimates": {
+          "ALP": 34.74318570644138,
+          "LIB_NAT": 38.001070416173924,
+          "GRN": 17.977564427785246,
+          "OTH_IND": 9.278179449599397
+        },
+        "winProbabilities": {
+          "ALP": 0.265,
+          "LIB_NAT": 0.735,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.735,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "sunbury",
+        "districtName": "Sunbury",
+        "primaryEstimates": {
+          "ALP": 34.88778655805295,
+          "LIB_NAT": 37.90694810083026,
+          "GRN": 17.969718381552806,
+          "OTH_IND": 9.23554695956394
+        },
+        "winProbabilities": {
+          "ALP": 0.27,
+          "LIB_NAT": 0.73,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.73,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "sydenham",
+        "districtName": "Sydenham",
+        "primaryEstimates": {
+          "ALP": 34.75755297455697,
+          "LIB_NAT": 37.93226487270485,
+          "GRN": 18.00340674972692,
+          "OTH_IND": 9.306775403011255
+        },
+        "winProbabilities": {
+          "ALP": 0.2633333333333333,
+          "LIB_NAT": 0.7366666666666667,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7366666666666667,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "tarneit",
+        "districtName": "Tarneit",
+        "primaryEstimates": {
+          "ALP": 41.53483819911509,
+          "LIB_NAT": 31.83016371054805,
+          "GRN": 15.926462299521866,
+          "OTH_IND": 10.708535790815024
+        },
+        "winProbabilities": {
+          "ALP": 0.97,
+          "LIB_NAT": 0.03,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.97,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "thomastown",
+        "districtName": "Thomastown",
+        "primaryEstimates": {
+          "ALP": 47.96719842374477,
+          "LIB_NAT": 27.719911000901078,
+          "GRN": 16.790483411306838,
+          "OTH_IND": 7.522407164047356
+        },
+        "winProbabilities": {
+          "ALP": 1.0,
+          "LIB_NAT": 0.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 1.0,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "warrandyte",
+        "districtName": "Warrandyte",
+        "primaryEstimates": {
+          "ALP": 29.92836807250749,
+          "LIB_NAT": 45.13909780254382,
+          "GRN": 18.254690841264264,
+          "OTH_IND": 6.677843283684311
+        },
+        "winProbabilities": {
+          "ALP": 0.0,
+          "LIB_NAT": 1.0,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 1.0,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "wendouree",
+        "districtName": "Wendouree",
+        "primaryEstimates": {
+          "ALP": 34.89092581270461,
+          "LIB_NAT": 37.867708366273,
+          "GRN": 17.944852846685443,
+          "OTH_IND": 9.296512974337109
+        },
+        "winProbabilities": {
+          "ALP": 0.2775,
+          "LIB_NAT": 0.7225,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.7225,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "werribee",
+        "districtName": "Werribee",
+        "primaryEstimates": {
+          "ALP": 34.81177883436711,
+          "LIB_NAT": 38.035938587358665,
+          "GRN": 17.896329719817565,
+          "OTH_IND": 9.255952858456617
+        },
+        "winProbabilities": {
+          "ALP": 0.27,
+          "LIB_NAT": 0.73,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "LIB_NAT-ALP",
+        "finalPairProbability": 0.73,
+        "favouredParty": "LIB_NAT"
+      },
+      {
+        "districtId": "williamstown",
+        "districtName": "Williamstown",
+        "primaryEstimates": {
+          "ALP": 40.85579683365328,
+          "LIB_NAT": 32.37479614164175,
+          "GRN": 25.50254662502019,
+          "OTH_IND": 1.2668603996847554
+        },
+        "winProbabilities": {
+          "ALP": 0.9466666666666667,
+          "LIB_NAT": 0.05333333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9091666666666667,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "yan-yean",
+        "districtName": "Yan Yean",
+        "primaryEstimates": {
+          "ALP": 38.385193425095096,
+          "LIB_NAT": 35.88939390442526,
+          "GRN": 16.925086466135202,
+          "OTH_IND": 8.800326204344483
+        },
+        "winProbabilities": {
+          "ALP": 0.6908333333333333,
+          "LIB_NAT": 0.30916666666666665,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.6908333333333333,
+        "favouredParty": "ALP"
+      },
+      {
+        "districtId": "yuroke",
+        "districtName": "Yuroke",
+        "primaryEstimates": {
+          "ALP": 44.96233114028758,
+          "LIB_NAT": 31.60712412088006,
+          "GRN": 16.842724200997814,
+          "OTH_IND": 6.587820537834578
+        },
+        "winProbabilities": {
+          "ALP": 0.9941666666666666,
+          "LIB_NAT": 0.005833333333333334,
+          "GRN": 0.0,
+          "OTH_IND": 0.0
+        },
+        "likelyFinalPair": "ALP-LIB_NAT",
+        "finalPairProbability": 0.9941666666666666,
+        "favouredParty": "ALP"
+      }
+    ],
+    "assemblySeatSummary": {
+      "ALP": {
+        "mean": 34.64083333333333,
+        "median": 34.0,
+        "lower80": 26.0,
+        "upper80": 44.0
+      },
+      "LIB_NAT": {
+        "mean": 52.76083333333333,
+        "median": 53.0,
+        "lower80": 44.0,
+        "upper80": 62.0
+      },
+      "GRN": {
+        "mean": 0.5983333333333334,
+        "median": 0.0,
+        "lower80": 0.0,
+        "upper80": 2.0
+      },
+      "OTH_IND": {
+        "mean": 0.0,
+        "median": 0.0,
+        "lower80": 0.0,
+        "upper80": 0.0
+      }
+    },
+    "council": {
+      "regionalPollContribution": 0,
+      "uncertaintyRule": "fixed-broadening-when-regional-poll-absent",
+      "regions": [
+        {
+          "regionName": "Eastern Metropolitan",
+          "seatDistributionMean": {
+            "ALP": 1.8658333333333332,
+            "LIB_NAT": 3.1341666666666668,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        },
+        {
+          "regionName": "Eastern Victoria",
+          "seatDistributionMean": {
+            "ALP": 1.5808333333333333,
+            "LIB_NAT": 3.4191666666666665,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        },
+        {
+          "regionName": "Northern Metropolitan",
+          "seatDistributionMean": {
+            "ALP": 2.9966666666666666,
+            "LIB_NAT": 1.8291666666666666,
+            "GRN": 0.17416666666666666,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        },
+        {
+          "regionName": "Northern Victoria",
+          "seatDistributionMean": {
+            "ALP": 1.7091666666666667,
+            "LIB_NAT": 3.2908333333333335,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        },
+        {
+          "regionName": "South-Eastern Metropolitan",
+          "seatDistributionMean": {
+            "ALP": 2.4225,
+            "LIB_NAT": 2.5775,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        },
+        {
+          "regionName": "Southern Metropolitan",
+          "seatDistributionMean": {
+            "ALP": 1.465,
+            "LIB_NAT": 3.4941666666666666,
+            "GRN": 0.04083333333333333,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        },
+        {
+          "regionName": "Western Metropolitan",
+          "seatDistributionMean": {
+            "ALP": 2.9758333333333336,
+            "LIB_NAT": 2.0241666666666664,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        },
+        {
+          "regionName": "Western Victoria",
+          "seatDistributionMean": {
+            "ALP": 2.0908333333333333,
+            "LIB_NAT": 2.9091666666666667,
+            "GRN": 0.0,
+            "OTH_IND": 0.0
+          },
+          "simulations": 1200
+        }
+      ]
+    },
+    "certificationStatus": "held-out-certifying-prediction-frozen",
+    "productionCompatible": false,
+    "targetOutcomeLoaded": false
+  }
+}

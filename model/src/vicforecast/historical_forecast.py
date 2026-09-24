@@ -302,10 +302,34 @@ def _generic_assembly_inputs(root: Path, spec: dict) -> tuple[pd.DataFrame, list
         if not np.allclose(values.sum(axis=1), 1.0, atol=1e-8): raise ValueError("2022 local family shares do not reconcile")
         frame["_ballot"] = frame.ballot_active_families.fillna("").map(lambda value: set(str(value).split(";")))
         return frame, families
+    if spec["cycleId"] == "vic_la_2014":
+        frame = pd.read_csv(_cycle_path(root, spec["localInput"]))
+        if len(frame) != spec["assemblyContestCount"]:
+            raise ValueError("2014 local input does not cover all 88 districts")
+        columns = [f"local_{family}" for family in families]
+        if any(column not in frame for column in columns):
+            raise ValueError("2014 local input is missing a mapped family")
+        values = frame[columns].to_numpy(float)
+        if not np.allclose(values.sum(axis=1), 1.0, atol=1e-8):
+            raise ValueError("2014 local family shares do not reconcile")
+        frame["_ballot"] = frame.ballot_active_families.fillna("").map(lambda value: set(str(value).split(";")))
+        return frame, families
     return _historical_assembly_baseline_v2(root), families
 
 
 def _generic_council_surface(root: Path, spec: dict, families: list[str]) -> pd.DataFrame:
+    if spec["cycleId"] == "vic_la_2014":
+        frame = pd.read_csv(_cycle_path(root, spec["councilInput"]))
+        if len(frame) != spec["councilRegions"]:
+            raise ValueError("2014 Council prior does not cover eight regions")
+        result = frame[["region_name", "alp_pct", "lib_nat_pct", "grn_pct", "other_pct"]].copy()
+        result.columns = ["region_name", "ALP", "LIB_NAT", "GRN", "OTH_IND"]
+        for family in families:
+            if family not in result: result[family] = 0.0
+        values = result[families].to_numpy(float, copy=True)
+        values /= values.sum(axis=1, keepdims=True)
+        result.loc[:, families] = values
+        return result
     if spec["cycleId"] != "vic_la_2022":
         frame = pd.read_csv(_cycle_path(root, spec["councilInput"]))
         raw = frame.party_name.fillna("").str.upper()
@@ -331,6 +355,8 @@ def run_historical_forecast_v2(root: str | Path, cycle_id: str, *, seed: int | N
     local, _ = _generic_assembly_inputs(root, spec)
     if cycle_id == "vic_la_2022":
         local_values = local[[f"aec_local_{family.lower()}" for family in families]].to_numpy(float)
+    elif cycle_id == "vic_la_2014":
+        local_values = local[[f"local_{family}" for family in families]].to_numpy(float)
     else:
         local_values = local.loc[:, families].to_numpy(float)
     local_centre = local_values.mean(axis=0); rng = np.random.default_rng(seed + 1)
@@ -353,6 +379,11 @@ def run_historical_forecast_v2(root: str | Path, cycle_id: str, *, seed: int | N
                 poll /= poll.sum()
             else:
                 poll = state
+                ballot = local.iloc[district]["_ballot"] if "_ballot" in local else set(families)
+                poll = poll * np.array([1.0 if family in ballot else 0.0 for family in families])
+                if poll.sum() <= 0:
+                    raise ValueError("ballot availability removed all historical poll mass")
+                poll /= poll.sum()
             local_log = np.log(np.clip(local_vector, .002, None) / np.clip(local_centre, .002, None))
             logits = np.log(np.clip(poll, 1e-6, None)) + .55 * local_log + rng.normal(0, .09, n_families)
             primary = np.exp(logits - logits.max()); primary /= primary.sum()

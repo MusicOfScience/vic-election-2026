@@ -15,13 +15,18 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_incomplete_cycles_fail_closed_with_structured_blockers():
-    for cycle_id in ("vic_la_2010", "vic_la_2014"):
+    for cycle_id in ("vic_la_2010",):
         result = run_historical_replay(ROOT, cycle_id)
         assert result.status == "blocked"
         assert result.blockers
         assert all(blocker in {"pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"} for blocker in result.blockers)
         assert result.prediction is None
         assert result.metrics is None
+
+
+def test_2014_runnable_cycle_requires_explicit_forecast_runner():
+    with pytest.raises(ReplayContractError, match="explicit forecast runner"):
+        run_historical_replay(ROOT, "vic_la_2014")
 
 
 def test_2018_replay_execution_is_separate_from_production_compatibility():

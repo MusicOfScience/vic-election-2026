@@ -62,10 +62,10 @@
       "electionDate": "2014-11-29",
       "informationCutoff": "2014-11-28",
       "seed": 20141128,
-      "runnable": false,
-      "blockedBy": [
-        "incumbency-local-multi-party-translation"
-      ],
+      "runnable": true,
+      "blockedBy": [],
+      "certifyingPredictionFrozen": true,
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2014-v2-prediction.json",
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
         "outcomesAvailableToModel": false,

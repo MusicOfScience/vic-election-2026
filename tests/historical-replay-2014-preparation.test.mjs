@@ -8,15 +8,13 @@ import { buildApprovedHistoricalPollInput2014 } from "../scripts/apply-approved-
 
 const readJson = (path) => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), "utf8"));
 
-test("2014 is selected by pre-score completeness and remains prediction-fail-closed", () => {
+test("2014 is selected by pre-score completeness and remains outcome-isolated after freeze", () => {
   const selection = readJson("metadata/historical-replay-next-cycle-selection.json");
   const audit = readJson("metadata/historical-replay-2014-input-audit.json");
   assert.equal(selection.selectedCycle, "vic_la_2014");
   assert.match(selection.reason, /pre-score evidence completeness/i);
-  assert.equal(audit.predictionGenerated, false);
-  assert.equal(audit.targetOutcomeLoaded, false);
-  assert.equal(audit.polling.approvedReplayObservations, 4);
-  assert.equal(audit.polling.independentFamiliesApproved, 2);
+  assert.equal(audit.targetElectionOutcomesUsed, false);
+  assert.equal(audit.rows, 88);
 });
 
 test("2014 Roy Morgan cases record the explicit owner approval and promote only through the governed builder", () => {
@@ -38,8 +36,8 @@ test("2014 Roy Morgan cases record the explicit owner approval and promote only 
 
 test("the 2010-to-2014 outcome transition remains forbidden prediction input", () => {
   const audit = readJson("metadata/historical-replay-2014-input-audit.json");
-  assert.equal(audit.localAssembly.targetOutcomeTransitionRole, "scoring-only-forbidden-in-prediction");
-  assert.ok(audit.localAssembly.predictionSafeTppBaseline);
+  assert.ok(audit.forbiddenInputs.includes("model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"));
+  assert.ok(audit.notionalBaseline.path);
   const sandbox = join(tmpdir(), "vic-election-2014-local-input-test");
   mkdirSync(join(sandbox, "model/data/processed"), { recursive: true });
   writeFileSync(join(sandbox, "model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"), "district_id,alp_tpp_share_2014,alp_tpp_swing_2010_2014\nexample,50,4\n");
@@ -80,17 +78,35 @@ test("prediction-safe 2014 baseline and Council prior are complete without targe
   assert.equal(baseline.council.regions, 8);
 });
 
-test("2014 crosswalk rebuild remains fail-closed when the original raw inputs are absent", () => {
+test("2014 crosswalk rebuild is governed when restored raw inputs are present", () => {
   const audit = readJson("metadata/historical-replay-2014-crosswalk-source-audit.json");
-  assert.equal(audit.status, "blocked-original-raw-inputs-absent");
+  assert.equal(audit.status, "recovered-and-rebuilt-prediction-safe-crosswalk");
   assert.equal(audit.expectedInputs.length, 4);
-  assert.equal(audit.expectedInputs.every((input) => input.status === "missing-locally" && input.path === null && input.sha256 === null), true);
-  assert.equal(audit.duplicateIdentityCheck.status, "not-applicable-no-copies-found");
+  assert.equal(audit.expectedInputs.every((input) => input.status === "recovered-project-library-payload" && input.path && input.sha256), true);
+  assert.equal(audit.duplicateIdentityCheck.status, "verified-single-restored-payload-per-input");
   assert.equal(audit.rebuildContract.targetElectionOutcomesUsed, false);
   assert.deepEqual(audit.rebuildContract.forbiddenInputs, ["model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"]);
   const baseline = readJson("metadata/historical-replay-2014-baseline-audit.json");
-  assert.equal(baseline.assemblyFamilyTranslation.status, "blocked");
+  assert.equal(baseline.assemblyFamilyTranslation.status, "pass-prediction-safe-rebuilt");
   assert.equal(baseline.assemblyFamilyTranslation.sourceAudit, "metadata/historical-replay-2014-crosswalk-source-audit.json");
+});
+
+test("2014 certifying prediction is sealed without target outcomes", () => {
+  const prediction = readJson("model/data/validation/historical-replays/vic_la_2014-v2-prediction.json");
+  assert.equal(prediction.cycleId, "vic_la_2014");
+  assert.equal(prediction.predictionSha256, "7621cd120c9efdd7f891d0d69fbd711b8d5316af632547df6035e3ea096b38b0");
+  assert.equal(prediction.targetOutcomeLoaded, false);
+  assert.deepEqual(prediction.forbiddenDependencies.includes("2014 Victorian election outcomes"), true);
+  assert.equal(readJson("metadata/historical-replay-input-readiness.json").cycles.find((cycle) => cycle.cycleId === "vic_la_2014").certifyingPredictionFrozen, true);
+});
+
+test("2014 rebuilt crosswalk has 88 districts, seven governed features and no outcome fields", () => {
+  const rows = readFileSync(new URL("../model/data/processed/historical_2014_crosswalk_core_features_long.csv", import.meta.url), "utf8").trim().split("\n");
+  assert.equal(rows.length, 617);
+  assert.doesNotMatch(rows[0], /2014_result|swing/i);
+  assert.doesNotMatch(rows.slice(1).join("\n"), /alp_tpp_share_2014|swing|winner/i);
+  const featureIds = new Set(rows.slice(1).map((row) => row.split(",")[2]));
+  assert.deepEqual([...featureIds].sort(), ["age_18_34_share", "age_65_plus_share", "apartment_share", "mortgage_share", "owned_outright_share", "renter_share", "separate_house_share"]);
 });
 
 test("2014 ballot availability uses the cutoff-safe family mask and remains outcome-isolated", () => {
