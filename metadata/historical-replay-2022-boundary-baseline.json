@@ -1,0 +1,25 @@
+{
+  "cycleId": "vic_la_2022",
+  "artifact": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv",
+  "source": {
+    "url": "https://www.vec.vic.gov.au/-/media/4dd734d659a44a08b45d415501981cc6.pdf",
+    "sha256": "bab76889f85cf76d88048aad1a00b2478612dc208a47c41bcd189eec957fc854",
+    "title": "Methodology of estimating 2018 election results on new electoral boundaries",
+    "publisher": "Victorian Electoral Commission",
+    "publicationDate": "2022-08-05",
+    "availableByCutoff": true
+  },
+  "coverage": {
+    "targetElection": "November 2022 Victorian general election",
+    "districtRows": 87,
+    "excludedSupplementaryDistrict": "Narracan",
+    "fields": ["estimated_2018_alp_tpp_share", "estimated_2018_coalition_tpp_share"],
+    "reconciliation": "each row sums to 100 within 0.05 percentage points"
+  },
+  "limitations": [
+    "This is a two-candidate-preferred local baseline, not a complete multi-party primary vector.",
+    "It may support the ballot/boundary gate but does not by itself open the v2 incumbency/local-input gate.",
+    "The target 2022 result and the 2018-to-2022 outcome-transition artefact are not used."
+  ],
+  "status": "governed-baseline-recovered-multipart-local-input-pending"
+}

@@ -1,0 +1,29 @@
+{
+  "cycleId": "vic_la_2022",
+  "priorCycle": "vic_lc_2018",
+  "status": "blocked-region-mapping-required",
+  "priorRegions": [
+    "Eastern Metropolitan Region",
+    "Eastern Victoria Region",
+    "Northern Metropolitan Region",
+    "Northern Victoria Region",
+    "South-Eastern Metropolitan Region",
+    "Southern Metropolitan Region",
+    "Western Metropolitan Region",
+    "Western Victoria Region"
+  ],
+  "targetRegions": [
+    "Eastern Victoria Region",
+    "North-Eastern Metropolitan Region",
+    "Northern Metropolitan Region",
+    "Northern Victoria Region",
+    "South-Eastern Metropolitan Region",
+    "Southern Metropolitan Region",
+    "Western Metropolitan Region",
+    "Western Victoria Region"
+  ],
+  "directNameContinuity": false,
+  "observedChange": "Eastern Metropolitan Region is not a target 2022 region; North-Eastern Metropolitan Region is new in the target evidence inventory.",
+  "policy": "Do not treat the changed metropolitan region as a direct prior join. Require an official pre-cutoff mapping or use the governed broad regional fallback with explicit uncertainty before prediction.",
+  "targetOutcomesScoringOnly": true
+}

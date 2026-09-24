@@ -1,0 +1,10 @@
+{
+  "cycleId": "vic_la_2022",
+  "status": "baseline-recovered-multipart-local-input-still-blocked",
+  "targetGeography": {"generalElectionDistricts": 87, "excludedSupplementaryDistrict": "Narracan", "basis": "existing governed VEC general-election inventory"},
+  "redistribution": {"effectiveForElection": "2022-11-26", "districtNameJoins": "forbidden without official mapping", "requiredTreatment": "use official VEC 2018 estimates on 2022 boundaries where pre-cutoff availability is proven"},
+  "referencedArtefact": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv",
+  "availability": {"presentLocally": true, "preCutoffPublicationProven": true, "publicationDate": "2022-08-05", "sourceUrl": "https://www.vec.vic.gov.au/-/media/4dd734d659a44a08b45d415501981cc6.pdf", "sourceSha256": "bab76889f85cf76d88048aad1a00b2478612dc208a47c41bcd189eec957fc854", "coverageRows": 87, "excludedRows": ["Narracan"]},
+  "predictionPolicy": "The governed VEC artefact supplies a cutoff-safe 2018 ALP/Lib-Nat TPP baseline on the 2022 general-election geography. It does not by itself supply the multi-party local components required by v2; do not substitute 2022 outcomes, 2018 district names, or the 2018-2022 outcome-transition file.",
+  "councilRegionAudit": {"priorCycle": "vic_lc_2018", "targetCycle": "vic_lc_2022", "priorRegionEvidencePresent": true, "targetRegionEvidencePresent": true, "directContinuityAssumed": false, "status": "mapping-audit-required-before-prior-use"}
+}

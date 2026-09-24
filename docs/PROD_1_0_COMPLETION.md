@@ -3,7 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/repair-historical-adapter-v2`
 Base: `5cdd8dd` (PR #99 merged)
-Current batch: PR #100 historical adapter v2 repair; v1 remains immutable and non-certifying.
+Current batch: 2022 pre-score evidence preparation after PR #100; v1 remains immutable and non-certifying.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -35,6 +35,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before scoring. Replay progress is 1/4 runnable, 1/4 predicted and 1/4 scored; release readiness remains unchanged.
 - Focus cycle: `vic_la_2018`. V1 local-family mapping, Assembly seat aggregation and Council top-two defects are preserved as a negative implementation result. V2 uses `metadata/historical-party-family-mapping.json`, per-simulation chamber draws and a non-certifying diagnostic output.
 - V2 diagnostic artefact: `model/data/validation/historical-replays/vic_la_2018-v2-diagnostic.json` (SHA `3aa4ce84…`); comparator limitations are recorded in `metadata/historical-replay-v1-comparator-audit.json`.
+- Next certifying cycle selected before scoring: `vic_la_2022`. Two Roy Morgan cases and one RedBridge case are awaiting owner review; the official VEC 2018-on-2022-boundary TPP baseline is recovered for all 87 November-election districts, while multi-party local sufficiency remains blocked. Council audit found the 2018 Eastern Metropolitan/2022 North-Eastern Metropolitan region change and requires a governed mapping or broad fallback.
 - Verification: JavaScript, build, lint, source provenance, psephology and isolated Python validation pass; the official 2018 outcome extractor validates 88/88 districts.
 
-Exact next action: recover the smallest finite polling/local/Council evidence set for the next certifying cycle; `metadata/historical-replay-next-cycle-selection.json` records that 2010, 2014 and 2022 are currently blocked before score selection.
+Exact next action: resolve the explicit 2022 poll owner-review cases, then establish governed multi-party local sufficiency and Council region mapping before freezing a 2022 v2 prediction.
