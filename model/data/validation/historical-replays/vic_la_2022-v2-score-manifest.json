@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2022",
+  "modelVersion": "historical_replay_v2",
+  "predictionSha256": "f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0",
+  "comparatorBundleSha256": "cd04d597a9016f714f0c1e98d42c4ca66a91ce53a9c72283cb04c1abaea4a748",
+  "predictionPath": "model/data/validation/historical-replays/vic_la_2022-v2-prediction.json",
+  "comparatorBundlePath": "model/data/validation/historical-replays/vic_la_2022-v2-comparators-v2.json",
+  "assemblyOutcomePath": "model/data/processed/vec_2022_assembly_final_pairs.csv",
+  "assemblyOutcomeSha256": "04e45c216d2f59ec351fb857444fa6cb78ab2a3d1be56c4e521c4b1ebbefdfa3",
+  "assemblySourceManifestPath": "metadata/vec-2022-assembly-final-pair-source-manifest.csv",
+  "assemblySourceManifestSha256": "55cda36912c6c1e0f622a16066279e78448909833b94e30420950dc6a684550b",
+  "councilOutcomePaths": [
+    "model/data/processed/vec_2022_council_candidate_primaries.csv",
+    "metadata/vec-2014-2022-council-evidence-audit.json"
+  ],
+  "councilOutcomeSha256": {
+    "model/data/processed/vec_2022_council_candidate_primaries.csv": "6612b035aec9bdcc56f22bad15423b7eb184ca151ae1ecf54ad4358afe74ca85",
+    "metadata/vec-2014-2022-council-evidence-audit.json": "260a832dd3ba07ad37685d539f900c476d4b060958800bc39733ff36e22b48e4"
+  },
+  "criteriaPath": "metadata/historical-validation-acceptance-criteria.json",
+  "criteriaSha256": "0fe66e8080dfcf48d6b9bab7c7568b8dfdee825a239e6ff9cbffd8a39ae3d22f",
+  "scoringCommit": "baee9e2ac098c8929fc2266db023f74568aa6596",
+  "outcomeBoundaryCrossedAfterPredictionAndComparatorVerification": true,
+  "forecastRegenerated": false,
+  "scorePath": "model/data/validation/historical-replays/vic_la_2022-v2-score.json",
+  "scoreSha256": "3bc3b150a5a410bbda2c18e679ed0ae03c555a24d7f3b98a1b0e111c22abdb4e"
+}

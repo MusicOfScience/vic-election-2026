@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2022",
+  "status": "scoring-only-outcomes-loaded-after-sealed-prediction",
+  "assemblyOutcomePath": "model/data/processed/vec_2022_assembly_final_pairs.csv",
+  "assemblyOutcomeSha256": "04e45c216d2f59ec351fb857444fa6cb78ab2a3d1be56c4e521c4b1ebbefdfa3",
+  "assemblyDistricts": 87,
+  "narracanIncluded": false,
+  "finalPairAvailableDistricts": 77,
+  "finalPairUnavailableDistricts": 10,
+  "sourceManifestPath": "metadata/vec-2022-assembly-final-pair-source-manifest.csv",
+  "sourceManifestSha256": "55cda36912c6c1e0f622a16066279e78448909833b94e30420950dc6a684550b",
+  "candidatePrimaryPath": "model/data/processed/vec_2022_assembly_candidate_primaries.csv",
+  "councilEvidenceAuditPath": "metadata/vec-2014-2022-council-evidence-audit.json",
+  "preElectionInputEligible": false,
+  "productionAuthorisation": false
+}

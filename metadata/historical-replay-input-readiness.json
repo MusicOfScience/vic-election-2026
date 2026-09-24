@@ -166,15 +166,22 @@
       "predictionSha256": "f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0",
       "comparatorBundle": "model/data/validation/historical-replays/vic_la_2022-v2-comparators-v2.json",
       "comparatorBundleDefectAudit": "metadata/historical-replay-v2-comparator-defect-audit.json",
-      "scored": false,
-      "certifyingScored": false
+      "scoringOutcome": {
+        "status": "pass",
+        "reason": "Frozen v2 prediction and corrected comparator bundle were verified before loading official 2022 outcomes; 87 Assembly districts and 8 Council regions were scored once",
+        "artefact": "model/data/processed/vec_2022_assembly_final_pairs.csv",
+        "scoreArtefact": "model/data/validation/historical-replays/vic_la_2022-v2-score.json",
+        "scoreManifest": "model/data/validation/historical-replays/vic_la_2022-v2-score-manifest.json"
+      },
+      "scored": true,
+      "certifyingScored": true
     }
   ],
   "runnableCycles": 2,
   "predictedCycles": 2,
-  "scoredCycles": 1,
+  "scoredCycles": 2,
   "certifyingPredictedCycles": 1,
-  "certifyingScoredCycles": 0,
+  "certifyingScoredCycles": 1,
   "modelImpact": {
     "forecast2026": false,
     "productionAuthorisation": false

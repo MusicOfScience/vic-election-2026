@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2022",
+  "modelVersion": "historical_replay_v2",
+  "outcomesLoaded": true,
+  "predictionSha256": "f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0",
+  "comparatorBundleSha256": "cd04d597a9016f714f0c1e98d42c4ca66a91ce53a9c72283cb04c1abaea4a748",
+  "assembly": {
+    "districtCount": 87,
+    "winner": {
+      "accuracy": 0.8735632183908046,
+      "multiclassBrier": 0.19074918582375477,
+      "multiclassLogLoss": 1.7620483223466001,
+      "alpEventBrier": 0.09267888729246487,
+      "alpEventLogLoss": 0.6846034122653147
+    },
+    "finalPair": {
+      "availableDistricts": 77,
+      "unavailableDistricts": 10,
+      "unavailableReason": "official VEC page provides only 2CP/early-majority information; no final-pair outcome was used",
+      "accuracy": 0.5194805194805194
+    },
+    "districtPrimaryMAE": 4.272601579826256,
+    "districtPrimaryMAEByFamily": {
+      "ALP": 5.073532701028332,
+      "LIB_NAT": 6.381858387059022,
+      "GRN": 3.877427896158607,
+      "ONP": 0.41413549767576224,
+      "OTH_IND": 5.6160534172095575
+    },
+    "districtPrimaryMaximumAbsoluteError": 25.622496924464016,
+    "statewideFamilySharesActual": {
+      "ALP": 37.033342549073815,
+      "LIB_NAT": 34.37542162012718,
+      "GRN": 11.503151783245784,
+      "ONP": 0.22330660768592756,
+      "OTH_IND": 16.864777439867293
+    },
+    "statewideVoteErrors": {
+      "ALP": 0.8493541795020718,
+      "LIB_NAT": -1.6754945627812177,
+      "GRN": -0.09745271970190217,
+      "predicted_poll_residual_vs_actual_nonmajor_residual": 0.9235931029810516
+    },
+    "assemblySeats": {
+      "actual": {
+        "ALP": 56,
+        "LIB_NAT": 27,
+        "GRN": 4,
+        "ONP": 0,
+        "OTH_IND": 0
+      },
+      "byFamily": {
+        "ALP": {
+          "meanError": 7.045833333333334,
+          "medianError": 8.0,
+          "actual": 56,
+          "mean": 63.045833333333334,
+          "median": 64.0,
+          "inside80": true
+        },
+        "LIB_NAT": {
+          "meanError": -3.140833333333333,
+          "medianError": -4.0,
+          "actual": 27,
+          "mean": 23.859166666666667,
+          "median": 23.0,
+          "inside80": true
+        },
+        "GRN": {
+          "meanError": -4.0,
+          "medianError": -4.0,
+          "actual": 4,
+          "mean": 0.0,
+          "median": 0.0,
+          "inside80": false
+        },
+        "ONP": {
+          "meanError": 0.0,
+          "medianError": 0.0,
+          "actual": 0,
+          "mean": 0.0,
+          "median": 0.0,
+          "inside80": true
+        },
+        "OTH_IND": {
+          "meanError": 0.095,
+          "medianError": 0.0,
+          "actual": 0,
+          "mean": 0.095,
+          "median": 0.0,
+          "inside80": true
+        }
+      },
+      "meanAbsoluteMeanSeatError": 2.8563333333333336,
+      "interval80Coverage": 0.8
+    }
+  },
+  "council": {
+    "regions": 8,
+    "seatsPerRegion": 5,
+    "actualSeats": {
+      "ALP": 15,
+      "LIB_NAT": 14,
+      "GRN": 4,
+      "ONP": 1,
+      "OTH_IND": 6
+    },
+    "predictedMeanSeats": {
+      "ALP": 20.239166666666666,
+      "LIB_NAT": 16.8725,
+      "GRN": 0.8016666666666666,
+      "ONP": 0.0,
+      "OTH_IND": 2.0866666666666664
+    },
+    "absoluteErrorByFamily": {
+      "ALP": 5.239166666666666,
+      "LIB_NAT": 2.8724999999999987,
+      "GRN": 3.1983333333333333,
+      "ONP": 1.0,
+      "OTH_IND": 3.9133333333333336
+    },
+    "regionalMeanAbsoluteSeatError": 0.4678333333333334,
+    "regionalErrors": {
+      "eastern-victoria-region": {
+        "ALP": -0.04416666666666669,
+        "LIB_NAT": 0.94,
+        "GRN": 0.0,
+        "ONP": 0.0,
+        "OTH_IND": -0.8958333333333334
+      },
+      "north-eastern-metropolitan-region": {
+        "ALP": 0.7749999999999999,
+        "LIB_NAT": 0.21916666666666673,
+        "GRN": -1.0,
+        "ONP": 0.0,
+        "OTH_IND": 0.005833333333333334
+      },
+      "northern-metropolitan-region": {
+        "ALP": 1.0766666666666667,
+        "LIB_NAT": 0.08000000000000007,
+        "GRN": -0.19833333333333336,
+        "ONP": 0.0,
+        "OTH_IND": -0.9583333333333334
+      },
+      "northern-victoria-region": {
+        "ALP": 0.8075000000000001,
+        "LIB_NAT": 0.2799999999999998,
+        "GRN": 0.0,
+        "ONP": -1.0,
+        "OTH_IND": -0.08750000000000002
+      },
+      "south-eastern-metropolitan-region": {
+        "ALP": 0.9808333333333334,
+        "LIB_NAT": 1.0150000000000001,
+        "GRN": 0.0,
+        "ONP": 0.0,
+        "OTH_IND": -1.9958333333333333
+      },
+      "southern-metropolitan-region": {
+        "ALP": -0.08250000000000002,
+        "LIB_NAT": 0.4391666666666665,
+        "GRN": -1.0,
+        "ONP": 0.0,
+        "OTH_IND": 0.6433333333333333
+      },
+      "western-metropolitan-region": {
+        "ALP": 1.0941666666666667,
+        "LIB_NAT": -0.1791666666666667,
+        "GRN": 0.0,
+        "ONP": 0.0,
+        "OTH_IND": -0.915
+      },
+      "western-victoria-region": {
+        "ALP": 0.6316666666666668,
+        "LIB_NAT": 0.07833333333333314,
+        "GRN": -1.0,
+        "ONP": 0.0,
+        "OTH_IND": 0.29
+      }
+    },
+    "regionalPrimaryMetric": {
+      "status": "unavailable",
+      "reason": "frozen certifying prediction contains no Council regional primary estimates"
+    }
+  },
+  "comparators": {
+    "uniform-swing-baseline": {
+      "status": "scored",
+      "metrics": {
+        "accuracy": 0.8620689655172413,
+        "multiclassBrier": 0.48699326610727306,
+        "multiclassLogLoss": 0.9213687047335466,
+        "alpEventBrier": 0.23851637174521736,
+        "alpEventLogLoss": 0.6665268041720467,
+        "districtPrimaryMAE": 4.5719526523456775,
+        "finalPairAccuracy": 0.45454545454545453
+      },
+      "unsupported": "uniform-swing comparator has no regional analogue"
+    },
+    "polling-only": {
+      "status": "scored",
+      "metrics": {
+        "accuracy": 0.6436781609195402,
+        "multiclassBrier": 0.5947510877241999,
+        "multiclassLogLoss": 1.0715241047042405,
+        "alpEventBrier": 0.29950274083647344,
+        "alpEventLogLoss": 0.7944638439290608,
+        "districtPrimaryMAE": 5.7262150140247,
+        "finalPairAccuracy": 0.4935064935064935
+      },
+      "unsupported": "polling-only comparator has no local regional input"
+    },
+    "polling-plus-fundamentals": {
+      "status": "scored",
+      "metrics": {
+        "accuracy": 0.8045977011494253,
+        "multiclassBrier": 0.6054582239914521,
+        "multiclassLogLoss": 1.1040710490987937,
+        "alpEventBrier": 0.310060766914598,
+        "alpEventLogLoss": 0.8166826699704907,
+        "districtPrimaryMAE": 5.708133396306924,
+        "finalPairAccuracy": 0.4805194805194805
+      },
+      "unsupported": "comparator excludes full Council ensemble"
+    },
+    "seat-level-model": {
+      "status": "scored",
+      "metrics": {
+        "accuracy": 0.8160919540229885,
+        "multiclassBrier": 0.5950833198120073,
+        "multiclassLogLoss": 1.081793797675018,
+        "alpEventBrier": 0.30557109126038495,
+        "alpEventLogLoss": 0.8070358095657073,
+        "districtPrimaryMAE": 5.716020856297429,
+        "finalPairAccuracy": 0.4935064935064935,
+        "seatCountErrorByFamily": {
+          "ALP": -26.0552536931,
+          "LIB_NAT": 0.06639546579999944,
+          "GRN": 8.9634977532,
+          "ONP": 0.3848581013,
+          "OTH_IND": 16.6405023729
+        }
+      },
+      "unsupported": "seat-level comparator is Assembly-only"
+    },
+    "complete-ensemble": {
+      "status": "scored-by-frozen-prediction",
+      "metrics": {
+        "districtCount": 87,
+        "winner": {
+          "accuracy": 0.8735632183908046,
+          "multiclassBrier": 0.19074918582375477,
+          "multiclassLogLoss": 1.7620483223466001,
+          "alpEventBrier": 0.09267888729246487,
+          "alpEventLogLoss": 0.6846034122653147
+        },
+        "finalPair": {
+          "availableDistricts": 77,
+          "unavailableDistricts": 10,
+          "unavailableReason": "official VEC page provides only 2CP/early-majority information; no final-pair outcome was used",
+          "accuracy": 0.5194805194805194
+        },
+        "districtPrimaryMAE": 4.272601579826256,
+        "districtPrimaryMAEByFamily": {
+          "ALP": 5.073532701028332,
+          "LIB_NAT": 6.381858387059022,
+          "GRN": 3.877427896158607,
+          "ONP": 0.41413549767576224,
+          "OTH_IND": 5.6160534172095575
+        },
+        "districtPrimaryMaximumAbsoluteError": 25.622496924464016,
+        "statewideFamilySharesActual": {
+          "ALP": 37.033342549073815,
+          "LIB_NAT": 34.37542162012718,
+          "GRN": 11.503151783245784,
+          "ONP": 0.22330660768592756,
+          "OTH_IND": 16.864777439867293
+        },
+        "statewideVoteErrors": {
+          "ALP": 0.8493541795020718,
+          "LIB_NAT": -1.6754945627812177,
+          "GRN": -0.09745271970190217,
+          "predicted_poll_residual_vs_actual_nonmajor_residual": 0.9235931029810516
+        },
+        "assemblySeats": {
+          "actual": {
+            "ALP": 56,
+            "LIB_NAT": 27,
+            "GRN": 4,
+            "ONP": 0,
+            "OTH_IND": 0
+          },
+          "byFamily": {
+            "ALP": {
+              "meanError": 7.045833333333334,
+              "medianError": 8.0,
+              "actual": 56,
+              "mean": 63.045833333333334,
+              "median": 64.0,
+              "inside80": true
+            },
+            "LIB_NAT": {
+              "meanError": -3.140833333333333,
+              "medianError": -4.0,
+              "actual": 27,
+              "mean": 23.859166666666667,
+              "median": 23.0,
+              "inside80": true
+            },
+            "GRN": {
+              "meanError": -4.0,
+              "medianError": -4.0,
+              "actual": 4,
+              "mean": 0.0,
+              "median": 0.0,
+              "inside80": false
+            },
+            "ONP": {
+              "meanError": 0.0,
+              "medianError": 0.0,
+              "actual": 0,
+              "mean": 0.0,
+              "median": 0.0,
+              "inside80": true
+            },
+            "OTH_IND": {
+              "meanError": 0.095,
+              "medianError": 0.0,
+              "actual": 0,
+              "mean": 0.095,
+              "median": 0.0,
+              "inside80": true
+            }
+          },
+          "meanAbsoluteMeanSeatError": 2.8563333333333336,
+          "interval80Coverage": 0.8
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "criteriaPath": "metadata/historical-validation-acceptance-criteria.json",
+    "criteriaSha256": "0fe66e8080dfcf48d6b9bab7c7568b8dfdee825a239e6ff9cbffd8a39ae3d22f",
+    "cycleLevelOnly": true,
+    "completeBacktest": "unavailable-until-four-cycles",
+    "probabilityCalibration": "unavailable-until-four-cycles",
+    "cycleLevelAssessment": {
+      "statewideVoteError": {
+        "meanAbsolutePercentagePoints": 0.8741004873283972,
+        "maximumAbsolutePercentagePoints": 1.6754945627812177,
+        "threshold": {
+          "meanMax": 4.0,
+          "maximumMax": 7.0
+        },
+        "status": "met"
+      },
+      "seatWinnerAccuracy": {
+        "value": 0.8735632183908046,
+        "threshold": 0.7,
+        "status": "met"
+      },
+      "seatCountError": {
+        "maximumAbsoluteMeanError": 7.045833333333334,
+        "meanAbsoluteMeanError": 2.8563333333333336,
+        "threshold": {
+          "maximum": 8.0,
+          "meanMaximum": 5.0
+        },
+        "status": "met"
+      },
+      "brierScore": {
+        "value": 0.19074918582375477,
+        "threshold": 0.25,
+        "status": "met"
+      },
+      "logLoss": {
+        "value": 1.7620483223466001,
+        "threshold": 1.2,
+        "status": "missed"
+      },
+      "intervalCoverage80": {
+        "value": 0.8,
+        "threshold": {
+          "minimum": 0.7,
+          "maximum": 0.9
+        },
+        "status": "met"
+      },
+      "finalPairCalibration": {
+        "status": "unavailable",
+        "reason": "frozen prediction contains only most-likely pair fields, and 10 official final pairs are unavailable"
+      },
+      "regionalError": {
+        "status": "unavailable",
+        "reason": "frozen prediction contains Council seat means but no regional primary estimates"
+      },
+      "contestType": {
+        "status": "unavailable",
+        "reason": "no preregistered contest-type partition is frozen for this single cycle"
+      }
+    }
+  },
+  "scoreSha256": "3bc3b150a5a410bbda2c18e679ed0ae03c555a24d7f3b98a1b0e111c22abdb4e"
+}
