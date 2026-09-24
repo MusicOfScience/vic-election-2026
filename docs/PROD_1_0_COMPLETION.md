@@ -3,7 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/repair-2022-comparators`
 Base: `4acf3133` (PR #104 merged)
-Current batch: repair and freeze the five preregistered 2022 v2 comparators before outcome loading.
+Current batch: repair and freeze the five preregistered 2022 v2 comparators before outcome loading. PR #105 is open for review: https://github.com/MusicOfScience/vic-election-2026/pull/105
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
