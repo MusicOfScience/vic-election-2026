@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "conservative-three-gate-policy",
+  "purpose": "Separate public availability, methodological adequacy and reuse basis for reconstructed historical poll facts. This is an evidence-control policy, not a legal determination.",
+  "gates": ["provenance", "methodologicalAdequacy", "reuseBasis"],
+  "classes": {
+    "explicit_open_licence": {
+      "meaning": "The source expressly grants a reusable licence covering the relevant data.",
+      "rawSourceStorage": "permitted within licence limits",
+      "factualTranscription": "permitted",
+      "replayEligibility": "possible when provenance and model-field gates pass",
+      "attribution": "licence and source attribution required",
+      "manualReview": "required before promotion",
+      "redistribution": "only within licence scope"
+    },
+    "permission_obtained": {
+      "meaning": "Documented permission covers the project use.",
+      "rawSourceStorage": "only as permission allows",
+      "factualTranscription": "permitted within permission",
+      "replayEligibility": "possible when other gates pass",
+      "attribution": "source and permission record required",
+      "manualReview": "required",
+      "redistribution": "restricted to permission scope"
+    },
+    "official_open_data": {
+      "meaning": "An official open-data source supplies the factual observation.",
+      "rawSourceStorage": "permitted within published terms",
+      "factualTranscription": "permitted",
+      "replayEligibility": "possible when other gates pass",
+      "attribution": "official source and terms required",
+      "manualReview": "required",
+      "redistribution": "within published terms"
+    },
+    "independently_reconstructed_factual_observation": {
+      "meaning": "Only model-required factual fields are transcribed from an attributable contemporaneous source; no authored compilation or unnecessary source expression is copied.",
+      "rawSourceStorage": "not required; retain URL, fingerprint and retrieval metadata instead",
+      "factualTranscription": "permitted as structured facts, subject to project-owner review",
+      "replayEligibility": "possible only when provenance and methodological gates pass and the record is manually approved",
+      "attribution": "stable source, availability date, retrieval date and fingerprint required",
+      "manualReview": "required",
+      "redistribution": "structured facts only; do not redistribute source text or report layout"
+    },
+    "research_only": {
+      "meaning": "Useful for discovery or analysis but not approved as a reusable project input.",
+      "rawSourceStorage": "quarantined",
+      "factualTranscription": "not for replay",
+      "replayEligibility": "never",
+      "attribution": "discovery provenance required",
+      "manualReview": "cannot override the prohibition",
+      "redistribution": "not permitted"
+    },
+    "third_party_dataset_unlicensed": {
+      "meaning": "An authored compilation has no established reuse basis.",
+      "rawSourceStorage": "quarantined",
+      "factualTranscription": "not from the compilation",
+      "replayEligibility": "never",
+      "attribution": "dataset fingerprint and quarantine record required",
+      "manualReview": "cannot promote copied rows",
+      "redistribution": "not permitted"
+    },
+    "unknown": {
+      "meaning": "The source-use basis is unresolved.",
+      "rawSourceStorage": "quarantined",
+      "factualTranscription": "not approved",
+      "replayEligibility": "never",
+      "attribution": "gap must be recorded",
+      "manualReview": "required to resolve, not to bypass",
+      "redistribution": "not permitted"
+    }
+  },
+  "eligibilityRule": {
+    "allGatesRequired": true,
+    "unknownReuseBasisRejected": true,
+    "thirdPartyUnlicensedRejected": true,
+    "nullDeclaredReuseLicenceIsNotByItselfAUniversalFinding": true,
+    "manualApprovalRequired": true,
+    "forecastPromotionAutomatic": false
+  }
+}

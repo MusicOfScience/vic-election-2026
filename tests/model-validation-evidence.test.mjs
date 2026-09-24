@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { validateModelValidationEvidence } from "../scripts/validate-model-validation-evidence.mjs";
+import { validateHistoricalPollReusePolicy } from "../scripts/validate-historical-poll-reuse-policy.mjs";
 
 const contract = JSON.parse(readFileSync(new URL("../metadata/model-validation-evidence-contract.json", import.meta.url), "utf8"));
 const inventory = JSON.parse(readFileSync(new URL("../metadata/model-validation-evidence-inventory.json", import.meta.url), "utf8"));
@@ -31,6 +32,14 @@ test("requires evidence matching the complete probability model", () => {
   assert.equal(councilRules.status, "complete-cycle-pinned-authorised-legislation");
   assert.equal(councilRules.cycles.length, 4);
   assert.equal(councilRules.modelEligibility.automaticGateOpening, false);
+});
+
+test("separates historical poll provenance, methodology and reuse basis", () => {
+  assert.deepEqual(validateHistoricalPollReusePolicy(), {
+    policyClasses: 7,
+    adjudicatedCases: 1,
+    replayEligibleCases: 0,
+  });
 });
 
 test("separates the delayed Narracan contest from the November 2022 replay", () => {

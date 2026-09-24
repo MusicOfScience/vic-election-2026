@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "caseId": "vic_la_2018-essential-2015-q4",
+  "cycleId": "vic_la_2018",
+  "observationPeriod": "2015-10 through 2015-12",
+  "sourceId": "essential-vic-2016-01-13-pdf",
+  "sourceUrl": "https://www.essentialvision.com.au/wp-content/uploads/2016/01/Essential-Report_statevoting_Dec2015.pdf",
+  "sourceSha256": "48828ef3fc4c9a12feeca881dff668c2cb5c465cc0b5b7480950eb5ea58e993d",
+  "sourceClass": "first-party-pollster-pdf",
+  "publishedAt": "2016-01-13T13:01:40",
+  "retrievedAt": "2026-09-24",
+  "evidenceAvailableByDate": "2016-01-13",
+  "cycleInformationCutoff": "2018-11-23",
+  "fieldwork": {
+    "periods": ["2015-10", "2015-11", "2015-12"],
+    "population": "Victorian adults",
+    "mode": "online Your Source panel",
+    "sampleSizes": {"2015-10": 882, "2015-11": 870, "2015-12": 650}
+  },
+  "reportedPrimaryShares": {
+    "2015-10": {"LIB_NAT": 40, "ALP": 38, "GRN": 13, "OTH_IND": 9},
+    "2015-11": {"LIB_NAT": 41, "ALP": 36, "GRN": 14, "OTH_IND": 9},
+    "2015-12": {"LIB_NAT": 39, "ALP": 38, "GRN": 12, "OTH_IND": 10}
+  },
+  "reportedTwoPartyPreferred": {
+    "2015-10": {"LIB_NAT": 47, "ALP": 53},
+    "2015-11": {"LIB_NAT": 47, "ALP": 53},
+    "2015-12": {"LIB_NAT": 46, "ALP": 54}
+  },
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "rawSourceStored": false,
+  "copiedAuthoredExpression": false,
+  "provenanceGate": {"passed": true, "basis": "first-party report published before the 2018 cutoff"},
+  "methodologicalAdequacyGate": {
+    "passed": false,
+    "reason": "The complete historical latent model requires a five-family composition including ONP; this report's Victorian table does not report an explicit One Nation share, so no value is imputed."
+  },
+  "reuseBasisGate": {"passed": true, "manualReviewRequired": true, "legalDetermination": false},
+  "replayEligible": false,
+  "decision": "blocked-methodological-adequacy",
+  "notFromQuarantinedDataset": true,
+  "nextEvidenceNeeded": "A contemporaneous five-family poll or a preregistered sparse-poll rule that widens uncertainty without fabricating the missing ONP share."
+}
