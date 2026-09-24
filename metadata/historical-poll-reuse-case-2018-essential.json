@@ -11,6 +11,12 @@
   "retrievedAt": "2026-09-24",
   "evidenceAvailableByDate": "2016-01-13",
   "cycleInformationCutoff": "2018-11-23",
+  "cycleBallotUniverse": {
+    "activeFamilies": ["ALP", "Coalition", "Greens", "Other/Independent"],
+    "inactiveFamilies": ["One Nation"],
+    "districtSpecificFamilies": ["Coalition", "Other/Independent"],
+    "basis": "metadata/historical-party-family-availability.json"
+  },
   "fieldwork": {
     "periods": ["2015-10", "2015-11", "2015-12"],
     "population": "Victorian adults",
@@ -32,12 +38,13 @@
   "copiedAuthoredExpression": false,
   "provenanceGate": {"passed": true, "basis": "first-party report published before the 2018 cutoff"},
   "methodologicalAdequacyGate": {
-    "passed": false,
-    "reason": "The complete historical latent model requires a five-family composition including ONP; this report's Victorian table does not report an explicit One Nation share, so no value is imputed."
+    "passed": true,
+    "reason": "The 2018 Assembly ballot universe has no One Nation candidates. The report explicitly supplies ALP, Coalition, Greens and a grouped residual; the residual is retained and not decomposed. No unreported family is converted to zero."
   },
   "reuseBasisGate": {"passed": true, "manualReviewRequired": true, "legalDetermination": false},
   "replayEligible": false,
-  "decision": "blocked-methodological-adequacy",
+  "modelInputAdmissible": true,
+  "decision": "awaiting-manual-reuse-approval",
   "notFromQuarantinedDataset": true,
-  "nextEvidenceNeeded": "A contemporaneous five-family poll or a preregistered sparse-poll rule that widens uncertainty without fabricating the missing ONP share."
+  "nextEvidenceNeeded": "Manual review of the independently reconstructed factual transcription, followed by the existing governed historical-input promotion path."
 }

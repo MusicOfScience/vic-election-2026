@@ -171,7 +171,8 @@ export function buildHistoricalPollReconstructionQueue({ sourceBuffer, audit, re
       sampleSizeRequired: true,
       explicitMethodRequired: true,
       observationSourceUrlRequired: true,
-      explicitReuseAuthorityRequired: true,
+      reuseBasisClassificationRequired: true,
+      explicitReuseAuthorityRequired: false,
       unresolvedRowsRemainQuarantined: true,
     },
     externalContact: {

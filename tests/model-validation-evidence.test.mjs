@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import { validateModelValidationEvidence } from "../scripts/validate-model-validation-evidence.mjs";
 import { validateHistoricalPollReusePolicy } from "../scripts/validate-historical-poll-reuse-policy.mjs";
+import { validateHistoricalPartyFamilyAvailability } from "../scripts/validate-historical-party-family-availability.mjs";
 
 const contract = JSON.parse(readFileSync(new URL("../metadata/model-validation-evidence-contract.json", import.meta.url), "utf8"));
 const inventory = JSON.parse(readFileSync(new URL("../metadata/model-validation-evidence-inventory.json", import.meta.url), "utf8"));
@@ -39,6 +40,14 @@ test("separates historical poll provenance, methodology and reuse basis", () => 
     policyClasses: 7,
     adjudicatedCases: 1,
     replayEligibleCases: 0,
+  });
+});
+
+test("derives cycle-aware Assembly party availability from candidate evidence", () => {
+  assert.deepEqual(validateHistoricalPartyFamilyAvailability(), {
+    cycles: 4,
+    verifiedFromCandidateEvidence: true,
+    historicalOnpInactiveThrough2018: true,
   });
 });
 

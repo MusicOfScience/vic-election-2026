@@ -1,8 +1,8 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-24
-Branch: `codex/historical-poll-reuse-basis`
-Base: `3962559` (`origin/main`, PR #92 merged)
+Branch: `codex/historical-ballot-aware-polling`
+Base: `17cd38b` (PR #93 merged)
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -28,7 +28,8 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - Forecast outputs and model configuration are unchanged by this ledger batch; runnable historical cycles remain 0/4.
 - Demographic challenger remains rejected at central weight `0`.
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
-- Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately. The 2018 Essential 2015-Q4 case passes provenance and reuse-basis review, but remains blocked on methodological adequacy because the complete model requires an explicit ONP share.
+- Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately.
+- Cycle-aware ballot review: 2010, 2014 and 2018 have no One Nation Assembly candidates; 2022 has four. The 2018 Essential case now passes provenance and methodological adequacy because its grouped Other residual is sufficient for the active four-family ballot universe. It remains pending manual reuse review and is not a model input.
 - Replay-eligible historical observations remain 0 and runnable cycles remain 0/4. The concrete case is not a forecast input and does not change readiness or authorisation.
 
-Exact next action: reconstruct a contemporaneous five-family historical poll (or register a common sparse-poll uncertainty rule) so one frozen cycle can pass methodological adequacy without fabricating ONP values; keep the policy's manual review gate separate from licence metadata.
+Exact next action: complete manual review and governed promotion of the 2018 factual observation if approved, then resolve ballot/slate and preference blockers; do not treat methodological admissibility as automatic replay promotion.
