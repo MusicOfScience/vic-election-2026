@@ -126,8 +126,8 @@
     {
       "cycleId": "vic_la_2022",
       "pollEvidence": {
-        "status": "blocked",
-        "reason": "2 Roy Morgan observations are owner-approved and promoted; one Resolve observation passes automated gates but awaits owner approval. The fixed minimum of 3 observations and 2 independent source families is therefore not yet met; RedBridge remains numerically incomplete and Freshwater lacks an exhaustive primary table"
+        "status": "pass",
+        "reason": "3 owner-approved observations from 2 independent source families satisfy the fixed minimum of 3 observations and 2 independent source families; RedBridge and Freshwater remain quarantined and are not required"
       },
         "ballotContest": {
           "status": "pass",
@@ -160,12 +160,20 @@
         "status": "pass",
         "reason": "guarded runner rejects outcomes before prediction freeze"
       },
-      "runnable": false
+      "runnable": true,
+      "certifyingPredictionFrozen": true,
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2022-v2-prediction.json",
+      "predictionSha256": "f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0",
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2022-v2-comparators.json",
+      "scored": false,
+      "certifyingScored": false
     }
   ],
-  "runnableCycles": 1,
-  "predictedCycles": 1,
+  "runnableCycles": 2,
+  "predictedCycles": 2,
   "scoredCycles": 1,
+  "certifyingPredictedCycles": 1,
+  "certifyingScoredCycles": 0,
   "modelImpact": {
     "forecast2026": false,
     "productionAuthorisation": false

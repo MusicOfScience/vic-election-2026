@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_incomplete_cycles_fail_closed_with_structured_blockers():
-    for cycle_id in ("vic_la_2010", "vic_la_2014", "vic_la_2022"):
+    for cycle_id in ("vic_la_2010", "vic_la_2014"):
         result = run_historical_replay(ROOT, cycle_id)
         assert result.status == "blocked"
         assert result.blockers

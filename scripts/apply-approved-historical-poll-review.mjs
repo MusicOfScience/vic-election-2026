@@ -50,7 +50,7 @@ export function buildApprovedHistoricalPollInput() {
     read("metadata/historical-poll-reuse-case-2022-roymorgan-2022-11-10.json"),
     read("metadata/historical-poll-reuse-case-2022-roymorgan-2022-11-23.json"),
   ];
-  if (review2022.decision !== "partially-approved" || approved2022Ids.size !== 2) throw new Error("2022 Roy Morgan review is not explicitly approved");
+  if (review2022.decision !== "partially-approved" || approved2022Ids.size !== 3) throw new Error("2022 historical poll review is not explicitly approved for all three governed observations");
   const royMorganObservations = royMorganCases.map((caseFile) => {
     if (!approved2022Ids.has(caseFile.caseId) || caseFile.ownerReviewStatus !== "approved-for-historical-replay" || !caseFile.modelInputAdmissible || !caseFile.replayEligible) throw new Error(`2022 case ${caseFile.caseId} is not governed for replay`);
     if (!caseFile.gates.provenance.passed || !caseFile.gates.methodologicalAdequacy.passed || !caseFile.gates.reuseBasis.passed || !caseFile.notFromQuarantinedDataset) throw new Error(`2022 case ${caseFile.caseId} has a failed automated gate`);
@@ -74,7 +74,21 @@ export function buildApprovedHistoricalPollInput() {
       replayEligible: true,
     };
   });
-  const observations = [...essentialObservations, ucommsObservation, ...royMorganObservations];
+  const resolveCase = read("metadata/historical-poll-reuse-case-2022-resolve-2022-11-16-20.json");
+  if (!approved2022Ids.has(resolveCase.caseId) || resolveCase.ownerReviewStatus !== "approved-for-historical-replay" || !resolveCase.modelInputAdmissible || !resolveCase.replayEligible) throw new Error("2022 Resolve case is not governed for replay");
+  if (!resolveCase.gates.provenance.passed || !resolveCase.gates.methodologicalAdequacy.passed || !resolveCase.gates.reuseBasis.passed || !resolveCase.notFromQuarantinedDataset) throw new Error("2022 Resolve case has a failed automated gate");
+  const resolveObservation = {
+    observationId: `${resolveCase.caseId}-${resolveCase.fieldwork.end}`,
+    cycleId: resolveCase.cycleId, period: resolveCase.fieldwork.end,
+    sourceId: resolveCase.sourceId, sourceUrl: resolveCase.sourceUrl, sourceSha256: resolveCase.sourceSha256,
+    evidenceAvailableByDate: resolveCase.evidenceAvailableByDate, sampleSize: resolveCase.fieldwork.sampleSize,
+    population: resolveCase.fieldwork.population, mode: resolveCase.fieldwork.mode,
+    primaryShares: { ALP: resolveCase.reportedPrimaryCategories.ALP, LIB_NAT: resolveCase.reportedPrimaryCategories.LIB_NAT, GRN: resolveCase.reportedPrimaryCategories.GRN, OTH_IND: resolveCase.groupedResidual.OTH_IND },
+    reportedCategories: resolveCase.reportedPrimaryCategories, reportedTpp: resolveCase.reportedTpp,
+    groupedResidual: "OTH_IND", ballotActiveFamilies: resolveCase.ballotActiveFamilies,
+    reuseBasis: resolveCase.reuseBasis, ownerReviewId: review2022.reviewId, replayEligible: true,
+  };
+  const observations = [...essentialObservations, ucommsObservation, ...royMorganObservations, resolveObservation];
   return {
     schemaVersion: 1,
     generatedBy: "scripts/apply-approved-historical-poll-review.mjs",

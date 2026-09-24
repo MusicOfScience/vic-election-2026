@@ -52,11 +52,11 @@ test("derives cycle-aware Assembly party availability from candidate evidence", 
   });
 });
 
-test("records owner-approved replay input and derives one runnable cycle", () => {
+test("records owner-approved replay input and derives two runnable cycles", () => {
   assert.deepEqual(validateHistoricalReplayInputReadiness(), {
     cycles: 4,
-    approvedReplayObservations: 6,
-    runnableCycles: 1,
+    approvedReplayObservations: 7,
+    runnableCycles: 2,
   });
 });
 
@@ -71,11 +71,7 @@ test("separates the delayed Narracan contest from the November 2022 replay", () 
   assert.equal(narracan.includedInGeneralElectionScoring, false);
   assert.equal(outcomeAvailability.modelImpact.changesCurrentForecast, false);
   assert.equal(outcomeAvailability.modelImpact.automaticGateOpening, false);
-  assert.deepEqual(historicalCycles.cycles.find((cycle) => cycle.id === "vic_la_2022").blockedBy, [
-    "pre-election-poll-vintages",
-    "ballot-and-contest-slates",
-    "preference-flows-and-final-pairs",
-  ]);
+  assert.deepEqual(historicalCycles.cycles.find((cycle) => cycle.id === "vic_la_2022").blockedBy, []);
 });
 
 test("fingerprints every available validation artefact and keeps partial evidence fail-closed", () => {
