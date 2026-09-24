@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "selectedCycle": "vic_la_2018",
+  "selectionRule": "highest pre-score input completeness from metadata/historical-replay-input-readiness.json; no replay metrics were inspected",
+  "selectionRationale": {
+    "approvedPollObservations": 3,
+    "independentPollFamilies": 1,
+    "ballotUniverseEstablished": true,
+    "preferenceFallbackAvailable": true,
+    "cutoffAndConfigValidated": true,
+    "remainingBlockers": ["second-independent-poll-family", "historical-local-contest-input", "historical-council-input"]
+  },
+  "modelImpact": {"forecast2026":false,"productionAuthorisation":false}
+}

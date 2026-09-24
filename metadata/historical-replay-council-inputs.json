@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "scripts/build-historical-council-inputs.mjs",
+  "cycleId": "vic_la_2018",
+  "status": "blocked",
+  "cutoff": "2018-11-23",
+  "requiredArtefact": "pre-cutoff regional poll or governed broad regional prior",
+  "rejectedModernArtefact": "model/data/processed/upper_house_region_poll_2026-08.csv",
+  "reason": "the available regional poll is a 2026 input after the frozen cutoff; no historical pre-cutoff regional forecast input is present",
+  "outcomeCountSequences": "scoring-only"
+}
