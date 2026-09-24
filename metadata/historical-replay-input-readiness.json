@@ -8,15 +8,15 @@
       "cycleId": "vic_la_2010",
       "pollEvidence": {
         "status": "blocked",
-        "reason": "0 approved replay observations; minimum 3 observations and 2 independent source families not met"
+        "reason": "Three first-party Roy Morgan observations pass automated gates but await owner approval; approved replay observations remain 0 and no second independent family is promoted, so the fixed minimum of 3 observations and 2 independent source families is not met"
       },
       "ballotContest": {
         "status": "blocked",
-        "reason": "cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"
+        "reason": "Final 2014 contest evidence exists, but cutoff-safe candidate availability and the cycle-specific pre-cutoff contest contract are not yet assembled"
       },
       "incumbencyLocal": {
         "status": "blocked",
-        "reason": "no leakage-safe historical local-pattern builder is wired"
+        "reason": "The 2010 family baseline exists, but the prediction-safe translation onto 2014 geography and an independently proven pre-cutoff TPP baseline are not yet assembled"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",
@@ -24,7 +24,7 @@
       },
       "councilInput": {
         "status": "blocked",
-        "reason": "historical pre-cutoff Council forecast inputs are not assembled"
+        "reason": "2010 Council evidence exists, but 2010-to-2014 region continuity and a prediction-safe regional prior have not yet been audited"
       },
       "cutoffValidation": {
         "status": "pass",

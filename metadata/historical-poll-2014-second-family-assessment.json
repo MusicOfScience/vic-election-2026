@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "cutoff": "2014-11-28",
+  "status": "no-second-family-promoted",
+  "attempts": [
+    {
+      "family": "Essential",
+      "sourceUrl": "https://essentialvision.com.au/state-voting-intention-victoria-2",
+      "sourceId": "essential-vic-2014-05-30-web",
+      "sourceSha256": "a3712e47b81ca98f458f82e83b6e1557aad8c18c02af830de700417a5805a9dc",
+      "publicationDate": "2014-05-30",
+      "observation": "The first-party table exposes May 2014 sample 1005, ALP 40, LIB_NAT 38, GRN 10 and Other/Independent 8, with ALP TPP 53 and LIB_NAT 47.",
+      "provenance": "pass",
+      "methodologicalAdequacy": "blocked",
+      "blocker": "The archived first-party page does not establish the observation-specific sampling method or weighting under the fixed methodology gate; later Essential method descriptions are not treated as contemporaneous proof.",
+      "reuseBasis": "not adjudicated while methodology is blocked"
+    },
+    {
+      "family": "Newspoll",
+      "sourceUrl": "https://www.abc.net.au/news/2014-11-03/poll-suggests-comfortable-labor-win-in-victorian-election/5861548",
+      "publicationDate": "2014-11-03",
+      "observation": "Contemporaneous ABC reporting identifies a Newspoll, sample greater than 1100, ALP 41, Coalition 39, Greens 13 and ALP TPP 54, but does not preserve the complete primary residual table or a first-party poll document.",
+      "provenance": "partial-corroboration",
+      "methodologicalAdequacy": "blocked",
+      "blocker": "No first-party Newspoll document with observation-specific sample, complete categories and method has been recovered in this bounded pass; the ABC report is not treated as a complete reconstructed poll record.",
+      "reuseBasis": "not adjudicated while methodology is blocked"
+    }
+  ],
+  "nextAction": "Target one first-party Newspoll or Essential methodological source only after the owner reviews the three Morgan cases; do not import secondary lead-list values."
+}

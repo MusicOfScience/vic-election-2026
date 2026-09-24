@@ -6,10 +6,11 @@ ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parent
 
 
-def test_2022_selection_remains_frozen_before_scoring():
+def test_next_cycle_selection_moves_forward_only_after_2022_score_is_immutable():
     selection = json.loads((REPO / "metadata/historical-replay-next-cycle-selection.json").read_text())
-    assert selection["selectedCycle"] == "vic_la_2022"
-    assert "selected" in selection["status"]
+    assert selection["selectedCycle"] == "vic_la_2014"
+    assert "pre-score evidence completeness" in selection["reason"]
+    assert "no-prediction-generated" in selection["status"]
 
 
 def test_2022_poll_cases_keep_owner_decisions_separate_from_fixed_sufficiency_rule():

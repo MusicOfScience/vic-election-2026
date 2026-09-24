@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2014-roymorgan-2014-11-10",
+  "cycleId": "vic_la_2014",
+  "sourceId": "roy-morgan-5919-2014-11-10-archive",
+  "sourceUrl": "https://web.archive.org/web/20141127115220id_/http://www.roymorgan.com/findings/5919-morgan-poll-victorian-voting-intention-november-10-2014-201411100547",
+  "sourceSha256": "ff7b4504c47e3b0e3909a776e66e67c1a4338bc09d3663966f10e0cd1d3196ae",
+  "publicationDate": "2014-11-10",
+  "evidenceAvailableByDate": "2014-11-27",
+  "fieldwork": {"start": "2014-11-07", "end": "2014-11-10", "sampleSize": 1847, "population": "Victorian electors", "mode": "SMS Morgan Poll"},
+  "reportedPrimaryCategories": {"LIB_NAT": 38, "ALP": 36, "GRN": 18.5, "OTH_IND": 7.5},
+  "reportedCategoryComponents": {"Family First": 2, "Country Alliance": 1, "Independents/Other": 4.5},
+  "reportedTpp": {"ALP": 53.5, "LIB_NAT": 46.5},
+  "groupedResidual": {"family": "OTH_IND", "components": ["Family First", "Country Alliance", "Independents/Other"]},
+  "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "gates": {
+    "provenance": {"passed": true, "basis": "archived first-party page captured before the 2014-11-28 cutoff"},
+    "methodologicalAdequacy": {"passed": true, "basis": "first-party page supplies fieldwork, Victorian sample, mode, exhaustive primary categories and TPP"},
+    "reuseBasis": {"passed": true, "manualReviewRequired": true}
+  },
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "ownerReviewId": "historical-poll-review-2014-pending",
+  "notes": "Structured factual fields only; no report prose, layout or source-document redistribution."
+}

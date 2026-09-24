@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2014-roymorgan-2014-10-01",
+  "cycleId": "vic_la_2014",
+  "sourceId": "roy-morgan-5836-2014-10-01-archive",
+  "sourceUrl": "https://web.archive.org/web/20141104142857id_/http://www.roymorgan.com/findings/5836-morgan-poll-state-voting-intention-nsw-vic-qld-qa-sa-tas-201410010501",
+  "sourceSha256": "3c86a4eeecce9d865b5c1895de1105fcdc07c6111c6d1ae9f4a91038f220d018",
+  "publicationDate": "2014-10-01",
+  "evidenceAvailableByDate": "2014-11-04",
+  "fieldwork": {"start": "2014-09-26", "end": "2014-09-29", "sampleSize": 1706, "population": "Victorian electors", "mode": "SMS Morgan Poll"},
+  "reportedPrimaryCategories": {"LIB_NAT": 37.5, "ALP": 34, "GRN": 18, "OTH_IND": 10.5},
+  "reportedCategoryComponents": {"PUP": 3, "Country Alliance": 0.5, "Independents/Other": 7},
+  "reportedTpp": {"ALP": 54, "LIB_NAT": 46},
+  "groupedResidual": {"family": "OTH_IND", "components": ["PUP", "Country Alliance", "Independents/Other"]},
+  "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "gates": {
+    "provenance": {"passed": true, "basis": "archived first-party page captured before the 2014-11-28 cutoff"},
+    "methodologicalAdequacy": {"passed": true, "basis": "first-party page supplies fieldwork, Victorian sample, mode, exhaustive primary categories and TPP"},
+    "reuseBasis": {"passed": true, "manualReviewRequired": true}
+  },
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "ownerReviewId": "historical-poll-review-2014-pending",
+  "notes": "Structured factual fields only; no report prose, layout or source-document redistribution. The source page does not identify the commissioning relationship in the lead note, so that discrepancy remains recorded separately."
+}

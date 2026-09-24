@@ -1,11 +1,11 @@
 {
   "selectionRule": "choose the next certifying cycle only by pre-score evidence completeness, before generating or viewing its model score",
-  "selectedCycle": "vic_la_2022",
-  "status": "selected-pre-score-input-completeness; input-ready-and-prediction-frozen-before-scoring",
+  "selectedCycle": "vic_la_2014",
+  "status": "selected-pre-score-input-completeness; preparation-incomplete-and-no-prediction-generated",
   "candidates": {
     "vic_la_2010": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]},
-    "vic_la_2014": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]},
-    "vic_la_2022": {"approvedPollingObservations": 3, "independentFamilies": 2, "reconstructedCases": 4, "independentFamiliesAvailableForReview": 2, "blockingInputs": [], "evidenceRationale": "two first-party Roy Morgan observations and one Resolve observation are owner-approved and promoted; the AEC/VEC district and regional local surfaces pass pre-cutoff input checks; the cycle is input-ready and prediction-frozen before scoring"}
+    "vic_la_2014": {"approvedPollingObservations": 0, "independentFamilies": 0, "reconstructedCases": 3, "independentFamiliesAvailableForReview": 1, "blockingInputs": ["pollEvidence", "ownerReview", "ballotContest", "incumbencyLocal", "councilInput"], "evidenceRationale": "three archived first-party Roy Morgan observations have complete structured categories, samples, fieldwork and TPP and are awaiting explicit owner approval; a second independent family is not yet promoted; the pre-cutoff 2010-on-2014 baseline provenance and cycle-specific local substrate remain unresolved"},
+    "vic_la_2022": {"approvedPollingObservations": 3, "independentFamilies": 2, "reconstructedCases": 4, "independentFamiliesAvailableForReview": 2, "blockingInputs": [], "evidenceRationale": "completed prior selection; not eligible for reselection in this stage because its certifying prediction and score are immutable"}
   },
-  "reason": "2022 was objectively closest by pre-score evidence completeness; selection was frozen before its model prediction and remains frozen while scoring is deferred."
+  "reason": "2014 is objectively closest among the remaining cycles by pre-score evidence completeness: it has 19 source-matched poll leads, a complete 2010 Assembly family baseline, existing 2014 boundary/crosswalk references and complete 2010 Council evidence. 2010 has only 4 source-matched leads and lacks a comparable 2006 multi-party baseline/local substrate. Selection is frozen before any 2014 prediction or target-outcome inspection."
 }
