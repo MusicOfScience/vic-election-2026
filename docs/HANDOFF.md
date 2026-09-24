@@ -4,12 +4,12 @@ Updated: 2026-09-24
 
 ## Current batch
 
-- Branch: `codex/preference-replay-minimum`
-- Base commit: `3e47339` (PR #87 merged; remote main verified on 24 September). This batch makes the minimum leakage-safe preference evidence contract explicit and machine-checked.
-- Completed: the preference component now separates forecast inputs from scoring outcomes, requires walk-forward priors, forbids target-cycle outcome training, and requires wider uncertainty instead of point estimates when source-party evidence is missing. No transfer parameters were promoted.
+- Branch: `codex/walk-forward-preference-prior`
+- Base commit: `464f74e` (PR #88 merged; remote main verified on 24 September). This batch adds a reusable walk-forward preference-prior builder without wiring it into the 2026 forecast.
+- Completed: the preference component now has a fail-closed prior builder: it rejects same-cycle/future evidence, averages only earlier-cycle matrices, and returns a low-concentration broad prior when no earlier evidence exists. No transfer parameters were promoted and no 2026 inputs changed.
 - Previous batch retained: `vicforecast.historical_replay.run_historical_replay` remains fail-closed, enforces publication cutoffs and returns structured blockers for all four currently unrunnable cycles. No replay or gate is opened.
 - Safeguards: RedBridge remains quarantined and model-ineligible pending explicit owner review; no poll rows, forecast outputs, candidate data, historical outcomes or authorisation gates changed. Runnable historical cycles remain 0/4.
-- Validation: `npm run validation:evidence`, JSON parsing and `git diff --check` passed. Forecast outputs and readiness gates are unchanged.
+- Validation: Python compilation passed; direct import/tests are unavailable because the local interpreter lacks NumPy and pytest. Forecast outputs and readiness gates are unchanged.
 - Publication: this batch is local and uncommitted. The next operation is a reviewable commit and PR; do not merge or deploy manually.
 - Preserved user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` remain untracked and untouched.
 
@@ -20,4 +20,4 @@ Updated: 2026-09-24
 - Newer model-eligible polling is still needed for freshness. Do not advance registry dates without complete evidence.
 - Ballot availability, alias-aware incumbency, final-pair and preference evidence remain prerequisites for leakage-safe complete-model replay and calibration. Keep Narracan's January 2023 contest separate.
 
-Exact next action: commit this focused contract batch, run the required checks, and publish one reviewable PR. Then build the first walk-forward preference prior from pre-target evidence or keep the cycle blocked; RedBridge owner acceptance remains a separate decision-dependent blocker.
+Exact next action: run the full JavaScript checks, commit this prior-builder batch, and publish one reviewable PR. Then supply independently reconstructed earlier-cycle preference evidence or retain the broad fallback and keep replay blocked; RedBridge owner acceptance remains separate.
