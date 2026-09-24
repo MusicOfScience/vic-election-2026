@@ -3,6 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/score-frozen-2018-replay`
 Base: `b9b4e46` (PR #98 merged)
+Current batch: PR #99 open for review; do not merge automatically.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 

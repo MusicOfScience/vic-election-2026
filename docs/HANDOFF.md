@@ -9,7 +9,7 @@ Updated: 2026-09-25
 - Completed: official VEC final-pair/winner scoring artefact now covers all 88 districts. The committed prediction hash remains `424552f6…`; it was not regenerated. A separate score artefact and manifest now score the frozen prediction.
 - Safeguards: no current 2026 poll, candidate record, forecast output or production gate changed. Historical progress is 1/4 runnable, 1/4 predicted and 1/4 scored.
 - Validation: thresholds remain `preregistered-thresholds-fixed`; JavaScript/build/lint/provenance/psephology and isolated Python tests pass. The score is single-cycle evidence; complete backtest and calibration remain closed.
-- Publication: this batch is local and will be published as one reviewable PR; do not merge or deploy manually.
+- Publication: PR #99 is open at https://github.com/MusicOfScience/vic-election-2026/pull/99; checks are queued. Do not merge or deploy manually.
 - Preserved user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` remain untracked and untouched.
 
 ## Remaining work and blockers
