@@ -4,8 +4,8 @@ Updated: 2026-09-25
 
 ## Current batch
 
-- Branch: `codex/prepare-2014-holdout`
-- Base commit: `602c7480` (PR #106 merged; remote main synchronised). The 2022 certifying prediction and score are immutable.
+- Branch: `codex/advance-2014-inputs`
+- Base commit: `17278c1c` (PR #107 merged; remote main synchronised). The 2022 certifying prediction and score are immutable.
 - Current batch: select and prepare the next certifying holdout using pre-score evidence completeness only.
 - Batch state: `vic_la_2014` selected objectively; no 2014 prediction or target outcome was generated or loaded.
 - V1 evidence is immutable: prediction `424552f6…`, score `fe6734e2…`; winner accuracy 62.5%, final-pair accuracy 85.23%, primary MAE 8.33pp, complete-ensemble ALP-event Brier/log loss 0.23819/0.67015 versus uniform-swing 0.18139/0.54935. Assembly seat scoring was invalid and Council scoring deferred.
@@ -15,9 +15,9 @@ Updated: 2026-09-25
 - Resolve owner approval is recorded and the governed canonical input has 3 approved 2022 observations from 2 independent families. The sealed prediction remains SHA `f68f3bfba…`; the corrected comparator bundle remains SHA `cd04d597…`, while defective pre-score bundle SHA `1492dc93…` is preserved. Official VEC scoring outcomes are in `model/data/processed/vec_2022_assembly_final_pairs.csv` (87 districts; 77 final pairs available, 10 unavailable because only 2CP/early-majority evidence exists). Score: `model/data/validation/historical-replays/vic_la_2022-v2-score.json`, SHA `3bc3b150…`; manifest: `vic_la_2022-v2-score-manifest.json`.
 - Safeguards: no current 2026 poll, candidate record, forecast output or production gate changed. Historical progress is 2/4 runnable, 2/4 predicted and 2/4 scored; certifying predicted cycles are 1 and certifying scored cycles are 1.
 - Validation: winner accuracy 87.36%, district primary MAE 4.27pp, ALP-event Brier 0.09268, ALP-event log loss 0.68460, multiclass Brier 0.19075, multiclass log loss 1.76205 (misses the fixed 1.20 cycle threshold). Assembly mean-seat absolute error 2.86; frozen 80% chamber interval coverage 0.80. Council regional primary metric is unavailable because no regional primary estimates were frozen. Complete backtest, calibration and production authorisation remain closed.
-- 2014 preparation: three archived first-party Roy Morgan observations (1 Oct, 27 Oct and 10 Nov) have complete structured categories, samples, fieldwork and TPP; automated gates pass but all await explicit owner approval. Bounded Essential/Newspoll checks remain methodologically incomplete and are recorded in `metadata/historical-poll-2014-second-family-assessment.json`; no second family is promoted. The 2010→2014 outcome-transition file remains scoring-only and forbidden in prediction.
-- Local/Council state: the 2010 Assembly family baseline and 2010 Council evidence exist, but the 2014 crosswalk surface is absent from the clone, the notional 2010-on-2014 TPP provenance is not independently proven, and 2010→2014 Council region continuity is unaudited. 2014 remains blocked and no prediction was generated.
-- Publication: PR #107 (https://github.com/MusicOfScience/vic-election-2026/pull/107) is open for review; do not merge or deploy manually.
+- 2014 preparation: the three archived first-party Roy Morgan observations are explicitly owner-approved and promoted through the cycle-scoped governed input (`model/data/validation/historical-replay-2014-poll-observations.json`); polling is 3 observations from 1 family. The May Essential observation now passes automated gates under the documented first-party methodology-continuity rule and awaits its own owner decision; Newspoll remains a bounded fallback. The 2010→2014 outcome-transition file remains scoring-only and forbidden in prediction.
+- Local/Council state: an 88-row ABC/Antony Green pre-election notional-margin baseline is assembled at `model/data/validation/historical-replay-2014-assembly-notional-baseline.csv` (SHA `a4bf1708…`), and all eight new-boundary Council priors are structured at `model/data/validation/historical-replay-2014-council-prior.csv` (SHA `b04baf24…`). The report-referenced multi-party 2014 crosswalk is absent from the clone. Candidate availability is separately fail-closed in `metadata/historical-replay-2014-ballot-availability-audit.json`; Council no longer needs a region-name continuity join.
+- Publication: this batch is local on `codex/advance-2014-inputs`; PR publication follows after checks. Do not merge or deploy manually.
 - Preserved user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` remain untracked and untouched.
 
 ## Remaining work and blockers
@@ -27,4 +27,4 @@ Updated: 2026-09-25
 - Newer model-eligible polling is still needed for freshness. Do not advance registry dates without complete evidence.
 - Ballot availability, alias-aware incumbency, final-pair and preference evidence remain prerequisites for leakage-safe complete-model replay and calibration. Keep Narracan's January 2023 contest separate.
 
-Exact next action: obtain owner decisions for the three governed 2014 Roy Morgan cases, then recover one independent second poll family and prove a prediction-safe 2010-on-2014 baseline before wiring 2014 inputs. Do not generate a prediction until every gate passes.
+Exact next action: obtain the single pending owner approval for the Essential case, then rebuild/prove the missing 2014 multi-party geographic crosswalk and cutoff-safe ballot mask. Do not generate a prediction until every gate passes.

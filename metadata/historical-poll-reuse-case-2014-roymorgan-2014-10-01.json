@@ -17,12 +17,12 @@
   "gates": {
     "provenance": {"passed": true, "basis": "archived first-party page captured before the 2014-11-28 cutoff"},
     "methodologicalAdequacy": {"passed": true, "basis": "first-party page supplies fieldwork, Victorian sample, mode, exhaustive primary categories and TPP"},
-    "reuseBasis": {"passed": true, "manualReviewRequired": true}
+    "reuseBasis": {"passed": true, "manualReviewRequired": false, "legalDetermination": false, "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25"}
   },
-  "ownerReviewStatus": "awaiting-project-owner-approval",
-  "modelInputAdmissible": false,
-  "replayEligible": false,
+  "ownerReviewStatus": "approved-for-historical-replay",
+  "modelInputAdmissible": true,
+  "replayEligible": true,
   "notFromQuarantinedDataset": true,
-  "ownerReviewId": "historical-poll-review-2014-pending",
+  "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25",
   "notes": "Structured factual fields only; no report prose, layout or source-document redistribution. The source page does not identify the commissioning relationship in the lead note, so that discrepancy remains recorded separately."
 }

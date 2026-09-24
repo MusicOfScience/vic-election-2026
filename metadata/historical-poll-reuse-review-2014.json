@@ -1,22 +1,25 @@
 {
   "schemaVersion": 1,
-  "reviewId": "historical-poll-review-2014-pending",
+  "reviewId": "historical-poll-review-2014-owner-2026-09-25",
   "cycleId": "vic_la_2014",
   "caseIds": [
     "historical-poll-2014-roymorgan-2014-10-01",
     "historical-poll-2014-roymorgan-2014-10-27",
     "historical-poll-2014-roymorgan-2014-11-10"
   ],
-  "decision": "awaiting-project-owner-approval",
+  "decision": "approved-for-historical-replay",
+  "approvedAt": "2026-09-25",
+  "approvedBy": "project-owner",
   "scope": "Structured factual fields and provenance only; no source prose, layout or document redistribution.",
   "reuseBasis": "independently_reconstructed_factual_observation",
   "checks": {
     "provenanceGate": true,
     "methodologicalAdequacyGate": true,
-    "ownerReuseBasisApproval": false,
+    "ownerReuseBasisApproval": true,
     "notFromQuarantinedDataset": true,
     "current2026ForecastImpact": false,
-    "productionAuthorisation": false
+    "productionAuthorisation": false,
+    "manualReviewRequiredAfterThisDecision": false
   },
-  "ownerDecisionRequired": "Approve or reject these three individually reconstructed Roy Morgan observations; no 2014 poll is promoted until this decision is recorded."
+  "ownerDecision": {"approvedCaseIds": ["historical-poll-2014-roymorgan-2014-10-01", "historical-poll-2014-roymorgan-2014-10-27", "historical-poll-2014-roymorgan-2014-11-10"], "scope": "Structured factual fields and provenance only; no source prose, layout or document redistribution."}
 }
