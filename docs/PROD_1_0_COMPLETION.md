@@ -3,7 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/freeze-2022-v2-prediction`
 Base: `1a6c07fe` (PR #103 merged)
-Current batch: owner-approved Resolve promotion, cycle-aware v2 refactor and sealed 2022 prediction; outcomes remain unloaded.
+Current batch: owner-approved Resolve promotion, cycle-aware v2 refactor and sealed 2022 prediction; outcomes remain unloaded. PR #104 is open for review.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
