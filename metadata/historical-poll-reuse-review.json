@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "historical-poll-review-2018-essential-2026-09-24",
+  "caseId": "vic_la_2018-essential-2015-q4",
+  "decision": "approved-for-historical-replay",
+  "approvedAt": "2026-09-24",
+  "approvedBy": "project-owner",
+  "scope": "Only the structured factual fields and provenance in the governed case file; no report prose, layout or source-document redistribution.",
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "checks": {
+    "provenanceGate": true,
+    "methodologicalAdequacyGate": true,
+    "ownerReuseBasisApproval": true,
+    "notFromQuarantinedDataset": true,
+    "manualReviewRequiredAfterThisDecision": false,
+    "current2026ForecastImpact": false,
+    "productionAuthorisation": false
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "scripts/apply-approved-historical-poll-review.mjs",
+  "generatedAt": "2026-09-24",
+  "sourceCaseId": "vic_la_2018-essential-2015-q4",
+  "ownerReviewId": "historical-poll-review-2018-essential-2026-09-24",
+  "independentSourceFamilies": 1,
+  "observations": [
+    {
+      "observationId": "vic_la_2018-essential-2015-q4-2015-10",
+      "cycleId": "vic_la_2018",
+      "period": "2015-10",
+      "sourceId": "essential-vic-2016-01-13-pdf",
+      "sourceUrl": "https://www.essentialvision.com.au/wp-content/uploads/2016/01/Essential-Report_statevoting_Dec2015.pdf",
+      "sourceSha256": "48828ef3fc4c9a12feeca881dff668c2cb5c465cc0b5b7480950eb5ea58e993d",
+      "evidenceAvailableByDate": "2016-01-13",
+      "sampleSize": 882,
+      "population": "Victorian adults",
+      "mode": "online Your Source panel",
+      "primaryShares": {
+        "LIB_NAT": 40,
+        "ALP": 38,
+        "GRN": 13,
+        "OTH_IND": 9
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "Coalition",
+        "Greens",
+        "Other/Independent"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2018-essential-2026-09-24",
+      "replayEligible": true
+    },
+    {
+      "observationId": "vic_la_2018-essential-2015-q4-2015-11",
+      "cycleId": "vic_la_2018",
+      "period": "2015-11",
+      "sourceId": "essential-vic-2016-01-13-pdf",
+      "sourceUrl": "https://www.essentialvision.com.au/wp-content/uploads/2016/01/Essential-Report_statevoting_Dec2015.pdf",
+      "sourceSha256": "48828ef3fc4c9a12feeca881dff668c2cb5c465cc0b5b7480950eb5ea58e993d",
+      "evidenceAvailableByDate": "2016-01-13",
+      "sampleSize": 870,
+      "population": "Victorian adults",
+      "mode": "online Your Source panel",
+      "primaryShares": {
+        "LIB_NAT": 41,
+        "ALP": 36,
+        "GRN": 14,
+        "OTH_IND": 9
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "Coalition",
+        "Greens",
+        "Other/Independent"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2018-essential-2026-09-24",
+      "replayEligible": true
+    },
+    {
+      "observationId": "vic_la_2018-essential-2015-q4-2015-12",
+      "cycleId": "vic_la_2018",
+      "period": "2015-12",
+      "sourceId": "essential-vic-2016-01-13-pdf",
+      "sourceUrl": "https://www.essentialvision.com.au/wp-content/uploads/2016/01/Essential-Report_statevoting_Dec2015.pdf",
+      "sourceSha256": "48828ef3fc4c9a12feeca881dff668c2cb5c465cc0b5b7480950eb5ea58e993d",
+      "evidenceAvailableByDate": "2016-01-13",
+      "sampleSize": 650,
+      "population": "Victorian adults",
+      "mode": "online Your Source panel",
+      "primaryShares": {
+        "LIB_NAT": 39,
+        "ALP": 38,
+        "GRN": 12,
+        "OTH_IND": 10
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "Coalition",
+        "Greens",
+        "Other/Independent"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2018-essential-2026-09-24",
+      "replayEligible": true
+    }
+  ],
+  "quarantineBoundary": "No values are read from d-j-hirst/aus-polling-analyser; this file contains only the approved structured factual reconstruction.",
+  "modelImpact": {
+    "forecast2026": false,
+    "productionAuthorisation": false
+  }
+}

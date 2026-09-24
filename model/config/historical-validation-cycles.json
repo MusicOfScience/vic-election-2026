@@ -3,11 +3,11 @@
   "reviewedAt": "2026-09-14",
   "status": "partial-unrunnable",
   "productionCompatible": false,
-  "scope": "Leakage-safe walk-forward specifications for the complete five-party Assembly, preference-transfer, chamber and Council probability model",
+  "scope": "Leakage-safe walk-forward specifications for the canonical-family Assembly, preference-transfer, chamber and Council probability model with each cycle's ballot-active family universe",
   "policy": "Each cycle may use only evidence published on or before its information cutoff. Election outcomes and later evidence are scoring-only and can never enter that cycle's forecast.",
   "requiredOutputs": [
-    "statewide-five-party-primary-votes",
-    "district-five-party-primary-votes",
+    "statewide-canonical-primary-votes-by-active-family",
+    "district-canonical-primary-votes-by-ballot-active-family",
     "district-final-two-pairs",
     "district-winners-and-probabilities",
     "assembly-seat-count-distribution",
@@ -19,6 +19,13 @@
       "centralWeight": 0,
       "reason": "Failed sealed four-cycle promotion test"
     }
+  },
+  "partyFamilyPolicy": {
+    "canonicalFamilies": ["ALP", "Coalition", "Greens", "One Nation", "Other/Independent"],
+    "cycleAvailabilityPath": "metadata/historical-party-family-availability.json",
+    "inactiveFamily": "not required as a separate poll category and never imputed as numeric zero",
+    "groupedResidual": "retained as reported; no decomposition",
+    "districtSpecificAvailability": true
   },
   "leakageRules": {
     "enforcePublicationDateCutoff": true,

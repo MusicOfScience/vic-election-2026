@@ -1,8 +1,8 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-24
-Branch: `codex/historical-ballot-aware-polling`
-Base: `17cd38b` (PR #93 merged)
+Branch: `codex/historical-replay-readiness`
+Base: `4d94195` (PR #94 merged)
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -12,12 +12,12 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 | Assembly primary and Council evidence | Complete | None currently evidenced | Preserve official VEC evidence, rule versions and Narracan separation | `npm run validation:evidence`, `npm run psephology:validate` | Complete — preserve |
 | Candidate coverage and quarantine | Complete | VEC nomination status remains separate | Use controlled review for changes | `npm run candidates:validate`, `npm run candidates:review:check` | Complete — preserve |
 | Current critical-source freshness | Blocked | 15 September RedBridge/Accent report is captured and dossier-recommended for evidence acceptance, but remains quarantined pending project-owner review and separate model-eligibility checks | Record explicit owner decision; admit only if independence and comparability checks pass | `npm run release:readiness:check`, `node scripts/build-poll-promotion-audit.mjs --as-of 2026-09-24` | Open blocker — review decision required |
-| Historical poll vintages | Partial | 64/200 matched; 136 residual; legacy queue remains quarantined; three-gate policy now separates provenance, methodological adequacy and reuse basis | Continue finite first-party reconstruction; adjudicate independent factual records under the policy | `npm run validation:evidence`, `node scripts/validate-historical-poll-reuse-policy.mjs` | Open blocker |
+| Historical poll vintages | Partial | 64/200 legacy leads matched; 3 independently reconstructed observations approved from 1 source family; sparse rule requires 2 families | Add a second independent family only if needed after sufficiency review; retain grouped categories and uncertainty | `node scripts/validate-historical-replay-input-readiness.mjs` | Open blocker |
 | Cutoff-safe ballot and incumbency | Partial | Official VEC 2010, 2014, 2018 and 2022 material now fixes nomination and post-draw publication timing frameworks, but candidate-specific acceptance, archived publication timing and aliases remain unresolved | Build cycle-scoped, leakage-safe slate evidence | `npm run validation:evidence` | Open blocker |
 | Preference flows and final pairs | Partial | 39 indicative 2022 distributions remain outcome evidence; the walk-forward prior builder is now wired into future replay execution, but no source-party prior is forecast-ready | Establish walk-forward preference priors and separate final-pair scoring outcomes | `npm run validation:evidence`, guarded replay CLI, Python prior-builder tests | Open blocker |
 | Runnable frozen historical configurations | Partial | Four specifications exist but are deliberately unrunnable | Complete frozen inputs and scoring-only outcome separation; guarded runner now freezes prediction before emitting scoring metrics | `npm run validation:replay-contract`, `PYTHONPATH=model/src python3 -m vicforecast.historical_replay vic_la_2022` | Open blocker — runner guarded |
-| Complete multi-party walk-forward backtest | Blocked | Existing validation is a two-party baseline, not the released probability model | Run leakage-safe four-cycle replays against the preregistered comparator/metric protocol; performance thresholds remain intentionally pending before first complete scoring | `metadata/historical-validation-acceptance-criteria.json` | Open blocker — evidence and threshold registration |
-| Probability calibration | Blocked | No held-out complete-model reliability, slope/intercept or coverage evidence | Evaluate out-of-fold probabilities and intervals under the preregistered cycle-clustered protocol | `metadata/historical-validation-acceptance-criteria.json` | Open blocker — evidence and threshold registration |
+| Complete multi-party walk-forward backtest | Blocked | Existing validation is a two-party baseline, not the released probability model | Run leakage-safe four-cycle replays against the fixed comparator/metric protocol | `metadata/historical-validation-acceptance-criteria.json` | Open blocker — evidence |
+| Probability calibration | Blocked | No held-out complete-model reliability, slope/intercept or coverage evidence | Evaluate out-of-fold probabilities and intervals under the fixed cycle-clustered protocol | `metadata/historical-validation-acceptance-criteria.json` | Open blocker — evidence |
 | Production authorisation | Blocked | Depends on freshness, complete backtest, calibration and exact artefact identity | Authorise only after upstream gates pass | `npm run release:readiness:check` | Closed pending evidence |
 | Public application and deployment | Complete but needs PROD verification | Production label remains correctly experimental | Run responsive/rendered checks after evidence gates are ready | `npm test`, `npm run lint`, deployment checks | Deferred until model gates |
 
@@ -30,6 +30,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
 - Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately.
 - Cycle-aware ballot review: 2010, 2014 and 2018 have no One Nation Assembly candidates; 2022 has four. The 2018 Essential case now passes provenance and methodological adequacy because its grouped Other residual is sufficient for the active four-family ballot universe. It remains pending manual reuse review and is not a model input.
-- Replay-eligible historical observations remain 0 and runnable cycles remain 0/4. The concrete case is not a forecast input and does not change readiness or authorisation.
+- Owner decision recorded: `metadata/historical-poll-reuse-review.json`; the approved replay input contains 3 structured observations from 1 independent source family. Legacy queue replay-eligible rows remain 0; total approved replay observations are 3.
+- Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before any complete replay score. Replay-input readiness remains 0/4 runnable and release readiness remains unchanged.
 
-Exact next action: complete manual review and governed promotion of the 2018 factual observation if approved, then resolve ballot/slate and preference blockers; do not treat methodological admissibility as automatic replay promotion.
+Exact next action: recover a second independent 2018 polling family or document why the common sparse rule cannot be met, then implement the leakage-safe local/contest and Council replay inputs.

@@ -16,13 +16,13 @@ export function validateHistoricalPollReusePolicy() {
   if (caseFile.cycleInformationCutoff < caseFile.evidenceAvailableByDate || !caseFile.notFromQuarantinedDataset) {
     throw new Error("historical poll reuse policy: 2018 case has unsafe provenance");
   }
-  if (caseFile.reuseBasis !== "independently_reconstructed_factual_observation" || !caseFile.reuseBasisGate.passed || caseFile.rawSourceStored || caseFile.copiedAuthoredExpression) {
+  if (caseFile.reuseBasis !== "independently_reconstructed_factual_observation" || !caseFile.reuseBasisGate.passed || caseFile.reuseBasisGate.manualReviewRequired || !caseFile.reuseBasisGate.ownerReviewId || caseFile.rawSourceStored || caseFile.copiedAuthoredExpression) {
     throw new Error("historical poll reuse policy: independent factual case is not conservatively represented");
   }
-  if (!caseFile.methodologicalAdequacyGate.passed || caseFile.replayEligible || !caseFile.modelInputAdmissible) {
+  if (!caseFile.methodologicalAdequacyGate.passed || !caseFile.replayEligible || !caseFile.modelInputAdmissible || caseFile.decision !== "approved-for-historical-replay") {
     throw new Error("historical poll reuse policy: ballot-aware 2018 case adjudication is inconsistent");
   }
-  return { policyClasses: required.length, adjudicatedCases: 1, replayEligibleCases: 0 };
+  return { policyClasses: required.length, adjudicatedCases: 1, replayEligibleCases: 1 };
 }
 
 if (process.argv[1]?.endsWith("validate-historical-poll-reuse-policy.mjs")) {
