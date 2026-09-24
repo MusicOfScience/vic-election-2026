@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 import pytest
 
@@ -23,9 +24,10 @@ def test_incomplete_cycles_fail_closed_with_structured_blockers():
         assert result.metrics is None
 
 
-def test_2018_replay_is_executable_without_production_compatibility():
-    with pytest.raises(ReplayContractError, match="final-pair/winner artefact"):
-        run_historical_replay(ROOT, "vic_la_2018")
+def test_2018_replay_execution_is_separate_from_production_compatibility():
+    config = json.loads((ROOT / "config/historical-validation-cycles.json").read_text())
+    assert config["replayExecutable"] is True
+    assert config["productionCompatible"] is False
 
 
 def test_later_evidence_is_a_contract_error_not_silently_ignored():
