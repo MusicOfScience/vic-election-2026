@@ -263,8 +263,20 @@
           "sha256": "f33d45f470560c01ff940cedde7ef8e34cfa7530d725945a866508b2d0512e1d"
         }
       ],
+      "externalEvidence": [
+        {
+          "url": "https://www.vec.vic.gov.au/-/media/47ecc63c36db4050b0318e8c9a6638d9.pdf",
+          "sha256": "8c3e4cc309bed388f3f904881e1d754636e62b458c6268bc5db02cd6170fce1e",
+          "retrievedAt": "2026-09-24",
+          "scope": "vic_la_2022",
+          "finding": "The VEC handbook records the 2022 nomination deadlines: registered-party candidates 10 November 2022 and independent candidates 11 November 2022.",
+          "availabilityUse": "timing-framework-only",
+          "limitation": "This establishes the legal nomination window, not candidate-specific acceptance or the exact public availability of every final slate row."
+        }
+      ],
       "limitations": [
         "The result pages prove the final ballot, but not when every identity became available before each frozen cutoff.",
+        "The VEC 2022 handbook now establishes the nomination window, but candidate-specific acceptance/publication timing remains unresolved and the component stays partial.",
         "Narracan's supplementary slate and outcome postdate the 2022 cutoff and remain excluded from that cycle's prediction and score."
       ],
       "needed": "Cutoff-compliant slate timing plus incumbent/challenger status as known at each historical election."
