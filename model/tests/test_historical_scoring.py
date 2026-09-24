@@ -17,6 +17,7 @@ def test_official_2018_final_pair_artefact_covers_all_districts_and_non_major_pa
         else int(row["finalist_2_votes"]) > int(row["finalist_1_votes"])
         for row in rows
     )
+    assert all(abs(float(row["finalist_1_percent"]) + float(row["finalist_2_percent"]) - 100) <= 0.25 for row in rows)
     assert any("Greens" in row["final_pair_family_label"] for row in rows)
     assert any(row["winner_party_family"] not in {"ALP", "Coalition"} for row in rows)
 

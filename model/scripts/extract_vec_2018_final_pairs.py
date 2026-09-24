@@ -97,6 +97,7 @@ def extract(entry: dict, aliases: dict[str, str], family_by_candidate: dict[str,
     if not any(norm(row[0]) == norm(elected_candidate) for row in parsed): raise ValueError(f"{entry['district_name']}: elected member not in final pair")
     winner = max(parsed, key=lambda row: row[2])
     if norm(winner[0]) != norm(elected_candidate): raise ValueError(f"{entry['district_name']}: elected member does not have greater final votes")
+    if abs(sum(row[3] for row in parsed) - 100.0) > 0.25: raise ValueError(f"{entry['district_name']}: final-pair percentages do not reconcile")
     return {"election_id":"vic_la_2018", "district_id": re.sub(r"[^a-z0-9]+", "-", entry["district_name"].casefold()).strip("-"), "district_name":entry["district_name"], "source_url":entry["source_url"], "source_sha256":digest,
       "elected_candidate":elected_candidate, "elected_party_raw":elected_raw, "elected_party_family":family(elected_raw, aliases) if elected_raw else family_by_candidate.get(norm(elected_candidate)),
       "finalist_1_candidate":parsed[0][0], "finalist_1_party_raw":parsed[0][1], "finalist_1_party_family":parsed[0][4], "finalist_1_votes":parsed[0][2], "finalist_1_percent":parsed[0][3],
