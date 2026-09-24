@@ -1,9 +1,9 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-25
-Branch: `codex/score-frozen-2018-replay`
-Base: `b9b4e46` (PR #98 merged)
-Current batch: PR #99 open for review; do not merge automatically.
+Branch: `codex/repair-historical-adapter-v2`
+Base: `5cdd8dd` (PR #99 merged)
+Current batch: historical adapter v2 repair; v1 remains immutable and non-certifying.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -26,14 +26,15 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 
 - Release readiness: `experimental-blocked`, 4/9 gates passing at the 24 September assessment; RedBridge freshness evidence is resolved into a dossier but not into model inputs.
 - Blocking gates: critical source freshness, unresolved newer model evidence, complete forecast backtest, probability calibration and production authorisation.
-- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 1/4 runnable, 1/4 predicted and 1/4 scored.
+- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 1/4 runnable, 1/4 predicted and 1/4 scored, with 0/4 certifying scored cycles because v1 contains confirmed adapter defects.
 - Demographic challenger remains rejected at central weight `0`.
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
 - Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately.
 - Cycle-aware ballot review: 2010, 2014 and 2018 have no One Nation Assembly candidates; 2022 has four. The 2018 Essential case passes provenance and methodological adequacy because its grouped Other residual is sufficient for the active four-family ballot universe, and owner approval has promoted only its structured replay input.
 - Owner decisions recorded: Essential and uComms/ReachTEL reviews; the approved replay input contains 4 structured observations from 2 independent source families. Legacy queue replay-eligible rows remain 0.
 - Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before scoring. Replay progress is 1/4 runnable, 1/4 predicted and 1/4 scored; release readiness remains unchanged.
-- Focus cycle: `vic_la_2018`, selected by pre-score input completeness. Poll, local, Council and preference contracts pass; the prediction path is executable while production compatibility remains false.
+- Focus cycle: `vic_la_2018`. V1 local-family mapping, Assembly seat aggregation and Council top-two defects are preserved as a negative implementation result. V2 uses `metadata/historical-party-family-mapping.json`, per-simulation chamber draws and a non-certifying diagnostic output.
+- V2 diagnostic artefact: `model/data/validation/historical-replays/vic_la_2018-v2-diagnostic.json` (SHA `3aa4ce84…`); comparator limitations are recorded in `metadata/historical-replay-v1-comparator-audit.json`.
 - Verification: JavaScript, build, lint, source provenance, psephology and isolated Python validation pass; the official 2018 outcome extractor validates 88/88 districts.
 
-Exact next action: preserve the first score and repair the historical seat-output scale in a new model version; then build the next evidence-complete cycle. Council seat scoring remains deferred because the frozen output lacks a comparable seat-distribution outcome adapter.
+Exact next action: recover the smallest finite polling/local/Council evidence set for the next certifying cycle; `metadata/historical-replay-next-cycle-selection.json` records that 2010, 2014 and 2022 are currently blocked before score selection.

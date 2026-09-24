@@ -1,0 +1,12 @@
+{
+  "modelVersion": "historical_replay_v1",
+  "status": "diagnostic-only",
+  "comparators": {
+    "uniformSwing": "2014 district ALP/Coalition baseline binary event",
+    "pollingOnly": "frozen statewide poll ALP/Coalition binary event",
+    "pollingPlusFundamentals": "mean of the same frozen poll and 2014 baseline",
+    "seatLevel": "district winner probability transformed to an ALP event",
+    "completeEnsemble": "frozen v1 district ALP win probability"
+  },
+  "caveat": "The seat-level and complete-ensemble ALP-event comparator outputs are numerically identical in v1 because both consume the same frozen district probabilities; they are retained as labelled protocol outputs, not independent evidence."
+}

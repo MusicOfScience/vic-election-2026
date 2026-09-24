@@ -28,6 +28,8 @@ def test_2018_replay_execution_is_separate_from_production_compatibility():
     config = json.loads((ROOT / "config/historical-validation-cycles.json").read_text())
     assert config["replayExecutable"] is True
     assert config["productionCompatible"] is False
+    with pytest.raises(ReplayContractError, match="prediction is immutable"):
+        run_historical_replay(ROOT, "vic_la_2018")
 
 
 def test_later_evidence_is_a_contract_error_not_silently_ignored():

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "historicalToModel": {
+    "ALP": "ALP",
+    "Coalition": "LIB_NAT",
+    "Greens": "GRN",
+    "One Nation": "ONP",
+    "Other/Independent": "OTH_IND"
+  },
+  "modelToHistorical": {
+    "ALP": "ALP",
+    "LIB_NAT": "Coalition",
+    "GRN": "Greens",
+    "ONP": "One Nation",
+    "OTH_IND": "Other/Independent"
+  },
+  "unknownFamilyPolicy": "fail-closed",
+  "verifiedUnavailablePolicy": "only cycle ballot evidence may mark a family unavailable; schema omissions are errors"
+}

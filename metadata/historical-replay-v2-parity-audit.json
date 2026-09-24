@@ -1,0 +1,8 @@
+{
+  "modelVersion": "historical_replay_v2",
+  "shared": ["statewide latent polling state", "local logit structure", "correlated simulation draws", "multi-party IRV", "preference uncertainty", "Assembly chamber simulation", "Council regional simulation", "cycle-appropriate counting"],
+  "cycleSpecific": ["ballot-active family universe", "prior-election local baseline", "pre-cutoff polling observations", "2018 Council rules", "absence of a regional Council poll"],
+  "unavailableWithGovernedFallback": ["target-cycle outcomes", "post-cutoff candidate evidence", "2018 regional poll", "promoted source-party transfer matrix"],
+  "fallbacks": {"regionalPoll": "zero contribution plus fixed regional shock broadening", "preferencePrior": "governed broad uncertainty prior", "inactiveFamily": "excluded from ballot vector; never imputed as a poll zero"},
+  "certification": "v2 2018 output is a post-hoc diagnostic and cannot count as a held-out cycle"
+}
