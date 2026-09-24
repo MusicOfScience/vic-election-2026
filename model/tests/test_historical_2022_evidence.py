@@ -33,6 +33,31 @@ def test_2022_poll_cases_keep_owner_decisions_separate_from_fixed_sufficiency_ru
     assert {row["sourceId"] for row in promoted} == {"roy-morgan-vic-2022-11-09-10", "roy-morgan-vic-2022-11-22-23"}
 
 
+def test_2022_resolve_case_is_independent_but_cannot_auto_promote():
+    case = json.loads((REPO / "metadata/historical-poll-reuse-case-2022-resolve-2022-11-16-20.json").read_text())
+    assert case["gates"]["provenance"]["passed"] is True
+    assert case["gates"]["methodologicalAdequacy"]["passed"] is True
+    assert case["reuseBasis"] == "independently_reconstructed_factual_observation"
+    assert case["ownerReviewStatus"] == "awaiting-project-owner-approval"
+    assert case["modelInputAdmissible"] is False
+    assert case["replayEligible"] is False
+    assert case["notFromQuarantinedDataset"] is True
+    assert case["sourceId"] not in {"roy-morgan-vic-2022-11-09-10", "roy-morgan-vic-2022-11-22-23"}
+    assert case["groupedResidual"]["OTH_IND"] == 18
+    assert sum(case["reportedPrimaryCategories"].values()) == 100
+
+
+def test_2022_poll_sufficiency_remains_fail_closed_until_resolve_owner_approval():
+    readiness = json.loads((REPO / "metadata/historical-replay-input-readiness.json").read_text())
+    cycle = next(item for item in readiness["cycles"] if item["cycleId"] == "vic_la_2022")
+    poll = cycle["pollEvidence"]
+    assert poll["status"] == "blocked"
+    assert "fixed minimum" in poll["reason"]
+    assert "3 observations" in poll["reason"]
+    assert "2 independent source families" in poll["reason"]
+    assert not (ROOT / "data/validation/historical-replays/vic_la_2022-prediction.json").exists()
+
+
 def test_2022_boundary_audit_does_not_substitute_target_outcomes():
     audit = json.loads((REPO / "metadata/historical-replay-2022-boundary-audit.json").read_text())
     assert audit["availability"]["presentLocally"] is True

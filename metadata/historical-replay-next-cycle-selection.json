@@ -5,7 +5,7 @@
   "candidates": {
     "vic_la_2010": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]},
     "vic_la_2014": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]},
-    "vic_la_2022": {"approvedPollingObservations": 2, "independentFamilies": 1, "reconstructedCases": 3, "independentFamiliesAvailableForReview": 2, "blockingInputs": ["thirdPollingObservation", "secondIndependentFamilyOwnerReview"], "evidenceRationale": "two first-party Roy Morgan observations are owner-approved and promoted; the AEC/VEC district and regional local surfaces now pass pre-cutoff input checks; fixed poll sufficiency still needs one approved observation from a second family"}
+    "vic_la_2022": {"approvedPollingObservations": 2, "independentFamilies": 1, "reconstructedCases": 4, "independentFamiliesAvailableForReview": 2, "blockingInputs": ["thirdPollingObservation", "secondIndependentFamilyOwnerReview"], "evidenceRationale": "two first-party Roy Morgan observations are owner-approved and promoted; a contemporaneous Resolve observation passes automated gates and is awaiting owner approval; the AEC/VEC district and regional local surfaces now pass pre-cutoff input checks; fixed poll sufficiency still needs that approval"}
   },
   "reason": "2022 is objectively closest by recoverable first-party polling and existing prior-cycle evidence, but is not yet runnable. Selection was frozen before any 2022 model prediction or score."
 }

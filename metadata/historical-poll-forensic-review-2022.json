@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "historical-poll-forensic-review-2022-2026-09-25",
+  "cycleId": "vic_la_2022",
+  "cutoff": "2022-11-25",
+  "freshwater": {
+    "sourceUrl": "https://freshwaterstrategy.com/2022/11/07/labor-slides-but-still-ahead-in-victoria/",
+    "firstPartyPageSha256": "8bd8ebdda74791e42212d0ddeff80e5dd6a79f62dd509b58efcfa31e2e7958d9",
+    "checks": ["article HTML", "WordPress post API", "embedded Datawrapper assets", "Freshwater-hosted image/media references"],
+    "result": "blocked",
+    "unresolvedField": "complete mutually exhaustive primary category structure, including treatment of the unreported residual; no arithmetic residual was fabricated"
+  },
+  "alternate": {
+    "caseId": "historical-poll-2022-resolve-2022-11-16-20",
+    "result": "automated-gates-pass-awaiting-owner-approval",
+    "selectionBasis": "one contemporaneous, independently attributable second-family observation satisfying the fixed evidence fields; no target outcome or quarantined lead value used"
+  },
+  "promotion": {"automatic": false, "ownerApprovalRequired": true},
+  "forecast2026Impact": false
+}
