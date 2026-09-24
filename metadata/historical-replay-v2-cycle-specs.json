@@ -20,7 +20,8 @@
       "councilRules": "vic-2014-five-seat-stv",
       "predictionStatus": "held-out-certifying-prediction-frozen",
       "predictionArtefact": "model/data/validation/historical-replays/vic_la_2014-v2-prediction.json",
-      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2014-v2-comparators.json"
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2014-v2-comparators-v2.json",
+      "comparatorSpec": "metadata/historical-replay-v2-comparator-spec-2014.json"
     },
     "vic_la_2018": {
       "electionDate": "2018-11-24",

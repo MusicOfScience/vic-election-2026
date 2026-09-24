@@ -1,9 +1,9 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-25
-Branch: `codex/freeze-2014-crosswalk`
-Base: `8bc89cc2` (PR #110 merged)
-Current batch: rebuild the prediction-safe 2014 geographic crosswalk and freeze the second certifying v2 prediction. No 2014 outcome loading.
+Branch: `codex/repair-2014-comparators`
+Base: `f0d692bf` (PR #111 merged)
+Current batch: repair and re-freeze the 2014 comparator bundle before outcome loading. No 2014 outcome loading.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -26,7 +26,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 
 - Release readiness: `experimental-blocked`, 4/9 gates passing at the 24 September assessment; RedBridge freshness evidence is resolved into a dossier but not into model inputs.
 - Blocking gates: critical source freshness, unresolved newer model evidence, complete forecast backtest, probability calibration and production authorisation.
-- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 2/4 runnable, 2/4 predicted and 2/4 scored, with 1/4 certifying predictions frozen and 1/4 certifying scored cycles.
+- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 3/4 runnable, 3/4 predicted and 2/4 scored, with 2/4 certifying predictions frozen and 1/4 certifying scored cycles.
 - Demographic challenger remains rejected at central weight `0`.
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
 - Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately.
@@ -38,7 +38,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - The first certifying v2 cycle was `vic_la_2022`; its frozen prediction and score remain immutable. The official score is `model/data/validation/historical-replays/vic_la_2022-v2-score.json` (SHA `3bc3b150…`) with outcomes loaded only after sealed prediction/comparator verification.
 - Next certifying cycle selected before any 2014 prediction: `vic_la_2014`. 2014 is objectively closer than 2010 by pre-score completeness: three archived Roy Morgan cases plus one Essential case are approved through the governed path, while 2010 has only four source-matched leads and lacks a comparable 2006 multi-party local baseline. Selection is recorded in `metadata/historical-replay-next-cycle-selection.json`.
 - 2014 preparation audit: `metadata/historical-replay-2014-input-audit.json`. Four observations from two independent families (Roy Morgan and Essential) are owner-approved/promoted and pass the fixed polling rule. The 88-row ABC/Antony Green notional baseline, eight-region Council prior and cutoff-safe 88-row ballot mask are structured. Four restored raw payloads are verified by `metadata/historical-replay-2014-crosswalk-build-manifest.json`; the rebuilt crosswalk has 616 cells (SHA `2b2a1612c631eba1a7a782f9147e90745d1d8fdf1c3a13bd8ebd7e276a4f0398`) and the local input has 88 rows (SHA `5aab7e9d8998674770845b41720f7b4219967d194cf99eaf8c012aba01b20f64`). The 2010→2014 observed-swing file remains scoring-only.
-- 2014 sealed holdout: `model/data/validation/historical-replays/vic_la_2014-v2-prediction.json` (prediction SHA `7621cd120c9efdd7f891d0d69fbd711b8d5316af632547df6035e3ea096b38b0`) and comparator bundle `vic_la_2014-v2-comparators.json` (SHA `d0178652ddcd922ae8b61cadac40ff6bab296c27f9bcc4be97cd5e34f43e3efd`) were generated before any target outcome access. Scoring is deliberately deferred.
-- Verification: 144 JavaScript tests, 60 isolated Python tests, lint, provenance, psephology, replay-contract, readiness, release-readiness and `git diff --check` pass locally. GitHub Actions could not start because the account billing/spending limit blocked the runner. Cycle-level log loss misses the fixed threshold; final-pair calibration, Council regional-primary error and four-cycle metrics remain unavailable by contract.
+- 2014 sealed holdout: `model/data/validation/historical-replays/vic_la_2014-v2-prediction.json` (prediction SHA `7621cd120c9efdd7f891d0d69fbd711b8d5316af632547df6035e3ea096b38b0`) is unchanged. The original comparator bundle `vic_la_2014-v2-comparators.json` (SHA `d0178652ddcd922ae8b61cadac40ff6bab296c27f9bcc4be97cd5e34f43e3efd`) is preserved as a pre-score implementation defect because uniform-swing and seat-level district arrays were identical. The corrected pre-outcome bundle is `vic_la_2014-v2-comparators-v2.json` (SHA `4d706fa0dc0b49b5cd6bf281550914594663da4d31d4c6613be17dc87daa1ccb`) under `metadata/historical-replay-v2-comparator-spec-2014.json`. Scoring is deliberately deferred.
+- Verification: 147 JavaScript tests, 65 isolated Python tests, lint, provenance, psephology, replay-contract, readiness, release-readiness and `git diff --check` pass locally. GitHub Actions could not start because the account billing/spending limit blocked the runner. Cycle-level log loss misses the fixed threshold; final-pair calibration, Council regional-primary error and four-cycle metrics remain unavailable by contract.
 
-Exact next action: score the immutable 2014 prediction in a separate outcome-loading batch, then update certifying metrics without tuning v2. Complete backtest, calibration and production authorisation remain closed.
+Exact next action: score the immutable 2014 prediction and corrected comparator bundle in a separate outcome-loading batch, then update certifying metrics without tuning v2. Complete backtest, calibration and production authorisation remain closed.
