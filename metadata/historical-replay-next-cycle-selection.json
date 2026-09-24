@@ -1,11 +1,11 @@
 {
   "selectionRule": "choose the next certifying cycle only by pre-score evidence completeness, before generating or viewing its model score",
-  "selectedCycle": null,
-  "status": "blocked-no-evidence-complete-candidate",
+  "selectedCycle": "vic_la_2022",
+  "status": "selected-pre-score-input-completeness; blocked-pending-governed-evidence",
   "candidates": {
     "vic_la_2010": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]},
     "vic_la_2014": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]},
-    "vic_la_2022": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]}
+    "vic_la_2022": {"approvedPollingObservations": 0, "independentFamilies": 0, "reconstructedCases": 3, "independentFamiliesAvailableForReview": 2, "blockingInputs": ["ownerReviewOfPolling", "incumbencyLocal", "councilInput"], "evidenceRationale": "two first-party Roy Morgan observations and one independently documented RedBridge case are available for governed review; the official VEC 2018-on-2022-boundary TPP baseline is now recovered, while multi-party local inputs and Council region continuity remain open"}
   },
-  "reason": "No remaining cycle satisfies the fixed minimum polling and pre-cutoff local/Council input requirements; no target outcomes were inspected for selection."
+  "reason": "2022 is objectively closest by recoverable first-party polling and existing prior-cycle evidence, but is not yet runnable. Selection was frozen before any 2022 model prediction or score."
 }

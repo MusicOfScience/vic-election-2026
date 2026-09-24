@@ -127,15 +127,16 @@
       "cycleId": "vic_la_2022",
       "pollEvidence": {
         "status": "blocked",
-        "reason": "0 approved replay observations; minimum 3 observations and 2 independent source families not met"
+        "reason": "3 governed 2022 cases reconstructed (2 Roy Morgan observations plus RedBridge methodology/corroboration), but owner review is pending and RedBridge numerical adequacy is unresolved; no observation promoted"
       },
-      "ballotContest": {
-        "status": "blocked",
-        "reason": "cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"
-      },
+        "ballotContest": {
+          "status": "pass",
+          "reason": "87-district November general-election universe and cutoff-safe VEC 2018-on-2022-boundary TPP baseline are governed; Narracan supplementary contest is excluded",
+          "artefact": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv"
+        },
       "incumbencyLocal": {
         "status": "blocked",
-        "reason": "no leakage-safe historical local-pattern builder is wired"
+        "reason": "v2 2022 local adapter still needs governed multi-party district vectors and district-specific family availability; the cutoff-safe TPP baseline alone is insufficient"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",
@@ -143,7 +144,8 @@
       },
       "councilInput": {
         "status": "blocked",
-        "reason": "historical pre-cutoff Council forecast inputs are not assembled"
+        "reason": "2018 Council evidence exists, but the audit finds Eastern Metropolitan→North-Eastern Metropolitan is not a direct name-continuity join; an official pre-cutoff mapping or governed broad fallback is still required",
+        "artefact": "metadata/historical-replay-2022-council-region-audit.json"
       },
       "cutoffValidation": {
         "status": "pass",

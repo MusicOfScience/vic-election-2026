@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2022-roymorgan-2022-11-10",
+  "cycleId": "vic_la_2022",
+  "sourceId": "roy-morgan-vic-2022-11-09-10",
+  "sourceUrl": "https://www.roymorgan.com/findings/9108-roy-morgan-survey-on-voting-intention-in-victoria-november-10-2022",
+  "sourceSha256": "24e89513233a697f535cbb1e47d43578010f693dbedc51f1be3a0b669b00aa9e",
+  "publicationDate": "2022-11-11",
+  "evidenceAvailableByDate": "2022-11-11",
+  "fieldwork": {"start": "2022-11-09", "end": "2022-11-10", "sampleSize": 1030, "population": "Victorian electors aged 18+", "mode": "Roy Morgan Snap SMS survey"},
+  "reportedPrimaryCategories": {"ALP": 40, "LIB_NAT": 29, "GRN": 11.5, "OTH_IND": 19.5},
+  "reportedTpp": {"ALP": 57, "LIB_NAT": 43},
+  "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"],
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "gates": {"provenance": {"passed": true}, "methodologicalAdequacy": {"passed": true, "basis": "first-party dated report supplies fieldwork, sample, mode, primary categories and TPP"}, "reuseBasis": {"passed": true, "manualReviewRequired": true}},
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "notes": "Structured factual fields only; no report prose or layout reproduced. Await explicit project-owner review before replay promotion."
+}

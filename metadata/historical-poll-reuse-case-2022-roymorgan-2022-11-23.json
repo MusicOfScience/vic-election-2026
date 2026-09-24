@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2022-roymorgan-2022-11-23",
+  "cycleId": "vic_la_2022",
+  "sourceId": "roy-morgan-vic-2022-11-22-23",
+  "sourceUrl": "https://www.roymorgan.com/findings/alp-government-of-daniel-andrews-set-to-win-with-a-reduced-majority-as-support-for-l-np-grows-but-will-the-trend-continue",
+  "sourceSha256": "a245dafdcb9c58e1c6692eeaf12e2b0e7fc4802996ccece8f3985842d6227aae",
+  "publicationDate": "2022-11-23",
+  "evidenceAvailableByDate": "2022-11-23",
+  "fieldwork": {"start": "2022-11-22", "end": "2022-11-23", "sampleSize": 1195, "population": "Victorian electors aged 18+", "mode": "Roy Morgan Snap SMS survey"},
+  "reportedPrimaryCategories": {"ALP": 38, "LIB_NAT": 32.5, "GRN": 12.5, "OTH_IND": 17},
+  "reportedTpp": {"ALP": 55, "LIB_NAT": 45},
+  "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"],
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "gates": {"provenance": {"passed": true}, "methodologicalAdequacy": {"passed": true, "basis": "first-party dated report supplies fieldwork, sample, mode, primary categories and TPP"}, "reuseBasis": {"passed": true, "manualReviewRequired": true}},
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "notes": "Structured factual fields only; no report prose or layout reproduced. Await explicit project-owner review before replay promotion."
+}

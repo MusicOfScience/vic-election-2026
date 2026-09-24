@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2022-redbridge-2022-11-14",
+  "cycleId": "vic_la_2022",
+  "sourceId": "redbridge-vic-2022-10-31-11-06",
+  "sourceUrl": "https://redbridgegroup.com.au/herald-sun-survey-results-published-14th-november-2022/",
+  "sourceSha256": "dabc0a21407c8bf72d7f38b98fd70570a58284a287b0cf0fed0746e12e0c32cc",
+  "publicationDate": "2022-11-14",
+  "evidenceAvailableByDate": "2022-11-14",
+  "fieldwork": {"start": "2022-10-31", "end": "2022-11-06", "sampleSize": 1189, "effectiveSampleSize": 1172, "population": "Victorian adults", "mode": "online panel; weighted by age and gender"},
+  "reportedHeadlineCategories": {"ALP": 38, "LIB_NAT": 38, "GRN": 14, "OTH_IND": 11},
+  "numericalValueCorroboration": {"sourceUrl": "https://www.theguardian.com/australia-news/2022/nov/14/early-voting-begins-in-victoria-as-poll-suggests-a-tightening-race", "availabilityDate": "2022-11-14", "status": "publisher-report-corroborated; first-party page supplies methodology but not the numeric table"},
+  "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"],
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "gates": {"provenance": {"passed": true, "basis": "first-party publication date and contemporaneous publisher corroboration"}, "methodologicalAdequacy": {"passed": false, "basis": "first-party page does not preserve the numerical voting-intention table; corroborated headline values require owner adjudication before model admission"}, "reuseBasis": {"passed": true, "manualReviewRequired": true}},
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "notes": "Do not promote or import values from the quarantined third-party lead dataset. Numeric categories are retained only as a review lead pending adjudication."
+}
