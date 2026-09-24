@@ -290,11 +290,20 @@
           "finding": "The VEC 2018 District Candidate Handbook records the party nomination close as 8 November 2018 and the independent nomination close as 9 November 2018, with a ballot-position draw after nominations close.",
           "availabilityUse": "timing-framework-only",
           "limitation": "The handbook establishes the cycle timing framework but is not an archived candidate-list capture and does not prove candidate-specific acceptance or publication timestamps."
+        },
+        {
+          "url": "https://www.vec.vic.gov.au/-/media/54e4dbcfe00c442180909aabccf5c3c2.pdf",
+          "sha256": "635724a7310bd4d1c7d011e4a088c2fa1243055722bd318a2af6603b80bffa5d",
+          "retrievedAt": "2026-09-24",
+          "scope": "vic_la_2014",
+          "finding": "The VEC 2014 candidate information records party nominations closing 13 November 2014 and non-party nominations closing 14 November 2014; late nominations could not be accepted.",
+          "availabilityUse": "timing-framework-only",
+          "limitation": "This establishes the nomination timing framework but is not an archived candidate-list capture and does not prove candidate-specific acceptance or publication timestamps."
         }
       ],
       "limitations": [
         "The result pages prove the final ballot, but not when every identity became available before each frozen cutoff.",
-        "The VEC 2018 and 2022 handbooks establish nomination and ballot-publication timing frameworks, but candidate-specific acceptance and archived publication timing remain unresolved and the component stays partial.",
+        "The VEC 2014, 2018 and 2022 handbooks establish nomination and ballot-publication timing frameworks, but candidate-specific acceptance and archived publication timing remain unresolved and the component stays partial.",
         "Narracan's supplementary slate and outcome postdate the 2022 cutoff and remain excluded from that cycle's prediction and score."
       ],
       "needed": "Cutoff-compliant slate timing plus incumbent/challenger status as known at each historical election."
