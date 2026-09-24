@@ -2,6 +2,24 @@
   "schemaVersion": 1,
   "modelVersion": "historical_replay_v2",
   "cycles": {
+    "vic_la_2014": {
+      "electionDate": "2014-11-29",
+      "informationCutoff": "2014-11-28",
+      "seed": 20141128,
+      "simulations": 1200,
+      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+      "pollInput": "model/data/validation/historical-replay-2014-poll-observations.json",
+      "localInput": "model/data/validation/historical-replay-2014-assembly-notional-baseline.csv",
+      "requiredLocalTranslation": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
+      "councilInput": "model/data/validation/historical-replay-2014-council-prior.csv",
+      "councilRegions": 8,
+      "councilSeatsPerRegion": 5,
+      "assemblyContestCount": 88,
+      "ballotAvailability": "metadata/historical-party-family-availability.json",
+      "preferencePrior": "broad-fallback-v2",
+      "councilRules": "vic-2014-five-seat-stv",
+      "predictionStatus": "not-frozen-input-substrate-incomplete"
+    },
     "vic_la_2018": {
       "electionDate": "2018-11-24",
       "informationCutoff": "2018-11-23",

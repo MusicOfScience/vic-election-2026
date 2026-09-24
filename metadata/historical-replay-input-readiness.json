@@ -8,15 +8,15 @@
       "cycleId": "vic_la_2010",
       "pollEvidence": {
         "status": "blocked",
-        "reason": "Three first-party Roy Morgan observations pass automated gates but await owner approval; approved replay observations remain 0 and no second independent family is promoted, so the fixed minimum of 3 observations and 2 independent source families is not met"
+      "reason": "No approved 2010 replay observations are registered; only four source-matched 2010 leads are available and no second-family case has passed the fixed three-observation/two-family rule"
       },
       "ballotContest": {
         "status": "blocked",
-        "reason": "Final 2014 contest evidence exists, but cutoff-safe candidate availability and the cycle-specific pre-cutoff contest contract are not yet assembled"
+        "reason": "The 2010 cutoff-safe ballot/contest contract is not assembled; later 2014 contest evidence is out of cycle and cannot satisfy the 2010 cutoff"
       },
       "incumbencyLocal": {
         "status": "blocked",
-        "reason": "The 2010 family baseline exists, but the prediction-safe translation onto 2014 geography and an independently proven pre-cutoff TPP baseline are not yet assembled"
+        "reason": "No governed 2006-to-2010 multi-party Assembly baseline or 2010 local translation substrate is registered"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",
@@ -24,7 +24,7 @@
       },
       "councilInput": {
         "status": "blocked",
-        "reason": "2010 Council evidence exists, but 2010-to-2014 region continuity and a prediction-safe regional prior have not yet been audited"
+        "reason": "2010 Council evidence exists, but a 2010-cycle prediction-safe regional input and cutoff audit are not assembled"
       },
       "cutoffValidation": {
         "status": "pass",
@@ -44,23 +44,24 @@
       "cycleId": "vic_la_2014",
       "pollEvidence": {
         "status": "blocked",
-        "reason": "0 approved replay observations; minimum 3 observations and 2 independent source families not met"
+        "reason": "3 owner-approved Roy Morgan observations from 1 independent family are promoted; the fixed minimum of 3 observations and 2 independent families remains blocked pending Essential owner approval"
       },
       "ballotContest": {
         "status": "blocked",
-        "reason": "cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"
+        "reason": "The ABC notional-margin anchor is assembled, but the cutoff-safe candidate/family mask remains unproven; see metadata/historical-replay-2014-ballot-availability-audit.json"
       },
       "incumbencyLocal": {
         "status": "blocked",
-        "reason": "no leakage-safe historical local-pattern builder is wired"
+        "reason": "The 88-row ABC notional baseline and 2010 family prior are identified; the report-referenced 2014 geographic crosswalk is absent and has not been rebuilt"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",
         "reason": "walk-forward builder can use a broad uncertainty prior without target-cycle outcomes"
       },
       "councilInput": {
-        "status": "blocked",
-        "reason": "historical pre-cutoff Council forecast inputs are not assembled"
+        "status": "pass-with-broad-fallback",
+        "reason": "A dated pre-election Antony Green redistribution analysis supplies all eight 2014 Council-region new-boundary party priors; regional polling remains absent and contributes zero with governed broadening",
+        "artefact": "model/data/validation/historical-replay-2014-council-prior.csv"
       },
       "cutoffValidation": {
         "status": "pass",

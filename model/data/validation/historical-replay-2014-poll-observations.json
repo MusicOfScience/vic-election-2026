@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "scripts/apply-approved-historical-poll-review.mjs",
+  "generatedAt": "2026-09-25",
+  "cycleId": "vic_la_2014",
+  "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25",
+  "independentSourceFamilies": 1,
+  "observations": [
+    {
+      "observationId": "historical-poll-2014-roymorgan-2014-10-01",
+      "cycleId": "vic_la_2014",
+      "period": "2014-09-29",
+      "sourceId": "roy-morgan-5836-2014-10-01-archive",
+      "sourceUrl": "https://web.archive.org/web/20141104142857id_/http://www.roymorgan.com/findings/5836-morgan-poll-state-voting-intention-nsw-vic-qld-qa-sa-tas-201410010501",
+      "sourceSha256": "3c86a4eeecce9d865b5c1895de1105fcdc07c6111c6d1ae9f4a91038f220d018",
+      "evidenceAvailableByDate": "2014-11-04",
+      "sampleSize": 1706,
+      "population": "Victorian electors",
+      "mode": "SMS Morgan Poll",
+      "primaryShares": {
+        "LIB_NAT": 37.5,
+        "ALP": 34,
+        "GRN": 18,
+        "OTH_IND": 10.5
+      },
+      "reportedTpp": {
+        "ALP": 54,
+        "LIB_NAT": 46
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25",
+      "replayEligible": true
+    },
+    {
+      "observationId": "historical-poll-2014-roymorgan-2014-10-27",
+      "cycleId": "vic_la_2014",
+      "period": "2014-10-27",
+      "sourceId": "roy-morgan-5896-2014-10-27-archive",
+      "sourceUrl": "https://web.archive.org/web/20141104110436id_/http://www.roymorgan.com/findings/5896-victorian-state-voting-intention-october-2014-201410270725",
+      "sourceSha256": "593a3b7fbd1734256e233995dbe26b411489a96d7a5ff953efcf5c4bce852490",
+      "evidenceAvailableByDate": "2014-11-04",
+      "sampleSize": 1700,
+      "population": "Victorian electors",
+      "mode": "SMS Morgan Poll",
+      "primaryShares": {
+        "LIB_NAT": 37.5,
+        "ALP": 34,
+        "GRN": 18.5,
+        "OTH_IND": 10
+      },
+      "reportedTpp": {
+        "ALP": 52.5,
+        "LIB_NAT": 47.5
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25",
+      "replayEligible": true
+    },
+    {
+      "observationId": "historical-poll-2014-roymorgan-2014-11-10",
+      "cycleId": "vic_la_2014",
+      "period": "2014-11-10",
+      "sourceId": "roy-morgan-5919-2014-11-10-archive",
+      "sourceUrl": "https://web.archive.org/web/20141127115220id_/http://www.roymorgan.com/findings/5919-morgan-poll-victorian-voting-intention-november-10-2014-201411100547",
+      "sourceSha256": "ff7b4504c47e3b0e3909a776e66e67c1a4338bc09d3663966f10e0cd1d3196ae",
+      "evidenceAvailableByDate": "2014-11-27",
+      "sampleSize": 1847,
+      "population": "Victorian electors",
+      "mode": "SMS Morgan Poll",
+      "primaryShares": {
+        "LIB_NAT": 38,
+        "ALP": 36,
+        "GRN": 18.5,
+        "OTH_IND": 7.5
+      },
+      "reportedTpp": {
+        "ALP": 53.5,
+        "LIB_NAT": 46.5
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25",
+      "replayEligible": true
+    }
+  ],
+  "sufficiency": {
+    "minimumEligibleObservations": 3,
+    "minimumIndependentSourceFamilies": 2,
+    "status": "blocked-pending-second-family"
+  },
+  "quarantineBoundary": "No values are read from d-j-hirst/aus-polling-analyser; this file contains only approved structured factual reconstruction.",
+  "modelImpact": {
+    "forecast2026": false,
+    "productionAuthorisation": false
+  }
+}

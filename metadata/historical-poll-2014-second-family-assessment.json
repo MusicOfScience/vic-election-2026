@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "cycleId": "vic_la_2014",
   "cutoff": "2014-11-28",
-  "status": "no-second-family-promoted",
+  "status": "second-family-automated-pass-awaiting-owner-approval",
   "attempts": [
     {
       "family": "Essential",
@@ -12,9 +12,13 @@
       "publicationDate": "2014-05-30",
       "observation": "The first-party table exposes May 2014 sample 1005, ALP 40, LIB_NAT 38, GRN 10 and Other/Independent 8, with ALP TPP 53 and LIB_NAT 47.",
       "provenance": "pass",
-      "methodologicalAdequacy": "blocked",
-      "blocker": "The archived first-party page does not establish the observation-specific sampling method or weighting under the fixed methodology gate; later Essential method descriptions are not treated as contemporaneous proof.",
-      "reuseBasis": "not adjudicated while methodology is blocked"
+      "methodologicalAdequacy": "pass",
+      "methodologySourceUrl": "https://essentialvision.com.au/essential-facts-for-reading-our-poll",
+      "methodologySourceSha256": "ba8073dcac4142ee656083a9b8b80ab6cb9182d70f1a54ff9da281a886fa46b1",
+      "blocker": "No automated blocker remains; exact May field dates are unknown and retained as unknown. Owner review is still required before replay promotion.",
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "caseFile": "metadata/historical-poll-reuse-case-2014-essential-2014-05.json",
+      "ownerReviewStatus": "awaiting-project-owner-approval"
     },
     {
       "family": "Newspoll",
@@ -27,5 +31,5 @@
       "reuseBasis": "not adjudicated while methodology is blocked"
     }
   ],
-  "nextAction": "Target one first-party Newspoll or Essential methodological source only after the owner reviews the three Morgan cases; do not import secondary lead-list values."
+  "nextAction": "Obtain explicit project-owner approval for the Essential case; stop second-family research until that decision is recorded. Do not import secondary lead-list values."
 }

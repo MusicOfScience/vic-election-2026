@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "cutoff": "2014-11-28",
+  "status": "partial-prediction-safe-baselines-assembled",
+  "assembly": {
+    "status": "pass-for-notional-margin-anchor",
+    "artefact": "model/data/validation/historical-replay-2014-assembly-notional-baseline.csv",
+    "rows": 88,
+    "uniqueDistricts": 88,
+    "source": "ABC/Antony Green 2014 election-guide pendulum and 17 October 2014 preview",
+    "sourcePublicationDate": "2014-10-17",
+    "sourceSha256": "68bf97b59aed725cff2b636458fbf36a2c17b6e395080c004cf3f74d93b507f4",
+    "targetOutcomeColumns": [],
+    "observedSwingColumns": [],
+    "nonMajorContestTypesPreserved": ["ALP_v_GRN", "IND_LIB_v_ALP"],
+    "note": "The pendulum is a pre-election notional contest/margin anchor. It does not supply multi-party prior primary geography or prove final candidate availability. Those remain separate gates."
+  },
+  "assemblyFamilyTranslation": {
+    "status": "blocked",
+    "priorFamilyBaseline": "model/data/processed/vec_2010_assembly_family_primaries.csv",
+    "crosswalkArtefact": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
+    "expectedSha256": "61e510c16bd4fb3e5a6704476ad23b19946c3efeae0595dd1f21f908c4040f0b",
+    "availableInClone": false,
+    "targetOutcomeUse": "forbidden",
+    "reason": "The report-referenced crosswalk is not present at the governed path and has not been rebuilt from independently fingerprinted pre-cutoff geography."
+  },
+  "council": {
+    "status": "pass-for-regional-prior",
+    "artefact": "model/data/validation/historical-replay-2014-council-prior.csv",
+    "regions": 8,
+    "source": "Antony Green, Victorian Redistribution - Legislative Council Estimates",
+    "sourceUrl": "https://www.abc.net.au/news/2013-10-25/victorian-redistribution---legislative-council-estimates/9388296",
+    "publicationDate": "2013-10-24",
+    "sourceSha256": "3e362a3d30b87d3ffec7a9a5b940b2fd7b5c1db8453da6fb86f4ee2e336e6e23",
+    "boundaryBasis": "new-boundary estimates published for the 2014 Council regions",
+    "targetOutcomeUse": "forbidden",
+    "note": "This removes the need for a 2010-to-2014 region-name join, but does not by itself authorise the replay."
+  },
+  "modelImpact": {"forecast2026": false, "productionAuthorisation": false}
+}

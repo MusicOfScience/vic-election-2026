@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "informationCutoff": "2014-11-28",
+  "status": "blocked-cutoff-safe-candidate-availability-unproven",
+  "requiredModelFields": [
+    "district_id",
+    "district_name",
+    "ballot_active_families",
+    "incumbent_party_family"
+  ],
+  "scope": "district-level family availability and incumbent-party inputs only; candidate biographies are not required",
+  "candidateAvailabilitySources": [
+    {
+      "sourceUrl": "https://www.abc.net.au/news/elections/vic/2014/guide/candidates",
+      "sourceClass": "contemporaneous-election-guide-lead",
+      "publicationContext": "ABC 2014 Victorian election guide published during the pre-election period",
+      "cutoffSafe": false,
+      "limitation": "The currently retrievable page does not provide an independently verifiable pre-cutoff archival capture for the final candidate/ballot list. Current or post-election result pages cannot establish historical availability."
+    },
+    {
+      "sourceUrl": "https://www.abc.net.au/news/elections/vic/2014/guide/pendulum",
+      "sourceClass": "contemporaneous-election-guide",
+      "publicationDate": "2014-10-17",
+      "cutoffSafe": true,
+      "limitation": "The pendulum supplies a prediction-safe notional contest anchor, not the final nomination/ballot availability needed by the v2 mask."
+    }
+  ],
+  "oneNation": {
+    "status": "verified-unavailable",
+    "basis": "cycle ballot-universe audit records no 2014 Legislative Assembly candidates",
+    "pollInterpretation": "absence is a ballot constraint, not a fabricated zero poll observation"
+  },
+  "targetOutcomeUse": "forbidden",
+  "finalOutcomePages": "scoring-only; not accepted as sole proof of pre-cutoff availability",
+  "nextAction": "Recover an archived VEC candidate list or pre-cutoff ABC ballot/candidate capture, then build the smallest governed district-family mask and incumbent-party input."
+}

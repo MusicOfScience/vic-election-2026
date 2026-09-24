@@ -1,9 +1,9 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-25
-Branch: `codex/prepare-2014-holdout`
-Base: `602c7480` (PR #106 merged)
-Current batch: select and prepare the next certifying v2 holdout using pre-score evidence completeness only. PR #107 is open for review.
+Branch: `codex/advance-2014-inputs`
+Base: `17278c1` (PR #107 merged)
+Current batch: record owner-approved 2014 Morgan inputs, adjudicate one second-family case and assemble prediction-safe Assembly/Council priors. No 2014 prediction or outcome loading.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -37,7 +37,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - V2 diagnostic artefact: `model/data/validation/historical-replays/vic_la_2018-v2-diagnostic.json` (SHA `3aa4ce84…`); comparator limitations are recorded in `metadata/historical-replay-v1-comparator-audit.json`.
 - The first certifying v2 cycle was `vic_la_2022`; its frozen prediction and score remain immutable. The official score is `model/data/validation/historical-replays/vic_la_2022-v2-score.json` (SHA `3bc3b150…`) with outcomes loaded only after sealed prediction/comparator verification.
 - Next certifying cycle selected before any 2014 prediction: `vic_la_2014`. 2014 is objectively closer than 2010 by pre-score completeness: three archived Roy Morgan cases now pass automated gates pending owner approval, while 2010 has only four source-matched leads and lacks a comparable 2006 multi-party local baseline. Selection is recorded in `metadata/historical-replay-next-cycle-selection.json`.
-- 2014 preparation audit: `metadata/historical-replay-2014-input-audit.json`. Three Roy Morgan cases are governed but not promoted; no second independent family has been approved. Bounded Essential/Newspoll checks are recorded in `metadata/historical-poll-2014-second-family-assessment.json` and remain methodologically incomplete. The 2010→2014 observed-swing file remains scoring-only. The 2010 family baseline is available, but the 2014 crosswalk surface is absent and the notional 2010-on-2014 TPP provenance is not independently proven. Council prior evidence exists, but region continuity remains unaudited.
-- Verification: 60 isolated Python tests, 136 JavaScript/build tests, lint, provenance, psephology, replay-contract, readiness, release-readiness and `git diff --check` pass locally. Cycle-level log loss misses the fixed threshold; final-pair calibration, Council regional-primary error and four-cycle metrics remain unavailable by contract.
+- 2014 preparation audit: `metadata/historical-replay-2014-input-audit.json`. Three Morgan cases are owner-approved/promoted (3 observations, 1 family). The May Essential case is automated-pass and awaiting separate owner approval; the fixed 3-observation/2-family rule therefore remains closed. The 88-row ABC/Antony Green notional baseline and dated eight-region Antony Green Council prior are structured, while the report-referenced 2014 multi-party crosswalk and the separately audited cutoff-safe ballot mask (`metadata/historical-replay-2014-ballot-availability-audit.json`) remain unresolved. The 2010→2014 observed-swing file remains scoring-only.
+- Verification: prior merged checks remain green; this batch's focused validation is pending final run. Cycle-level log loss misses the fixed threshold; final-pair calibration, Council regional-primary error and four-cycle metrics remain unavailable by contract.
 
-Exact next action: obtain explicit owner decisions for the three 2014 Roy Morgan cases, recover one independent second-family observation, and establish prediction-safe 2014 Assembly/Council inputs. Do not generate or score 2014 until all gates pass; complete backtest, calibration and production authorisation remain closed.
+Exact next action: obtain the pending Essential owner decision, rebuild/prove the missing 2014 multi-party crosswalk and cutoff-safe ballot mask, then rerun readiness. PR #108 is open; local checks pass, while GitHub validation is externally blocked by the account billing/spending-limit restriction. Do not generate or score 2014 until all gates pass; complete backtest, calibration and production authorisation remain closed.

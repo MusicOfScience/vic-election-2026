@@ -6,7 +6,8 @@ const root = resolve(new URL("..", import.meta.url).pathname);
 const CYCLE_REQUIREMENTS = {
   vic_la_2014: {
     cutoff: "2014-11-28",
-    baselinePath: "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
+    baselinePath: "model/data/validation/historical-replay-2014-assembly-notional-baseline.csv",
+    requiredAuxiliaryPaths: ["model/data/processed/historical_2014_crosswalk_core_features_long.csv"],
     forbiddenPaths: ["model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"],
     baselineDescription: "2010 Assembly family baseline translated through a cutoff-safe 2014 geography surface",
   },
@@ -32,13 +33,23 @@ export function buildHistoricalLocalInputs(cycleId, projectRoot = root) {
       sourceOutcomeUse: "forbidden",
     };
   }
+  const missingAuxiliary = (requirement.requiredAuxiliaryPaths ?? []).filter((path) => !existsSync(resolve(projectRoot, path)));
+  if (missingAuxiliary.length) {
+    return {
+      cycleId, status: "blocked", cutoff: requirement.cutoff, inputPath: requirement.baselinePath,
+      requiredArtefact: missingAuxiliary[0],
+      reason: "notional margin anchor exists, but the pre-cutoff multi-party geographic translation surface is absent; target-cycle outcomes cannot substitute it",
+      sourceOutcomeUse: "forbidden",
+      availablePredictionSafeArtefacts: [requirement.baselinePath],
+    };
+  }
   const header = readFileSync(baselinePath, "utf8").split(/\r?\n/, 1)[0];
   if (/2018|swing|share_2018/i.test(header)) throw new Error(`target-cycle outcome field in local baseline: ${requirement.baselinePath}`);
   return {
     cycleId, status: "pass", cutoff: requirement.cutoff, inputPath: requirement.baselinePath,
     inputRole: "prior-election-local-baseline", description: requirement.baselineDescription,
     sourceOutcomeUse: "pre-cutoff-derived-only",
-    dependencyAudit: { predictionInputs: [requirement.baselinePath], scoringOnly: ["model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv"], forbiddenInPrediction: true },
+    dependencyAudit: { predictionInputs: [requirement.baselinePath, ...(requirement.requiredAuxiliaryPaths ?? [])], scoringOnly: ["model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv"], forbiddenInPrediction: true },
   };
 }
 
