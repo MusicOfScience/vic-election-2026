@@ -238,3 +238,166 @@ def run_historical_2018_forecast_v2(root: str | Path, *, seed: int, simulations:
             "assemblySeatSummary": {p: {"mean": float(chamber_draws[:, j].mean()), "median": float(np.median(chamber_draws[:, j])), "lower80": float(np.quantile(chamber_draws[:, j], .1)), "upper80": float(np.quantile(chamber_draws[:, j], .9))} for j, p in enumerate(ACTIVE)},
             "council": {"regionalPollContribution": 0, "uncertaintyRule": "fixed-broadening-when-regional-poll-absent", "regions": council_regions},
             "diagnosticStatus": "post-hoc-diagnostic-non-certifying", "productionCompatible": False}
+
+
+# The certifying runner below is deliberately specification-driven.  The older
+# 2018 function above remains as the immutable diagnostic compatibility entry
+# point; new cycles must use this adapter so cutoff, paths, families and contest
+# counts cannot be inherited accidentally from 2018.
+def load_historical_cycle_spec(root: str | Path, cycle_id: str) -> dict:
+    root = Path(root)
+    path = root / "metadata/historical-replay-v2-cycle-specs.json"
+    if not path.exists():
+        path = root.parent / "metadata/historical-replay-v2-cycle-specs.json"
+    specs = json.loads(path.read_text())["cycles"]
+    if cycle_id not in specs:
+        raise ValueError(f"unknown historical v2 cycle: {cycle_id}")
+    spec = dict(specs[cycle_id]); spec["cycleId"] = cycle_id
+    return spec
+
+
+def _cycle_path(root: Path, relative: str) -> Path:
+    candidate = root / relative
+    return candidate if candidate.exists() else root.parent / relative
+
+
+def _generic_poll_state(root: Path, spec: dict, draws: int, seed: int) -> np.ndarray:
+    payload = json.loads(_cycle_path(root, spec["pollInput"]).read_text())
+    rows = [row for row in payload["observations"] if row.get("cycleId") == spec["cycleId"] and row.get("replayEligible")]
+    families = spec["activeFamilies"]
+    if len(rows) < 3 and spec["cycleId"] == "vic_la_2022":
+        raise ValueError("2022 polling requires three approved observations")
+    if len({row["sourceId"] for row in rows}) < 2:
+        raise ValueError(f"{spec['cycleId']} polling requires two independent source families")
+    vectors, weights = [], []
+    for row in rows:
+        shares = row.get("primaryShares", {})
+        if spec["cycleId"] == "vic_la_2022":
+            required = ("ALP", "LIB_NAT", "GRN", "OTH_IND")
+            if any(name not in shares for name in required):
+                raise ValueError("approved 2022 poll is missing a reported grouped residual")
+            vector = np.array([float(shares[name]) for name in required], dtype=float)
+        else:
+            if any(name not in shares for name in families):
+                raise ValueError("approved historical poll is missing an active family")
+            vector = np.array([float(shares[name]) for name in families], dtype=float)
+        if vector.sum() <= 0:
+            raise ValueError("historical poll has no positive reported share")
+        vector /= vector.sum()
+        age = max(0, (pd.Timestamp(spec["informationCutoff"]) - pd.Timestamp(row["evidenceAvailableByDate"])).days)
+        vectors.append(vector); weights.append(float(row.get("sampleSize", 500)) * 0.5 ** (age / 45.0))
+    centre = np.average(np.asarray(vectors), axis=0, weights=np.asarray(weights))
+    rng = np.random.default_rng(seed)
+    logits = np.log(np.clip(centre, 1e-6, None))[None, :] + rng.normal(0, 0.045, (draws, len(centre)))
+    values = np.exp(logits); return values / values.sum(axis=1, keepdims=True)
+
+
+def _generic_assembly_inputs(root: Path, spec: dict) -> tuple[pd.DataFrame, list[str]]:
+    families = spec["activeFamilies"]
+    if spec["cycleId"] == "vic_la_2022":
+        frame = pd.read_csv(_cycle_path(root, spec["localInput"]))
+        if len(frame) != spec["assemblyContestCount"] or frame.district_name.eq("Narracan").any():
+            raise ValueError("2022 local input is not the 87-district November-election universe")
+        values = frame[[f"aec_local_{family.lower()}" for family in families]].to_numpy(float)
+        if not np.allclose(values.sum(axis=1), 1.0, atol=1e-8): raise ValueError("2022 local family shares do not reconcile")
+        frame["_ballot"] = frame.ballot_active_families.fillna("").map(lambda value: set(str(value).split(";")))
+        return frame, families
+    return _historical_assembly_baseline_v2(root), families
+
+
+def _generic_council_surface(root: Path, spec: dict, families: list[str]) -> pd.DataFrame:
+    if spec["cycleId"] != "vic_la_2022":
+        frame = pd.read_csv(_cycle_path(root, spec["councilInput"]))
+        raw = frame.party_name.fillna("").str.upper()
+        frame["model_family"] = np.select([raw.str.contains("LABOR"), raw.str.contains("LIBERAL|NATIONAL|COALITION"), raw.str.contains("GREEN")], ["ALP", "LIB_NAT", "GRN"], default="OTH_IND")
+        grouped = frame.groupby(["region_name", "model_family"], as_index=False).first_preference_votes.sum()
+        return grouped.pivot(index="region_name", columns="model_family", values="first_preference_votes").fillna(0).reset_index()
+    frame = pd.read_csv(_cycle_path(root, spec["councilInput"]), compression="gzip")
+    mapping = {"ALP": "ALP", "GRN": "GRN", "ON": "ONP", "LP": "LIB_NAT", "NP": "LIB_NAT"}
+    frame["model_family"] = frame.party_id.map(lambda value: mapping.get(str(value), "OTH_IND"))
+    grouped = frame.groupby(["region_name", "model_family"], as_index=False).allocated_ballots.sum()
+    result = grouped.pivot(index="region_name", columns="model_family", values="allocated_ballots").fillna(0).reset_index()
+    if len(result) != spec["councilRegions"]: raise ValueError("2022 Council surface does not cover eight regions")
+    for family in families:
+        if family not in result: result[family] = 0.0
+    return result
+
+
+def run_historical_forecast_v2(root: str | Path, cycle_id: str, *, seed: int | None = None, simulations: int | None = None) -> dict:
+    """Run the same v2 simulation architecture from a frozen cycle contract."""
+    root = Path(root); spec = load_historical_cycle_spec(root, cycle_id)
+    seed = spec["seed"] if seed is None else seed; simulations = spec["simulations"] if simulations is None else simulations
+    families = list(spec["activeFamilies"]); state_draws = _generic_poll_state(root, spec, simulations, seed)
+    local, _ = _generic_assembly_inputs(root, spec)
+    if cycle_id == "vic_la_2022":
+        local_values = local[[f"aec_local_{family.lower()}" for family in families]].to_numpy(float)
+    else:
+        local_values = local.loc[:, families].to_numpy(float)
+    local_centre = local_values.mean(axis=0); rng = np.random.default_rng(seed + 1)
+    n_districts = len(local_values); n_families = len(families)
+    wins = np.zeros((n_districts, n_families), dtype=int); chamber = np.zeros((simulations, n_families), dtype=int)
+    primary_sum = np.zeros((n_districts, n_families)); pairs = [dict() for _ in range(n_districts)]
+    preference = np.full((n_families, n_families), 1 / max(n_families - 1, 1)); np.fill_diagonal(preference, 0)
+    for sim, state in enumerate(state_draws):
+        if cycle_id == "vic_la_2022":
+            poll = np.zeros(n_families); poll[:3] = state[:3]
+        for district, local_vector in enumerate(local_values):
+            if cycle_id == "vic_la_2022":
+                ballot = local.iloc[district]["_ballot"]
+                residual = state[3]
+                onp_ratio = local_vector[3] / max(local_vector[3] + local_vector[4], 1e-12)
+                poll[3] = residual * onp_ratio if "ONP" in ballot else 0.0
+                poll[4] = residual - poll[3]
+                poll = poll * np.array([1.0 if family in ballot else 0.0 for family in families])
+                if poll.sum() <= 0: raise ValueError("ballot availability removed all 2022 poll mass")
+                poll /= poll.sum()
+            else:
+                poll = state
+            local_log = np.log(np.clip(local_vector, .002, None) / np.clip(local_centre, .002, None))
+            logits = np.log(np.clip(poll, 1e-6, None)) + .55 * local_log + rng.normal(0, .09, n_families)
+            primary = np.exp(logits - logits.max()); primary /= primary.sum()
+            if cycle_id == "vic_la_2022":
+                primary *= np.array([1.0 if family in ballot else 0.0 for family in families])
+                primary /= primary.sum()
+            primary_sum[district] += primary
+            winner, pair = _count_irv_generic(primary, preference); wins[district, winner] += 1; chamber[sim, winner] += 1
+            key = "-".join(families[index] for index in pair); pairs[district][key] = pairs[district].get(key, 0) + 1
+    districts = []
+    for index, row in local.reset_index(drop=True).iterrows():
+        probabilities = wins[index] / simulations; pair = max(pairs[index], key=pairs[index].get)
+        districts.append({"districtId": row.district_id, "districtName": row.district_name, "primaryEstimates": {p: float(primary_sum[index, j] / simulations * 100) for j, p in enumerate(families)}, "winProbabilities": {p: float(probabilities[j]) for j, p in enumerate(families)}, "likelyFinalPair": pair, "finalPairProbability": pairs[index][pair] / simulations, "favouredParty": families[int(np.argmax(probabilities))]})
+    council_frame = _generic_council_surface(root, spec, families); council_draws = np.zeros((simulations, len(council_frame), n_families), dtype=int)
+    for sim, state in enumerate(state_draws):
+        state5 = np.pad(state, (0, n_families - len(state)), constant_values=0) if len(state) < n_families else state
+        if cycle_id == "vic_la_2022":
+            residual = state[3]; state5[4] = residual * .75; state5[3] = residual * .25
+        state5 = state5 / state5.sum()
+        for region, row in enumerate(council_frame.iterrows()):
+            local_vector = row[1][families].to_numpy(float); local_vector /= max(local_vector.sum(), 1.0)
+            logits = np.log(np.clip(state5, 1e-6, None)) + np.log(np.clip(local_vector, .002, None) / max(local_vector.mean(), .002)) + rng.normal(0, .12, n_families)
+            primary = np.exp(logits - logits.max()); primary /= primary.sum(); council_draws[sim, region] = _count_group_stv_generic(primary, preference, .15)
+    if not np.all(council_draws.sum(axis=2) == 5) or not np.all(council_draws.sum(axis=1).sum(axis=1) == 40): raise ValueError("Council simulation did not conserve 5 seats per region and 40 statewide")
+    council_regions = [{"regionName": row.region_name, "seatDistributionMean": {p: float(council_draws[:, i, j].mean()) for j, p in enumerate(families)}, "simulations": simulations} for i, row in council_frame.iterrows()]
+    return {"modelVersion": HISTORICAL_REPLAY_V2, "cycleId": cycle_id, "informationCutoff": spec["informationCutoff"], "seed": seed, "activeFamilies": families, "simulations": simulations, "pollObservationState": {"buckets": ["ALP", "LIB_NAT", "GRN", "OTH_RESIDUAL"] if cycle_id == "vic_la_2022" else families, "unreportedFamilies": ["ONP"] if cycle_id == "vic_la_2022" else [], "residualDecomposition": spec.get("groupedResidualRule", "none")}, "statewidePrimaryEstimates": {p: float(state_draws[:, j].mean() * 100) for j, p in enumerate((['ALP', 'LIB_NAT', 'GRN', 'OTH_IND'] if cycle_id == 'vic_la_2022' else families))}, "assemblyDistricts": districts, "assemblySeatSummary": {p: {"mean": float(chamber[:, j].mean()), "median": float(np.median(chamber[:, j])), "lower80": float(np.quantile(chamber[:, j], .1)), "upper80": float(np.quantile(chamber[:, j], .9))} for j, p in enumerate(families)}, "council": {"regionalPollContribution": 0, "uncertaintyRule": "fixed-broadening-when-regional-poll-absent", "regions": council_regions}, "certificationStatus": "held-out-certifying-prediction-frozen" if cycle_id == "vic_la_2022" else "diagnostic", "productionCompatible": False}
+
+
+def _count_irv_generic(primary: np.ndarray, preference: np.ndarray) -> tuple[int, tuple[int, int]]:
+    votes = primary.copy(); continuing = set(range(len(primary)))
+    while len(continuing) > 2:
+        source = min(continuing, key=lambda index: (votes[index], index)); continuing.remove(source); destinations = sorted(continuing)
+        probs = preference[source, destinations]; probs = probs / probs.sum(); votes[destinations] += votes[source] * probs; votes[source] = 0
+    final = tuple(sorted(continuing, key=lambda index: votes[index], reverse=True)); return final[0], final
+
+
+def _count_group_stv_generic(primary: np.ndarray, preference: np.ndarray, exhaustion_probability: float) -> np.ndarray:
+    votes = primary.copy() * 100000.0; quota = 100000.0 / 6.0; active = set(range(len(primary))); seats = np.zeros(len(primary), dtype=int)
+    while seats.sum() < 5:
+        winner = max(active, key=lambda index: votes[index])
+        if votes[winner] >= quota:
+            seats[winner] += 1; votes[winner] = max(votes[winner] - quota, 0.0)
+            if seats[winner] >= 5: active.discard(winner)
+            continue
+        source = min(active, key=lambda index: votes[index])
+        if len(active) == 1: seats[source] += 5 - seats.sum(); break
+        active.remove(source); destinations = sorted(active); probs = preference[source, destinations]; probs = probs / probs.sum(); votes[destinations] += votes[source] * (1 - exhaustion_probability) * probs; votes[source] = 0
+    return seats

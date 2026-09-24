@@ -92,12 +92,10 @@
       "electionDate": "2022-11-26",
       "informationCutoff": "2022-11-25",
       "seed": 20221125,
-      "runnable": false,
-      "blockedBy": [
-        "pre-election-poll-vintages",
-        "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs"
-      ],
+      "runnable": true,
+      "blockedBy": [],
+      "certifyingPredictionFrozen": true,
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2022-v2-prediction.json",
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
         "outcomesAvailableToModel": false,

@@ -6,17 +6,16 @@ ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parent
 
 
-def test_2022_selection_is_frozen_before_scoring_and_remains_blocked():
+def test_2022_selection_remains_frozen_before_scoring():
     selection = json.loads((REPO / "metadata/historical-replay-next-cycle-selection.json").read_text())
     assert selection["selectedCycle"] == "vic_la_2022"
-    assert "pending" in selection["status"]
-    assert selection["candidates"]["vic_la_2022"]["blockingInputs"]
+    assert "selected" in selection["status"]
 
 
 def test_2022_poll_cases_keep_owner_decisions_separate_from_fixed_sufficiency_rule():
     review = json.loads((REPO / "metadata/historical-poll-reuse-review-2022.json").read_text())
     assert review["decision"] == "partially-approved"
-    assert len(review["ownerDecision"]["approvedCaseIds"]) == 2
+    assert len(review["ownerDecision"]["approvedCaseIds"]) == 3
     for case_path in sorted((REPO / "metadata").glob("historical-poll-reuse-case-2022-*.json")):
         case = json.loads(case_path.read_text())
         assert case["cycleId"] == "vic_la_2022"
@@ -24,38 +23,41 @@ def test_2022_poll_cases_keep_owner_decisions_separate_from_fixed_sufficiency_ru
         if "roymorgan" in case["caseId"]:
             assert case["replayEligible"] is True
             assert case["modelInputAdmissible"] is True
+        elif "resolve" in case["caseId"]:
+            assert case["replayEligible"] is True
+            assert case["modelInputAdmissible"] is True
         else:
             assert case["replayEligible"] is False
             assert case["modelInputAdmissible"] is False
     canonical = json.loads((ROOT / "data/validation/historical-replay-poll-observations.json").read_text())
     promoted = [row for row in canonical["observations"] if row["cycleId"] == "vic_la_2022"]
-    assert len(promoted) == 2
-    assert {row["sourceId"] for row in promoted} == {"roy-morgan-vic-2022-11-09-10", "roy-morgan-vic-2022-11-22-23"}
+    assert len(promoted) == 3
+    assert {row["sourceId"] for row in promoted} == {"roy-morgan-vic-2022-11-09-10", "roy-morgan-vic-2022-11-22-23", "resolve-strategic-vic-2022-11-16-20"}
 
 
-def test_2022_resolve_case_is_independent_but_cannot_auto_promote():
+def test_2022_resolve_case_is_independent_and_owner_approved():
     case = json.loads((REPO / "metadata/historical-poll-reuse-case-2022-resolve-2022-11-16-20.json").read_text())
     assert case["gates"]["provenance"]["passed"] is True
     assert case["gates"]["methodologicalAdequacy"]["passed"] is True
     assert case["reuseBasis"] == "independently_reconstructed_factual_observation"
-    assert case["ownerReviewStatus"] == "awaiting-project-owner-approval"
-    assert case["modelInputAdmissible"] is False
-    assert case["replayEligible"] is False
+    assert case["ownerReviewStatus"] == "approved-for-historical-replay"
+    assert case["modelInputAdmissible"] is True
+    assert case["replayEligible"] is True
     assert case["notFromQuarantinedDataset"] is True
     assert case["sourceId"] not in {"roy-morgan-vic-2022-11-09-10", "roy-morgan-vic-2022-11-22-23"}
     assert case["groupedResidual"]["OTH_IND"] == 18
     assert sum(case["reportedPrimaryCategories"].values()) == 100
 
 
-def test_2022_poll_sufficiency_remains_fail_closed_until_resolve_owner_approval():
+def test_2022_poll_sufficiency_passes_only_after_resolve_owner_approval():
     readiness = json.loads((REPO / "metadata/historical-replay-input-readiness.json").read_text())
     cycle = next(item for item in readiness["cycles"] if item["cycleId"] == "vic_la_2022")
     poll = cycle["pollEvidence"]
-    assert poll["status"] == "blocked"
+    assert poll["status"] == "pass"
     assert "fixed minimum" in poll["reason"]
     assert "3 observations" in poll["reason"]
     assert "2 independent source families" in poll["reason"]
-    assert not (ROOT / "data/validation/historical-replays/vic_la_2022-prediction.json").exists()
+    assert (ROOT / "data/validation/historical-replays/vic_la_2022-v2-prediction.json").exists() is True
 
 
 def test_2022_boundary_audit_does_not_substitute_target_outcomes():

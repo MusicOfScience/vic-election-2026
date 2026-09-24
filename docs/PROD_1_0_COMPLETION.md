@@ -1,9 +1,9 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-25
-Branch: `codex/recover-2022-second-family-poll`
-Base: `2b063b7c` (PR #102 merged)
-Current batch: bounded 2022 second-family poll recovery; v1/v2 historical evidence remains immutable and non-certifying. PR #103 is open for review.
+Branch: `codex/freeze-2022-v2-prediction`
+Base: `1a6c07fe` (PR #103 merged)
+Current batch: owner-approved Resolve promotion, cycle-aware v2 refactor and sealed 2022 prediction; outcomes remain unloaded. PR #104 is open for review.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -13,7 +13,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 | Assembly primary and Council evidence | Complete | None currently evidenced | Preserve official VEC evidence, rule versions and Narracan separation | `npm run validation:evidence`, `npm run psephology:validate` | Complete — preserve |
 | Candidate coverage and quarantine | Complete | VEC nomination status remains separate | Use controlled review for changes | `npm run candidates:validate`, `npm run candidates:review:check` | Complete — preserve |
 | Current critical-source freshness | Blocked | 15 September RedBridge/Accent report is captured and dossier-recommended for evidence acceptance, but remains quarantined pending project-owner review and separate model-eligibility checks | Record explicit owner decision; admit only if independence and comparability checks pass | `npm run release:readiness:check`, `node scripts/build-poll-promotion-audit.mjs --as-of 2026-09-24` | Open blocker — review decision required |
-| Historical poll vintages | Partial | 2018 has 4 approved observations from 2 families; 2022 has 2 approved Roy Morgan observations from 1 family; Resolve is complete through automated gates but awaits owner approval; RedBridge/Freshwater remain incomplete | Obtain explicit owner approval for the Resolve case; do not import lead dataset | `node scripts/validate-historical-replay-input-readiness.mjs`, `model/tests/test_historical_2022_evidence.py` | 2022 poll gate blocked |
+| Historical poll vintages | Partial | 2018 has 4 approved observations from 2 families; 2022 has 3 approved observations from 2 families; RedBridge/Freshwater remain quarantined | Preserve governed inputs; do not import lead dataset | `node scripts/validate-historical-replay-input-readiness.mjs`, `model/tests/test_historical_2022_evidence.py` | 2022 poll gate passes |
 | Cutoff-safe ballot and incumbency | Partial | 2018 uses 2014 Assembly primaries as a pre-cutoff baseline; the 2014→2018 outcome-transition file is scoring-only | Wire baseline into the real historical runner and retain the dependency audit | `node scripts/build-historical-local-inputs.mjs vic_la_2018` | Open blocker |
 | Preference flows and final pairs | Partial | 39 indicative 2022 distributions remain outcome evidence; the walk-forward prior builder is now wired into future replay execution, but no source-party prior is forecast-ready | Establish walk-forward preference priors and separate final-pair scoring outcomes | `npm run validation:evidence`, guarded replay CLI, Python prior-builder tests | Open blocker |
 | Runnable frozen historical configurations | Partial | 2018 prediction is frozen and scored against 88 official VEC outcome rows; three cycles remain blocked | Preserve immutable prediction/score pair; extend walk-forward coverage | `model/data/validation/historical-replays/vic_la_2018-score-manifest.json` | One cycle scored |
@@ -26,16 +26,16 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 
 - Release readiness: `experimental-blocked`, 4/9 gates passing at the 24 September assessment; RedBridge freshness evidence is resolved into a dossier but not into model inputs.
 - Blocking gates: critical source freshness, unresolved newer model evidence, complete forecast backtest, probability calibration and production authorisation.
-- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 1/4 runnable, 1/4 predicted and 1/4 scored, with 0/4 certifying scored cycles because v1 contains confirmed adapter defects.
+- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 2/4 runnable, 2/4 predicted and 1/4 scored, with 1/4 certifying predictions frozen and 0/4 certifying scored cycles.
 - Demographic challenger remains rejected at central weight `0`.
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
 - Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately.
 - Cycle-aware ballot review: 2010, 2014 and 2018 have no One Nation Assembly candidates; 2022 has four. The 2018 Essential case passes provenance and methodological adequacy because its grouped Other residual is sufficient for the active four-family ballot universe, and owner approval has promoted only its structured replay input.
-- Owner decisions recorded: Essential and uComms/ReachTEL reviews; the approved replay input contains 4 structured observations from 2 independent source families. Legacy queue replay-eligible rows remain 0.
-- Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before scoring. Replay progress is 1/4 runnable, 1/4 predicted and 1/4 scored; release readiness remains unchanged.
+- Owner decisions recorded: Essential, uComms/ReachTEL, Roy Morgan and Resolve reviews; the approved replay input contains 7 structured observations overall, including 3 2022 observations from 2 independent source families. Legacy queue replay-eligible rows remain 0.
+- Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before scoring. The 2022 v2 prediction and comparator bundle are frozen before outcome loading; release readiness remains unchanged.
 - Focus cycle: `vic_la_2018`. V1 local-family mapping, Assembly seat aggregation and Council top-two defects are preserved as a negative implementation result. V2 uses `metadata/historical-party-family-mapping.json`, per-simulation chamber draws and a non-certifying diagnostic output.
 - V2 diagnostic artefact: `model/data/validation/historical-replays/vic_la_2018-v2-diagnostic.json` (SHA `3aa4ce84…`); comparator limitations are recorded in `metadata/historical-replay-v1-comparator-audit.json`.
-- Next certifying cycle selected before scoring: `vic_la_2022`. Both Roy Morgan cases are owner-approved and promoted. A bounded Freshwater forensic pass (article, WordPress API and first-party chart/media assets) found no exhaustive primary table; no residual was fabricated. A contemporaneous Resolve/The Age observation with Poll Bludger numerical corroboration now passes automated provenance and methodological gates, but awaits explicit owner approval. The official VEC TPP baseline plus AEC relative district/region surfaces pass pre-cutoff checks; ballot, local and Council components remain ready.
+- Next certifying cycle selected before scoring: `vic_la_2022`. Resolve is owner-approved and promoted, producing 3 observations from 2 independent families. The cycle-aware v2 adapter preserves a four-bucket polling state (`OTH_RESIDUAL`) and allocates that residual only at the model layer using pre-cutoff district propensity and ballot masks; Assembly simulations cover 87 November-election districts and Council simulations cover 8×5 seats. Freshwater and RedBridge remain quarantined. The sealed prediction is `model/data/validation/historical-replays/vic_la_2022-v2-prediction.json` (SHA `f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0`); no 2022 outcomes were loaded.
 - Verification: JavaScript, build, lint, source provenance, psephology and isolated Python validation pass; the official 2018 outcome extractor validates 88/88 districts.
 
-Exact next action: record project-owner approval for `historical-poll-2022-resolve-2022-11-16-20`; only then rerun the fixed 3-observation/2-family sufficiency check. Do not generate or score 2022 before that approval.
+Exact next action: score the immutable 2022 v2 prediction in a separate outcome-loading batch. Do not regenerate or tune it; complete backtest, calibration and production authorisation remain closed.

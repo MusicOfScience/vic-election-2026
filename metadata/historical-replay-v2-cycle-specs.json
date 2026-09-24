@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "historical_replay_v2",
+  "cycles": {
+    "vic_la_2018": {
+      "electionDate": "2018-11-24",
+      "informationCutoff": "2018-11-23",
+      "seed": 20181123,
+      "simulations": 1200,
+      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+      "pollInput": "model/data/validation/historical-replay-poll-observations.json",
+      "localInput": "model/data/processed/vec_2014_assembly_family_primaries.csv",
+      "councilInput": "model/data/processed/vec_2014_council_candidate_primaries.csv",
+      "councilRegions": 8,
+      "councilSeatsPerRegion": 5,
+      "assemblyContestCount": 88,
+      "ballotAvailability": "metadata/historical-party-family-availability.json",
+      "preferencePrior": "broad-fallback-v2",
+      "councilRules": "vic-2018-five-seat-stv"
+    },
+    "vic_la_2022": {
+      "electionDate": "2022-11-26",
+      "informationCutoff": "2022-11-25",
+      "seed": 20221125,
+      "simulations": 1200,
+      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"],
+      "pollInput": "model/data/validation/historical-replay-poll-observations.json",
+      "localInput": "model/data/validation/historical-replay-2022-local-inputs.csv",
+      "councilInput": "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz",
+      "councilAudit": "metadata/historical-replay-2022-council-surface-audit.json",
+      "councilRegions": 8,
+      "councilSeatsPerRegion": 5,
+      "assemblyContestCount": 87,
+      "ballotAvailability": "model/data/validation/historical-replay-2022-local-inputs.csv",
+      "preferencePrior": "broad-fallback-v2",
+      "councilRules": "vic-2022-five-seat-stv",
+      "groupedResidualRule": "allocate reported OTH_RESIDUAL only at model layer using pre-cutoff district AEC ONP:OTH_IND propensity; ballot-unavailable ONP receives zero and residual remains OTH_IND",
+      "regionalPollContribution": 0
+    }
+  }
+}

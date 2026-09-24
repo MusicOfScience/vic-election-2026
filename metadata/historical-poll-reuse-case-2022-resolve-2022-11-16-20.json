@@ -39,9 +39,10 @@
     "methodologicalAdequacy": {"passed": true, "basis": "The combined contemporaneous sources provide pollster identity, fieldwork window, approximate sample, primary categories, grouped residual components and TPP; the later pollster table supplies method corroboration and the exact sample without being used as availability evidence."},
     "reuseBasis": {"passed": true, "manualReviewRequired": true}
   },
-  "ownerReviewStatus": "awaiting-project-owner-approval",
-  "modelInputAdmissible": false,
-  "replayEligible": false,
+  "ownerReviewStatus": "approved-for-historical-replay",
+  "modelInputAdmissible": true,
+  "replayEligible": true,
   "notFromQuarantinedDataset": true,
+  "ownerReviewId": "historical-poll-review-2022-roymorgan-owner-2026-09-25",
   "notes": "Prepared for owner review only. Structured factual fields and provenance are retained; no source prose, layout or report asset is redistributed. Approval would be limited to this case."
 }

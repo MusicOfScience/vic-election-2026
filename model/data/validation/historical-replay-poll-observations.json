@@ -191,6 +191,46 @@
       "reuseBasis": "independently_reconstructed_factual_observation",
       "ownerReviewId": "historical-poll-review-2022-roymorgan-owner-2026-09-25",
       "replayEligible": true
+    },
+    {
+      "observationId": "historical-poll-2022-resolve-2022-11-16-20-2022-11-21",
+      "cycleId": "vic_la_2022",
+      "period": "2022-11-21",
+      "sourceId": "resolve-strategic-vic-2022-11-16-20",
+      "sourceUrl": "https://www.theage.com.au/politics/victoria/labor-coalition-neck-and-neck-as-gap-narrows-between-andrews-and-guy-20221121-p5bzxv.html",
+      "sourceSha256": "3c22410108f755d5becea4c63862109c7c6568c9cb69595203d9c652011e1b60",
+      "evidenceAvailableByDate": "2022-11-22",
+      "sampleSize": 1000,
+      "population": "Victorian voters",
+      "mode": "online / CATI (method corroborated by the pollster's later accuracy table; not inferred from the quarantined lead dataset)",
+      "primaryShares": {
+        "ALP": 36,
+        "LIB_NAT": 36,
+        "GRN": 10,
+        "OTH_IND": 18
+      },
+      "reportedCategories": {
+        "ALP": 36,
+        "LIB_NAT": 36,
+        "GRN": 10,
+        "INDEPENDENT": 6,
+        "OTHER": 12
+      },
+      "reportedTpp": {
+        "ALP": 53,
+        "LIB_NAT": 47
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "ONP",
+        "OTH_IND"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2022-roymorgan-owner-2026-09-25",
+      "replayEligible": true
     }
   ],
   "quarantineBoundary": "No values are read from d-j-hirst/aus-polling-analyser; this file contains only the approved structured factual reconstruction.",

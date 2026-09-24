@@ -560,6 +560,9 @@ export function validateModelValidationEvidence() {
     assert(Number.isSafeInteger(cycle.seed), `seed must be a safe integer for ${cycle.id}`);
     if (cycle.id === "vic_la_2018") {
       assert(cycle.runnable === true && cycle.blockedBy.length === 0, "2018 runnable state must be derived from complete readiness");
+    } else if (cycle.id === "vic_la_2022") {
+      assert(cycle.runnable === true && cycle.blockedBy.length === 0, "2022 runnable state must be derived from complete readiness");
+      assert(cycle.certifyingPredictionFrozen === true && cycle.predictionArtefact, "2022 certifying prediction must be registered");
     } else {
       assert(cycle.runnable === false, `${cycle.id} must remain unrunnable until its inputs are complete`);
       assert(JSON.stringify(cycle.blockedBy) === JSON.stringify(expectedReplayBlockers), `${cycle.id} blockers must match the remaining partial evidence`);

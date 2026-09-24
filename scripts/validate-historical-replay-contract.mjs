@@ -13,6 +13,7 @@ function assert(condition, message) {
 
 export function validateHistoricalReplayContract() {
   const config = readJson("model/config/historical-validation-cycles.json");
+  const readiness = readJson("metadata/historical-replay-input-readiness.json");
   const expected = ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022"];
   assert(config.status === "partial-unrunnable", "contract must remain explicitly partial until all inputs are present");
   assert(config.productionCompatible === false, "historical replay contract cannot authorise production");
@@ -37,6 +38,12 @@ export function validateHistoricalReplayContract() {
     if (cycle.id === "vic_la_2018") {
       assert(cycle.runnable === true, "2018 must be runnable only after governed readiness passes");
       assert(Array.isArray(cycle.blockedBy) && cycle.blockedBy.length === 0, "2018 stale static blockers must be cleared");
+    } else if (cycle.id === "vic_la_2022") {
+      const state = readiness.cycles?.find((item) => item.cycleId === cycle.id);
+      assert(state?.runnable === true, "2022 runnable state must derive from governed readiness");
+      assert(cycle.runnable === true, "2022 must be runnable only after governed readiness passes");
+      assert(Array.isArray(cycle.blockedBy) && cycle.blockedBy.length === 0, "2022 stale static blockers must be cleared");
+      assert(cycle.certifyingPredictionFrozen === true && cycle.predictionArtefact, "2022 certifying prediction must be explicitly frozen");
     } else {
       assert(cycle.runnable === false, `${cycle.id} cannot be marked runnable before residual inputs are complete`);
       assert(Array.isArray(cycle.blockedBy) && cycle.blockedBy.length > 0, `${cycle.id} must disclose concrete blockers`);
