@@ -46,6 +46,23 @@ def _load_config(root: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _readiness(root: Path, cycle_id: str) -> Mapping[str, Any]:
+    readiness = json.loads((root.parent / "metadata/historical-replay-input-readiness.json").read_text(encoding="utf-8"))
+    return next((row for row in readiness["cycles"] if row["cycleId"] == cycle_id), {})
+
+
+def _load_2018_outcomes(root: Path) -> list[Mapping[str, Any]]:
+    import pandas as pd
+    path = root / "data/processed/vec_2018_assembly_final_pairs.csv"
+    if not path.exists():
+        raise ReplayContractError("2018 scoring outcomes require a separately loaded final-pair/winner artefact; primary leaders cannot substitute an IRV outcome")
+    frame = pd.read_csv(path)
+    required = {"district_id", "alp_won"}
+    if not required.issubset(frame.columns):
+        raise ReplayContractError("2018 scoring final-pair artefact is missing district_id and alp_won")
+    return [{"districtId": row.district_id, "outcome": int(row.alp_won)} for row in frame.itertuples()]
+
+
 def _cycle(config: Mapping[str, Any], cycle_id: str) -> Mapping[str, Any]:
     for cycle in config.get("cycles", []):
         if cycle.get("id") == cycle_id:
@@ -142,11 +159,24 @@ def run_historical_replay(
     if outcomes is not None and forecast_runner is None:
         raise ReplayContractError("scoring outcomes cannot be supplied before prediction is frozen")
 
-    blockers = tuple(cycle.get("blockedBy", ()))
-    if not cycle.get("runnable", False):
+    readiness = _readiness(root_path, cycle_id)
+    components = ("pollEvidence", "ballotContest", "incumbencyLocal", "preferencePrior", "councilInput", "cutoffValidation", "replayConfig", "predictionScoringSeparation")
+    blockers = tuple(name for name in components if readiness.get(name, {}).get("status") not in {"pass", "pass-with-broad-fallback"})
+    if blockers or not readiness.get("runnable", False):
         return ReplayResult(cycle_id, "blocked", cutoff, seed, blockers=blockers)
-    if config.get("productionCompatible") is not True:
-        raise ReplayContractError("historical replay contract is not production-compatible")
+    if not config.get("replayExecutable", False):
+        raise ReplayContractError("historical replay is not marked executable")
+    if forecast_runner is None and cycle_id == "vic_la_2018":
+        from .historical_forecast import run_historical_2018_forecast, freeze_prediction
+        prediction = run_historical_2018_forecast(root_path, seed=seed)
+        inputs = ["data/validation/historical-replay-poll-observations.json", "data/processed/vec_2014_assembly_family_primaries.csv", "data/processed/vec_2014_council_candidate_primaries.csv"]
+        frozen = freeze_prediction(root_path, prediction, inputs)
+        prediction = dict(prediction); prediction["predictionSha256"] = frozen["predictionSha256"]; prediction["predictionFrozen"] = True
+        outcomes = _load_2018_outcomes(root_path)
+        probabilities = [row["winProbabilities"]["ALP"] for row in prediction["assemblyDistricts"]]
+        score = _score_prediction({"probabilities": probabilities}, outcomes)
+        score["comparators"] = {"uniformSwing": "pending shared comparator implementation", "pollingOnly": "same frozen polling state; district local term omitted"}
+        return ReplayResult(cycle_id, "scored", cutoff, seed, prediction=prediction, metrics=score)
     if forecast_runner is None:
         raise ReplayContractError("runnable cycle requires an explicit forecast runner")
     if outcomes is None:

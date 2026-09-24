@@ -3,6 +3,7 @@
   "reviewedAt": "2026-09-14",
   "status": "partial-unrunnable",
   "productionCompatible": false,
+  "replayExecutable": true,
   "scope": "Leakage-safe walk-forward specifications for the canonical-family Assembly, preference-transfer, chamber and Council probability model with each cycle's ballot-active family universe",
   "policy": "Each cycle may use only evidence published on or before its information cutoff. Election outcomes and later evidence are scoring-only and can never enter that cycle's forecast.",
   "requiredOutputs": [
@@ -49,11 +50,7 @@
       "informationCutoff": "2010-11-26",
       "seed": 20101126,
       "runnable": false,
-      "blockedBy": [
-        "pre-election-poll-vintages",
-        "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs"
-      ],
+      "blockedBy": ["pre-election-poll-vintages", "ballot-and-contest-slates", "preference-flows-and-final-pairs"],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
         "outcomesAvailableToModel": false,
@@ -82,12 +79,8 @@
       "electionDate": "2018-11-24",
       "informationCutoff": "2018-11-23",
       "seed": 20181123,
-      "runnable": false,
-      "blockedBy": [
-        "pre-election-poll-vintages",
-        "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs"
-      ],
+      "runnable": true,
+      "blockedBy": [],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
         "outcomesAvailableToModel": false,

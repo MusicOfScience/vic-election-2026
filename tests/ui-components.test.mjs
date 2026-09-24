@@ -186,7 +186,7 @@ test("ships explicit fail-closed release gates", async () => {
   assert.match(html, /Historical VEC results are available—but they are outcomes/);
   assert.match(html, /Narracan supplementary result stays outside the November 2022 cycle/);
   assert.match(html, /Historical replay readiness/);
-  assert.match(html, /0\/4 cycles runnable/);
+  assert.match(html, /1\/4 cycles runnable/);
 });
 
 test("renders the governed candidate review dossier without implying nomination", async () => {

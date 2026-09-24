@@ -39,8 +39,8 @@ test("requires evidence matching the complete probability model", () => {
 test("separates historical poll provenance, methodology and reuse basis", () => {
   assert.deepEqual(validateHistoricalPollReusePolicy(), {
     policyClasses: 7,
-    adjudicatedCases: 1,
-    replayEligibleCases: 1,
+    adjudicatedCases: 2,
+    replayEligibleCases: 2,
   });
 });
 
@@ -52,11 +52,11 @@ test("derives cycle-aware Assembly party availability from candidate evidence", 
   });
 });
 
-test("records owner-approved replay input without making a cycle runnable", () => {
+test("records owner-approved replay input and derives one runnable cycle", () => {
   assert.deepEqual(validateHistoricalReplayInputReadiness(), {
     cycles: 4,
-    approvedReplayObservations: 3,
-    runnableCycles: 0,
+    approvedReplayObservations: 4,
+    runnableCycles: 1,
   });
 });
 

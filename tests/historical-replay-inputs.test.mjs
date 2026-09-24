@@ -31,10 +31,10 @@ test("2018 Council builder rejects the modern regional poll as post-cutoff", () 
   assert.equal(result.regionalPollContribution, 0);
 });
 
-test("the uComms case preserves published categories and remains owner-gated", async () => {
+test("the uComms case preserves published categories and records owner approval", async () => {
   const caseFile = await import("../metadata/historical-poll-reuse-case-2018-ucomms.json", { with: { type: "json" } });
   assert.equal(caseFile.default.fieldwork.sampleSize, 1527);
   assert.deepEqual(caseFile.default.reportedPrimaryCategories, { ALP: 37.6, LIB_NAT: 35.2, GRN: 10.2, INDEPENDENT: 5.7, OTHER_MINOR: 4.6, UNDECIDED: 6.7 });
-  assert.equal(caseFile.default.ownerReviewStatus, "awaiting-project-owner-approval");
-  assert.equal(caseFile.default.replayEligible, false);
+  assert.equal(caseFile.default.ownerReviewStatus, "approved-for-historical-replay");
+  assert.equal(caseFile.default.replayEligible, true);
 });
