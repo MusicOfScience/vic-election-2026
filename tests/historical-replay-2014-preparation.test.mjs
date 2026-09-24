@@ -80,6 +80,19 @@ test("prediction-safe 2014 baseline and Council prior are complete without targe
   assert.equal(baseline.council.regions, 8);
 });
 
+test("2014 crosswalk rebuild remains fail-closed when the original raw inputs are absent", () => {
+  const audit = readJson("metadata/historical-replay-2014-crosswalk-source-audit.json");
+  assert.equal(audit.status, "blocked-original-raw-inputs-absent");
+  assert.equal(audit.expectedInputs.length, 4);
+  assert.equal(audit.expectedInputs.every((input) => input.status === "missing-locally" && input.path === null && input.sha256 === null), true);
+  assert.equal(audit.duplicateIdentityCheck.status, "not-applicable-no-copies-found");
+  assert.equal(audit.rebuildContract.targetElectionOutcomesUsed, false);
+  assert.deepEqual(audit.rebuildContract.forbiddenInputs, ["model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"]);
+  const baseline = readJson("metadata/historical-replay-2014-baseline-audit.json");
+  assert.equal(baseline.assemblyFamilyTranslation.status, "blocked");
+  assert.equal(baseline.assemblyFamilyTranslation.sourceAudit, "metadata/historical-replay-2014-crosswalk-source-audit.json");
+});
+
 test("2014 ballot availability uses the cutoff-safe family mask and remains outcome-isolated", () => {
   const audit = readJson("metadata/historical-replay-2014-ballot-availability-audit.json");
   assert.equal(audit.cycleId, "vic_la_2014");

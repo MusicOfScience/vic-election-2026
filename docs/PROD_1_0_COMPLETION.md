@@ -2,8 +2,8 @@
 
 Updated: 2026-09-25
 Branch: `codex/freeze-2014-holdout`
-Base: `e3e7322` (PR #108 merged); current review: PR #109
-Current batch: promote approved Essential evidence, close the 2014 ballot gate and assess the remaining prediction-safe geographic translation. No 2014 prediction or outcome loading.
+Base: `c4aa75d` (PR #109 merged)
+Current batch: locate or deterministically rebuild the original prediction-safe 2014 geographic crosswalk. No 2014 prediction or outcome loading.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -37,7 +37,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - V2 diagnostic artefact: `model/data/validation/historical-replays/vic_la_2018-v2-diagnostic.json` (SHA `3aa4ce84…`); comparator limitations are recorded in `metadata/historical-replay-v1-comparator-audit.json`.
 - The first certifying v2 cycle was `vic_la_2022`; its frozen prediction and score remain immutable. The official score is `model/data/validation/historical-replays/vic_la_2022-v2-score.json` (SHA `3bc3b150…`) with outcomes loaded only after sealed prediction/comparator verification.
 - Next certifying cycle selected before any 2014 prediction: `vic_la_2014`. 2014 is objectively closer than 2010 by pre-score completeness: three archived Roy Morgan cases plus one Essential case are approved through the governed path, while 2010 has only four source-matched leads and lacks a comparable 2006 multi-party local baseline. Selection is recorded in `metadata/historical-replay-next-cycle-selection.json`.
-- 2014 preparation audit: `metadata/historical-replay-2014-input-audit.json`. Four observations from two independent families (Roy Morgan and Essential) are owner-approved/promoted and pass the fixed polling rule. The 88-row ABC/Antony Green notional baseline, eight-region Council prior and cutoff-safe 88-row ballot mask are structured. The report-referenced 2014 multi-party crosswalk was not recoverable from Git, branches, LFS or local manifests, and no governed rebuild inputs are present, so the incumbency/local gate remains blocked. The 2010→2014 observed-swing file remains scoring-only.
+- 2014 preparation audit: `metadata/historical-replay-2014-input-audit.json`. Four observations from two independent families (Roy Morgan and Essential) are owner-approved/promoted and pass the fixed polling rule. The 88-row ABC/Antony Green notional baseline, eight-region Council prior and cutoff-safe 88-row ballot mask are structured. The original four raw geographic bridge inputs are absent from the bounded local/project search; the source audit is `metadata/historical-replay-2014-crosswalk-source-audit.json`, so the incumbency/local gate remains blocked. The 2010→2014 observed-swing file remains scoring-only.
 - Verification: 144 JavaScript tests, 60 isolated Python tests, lint, provenance, psephology, replay-contract, readiness, release-readiness and `git diff --check` pass locally. GitHub Actions could not start because the account billing/spending limit blocked the runner. Cycle-level log loss misses the fixed threshold; final-pair calibration, Council regional-primary error and four-cycle metrics remain unavailable by contract.
 
-Exact next action: recover or independently rebuild the missing prediction-safe 2014 multi-party geographic crosswalk from governed pre-cutoff sources, then rerun readiness. Do not generate or score 2014 until all gates pass; complete backtest, calibration and production authorisation remain closed.
+Exact next action: obtain and fingerprint the four original raw inputs, reproduce the projected mesh-block/Assembly intersection and seven-feature aggregation, then rerun readiness. Do not generate or score 2014 until all gates pass; complete backtest, calibration and production authorisation remain closed.
