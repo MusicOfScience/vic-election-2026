@@ -40,6 +40,7 @@ function assert(condition, message) {
 
 export function validateModelValidationEvidence() {
   const contract = readJson("metadata/model-validation-evidence-contract.json");
+  const acceptance = readJson("metadata/historical-validation-acceptance-criteria.json");
   const inventory = readJson("metadata/model-validation-evidence-inventory.json");
   const contractById = new Map(contract.components.map((component) => [component.id, component]));
   const inventoryById = new Map(inventory.components.map((component) => [component.id, component]));
@@ -53,6 +54,12 @@ export function validateModelValidationEvidence() {
   assert(inventory.summary.partial === (statusCounts.partial ?? 0), "partial summary count is stale");
   assert(inventory.summary.missing === (statusCounts.missing ?? 0), "missing summary count is stale");
   assert(inventory.summary.total === inventory.components.length, "total summary count is stale");
+  assert(acceptance.status === "preregistered-protocol-thresholds-pending", "historical acceptance protocol must remain preregistered until thresholds are fixed");
+  assert(acceptance.cycles.length === 4 && new Set(acceptance.cycles).size === 4, "acceptance protocol must cover four unique cycles");
+  assert(acceptance.dependencePolicy.cyclesAreNotIndependent === true, "acceptance protocol must cluster dependence by election cycle");
+  assert(acceptance.decisionRules.thresholdsMustBeFixedBeforeFirstCompleteReplay === true, "acceptance thresholds must precede complete replay scoring");
+  assert(acceptance.decisionRules.thresholdsMayNotBeChosenAfterViewingScores === true, "acceptance thresholds cannot be score-driven");
+  assert(acceptance.decisionRules.productionGateOpensAutomatically === false, "acceptance protocol cannot open production automatically");
 
   const acquisition = readJson("metadata/historical-source-acquisition-plan.json");
   const publicAudit = readJson("metadata/historical-public-source-audit.json");

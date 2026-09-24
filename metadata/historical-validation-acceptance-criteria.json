@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-24",
+  "status": "preregistered-protocol-thresholds-pending",
+  "purpose": "Define how the four frozen Victorian election cycles will be evaluated before any complete-model scores are interpreted or a production gate can open.",
+  "unitOfReplication": "election-cycle",
+  "cycles": [
+    "vic_la_2010",
+    "vic_la_2014",
+    "vic_la_2018",
+    "vic_la_2022"
+  ],
+  "dependencePolicy": {
+    "cyclesAreNotIndependent": true,
+    "primaryAggregation": "report each cycle and a cycle-clustered summary; do not treat districts within a cycle as independent election replications",
+    "scoringOutcomesLoadedAfterPrediction": true,
+    "postCutoffEvidenceForbidden": true
+  },
+  "requiredComparators": [
+    "uniform-swing-baseline",
+    "polling-only",
+    "polling-plus-fundamentals",
+    "seat-level-model",
+    "complete-ensemble"
+  ],
+  "requiredMetrics": {
+    "forecastError": [
+      "statewide-vote-error",
+      "seat-winner-accuracy",
+      "seat-count-error",
+      "regional-error",
+      "performance-by-contest-type"
+    ],
+    "probability": [
+      "brier-score",
+      "log-loss",
+      "reliability-curve",
+      "calibration-slope",
+      "calibration-intercept",
+      "80-percent-interval-coverage",
+      "final-pair-calibration"
+    ]
+  },
+  "decisionRules": {
+    "thresholdsMustBeFixedBeforeFirstCompleteReplay": true,
+    "thresholdsMayNotBeChosenAfterViewingScores": true,
+    "completeBacktestCannotPassWithMissingCycle": true,
+    "complexModelMustBeComparedWithRequiredComparators": true,
+    "negativeFindingsRemainRecorded": true,
+    "productionGateOpensAutomatically": false
+  },
+  "currentDecision": {
+    "completeBacktest": "blocked-until-four-leakage-safe-replays-and-threshold-registration",
+    "probabilityCalibration": "blocked-until-four-leakage-safe-replays-and-threshold-registration",
+    "productionAuthorisation": "blocked-downstream"
+  }
+}
