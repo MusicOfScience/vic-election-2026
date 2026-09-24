@@ -5,12 +5,12 @@
   "status": "preparation-blocked-no-prediction-generated",
   "selectionBasis": "pre-score evidence completeness only",
   "polling": {
-    "automatedGatePassingCases": 3,
-    "approvedReplayObservations": 3,
-    "independentFamiliesApproved": 1,
-    "pendingOwnerReview": "metadata/historical-poll-reuse-review-2014-second-family.json",
+    "automatedGatePassingCases": 4,
+    "approvedReplayObservations": 4,
+    "independentFamiliesApproved": 2,
+    "pendingOwnerReview": null,
     "fixedRule": {"minimumObservations": 3, "minimumIndependentFamilies": 2},
-    "secondFamilyStatus": "Essential May 2014 passes the automated evidence gates under the documented continuity rule and awaits explicit owner approval; Newspoll remains a bounded fallback only",
+    "secondFamilyStatus": "Essential May 2014 passed all gates, received explicit owner approval and was promoted; Newspoll remains unneeded",
     "secondFamilyAssessment": "metadata/historical-poll-2014-second-family-assessment.json"
   },
   "localAssembly": {
@@ -18,6 +18,7 @@
     "priorFamilyBaselineAvailable": true,
     "translationSurface": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
     "translationSurfaceAvailable": false,
+    "translationRecovery": "not recovered from Git, branches, LFS or local manifests; no governed rebuild inputs are present",
     "targetOutcomeTransition": "model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv",
     "targetOutcomeTransitionRole": "scoring-only-forbidden-in-prediction",
     "predictionSafeTppBaseline": "model/data/validation/historical-replay-2014-assembly-notional-baseline.csv",
@@ -27,8 +28,10 @@
   "ballotContest": {
     "audit": "metadata/historical-replay-2014-ballot-availability-audit.json",
     "finalOutcomeRowsAvailable": true,
-    "cutoffSafeCandidateAvailability": false,
-    "status": "blocked; final outcome pages are not proof of pre-cutoff candidate availability"
+    "cutoffSafeCandidateAvailability": true,
+    "artefact": "model/data/validation/historical-replay-2014-ballot-mask.csv",
+    "artefactSha256": "631565592105e06a126fe009784a2949065eda12f98cdc59bba3f0cbb4b2b240",
+    "status": "pass; ABC 2014-11-13 nominations summary supports the governed family mask; final outcome pages remain scoring-only"
   },
   "council": {
     "priorEvidence": "model/data/processed/vec_2010_council_candidate_primaries.csv",

@@ -517,6 +517,7 @@ export function validateModelValidationEvidence() {
   }
 
   const historicalConfigs = readJson("model/config/historical-validation-cycles.json");
+  const cycleReadiness = readJson("metadata/historical-replay-input-readiness.json");
   const expectedCycleDates = new Map([
     ["vic_la_2010", ["2010-11-27", "2010-11-26"]],
     ["vic_la_2014", ["2014-11-29", "2014-11-28"]],
@@ -551,6 +552,10 @@ export function validateModelValidationEvidence() {
   assert(historicalConfigs.outcomeScoringPolicy.postCycleContests === "separate-scoring-only", "post-cycle contests must be scored separately");
   assert(historicalConfigs.outcomeScoringPolicy.unknownEvidencePublicationDate === "not-pre-cutoff-eligible", "unknown evidence dates cannot enter historical inputs");
   const expectedReplayBlockers = ["pre-election-poll-vintages", "ballot-and-contest-slates", "preference-flows-and-final-pairs"];
+  const expectedReplayBlockersByCycle = {
+    vic_la_2010: expectedReplayBlockers,
+    vic_la_2014: ["incumbency-local-multi-party-translation"],
+  };
   for (const cycle of historicalConfigs.cycles) {
     const expectedDates = expectedCycleDates.get(cycle.id);
     assert(expectedDates, `unexpected historical cycle ${cycle.id}`);
@@ -565,8 +570,16 @@ export function validateModelValidationEvidence() {
       assert(cycle.certifyingPredictionFrozen === true && cycle.predictionArtefact, "2022 certifying prediction must be registered");
     } else {
       assert(cycle.runnable === false, `${cycle.id} must remain unrunnable until its inputs are complete`);
-      assert(JSON.stringify(cycle.blockedBy) === JSON.stringify(expectedReplayBlockers), `${cycle.id} blockers must match the remaining partial evidence`);
-      assert(cycle.blockedBy.every((id) => contractById.get(id)?.status === "partial"), `${cycle.id} cannot list completed evidence as a blocker`);
+      const expectedBlockersForCycle = expectedReplayBlockersByCycle[cycle.id] ?? expectedReplayBlockers;
+      assert(JSON.stringify(cycle.blockedBy) === JSON.stringify(expectedBlockersForCycle), `${cycle.id} blockers must match the remaining partial evidence`);
+      if (cycle.id === "vic_la_2014") {
+        const readiness2014 = cycleReadiness.cycles.find((item) => item.cycleId === cycle.id);
+        assert(readiness2014?.pollEvidence.status === "pass", "2014 poll evidence must not remain a stale blocker");
+        assert(readiness2014?.ballotContest.status === "pass", "2014 ballot evidence must not remain a stale blocker");
+        assert(readiness2014?.incumbencyLocal.status === "blocked", "2014 local translation blocker must remain explicit");
+      } else {
+        assert(cycle.blockedBy.every((id) => contractById.get(id)?.status === "partial"), `${cycle.id} cannot list completed evidence as a blocker`);
+      }
     }
     assert(cycle.inputPolicy.publicationDateAtOrBeforeCutoff === true, `${cycle.id} must enforce its information cutoff`);
     assert(cycle.inputPolicy.outcomesAvailableToModel === false, `${cycle.id} outcomes cannot enter the model`);

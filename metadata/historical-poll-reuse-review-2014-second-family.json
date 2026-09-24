@@ -1,18 +1,21 @@
 {
   "schemaVersion": 1,
-  "reviewId": "historical-poll-review-2014-second-family-pending",
+  "reviewId": "historical-poll-review-2014-essential-owner-2026-09-25",
   "cycleId": "vic_la_2014",
   "caseId": "historical-poll-2014-essential-2014-05",
-  "decision": "awaiting-project-owner-approval",
+  "decision": "approved-for-historical-replay",
   "scope": "Structured factual fields and provenance only; no source prose, layout or source-document redistribution.",
   "reuseBasis": "independently_reconstructed_factual_observation",
   "checks": {
     "provenanceGate": true,
     "methodologicalAdequacyGate": true,
-    "ownerReuseBasisApproval": false,
+    "ownerReuseBasisApproval": true,
     "notFromQuarantinedDataset": true,
     "current2026ForecastImpact": false,
     "productionAuthorisation": false
   },
-  "ownerDecisionRequired": "Approve or reject the individually reconstructed Essential May 2014 observation; no second-family observation is promoted until this decision is recorded."
+  "approvedAt": "2026-09-25",
+  "approvedBy": "project-owner",
+  "approvedCaseIds": ["historical-poll-2014-essential-2014-05"],
+  "ownerDecision": "Approved for historical replay under independently_reconstructed_factual_observation; structured factual fields and provenance only."
 }

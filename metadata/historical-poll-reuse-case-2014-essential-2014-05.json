@@ -25,10 +25,10 @@
     "methodologicalAdequacy": {"passed": true, "basis": "The first-party state-voting table supplies an observation-specific sample and exhaustive published primary categories. A first-party Essential methodology note identifies the continuing Your Source online-panel, demographic/geographic weighting and rolling-wave treatment; the exact May field dates are not reported and are retained as unknown rather than invented."},
     "reuseBasis": {"passed": true, "manualReviewRequired": true, "legalDetermination": false}
   },
-  "ownerReviewStatus": "awaiting-project-owner-approval",
-  "modelInputAdmissible": false,
-  "replayEligible": false,
+  "ownerReviewStatus": "approved-for-historical-replay",
+  "modelInputAdmissible": true,
+  "replayEligible": true,
   "notFromQuarantinedDataset": true,
-  "ownerReviewId": "historical-poll-review-2014-second-family-pending",
+  "ownerReviewId": "historical-poll-review-2014-essential-owner-2026-09-25",
   "notes": "Structured factual fields only. Palmer United is retained as a reported component and grouped with Other/Independent at the model layer; no arithmetic residual was manufactured. The methodology continuity rationale is reviewable and does not reproduce source prose or layout."
 }

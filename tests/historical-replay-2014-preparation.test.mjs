@@ -8,15 +8,15 @@ import { buildApprovedHistoricalPollInput2014 } from "../scripts/apply-approved-
 
 const readJson = (path) => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), "utf8"));
 
-test("2014 is selected by pre-score completeness and remains fail-closed", () => {
+test("2014 is selected by pre-score completeness and remains prediction-fail-closed", () => {
   const selection = readJson("metadata/historical-replay-next-cycle-selection.json");
   const audit = readJson("metadata/historical-replay-2014-input-audit.json");
   assert.equal(selection.selectedCycle, "vic_la_2014");
   assert.match(selection.reason, /pre-score evidence completeness/i);
   assert.equal(audit.predictionGenerated, false);
   assert.equal(audit.targetOutcomeLoaded, false);
-  assert.equal(audit.polling.approvedReplayObservations, 3);
-  assert.equal(audit.polling.independentFamiliesApproved, 1);
+  assert.equal(audit.polling.approvedReplayObservations, 4);
+  assert.equal(audit.polling.independentFamiliesApproved, 2);
 });
 
 test("2014 Roy Morgan cases record the explicit owner approval and promote only through the governed builder", () => {
@@ -46,16 +46,16 @@ test("the 2010-to-2014 outcome transition remains forbidden prediction input", (
   assert.throws(() => buildHistoricalLocalInputs("vic_la_2014", sandbox), /forbidden target-outcome-derived local input/i);
 });
 
-test("2014 poll promotion remains blocked at one family and Essential stays owner-pending", () => {
+test("2014 poll promotion reaches the fixed two-family sufficiency rule after Essential approval", () => {
   const promoted = buildApprovedHistoricalPollInput2014();
   const assessment = readJson("metadata/historical-poll-2014-second-family-assessment.json");
   const essential = readJson("metadata/historical-poll-reuse-case-2014-essential-2014-05.json");
-  assert.equal(promoted.observations.length, 3);
-  assert.equal(promoted.independentSourceFamilies, 1);
-  assert.equal(promoted.sufficiency.status, "blocked-pending-second-family");
-  assert.equal(assessment.status, "second-family-automated-pass-awaiting-owner-approval");
-  assert.equal(essential.replayEligible, false);
-  assert.equal(essential.ownerReviewStatus, "awaiting-project-owner-approval");
+  assert.equal(promoted.observations.length, 4);
+  assert.equal(promoted.independentSourceFamilies, 2);
+  assert.equal(promoted.sufficiency.status, "pass");
+  assert.equal(assessment.status, "second-family-approved-and-promoted");
+  assert.equal(essential.replayEligible, true);
+  assert.equal(essential.ownerReviewStatus, "approved-for-historical-replay");
   assert.deepEqual(essential.modelPrimaryShares, { LIB_NAT: 38, ALP: 40, GRN: 10, OTH_IND: 12 });
 });
 
@@ -80,13 +80,19 @@ test("prediction-safe 2014 baseline and Council prior are complete without targe
   assert.equal(baseline.council.regions, 8);
 });
 
-test("2014 ballot availability remains fail-closed without cutoff-safe candidate evidence", () => {
+test("2014 ballot availability uses the cutoff-safe family mask and remains outcome-isolated", () => {
   const audit = readJson("metadata/historical-replay-2014-ballot-availability-audit.json");
   assert.equal(audit.cycleId, "vic_la_2014");
-  assert.equal(audit.status, "blocked-cutoff-safe-candidate-availability-unproven");
+  assert.equal(audit.status, "pass-cutoff-safe-family-mask");
   assert.equal(audit.targetOutcomeUse, "forbidden");
   assert.equal(audit.oneNation.status, "verified-unavailable");
-  assert.equal(audit.candidateAvailabilitySources.some((source) => source.cutoffSafe === false), true);
+  assert.equal(audit.candidateAvailabilitySources.some((source) => source.cutoffSafe === true), true);
+  const mask = readFileSync(new URL("../model/data/validation/historical-replay-2014-ballot-mask.csv", import.meta.url), "utf8").trim().split("\n");
+  assert.equal(mask.length, 89);
+  const hawthorn = mask.find((row) => row.includes('","Hawthorn","'));
+  assert.ok(hawthorn);
+  assert.doesNotMatch(hawthorn, /OTH_IND/);
+  assert.match(mask.find((row) => row.includes("Albert Park")), /OTH_IND/);
 });
 
 test("sealed 2018 and 2022 evidence is not rewritten while preparing 2014", () => {

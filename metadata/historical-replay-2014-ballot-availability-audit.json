@@ -2,7 +2,10 @@
   "schemaVersion": 1,
   "cycleId": "vic_la_2014",
   "informationCutoff": "2014-11-28",
-  "status": "blocked-cutoff-safe-candidate-availability-unproven",
+  "status": "pass-cutoff-safe-family-mask",
+  "artefact": "model/data/validation/historical-replay-2014-ballot-mask.csv",
+  "artefactRows": 88,
+  "artefactSha256": "631565592105e06a126fe009784a2949065eda12f98cdc59bba3f0cbb4b2b240",
   "requiredModelFields": [
     "district_id",
     "district_name",
@@ -12,11 +15,13 @@
   "scope": "district-level family availability and incumbent-party inputs only; candidate biographies are not required",
   "candidateAvailabilitySources": [
     {
-      "sourceUrl": "https://www.abc.net.au/news/elections/vic/2014/guide/candidates",
-      "sourceClass": "contemporaneous-election-guide-lead",
-      "publicationContext": "ABC 2014 Victorian election guide published during the pre-election period",
-      "cutoffSafe": false,
-      "limitation": "The currently retrievable page does not provide an independently verifiable pre-cutoff archival capture for the final candidate/ballot list. Current or post-election result pages cannot establish historical availability."
+      "sourceUrl": "https://www.abc.net.au/news/2014-11-14/2014-victorian-election---summary-of-nominations/9388508",
+      "sourceClass": "contemporaneous-election-nominations-summary",
+      "publicationContext": "ABC nominations summary published 13 November 2014 after party nominations closed and before the frozen cutoff",
+      "cutoffSafe": true,
+      "publicationDate": "2014-11-13",
+      "sourceSha256": "13d222c66c96a7013bfbb579b417de6a4cf6c1a5eef03bdea4a33bdf01e67f1c",
+      "limitation": "The contemporaneous summary establishes the family-level coverage needed by v2 and names the only three three-candidate districts; it does not reproduce candidate biographies or post-election results."
     },
     {
       "sourceUrl": "https://www.abc.net.au/news/elections/vic/2014/guide/pendulum",
@@ -32,6 +37,7 @@
     "pollInterpretation": "absence is a ballot constraint, not a fabricated zero poll observation"
   },
   "targetOutcomeUse": "forbidden",
-  "finalOutcomePages": "scoring-only; not accepted as sole proof of pre-cutoff availability",
-  "nextAction": "Recover an archived VEC candidate list or pre-cutoff ABC ballot/candidate capture, then build the smallest governed district-family mask and incumbent-party input."
+  "finalOutcomePages": "scoring-only; not used for this mask",
+  "incumbency": "incumbent_party_family is taken from the separately fingerprinted pre-election notional-holder baseline; no 2014 winner field is read",
+  "nextAction": "Use the mask only after the missing multi-party geographic translation is independently recovered or rebuilt."
 }
