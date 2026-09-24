@@ -3,7 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/recover-2022-second-family-poll`
 Base: `2b063b7c` (PR #102 merged)
-Current batch: bounded 2022 second-family poll recovery; v1/v2 historical evidence remains immutable and non-certifying.
+Current batch: bounded 2022 second-family poll recovery; v1/v2 historical evidence remains immutable and non-certifying. PR #103 is open for review.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
