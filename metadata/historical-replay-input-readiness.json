@@ -164,7 +164,8 @@
       "certifyingPredictionFrozen": true,
       "predictionArtefact": "model/data/validation/historical-replays/vic_la_2022-v2-prediction.json",
       "predictionSha256": "f68f3bfba98a41205290aff7ef9fa151786d2407c1c764f09006b6b15757f0b0",
-      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2022-v2-comparators.json",
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2022-v2-comparators-v2.json",
+      "comparatorBundleDefectAudit": "metadata/historical-replay-v2-comparator-defect-audit.json",
       "scored": false,
       "certifyingScored": false
     }

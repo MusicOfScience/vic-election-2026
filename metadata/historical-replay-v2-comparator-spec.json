@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "historical_replay_v2",
+  "cycleId": "vic_la_2022",
+  "informationCutoff": "2022-11-25",
+  "outcomesLoaded": false,
+  "status": "frozen-pre-outcome-comparator-contract",
+  "commonInformationBoundary": {
+    "pollInput": "model/data/validation/historical-replay-poll-observations.json",
+    "localInput": "model/data/validation/historical-replay-2022-local-inputs.csv",
+    "vecBaseline": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv",
+    "outcomeInputs": [],
+    "forbiddenInputs": [
+      "ASSEMBLY_2022_TARGET",
+      "COUNCIL_2022_TARGET",
+      "vec_2022_indicative_candidate_evidence.csv",
+      "2018-to-2022 observed outcome transitions",
+      "all target-election outcome artefacts"
+    ]
+  },
+  "definitions": {
+    "uniform-swing-baseline": {
+      "uses": ["VEC 2018-on-2022-boundary ALP/Coalition TPP baseline", "common statewide poll level"],
+      "excludes": ["AEC district surface", "district stochastic shocks", "full IRV ensemble", "Council"],
+      "scope": "ALP-vs-Coalition baseline plus common statewide poll level",
+      "limitations": ["does not estimate non-major final pairs", "Assembly comparator only"]
+    },
+    "polling-only": {
+      "uses": ["statewide historical polling state", "district ballot masks"],
+      "excludes": ["VEC baseline", "AEC local surface", "local fundamentals", "Council"],
+      "scope": "statewide poll state with ballot masks only",
+      "limitations": ["district means are equal where ballot masks are equal", "no local geography"]
+    },
+    "polling-plus-fundamentals": {
+      "uses": ["statewide historical polling state", "VEC baseline", "AEC relative district pattern", "ballot availability"],
+      "excludes": ["full correlated ensemble", "full Council ensemble"],
+      "scope": "polling plus deterministic local fundamentals",
+      "limitations": ["district probabilities are deterministic marginals"]
+    },
+    "seat-level-model": {
+      "uses": ["statewide polling", "VEC/AEC local fundamentals", "ballot availability", "fixed pre-score district uncertainty"],
+      "excludes": ["complete cross-seat correlation", "Council"],
+      "scope": "independent district IRV marginals",
+      "limitations": ["chamber distribution is an independent-seat approximation"]
+    },
+    "complete-ensemble": {
+      "uses": ["immutable historical_replay_v2 certifying prediction by reference"],
+      "excludes": [],
+      "scope": "shared polling, local, IRV, correlated Assembly and Council ensemble",
+      "limitations": []
+    }
+  },
+  "metricPolicy": {
+    "simpleAssemblyOnly": ["uniform-swing-baseline", "polling-only", "polling-plus-fundamentals", "seat-level-model"],
+    "completeAssemblyAndCouncil": ["complete-ensemble"],
+    "unavailableMetricsRemainExplicit": true
+  }
+}
