@@ -6143,17 +6143,19 @@
             "OTH_IND": 17.1920261981
           },
           "winProbabilities": {
-            "ALP": 0.3326028489,
-            "LIB_NAT": 0.2864330598,
-            "GRN": 0.2090438293,
+            "ALP": 0.3456397869,
+            "LIB_NAT": 0.2939893742,
+            "GRN": 0.1977438343,
             "ONP": 0.0,
-            "OTH_IND": 0.171920262
+            "OTH_IND": 0.1626270046
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "ashwood",
@@ -6166,17 +6168,19 @@
             "OTH_IND": 18.6860259221
           },
           "winProbabilities": {
-            "ALP": 0.3360484979,
-            "LIB_NAT": 0.3113288911,
-            "GRN": 0.1657623517,
+            "ALP": 0.3438531483,
+            "LIB_NAT": 0.3212386704,
+            "GRN": 0.1574350766,
             "ONP": 0.0,
-            "OTH_IND": 0.1868602592
+            "OTH_IND": 0.1774731048
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bass",
@@ -6189,17 +6193,19 @@
             "OTH_IND": 21.4242162592
           },
           "winProbabilities": {
-            "ALP": 0.3266260108,
-            "LIB_NAT": 0.3123727209,
-            "GRN": 0.1467591057,
+            "ALP": 0.3338843272,
+            "LIB_NAT": 0.3236585243,
+            "GRN": 0.1392203,
             "ONP": 0.0,
-            "OTH_IND": 0.2142421626
+            "OTH_IND": 0.2032368486
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bayswater",
@@ -6212,17 +6218,19 @@
             "OTH_IND": 18.1919371035
           },
           "winProbabilities": {
-            "ALP": 0.3380994472,
-            "LIB_NAT": 0.3196839863,
-            "GRN": 0.1602971954,
+            "ALP": 0.3454224429,
+            "LIB_NAT": 0.3290700975,
+            "GRN": 0.1524705054,
             "ONP": 0.0,
-            "OTH_IND": 0.181919371
+            "OTH_IND": 0.1730369542
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bellarine",
@@ -6235,17 +6243,19 @@
             "OTH_IND": 18.0826420314
           },
           "winProbabilities": {
-            "ALP": 0.3404762821,
-            "LIB_NAT": 0.3144486776,
-            "GRN": 0.1642486199,
+            "ALP": 0.3457143432,
+            "LIB_NAT": 0.3261930994,
+            "GRN": 0.1561653075,
             "ONP": 0.0,
-            "OTH_IND": 0.1808264203
+            "OTH_IND": 0.1719272499
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "benambra",
@@ -6258,17 +6268,19 @@
             "OTH_IND": 28.3288004531
           },
           "winProbabilities": {
-            "ALP": 0.2914412848,
-            "LIB_NAT": 0.311163478,
-            "GRN": 0.1141072327,
+            "ALP": 0.3002128088,
+            "LIB_NAT": 0.3247477851,
+            "GRN": 0.1076880264,
             "ONP": 0.0,
-            "OTH_IND": 0.2832880045
+            "OTH_IND": 0.2673513798
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bendigo-east",
@@ -6281,17 +6293,19 @@
             "OTH_IND": 16.9852584012
           },
           "winProbabilities": {
-            "ALP": 0.3218134061,
-            "LIB_NAT": 0.2721311472,
-            "GRN": 0.14114306,
-            "ONP": 0.0950598028,
-            "OTH_IND": 0.169852584
+            "ALP": 0.3336883361,
+            "LIB_NAT": 0.2835684614,
+            "GRN": 0.1330398279,
+            "ONP": 0.0896022788,
+            "OTH_IND": 0.1601010957
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bendigo-west",
@@ -6304,17 +6318,19 @@
             "OTH_IND": 18.6381487846
           },
           "winProbabilities": {
-            "ALP": 0.3542300448,
-            "LIB_NAT": 0.2946052627,
-            "GRN": 0.1647832046,
+            "ALP": 0.3628253664,
+            "LIB_NAT": 0.3035818426,
+            "GRN": 0.1565376313,
             "ONP": 0.0,
-            "OTH_IND": 0.1863814878
+            "OTH_IND": 0.1770551597
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bentleigh",
@@ -6327,17 +6343,19 @@
             "OTH_IND": 21.7884847583
           },
           "winProbabilities": {
-            "ALP": 0.3270345891,
-            "LIB_NAT": 0.3037075225,
-            "GRN": 0.1513730409,
+            "ALP": 0.3348009019,
+            "LIB_NAT": 0.3153205233,
+            "GRN": 0.1434287133,
             "ONP": 0.0,
-            "OTH_IND": 0.2178848476
+            "OTH_IND": 0.2064498616
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "berwick",
@@ -6350,17 +6368,19 @@
             "OTH_IND": 18.9005664122
           },
           "winProbabilities": {
-            "ALP": 0.3435038991,
-            "LIB_NAT": 0.31748112,
-            "GRN": 0.1500093168,
+            "ALP": 0.3566339089,
+            "LIB_NAT": 0.3207565312,
+            "GRN": 0.1427501509,
             "ONP": 0.0,
-            "OTH_IND": 0.1890056641
+            "OTH_IND": 0.179859409
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "box-hill",
@@ -6373,17 +6393,19 @@
             "OTH_IND": 20.270377571
           },
           "winProbabilities": {
-            "ALP": 0.3270684721,
-            "LIB_NAT": 0.3100285838,
-            "GRN": 0.1601991683,
+            "ALP": 0.3337058037,
+            "LIB_NAT": 0.3221261897,
+            "GRN": 0.1519288541,
             "ONP": 0.0,
-            "OTH_IND": 0.2027037757
+            "OTH_IND": 0.1922391525
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "brighton",
@@ -6396,17 +6418,19 @@
             "OTH_IND": 24.5835330847
           },
           "winProbabilities": {
-            "ALP": 0.30175557,
-            "LIB_NAT": 0.2984120462,
-            "GRN": 0.1539970529,
+            "ALP": 0.3171377664,
+            "LIB_NAT": 0.3056529244,
+            "GRN": 0.1452836846,
             "ONP": 0.0,
-            "OTH_IND": 0.2458353308
+            "OTH_IND": 0.2319256245
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "broadmeadows",
@@ -6419,17 +6443,19 @@
             "OTH_IND": 19.646423968
           },
           "winProbabilities": {
-            "ALP": 0.3549724889,
-            "LIB_NAT": 0.2784449286,
-            "GRN": 0.1701183428,
+            "ALP": 0.3675057155,
+            "LIB_NAT": 0.2850184882,
+            "GRN": 0.1612515418,
             "ONP": 0.0,
-            "OTH_IND": 0.1964642397
+            "OTH_IND": 0.1862242545
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "brunswick",
@@ -6442,17 +6468,19 @@
             "OTH_IND": 17.9478999387
           },
           "winProbabilities": {
-            "ALP": 0.330708295,
-            "LIB_NAT": 0.2521752121,
-            "GRN": 0.2376374934,
+            "ALP": 0.3480611898,
+            "LIB_NAT": 0.2593835108,
+            "GRN": 0.2236446148,
             "ONP": 0.0,
-            "OTH_IND": 0.1794789994
+            "OTH_IND": 0.1689106845
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bulleen",
@@ -6465,17 +6493,19 @@
             "OTH_IND": 17.8555982376
           },
           "winProbabilities": {
-            "ALP": 0.3458438976,
-            "LIB_NAT": 0.3153820566,
-            "GRN": 0.1602180634,
+            "ALP": 0.3583396913,
+            "LIB_NAT": 0.3192689373,
+            "GRN": 0.1524701253,
             "ONP": 0.0,
-            "OTH_IND": 0.1785559824
+            "OTH_IND": 0.1699212462
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "bundoora",
@@ -6488,17 +6518,19 @@
             "OTH_IND": 18.9762157083
           },
           "winProbabilities": {
-            "ALP": 0.3524458066,
-            "LIB_NAT": 0.2929214116,
-            "GRN": 0.1648706248,
+            "ALP": 0.3623992862,
+            "LIB_NAT": 0.3008797745,
+            "GRN": 0.156543316,
             "ONP": 0.0,
-            "OTH_IND": 0.1897621571
+            "OTH_IND": 0.1801776233
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "carrum",
@@ -6511,17 +6543,19 @@
             "OTH_IND": 19.9281439755
           },
           "winProbabilities": {
-            "ALP": 0.3566868987,
-            "LIB_NAT": 0.2965748849,
-            "GRN": 0.1474567766,
+            "ALP": 0.3691835208,
+            "LIB_NAT": 0.3012207767,
+            "GRN": 0.1401666087,
             "ONP": 0.0,
-            "OTH_IND": 0.1992814398
+            "OTH_IND": 0.1894290938
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "caulfield",
@@ -6534,17 +6568,19 @@
             "OTH_IND": 20.5725139173
           },
           "winProbabilities": {
-            "ALP": 0.315222385,
-            "LIB_NAT": 0.2975420343,
-            "GRN": 0.1815104415,
+            "ALP": 0.3266392069,
+            "LIB_NAT": 0.3073831473,
+            "GRN": 0.1715461269,
             "ONP": 0.0,
-            "OTH_IND": 0.2057251392
+            "OTH_IND": 0.1944315189
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "clarinda",
@@ -6557,17 +6593,19 @@
             "OTH_IND": 19.2138272908
           },
           "winProbabilities": {
-            "ALP": 0.3513633805,
-            "LIB_NAT": 0.3027161104,
-            "GRN": 0.1537822362,
+            "ALP": 0.3565748077,
+            "LIB_NAT": 0.314568428,
+            "GRN": 0.1461963869,
             "ONP": 0.0,
-            "OTH_IND": 0.1921382729
+            "OTH_IND": 0.1826603773
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "cranbourne",
@@ -6580,17 +6618,19 @@
             "OTH_IND": 20.4910314969
           },
           "winProbabilities": {
-            "ALP": 0.3530761257,
-            "LIB_NAT": 0.3022069925,
-            "GRN": 0.1398065669,
+            "ALP": 0.3624966668,
+            "LIB_NAT": 0.3097345655,
+            "GRN": 0.1329329329,
             "ONP": 0.0,
-            "OTH_IND": 0.204910315
+            "OTH_IND": 0.1948358348
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "croydon",
@@ -6603,17 +6643,19 @@
             "OTH_IND": 19.1204388839
           },
           "winProbabilities": {
-            "ALP": 0.3346913995,
-            "LIB_NAT": 0.3151452652,
-            "GRN": 0.1589589464,
+            "ALP": 0.3442431639,
+            "LIB_NAT": 0.3230678249,
+            "GRN": 0.1510263622,
             "ONP": 0.0,
-            "OTH_IND": 0.1912043888
+            "OTH_IND": 0.181662649
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "dandenong",
@@ -6626,17 +6668,19 @@
             "OTH_IND": 20.1196136901
           },
           "winProbabilities": {
-            "ALP": 0.3565960102,
-            "LIB_NAT": 0.2975067307,
-            "GRN": 0.1447011222,
+            "ALP": 0.3630900747,
+            "LIB_NAT": 0.308074174,
+            "GRN": 0.1375636868,
             "ONP": 0.0,
-            "OTH_IND": 0.2011961369
+            "OTH_IND": 0.1912720645
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "eildon",
@@ -6649,17 +6693,19 @@
             "OTH_IND": 23.7767412877
           },
           "winProbabilities": {
-            "ALP": 0.312902481,
-            "LIB_NAT": 0.304250452,
-            "GRN": 0.1450796541,
+            "ALP": 0.3225295909,
+            "LIB_NAT": 0.3154151133,
+            "GRN": 0.1372006256,
             "ONP": 0.0,
-            "OTH_IND": 0.2377674129
+            "OTH_IND": 0.2248546702
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "eltham",
@@ -6672,17 +6718,19 @@
             "OTH_IND": 18.3341505782
           },
           "winProbabilities": {
-            "ALP": 0.3474542487,
-            "LIB_NAT": 0.2967735293,
-            "GRN": 0.1724307163,
+            "ALP": 0.3587285582,
+            "LIB_NAT": 0.3035234242,
+            "GRN": 0.1636949964,
             "ONP": 0.0,
-            "OTH_IND": 0.1833415058
+            "OTH_IND": 0.1740530213
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "essendon",
@@ -6695,17 +6743,19 @@
             "OTH_IND": 18.3645922104
           },
           "winProbabilities": {
-            "ALP": 0.3516149573,
-            "LIB_NAT": 0.2852434378,
-            "GRN": 0.1794956828,
+            "ALP": 0.363849619,
+            "LIB_NAT": 0.2917677266,
+            "GRN": 0.1702234028,
             "ONP": 0.0,
-            "OTH_IND": 0.1836459221
+            "OTH_IND": 0.1741592516
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "eureka",
@@ -6718,17 +6768,19 @@
             "OTH_IND": 20.2124041155
           },
           "winProbabilities": {
-            "ALP": 0.3401517239,
-            "LIB_NAT": 0.3015713892,
-            "GRN": 0.1561528457,
+            "ALP": 0.3452485009,
+            "LIB_NAT": 0.3147469765,
+            "GRN": 0.1481889447,
             "ONP": 0.0,
-            "OTH_IND": 0.2021240412
+            "OTH_IND": 0.1918155779
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "euroa",
@@ -6741,17 +6793,19 @@
             "OTH_IND": 24.3321191435
           },
           "winProbabilities": {
-            "ALP": 0.3217164284,
-            "LIB_NAT": 0.3102637926,
-            "GRN": 0.1246985876,
+            "ALP": 0.3335698997,
+            "LIB_NAT": 0.3176632843,
+            "GRN": 0.1181749782,
             "ONP": 0.0,
-            "OTH_IND": 0.2433211914
+            "OTH_IND": 0.2305918379
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "evelyn",
@@ -6764,17 +6818,19 @@
             "OTH_IND": 21.6251008604
           },
           "winProbabilities": {
-            "ALP": 0.318028319,
-            "LIB_NAT": 0.3163581146,
-            "GRN": 0.1493625578,
+            "ALP": 0.325368942,
+            "LIB_NAT": 0.3280260174,
+            "GRN": 0.1415970855,
             "ONP": 0.0,
-            "OTH_IND": 0.2162510086
+            "OTH_IND": 0.2050079552
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
-          "favouredParty": "ALP",
+          "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "footscray",
@@ -6787,17 +6843,19 @@
             "OTH_IND": 18.2890487644
           },
           "winProbabilities": {
-            "ALP": 0.3417001451,
-            "LIB_NAT": 0.2805846536,
-            "GRN": 0.1948247136,
+            "ALP": 0.351973338,
+            "LIB_NAT": 0.2905643057,
+            "GRN": 0.1843783384,
             "ONP": 0.0,
-            "OTH_IND": 0.1828904876
+            "OTH_IND": 0.1730840179
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "frankston",
@@ -6810,17 +6868,19 @@
             "OTH_IND": 19.921862307
           },
           "winProbabilities": {
-            "ALP": 0.3553605783,
-            "LIB_NAT": 0.2944108678,
-            "GRN": 0.1510099308,
+            "ALP": 0.3683492803,
+            "LIB_NAT": 0.2989028372,
+            "GRN": 0.1434726956,
             "ONP": 0.0,
-            "OTH_IND": 0.1992186231
+            "OTH_IND": 0.1892751868
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "geelong",
@@ -6833,17 +6893,19 @@
             "OTH_IND": 19.2980099491
           },
           "winProbabilities": {
-            "ALP": 0.3419413898,
-            "LIB_NAT": 0.2970838102,
-            "GRN": 0.1679947006,
+            "ALP": 0.3483608208,
+            "LIB_NAT": 0.3092058496,
+            "GRN": 0.1593656528,
             "ONP": 0.0,
-            "OTH_IND": 0.1929800995
+            "OTH_IND": 0.1830676768
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "gippsland-east",
@@ -6856,17 +6918,19 @@
             "OTH_IND": 18.1128298622
           },
           "winProbabilities": {
-            "ALP": 0.3259781155,
-            "LIB_NAT": 0.3474675992,
-            "GRN": 0.1454259866,
+            "ALP": 0.3357942427,
+            "LIB_NAT": 0.3529001967,
+            "GRN": 0.1386351989,
             "ONP": 0.0,
-            "OTH_IND": 0.1811282986
+            "OTH_IND": 0.1726703616
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "gippsland-south",
@@ -6879,17 +6943,19 @@
             "OTH_IND": 19.8854771295
           },
           "winProbabilities": {
-            "ALP": 0.3254995157,
-            "LIB_NAT": 0.3320521363,
-            "GRN": 0.1435935767,
+            "ALP": 0.3339513782,
+            "LIB_NAT": 0.3403314689,
+            "GRN": 0.1365779431,
             "ONP": 0.0,
-            "OTH_IND": 0.1988547713
+            "OTH_IND": 0.1891392098
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "glen-waverley",
@@ -6902,17 +6968,19 @@
             "OTH_IND": 18.0688433599
           },
           "winProbabilities": {
-            "ALP": 0.3495303559,
-            "LIB_NAT": 0.3136143343,
-            "GRN": 0.1561668763,
+            "ALP": 0.3597674212,
+            "LIB_NAT": 0.3195793313,
+            "GRN": 0.1486555639,
             "ONP": 0.0,
-            "OTH_IND": 0.1806884336
+            "OTH_IND": 0.1719976836
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "greenvale",
@@ -6925,17 +6993,19 @@
             "OTH_IND": 20.0828970148
           },
           "winProbabilities": {
-            "ALP": 0.3618420461,
-            "LIB_NAT": 0.2919203616,
-            "GRN": 0.1454086222,
+            "ALP": 0.3724766725,
+            "LIB_NAT": 0.298380004,
+            "GRN": 0.1382295806,
             "ONP": 0.0,
-            "OTH_IND": 0.2008289701
+            "OTH_IND": 0.1909137429
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "hastings",
@@ -6948,17 +7018,19 @@
             "OTH_IND": 21.2619334919
           },
           "winProbabilities": {
-            "ALP": 0.329187158,
-            "LIB_NAT": 0.3149128998,
-            "GRN": 0.1432806073,
+            "ALP": 0.336820641,
+            "LIB_NAT": 0.3253162367,
+            "GRN": 0.1360192223,
             "ONP": 0.0,
-            "OTH_IND": 0.2126193349
+            "OTH_IND": 0.2018439001
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "hawthorn",
@@ -6971,17 +7043,19 @@
             "OTH_IND": 28.0676555295
           },
           "winProbabilities": {
-            "ALP": 0.2682536105,
-            "LIB_NAT": 0.3196648753,
-            "GRN": 0.1314049589,
+            "ALP": 0.2753342149,
+            "LIB_NAT": 0.3365731415,
+            "GRN": 0.1237553642,
             "ONP": 0.0,
-            "OTH_IND": 0.2806765553
+            "OTH_IND": 0.2643372793
           },
-          "likelyFinalPair": "LIB_NAT-OTH_IND",
+          "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "ivanhoe",
@@ -6994,17 +7068,19 @@
             "OTH_IND": 18.5266771743
           },
           "winProbabilities": {
-            "ALP": 0.3422269467,
-            "LIB_NAT": 0.2980856222,
-            "GRN": 0.1744206593,
+            "ALP": 0.3487797099,
+            "LIB_NAT": 0.3099456869,
+            "GRN": 0.1654918581,
             "ONP": 0.0,
-            "OTH_IND": 0.1852667717
+            "OTH_IND": 0.1757827451
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "kalkallo",
@@ -7017,17 +7093,19 @@
             "OTH_IND": 19.6897054268
           },
           "winProbabilities": {
-            "ALP": 0.3559565746,
-            "LIB_NAT": 0.3019068378,
-            "GRN": 0.1452395334,
+            "ALP": 0.3621864549,
+            "LIB_NAT": 0.3123784456,
+            "GRN": 0.1381496271,
             "ONP": 0.0,
-            "OTH_IND": 0.1968970543
+            "OTH_IND": 0.1872854724
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "kew",
@@ -7040,17 +7118,19 @@
             "OTH_IND": 27.7540322489
           },
           "winProbabilities": {
-            "ALP": 0.2788873519,
-            "LIB_NAT": 0.3167649794,
-            "GRN": 0.1268073461,
+            "ALP": 0.290279231,
+            "LIB_NAT": 0.3284952479,
+            "GRN": 0.1195560167,
             "ONP": 0.0,
-            "OTH_IND": 0.2775403225
+            "OTH_IND": 0.2616695044
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "kororoit",
@@ -7063,17 +7143,19 @@
             "OTH_IND": 20.1137827112
           },
           "winProbabilities": {
-            "ALP": 0.3579994095,
-            "LIB_NAT": 0.2985857321,
-            "GRN": 0.1422770314,
+            "ALP": 0.3668730811,
+            "LIB_NAT": 0.3065355117,
+            "GRN": 0.135307063,
             "ONP": 0.0,
-            "OTH_IND": 0.2011378271
+            "OTH_IND": 0.1912843442
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "lara",
@@ -7086,17 +7168,19 @@
             "OTH_IND": 20.3507954019
           },
           "winProbabilities": {
-            "ALP": 0.3494673241,
-            "LIB_NAT": 0.2922993367,
-            "GRN": 0.1547253852,
+            "ALP": 0.3562700891,
+            "LIB_NAT": 0.3037646076,
+            "GRN": 0.1468351958,
             "ONP": 0.0,
-            "OTH_IND": 0.203507954
+            "OTH_IND": 0.1931301075
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "laverton",
@@ -7109,17 +7193,19 @@
             "OTH_IND": 19.1718957503
           },
           "winProbabilities": {
-            "ALP": 0.3572516167,
-            "LIB_NAT": 0.2868319803,
-            "GRN": 0.1641974454,
+            "ALP": 0.3697749715,
+            "LIB_NAT": 0.2923470717,
+            "GRN": 0.1558756408,
             "ONP": 0.0,
-            "OTH_IND": 0.1917189575
+            "OTH_IND": 0.1820023161
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "lowan",
@@ -7132,17 +7218,19 @@
             "OTH_IND": 22.9175514543
           },
           "winProbabilities": {
-            "ALP": 0.3127310304,
-            "LIB_NAT": 0.3334633297,
-            "GRN": 0.1246301254,
+            "ALP": 0.3199580645,
+            "LIB_NAT": 0.3440667813,
+            "GRN": 0.1183492315,
             "ONP": 0.0,
-            "OTH_IND": 0.2291755145
+            "OTH_IND": 0.2176259227
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "macedon",
@@ -7155,17 +7243,19 @@
             "OTH_IND": 16.6944899208
           },
           "winProbabilities": {
-            "ALP": 0.3172590372,
-            "LIB_NAT": 0.2726877749,
-            "GRN": 0.1557580612,
-            "ONP": 0.0873502275,
-            "OTH_IND": 0.1669448992
+            "ALP": 0.3308929317,
+            "LIB_NAT": 0.2828139868,
+            "GRN": 0.1467328219,
+            "ONP": 0.0822888093,
+            "OTH_IND": 0.1572714503
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "malvern",
@@ -7178,17 +7268,19 @@
             "OTH_IND": 17.090567142
           },
           "winProbabilities": {
-            "ALP": 0.3258059031,
-            "LIB_NAT": 0.3142945731,
-            "GRN": 0.1889938525,
+            "ALP": 0.338302344,
+            "LIB_NAT": 0.3202321245,
+            "GRN": 0.1793136195,
             "ONP": 0.0,
-            "OTH_IND": 0.1709056714
+            "OTH_IND": 0.162151912
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "melbourne",
@@ -7201,17 +7293,19 @@
             "OTH_IND": 17.5249014914
           },
           "winProbabilities": {
-            "ALP": 0.3148847269,
-            "LIB_NAT": 0.2651789418,
-            "GRN": 0.2446873164,
+            "ALP": 0.3273257177,
+            "LIB_NAT": 0.277622444,
+            "GRN": 0.2301876903,
             "ONP": 0.0,
-            "OTH_IND": 0.1752490149
+            "OTH_IND": 0.1648641481
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "melton",
@@ -7224,17 +7318,19 @@
             "OTH_IND": 22.6107116019
           },
           "winProbabilities": {
-            "ALP": 0.3546051706,
-            "LIB_NAT": 0.2845534731,
-            "GRN": 0.1347342402,
+            "ALP": 0.3684129461,
+            "LIB_NAT": 0.2892738137,
+            "GRN": 0.1278160431,
             "ONP": 0.0,
-            "OTH_IND": 0.226107116
+            "OTH_IND": 0.2144971971
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "mildura",
@@ -7247,17 +7343,19 @@
             "OTH_IND": 22.2948108364
           },
           "winProbabilities": {
-            "ALP": 0.312817993,
-            "LIB_NAT": 0.3387547661,
-            "GRN": 0.1254791326,
+            "ALP": 0.3205313024,
+            "LIB_NAT": 0.3483472182,
+            "GRN": 0.1192468072,
             "ONP": 0.0,
-            "OTH_IND": 0.2229481084
+            "OTH_IND": 0.2118746722
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "mill-park",
@@ -7270,17 +7368,19 @@
             "OTH_IND": 19.8411809969
           },
           "winProbabilities": {
-            "ALP": 0.366588347,
-            "LIB_NAT": 0.2850259285,
-            "GRN": 0.1499739146,
+            "ALP": 0.3799140644,
+            "LIB_NAT": 0.2890019511,
+            "GRN": 0.1425258204,
             "ONP": 0.0,
-            "OTH_IND": 0.19841181
+            "OTH_IND": 0.1885581641
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "monbulk",
@@ -7293,17 +7393,19 @@
             "OTH_IND": 20.9996856141
           },
           "winProbabilities": {
-            "ALP": 0.3211768372,
-            "LIB_NAT": 0.3047058,
-            "GRN": 0.1641205066,
+            "ALP": 0.3291822093,
+            "LIB_NAT": 0.3165794358,
+            "GRN": 0.1553998399,
             "ONP": 0.0,
-            "OTH_IND": 0.2099968561
+            "OTH_IND": 0.198838515
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "mordialloc",
@@ -7316,17 +7418,19 @@
             "OTH_IND": 19.0210464772
           },
           "winProbabilities": {
-            "ALP": 0.3499433432,
-            "LIB_NAT": 0.3014819211,
-            "GRN": 0.1583642709,
+            "ALP": 0.359141079,
+            "LIB_NAT": 0.3096042374,
+            "GRN": 0.150495435,
             "ONP": 0.0,
-            "OTH_IND": 0.1902104648
+            "OTH_IND": 0.1807592487
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "mornington",
@@ -7339,17 +7443,19 @@
             "OTH_IND": 21.4126784827
           },
           "winProbabilities": {
-            "ALP": 0.322530792,
-            "LIB_NAT": 0.3196548697,
-            "GRN": 0.1436875535,
+            "ALP": 0.3314274778,
+            "LIB_NAT": 0.3289845981,
+            "GRN": 0.1363683698,
             "ONP": 0.0,
-            "OTH_IND": 0.2141267848
+            "OTH_IND": 0.2032195543
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "morwell",
@@ -7362,17 +7468,19 @@
             "OTH_IND": 16.4812515928
           },
           "winProbabilities": {
-            "ALP": 0.2909525793,
-            "LIB_NAT": 0.2889798249,
-            "GRN": 0.1202445171,
-            "ONP": 0.1350105627,
-            "OTH_IND": 0.1648125159
+            "ALP": 0.3017743727,
+            "LIB_NAT": 0.3030576225,
+            "GRN": 0.1131169992,
+            "ONP": 0.1270077845,
+            "OTH_IND": 0.155043221
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
-          "favouredParty": "ALP",
+          "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "mulgrave",
@@ -7385,17 +7493,19 @@
             "OTH_IND": 19.2891696969
           },
           "winProbabilities": {
-            "ALP": 0.3643399877,
-            "LIB_NAT": 0.2922483859,
-            "GRN": 0.1505199294,
+            "ALP": 0.3778671021,
+            "LIB_NAT": 0.2955444139,
+            "GRN": 0.1431462181,
             "ONP": 0.0,
-            "OTH_IND": 0.192891697
+            "OTH_IND": 0.1834422659
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "murray-plains",
@@ -7408,17 +7518,19 @@
             "OTH_IND": 24.6526754451
           },
           "winProbabilities": {
-            "ALP": 0.2977539668,
-            "LIB_NAT": 0.3406750769,
-            "GRN": 0.1150442018,
+            "ALP": 0.3018539735,
+            "LIB_NAT": 0.3551762564,
+            "GRN": 0.1091256993,
             "ONP": 0.0,
-            "OTH_IND": 0.2465267545
+            "OTH_IND": 0.2338440708
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "narre-warren-north",
@@ -7431,17 +7543,19 @@
             "OTH_IND": 19.7498145042
           },
           "winProbabilities": {
-            "ALP": 0.3467222655,
-            "LIB_NAT": 0.3104513414,
-            "GRN": 0.1453282481,
+            "ALP": 0.3516113175,
+            "LIB_NAT": 0.3223295413,
+            "GRN": 0.1382204075,
             "ONP": 0.0,
-            "OTH_IND": 0.197498145
+            "OTH_IND": 0.1878387337
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "narre-warren-south",
@@ -7454,17 +7568,19 @@
             "OTH_IND": 20.4432138314
           },
           "winProbabilities": {
-            "ALP": 0.3488965721,
-            "LIB_NAT": 0.3054946081,
-            "GRN": 0.1411766814,
+            "ALP": 0.3542063217,
+            "LIB_NAT": 0.317218624,
+            "GRN": 0.1342186111,
             "ONP": 0.0,
-            "OTH_IND": 0.2044321383
+            "OTH_IND": 0.1943564432
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "nepean",
@@ -7477,17 +7593,19 @@
             "OTH_IND": 21.9210793676
           },
           "winProbabilities": {
-            "ALP": 0.3246092263,
-            "LIB_NAT": 0.3125733938,
-            "GRN": 0.1436065863,
+            "ALP": 0.3379519564,
+            "LIB_NAT": 0.3179569955,
+            "GRN": 0.1361945252,
             "ONP": 0.0,
-            "OTH_IND": 0.2192107937
+            "OTH_IND": 0.2078965229
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "niddrie",
@@ -7500,17 +7618,19 @@
             "OTH_IND": 19.475252617
           },
           "winProbabilities": {
-            "ALP": 0.3546611699,
-            "LIB_NAT": 0.2965956424,
-            "GRN": 0.1539906615,
+            "ALP": 0.3662477335,
+            "LIB_NAT": 0.3023454588,
+            "GRN": 0.1463356285,
             "ONP": 0.0,
-            "OTH_IND": 0.1947525262
+            "OTH_IND": 0.1850711792
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "northcote",
@@ -7523,17 +7643,19 @@
             "OTH_IND": 18.2870703624
           },
           "winProbabilities": {
-            "ALP": 0.3369545586,
-            "LIB_NAT": 0.2699279409,
-            "GRN": 0.2102467968,
+            "ALP": 0.3456807435,
+            "LIB_NAT": 0.2830921376,
+            "GRN": 0.1985393999,
             "ONP": 0.0,
-            "OTH_IND": 0.1828707036
+            "OTH_IND": 0.172687719
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "oakleigh",
@@ -7546,17 +7668,19 @@
             "OTH_IND": 18.2961589551
           },
           "winProbabilities": {
-            "ALP": 0.3499316128,
-            "LIB_NAT": 0.2902039446,
-            "GRN": 0.1769028531,
+            "ALP": 0.3636362252,
+            "LIB_NAT": 0.294929823,
+            "GRN": 0.167842757,
             "ONP": 0.0,
-            "OTH_IND": 0.1829615896
+            "OTH_IND": 0.1735911948
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "ovens-valley",
@@ -7569,17 +7693,19 @@
             "OTH_IND": 27.6348428173
           },
           "winProbabilities": {
-            "ALP": 0.2913583559,
-            "LIB_NAT": 0.3216588466,
-            "GRN": 0.1106343693,
+            "ALP": 0.298733434,
+            "LIB_NAT": 0.3355147194,
+            "GRN": 0.1045646606,
             "ONP": 0.0,
-            "OTH_IND": 0.2763484282
+            "OTH_IND": 0.261187186
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "pakenham",
@@ -7592,17 +7718,19 @@
             "OTH_IND": 17.7433472102
           },
           "winProbabilities": {
-            "ALP": 0.3075616425,
-            "LIB_NAT": 0.2868314354,
-            "GRN": 0.1369843726,
-            "ONP": 0.0911890774,
-            "OTH_IND": 0.1774334721
+            "ALP": 0.3236125015,
+            "LIB_NAT": 0.2940428235,
+            "GRN": 0.1291280858,
+            "ONP": 0.0859592287,
+            "OTH_IND": 0.1672573606
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "pascoe-vale",
@@ -7615,17 +7743,19 @@
             "OTH_IND": 18.7900268904
           },
           "winProbabilities": {
-            "ALP": 0.3352229931,
-            "LIB_NAT": 0.2787441178,
-            "GRN": 0.1981326201,
+            "ALP": 0.3433995381,
+            "LIB_NAT": 0.291697268,
+            "GRN": 0.1872877362,
             "ONP": 0.0,
-            "OTH_IND": 0.1879002689
+            "OTH_IND": 0.1776154577
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "point-cook",
@@ -7638,17 +7768,19 @@
             "OTH_IND": 18.9128120288
           },
           "winProbabilities": {
-            "ALP": 0.3492568993,
-            "LIB_NAT": 0.2990341031,
-            "GRN": 0.1625808774,
+            "ALP": 0.3573630853,
+            "LIB_NAT": 0.3085529666,
+            "GRN": 0.1544335281,
             "ONP": 0.0,
-            "OTH_IND": 0.1891281203
+            "OTH_IND": 0.1796504199
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "polwarth",
@@ -7661,17 +7793,19 @@
             "OTH_IND": 20.758287361
           },
           "winProbabilities": {
-            "ALP": 0.317722617,
-            "LIB_NAT": 0.3186171787,
-            "GRN": 0.1560773306,
+            "ALP": 0.3239259425,
+            "LIB_NAT": 0.3312250333,
+            "GRN": 0.1480038633,
             "ONP": 0.0,
-            "OTH_IND": 0.2075828736
+            "OTH_IND": 0.1968451609
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "prahran",
@@ -7684,17 +7818,19 @@
             "OTH_IND": 17.1905662711
           },
           "winProbabilities": {
-            "ALP": 0.3277709122,
-            "LIB_NAT": 0.2871716545,
-            "GRN": 0.2131517706,
+            "ALP": 0.3424536791,
+            "LIB_NAT": 0.2935148416,
+            "GRN": 0.2015126774,
             "ONP": 0.0,
-            "OTH_IND": 0.1719056627
+            "OTH_IND": 0.1625188018
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "preston",
@@ -7707,17 +7843,19 @@
             "OTH_IND": 18.9052754543
           },
           "winProbabilities": {
-            "ALP": 0.341008975,
-            "LIB_NAT": 0.2793164152,
-            "GRN": 0.1906218552,
+            "ALP": 0.3489776463,
+            "LIB_NAT": 0.2918055679,
+            "GRN": 0.1803506697,
             "ONP": 0.0,
-            "OTH_IND": 0.1890527545
+            "OTH_IND": 0.1788661161
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "richmond",
@@ -7730,17 +7868,19 @@
             "OTH_IND": 17.1359741177
           },
           "winProbabilities": {
-            "ALP": 0.3200036914,
-            "LIB_NAT": 0.254012154,
-            "GRN": 0.2546244135,
+            "ALP": 0.338630247,
+            "LIB_NAT": 0.2609701794,
+            "GRN": 0.2393316875,
             "ONP": 0.0,
-            "OTH_IND": 0.1713597412
+            "OTH_IND": 0.1610678861
           },
-          "likelyFinalPair": "ALP-GRN",
+          "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "ringwood",
@@ -7753,17 +7893,19 @@
             "OTH_IND": 17.7201630373
           },
           "winProbabilities": {
-            "ALP": 0.3461386651,
-            "LIB_NAT": 0.3063328408,
-            "GRN": 0.1703268637,
+            "ALP": 0.3598243763,
+            "LIB_NAT": 0.309865934,
+            "GRN": 0.1618877717,
             "ONP": 0.0,
-            "OTH_IND": 0.1772016304
+            "OTH_IND": 0.168421918
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "ripon",
@@ -7776,17 +7918,19 @@
             "OTH_IND": 20.0364556433
           },
           "winProbabilities": {
-            "ALP": 0.3434923001,
-            "LIB_NAT": 0.3140608849,
-            "GRN": 0.1420822586,
+            "ALP": 0.3518145183,
+            "LIB_NAT": 0.3224697157,
+            "GRN": 0.1351404938,
             "ONP": 0.0,
-            "OTH_IND": 0.2003645564
+            "OTH_IND": 0.1905752722
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "rowville",
@@ -7799,17 +7943,19 @@
             "OTH_IND": 18.0824197615
           },
           "winProbabilities": {
-            "ALP": 0.3356917471,
-            "LIB_NAT": 0.3324036581,
-            "GRN": 0.1510803972,
+            "ALP": 0.3413749963,
+            "LIB_NAT": 0.3424608588,
+            "GRN": 0.1439154665,
             "ONP": 0.0,
-            "OTH_IND": 0.1808241976
+            "OTH_IND": 0.1722486784
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
-          "favouredParty": "ALP",
+          "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "sandringham",
@@ -7822,17 +7968,19 @@
             "OTH_IND": 25.3173583343
           },
           "winProbabilities": {
-            "ALP": 0.3050103667,
-            "LIB_NAT": 0.3017226733,
-            "GRN": 0.1400933767,
+            "ALP": 0.3190072168,
+            "LIB_NAT": 0.3096323891,
+            "GRN": 0.1322896069,
             "ONP": 0.0,
-            "OTH_IND": 0.2531735833
+            "OTH_IND": 0.2390707871
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "shepparton",
@@ -7845,17 +7993,19 @@
             "OTH_IND": 26.886490905
           },
           "winProbabilities": {
-            "ALP": 0.2923483286,
-            "LIB_NAT": 0.3279634667,
-            "GRN": 0.1108232956,
+            "ALP": 0.2977220705,
+            "LIB_NAT": 0.3430489744,
+            "GRN": 0.1048516551,
             "ONP": 0.0,
-            "OTH_IND": 0.2688649091
+            "OTH_IND": 0.2543773
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "south-barwon",
@@ -7868,17 +8018,19 @@
             "OTH_IND": 18.6763559801
           },
           "winProbabilities": {
-            "ALP": 0.339862265,
-            "LIB_NAT": 0.3045104626,
-            "GRN": 0.1688637125,
+            "ALP": 0.3457875263,
+            "LIB_NAT": 0.3165950935,
+            "GRN": 0.1603120139,
             "ONP": 0.0,
-            "OTH_IND": 0.1867635598
+            "OTH_IND": 0.1773053662
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "south-west-coast",
@@ -7891,17 +8043,19 @@
             "OTH_IND": 24.7509522844
           },
           "winProbabilities": {
-            "ALP": 0.3095994925,
-            "LIB_NAT": 0.3218136668,
-            "GRN": 0.1210773179,
+            "ALP": 0.3176140282,
+            "LIB_NAT": 0.3331099148,
+            "GRN": 0.1147339067,
             "ONP": 0.0,
-            "OTH_IND": 0.2475095228
+            "OTH_IND": 0.2345421503
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "LIB_NAT",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "st-albans",
@@ -7914,17 +8068,19 @@
             "OTH_IND": 19.3898465275
           },
           "winProbabilities": {
-            "ALP": 0.3565030042,
-            "LIB_NAT": 0.2961279417,
-            "GRN": 0.1534705888,
+            "ALP": 0.3666102337,
+            "LIB_NAT": 0.3032241118,
+            "GRN": 0.1458699812,
             "ONP": 0.0,
-            "OTH_IND": 0.1938984653
+            "OTH_IND": 0.1842956732
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "sunbury",
@@ -7937,17 +8093,19 @@
             "OTH_IND": 20.6313991817
           },
           "winProbabilities": {
-            "ALP": 0.3433116393,
-            "LIB_NAT": 0.3055190098,
-            "GRN": 0.1448553591,
+            "ALP": 0.3493817196,
+            "LIB_NAT": 0.3170212855,
+            "GRN": 0.1376068622,
             "ONP": 0.0,
-            "OTH_IND": 0.2063139918
+            "OTH_IND": 0.1959901327
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "sydenham",
@@ -7960,17 +8118,19 @@
             "OTH_IND": 20.4420858481
           },
           "winProbabilities": {
-            "ALP": 0.3519604109,
-            "LIB_NAT": 0.3024897681,
-            "GRN": 0.1411289625,
+            "ALP": 0.3592061589,
+            "LIB_NAT": 0.3122721137,
+            "GRN": 0.1341743729,
             "ONP": 0.0,
-            "OTH_IND": 0.2044208585
+            "OTH_IND": 0.1943473545
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "tarneit",
@@ -7983,17 +8143,19 @@
             "OTH_IND": 20.701538013
           },
           "winProbabilities": {
-            "ALP": 0.3503437946,
-            "LIB_NAT": 0.2962560308,
-            "GRN": 0.1463847945,
+            "ALP": 0.3569922251,
+            "LIB_NAT": 0.307398269,
+            "GRN": 0.1390155752,
             "ONP": 0.0,
-            "OTH_IND": 0.2070153801
+            "OTH_IND": 0.1965939307
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "thomastown",
@@ -8006,17 +8168,19 @@
             "OTH_IND": 20.2597671524
           },
           "winProbabilities": {
-            "ALP": 0.3632608656,
-            "LIB_NAT": 0.2864041577,
-            "GRN": 0.1477373052,
+            "ALP": 0.3727823864,
+            "LIB_NAT": 0.2943736682,
+            "GRN": 0.1403612851,
             "ONP": 0.0,
-            "OTH_IND": 0.2025976715
+            "OTH_IND": 0.1924826603
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "warrandyte",
@@ -8029,17 +8193,19 @@
             "OTH_IND": 18.0939772085
           },
           "winProbabilities": {
-            "ALP": 0.3309016462,
-            "LIB_NAT": 0.3243098769,
-            "GRN": 0.1638487048,
+            "ALP": 0.3372945862,
+            "LIB_NAT": 0.3348719186,
+            "GRN": 0.1557914408,
             "ONP": 0.0,
-            "OTH_IND": 0.1809397721
+            "OTH_IND": 0.1720420544
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "wendouree",
@@ -8052,17 +8218,19 @@
             "OTH_IND": 18.189340633
           },
           "winProbabilities": {
-            "ALP": 0.363422818,
-            "LIB_NAT": 0.2902388955,
-            "GRN": 0.1644448802,
+            "ALP": 0.3756166326,
+            "LIB_NAT": 0.2951490484,
+            "GRN": 0.1563237454,
             "ONP": 0.0,
-            "OTH_IND": 0.1818934063
+            "OTH_IND": 0.1729105736
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "werribee",
@@ -8075,17 +8243,19 @@
             "OTH_IND": 20.4626204935
           },
           "winProbabilities": {
-            "ALP": 0.3526339009,
-            "LIB_NAT": 0.2945564546,
-            "GRN": 0.1481834396,
+            "ALP": 0.3600845721,
+            "LIB_NAT": 0.3048385372,
+            "GRN": 0.1407355127,
             "ONP": 0.0,
-            "OTH_IND": 0.2046262049
+            "OTH_IND": 0.1943413781
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "williamstown",
@@ -8098,17 +8268,19 @@
             "OTH_IND": 18.2269955486
           },
           "winProbabilities": {
-            "ALP": 0.3514507711,
-            "LIB_NAT": 0.2881300425,
-            "GRN": 0.1781492309,
+            "ALP": 0.3622698631,
+            "LIB_NAT": 0.2957968482,
+            "GRN": 0.169011958,
             "ONP": 0.0,
-            "OTH_IND": 0.1822699555
+            "OTH_IND": 0.1729213307
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         },
         {
           "districtId": "yan-yean",
@@ -8121,38 +8293,40 @@
             "OTH_IND": 18.8017841921
           },
           "winProbabilities": {
-            "ALP": 0.3447767787,
-            "LIB_NAT": 0.3123628276,
-            "GRN": 0.1548425518,
+            "ALP": 0.3500103176,
+            "LIB_NAT": 0.3238997853,
+            "GRN": 0.147268663,
             "ONP": 0.0,
-            "OTH_IND": 0.1880178419
+            "OTH_IND": 0.1788212341
           },
           "likelyFinalPair": "ALP-LIB_NAT",
           "finalPairProbability": 1.0,
           "favouredParty": "ALP",
           "method": "seat-level-model",
-          "scope": "independent district IRV marginals with fixed pre-score uncertainty"
+          "scope": "independent district IRV marginals",
+          "preferencePrior": "broad-fallback-v2",
+          "irvApproximation": "single deterministic transfer step before independent seat marginal"
         }
       ],
       "assemblySeatSummary": {
         "ALP": {
-          "mean": 29.1090373379,
+          "mean": 29.9447463069,
           "scope": "independent-seat-marginals"
         },
         "LIB_NAT": {
-          "mean": 26.2605989657,
+          "mean": 27.0663954658,
           "scope": "independent-seat-marginals"
         },
         "GRN": {
-          "mean": 13.6724713088,
+          "mean": 12.9634977532,
           "scope": "independent-seat-marginals"
         },
         "ONP": {
-          "mean": 0.4086096704,
+          "mean": 0.3848581013,
           "scope": "independent-seat-marginals"
         },
         "OTH_IND": {
-          "mean": 17.5492827166,
+          "mean": 16.6405023729,
           "scope": "independent-seat-marginals"
         }
       },
@@ -8188,5 +8362,5 @@
       }
     }
   },
-  "bundleSha256": "0ea2d5546afcad812e053166dcb9604461f4c8d2f677cbe64b92d1175426973d"
+  "bundleSha256": "cd04d597a9016f714f0c1e98d42c4ca66a91ce53a9c72283cb04c1abaea4a748"
 }

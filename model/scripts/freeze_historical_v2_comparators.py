@@ -97,6 +97,37 @@ def row(district_id: str, district_name: str, values: dict[str, float], method: 
     }
 
 
+def seat_row(district_id: str, district_name: str, values: dict[str, float], perturb: float) -> dict:
+    """Independent-seat approximation with the frozen broad preference fallback.
+
+    This is intentionally simpler than the complete correlated IRV ensemble,
+    but it still models a one-step transfer of non-major mass and a fixed
+    district shock before deriving the independent seat marginal.
+    """
+    adjusted = dict(values)
+    major = values.get("ALP", 0.0) + values.get("LIB_NAT", 0.0)
+    non_major = max(0.0, 100.0 - major)
+    if major > 0:
+        adjusted["ALP"] += 0.15 * non_major * values.get("ALP", 0.0) / major
+        adjusted["LIB_NAT"] += 0.15 * non_major * values.get("LIB_NAT", 0.0) / major
+    adjusted["ALP"] = max(0.0, adjusted.get("ALP", 0.0) + perturb)
+    adjusted["LIB_NAT"] = max(0.0, adjusted.get("LIB_NAT", 0.0) - perturb)
+    probabilities = win_probabilities(adjusted)
+    return {
+        "districtId": district_id,
+        "districtName": district_name,
+        "primaryEstimates": {key: round(value, 10) for key, value in values.items()},
+        "winProbabilities": {key: round(value, 10) for key, value in probabilities.items()},
+        "likelyFinalPair": top_pair(adjusted),
+        "finalPairProbability": 1.0,
+        "favouredParty": max(probabilities, key=probabilities.get),
+        "method": "seat-level-model",
+        "scope": "independent district IRV marginals",
+        "preferencePrior": "broad-fallback-v2",
+        "irvApproximation": "single deterministic transfer step before independent seat marginal",
+    }
+
+
 def build_comparators(prediction: dict, local_rows: list[dict[str, str]], vec_rows: list[dict[str, str]]) -> dict[str, dict]:
     state = {key: float(value) for key, value in prediction["statewidePrimaryEstimates"].items()}
     # The polling observation is four-bucket.  ONP is intentionally absent from
@@ -154,7 +185,7 @@ def build_comparators(prediction: dict, local_rows: list[dict[str, str]], vec_ro
             seat_values["ALP"] = max(0.0, seat_values["ALP"] + shift)
             seat_values["LIB_NAT"] = max(0.0, seat_values["LIB_NAT"] - shift)
             seat_values = normalise(seat_values, active)
-        seat_rows.append(row(district_id, local["district_name"], seat_values, "seat-level-model", "independent district IRV marginals with fixed pre-score uncertainty"))
+        seat_rows.append(seat_row(district_id, local["district_name"], seat_values, perturb))
 
     def chamber(rows: list[dict]) -> dict[str, dict[str, float]]:
         means = {family: sum(item["winProbabilities"].get(family, 0.0) for item in rows) for family in families}
