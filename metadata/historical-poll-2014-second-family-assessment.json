@@ -2,23 +2,23 @@
   "schemaVersion": 1,
   "cycleId": "vic_la_2014",
   "cutoff": "2014-11-28",
-  "status": "second-family-automated-pass-awaiting-owner-approval",
+  "status": "second-family-approved-and-promoted",
   "attempts": [
     {
       "family": "Essential",
       "sourceUrl": "https://essentialvision.com.au/state-voting-intention-victoria-2",
       "sourceId": "essential-vic-2014-05-30-web",
-      "sourceSha256": "a3712e47b81ca98f458f82e83b6e1557aad8c18c02af830de700417a5805a9dc",
+      "sourceSha256": "ea776253c36e36459a14222a69ac2018b78212cf01a8a36b261f0dfc68973fd5",
       "publicationDate": "2014-05-30",
       "observation": "The first-party table exposes May 2014 sample 1005, ALP 40, LIB_NAT 38, GRN 10 and Other/Independent 8, with ALP TPP 53 and LIB_NAT 47.",
       "provenance": "pass",
       "methodologicalAdequacy": "pass",
       "methodologySourceUrl": "https://essentialvision.com.au/essential-facts-for-reading-our-poll",
       "methodologySourceSha256": "ba8073dcac4142ee656083a9b8b80ab6cb9182d70f1a54ff9da281a886fa46b1",
-      "blocker": "No automated blocker remains; exact May field dates are unknown and retained as unknown. Owner review is still required before replay promotion.",
+      "blocker": "No automated blocker remains; exact May field dates are unknown and retained as unknown.",
       "reuseBasis": "independently_reconstructed_factual_observation",
       "caseFile": "metadata/historical-poll-reuse-case-2014-essential-2014-05.json",
-      "ownerReviewStatus": "awaiting-project-owner-approval"
+      "ownerReviewStatus": "approved-for-historical-replay"
     },
     {
       "family": "Newspoll",
@@ -31,5 +31,5 @@
       "reuseBasis": "not adjudicated while methodology is blocked"
     }
   ],
-  "nextAction": "Obtain explicit project-owner approval for the Essential case; stop second-family research until that decision is recorded. Do not import secondary lead-list values."
+  "nextAction": "Retain the four governed observations from two independent families; stop second-family research. Do not import secondary lead-list values."
 }

@@ -64,9 +64,7 @@
       "seed": 20141128,
       "runnable": false,
       "blockedBy": [
-        "pre-election-poll-vintages",
-        "ballot-and-contest-slates",
-        "preference-flows-and-final-pairs"
+        "incumbency-local-multi-party-translation"
       ],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,

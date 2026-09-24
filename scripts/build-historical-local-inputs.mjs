@@ -7,7 +7,7 @@ const CYCLE_REQUIREMENTS = {
   vic_la_2014: {
     cutoff: "2014-11-28",
     baselinePath: "model/data/validation/historical-replay-2014-assembly-notional-baseline.csv",
-    requiredAuxiliaryPaths: ["model/data/processed/historical_2014_crosswalk_core_features_long.csv"],
+    requiredAuxiliaryPaths: ["model/data/processed/historical_2014_crosswalk_core_features_long.csv", "model/data/validation/historical-replay-2014-ballot-mask.csv"],
     forbiddenPaths: ["model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"],
     baselineDescription: "2010 Assembly family baseline translated through a cutoff-safe 2014 geography surface",
   },

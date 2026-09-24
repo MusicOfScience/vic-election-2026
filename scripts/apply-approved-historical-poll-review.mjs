@@ -15,7 +15,12 @@ export function buildApprovedHistoricalPollInput2014() {
     if (caseFile.cycleId !== "vic_la_2014" || !caseFile.replayEligible || !caseFile.modelInputAdmissible || caseFile.ownerReviewStatus !== "approved-for-historical-replay" || !caseFile.notFromQuarantinedDataset) throw new Error(`2014 case ${caseFile.caseId} is not governed for replay`);
     if (!caseFile.gates.provenance.passed || !caseFile.gates.methodologicalAdequacy.passed || !caseFile.gates.reuseBasis.passed) throw new Error(`2014 case ${caseFile.caseId} has a failed automated gate`);
   }
-  const observations = cases.map((caseFile) => ({
+  const essential = read("metadata/historical-poll-reuse-case-2014-essential-2014-05.json");
+  const essentialReview = read("metadata/historical-poll-reuse-review-2014-second-family.json");
+  if (essentialReview.decision !== "approved-for-historical-replay" || !essentialReview.checks.ownerReuseBasisApproval || !essentialReview.approvedCaseIds?.includes(essential.caseId)) throw new Error("2014 Essential review is not approved for replay");
+  if (essential.cycleId !== "vic_la_2014" || !essential.replayEligible || !essential.modelInputAdmissible || essential.ownerReviewStatus !== "approved-for-historical-replay" || !essential.notFromQuarantinedDataset) throw new Error("2014 Essential case is not governed for replay");
+  if (!essential.gates.provenance.passed || !essential.gates.methodologicalAdequacy.passed || !essential.gates.reuseBasis.passed) throw new Error("2014 Essential case has a failed automated gate");
+  const observations = [...cases, essential].map((caseFile) => ({
     observationId: caseFile.caseId,
     cycleId: caseFile.cycleId,
     period: caseFile.observationPeriod ?? caseFile.fieldwork.end,
@@ -26,12 +31,13 @@ export function buildApprovedHistoricalPollInput2014() {
     sampleSize: caseFile.fieldwork.sampleSize,
     population: caseFile.fieldwork.population,
     mode: caseFile.fieldwork.mode,
-    primaryShares: caseFile.reportedPrimaryCategories,
+    primaryShares: caseFile.modelPrimaryShares ?? caseFile.reportedPrimaryCategories,
+    reportedCategories: caseFile.reportedPrimaryCategories,
     reportedTpp: caseFile.reportedTpp,
     groupedResidual: caseFile.groupedResidual.family,
     ballotActiveFamilies: caseFile.ballotActiveFamilies,
     reuseBasis: caseFile.reuseBasis,
-    ownerReviewId: review.reviewId,
+    ownerReviewId: caseFile.caseId === essential.caseId ? essentialReview.reviewId : review.reviewId,
     replayEligible: true,
   }));
   return {
@@ -40,9 +46,9 @@ export function buildApprovedHistoricalPollInput2014() {
     generatedAt: review.approvedAt,
     cycleId: "vic_la_2014",
     ownerReviewId: review.reviewId,
-    independentSourceFamilies: 1,
+    independentSourceFamilies: 2,
     observations,
-    sufficiency: {minimumEligibleObservations: 3, minimumIndependentSourceFamilies: 2, status: "blocked-pending-second-family"},
+    sufficiency: {minimumEligibleObservations: 3, minimumIndependentSourceFamilies: 2, status: "pass"},
     quarantineBoundary: "No values are read from d-j-hirst/aus-polling-analyser; this file contains only approved structured factual reconstruction.",
     modelImpact: {forecast2026: false, productionAuthorisation: false},
   };

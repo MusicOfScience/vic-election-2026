@@ -43,16 +43,18 @@
     {
       "cycleId": "vic_la_2014",
       "pollEvidence": {
-        "status": "blocked",
-        "reason": "3 owner-approved Roy Morgan observations from 1 independent family are promoted; the fixed minimum of 3 observations and 2 independent families remains blocked pending Essential owner approval"
+        "status": "pass",
+        "reason": "4 owner-approved observations from 2 independent families (Roy Morgan and Essential) satisfy the fixed minimum of 3 observations and 2 independent families",
+        "artefact": "model/data/validation/historical-replay-2014-poll-observations.json"
       },
       "ballotContest": {
-        "status": "blocked",
-        "reason": "The ABC notional-margin anchor is assembled, but the cutoff-safe candidate/family mask remains unproven; see metadata/historical-replay-2014-ballot-availability-audit.json"
+        "status": "pass",
+        "reason": "The 88-row family mask is derived from the 2014-11-13 ABC nominations summary and pre-election notional-holder baseline; target result pages are not used",
+        "artefact": "model/data/validation/historical-replay-2014-ballot-mask.csv"
       },
       "incumbencyLocal": {
         "status": "blocked",
-        "reason": "The 88-row ABC notional baseline and 2010 family prior are identified; the report-referenced 2014 geographic crosswalk is absent and has not been rebuilt"
+        "reason": "The 88-row ABC notional baseline and cutoff-safe ballot mask pass; the report-referenced 2014 multi-party geographic crosswalk is absent and is not recoverable from the clone"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",

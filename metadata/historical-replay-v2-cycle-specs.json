@@ -15,7 +15,7 @@
       "councilRegions": 8,
       "councilSeatsPerRegion": 5,
       "assemblyContestCount": 88,
-      "ballotAvailability": "metadata/historical-party-family-availability.json",
+      "ballotAvailability": "model/data/validation/historical-replay-2014-ballot-mask.csv",
       "preferencePrior": "broad-fallback-v2",
       "councilRules": "vic-2014-five-seat-stv",
       "predictionStatus": "not-frozen-input-substrate-incomplete"

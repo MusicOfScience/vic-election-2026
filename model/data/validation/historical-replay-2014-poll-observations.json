@@ -4,7 +4,7 @@
   "generatedAt": "2026-09-25",
   "cycleId": "vic_la_2014",
   "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25",
-  "independentSourceFamilies": 1,
+  "independentSourceFamilies": 2,
   "observations": [
     {
       "observationId": "historical-poll-2014-roymorgan-2014-10-01",
@@ -18,6 +18,12 @@
       "population": "Victorian electors",
       "mode": "SMS Morgan Poll",
       "primaryShares": {
+        "LIB_NAT": 37.5,
+        "ALP": 34,
+        "GRN": 18,
+        "OTH_IND": 10.5
+      },
+      "reportedCategories": {
         "LIB_NAT": 37.5,
         "ALP": 34,
         "GRN": 18,
@@ -55,6 +61,12 @@
         "GRN": 18.5,
         "OTH_IND": 10
       },
+      "reportedCategories": {
+        "LIB_NAT": 37.5,
+        "ALP": 34,
+        "GRN": 18.5,
+        "OTH_IND": 10
+      },
       "reportedTpp": {
         "ALP": 52.5,
         "LIB_NAT": 47.5
@@ -87,6 +99,12 @@
         "GRN": 18.5,
         "OTH_IND": 7.5
       },
+      "reportedCategories": {
+        "LIB_NAT": 38,
+        "ALP": 36,
+        "GRN": 18.5,
+        "OTH_IND": 7.5
+      },
       "reportedTpp": {
         "ALP": 53.5,
         "LIB_NAT": 46.5
@@ -101,12 +119,51 @@
       "reuseBasis": "independently_reconstructed_factual_observation",
       "ownerReviewId": "historical-poll-review-2014-owner-2026-09-25",
       "replayEligible": true
+    },
+    {
+      "observationId": "historical-poll-2014-essential-2014-05",
+      "cycleId": "vic_la_2014",
+      "period": "2014-05",
+      "sourceId": "essential-vic-2014-05-30-web",
+      "sourceUrl": "https://essentialvision.com.au/state-voting-intention-victoria-2",
+      "sourceSha256": "ea776253c36e36459a14222a69ac2018b78212cf01a8a36b261f0dfc68973fd5",
+      "evidenceAvailableByDate": "2014-05-30",
+      "sampleSize": 1005,
+      "population": "Victorian electors",
+      "mode": "online Your Source community panel",
+      "primaryShares": {
+        "LIB_NAT": 38,
+        "ALP": 40,
+        "GRN": 10,
+        "OTH_IND": 12
+      },
+      "reportedCategories": {
+        "LIB_NAT": 38,
+        "ALP": 40,
+        "GRN": 10,
+        "PUP": 4,
+        "OTH_IND": 8
+      },
+      "reportedTpp": {
+        "ALP": 53,
+        "LIB_NAT": 47
+      },
+      "groupedResidual": "OTH_IND",
+      "ballotActiveFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2014-essential-owner-2026-09-25",
+      "replayEligible": true
     }
   ],
   "sufficiency": {
     "minimumEligibleObservations": 3,
     "minimumIndependentSourceFamilies": 2,
-    "status": "blocked-pending-second-family"
+    "status": "pass"
   },
   "quarantineBoundary": "No values are read from d-j-hirst/aus-polling-analyser; this file contains only approved structured factual reconstruction.",
   "modelImpact": {
