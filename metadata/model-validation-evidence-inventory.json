@@ -281,11 +281,20 @@
           "finding": "The VEC district handbook states the ballot draw followed the 11 November 2022 nomination close and that the VEC website would reflect candidate names in ballot-paper order as soon as practicable after the draw.",
           "availabilityUse": "candidate-publication-timing-framework",
           "limitation": "The handbook is not an archived 2022 page capture and therefore does not prove the exact publication timestamp or acceptance status of each reconstructed candidate row."
+        },
+        {
+          "url": "https://www.vec.vic.gov.au/-/media/d8a664a8c6554fccbd9329d100ee32a4.pdf?sc_lang=en",
+          "sha256": "be97ccd95846b8705b710068856f4ea5b2d4255fdb59048dca16cb70fc5b1b75",
+          "retrievedAt": "2026-09-24",
+          "scope": "vic_la_2018",
+          "finding": "The VEC 2018 District Candidate Handbook records the party nomination close as 8 November 2018 and the independent nomination close as 9 November 2018, with a ballot-position draw after nominations close.",
+          "availabilityUse": "timing-framework-only",
+          "limitation": "The handbook establishes the cycle timing framework but is not an archived candidate-list capture and does not prove candidate-specific acceptance or publication timestamps."
         }
       ],
       "limitations": [
         "The result pages prove the final ballot, but not when every identity became available before each frozen cutoff.",
-        "The VEC 2022 handbooks establish the nomination and ballot-publication timing framework, but candidate-specific acceptance and archived publication timing remain unresolved and the component stays partial.",
+        "The VEC 2018 and 2022 handbooks establish nomination and ballot-publication timing frameworks, but candidate-specific acceptance and archived publication timing remain unresolved and the component stays partial.",
         "Narracan's supplementary slate and outcome postdate the 2022 cutoff and remain excluded from that cycle's prediction and score."
       ],
       "needed": "Cutoff-compliant slate timing plus incumbent/challenger status as known at each historical election."
