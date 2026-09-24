@@ -4,9 +4,9 @@ Updated: 2026-09-24
 
 ## Current batch
 
-- Branch: `codex/historical-slate-2010-timing`
-- Base commit: `499aab0` (PR #86 merged; remote main verified on 24 September). This batch records the official VEC 2010 election report’s nomination timing and candidate-list limitation.
-- Completed: the VEC 2010 report is fingerprinted and records party nominations closing 11 November 2010 and other candidates’ nominations closing 12 November 2010, with Appendix 14 candidate identities. Because it is a post-election report, it does not prove pre-cutoff availability.
+- Branch: `codex/preference-replay-minimum`
+- Base commit: `3e47339` (PR #87 merged; remote main verified on 24 September). This batch makes the minimum leakage-safe preference evidence contract explicit and machine-checked.
+- Completed: the preference component now separates forecast inputs from scoring outcomes, requires walk-forward priors, forbids target-cycle outcome training, and requires wider uncertainty instead of point estimates when source-party evidence is missing. No transfer parameters were promoted.
 - Previous batch retained: `vicforecast.historical_replay.run_historical_replay` remains fail-closed, enforces publication cutoffs and returns structured blockers for all four currently unrunnable cycles. No replay or gate is opened.
 - Safeguards: RedBridge remains quarantined and model-ineligible pending explicit owner review; no poll rows, forecast outputs, candidate data, historical outcomes or authorisation gates changed. Runnable historical cycles remain 0/4.
 - Validation: `npm run validation:evidence`, JSON parsing and `git diff --check` passed. Forecast outputs and readiness gates are unchanged.
@@ -20,4 +20,4 @@ Updated: 2026-09-24
 - Newer model-eligible polling is still needed for freshness. Do not advance registry dates without complete evidence.
 - Ballot availability, alias-aware incumbency, final-pair and preference evidence remain prerequisites for leakage-safe complete-model replay and calibration. Keep Narracan's January 2023 contest separate.
 
-Exact next action: commit this focused evidence batch, run the required checks, and publish one reviewable PR. The timing-framework pass now covers all four cycles; next locate archived candidate-list captures or equivalent primary records proving candidate-specific timing, while RedBridge owner acceptance remains a separate decision-dependent blocker.
+Exact next action: commit this focused contract batch, run the required checks, and publish one reviewable PR. Then build the first walk-forward preference prior from pre-target evidence or keep the cycle blocked; RedBridge owner acceptance remains a separate decision-dependent blocker.

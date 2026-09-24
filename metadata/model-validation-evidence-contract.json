@@ -52,6 +52,22 @@
       "status": "partial",
       "available": "Major-party TPP outcomes plus 1,204 transfer rows from 39 audited 2022 indicative distributions; no source-party parameter is forecast-ready",
       "needed": "Full distributions or defensible cycle-specific transfer evidence, final-two pair identities and non-major 2CP outcomes across all four cycles",
+      "minimumLeakageSafeReplay": {
+        "forecastInputs": [
+          "A pre-cutoff contest slate and primary-vote input for every scored district",
+          "A preference prior whose parameters are trained only from evidence available before the target cutoff; if no earlier-cycle evidence supports a parameter, use the preregistered broad prior and carry its wider uncertainty",
+          "An explicit final-pair construction rule that does not read target-cycle outcomes"
+        ],
+        "scoringOutcomes": [
+          "A separately loaded final-pair identity for every scored district",
+          "Observed transfer/exhaustion totals sufficient to score the frozen final-pair output"
+        ],
+        "promotionRules": [
+          "Forecast generation must complete before scoring outcomes are loaded",
+          "Target-cycle outcomes cannot train that cycle's preference prior",
+          "Missing source-party evidence widens uncertainty and cannot be replaced by a point estimate"
+        ]
+      },
       "requiredFor": [
         "irv-replay",
         "final-pair-calibration",

@@ -386,6 +386,12 @@ export function validateModelValidationEvidence() {
   const transfers = parseCsv(gunzipSync(readFileSync(resolve(root, "model/data/processed/vec_2022_preference_transfer_evidence.csv.gz"))).toString("utf8"));
   assert(transfers.length === 1204, "expected 1204 audited preference transfer rows");
   assert(new Set(transfers.map((row) => row.district_id)).size === 39, "expected 39 districts with preference distributions");
+  const preferenceContract = contractById.get("preference-flows-and-final-pairs");
+  assert(preferenceContract?.minimumLeakageSafeReplay?.forecastInputs?.length === 3, "preference replay minimum must define three forecast-input requirements");
+  assert(preferenceContract.minimumLeakageSafeReplay.scoringOutcomes?.length === 2, "preference replay minimum must separate two scoring-outcome requirements");
+  assert(preferenceContract.minimumLeakageSafeReplay.promotionRules?.includes("Forecast generation must complete before scoring outcomes are loaded"), "preference replay must freeze prediction before scoring");
+  assert(preferenceContract.minimumLeakageSafeReplay.promotionRules?.includes("Target-cycle outcomes cannot train that cycle's preference prior"), "preference priors must be walk-forward");
+  assert(preferenceContract.minimumLeakageSafeReplay.promotionRules?.includes("Missing source-party evidence widens uncertainty and cannot be replaced by a point estimate"), "missing preference evidence must widen uncertainty");
   const preferenceReport = readJson("model/data/processed/vec_2022_preference_evidence_build_report.json");
   const conditionalReport = readJson("model/data/processed/vec_2022_conditional_preference_validation_report.json");
   assert(preferenceReport.max_workbook_internal_reconstruction_abs_delta === 0, "preference workbook reconstruction is not exact");
