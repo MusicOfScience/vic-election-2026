@@ -35,7 +35,12 @@ export function validateHistoricalReplayContract() {
     assert(cycle.informationCutoff < cycle.electionDate, `${cycle.id} cutoff must precede election day`);
     assert(cycle.inputPolicy?.outcomesAvailableToModel === false, `${cycle.id} cannot expose outcomes to the model`);
     assert(cycle.inputPolicy?.outcomesAvailableForScoring === true, `${cycle.id} must retain scoring outcomes separately`);
-    if (cycle.id === "vic_la_2018") {
+    if (cycle.id === "vic_la_2014") {
+      const state = readiness.cycles?.find((item) => item.cycleId === cycle.id);
+      assert(state?.runnable === true, "2014 runnable state must derive from governed readiness");
+      assert(cycle.runnable === true && Array.isArray(cycle.blockedBy) && cycle.blockedBy.length === 0, "2014 must be runnable only after governed readiness passes");
+      assert(cycle.certifyingPredictionFrozen === true && cycle.predictionArtefact, "2014 certifying prediction must be explicitly frozen");
+    } else if (cycle.id === "vic_la_2018") {
       assert(cycle.runnable === true, "2018 must be runnable only after governed readiness passes");
       assert(Array.isArray(cycle.blockedBy) && cycle.blockedBy.length === 0, "2018 stale static blockers must be cleared");
     } else if (cycle.id === "vic_la_2022") {

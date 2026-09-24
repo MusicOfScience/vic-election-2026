@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "cycleId": "vic_la_2014",
   "cutoff": "2014-11-28",
-  "status": "partial-prediction-safe-baselines-assembled",
+  "status": "prediction-safe-baselines-assembled",
   "assembly": {
     "status": "pass-for-notional-margin-anchor",
     "artefact": "model/data/validation/historical-replay-2014-assembly-notional-baseline.csv",
@@ -17,21 +17,25 @@
     "note": "The pendulum is a pre-election notional contest/margin anchor. It does not supply multi-party prior primary geography or prove final candidate availability. Those remain separate gates."
   },
   "assemblyFamilyTranslation": {
-    "status": "blocked",
+    "status": "pass-prediction-safe-rebuilt",
     "priorFamilyBaseline": "model/data/processed/vec_2010_assembly_family_primaries.csv",
     "crosswalkArtefact": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
     "expectedSha256": "61e510c16bd4fb3e5a6704476ad23b19946c3efeae0595dd1f21f908c4040f0b",
-    "availableInClone": false,
+    "availableInClone": true,
+    "actualSha256": "2b2a1612c631eba1a7a782f9147e90745d1d8fdf1c3a13bd8ebd7e276a4f0398",
+    "buildManifest": "metadata/historical-replay-2014-crosswalk-build-manifest.json",
     "sourceAudit": "metadata/historical-replay-2014-crosswalk-source-audit.json",
     "recoveryInvestigation": {
       "gitHistory": "not found",
       "branchesAndTags": "not found",
       "gitLfs": "not tracked",
       "localBuildScriptOrSourceManifest": "not found",
-      "oldHashRecovered": false
+      "oldHashRecovered": false,
+      "rawPayloadsRecovered": true,
+      "rebuildStatus": "deterministic-rebuild-complete"
     },
     "targetOutcomeUse": "forbidden",
-    "reason": "The report-referenced crosswalk is not present at the governed path and all four original raw inputs are absent from the bounded local/project search. It is not recoverable from Git history, branches, LFS, or local manifests; rebuilding it requires new governed source payloads rather than a safe transformation."
+    "reason": "The report-referenced bytes were not recoverable; a new deterministic prediction-safe reconstruction is governed by the restored raw-payload manifest."
   },
   "council": {
     "status": "pass-for-regional-prior",

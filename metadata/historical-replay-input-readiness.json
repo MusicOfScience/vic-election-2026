@@ -53,8 +53,9 @@
         "artefact": "model/data/validation/historical-replay-2014-ballot-mask.csv"
       },
       "incumbencyLocal": {
-        "status": "blocked",
-        "reason": "The 88-row ABC notional baseline and cutoff-safe ballot mask pass; the report-referenced 2014 multi-party geographic crosswalk is absent and is not recoverable from the clone"
+        "status": "pass",
+        "reason": "88 prediction-safe local rows combine the pre-election ABC notional anchor, 2010 prior-family composition, the rebuilt seven-feature geographic translation, and the cutoff-safe ballot mask; target outcomes and transition files are forbidden",
+        "artefact": "model/data/validation/historical-replay-2014-local-inputs.csv"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",
@@ -77,7 +78,14 @@
         "status": "pass",
         "reason": "guarded runner rejects outcomes before prediction freeze"
       },
-      "runnable": false
+      "runnable": true,
+      "certifyingPredictionFrozen": true,
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2014-v2-prediction.json",
+      "predictionSha256": "7621cd120c9efdd7f891d0d69fbd711b8d5316af632547df6035e3ea096b38b0",
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2014-v2-comparators.json",
+      "comparatorBundleSha256": "d0178652ddcd922ae8b61cadac40ff6bab296c27f9bcc4be97cd5e34f43e3efd",
+      "scored": false,
+      "certifyingScored": false
     },
     {
       "cycleId": "vic_la_2018",
@@ -180,10 +188,10 @@
       "certifyingScored": true
     }
   ],
-  "runnableCycles": 2,
-  "predictedCycles": 2,
+  "runnableCycles": 3,
+  "predictedCycles": 3,
   "scoredCycles": 2,
-  "certifyingPredictedCycles": 1,
+  "certifyingPredictedCycles": 2,
   "certifyingScoredCycles": 1,
   "modelImpact": {
     "forecast2026": false,

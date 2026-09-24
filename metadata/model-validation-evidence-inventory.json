@@ -454,16 +454,16 @@
         ],
         "deterministicSeeds": 4,
         "explicitInformationCutoffs": 4,
-        "runnableConfigs": 2
+        "runnableConfigs": 3
       },
       "evidence": [
         {
           "path": "model/config/historical-validation-cycles.json",
-          "sha256": "924f0c5d45ab763f04c1ef1916aaef440273954bca110a6364735247b0ca1faf"
+          "sha256": "2a64805818a6de5f63110484bce3b45f393e5f4e68cb639f1f1def8e69bdbc5c"
         }
       ],
       "limitations": [
-        "Two configurations remain blocked while vic_la_2018 and vic_la_2022 are executable under the governed readiness contract.",
+        "One configuration remains blocked while vic_la_2018, vic_la_2014 and vic_la_2022 are executable under the governed readiness contract.",
         "Election outcomes are scoring-only and no post-cutoff evidence is permitted."
       ],
       "needed": "Complete cutoff-compliant historical inputs and an executable replay for each frozen cycle."

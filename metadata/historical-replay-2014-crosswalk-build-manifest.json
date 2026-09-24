@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "algorithmVersion": "historical_2014_mesh_area_fraction_sa1_bcp_v1",
+  "cycleId": "vic_la_2014",
+  "informationCutoff": "2014-11-28",
+  "targetElectionOutcomesUsed": false,
+  "archiveMembers": {
+    "meshBlockShape": ["MB_2011_VIC.shp", "MB_2011_VIC.shx", "MB_2011_VIC.dbf", "MB_2011_VIC.prj", "MB_2011_VIC.cpg"],
+    "assemblyShape": ["STATE_ASSEMBLY_2013.shp", "STATE_ASSEMBLY_2013.shx", "STATE_ASSEMBLY_2013.dbf", "STATE_ASSEMBLY_2013.prj", "STATE_ASSEMBLY_2013.cpg"],
+    "bcpTables": ["2011Census_B01_VIC_SA1_short.csv", "2011Census_B32_VIC_SA1_short.csv"],
+    "censusCounts": ["censuscounts_mb_2011_aust.csv"]
+  },
+  "sources": {
+    "bcp_sa1_2011_vic": {
+      "path": "work/historical-2014-sources/2011_BCP_SA1_for_VIC_short-header.zip",
+      "sizeBytes": 52198605,
+      "sha256": "0d94aaf6ee3f8db0e770ba5f384e3594ef87cff4930200d8fe521c7113678fe6"
+    },
+    "mesh_block_shape_2011_vic": {
+      "path": "work/historical-2014-sources/1270055001_mb_2011_vic_shape.zip",
+      "sizeBytes": 39426176,
+      "sha256": "6d8cdb31efd4852d826218b8ebc241ff07f9f927602976941ddb92ff3defd6a9"
+    },
+    "census_counts_mesh_block_2011": {
+      "path": "work/historical-2014-sources/censuscounts_mb_2011_aust.csv",
+      "sizeBytes": 6478814,
+      "sha256": "62a24f1705e98bf847c016d00d44dd99cbb5f70439945563417861cb44477239"
+    },
+    "state_assembly_2013_shape": {
+      "path": "work/historical-2014-sources/STATEASSEMBLY2013 SHP.zip",
+      "sizeBytes": 7590829,
+      "sha256": "d9a97e8f35f8403656a454bb6c00e986d2721e6a12ad13d9ef0d327d451aef69"
+    }
+  },
+  "geometry": {
+    "meshRecords": 81377,
+    "meshSpatialRecords": 81292,
+    "meshSpecialPurposeRecords": 8,
+    "meshUncoveredRecords": 77,
+    "maxUncoveredFraction": 1.0,
+    "minimumRawIntersectionCoverage": 1.3617140010624514e-05,
+    "assemblyDistricts": 88,
+    "projectedCrs": "EPSG:3111",
+    "sourceCrs": "EPSG:4283",
+    "intersectionCoverageTolerance": 1e-05
+  },
+  "features": [
+    "mortgage_share",
+    "renter_share",
+    "owned_outright_share",
+    "separate_house_share",
+    "apartment_share",
+    "age_18_34_share",
+    "age_65_plus_share"
+  ],
+  "featureCells": 616,
+  "weighting": "census persons usually resident, dwelling fallback; mesh-district area fraction",
+  "featureDefinitions": {
+    "age_18_34_share": "directly observed BCP 20-24 + 25-34 bands (18-19 unavailable in source)",
+    "tenureAndDwellingShares": "BCP B32 totals over Total_Total"
+  },
+  "output": {
+    "path": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
+    "sha256": "2b2a1612c631eba1a7a782f9147e90745d1d8fdf1c3a13bd8ebd7e276a4f0398",
+    "rows": 616
+  },
+  "forbiddenInputs": [
+    "model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv",
+    "2014 Victorian election outcomes"
+  ]
+}

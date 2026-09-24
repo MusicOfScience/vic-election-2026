@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "cycleId": "vic_la_2014",
   "informationCutoff": "2014-11-28",
-  "status": "blocked-original-raw-inputs-absent",
+  "status": "recovered-and-rebuilt-prediction-safe-crosswalk",
   "searchScope": {
     "method": "bounded-local-source-search",
     "locations": [
@@ -18,38 +18,40 @@
     {
       "id": "bcp_sa1_2011_vic",
       "expectedNames": ["2011_BCP_SA1_for_VIC_short-header.zip", "2011_BCP_SA1_for_VIC_short-header(1).zip"],
-      "status": "missing-locally",
+      "status": "recovered-project-library-payload",
       "expectedHistoricalSizeBytes": 52198605,
       "historicalSha256Evidence": "0d94aaf6…3678fe6",
-      "path": null,
-      "sha256": null
+      "path": "work/historical-2014-sources/2011_BCP_SA1_for_VIC_short-header.zip",
+      "sha256": "0d94aaf6ee3f8db0e770ba5f384e3594ef87cff4930200d8fe521c7113678fe6"
     },
     {
       "id": "mesh_block_shape_2011_vic",
       "expectedNames": ["1270055001_mb_2011_vic_shape.zip", "1270055001_mb_2011_vic_shape(1).zip"],
-      "status": "missing-locally",
+      "status": "recovered-project-library-payload",
       "expectedHistoricalSizeBytes": 39426176,
       "historicalSha256Evidence": "6d8cdb31…defd6a9",
-      "path": null,
-      "sha256": null
+      "path": "work/historical-2014-sources/1270055001_mb_2011_vic_shape.zip",
+      "sha256": "6d8cdb31efd4852d826218b8ebc241ff07f9f927602976941ddb92ff3defd6a9"
     },
     {
       "id": "census_counts_mesh_block_2011",
       "expectedNames": ["censuscounts_mb_2011_aust.csv", "censuscounts_mb_2011_aust(1).csv"],
-      "status": "missing-locally",
-      "path": null,
-      "sha256": null
+      "status": "recovered-project-library-payload",
+      "expectedHistoricalSizeBytes": 6478814,
+      "historicalSha256Evidence": "62a24f1705e98bf847c016d00d44dd99cbb5f70439945563417861cb44477239",
+      "path": "work/historical-2014-sources/censuscounts_mb_2011_aust.csv",
+      "sha256": "62a24f1705e98bf847c016d00d44dd99cbb5f70439945563417861cb44477239"
     },
     {
       "id": "state_assembly_2013_shape",
       "expectedNames": ["STATEASSEMBLY2013 SHP.zip", "STATEASSEMBLY2013 SHP(2).zip"],
-      "status": "missing-locally",
-      "path": null,
-      "sha256": null
+      "status": "recovered-project-library-payload",
+      "path": "work/historical-2014-sources/STATEASSEMBLY2013 SHP.zip",
+      "sha256": "d9a97e8f35f8403656a454bb6c00e986d2721e6a12ad13d9ef0d327d451aef69"
     }
   ],
   "duplicateIdentityCheck": {
-    "status": "not-applicable-no-copies-found",
+    "status": "verified-single-restored-payload-per-input",
     "filenameSuffixesAreNotSemantic": true,
     "differingDuplicates": false
   },
@@ -59,7 +61,8 @@
     "forbiddenInputs": ["model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"],
     "expectedGeometryAudit": {"meshBlockAndSpecialPurposeRecords": 81377, "districts": 88, "featuresPerDistrict": 7, "featureCells": 616},
     "outputPath": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
-    "outputSha256": null
+    "outputSha256": "2b2a1612c631eba1a7a782f9147e90745d1d8fdf1c3a13bd8ebd7e276a4f0398"
   },
-  "blockingReason": "All four original raw inputs are absent from the bounded local/project search scope. No substitute source or deterministic rebuild is authorised; the incumbencyLocal gate remains blocked."
+  "recoveryEvent": {"source": "project ChatGPT Library manually restored local payloads", "mergeBase": "8bc89cc2a7c6a1dfa70c1510e9854946d71199a5", "oldArtefactRecovered": false, "newBuildManifest": "metadata/historical-replay-2014-crosswalk-build-manifest.json"},
+  "blockingReason": null
 }

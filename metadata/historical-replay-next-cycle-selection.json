@@ -1,11 +1,11 @@
 {
   "selectionRule": "choose the next certifying cycle only by pre-score evidence completeness, before generating or viewing its model score",
   "selectedCycle": "vic_la_2014",
-  "status": "selected-pre-score-input-completeness; preparation-incomplete-and-no-prediction-generated",
+  "status": "selected-pre-score-input-completeness; prediction-frozen-outcomes-sealed",
   "candidates": {
     "vic_la_2010": {"approvedPollingObservations": 0, "independentFamilies": 0, "blockingInputs": ["pollEvidence", "ballotContest", "incumbencyLocal", "councilInput"]},
-    "vic_la_2014": {"approvedPollingObservations": 4, "independentFamilies": 2, "reconstructedCases": 4, "independentFamiliesAvailableForReview": 2, "blockingInputs": ["incumbencyLocal"], "evidenceRationale": "four archived first-party observations from Roy Morgan and Essential are owner-approved and promoted; the pre-cutoff ABC notional margin, family mask and Council regional priors are assembled, while the multi-party Assembly translation remains unresolved"},
+    "vic_la_2014": {"approvedPollingObservations": 4, "independentFamilies": 2, "reconstructedCases": 4, "independentFamiliesAvailableForReview": 2, "blockingInputs": [], "predictionFrozen": true, "evidenceRationale": "four archived first-party observations from Roy Morgan and Essential are owner-approved and promoted; the pre-cutoff ABC notional margin, rebuilt multi-party translation, family mask and Council regional priors are assembled without target outcomes"},
     "vic_la_2022": {"approvedPollingObservations": 3, "independentFamilies": 2, "reconstructedCases": 4, "independentFamiliesAvailableForReview": 2, "blockingInputs": [], "evidenceRationale": "completed prior selection; not eligible for reselection in this stage because its certifying prediction and score are immutable"}
   },
-  "reason": "2014 remains objectively closest among the remaining cycles by pre-score evidence completeness: it has 19 source-matched poll leads, four owner-approved observations from two independent families, a complete 2010 Assembly family baseline, a dated 88-row ABC notional-margin anchor, a cutoff-safe family mask and a dated eight-region Council prior. 2010 has only 4 source-matched leads and lacks a comparable 2006 multi-party baseline/local substrate. Selection is frozen before any 2014 prediction or target-outcome inspection."
+  "reason": "2014 was selected before any target score because it had the strongest remaining pre-score evidence completeness: four owner-approved observations from two independent families, a complete 2010 Assembly family baseline, a dated 88-row ABC notional-margin anchor, a cutoff-safe family mask and a dated eight-region Council prior. The restored raw payloads now support a deterministic prediction-safe translation. 2010 has only 4 source-matched leads and lacks a comparable 2006 multi-party baseline/local substrate. The prediction is frozen before any target-outcome inspection."
 }

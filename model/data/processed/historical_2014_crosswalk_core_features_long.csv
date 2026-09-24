@@ -1,0 +1,617 @@
+district_id,district_name,feature_id,value,cutoff,source_role
+1,ALBERT PARK,mortgage_share,0.241516898033,2014-11-28,prediction-safe-prior-geographic-translation
+1,ALBERT PARK,renter_share,0.505640929483,2014-11-28,prediction-safe-prior-geographic-translation
+1,ALBERT PARK,owned_outright_share,0.223763228924,2014-11-28,prediction-safe-prior-geographic-translation
+1,ALBERT PARK,separate_house_share,0.130817964046,2014-11-28,prediction-safe-prior-geographic-translation
+1,ALBERT PARK,apartment_share,0.599877342318,2014-11-28,prediction-safe-prior-geographic-translation
+1,ALBERT PARK,age_18_34_share,0.357191481723,2014-11-28,prediction-safe-prior-geographic-translation
+1,ALBERT PARK,age_65_plus_share,0.102797237391,2014-11-28,prediction-safe-prior-geographic-translation
+10,BOX HILL,mortgage_share,0.304682641944,2014-11-28,prediction-safe-prior-geographic-translation
+10,BOX HILL,renter_share,0.258889056641,2014-11-28,prediction-safe-prior-geographic-translation
+10,BOX HILL,owned_outright_share,0.397054562859,2014-11-28,prediction-safe-prior-geographic-translation
+10,BOX HILL,separate_house_share,0.679783828516,2014-11-28,prediction-safe-prior-geographic-translation
+10,BOX HILL,apartment_share,0.123799475877,2014-11-28,prediction-safe-prior-geographic-translation
+10,BOX HILL,age_18_34_share,0.208969281307,2014-11-28,prediction-safe-prior-geographic-translation
+10,BOX HILL,age_65_plus_share,0.168745312723,2014-11-28,prediction-safe-prior-geographic-translation
+11,BRIGHTON,mortgage_share,0.297360471444,2014-11-28,prediction-safe-prior-geographic-translation
+11,BRIGHTON,renter_share,0.298143746025,2014-11-28,prediction-safe-prior-geographic-translation
+11,BRIGHTON,owned_outright_share,0.373055598691,2014-11-28,prediction-safe-prior-geographic-translation
+11,BRIGHTON,separate_house_share,0.560733142402,2014-11-28,prediction-safe-prior-geographic-translation
+11,BRIGHTON,apartment_share,0.277184195970,2014-11-28,prediction-safe-prior-geographic-translation
+11,BRIGHTON,age_18_34_share,0.181983952880,2014-11-28,prediction-safe-prior-geographic-translation
+11,BRIGHTON,age_65_plus_share,0.151757014491,2014-11-28,prediction-safe-prior-geographic-translation
+12,BROADMEADOWS,mortgage_share,0.343191955054,2014-11-28,prediction-safe-prior-geographic-translation
+12,BROADMEADOWS,renter_share,0.268232080912,2014-11-28,prediction-safe-prior-geographic-translation
+12,BROADMEADOWS,owned_outright_share,0.330876191607,2014-11-28,prediction-safe-prior-geographic-translation
+12,BROADMEADOWS,separate_house_share,0.815052130742,2014-11-28,prediction-safe-prior-geographic-translation
+12,BROADMEADOWS,apartment_share,0.056048897169,2014-11-28,prediction-safe-prior-geographic-translation
+12,BROADMEADOWS,age_18_34_share,0.220161897387,2014-11-28,prediction-safe-prior-geographic-translation
+12,BROADMEADOWS,age_65_plus_share,0.130537048904,2014-11-28,prediction-safe-prior-geographic-translation
+13,BRUNSWICK,mortgage_share,0.270079604319,2014-11-28,prediction-safe-prior-geographic-translation
+13,BRUNSWICK,renter_share,0.407285904618,2014-11-28,prediction-safe-prior-geographic-translation
+13,BRUNSWICK,owned_outright_share,0.287713042281,2014-11-28,prediction-safe-prior-geographic-translation
+13,BRUNSWICK,separate_house_share,0.526856616984,2014-11-28,prediction-safe-prior-geographic-translation
+13,BRUNSWICK,apartment_share,0.268725628537,2014-11-28,prediction-safe-prior-geographic-translation
+13,BRUNSWICK,age_18_34_share,0.344023906848,2014-11-28,prediction-safe-prior-geographic-translation
+13,BRUNSWICK,age_65_plus_share,0.120672539562,2014-11-28,prediction-safe-prior-geographic-translation
+14,BULLEEN,mortgage_share,0.303826815730,2014-11-28,prediction-safe-prior-geographic-translation
+14,BULLEEN,renter_share,0.154242043107,2014-11-28,prediction-safe-prior-geographic-translation
+14,BULLEEN,owned_outright_share,0.506644890813,2014-11-28,prediction-safe-prior-geographic-translation
+14,BULLEEN,separate_house_share,0.826294955171,2014-11-28,prediction-safe-prior-geographic-translation
+14,BULLEEN,apartment_share,0.065046468992,2014-11-28,prediction-safe-prior-geographic-translation
+14,BULLEEN,age_18_34_share,0.173083281517,2014-11-28,prediction-safe-prior-geographic-translation
+14,BULLEEN,age_65_plus_share,0.218633827738,2014-11-28,prediction-safe-prior-geographic-translation
+15,BUNDOORA,mortgage_share,0.376921044701,2014-11-28,prediction-safe-prior-geographic-translation
+15,BUNDOORA,renter_share,0.215088584101,2014-11-28,prediction-safe-prior-geographic-translation
+15,BUNDOORA,owned_outright_share,0.376730087016,2014-11-28,prediction-safe-prior-geographic-translation
+15,BUNDOORA,separate_house_share,0.882660109957,2014-11-28,prediction-safe-prior-geographic-translation
+15,BUNDOORA,apartment_share,0.059963275684,2014-11-28,prediction-safe-prior-geographic-translation
+15,BUNDOORA,age_18_34_share,0.236816541780,2014-11-28,prediction-safe-prior-geographic-translation
+15,BUNDOORA,age_65_plus_share,0.142849746193,2014-11-28,prediction-safe-prior-geographic-translation
+16,BUNINYONG,mortgage_share,0.408380407108,2014-11-28,prediction-safe-prior-geographic-translation
+16,BUNINYONG,renter_share,0.211290079929,2014-11-28,prediction-safe-prior-geographic-translation
+16,BUNINYONG,owned_outright_share,0.341527187146,2014-11-28,prediction-safe-prior-geographic-translation
+16,BUNINYONG,separate_house_share,0.915235737718,2014-11-28,prediction-safe-prior-geographic-translation
+16,BUNINYONG,apartment_share,0.049977304513,2014-11-28,prediction-safe-prior-geographic-translation
+16,BUNINYONG,age_18_34_share,0.186764961775,2014-11-28,prediction-safe-prior-geographic-translation
+16,BUNINYONG,age_65_plus_share,0.135779815115,2014-11-28,prediction-safe-prior-geographic-translation
+17,BURWOOD,mortgage_share,0.325774063879,2014-11-28,prediction-safe-prior-geographic-translation
+17,BURWOOD,renter_share,0.252400307258,2014-11-28,prediction-safe-prior-geographic-translation
+17,BURWOOD,owned_outright_share,0.380656924952,2014-11-28,prediction-safe-prior-geographic-translation
+17,BURWOOD,separate_house_share,0.760891938837,2014-11-28,prediction-safe-prior-geographic-translation
+17,BURWOOD,apartment_share,0.084651384807,2014-11-28,prediction-safe-prior-geographic-translation
+17,BURWOOD,age_18_34_share,0.220960174150,2014-11-28,prediction-safe-prior-geographic-translation
+17,BURWOOD,age_65_plus_share,0.148537519586,2014-11-28,prediction-safe-prior-geographic-translation
+18,CARRUM,mortgage_share,0.467319404885,2014-11-28,prediction-safe-prior-geographic-translation
+18,CARRUM,renter_share,0.239224433977,2014-11-28,prediction-safe-prior-geographic-translation
+18,CARRUM,owned_outright_share,0.254915742125,2014-11-28,prediction-safe-prior-geographic-translation
+18,CARRUM,separate_house_share,0.774024559172,2014-11-28,prediction-safe-prior-geographic-translation
+18,CARRUM,apartment_share,0.082292724961,2014-11-28,prediction-safe-prior-geographic-translation
+18,CARRUM,age_18_34_share,0.208576115466,2014-11-28,prediction-safe-prior-geographic-translation
+18,CARRUM,age_65_plus_share,0.128295763960,2014-11-28,prediction-safe-prior-geographic-translation
+19,CAULFIELD,mortgage_share,0.277203905768,2014-11-28,prediction-safe-prior-geographic-translation
+19,CAULFIELD,renter_share,0.359396590072,2014-11-28,prediction-safe-prior-geographic-translation
+19,CAULFIELD,owned_outright_share,0.327729097294,2014-11-28,prediction-safe-prior-geographic-translation
+19,CAULFIELD,separate_house_share,0.457740867985,2014-11-28,prediction-safe-prior-geographic-translation
+19,CAULFIELD,apartment_share,0.354301645541,2014-11-28,prediction-safe-prior-geographic-translation
+19,CAULFIELD,age_18_34_share,0.265828587156,2014-11-28,prediction-safe-prior-geographic-translation
+19,CAULFIELD,age_65_plus_share,0.136943107100,2014-11-28,prediction-safe-prior-geographic-translation
+2,ALTONA,mortgage_share,0.463583058116,2014-11-28,prediction-safe-prior-geographic-translation
+2,ALTONA,renter_share,0.252296785875,2014-11-28,prediction-safe-prior-geographic-translation
+2,ALTONA,owned_outright_share,0.256715171005,2014-11-28,prediction-safe-prior-geographic-translation
+2,ALTONA,separate_house_share,0.886877869185,2014-11-28,prediction-safe-prior-geographic-translation
+2,ALTONA,apartment_share,0.057863943283,2014-11-28,prediction-safe-prior-geographic-translation
+2,ALTONA,age_18_34_share,0.243034486627,2014-11-28,prediction-safe-prior-geographic-translation
+2,ALTONA,age_65_plus_share,0.083061462127,2014-11-28,prediction-safe-prior-geographic-translation
+20,CLARINDA,mortgage_share,0.281332317962,2014-11-28,prediction-safe-prior-geographic-translation
+20,CLARINDA,renter_share,0.299798883336,2014-11-28,prediction-safe-prior-geographic-translation
+20,CLARINDA,owned_outright_share,0.371485639737,2014-11-28,prediction-safe-prior-geographic-translation
+20,CLARINDA,separate_house_share,0.724393775216,2014-11-28,prediction-safe-prior-geographic-translation
+20,CLARINDA,apartment_share,0.139478089504,2014-11-28,prediction-safe-prior-geographic-translation
+20,CLARINDA,age_18_34_share,0.268927338362,2014-11-28,prediction-safe-prior-geographic-translation
+20,CLARINDA,age_65_plus_share,0.159115244116,2014-11-28,prediction-safe-prior-geographic-translation
+21,CRANBOURNE,mortgage_share,0.590003242333,2014-11-28,prediction-safe-prior-geographic-translation
+21,CRANBOURNE,renter_share,0.204739349859,2014-11-28,prediction-safe-prior-geographic-translation
+21,CRANBOURNE,owned_outright_share,0.171752147891,2014-11-28,prediction-safe-prior-geographic-translation
+21,CRANBOURNE,separate_house_share,0.929822960936,2014-11-28,prediction-safe-prior-geographic-translation
+21,CRANBOURNE,apartment_share,0.049113580264,2014-11-28,prediction-safe-prior-geographic-translation
+21,CRANBOURNE,age_18_34_share,0.249640674660,2014-11-28,prediction-safe-prior-geographic-translation
+21,CRANBOURNE,age_65_plus_share,0.081686243860,2014-11-28,prediction-safe-prior-geographic-translation
+22,CROYDON,mortgage_share,0.419922377558,2014-11-28,prediction-safe-prior-geographic-translation
+22,CROYDON,renter_share,0.198623899285,2014-11-28,prediction-safe-prior-geographic-translation
+22,CROYDON,owned_outright_share,0.349165689365,2014-11-28,prediction-safe-prior-geographic-translation
+22,CROYDON,separate_house_share,0.818575131307,2014-11-28,prediction-safe-prior-geographic-translation
+22,CROYDON,apartment_share,0.051370323859,2014-11-28,prediction-safe-prior-geographic-translation
+22,CROYDON,age_18_34_share,0.197832517645,2014-11-28,prediction-safe-prior-geographic-translation
+22,CROYDON,age_65_plus_share,0.160281309326,2014-11-28,prediction-safe-prior-geographic-translation
+23,DANDENONG,mortgage_share,0.299082405117,2014-11-28,prediction-safe-prior-geographic-translation
+23,DANDENONG,renter_share,0.348223200041,2014-11-28,prediction-safe-prior-geographic-translation
+23,DANDENONG,owned_outright_share,0.296281819597,2014-11-28,prediction-safe-prior-geographic-translation
+23,DANDENONG,separate_house_share,0.727477904053,2014-11-28,prediction-safe-prior-geographic-translation
+23,DANDENONG,apartment_share,0.223504012464,2014-11-28,prediction-safe-prior-geographic-translation
+23,DANDENONG,age_18_34_share,0.246297822427,2014-11-28,prediction-safe-prior-geographic-translation
+23,DANDENONG,age_65_plus_share,0.133545311324,2014-11-28,prediction-safe-prior-geographic-translation
+24,EILDON,mortgage_share,0.416464291445,2014-11-28,prediction-safe-prior-geographic-translation
+24,EILDON,renter_share,0.161887770921,2014-11-28,prediction-safe-prior-geographic-translation
+24,EILDON,owned_outright_share,0.384360726315,2014-11-28,prediction-safe-prior-geographic-translation
+24,EILDON,separate_house_share,0.930392923664,2014-11-28,prediction-safe-prior-geographic-translation
+24,EILDON,apartment_share,0.021889829292,2014-11-28,prediction-safe-prior-geographic-translation
+24,EILDON,age_18_34_share,0.139988231631,2014-11-28,prediction-safe-prior-geographic-translation
+24,EILDON,age_65_plus_share,0.156158127923,2014-11-28,prediction-safe-prior-geographic-translation
+25,ELTHAM,mortgage_share,0.460760632692,2014-11-28,prediction-safe-prior-geographic-translation
+25,ELTHAM,renter_share,0.113562819094,2014-11-28,prediction-safe-prior-geographic-translation
+25,ELTHAM,owned_outright_share,0.400506761316,2014-11-28,prediction-safe-prior-geographic-translation
+25,ELTHAM,separate_house_share,0.911612936985,2014-11-28,prediction-safe-prior-geographic-translation
+25,ELTHAM,apartment_share,0.025135691643,2014-11-28,prediction-safe-prior-geographic-translation
+25,ELTHAM,age_18_34_share,0.171711038003,2014-11-28,prediction-safe-prior-geographic-translation
+25,ELTHAM,age_65_plus_share,0.116623545849,2014-11-28,prediction-safe-prior-geographic-translation
+26,ESSENDON,mortgage_share,0.293569565663,2014-11-28,prediction-safe-prior-geographic-translation
+26,ESSENDON,renter_share,0.351795013353,2014-11-28,prediction-safe-prior-geographic-translation
+26,ESSENDON,owned_outright_share,0.317829543660,2014-11-28,prediction-safe-prior-geographic-translation
+26,ESSENDON,separate_house_share,0.574809334521,2014-11-28,prediction-safe-prior-geographic-translation
+26,ESSENDON,apartment_share,0.287137878288,2014-11-28,prediction-safe-prior-geographic-translation
+26,ESSENDON,age_18_34_share,0.252011522525,2014-11-28,prediction-safe-prior-geographic-translation
+26,ESSENDON,age_65_plus_share,0.123256444785,2014-11-28,prediction-safe-prior-geographic-translation
+27,EUROA,mortgage_share,0.353682286466,2014-11-28,prediction-safe-prior-geographic-translation
+27,EUROA,renter_share,0.211734071359,2014-11-28,prediction-safe-prior-geographic-translation
+27,EUROA,owned_outright_share,0.393969211939,2014-11-28,prediction-safe-prior-geographic-translation
+27,EUROA,separate_house_share,0.921231170517,2014-11-28,prediction-safe-prior-geographic-translation
+27,EUROA,apartment_share,0.032902379168,2014-11-28,prediction-safe-prior-geographic-translation
+27,EUROA,age_18_34_share,0.136196979376,2014-11-28,prediction-safe-prior-geographic-translation
+27,EUROA,age_65_plus_share,0.187698919713,2014-11-28,prediction-safe-prior-geographic-translation
+28,EVELYN,mortgage_share,0.500658734587,2014-11-28,prediction-safe-prior-geographic-translation
+28,EVELYN,renter_share,0.135751913725,2014-11-28,prediction-safe-prior-geographic-translation
+28,EVELYN,owned_outright_share,0.335545201161,2014-11-28,prediction-safe-prior-geographic-translation
+28,EVELYN,separate_house_share,0.949579100314,2014-11-28,prediction-safe-prior-geographic-translation
+28,EVELYN,apartment_share,0.019169969784,2014-11-28,prediction-safe-prior-geographic-translation
+28,EVELYN,age_18_34_share,0.188835971753,2014-11-28,prediction-safe-prior-geographic-translation
+28,EVELYN,age_65_plus_share,0.120207012291,2014-11-28,prediction-safe-prior-geographic-translation
+29,FERNTREE GULLY,mortgage_share,0.418640921645,2014-11-28,prediction-safe-prior-geographic-translation
+29,FERNTREE GULLY,renter_share,0.160122896025,2014-11-28,prediction-safe-prior-geographic-translation
+29,FERNTREE GULLY,owned_outright_share,0.383815209920,2014-11-28,prediction-safe-prior-geographic-translation
+29,FERNTREE GULLY,separate_house_share,0.895242782301,2014-11-28,prediction-safe-prior-geographic-translation
+29,FERNTREE GULLY,apartment_share,0.029978613188,2014-11-28,prediction-safe-prior-geographic-translation
+29,FERNTREE GULLY,age_18_34_share,0.197672606316,2014-11-28,prediction-safe-prior-geographic-translation
+29,FERNTREE GULLY,age_65_plus_share,0.144494592952,2014-11-28,prediction-safe-prior-geographic-translation
+3,BASS,mortgage_share,0.388061416949,2014-11-28,prediction-safe-prior-geographic-translation
+3,BASS,renter_share,0.245296694435,2014-11-28,prediction-safe-prior-geographic-translation
+3,BASS,owned_outright_share,0.328972123533,2014-11-28,prediction-safe-prior-geographic-translation
+3,BASS,separate_house_share,0.908131930483,2014-11-28,prediction-safe-prior-geographic-translation
+3,BASS,apartment_share,0.034783909763,2014-11-28,prediction-safe-prior-geographic-translation
+3,BASS,age_18_34_share,0.178635589220,2014-11-28,prediction-safe-prior-geographic-translation
+3,BASS,age_65_plus_share,0.175326666766,2014-11-28,prediction-safe-prior-geographic-translation
+30,FOOTSCRAY,mortgage_share,0.303828774131,2014-11-28,prediction-safe-prior-geographic-translation
+30,FOOTSCRAY,renter_share,0.360746428491,2014-11-28,prediction-safe-prior-geographic-translation
+30,FOOTSCRAY,owned_outright_share,0.287498956697,2014-11-28,prediction-safe-prior-geographic-translation
+30,FOOTSCRAY,separate_house_share,0.675457671688,2014-11-28,prediction-safe-prior-geographic-translation
+30,FOOTSCRAY,apartment_share,0.192729087024,2014-11-28,prediction-safe-prior-geographic-translation
+30,FOOTSCRAY,age_18_34_share,0.298850672425,2014-11-28,prediction-safe-prior-geographic-translation
+30,FOOTSCRAY,age_65_plus_share,0.117394232974,2014-11-28,prediction-safe-prior-geographic-translation
+31,FOREST HILL,mortgage_share,0.330239191596,2014-11-28,prediction-safe-prior-geographic-translation
+31,FOREST HILL,renter_share,0.170916003055,2014-11-28,prediction-safe-prior-geographic-translation
+31,FOREST HILL,owned_outright_share,0.458922896577,2014-11-28,prediction-safe-prior-geographic-translation
+31,FOREST HILL,separate_house_share,0.875418357116,2014-11-28,prediction-safe-prior-geographic-translation
+31,FOREST HILL,apartment_share,0.053560827798,2014-11-28,prediction-safe-prior-geographic-translation
+31,FOREST HILL,age_18_34_share,0.176715673572,2014-11-28,prediction-safe-prior-geographic-translation
+31,FOREST HILL,age_65_plus_share,0.198343969661,2014-11-28,prediction-safe-prior-geographic-translation
+32,FRANKSTON,mortgage_share,0.339308817490,2014-11-28,prediction-safe-prior-geographic-translation
+32,FRANKSTON,renter_share,0.303979378481,2014-11-28,prediction-safe-prior-geographic-translation
+32,FRANKSTON,owned_outright_share,0.311602837484,2014-11-28,prediction-safe-prior-geographic-translation
+32,FRANKSTON,separate_house_share,0.831953311243,2014-11-28,prediction-safe-prior-geographic-translation
+32,FRANKSTON,apartment_share,0.102702504449,2014-11-28,prediction-safe-prior-geographic-translation
+32,FRANKSTON,age_18_34_share,0.194379434674,2014-11-28,prediction-safe-prior-geographic-translation
+32,FRANKSTON,age_65_plus_share,0.172093614377,2014-11-28,prediction-safe-prior-geographic-translation
+33,GEELONG,mortgage_share,0.320406889104,2014-11-28,prediction-safe-prior-geographic-translation
+33,GEELONG,renter_share,0.305616482999,2014-11-28,prediction-safe-prior-geographic-translation
+33,GEELONG,owned_outright_share,0.329154100612,2014-11-28,prediction-safe-prior-geographic-translation
+33,GEELONG,separate_house_share,0.776065418933,2014-11-28,prediction-safe-prior-geographic-translation
+33,GEELONG,apartment_share,0.133249768568,2014-11-28,prediction-safe-prior-geographic-translation
+33,GEELONG,age_18_34_share,0.213793908341,2014-11-28,prediction-safe-prior-geographic-translation
+33,GEELONG,age_65_plus_share,0.165603815953,2014-11-28,prediction-safe-prior-geographic-translation
+34,GEMBROOK,mortgage_share,0.501144609658,2014-11-28,prediction-safe-prior-geographic-translation
+34,GEMBROOK,renter_share,0.162752937681,2014-11-28,prediction-safe-prior-geographic-translation
+34,GEMBROOK,owned_outright_share,0.302938972384,2014-11-28,prediction-safe-prior-geographic-translation
+34,GEMBROOK,separate_house_share,0.912618219408,2014-11-28,prediction-safe-prior-geographic-translation
+34,GEMBROOK,apartment_share,0.037546938462,2014-11-28,prediction-safe-prior-geographic-translation
+34,GEMBROOK,age_18_34_share,0.181324391467,2014-11-28,prediction-safe-prior-geographic-translation
+34,GEMBROOK,age_65_plus_share,0.119667652770,2014-11-28,prediction-safe-prior-geographic-translation
+35,GIPPSLAND EAST,mortgage_share,0.305458988889,2014-11-28,prediction-safe-prior-geographic-translation
+35,GIPPSLAND EAST,renter_share,0.209931887674,2014-11-28,prediction-safe-prior-geographic-translation
+35,GIPPSLAND EAST,owned_outright_share,0.441290503398,2014-11-28,prediction-safe-prior-geographic-translation
+35,GIPPSLAND EAST,separate_house_share,0.901604180527,2014-11-28,prediction-safe-prior-geographic-translation
+35,GIPPSLAND EAST,apartment_share,0.050870786374,2014-11-28,prediction-safe-prior-geographic-translation
+35,GIPPSLAND EAST,age_18_34_share,0.126271061234,2014-11-28,prediction-safe-prior-geographic-translation
+35,GIPPSLAND EAST,age_65_plus_share,0.217967187900,2014-11-28,prediction-safe-prior-geographic-translation
+36,GIPPSLAND SOUTH,mortgage_share,0.337299284280,2014-11-28,prediction-safe-prior-geographic-translation
+36,GIPPSLAND SOUTH,renter_share,0.210248525374,2014-11-28,prediction-safe-prior-geographic-translation
+36,GIPPSLAND SOUTH,owned_outright_share,0.409527138032,2014-11-28,prediction-safe-prior-geographic-translation
+36,GIPPSLAND SOUTH,separate_house_share,0.927546050541,2014-11-28,prediction-safe-prior-geographic-translation
+36,GIPPSLAND SOUTH,apartment_share,0.027614275560,2014-11-28,prediction-safe-prior-geographic-translation
+36,GIPPSLAND SOUTH,age_18_34_share,0.149566061362,2014-11-28,prediction-safe-prior-geographic-translation
+36,GIPPSLAND SOUTH,age_65_plus_share,0.181914708130,2014-11-28,prediction-safe-prior-geographic-translation
+37,HASTINGS,mortgage_share,0.492173161971,2014-11-28,prediction-safe-prior-geographic-translation
+37,HASTINGS,renter_share,0.192329854346,2014-11-28,prediction-safe-prior-geographic-translation
+37,HASTINGS,owned_outright_share,0.285896415757,2014-11-28,prediction-safe-prior-geographic-translation
+37,HASTINGS,separate_house_share,0.891511906216,2014-11-28,prediction-safe-prior-geographic-translation
+37,HASTINGS,apartment_share,0.038997292358,2014-11-28,prediction-safe-prior-geographic-translation
+37,HASTINGS,age_18_34_share,0.186974959696,2014-11-28,prediction-safe-prior-geographic-translation
+37,HASTINGS,age_65_plus_share,0.114798405902,2014-11-28,prediction-safe-prior-geographic-translation
+38,HAWTHORN,mortgage_share,0.274591089484,2014-11-28,prediction-safe-prior-geographic-translation
+38,HAWTHORN,renter_share,0.337371741473,2014-11-28,prediction-safe-prior-geographic-translation
+38,HAWTHORN,owned_outright_share,0.360849361585,2014-11-28,prediction-safe-prior-geographic-translation
+38,HAWTHORN,separate_house_share,0.526041958096,2014-11-28,prediction-safe-prior-geographic-translation
+38,HAWTHORN,apartment_share,0.324721330291,2014-11-28,prediction-safe-prior-geographic-translation
+38,HAWTHORN,age_18_34_share,0.274203892760,2014-11-28,prediction-safe-prior-geographic-translation
+38,HAWTHORN,age_65_plus_share,0.128641559600,2014-11-28,prediction-safe-prior-geographic-translation
+39,IVANHOE,mortgage_share,0.303162666942,2014-11-28,prediction-safe-prior-geographic-translation
+39,IVANHOE,renter_share,0.277630383093,2014-11-28,prediction-safe-prior-geographic-translation
+39,IVANHOE,owned_outright_share,0.382312324042,2014-11-28,prediction-safe-prior-geographic-translation
+39,IVANHOE,separate_house_share,0.754727523522,2014-11-28,prediction-safe-prior-geographic-translation
+39,IVANHOE,apartment_share,0.124440644403,2014-11-28,prediction-safe-prior-geographic-translation
+39,IVANHOE,age_18_34_share,0.203048760588,2014-11-28,prediction-safe-prior-geographic-translation
+39,IVANHOE,age_65_plus_share,0.162846991687,2014-11-28,prediction-safe-prior-geographic-translation
+4,BAYSWATER,mortgage_share,0.433697832747,2014-11-28,prediction-safe-prior-geographic-translation
+4,BAYSWATER,renter_share,0.206074036964,2014-11-28,prediction-safe-prior-geographic-translation
+4,BAYSWATER,owned_outright_share,0.328703913987,2014-11-28,prediction-safe-prior-geographic-translation
+4,BAYSWATER,separate_house_share,0.802714853722,2014-11-28,prediction-safe-prior-geographic-translation
+4,BAYSWATER,apartment_share,0.063054655130,2014-11-28,prediction-safe-prior-geographic-translation
+4,BAYSWATER,age_18_34_share,0.210466564419,2014-11-28,prediction-safe-prior-geographic-translation
+4,BAYSWATER,age_65_plus_share,0.146249195301,2014-11-28,prediction-safe-prior-geographic-translation
+40,KEW,mortgage_share,0.299002167005,2014-11-28,prediction-safe-prior-geographic-translation
+40,KEW,renter_share,0.218444080659,2014-11-28,prediction-safe-prior-geographic-translation
+40,KEW,owned_outright_share,0.454901575513,2014-11-28,prediction-safe-prior-geographic-translation
+40,KEW,separate_house_share,0.742884374551,2014-11-28,prediction-safe-prior-geographic-translation
+40,KEW,apartment_share,0.122443551314,2014-11-28,prediction-safe-prior-geographic-translation
+40,KEW,age_18_34_share,0.174618492881,2014-11-28,prediction-safe-prior-geographic-translation
+40,KEW,age_65_plus_share,0.161917345733,2014-11-28,prediction-safe-prior-geographic-translation
+41,KEYSBOROUGH,mortgage_share,0.378691540255,2014-11-28,prediction-safe-prior-geographic-translation
+41,KEYSBOROUGH,renter_share,0.206065452365,2014-11-28,prediction-safe-prior-geographic-translation
+41,KEYSBOROUGH,owned_outright_share,0.371872329365,2014-11-28,prediction-safe-prior-geographic-translation
+41,KEYSBOROUGH,separate_house_share,0.809494857891,2014-11-28,prediction-safe-prior-geographic-translation
+41,KEYSBOROUGH,apartment_share,0.100113426479,2014-11-28,prediction-safe-prior-geographic-translation
+41,KEYSBOROUGH,age_18_34_share,0.215681812019,2014-11-28,prediction-safe-prior-geographic-translation
+41,KEYSBOROUGH,age_65_plus_share,0.135668843812,2014-11-28,prediction-safe-prior-geographic-translation
+42,KOROROIT,mortgage_share,0.518604110783,2014-11-28,prediction-safe-prior-geographic-translation
+42,KOROROIT,renter_share,0.202734044119,2014-11-28,prediction-safe-prior-geographic-translation
+42,KOROROIT,owned_outright_share,0.240543768562,2014-11-28,prediction-safe-prior-geographic-translation
+42,KOROROIT,separate_house_share,0.920177748209,2014-11-28,prediction-safe-prior-geographic-translation
+42,KOROROIT,apartment_share,0.018113221301,2014-11-28,prediction-safe-prior-geographic-translation
+42,KOROROIT,age_18_34_share,0.251783035777,2014-11-28,prediction-safe-prior-geographic-translation
+42,KOROROIT,age_65_plus_share,0.066346450830,2014-11-28,prediction-safe-prior-geographic-translation
+43,LARA,mortgage_share,0.338699628245,2014-11-28,prediction-safe-prior-geographic-translation
+43,LARA,renter_share,0.271452085910,2014-11-28,prediction-safe-prior-geographic-translation
+43,LARA,owned_outright_share,0.344952447080,2014-11-28,prediction-safe-prior-geographic-translation
+43,LARA,separate_house_share,0.899168001025,2014-11-28,prediction-safe-prior-geographic-translation
+43,LARA,apartment_share,0.061295357066,2014-11-28,prediction-safe-prior-geographic-translation
+43,LARA,age_18_34_share,0.187719566249,2014-11-28,prediction-safe-prior-geographic-translation
+43,LARA,age_65_plus_share,0.151946035925,2014-11-28,prediction-safe-prior-geographic-translation
+44,LOWAN,mortgage_share,0.280988403733,2014-11-28,prediction-safe-prior-geographic-translation
+44,LOWAN,renter_share,0.206589600320,2014-11-28,prediction-safe-prior-geographic-translation
+44,LOWAN,owned_outright_share,0.466362277462,2014-11-28,prediction-safe-prior-geographic-translation
+44,LOWAN,separate_house_share,0.926909598131,2014-11-28,prediction-safe-prior-geographic-translation
+44,LOWAN,apartment_share,0.040760896944,2014-11-28,prediction-safe-prior-geographic-translation
+44,LOWAN,age_18_34_share,0.136518377996,2014-11-28,prediction-safe-prior-geographic-translation
+44,LOWAN,age_65_plus_share,0.206311897345,2014-11-28,prediction-safe-prior-geographic-translation
+45,MACEDON,mortgage_share,0.444794322993,2014-11-28,prediction-safe-prior-geographic-translation
+45,MACEDON,renter_share,0.143625615753,2014-11-28,prediction-safe-prior-geographic-translation
+45,MACEDON,owned_outright_share,0.383230011484,2014-11-28,prediction-safe-prior-geographic-translation
+45,MACEDON,separate_house_share,0.960770624768,2014-11-28,prediction-safe-prior-geographic-translation
+45,MACEDON,apartment_share,0.023141548911,2014-11-28,prediction-safe-prior-geographic-translation
+45,MACEDON,age_18_34_share,0.123393355657,2014-11-28,prediction-safe-prior-geographic-translation
+45,MACEDON,age_65_plus_share,0.143227918239,2014-11-28,prediction-safe-prior-geographic-translation
+46,MALVERN,mortgage_share,0.270653735278,2014-11-28,prediction-safe-prior-geographic-translation
+46,MALVERN,renter_share,0.308335237008,2014-11-28,prediction-safe-prior-geographic-translation
+46,MALVERN,owned_outright_share,0.382576120707,2014-11-28,prediction-safe-prior-geographic-translation
+46,MALVERN,separate_house_share,0.518635346696,2014-11-28,prediction-safe-prior-geographic-translation
+46,MALVERN,apartment_share,0.310011173667,2014-11-28,prediction-safe-prior-geographic-translation
+46,MALVERN,age_18_34_share,0.247018184696,2014-11-28,prediction-safe-prior-geographic-translation
+46,MALVERN,age_65_plus_share,0.154596989191,2014-11-28,prediction-safe-prior-geographic-translation
+47,MELBOURNE,mortgage_share,0.180797546030,2014-11-28,prediction-safe-prior-geographic-translation
+47,MELBOURNE,renter_share,0.609824712069,2014-11-28,prediction-safe-prior-geographic-translation
+47,MELBOURNE,owned_outright_share,0.162076160699,2014-11-28,prediction-safe-prior-geographic-translation
+47,MELBOURNE,separate_house_share,0.069681447801,2014-11-28,prediction-safe-prior-geographic-translation
+47,MELBOURNE,apartment_share,0.671363902820,2014-11-28,prediction-safe-prior-geographic-translation
+47,MELBOURNE,age_18_34_share,0.521357435723,2014-11-28,prediction-safe-prior-geographic-translation
+47,MELBOURNE,age_65_plus_share,0.063663261376,2014-11-28,prediction-safe-prior-geographic-translation
+48,MELTON,mortgage_share,0.479943671068,2014-11-28,prediction-safe-prior-geographic-translation
+48,MELTON,renter_share,0.227254311069,2014-11-28,prediction-safe-prior-geographic-translation
+48,MELTON,owned_outright_share,0.255930998669,2014-11-28,prediction-safe-prior-geographic-translation
+48,MELTON,separate_house_share,0.920453051735,2014-11-28,prediction-safe-prior-geographic-translation
+48,MELTON,apartment_share,0.038406496036,2014-11-28,prediction-safe-prior-geographic-translation
+48,MELTON,age_18_34_share,0.217900611807,2014-11-28,prediction-safe-prior-geographic-translation
+48,MELTON,age_65_plus_share,0.096161044783,2014-11-28,prediction-safe-prior-geographic-translation
+49,MILDURA,mortgage_share,0.318181831331,2014-11-28,prediction-safe-prior-geographic-translation
+49,MILDURA,renter_share,0.274102411409,2014-11-28,prediction-safe-prior-geographic-translation
+49,MILDURA,owned_outright_share,0.353237459615,2014-11-28,prediction-safe-prior-geographic-translation
+49,MILDURA,separate_house_share,0.876735114320,2014-11-28,prediction-safe-prior-geographic-translation
+49,MILDURA,apartment_share,0.062726286241,2014-11-28,prediction-safe-prior-geographic-translation
+49,MILDURA,age_18_34_share,0.160200486902,2014-11-28,prediction-safe-prior-geographic-translation
+49,MILDURA,age_65_plus_share,0.167356119705,2014-11-28,prediction-safe-prior-geographic-translation
+5,BELLARINE,mortgage_share,0.362100953464,2014-11-28,prediction-safe-prior-geographic-translation
+5,BELLARINE,renter_share,0.183351584297,2014-11-28,prediction-safe-prior-geographic-translation
+5,BELLARINE,owned_outright_share,0.425514010245,2014-11-28,prediction-safe-prior-geographic-translation
+5,BELLARINE,separate_house_share,0.913066176304,2014-11-28,prediction-safe-prior-geographic-translation
+5,BELLARINE,apartment_share,0.045399918003,2014-11-28,prediction-safe-prior-geographic-translation
+5,BELLARINE,age_18_34_share,0.135429082334,2014-11-28,prediction-safe-prior-geographic-translation
+5,BELLARINE,age_65_plus_share,0.205409640281,2014-11-28,prediction-safe-prior-geographic-translation
+50,MILL PARK,mortgage_share,0.510042505204,2014-11-28,prediction-safe-prior-geographic-translation
+50,MILL PARK,renter_share,0.179588107787,2014-11-28,prediction-safe-prior-geographic-translation
+50,MILL PARK,owned_outright_share,0.282372111709,2014-11-28,prediction-safe-prior-geographic-translation
+50,MILL PARK,separate_house_share,0.877313219362,2014-11-28,prediction-safe-prior-geographic-translation
+50,MILL PARK,apartment_share,0.034895329652,2014-11-28,prediction-safe-prior-geographic-translation
+50,MILL PARK,age_18_34_share,0.224174916021,2014-11-28,prediction-safe-prior-geographic-translation
+50,MILL PARK,age_65_plus_share,0.078930839861,2014-11-28,prediction-safe-prior-geographic-translation
+51,MONBULK,mortgage_share,0.518130979961,2014-11-28,prediction-safe-prior-geographic-translation
+51,MONBULK,renter_share,0.112603048259,2014-11-28,prediction-safe-prior-geographic-translation
+51,MONBULK,owned_outright_share,0.342704175469,2014-11-28,prediction-safe-prior-geographic-translation
+51,MONBULK,separate_house_share,0.944979453479,2014-11-28,prediction-safe-prior-geographic-translation
+51,MONBULK,apartment_share,0.020802170470,2014-11-28,prediction-safe-prior-geographic-translation
+51,MONBULK,age_18_34_share,0.168009070943,2014-11-28,prediction-safe-prior-geographic-translation
+51,MONBULK,age_65_plus_share,0.111140910659,2014-11-28,prediction-safe-prior-geographic-translation
+52,MORDIALLOC,mortgage_share,0.414957888904,2014-11-28,prediction-safe-prior-geographic-translation
+52,MORDIALLOC,renter_share,0.214974070495,2014-11-28,prediction-safe-prior-geographic-translation
+52,MORDIALLOC,owned_outright_share,0.338895304475,2014-11-28,prediction-safe-prior-geographic-translation
+52,MORDIALLOC,separate_house_share,0.698930294868,2014-11-28,prediction-safe-prior-geographic-translation
+52,MORDIALLOC,apartment_share,0.144792657849,2014-11-28,prediction-safe-prior-geographic-translation
+52,MORDIALLOC,age_18_34_share,0.178277139368,2014-11-28,prediction-safe-prior-geographic-translation
+52,MORDIALLOC,age_65_plus_share,0.151737475319,2014-11-28,prediction-safe-prior-geographic-translation
+53,MORNINGTON,mortgage_share,0.427340755622,2014-11-28,prediction-safe-prior-geographic-translation
+53,MORNINGTON,renter_share,0.155681488980,2014-11-28,prediction-safe-prior-geographic-translation
+53,MORNINGTON,owned_outright_share,0.387256198872,2014-11-28,prediction-safe-prior-geographic-translation
+53,MORNINGTON,separate_house_share,0.858955224707,2014-11-28,prediction-safe-prior-geographic-translation
+53,MORNINGTON,apartment_share,0.041933450142,2014-11-28,prediction-safe-prior-geographic-translation
+53,MORNINGTON,age_18_34_share,0.120471849513,2014-11-28,prediction-safe-prior-geographic-translation
+53,MORNINGTON,age_65_plus_share,0.200426458101,2014-11-28,prediction-safe-prior-geographic-translation
+54,MORWELL,mortgage_share,0.371589304816,2014-11-28,prediction-safe-prior-geographic-translation
+54,MORWELL,renter_share,0.231126195600,2014-11-28,prediction-safe-prior-geographic-translation
+54,MORWELL,owned_outright_share,0.356652039847,2014-11-28,prediction-safe-prior-geographic-translation
+54,MORWELL,separate_house_share,0.895469762914,2014-11-28,prediction-safe-prior-geographic-translation
+54,MORWELL,apartment_share,0.072534286589,2014-11-28,prediction-safe-prior-geographic-translation
+54,MORWELL,age_18_34_share,0.186505687649,2014-11-28,prediction-safe-prior-geographic-translation
+54,MORWELL,age_65_plus_share,0.149276098294,2014-11-28,prediction-safe-prior-geographic-translation
+55,MOUNT WAVERLEY,mortgage_share,0.281957681281,2014-11-28,prediction-safe-prior-geographic-translation
+55,MOUNT WAVERLEY,renter_share,0.207771067845,2014-11-28,prediction-safe-prior-geographic-translation
+55,MOUNT WAVERLEY,owned_outright_share,0.480907000991,2014-11-28,prediction-safe-prior-geographic-translation
+55,MOUNT WAVERLEY,separate_house_share,0.798409747017,2014-11-28,prediction-safe-prior-geographic-translation
+55,MOUNT WAVERLEY,apartment_share,0.066137477850,2014-11-28,prediction-safe-prior-geographic-translation
+55,MOUNT WAVERLEY,age_18_34_share,0.180935194656,2014-11-28,prediction-safe-prior-geographic-translation
+55,MOUNT WAVERLEY,age_65_plus_share,0.198154083281,2014-11-28,prediction-safe-prior-geographic-translation
+56,MULGRAVE,mortgage_share,0.323046980452,2014-11-28,prediction-safe-prior-geographic-translation
+56,MULGRAVE,renter_share,0.221280442540,2014-11-28,prediction-safe-prior-geographic-translation
+56,MULGRAVE,owned_outright_share,0.410088326568,2014-11-28,prediction-safe-prior-geographic-translation
+56,MULGRAVE,separate_house_share,0.831048237160,2014-11-28,prediction-safe-prior-geographic-translation
+56,MULGRAVE,apartment_share,0.102057668711,2014-11-28,prediction-safe-prior-geographic-translation
+56,MULGRAVE,age_18_34_share,0.215600405114,2014-11-28,prediction-safe-prior-geographic-translation
+56,MULGRAVE,age_65_plus_share,0.167753845780,2014-11-28,prediction-safe-prior-geographic-translation
+57,MURRAY PLAINS,mortgage_share,0.315974677957,2014-11-28,prediction-safe-prior-geographic-translation
+57,MURRAY PLAINS,renter_share,0.239369996324,2014-11-28,prediction-safe-prior-geographic-translation
+57,MURRAY PLAINS,owned_outright_share,0.399562294042,2014-11-28,prediction-safe-prior-geographic-translation
+57,MURRAY PLAINS,separate_house_share,0.894299974845,2014-11-28,prediction-safe-prior-geographic-translation
+57,MURRAY PLAINS,apartment_share,0.066415159267,2014-11-28,prediction-safe-prior-geographic-translation
+57,MURRAY PLAINS,age_18_34_share,0.144295495648,2014-11-28,prediction-safe-prior-geographic-translation
+57,MURRAY PLAINS,age_65_plus_share,0.194538091751,2014-11-28,prediction-safe-prior-geographic-translation
+58,NARRACAN,mortgage_share,0.374910535655,2014-11-28,prediction-safe-prior-geographic-translation
+58,NARRACAN,renter_share,0.200117400082,2014-11-28,prediction-safe-prior-geographic-translation
+58,NARRACAN,owned_outright_share,0.386364863835,2014-11-28,prediction-safe-prior-geographic-translation
+58,NARRACAN,separate_house_share,0.891130670332,2014-11-28,prediction-safe-prior-geographic-translation
+58,NARRACAN,apartment_share,0.045241782700,2014-11-28,prediction-safe-prior-geographic-translation
+58,NARRACAN,age_18_34_share,0.153689547450,2014-11-28,prediction-safe-prior-geographic-translation
+58,NARRACAN,age_65_plus_share,0.164840039430,2014-11-28,prediction-safe-prior-geographic-translation
+59,NARRE WARREN NORTH,mortgage_share,0.502046007808,2014-11-28,prediction-safe-prior-geographic-translation
+59,NARRE WARREN NORTH,renter_share,0.182436796394,2014-11-28,prediction-safe-prior-geographic-translation
+59,NARRE WARREN NORTH,owned_outright_share,0.285520805645,2014-11-28,prediction-safe-prior-geographic-translation
+59,NARRE WARREN NORTH,separate_house_share,0.933718404417,2014-11-28,prediction-safe-prior-geographic-translation
+59,NARRE WARREN NORTH,apartment_share,0.025855918779,2014-11-28,prediction-safe-prior-geographic-translation
+59,NARRE WARREN NORTH,age_18_34_share,0.202794145778,2014-11-28,prediction-safe-prior-geographic-translation
+59,NARRE WARREN NORTH,age_65_plus_share,0.098915793035,2014-11-28,prediction-safe-prior-geographic-translation
+6,BENAMBRA,mortgage_share,0.366943277908,2014-11-28,prediction-safe-prior-geographic-translation
+6,BENAMBRA,renter_share,0.271072251013,2014-11-28,prediction-safe-prior-geographic-translation
+6,BENAMBRA,owned_outright_share,0.328476242920,2014-11-28,prediction-safe-prior-geographic-translation
+6,BENAMBRA,separate_house_share,0.885119849152,2014-11-28,prediction-safe-prior-geographic-translation
+6,BENAMBRA,apartment_share,0.056445582839,2014-11-28,prediction-safe-prior-geographic-translation
+6,BENAMBRA,age_18_34_share,0.164914045775,2014-11-28,prediction-safe-prior-geographic-translation
+6,BENAMBRA,age_65_plus_share,0.148619469017,2014-11-28,prediction-safe-prior-geographic-translation
+60,NARRE WARREN SOUTH,mortgage_share,0.613767021722,2014-11-28,prediction-safe-prior-geographic-translation
+60,NARRE WARREN SOUTH,renter_share,0.183190334830,2014-11-28,prediction-safe-prior-geographic-translation
+60,NARRE WARREN SOUTH,owned_outright_share,0.176905921584,2014-11-28,prediction-safe-prior-geographic-translation
+60,NARRE WARREN SOUTH,separate_house_share,0.918214994526,2014-11-28,prediction-safe-prior-geographic-translation
+60,NARRE WARREN SOUTH,apartment_share,0.013607145688,2014-11-28,prediction-safe-prior-geographic-translation
+60,NARRE WARREN SOUTH,age_18_34_share,0.201597982967,2014-11-28,prediction-safe-prior-geographic-translation
+60,NARRE WARREN SOUTH,age_65_plus_share,0.057426086410,2014-11-28,prediction-safe-prior-geographic-translation
+61,NEPEAN,mortgage_share,0.299473368174,2014-11-28,prediction-safe-prior-geographic-translation
+61,NEPEAN,renter_share,0.216830663663,2014-11-28,prediction-safe-prior-geographic-translation
+61,NEPEAN,owned_outright_share,0.434311389115,2014-11-28,prediction-safe-prior-geographic-translation
+61,NEPEAN,separate_house_share,0.892809446229,2014-11-28,prediction-safe-prior-geographic-translation
+61,NEPEAN,apartment_share,0.037858771558,2014-11-28,prediction-safe-prior-geographic-translation
+61,NEPEAN,age_18_34_share,0.115095568180,2014-11-28,prediction-safe-prior-geographic-translation
+61,NEPEAN,age_65_plus_share,0.283587306514,2014-11-28,prediction-safe-prior-geographic-translation
+62,NIDDRIE,mortgage_share,0.307052658036,2014-11-28,prediction-safe-prior-geographic-translation
+62,NIDDRIE,renter_share,0.172693563804,2014-11-28,prediction-safe-prior-geographic-translation
+62,NIDDRIE,owned_outright_share,0.481558982136,2014-11-28,prediction-safe-prior-geographic-translation
+62,NIDDRIE,separate_house_share,0.851073582759,2014-11-28,prediction-safe-prior-geographic-translation
+62,NIDDRIE,apartment_share,0.070055892798,2014-11-28,prediction-safe-prior-geographic-translation
+62,NIDDRIE,age_18_34_share,0.177528494104,2014-11-28,prediction-safe-prior-geographic-translation
+62,NIDDRIE,age_65_plus_share,0.195148561982,2014-11-28,prediction-safe-prior-geographic-translation
+63,NORTHCOTE,mortgage_share,0.300574380358,2014-11-28,prediction-safe-prior-geographic-translation
+63,NORTHCOTE,renter_share,0.362830580724,2014-11-28,prediction-safe-prior-geographic-translation
+63,NORTHCOTE,owned_outright_share,0.304341460270,2014-11-28,prediction-safe-prior-geographic-translation
+63,NORTHCOTE,separate_house_share,0.611246822968,2014-11-28,prediction-safe-prior-geographic-translation
+63,NORTHCOTE,apartment_share,0.239860035156,2014-11-28,prediction-safe-prior-geographic-translation
+63,NORTHCOTE,age_18_34_share,0.269363096245,2014-11-28,prediction-safe-prior-geographic-translation
+63,NORTHCOTE,age_65_plus_share,0.124292330534,2014-11-28,prediction-safe-prior-geographic-translation
+64,OAKLEIGH,mortgage_share,0.284901926109,2014-11-28,prediction-safe-prior-geographic-translation
+64,OAKLEIGH,renter_share,0.365483299976,2014-11-28,prediction-safe-prior-geographic-translation
+64,OAKLEIGH,owned_outright_share,0.313870654970,2014-11-28,prediction-safe-prior-geographic-translation
+64,OAKLEIGH,separate_house_share,0.561075727810,2014-11-28,prediction-safe-prior-geographic-translation
+64,OAKLEIGH,apartment_share,0.267293935778,2014-11-28,prediction-safe-prior-geographic-translation
+64,OAKLEIGH,age_18_34_share,0.303588568119,2014-11-28,prediction-safe-prior-geographic-translation
+64,OAKLEIGH,age_65_plus_share,0.136723412859,2014-11-28,prediction-safe-prior-geographic-translation
+65,OVENS VALLEY,mortgage_share,0.322080445447,2014-11-28,prediction-safe-prior-geographic-translation
+65,OVENS VALLEY,renter_share,0.222254456770,2014-11-28,prediction-safe-prior-geographic-translation
+65,OVENS VALLEY,owned_outright_share,0.413473921406,2014-11-28,prediction-safe-prior-geographic-translation
+65,OVENS VALLEY,separate_house_share,0.891285925305,2014-11-28,prediction-safe-prior-geographic-translation
+65,OVENS VALLEY,apartment_share,0.062847134468,2014-11-28,prediction-safe-prior-geographic-translation
+65,OVENS VALLEY,age_18_34_share,0.132625267311,2014-11-28,prediction-safe-prior-geographic-translation
+65,OVENS VALLEY,age_65_plus_share,0.208938918728,2014-11-28,prediction-safe-prior-geographic-translation
+66,PASCOE VALE,mortgage_share,0.311162549950,2014-11-28,prediction-safe-prior-geographic-translation
+66,PASCOE VALE,renter_share,0.276325987199,2014-11-28,prediction-safe-prior-geographic-translation
+66,PASCOE VALE,owned_outright_share,0.371539762902,2014-11-28,prediction-safe-prior-geographic-translation
+66,PASCOE VALE,separate_house_share,0.717164396525,2014-11-28,prediction-safe-prior-geographic-translation
+66,PASCOE VALE,apartment_share,0.107921738605,2014-11-28,prediction-safe-prior-geographic-translation
+66,PASCOE VALE,age_18_34_share,0.246030915728,2014-11-28,prediction-safe-prior-geographic-translation
+66,PASCOE VALE,age_65_plus_share,0.162654669535,2014-11-28,prediction-safe-prior-geographic-translation
+67,POLWARTH,mortgage_share,0.340159456089,2014-11-28,prediction-safe-prior-geographic-translation
+67,POLWARTH,renter_share,0.195464184435,2014-11-28,prediction-safe-prior-geographic-translation
+67,POLWARTH,owned_outright_share,0.422059579675,2014-11-28,prediction-safe-prior-geographic-translation
+67,POLWARTH,separate_house_share,0.943255877121,2014-11-28,prediction-safe-prior-geographic-translation
+67,POLWARTH,apartment_share,0.025194080174,2014-11-28,prediction-safe-prior-geographic-translation
+67,POLWARTH,age_18_34_share,0.139365238235,2014-11-28,prediction-safe-prior-geographic-translation
+67,POLWARTH,age_65_plus_share,0.178616759808,2014-11-28,prediction-safe-prior-geographic-translation
+68,PRAHRAN,mortgage_share,0.208346702843,2014-11-28,prediction-safe-prior-geographic-translation
+68,PRAHRAN,renter_share,0.562651899819,2014-11-28,prediction-safe-prior-geographic-translation
+68,PRAHRAN,owned_outright_share,0.200922305457,2014-11-28,prediction-safe-prior-geographic-translation
+68,PRAHRAN,separate_house_share,0.179656082964,2014-11-28,prediction-safe-prior-geographic-translation
+68,PRAHRAN,apartment_share,0.670236498398,2014-11-28,prediction-safe-prior-geographic-translation
+68,PRAHRAN,age_18_34_share,0.412962406728,2014-11-28,prediction-safe-prior-geographic-translation
+68,PRAHRAN,age_65_plus_share,0.121447202414,2014-11-28,prediction-safe-prior-geographic-translation
+69,PRESTON,mortgage_share,0.258501690418,2014-11-28,prediction-safe-prior-geographic-translation
+69,PRESTON,renter_share,0.342723548291,2014-11-28,prediction-safe-prior-geographic-translation
+69,PRESTON,owned_outright_share,0.348943987217,2014-11-28,prediction-safe-prior-geographic-translation
+69,PRESTON,separate_house_share,0.701019694031,2014-11-28,prediction-safe-prior-geographic-translation
+69,PRESTON,apartment_share,0.163344404130,2014-11-28,prediction-safe-prior-geographic-translation
+69,PRESTON,age_18_34_share,0.254863931765,2014-11-28,prediction-safe-prior-geographic-translation
+69,PRESTON,age_65_plus_share,0.167511235232,2014-11-28,prediction-safe-prior-geographic-translation
+7,BENDIGO EAST,mortgage_share,0.373797782134,2014-11-28,prediction-safe-prior-geographic-translation
+7,BENDIGO EAST,renter_share,0.237860692822,2014-11-28,prediction-safe-prior-geographic-translation
+7,BENDIGO EAST,owned_outright_share,0.352262186982,2014-11-28,prediction-safe-prior-geographic-translation
+7,BENDIGO EAST,separate_house_share,0.908314808697,2014-11-28,prediction-safe-prior-geographic-translation
+7,BENDIGO EAST,apartment_share,0.052563658042,2014-11-28,prediction-safe-prior-geographic-translation
+7,BENDIGO EAST,age_18_34_share,0.185662492115,2014-11-28,prediction-safe-prior-geographic-translation
+7,BENDIGO EAST,age_65_plus_share,0.151573769439,2014-11-28,prediction-safe-prior-geographic-translation
+70,RICHMOND,mortgage_share,0.243736199803,2014-11-28,prediction-safe-prior-geographic-translation
+70,RICHMOND,renter_share,0.516879629141,2014-11-28,prediction-safe-prior-geographic-translation
+70,RICHMOND,owned_outright_share,0.198875015103,2014-11-28,prediction-safe-prior-geographic-translation
+70,RICHMOND,separate_house_share,0.220127678741,2014-11-28,prediction-safe-prior-geographic-translation
+70,RICHMOND,apartment_share,0.384906584470,2014-11-28,prediction-safe-prior-geographic-translation
+70,RICHMOND,age_18_34_share,0.376348043759,2014-11-28,prediction-safe-prior-geographic-translation
+70,RICHMOND,age_65_plus_share,0.095011161038,2014-11-28,prediction-safe-prior-geographic-translation
+71,RINGWOOD,mortgage_share,0.370745454946,2014-11-28,prediction-safe-prior-geographic-translation
+71,RINGWOOD,renter_share,0.248265509031,2014-11-28,prediction-safe-prior-geographic-translation
+71,RINGWOOD,owned_outright_share,0.345700064486,2014-11-28,prediction-safe-prior-geographic-translation
+71,RINGWOOD,separate_house_share,0.742296940041,2014-11-28,prediction-safe-prior-geographic-translation
+71,RINGWOOD,apartment_share,0.076624958974,2014-11-28,prediction-safe-prior-geographic-translation
+71,RINGWOOD,age_18_34_share,0.212422559320,2014-11-28,prediction-safe-prior-geographic-translation
+71,RINGWOOD,age_65_plus_share,0.157463975509,2014-11-28,prediction-safe-prior-geographic-translation
+72,RIPON,mortgage_share,0.318316505116,2014-11-28,prediction-safe-prior-geographic-translation
+72,RIPON,renter_share,0.182155897093,2014-11-28,prediction-safe-prior-geographic-translation
+72,RIPON,owned_outright_share,0.454688638638,2014-11-28,prediction-safe-prior-geographic-translation
+72,RIPON,separate_house_share,0.936804481671,2014-11-28,prediction-safe-prior-geographic-translation
+72,RIPON,apartment_share,0.026309042905,2014-11-28,prediction-safe-prior-geographic-translation
+72,RIPON,age_18_34_share,0.129773177437,2014-11-28,prediction-safe-prior-geographic-translation
+72,RIPON,age_65_plus_share,0.208763551100,2014-11-28,prediction-safe-prior-geographic-translation
+73,ROWVILLE,mortgage_share,0.541285726390,2014-11-28,prediction-safe-prior-geographic-translation
+73,ROWVILLE,renter_share,0.121848006447,2014-11-28,prediction-safe-prior-geographic-translation
+73,ROWVILLE,owned_outright_share,0.309347904973,2014-11-28,prediction-safe-prior-geographic-translation
+73,ROWVILLE,separate_house_share,0.956759411840,2014-11-28,prediction-safe-prior-geographic-translation
+73,ROWVILLE,apartment_share,0.013454404146,2014-11-28,prediction-safe-prior-geographic-translation
+73,ROWVILLE,age_18_34_share,0.176130165481,2014-11-28,prediction-safe-prior-geographic-translation
+73,ROWVILLE,age_65_plus_share,0.090361966545,2014-11-28,prediction-safe-prior-geographic-translation
+74,SANDRINGHAM,mortgage_share,0.346505861285,2014-11-28,prediction-safe-prior-geographic-translation
+74,SANDRINGHAM,renter_share,0.215363265360,2014-11-28,prediction-safe-prior-geographic-translation
+74,SANDRINGHAM,owned_outright_share,0.408590554654,2014-11-28,prediction-safe-prior-geographic-translation
+74,SANDRINGHAM,separate_house_share,0.672955301669,2014-11-28,prediction-safe-prior-geographic-translation
+74,SANDRINGHAM,apartment_share,0.143117742370,2014-11-28,prediction-safe-prior-geographic-translation
+74,SANDRINGHAM,age_18_34_share,0.143706517364,2014-11-28,prediction-safe-prior-geographic-translation
+74,SANDRINGHAM,age_65_plus_share,0.179780149364,2014-11-28,prediction-safe-prior-geographic-translation
+75,SHEPPARTON,mortgage_share,0.353647802107,2014-11-28,prediction-safe-prior-geographic-translation
+75,SHEPPARTON,renter_share,0.264144434182,2014-11-28,prediction-safe-prior-geographic-translation
+75,SHEPPARTON,owned_outright_share,0.333711248802,2014-11-28,prediction-safe-prior-geographic-translation
+75,SHEPPARTON,separate_house_share,0.881967901829,2014-11-28,prediction-safe-prior-geographic-translation
+75,SHEPPARTON,apartment_share,0.074761189459,2014-11-28,prediction-safe-prior-geographic-translation
+75,SHEPPARTON,age_18_34_share,0.170579824425,2014-11-28,prediction-safe-prior-geographic-translation
+75,SHEPPARTON,age_65_plus_share,0.157158396996,2014-11-28,prediction-safe-prior-geographic-translation
+76,SOUTH BARWON,mortgage_share,0.412772155386,2014-11-28,prediction-safe-prior-geographic-translation
+76,SOUTH BARWON,renter_share,0.188713772059,2014-11-28,prediction-safe-prior-geographic-translation
+76,SOUTH BARWON,owned_outright_share,0.361331500102,2014-11-28,prediction-safe-prior-geographic-translation
+76,SOUTH BARWON,separate_house_share,0.886186442423,2014-11-28,prediction-safe-prior-geographic-translation
+76,SOUTH BARWON,apartment_share,0.075240241476,2014-11-28,prediction-safe-prior-geographic-translation
+76,SOUTH BARWON,age_18_34_share,0.180646370013,2014-11-28,prediction-safe-prior-geographic-translation
+76,SOUTH BARWON,age_65_plus_share,0.150179056031,2014-11-28,prediction-safe-prior-geographic-translation
+77,SOUTH-WEST COAST,mortgage_share,0.334734226745,2014-11-28,prediction-safe-prior-geographic-translation
+77,SOUTH-WEST COAST,renter_share,0.251925097606,2014-11-28,prediction-safe-prior-geographic-translation
+77,SOUTH-WEST COAST,owned_outright_share,0.374351761328,2014-11-28,prediction-safe-prior-geographic-translation
+77,SOUTH-WEST COAST,separate_house_share,0.881089368928,2014-11-28,prediction-safe-prior-geographic-translation
+77,SOUTH-WEST COAST,apartment_share,0.067376083384,2014-11-28,prediction-safe-prior-geographic-translation
+77,SOUTH-WEST COAST,age_18_34_share,0.162619391206,2014-11-28,prediction-safe-prior-geographic-translation
+77,SOUTH-WEST COAST,age_65_plus_share,0.158412866002,2014-11-28,prediction-safe-prior-geographic-translation
+78,ST ALBANS,mortgage_share,0.284106535810,2014-11-28,prediction-safe-prior-geographic-translation
+78,ST ALBANS,renter_share,0.266404950806,2014-11-28,prediction-safe-prior-geographic-translation
+78,ST ALBANS,owned_outright_share,0.392784345631,2014-11-28,prediction-safe-prior-geographic-translation
+78,ST ALBANS,separate_house_share,0.832513112788,2014-11-28,prediction-safe-prior-geographic-translation
+78,ST ALBANS,apartment_share,0.104349810749,2014-11-28,prediction-safe-prior-geographic-translation
+78,ST ALBANS,age_18_34_share,0.247994867859,2014-11-28,prediction-safe-prior-geographic-translation
+78,ST ALBANS,age_65_plus_share,0.140122894560,2014-11-28,prediction-safe-prior-geographic-translation
+79,SUNBURY,mortgage_share,0.463330072249,2014-11-28,prediction-safe-prior-geographic-translation
+79,SUNBURY,renter_share,0.181875535090,2014-11-28,prediction-safe-prior-geographic-translation
+79,SUNBURY,owned_outright_share,0.326457058678,2014-11-28,prediction-safe-prior-geographic-translation
+79,SUNBURY,separate_house_share,0.905361933002,2014-11-28,prediction-safe-prior-geographic-translation
+79,SUNBURY,apartment_share,0.051243829212,2014-11-28,prediction-safe-prior-geographic-translation
+79,SUNBURY,age_18_34_share,0.204264615346,2014-11-28,prediction-safe-prior-geographic-translation
+79,SUNBURY,age_65_plus_share,0.121153996821,2014-11-28,prediction-safe-prior-geographic-translation
+8,BENDIGO WEST,mortgage_share,0.350118142581,2014-11-28,prediction-safe-prior-geographic-translation
+8,BENDIGO WEST,renter_share,0.250314370274,2014-11-28,prediction-safe-prior-geographic-translation
+8,BENDIGO WEST,owned_outright_share,0.359306575490,2014-11-28,prediction-safe-prior-geographic-translation
+8,BENDIGO WEST,separate_house_share,0.907490030627,2014-11-28,prediction-safe-prior-geographic-translation
+8,BENDIGO WEST,apartment_share,0.048912944033,2014-11-28,prediction-safe-prior-geographic-translation
+8,BENDIGO WEST,age_18_34_share,0.173155685350,2014-11-28,prediction-safe-prior-geographic-translation
+8,BENDIGO WEST,age_65_plus_share,0.174429384105,2014-11-28,prediction-safe-prior-geographic-translation
+80,SYDENHAM,mortgage_share,0.547856307220,2014-11-28,prediction-safe-prior-geographic-translation
+80,SYDENHAM,renter_share,0.147184466584,2014-11-28,prediction-safe-prior-geographic-translation
+80,SYDENHAM,owned_outright_share,0.273504108103,2014-11-28,prediction-safe-prior-geographic-translation
+80,SYDENHAM,separate_house_share,0.897080524477,2014-11-28,prediction-safe-prior-geographic-translation
+80,SYDENHAM,apartment_share,0.047127392556,2014-11-28,prediction-safe-prior-geographic-translation
+80,SYDENHAM,age_18_34_share,0.223659706165,2014-11-28,prediction-safe-prior-geographic-translation
+80,SYDENHAM,age_65_plus_share,0.060135831735,2014-11-28,prediction-safe-prior-geographic-translation
+81,TARNEIT,mortgage_share,0.528962533317,2014-11-28,prediction-safe-prior-geographic-translation
+81,TARNEIT,renter_share,0.237735843967,2014-11-28,prediction-safe-prior-geographic-translation
+81,TARNEIT,owned_outright_share,0.203849026561,2014-11-28,prediction-safe-prior-geographic-translation
+81,TARNEIT,separate_house_share,0.918947013648,2014-11-28,prediction-safe-prior-geographic-translation
+81,TARNEIT,apartment_share,0.027850521043,2014-11-28,prediction-safe-prior-geographic-translation
+81,TARNEIT,age_18_34_share,0.266477050972,2014-11-28,prediction-safe-prior-geographic-translation
+81,TARNEIT,age_65_plus_share,0.054449332455,2014-11-28,prediction-safe-prior-geographic-translation
+82,THOMASTOWN,mortgage_share,0.304404206776,2014-11-28,prediction-safe-prior-geographic-translation
+82,THOMASTOWN,renter_share,0.210071821160,2014-11-28,prediction-safe-prior-geographic-translation
+82,THOMASTOWN,owned_outright_share,0.438965820262,2014-11-28,prediction-safe-prior-geographic-translation
+82,THOMASTOWN,separate_house_share,0.903853110375,2014-11-28,prediction-safe-prior-geographic-translation
+82,THOMASTOWN,apartment_share,0.042825738512,2014-11-28,prediction-safe-prior-geographic-translation
+82,THOMASTOWN,age_18_34_share,0.231908677339,2014-11-28,prediction-safe-prior-geographic-translation
+82,THOMASTOWN,age_65_plus_share,0.159315346340,2014-11-28,prediction-safe-prior-geographic-translation
+83,WARRANDYTE,mortgage_share,0.390723941854,2014-11-28,prediction-safe-prior-geographic-translation
+83,WARRANDYTE,renter_share,0.133347932583,2014-11-28,prediction-safe-prior-geographic-translation
+83,WARRANDYTE,owned_outright_share,0.451053381266,2014-11-28,prediction-safe-prior-geographic-translation
+83,WARRANDYTE,separate_house_share,0.874912196484,2014-11-28,prediction-safe-prior-geographic-translation
+83,WARRANDYTE,apartment_share,0.033545173986,2014-11-28,prediction-safe-prior-geographic-translation
+83,WARRANDYTE,age_18_34_share,0.160224887020,2014-11-28,prediction-safe-prior-geographic-translation
+83,WARRANDYTE,age_65_plus_share,0.154949894911,2014-11-28,prediction-safe-prior-geographic-translation
+84,WENDOUREE,mortgage_share,0.326107843427,2014-11-28,prediction-safe-prior-geographic-translation
+84,WENDOUREE,renter_share,0.292240072199,2014-11-28,prediction-safe-prior-geographic-translation
+84,WENDOUREE,owned_outright_share,0.342327694384,2014-11-28,prediction-safe-prior-geographic-translation
+84,WENDOUREE,separate_house_share,0.857713094589,2014-11-28,prediction-safe-prior-geographic-translation
+84,WENDOUREE,apartment_share,0.071243860467,2014-11-28,prediction-safe-prior-geographic-translation
+84,WENDOUREE,age_18_34_share,0.188858445863,2014-11-28,prediction-safe-prior-geographic-translation
+84,WENDOUREE,age_65_plus_share,0.161935993874,2014-11-28,prediction-safe-prior-geographic-translation
+85,WERRIBEE,mortgage_share,0.445906527516,2014-11-28,prediction-safe-prior-geographic-translation
+85,WERRIBEE,renter_share,0.253696805353,2014-11-28,prediction-safe-prior-geographic-translation
+85,WERRIBEE,owned_outright_share,0.264805428196,2014-11-28,prediction-safe-prior-geographic-translation
+85,WERRIBEE,separate_house_share,0.881521369828,2014-11-28,prediction-safe-prior-geographic-translation
+85,WERRIBEE,apartment_share,0.060065868926,2014-11-28,prediction-safe-prior-geographic-translation
+85,WERRIBEE,age_18_34_share,0.226174057902,2014-11-28,prediction-safe-prior-geographic-translation
+85,WERRIBEE,age_65_plus_share,0.104110041638,2014-11-28,prediction-safe-prior-geographic-translation
+86,WILLIAMSTOWN,mortgage_share,0.343439779418,2014-11-28,prediction-safe-prior-geographic-translation
+86,WILLIAMSTOWN,renter_share,0.291525989332,2014-11-28,prediction-safe-prior-geographic-translation
+86,WILLIAMSTOWN,owned_outright_share,0.330568603777,2014-11-28,prediction-safe-prior-geographic-translation
+86,WILLIAMSTOWN,separate_house_share,0.711762551586,2014-11-28,prediction-safe-prior-geographic-translation
+86,WILLIAMSTOWN,apartment_share,0.118454278275,2014-11-28,prediction-safe-prior-geographic-translation
+86,WILLIAMSTOWN,age_18_34_share,0.214052441236,2014-11-28,prediction-safe-prior-geographic-translation
+86,WILLIAMSTOWN,age_65_plus_share,0.132827568876,2014-11-28,prediction-safe-prior-geographic-translation
+87,YAN YEAN,mortgage_share,0.593781692212,2014-11-28,prediction-safe-prior-geographic-translation
+87,YAN YEAN,renter_share,0.125128702987,2014-11-28,prediction-safe-prior-geographic-translation
+87,YAN YEAN,owned_outright_share,0.258448319735,2014-11-28,prediction-safe-prior-geographic-translation
+87,YAN YEAN,separate_house_share,0.954329832028,2014-11-28,prediction-safe-prior-geographic-translation
+87,YAN YEAN,apartment_share,0.014639571187,2014-11-28,prediction-safe-prior-geographic-translation
+87,YAN YEAN,age_18_34_share,0.206967771400,2014-11-28,prediction-safe-prior-geographic-translation
+87,YAN YEAN,age_65_plus_share,0.074575445041,2014-11-28,prediction-safe-prior-geographic-translation
+88,YUROKE,mortgage_share,0.596883836556,2014-11-28,prediction-safe-prior-geographic-translation
+88,YUROKE,renter_share,0.144017256388,2014-11-28,prediction-safe-prior-geographic-translation
+88,YUROKE,owned_outright_share,0.226645889265,2014-11-28,prediction-safe-prior-geographic-translation
+88,YUROKE,separate_house_share,0.909277340883,2014-11-28,prediction-safe-prior-geographic-translation
+88,YUROKE,apartment_share,0.006519162415,2014-11-28,prediction-safe-prior-geographic-translation
+88,YUROKE,age_18_34_share,0.233543052513,2014-11-28,prediction-safe-prior-geographic-translation
+88,YUROKE,age_65_plus_share,0.053895860758,2014-11-28,prediction-safe-prior-geographic-translation
+9,BENTLEIGH,mortgage_share,0.355117819100,2014-11-28,prediction-safe-prior-geographic-translation
+9,BENTLEIGH,renter_share,0.230049510252,2014-11-28,prediction-safe-prior-geographic-translation
+9,BENTLEIGH,owned_outright_share,0.380806863090,2014-11-28,prediction-safe-prior-geographic-translation
+9,BENTLEIGH,separate_house_share,0.761439733788,2014-11-28,prediction-safe-prior-geographic-translation
+9,BENTLEIGH,apartment_share,0.100712934407,2014-11-28,prediction-safe-prior-geographic-translation
+9,BENTLEIGH,age_18_34_share,0.162973142740,2014-11-28,prediction-safe-prior-geographic-translation
+9,BENTLEIGH,age_65_plus_share,0.159412241511,2014-11-28,prediction-safe-prior-geographic-translation
