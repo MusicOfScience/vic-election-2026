@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "preregistered-sparse-poll-rule",
+  "purpose": "Define common polling-input sufficiency before any complete historical replay score is examined.",
+  "ruleAppliesTo": "all frozen Victorian cycles",
+  "minimumEligibleObservations": 3,
+  "minimumIndependentSourceFamilies": 2,
+  "independenceDefinition": "Distinct pollster or commissioning/source family after duplicate and overlapping-sample review; repeated releases from one family do not satisfy source diversity.",
+  "weighting": {
+    "age": "existing exponential half-life from the frozen polling model",
+    "sample": "existing effective-sample weighting capped by the frozen model",
+    "sparseUncertainty": "inflate the polling-state covariance when eligible observations or independent source families are below the full-information reference; never fabricate a share",
+    "missingObservation": "a missing party category remains missing or grouped residual, never numeric zero"
+  },
+  "noEligibleObservation": "A broad pre-registered prior may be constructed for diagnostic purposes, but the cycle remains non-runnable until the minimum evidence rule passes.",
+  "decisionBeforeScores": true,
+  "scoreDependentTuning": false,
+  "currentImpact": {
+    "forecast2026": false,
+    "productionAuthorisation": false
+  }
+}

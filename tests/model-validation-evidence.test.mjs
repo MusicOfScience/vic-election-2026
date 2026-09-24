@@ -4,6 +4,7 @@ import test from "node:test";
 import { validateModelValidationEvidence } from "../scripts/validate-model-validation-evidence.mjs";
 import { validateHistoricalPollReusePolicy } from "../scripts/validate-historical-poll-reuse-policy.mjs";
 import { validateHistoricalPartyFamilyAvailability } from "../scripts/validate-historical-party-family-availability.mjs";
+import { validateHistoricalReplayInputReadiness } from "../scripts/validate-historical-replay-input-readiness.mjs";
 
 const contract = JSON.parse(readFileSync(new URL("../metadata/model-validation-evidence-contract.json", import.meta.url), "utf8"));
 const inventory = JSON.parse(readFileSync(new URL("../metadata/model-validation-evidence-inventory.json", import.meta.url), "utf8"));
@@ -39,7 +40,7 @@ test("separates historical poll provenance, methodology and reuse basis", () => 
   assert.deepEqual(validateHistoricalPollReusePolicy(), {
     policyClasses: 7,
     adjudicatedCases: 1,
-    replayEligibleCases: 0,
+    replayEligibleCases: 1,
   });
 });
 
@@ -48,6 +49,14 @@ test("derives cycle-aware Assembly party availability from candidate evidence", 
     cycles: 4,
     verifiedFromCandidateEvidence: true,
     historicalOnpInactiveThrough2018: true,
+  });
+});
+
+test("records owner-approved replay input without making a cycle runnable", () => {
+  assert.deepEqual(validateHistoricalReplayInputReadiness(), {
+    cycles: 4,
+    approvedReplayObservations: 3,
+    runnableCycles: 0,
   });
 });
 

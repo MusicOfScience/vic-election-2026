@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedAt": "2026-09-24",
-  "status": "preregistered-protocol-thresholds-pending",
+  "status": "preregistered-thresholds-fixed",
   "purpose": "Define how the four frozen Victorian election cycles will be evaluated before any complete-model scores are interpreted or a production gate can open.",
   "unitOfReplication": "election-cycle",
   "cycles": [
@@ -40,6 +40,23 @@
       "80-percent-interval-coverage",
       "final-pair-calibration"
     ]
+  },
+  "thresholds": {
+    "rationale": "Conservative pre-score tolerances designed for four cycle-level replications: vote and seat tolerances are practical error bands, while probability criteria require non-extreme calibration without treating districts as independent elections.",
+    "statewideVoteError": {"cycleMeanAbsoluteErrorMaxPercentagePoints": 4.0, "cycleMaximumAbsoluteErrorMaxPercentagePoints": 7.0},
+    "seatWinner": {"cycleAccuracyMin": 0.70, "aggregateAccuracyMin": 0.75},
+    "seatCount": {"cycleAbsoluteErrorMaxSeats": 8, "cycleMeanAbsoluteErrorMaxSeats": 5},
+    "brierScore": {"cycleMaximum": 0.25, "aggregateMaximum": 0.22},
+    "logLoss": {"cycleMaximum": 1.20, "aggregateMaximum": 1.00},
+    "reliability": {"maximumAbsoluteBinGap": 0.10, "minimumPopulatedBins": 3},
+    "calibrationSlope": {"minimum": 0.75, "maximum": 1.25},
+    "calibrationIntercept": {"absoluteMaximum": 0.10},
+    "intervalCoverage80": {"cycleMinimum": 0.70, "cycleMaximum": 0.90},
+    "finalPairCalibration": {"maximumAbsoluteGap": 0.10, "minimumPopulatedPairs": 3},
+    "regionalError": {"cycleMeanAbsoluteErrorMaxPercentagePoints": 6.0, "cycleMaximumAbsoluteErrorMaxPercentagePoints": 10.0},
+    "contestType": {"maximumAbsoluteDifferenceFromAggregatePercentagePoints": 5.0, "minimumContestsPerType": 10},
+    "baselineComparison": {"complexModelMayNotBeDeclaredAcceptedIfAggregateBrierOrLogLossExceedsAllRequiredBaselinesByMoreThan": 0.02, "complexModelNeedNotWinEveryMetric": true},
+    "dependence": {"primaryUnit": "cycle", "districtsAreNotIndependentReplications": true, "noAutomaticProductionOpening": true}
   },
   "decisionRules": {
     "thresholdsMustBeFixedBeforeFirstCompleteReplay": true,

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
 import { validateHistoricalPollReusePolicy } from "./validate-historical-poll-reuse-policy.mjs";
 import { validateHistoricalPartyFamilyAvailability } from "./validate-historical-party-family-availability.mjs";
+import { validateHistoricalReplayInputReadiness } from "./validate-historical-replay-input-readiness.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -43,6 +44,7 @@ function assert(condition, message) {
 export function validateModelValidationEvidence() {
   validateHistoricalPollReusePolicy();
   validateHistoricalPartyFamilyAvailability();
+  validateHistoricalReplayInputReadiness();
   const contract = readJson("metadata/model-validation-evidence-contract.json");
   const acceptance = readJson("metadata/historical-validation-acceptance-criteria.json");
   const inventory = readJson("metadata/model-validation-evidence-inventory.json");
@@ -58,12 +60,14 @@ export function validateModelValidationEvidence() {
   assert(inventory.summary.partial === (statusCounts.partial ?? 0), "partial summary count is stale");
   assert(inventory.summary.missing === (statusCounts.missing ?? 0), "missing summary count is stale");
   assert(inventory.summary.total === inventory.components.length, "total summary count is stale");
-  assert(acceptance.status === "preregistered-protocol-thresholds-pending", "historical acceptance protocol must remain preregistered until thresholds are fixed");
+  assert(acceptance.status === "preregistered-thresholds-fixed", "historical acceptance protocol thresholds must be fixed before scoring");
   assert(acceptance.cycles.length === 4 && new Set(acceptance.cycles).size === 4, "acceptance protocol must cover four unique cycles");
   assert(acceptance.dependencePolicy.cyclesAreNotIndependent === true, "acceptance protocol must cluster dependence by election cycle");
   assert(acceptance.decisionRules.thresholdsMustBeFixedBeforeFirstCompleteReplay === true, "acceptance thresholds must precede complete replay scoring");
   assert(acceptance.decisionRules.thresholdsMayNotBeChosenAfterViewingScores === true, "acceptance thresholds cannot be score-driven");
   assert(acceptance.decisionRules.productionGateOpensAutomatically === false, "acceptance protocol cannot open production automatically");
+  assert(acceptance.thresholds?.dependence?.primaryUnit === "cycle" && acceptance.thresholds.dependence.districtsAreNotIndependentReplications === true, "acceptance thresholds must use cycle-level dependence");
+  assert(acceptance.thresholds.baselineComparison.complexModelNeedNotWinEveryMetric === true, "acceptance thresholds must not require unjustified metric dominance");
 
   const acquisition = readJson("metadata/historical-source-acquisition-plan.json");
   const publicAudit = readJson("metadata/historical-public-source-audit.json");
@@ -520,8 +524,8 @@ export function validateModelValidationEvidence() {
     ["vic_la_2022", ["2022-11-26", "2022-11-25"]],
   ]);
   const expectedOutputs = new Set([
-    "statewide-five-party-primary-votes",
-    "district-five-party-primary-votes",
+    "statewide-canonical-primary-votes-by-active-family",
+    "district-canonical-primary-votes-by-ballot-active-family",
     "district-final-two-pairs",
     "district-winners-and-probabilities",
     "assembly-seat-count-distribution",
@@ -529,6 +533,7 @@ export function validateModelValidationEvidence() {
   ]);
   assert(historicalConfigs.status === "partial-unrunnable", "historical configurations must remain explicitly partial and unrunnable");
   assert(historicalConfigs.productionCompatible === false, "historical configurations cannot authorise production");
+  assert(historicalConfigs.partyFamilyPolicy?.districtSpecificAvailability === true, "historical configurations must use cycle-aware ballot families");
   assert(historicalConfigs.cycles.length === expectedCycleDates.size, "expected four frozen historical configurations");
   assert(new Set(historicalConfigs.cycles.map((cycle) => cycle.id)).size === expectedCycleDates.size, "historical cycle ids must be unique");
   assert(new Set(historicalConfigs.cycles.map((cycle) => cycle.seed)).size === expectedCycleDates.size, "historical seeds must be unique");

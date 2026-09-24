@@ -41,10 +41,10 @@
     "passed": true,
     "reason": "The 2018 Assembly ballot universe has no One Nation candidates. The report explicitly supplies ALP, Coalition, Greens and a grouped residual; the residual is retained and not decomposed. No unreported family is converted to zero."
   },
-  "reuseBasisGate": {"passed": true, "manualReviewRequired": true, "legalDetermination": false},
-  "replayEligible": false,
+  "reuseBasisGate": {"passed": true, "manualReviewRequired": false, "legalDetermination": false, "ownerReviewId": "historical-poll-review-2018-essential-2026-09-24"},
+  "replayEligible": true,
   "modelInputAdmissible": true,
-  "decision": "awaiting-manual-reuse-approval",
+  "decision": "approved-for-historical-replay",
   "notFromQuarantinedDataset": true,
-  "nextEvidenceNeeded": "Manual review of the independently reconstructed factual transcription, followed by the existing governed historical-input promotion path."
+  "nextEvidenceNeeded": "No further reuse-basis action for this case; cycle-level polling sufficiency and other replay inputs remain separate gates."
 }
