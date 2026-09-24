@@ -6,6 +6,7 @@ Updated: 2026-09-25
 
 - Branch: `codex/promote-2022-polls-and-local-surfaces`
 - Base commit: `52df20c` (PR #101 merged; remote main synchronised). Focus cycle remains pre-score `vic_la_2022`.
+- Current batch commit: `71b13ce`; PR #102 is open for review: https://github.com/MusicOfScience/vic-election-2026/pull/102
 - V1 evidence is immutable: prediction `424552f6…`, score `fe6734e2…`; winner accuracy 62.5%, final-pair accuracy 85.23%, primary MAE 8.33pp, complete-ensemble ALP-event Brier/log loss 0.23819/0.67015 versus uniform-swing 0.18139/0.54935. Assembly seat scoring was invalid and Council scoring deferred.
 - Confirmed v1 defects: historical `Coalition/Greens/Other/Independent` labels were zero-filled against internal names, collapsing local baselines; chamber seats were aggregated across simulations; Council used a deterministic top-two 3/2 shortcut.
 - V2 adds a governed family mapping, varied local vectors, per-simulation Assembly/Council seat draws and explicit parity/version manifests. The 2018 v2 output is post-hoc diagnostic/non-certifying and does not replace v1.
