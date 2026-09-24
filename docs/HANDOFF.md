@@ -17,7 +17,7 @@ Updated: 2026-09-25
 - Validation: winner accuracy 87.36%, district primary MAE 4.27pp, ALP-event Brier 0.09268, ALP-event log loss 0.68460, multiclass Brier 0.19075, multiclass log loss 1.76205 (misses the fixed 1.20 cycle threshold). Assembly mean-seat absolute error 2.86; frozen 80% chamber interval coverage 0.80. Council regional primary metric is unavailable because no regional primary estimates were frozen. Complete backtest, calibration and production authorisation remain closed.
 - 2014 preparation: three archived first-party Roy Morgan observations (1 Oct, 27 Oct and 10 Nov) have complete structured categories, samples, fieldwork and TPP; automated gates pass but all await explicit owner approval. Bounded Essential/Newspoll checks remain methodologically incomplete and are recorded in `metadata/historical-poll-2014-second-family-assessment.json`; no second family is promoted. The 2010→2014 outcome-transition file remains scoring-only and forbidden in prediction.
 - Local/Council state: the 2010 Assembly family baseline and 2010 Council evidence exist, but the 2014 crosswalk surface is absent from the clone, the notional 2010-on-2014 TPP provenance is not independently proven, and 2010→2014 Council region continuity is unaudited. 2014 remains blocked and no prediction was generated.
-- Publication: this preparation batch will be one focused reviewable PR; do not merge or deploy manually.
+- Publication: PR #107 (https://github.com/MusicOfScience/vic-election-2026/pull/107) is open for review; do not merge or deploy manually.
 - Preserved user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` remain untracked and untouched.
 
 ## Remaining work and blockers

@@ -3,7 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/prepare-2014-holdout`
 Base: `602c7480` (PR #106 merged)
-Current batch: select and prepare the next certifying v2 holdout using pre-score evidence completeness only.
+Current batch: select and prepare the next certifying v2 holdout using pre-score evidence completeness only. PR #107 is open for review.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
