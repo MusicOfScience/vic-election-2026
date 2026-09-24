@@ -1,8 +1,8 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-24
-Branch: `codex/prod-1.0-completion`
-Base: `a32b1e9` (`origin/main`, PR #73 merged)
+Branch: `codex/redbridge-review-dossier`
+Base: `77dbf42` (`origin/main`, PR #80 merged)
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -11,7 +11,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 | Source integrity and deterministic artefacts | Complete | None currently evidenced | Preserve fingerprints and generated-output checks | `npm run data:provenance:check`, `npm run release:readiness:check` | Complete — preserve |
 | Assembly primary and Council evidence | Complete | None currently evidenced | Preserve official VEC evidence, rule versions and Narracan separation | `npm run validation:evidence`, `npm run psephology:validate` | Complete — preserve |
 | Candidate coverage and quarantine | Complete | VEC nomination status remains separate | Use controlled review for changes | `npm run candidates:validate`, `npm run candidates:review:check` | Complete — preserve |
-| Current critical-source freshness | Blocked | Model-eligible poll is stale; newer staged evidence is deliberately held | Obtain and review a legitimate current Victorian source, then run freshness gates | `npm run release:readiness:check`, `npm run sources:live` | Open blocker |
+| Current critical-source freshness | Blocked | 15 September RedBridge/Accent report is captured and dossier-recommended for evidence acceptance, but remains quarantined pending project-owner review and separate model-eligibility checks | Record explicit owner decision; admit only if independence and comparability checks pass | `npm run release:readiness:check`, `node scripts/build-poll-promotion-audit.mjs --as-of 2026-09-24` | Open blocker — review decision required |
 | Historical poll vintages | Partial | 64/200 matched; 136 residual; no reuse authority | Continue finite first-party reconstruction where it materially improves replay | `npm run validation:evidence` | Open blocker |
 | Cutoff-safe ballot and incumbency | Partial | Pre-cutoff candidate timing and aliases unresolved | Build cycle-scoped, leakage-safe slate evidence | `npm run validation:evidence` | Open blocker |
 | Preference flows and final pairs | Partial | 39 indicative distributions lack complete replay evidence | Establish defensible cycle-specific final-pair and transfer inputs | `npm run validation:evidence` | Open blocker |
@@ -23,10 +23,10 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 
 ## Current verified state
 
-- Release readiness: `experimental-blocked`, 4/9 gates passing at the 15 September registry assessment.
+- Release readiness: `experimental-blocked`, 4/9 gates passing at the 24 September assessment; RedBridge freshness evidence is resolved into a dossier but not into model inputs.
 - Blocking gates: critical source freshness, unresolved newer model evidence, complete forecast backtest, probability calibration and production authorisation.
-- Forecast outputs and model configuration are unchanged by this ledger batch.
+- Forecast outputs and model configuration are unchanged by this ledger batch; runnable historical cycles remain 0/4.
 - Demographic challenger remains rejected at central weight `0`.
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
 
-Exact next action: review the staged 15 September RedBridge report through the existing evidence workflow, then inspect the historical data/configuration modules and implement the smallest reproducible replay slice that can produce held-out complete-model metrics without importing outcome data into prediction inputs.
+Exact next action: obtain the explicit project-owner decision for the RedBridge dossier; if accepted, resolve sample-family independence before any separate model-eligibility decision. Then return to the first evidence-complete historical cycle without importing outcomes into prediction inputs.
