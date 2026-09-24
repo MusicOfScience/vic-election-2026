@@ -20,7 +20,7 @@
   },
   "criteriaPath": "metadata/historical-validation-acceptance-criteria.json",
   "criteriaSha256": "0fe66e8080dfcf48d6b9bab7c7568b8dfdee825a239e6ff9cbffd8a39ae3d22f",
-  "scoringCommit": "baee9e2ac098c8929fc2266db023f74568aa6596",
+  "scoringCommit": "adb5b7bfb0125cb434f1951cc1487dc196af0d2e",
   "outcomeBoundaryCrossedAfterPredictionAndComparatorVerification": true,
   "forecastRegenerated": false,
   "scorePath": "model/data/validation/historical-replays/vic_la_2022-v2-score.json",
