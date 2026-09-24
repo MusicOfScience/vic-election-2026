@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
+import { validateHistoricalPollReusePolicy } from "./validate-historical-poll-reuse-policy.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -39,6 +40,7 @@ function assert(condition, message) {
 }
 
 export function validateModelValidationEvidence() {
+  validateHistoricalPollReusePolicy();
   const contract = readJson("metadata/model-validation-evidence-contract.json");
   const acceptance = readJson("metadata/historical-validation-acceptance-criteria.json");
   const inventory = readJson("metadata/model-validation-evidence-inventory.json");

@@ -1,8 +1,8 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-24
-Branch: `codex/redbridge-review-dossier`
-Base: `77dbf42` (`origin/main`, PR #80 merged)
+Branch: `codex/historical-poll-reuse-basis`
+Base: `3962559` (`origin/main`, PR #92 merged)
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -12,7 +12,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 | Assembly primary and Council evidence | Complete | None currently evidenced | Preserve official VEC evidence, rule versions and Narracan separation | `npm run validation:evidence`, `npm run psephology:validate` | Complete — preserve |
 | Candidate coverage and quarantine | Complete | VEC nomination status remains separate | Use controlled review for changes | `npm run candidates:validate`, `npm run candidates:review:check` | Complete — preserve |
 | Current critical-source freshness | Blocked | 15 September RedBridge/Accent report is captured and dossier-recommended for evidence acceptance, but remains quarantined pending project-owner review and separate model-eligibility checks | Record explicit owner decision; admit only if independence and comparability checks pass | `npm run release:readiness:check`, `node scripts/build-poll-promotion-audit.mjs --as-of 2026-09-24` | Open blocker — review decision required |
-| Historical poll vintages | Partial | 64/200 matched; 136 residual; no reuse authority | Continue finite first-party reconstruction where it materially improves replay | `npm run validation:evidence` | Open blocker |
+| Historical poll vintages | Partial | 64/200 matched; 136 residual; legacy queue remains quarantined; three-gate policy now separates provenance, methodological adequacy and reuse basis | Continue finite first-party reconstruction; adjudicate independent factual records under the policy | `npm run validation:evidence`, `node scripts/validate-historical-poll-reuse-policy.mjs` | Open blocker |
 | Cutoff-safe ballot and incumbency | Partial | Official VEC 2010, 2014, 2018 and 2022 material now fixes nomination and post-draw publication timing frameworks, but candidate-specific acceptance, archived publication timing and aliases remain unresolved | Build cycle-scoped, leakage-safe slate evidence | `npm run validation:evidence` | Open blocker |
 | Preference flows and final pairs | Partial | 39 indicative 2022 distributions remain outcome evidence; the walk-forward prior builder is now wired into future replay execution, but no source-party prior is forecast-ready | Establish walk-forward preference priors and separate final-pair scoring outcomes | `npm run validation:evidence`, guarded replay CLI, Python prior-builder tests | Open blocker |
 | Runnable frozen historical configurations | Partial | Four specifications exist but are deliberately unrunnable | Complete frozen inputs and scoring-only outcome separation; guarded runner now freezes prediction before emitting scoring metrics | `npm run validation:replay-contract`, `PYTHONPATH=model/src python3 -m vicforecast.historical_replay vic_la_2022` | Open blocker — runner guarded |
@@ -28,5 +28,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - Forecast outputs and model configuration are unchanged by this ledger batch; runnable historical cycles remain 0/4.
 - Demographic challenger remains rejected at central weight `0`.
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
+- Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately. The 2018 Essential 2015-Q4 case passes provenance and reuse-basis review, but remains blocked on methodological adequacy because the complete model requires an explicit ONP share.
+- Replay-eligible historical observations remain 0 and runnable cycles remain 0/4. The concrete case is not a forecast input and does not change readiness or authorisation.
 
-Exact next action: obtain the explicit project-owner decision for the RedBridge dossier; if accepted, resolve sample-family independence before any separate model-eligibility decision. In parallel, feed only independently reconstructed earlier-cycle evidence into the replay prior; otherwise retain its broad fallback and keep replay blocked.
+Exact next action: reconstruct a contemporaneous five-family historical poll (or register a common sparse-poll uncertainty rule) so one frozen cycle can pass methodological adequacy without fabricating ONP values; keep the policy's manual review gate separate from licence metadata.

@@ -4,20 +4,19 @@ Updated: 2026-09-24
 
 ## Current batch
 
-- Branch: `codex/preregister-validation-criteria`
-- Base commit: `c4e8922` (PR #91 merged; remote main verified on 24 September). This batch adds a version-controlled historical validation acceptance protocol.
-- Completed: the protocol fixes the four-cycle unit of replication, cycle-clustered dependence treatment, required baselines and metrics, and forbids score-driven thresholds or automatic production opening. No replay scores exist yet and the 2026 forecast remains unchanged.
-- Previous batch retained: `vicforecast.historical_replay.run_historical_replay` remains fail-closed, enforces publication cutoffs and returns structured blockers for all four currently unrunnable cycles. No replay or gate is opened.
-- Safeguards: RedBridge remains quarantined and model-ineligible pending explicit owner review; no poll rows, forecast outputs, candidate data, historical outcomes or authorisation gates changed. Runnable historical cycles remain 0/4.
-- Validation: JSON/acceptance validation and release checks pass; no replay scores were examined. Forecast outputs and readiness gates are unchanged.
+- Branch: `codex/historical-poll-reuse-basis`
+- Base commit: `3962559` (PR #92 merged; remote main verified on 24 September). This batch separates historical poll provenance, methodological adequacy and reuse basis without importing the quarantined candidate dataset.
+- Completed: added a machine-readable seven-class reuse policy, a conservative 2018 Essential case adjudication, and validators/tests. The case is independently reconstructed from a first-party PDF, public before the 2018 cutoff, and stores only required structured facts; it remains blocked because the complete five-family model requires an explicit ONP share.
+- Safeguards: the legacy 200-row candidate queue remains quarantined and replay-ineligible; no poll rows, forecast outputs, historical outcomes or authorisation gates changed. Runnable historical cycles remain 0/4.
+- Validation: policy validator and focused JavaScript evidence tests are added; broader checks are pending this batch. Python replay remains fail-closed.
 - Publication: this batch is local and uncommitted. The next operation is a reviewable commit and PR; do not merge or deploy manually.
 - Preserved user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` remain untracked and untouched.
 
 ## Remaining work and blockers
 
 - Continue the finite historical polling queue with Galaxy and Newspoll2 after this batch; 32 Newspoll matches remain unresolved. Several publisher PDF retrieval attempts returned 403 and the tested archive alternatives were empty. Do not repeat unchanged requests or treat all discovered links as individually tested.
-- Historical polling reuse authority is unestablished. No owner contact is required yet; complete the existing first-party reconstruction before escalating residual gaps.
+- Historical polling still has 64/200 source-matched rows and 0 replay-eligible legacy rows. The new policy means null `declaredReuseLicence` is not, by itself, a universal finding against an independently reconstructed factual observation; provenance, model fields and manual reuse review remain separate gates.
 - Newer model-eligible polling is still needed for freshness. Do not advance registry dates without complete evidence.
 - Ballot availability, alias-aware incumbency, final-pair and preference evidence remain prerequisites for leakage-safe complete-model replay and calibration. Keep Narracan's January 2023 contest separate.
 
-Exact next action: run the full JavaScript checks, commit this acceptance-protocol batch, and publish one reviewable PR. Before the first complete replay score is interpreted, register performance thresholds; RedBridge owner acceptance remains separate.
+Exact next action: run the full JavaScript checks, then identify a contemporaneous five-family poll or preregister a sparse-poll uncertainty rule before admitting any historical poll to replay. RedBridge owner acceptance and production authorisation remain separate.
