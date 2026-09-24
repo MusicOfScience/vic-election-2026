@@ -62,3 +62,17 @@ test("explicit hold or defer decisions resolve newer evidence without model admi
     },
   });
 });
+
+test("does not treat evidence published after the assessment date as available", () => {
+  const report = buildEvidenceFreshness({
+    modelPolls: [{ poll_id: "old", pollster: "Old", publication_date: "2026-08-08", model_eligible: "True" }],
+    acceptedPolls: [],
+    stagedPolls: [{ id: "future", pollster: "Future", publicationDate: "2026-09-15", fieldworkEnd: "2026-09-14" }],
+    reviewDecisions: [],
+    asOf: "2026-08-28",
+  });
+  assert.equal(report.stagedEvidence, null);
+  assert.equal(report.reviewResolution.stagedRecords, 0);
+  assert.equal(report.newerEvidenceAwaitingReview, false);
+  assert.equal(report.newestEvidenceDate, null);
+});

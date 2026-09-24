@@ -9,10 +9,11 @@ export const releaseReadiness = {
     "automaticProductionPublish": false
   },
   "summary": {
-    "passedRequiredGates": 5,
+    "passedRequiredGates": 4,
     "requiredGateCount": 9,
     "blockingGateIds": [
       "criticalSourceFreshness",
+      "modelInputFreshness",
       "completeForecastBacktest",
       "probabilityCalibration",
       "productionAuthorisation"
@@ -28,7 +29,7 @@ export const releaseReadiness = {
       "label": "Critical sources are within age policy"
     },
     "modelInputFreshness": {
-      "passed": true,
+      "passed": false,
       "label": "Newer reviewed evidence is resolved into or excluded from model inputs"
     },
     "deterministicOutputs": {
@@ -114,17 +115,17 @@ export const releaseReadiness = {
       "status": "human-reviewed-not-necessarily-model-eligible"
     },
     "stagedEvidence": {
-      "latestPublicationDate": "2026-08-21",
-      "pollster": "Resolve Strategic",
-      "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
-      "status": "quarantined-awaiting-review",
-      "sourceTier": "reputable_secondary",
-      "verificationStatus": "corroborated-secondary-awaiting-primary"
+      "latestPublicationDate": "2026-09-15",
+      "pollster": "RedBridge / Accent Research",
+      "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+      "status": "quarantined-awaiting-dossier",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-report-captured-awaiting-human-review"
     },
     "reviewResolution": {
-      "stagedRecords": 7,
+      "stagedRecords": 8,
       "resolvedRecords": 7,
-      "unresolvedRecords": 0,
+      "unresolvedRecords": 1,
       "latestResolvedEvidence": {
         "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
         "pollster": "Resolve Strategic",
@@ -132,8 +133,8 @@ export const releaseReadiness = {
         "decision": "hold"
       }
     },
-    "newestEvidenceDate": "2026-08-21",
-    "newerEvidenceAwaitingReview": false,
+    "newestEvidenceDate": "2026-09-15",
+    "newerEvidenceAwaitingReview": true,
     "newerEvidenceExcludedByReview": true,
     "modelFreshnessUnchangedByStagedEvidence": true
   },

@@ -6,7 +6,23 @@ import { resolve } from "node:path";
 import { auditPollPromotion, proposedEstimateRows } from "../scripts/build-poll-promotion-audit.mjs";
 
 const primary = JSON.parse(readFileSync(resolve("metadata/primary-source-evidence-2026.json"), "utf8"));
-const redbridge = primary.records[0];
+const redbridge = primary.records.find((record) => record.proposedModelPollId === "redbridge_accent_2026-08");
+
+test("September RedBridge report is captured as fresh primary evidence but remains quarantined", () => {
+  const september = primary.records.find((record) => record.proposedModelPollId === "redbridge_accent_2026-09");
+  assert.ok(september);
+  assert.equal(september.status, "quarantined-awaiting-dossier");
+  assert.equal(september.automaticPromotion, false);
+  assert.equal(september.fieldworkEnd, "2026-09-14");
+  assert.equal(september.pollPublicationDate, "2026-09-15");
+  assert.equal(september.sampleSize, 2371);
+  assert.equal(september.effectiveSampleSize, 2009);
+  assert.equal(september.publishedVoteIntentionBase, 2160);
+  assert.deepEqual(september.primaryVote, { alp: 24, coalition: 29, oneNation: 25, greens: 15, otherParties: 7 });
+  assert.deepEqual(september.twoPartyPreferred, { alp: 44, coalition: 53, basis: "respondent allocated; published vote-intention base N=2,160" });
+  assert.equal(september.reportSha256, "ba588f8f3cf71b8ee7366dc43c354b6b4e42c42e34dc6c6ee3af8db103dd5ee9");
+  assert.match(september.reviewNotes, /211 respondents/);
+});
 
 test("RedBridge August evidence preserves corrected first-party toplines and remains quarantined", () => {
   assert.equal(redbridge.pollster, "RedBridge / Accent Research");

@@ -3,6 +3,43 @@
   "policy": "Primary-source polling evidence may be staged for review when the publisher supplies sufficient methodology and the reported toplines can be reconciled. Staging never implies human acceptance or model eligibility.",
   "records": [
     {
+      "id": "redbridge-accent-vic-2026-09-14-primary",
+      "sourceId": "redbridge-accent-victoria-state-polls",
+      "status": "quarantined-awaiting-dossier",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "RedBridge / Accent Research",
+      "commissioner": "Australian Financial Review",
+      "fieldworkStart": "2026-09-01",
+      "fieldworkEnd": "2026-09-14",
+      "sampleSize": 2371,
+      "effectiveSampleSize": 2009,
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted across age, gender, education, religion and location; undecided leaner; unresolved respondents excluded from published vote-intention figures",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24,
+        "coalition": 29,
+        "oneNation": 25,
+        "greens": 15,
+        "otherParties": 7
+      },
+      "twoPartyPreferred": {
+        "alp": 44,
+        "coalition": 53,
+        "basis": "respondent allocated; published vote-intention base N=2,160"
+      },
+      "publishedVoteIntentionBase": 2160,
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-september-2026-victorian-state-poll",
+      "reportUrl": "https://6b72024e-077a-44e2-88f5-dc1a0ed81099.usrfiles.com/ugd/b86980_046899eb40cd4f509fc7325fece7440f.pdf",
+      "reportSha256": "ba588f8f3cf71b8ee7366dc43c354b6b4e42c42e34dc6c6ee3af8db103dd5ee9",
+      "pollPublicationDate": "2026-09-15",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-report-captured-awaiting-human-review",
+      "proposedModelPollId": "redbridge_accent_2026-09",
+      "captureMode": "first-party-pollster-report",
+      "reviewNotes": "The pollster page and linked ten-page PDF provide fieldwork, sample, effective sample, vote-intention wording, method and exact rounded toplines. The published vote-intention table excludes 211 respondents from the full N=2,371 sample; retain that distinction. This record is staged only: it has not been accepted or admitted to model inputs, and sample-family independence from the June RedBridge evidence must be reviewed."
+    },
+    {
       "id": "redbridge-accent-vic-2026-08-01-primary",
       "sourceId": "redbridge-accent-victoria-state-polls",
       "status": "quarantined-awaiting-review",
