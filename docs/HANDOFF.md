@@ -4,9 +4,9 @@ Updated: 2026-09-24
 
 ## Current batch
 
-- Branch: `codex/historical-slate-timing`
-- Base commit: `93467fc` (PR #82 merged; remote main verified on 24 September). This batch records a verified official VEC nomination-timing source for the 2022 cycle.
-- Completed: the VEC 2022 candidate handbook is fingerprinted and recorded as timing-framework evidence: party nominations closed 10 November 2022 and independent nominations 11 November 2022. This narrows the slate-timing gap but does not prove candidate-specific acceptance/publication timing.
+- Branch: `codex/historical-slate-publication-timing`
+- Base commit: `d434675` (PR #83 merged; remote main verified on 24 September). This batch adds the VEC district-handbook timing framework for candidate publication after the 2022 ballot draw.
+- Completed: the VEC 2022 district handbook is fingerprinted and records that the ballot draw followed the 11 November nomination close and the website would reflect candidate names shortly after the draw. This narrows the slate-timing gap but does not prove an archived timestamp or candidate-specific acceptance.
 - Previous batch retained: `vicforecast.historical_replay.run_historical_replay` remains fail-closed, enforces publication cutoffs and returns structured blockers for all four currently unrunnable cycles. No replay or gate is opened.
 - Safeguards: RedBridge remains quarantined and model-ineligible pending explicit owner review; no poll rows, forecast outputs, candidate data, historical outcomes or authorisation gates changed. Runnable historical cycles remain 0/4.
 - Validation: `npm run validation:evidence`, JSON parsing and `git diff --check` passed. Forecast outputs and readiness gates are unchanged.
@@ -20,4 +20,4 @@ Updated: 2026-09-24
 - Newer model-eligible polling is still needed for freshness. Do not advance registry dates without complete evidence.
 - Ballot availability, alias-aware incumbency, final-pair and preference evidence remain prerequisites for leakage-safe complete-model replay and calibration. Keep Narracan's January 2023 contest separate.
 
-Exact next action: commit this focused evidence batch, run the required checks, and publish one reviewable PR. Then continue candidate-specific 2022 slate timing and alias evidence; RedBridge owner acceptance remains a separate decision-dependent blocker.
+Exact next action: commit this focused evidence batch, run the required checks, and publish one reviewable PR. Then locate archived candidate-list captures or equivalent primary records for candidate-specific timing; RedBridge owner acceptance remains a separate decision-dependent blocker.
