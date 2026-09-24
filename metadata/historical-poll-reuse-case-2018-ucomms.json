@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2018-ucomms-2018-11-13",
+  "cycleId": "vic_la_2018",
+  "sourceId": "ucomms-reachtel-vic-2018-11-13",
+  "sourceUrl": "https://www.vnpa.org.au/wp-content/uploads/2018/11/Polling-13-Nov-2018.pdf",
+  "sourceSha256": "007cec4f30982d7ef0351537a492c81fc5ebd0402f06cbfd301535e4e12fdfc0",
+  "publicationDate": "2018-11-13",
+  "evidenceAvailableByDate": "2018-11-13",
+  "retrievedAt": "2026-09-24",
+  "sourceTier": "primary_pollster_report",
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "fieldwork": {"date": "2018-11-13", "sampleSize": 1527, "population": "Victorian residents", "mode": "automated telephone survey; random telephone and within-household selection; weighted by gender and age to ABS population"},
+  "reportedPrimaryCategories": {"ALP": 37.6, "LIB_NAT": 35.2, "GRN": 10.2, "INDEPENDENT": 5.7, "OTHER_MINOR": 4.6, "UNDECIDED": 6.7},
+  "reportedTpp": {"ALP": 56, "LIB_NAT": 44, "undecidedAllocation": "report states undecided voters were allocated by follow-up question"},
+  "cycleBallotUniverse": {"activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"], "inactiveFamilies": ["ONP"]},
+  "gates": {"provenance": {"passed": true, "basis": "dated attributable report available before 2018-11-23"}, "methodologicalAdequacy": {"passed": true, "basis": "required primary shares, sample, population, mode and published TPP are present; Independent and Other remain grouped residual categories"}, "reuseBasis": {"passed": true, "manualApprovalRequired": true}},
+  "modelInputAdmissible": true,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "notes": "Structured factual fields only; source prose/layout are not reproduced. Independent and Other minor party shares must not be converted to fabricated ONP support."
+}
