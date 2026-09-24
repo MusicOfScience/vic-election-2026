@@ -9,11 +9,11 @@
   "evidenceAvailableByDate": "2022-11-22",
   "fieldwork": {
     "start": "2022-11-16",
-    "end": "2022-11-20",
-    "dateBasis": "contemporaneous report states Wednesday-to-Sunday fieldwork; calendar dates are recorded without extending beyond the publication context",
+    "end": "2022-11-21",
+    "dateBasis": "contemporaneous report states Wednesday-to-Sunday fieldwork; the later Resolve accuracy table identifies the wave as 16–21 November",
     "sampleSize": 1000,
     "population": "Victorian voters",
-    "mode": "Resolve Political Monitor; mode not specified in the contemporaneous report"
+    "mode": "online / CATI (method corroborated by the pollster's later accuracy table; not inferred from the quarantined lead dataset)"
   },
   "reportedPrimaryCategories": {
     "ALP": 36,
@@ -29,12 +29,14 @@
     "publisherNumericalSourceUrl": "https://www.pollbludger.net/2022/11/22/resolve-strategic-53-47-to-labor-in-victoria/",
     "publisherNumericalSourceSha256": "0f525d0fc67c0fc4c629bc7cc5003ab5fd5d7293e7487538c9755d77f9202628",
     "publisherNumericalEvidenceDate": "2022-11-22",
-    "basis": "The Age establishes the poll identity, primary major-party and Greens values, TPP, sample and fieldwork; contemporaneous Poll Bludger reporting supplies the complete independent/other split and explicitly states the response-category change. No quarantined dataset values were used."
+    "basis": "The Age establishes the poll identity, primary major-party and Greens values, TPP, approximate sample and contemporaneous availability; Poll Bludger supplies the complete independent/other split and explicitly states the response-category change. Resolve's later accuracy table corroborates the 16–21 wave, published sample (1008 versus the contemporaneous rounded 1000) and online/CATI method, but is not used to establish availability. No quarantined dataset values were used.",
+    "methodologyCorroborationUrl": "https://resolvestrategic.com/__static/30820d635d983649d55bde900dfac121/victorianelection-2022-accuracy-75-count%282%29.pdf",
+    "methodologyCorroborationSha256": "bcf9120eb060c2e99fb8b8d15ef3c2e5a6e673640bfa0131b8993f6b28eebdcc"
   },
   "reuseBasis": "independently_reconstructed_factual_observation",
   "gates": {
     "provenance": {"passed": true, "basis": "The Age publication and contemporaneous reporting are before the 2022-11-25 cutoff."},
-    "methodologicalAdequacy": {"passed": true, "basis": "The combined contemporaneous sources provide pollster identity, fieldwork window, sample, primary categories, grouped residual components and TPP; mode is explicitly recorded as not specified rather than inferred."},
+    "methodologicalAdequacy": {"passed": true, "basis": "The combined contemporaneous sources provide pollster identity, fieldwork window, approximate sample, primary categories, grouped residual components and TPP; the later pollster table supplies method corroboration and the exact sample without being used as availability evidence."},
     "reuseBasis": {"passed": true, "manualReviewRequired": true}
   },
   "ownerReviewStatus": "awaiting-project-owner-approval",
