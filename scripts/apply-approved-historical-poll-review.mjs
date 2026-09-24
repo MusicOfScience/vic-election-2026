@@ -44,14 +44,44 @@ export function buildApprovedHistoricalPollInput() {
     ballotActiveFamilies: ucomms.cycleBallotUniverse.activeFamilies, reuseBasis: ucomms.reuseBasis,
     ownerReviewId: ucommsReview.reviewId, replayEligible: true,
   };
-  const observations = [...essentialObservations, ucommsObservation];
+  const review2022 = read("metadata/historical-poll-reuse-review-2022.json");
+  const approved2022Ids = new Set(review2022.ownerDecision?.approvedCaseIds ?? []);
+  const royMorganCases = [
+    read("metadata/historical-poll-reuse-case-2022-roymorgan-2022-11-10.json"),
+    read("metadata/historical-poll-reuse-case-2022-roymorgan-2022-11-23.json"),
+  ];
+  if (review2022.decision !== "partially-approved" || approved2022Ids.size !== 2) throw new Error("2022 Roy Morgan review is not explicitly approved");
+  const royMorganObservations = royMorganCases.map((caseFile) => {
+    if (!approved2022Ids.has(caseFile.caseId) || caseFile.ownerReviewStatus !== "approved-for-historical-replay" || !caseFile.modelInputAdmissible || !caseFile.replayEligible) throw new Error(`2022 case ${caseFile.caseId} is not governed for replay`);
+    if (!caseFile.gates.provenance.passed || !caseFile.gates.methodologicalAdequacy.passed || !caseFile.gates.reuseBasis.passed || !caseFile.notFromQuarantinedDataset) throw new Error(`2022 case ${caseFile.caseId} has a failed automated gate`);
+    return {
+      observationId: `${caseFile.caseId}-${caseFile.fieldwork.end}`,
+      cycleId: caseFile.cycleId,
+      period: caseFile.fieldwork.end,
+      sourceId: caseFile.sourceId,
+      sourceUrl: caseFile.sourceUrl,
+      sourceSha256: caseFile.sourceSha256,
+      evidenceAvailableByDate: caseFile.evidenceAvailableByDate,
+      sampleSize: caseFile.fieldwork.sampleSize,
+      population: caseFile.fieldwork.population,
+      mode: caseFile.fieldwork.mode,
+      primaryShares: caseFile.reportedPrimaryCategories,
+      reportedTpp: caseFile.reportedTpp,
+      groupedResidual: "OTH_IND",
+      ballotActiveFamilies: caseFile.ballotActiveFamilies,
+      reuseBasis: caseFile.reuseBasis,
+      ownerReviewId: review2022.reviewId,
+      replayEligible: true,
+    };
+  });
+  const observations = [...essentialObservations, ucommsObservation, ...royMorganObservations];
   return {
     schemaVersion: 1,
     generatedBy: "scripts/apply-approved-historical-poll-review.mjs",
     generatedAt: review.approvedAt,
     sourceCaseId: caseFile.caseId,
     ownerReviewId: review.reviewId,
-    independentSourceFamilies: 2,
+    independentSourceFamilies: 3,
     observations,
     quarantineBoundary: "No values are read from d-j-hirst/aus-polling-analyser; this file contains only the approved structured factual reconstruction.",
     modelImpact: { forecast2026: false, productionAuthorisation: false },

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2022-freshwater-2022-11-03-06",
+  "cycleId": "vic_la_2022",
+  "sourceId": "freshwater-vic-2022-11-03-06",
+  "sourceUrl": "https://freshwaterstrategy.com/2022/11/07/labor-slides-but-still-ahead-in-victoria/",
+  "sourceSha256": "8bd8ebdda74791e42212d0ddeff80e5dd6a79f62dd509b58efcfa31e2e7958d9",
+  "publicationDate": "2022-11-07",
+  "evidenceAvailableByDate": "2022-11-07",
+  "fieldwork": {"start": "2022-11-03", "end": "2022-11-06", "sampleSize": 1012, "population": "Victorian adults eligible to vote", "mode": "online; weighted"},
+  "reportedPrimaryCategories": {"ALP": 37, "LIB_NAT": 34, "GRN": 14, "INDEPENDENT": 7},
+  "reportedTpp": {"ALP": 51, "LIB_NAT": 40, "undecided": 9, "basis": "page reports both headline and excluding-firmly-undecided figures"},
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "gates": {
+    "provenance": {"passed": true},
+    "methodologicalAdequacy": {"passed": false, "basis": "first-party page does not expose a complete mutually exhaustive primary-vote table; the residual/undecided treatment is not sufficient to transcribe a complete model vector without inference"},
+    "reuseBasis": {"passed": true, "manualReviewRequired": true}
+  },
+  "ownerReviewStatus": "not-submitted-methodology-incomplete",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "notes": "First-party Freshwater evidence was checked once as the clean alternate family candidate. Structured values are retained for audit only; no residual category is fabricated."
+}

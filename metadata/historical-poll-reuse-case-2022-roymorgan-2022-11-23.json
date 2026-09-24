@@ -13,9 +13,10 @@
   "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"],
   "reuseBasis": "independently_reconstructed_factual_observation",
   "gates": {"provenance": {"passed": true}, "methodologicalAdequacy": {"passed": true, "basis": "first-party dated report supplies fieldwork, sample, mode, primary categories and TPP"}, "reuseBasis": {"passed": true, "manualReviewRequired": true}},
-  "ownerReviewStatus": "awaiting-project-owner-approval",
-  "modelInputAdmissible": false,
-  "replayEligible": false,
+  "ownerReviewStatus": "approved-for-historical-replay",
+  "modelInputAdmissible": true,
+  "replayEligible": true,
   "notFromQuarantinedDataset": true,
-  "notes": "Structured factual fields only; no report prose or layout reproduced. Await explicit project-owner review before replay promotion."
+  "ownerReviewId": "historical-poll-review-2022-roymorgan-owner-2026-09-25",
+  "notes": "Owner approval is limited to these structured factual fields and provenance; no report prose or layout is reproduced."
 }

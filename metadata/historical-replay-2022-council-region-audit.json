@@ -1,7 +1,7 @@
 {
   "cycleId": "vic_la_2022",
   "priorCycle": "vic_lc_2018",
-  "status": "blocked-region-mapping-required",
+  "status": "superseded-by-direct-2022-geography-surface",
   "priorRegions": [
     "Eastern Metropolitan Region",
     "Eastern Victoria Region",
@@ -24,6 +24,6 @@
   ],
   "directNameContinuity": false,
   "observedChange": "Eastern Metropolitan Region is not a target 2022 region; North-Eastern Metropolitan Region is new in the target evidence inventory.",
-  "policy": "Do not treat the changed metropolitan region as a direct prior join. Require an official pre-cutoff mapping or use the governed broad regional fallback with explicit uncertainty before prediction.",
+  "policy": "Do not treat the changed metropolitan region as a direct prior join. The direct pre-cutoff AEC 2022 region surface is now the governed geographic fallback; the 2018 state-Council mapping is not required for this adapter.",
   "targetOutcomesScoringOnly": true
 }

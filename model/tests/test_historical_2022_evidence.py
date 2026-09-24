@@ -13,18 +13,24 @@ def test_2022_selection_is_frozen_before_scoring_and_remains_blocked():
     assert selection["candidates"]["vic_la_2022"]["blockingInputs"]
 
 
-def test_2022_poll_cases_are_cutoff_safe_but_not_auto_promoted():
+def test_2022_poll_cases_keep_owner_decisions_separate_from_fixed_sufficiency_rule():
     review = json.loads((REPO / "metadata/historical-poll-reuse-review-2022.json").read_text())
-    assert review["decision"] == "awaiting-project-owner-approval"
-    assert review["checks"]["ownerReuseBasisApproval"] is False
+    assert review["decision"] == "partially-approved"
+    assert len(review["ownerDecision"]["approvedCaseIds"]) == 2
     for case_path in sorted((REPO / "metadata").glob("historical-poll-reuse-case-2022-*.json")):
         case = json.loads(case_path.read_text())
         assert case["cycleId"] == "vic_la_2022"
         assert case["evidenceAvailableByDate"] <= "2022-11-25"
-        assert case["replayEligible"] is False
-        assert case["modelInputAdmissible"] is False
+        if "roymorgan" in case["caseId"]:
+            assert case["replayEligible"] is True
+            assert case["modelInputAdmissible"] is True
+        else:
+            assert case["replayEligible"] is False
+            assert case["modelInputAdmissible"] is False
     canonical = json.loads((ROOT / "data/validation/historical-replay-poll-observations.json").read_text())
-    assert not any(row["cycleId"] == "vic_la_2022" for row in canonical["observations"])
+    promoted = [row for row in canonical["observations"] if row["cycleId"] == "vic_la_2022"]
+    assert len(promoted) == 2
+    assert {row["sourceId"] for row in promoted} == {"roy-morgan-vic-2022-11-09-10", "roy-morgan-vic-2022-11-22-23"}
 
 
 def test_2022_boundary_audit_does_not_substitute_target_outcomes():
@@ -65,3 +71,29 @@ def test_2022_council_region_audit_rejects_direct_name_join_for_changed_region()
     assert "North-Eastern Metropolitan Region" in audit["targetRegions"]
     assert "Eastern Metropolitan Region" in audit["priorRegions"]
     assert audit["targetOutcomesScoringOnly"] is True
+
+
+def test_2022_local_surface_is_relative_and_excludes_state_outcome_targets():
+    import csv
+
+    audit = json.loads((REPO / "metadata/historical-replay-2022-local-input-audit.json").read_text())
+    assert audit["rows"] == 87
+    assert "ASSEMBLY_2022_TARGET" in audit["forbiddenInputs"]
+    assert "vec_2022_indicative_candidate_evidence.csv" in audit["forbiddenInputs"]
+    with (ROOT / "data/validation/historical-replay-2022-local-inputs.csv").open(newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    assert len(rows) == 87
+    assert len({row["district_id"] for row in rows}) == 87
+    assert all(row["district_name"] != "Narracan" for row in rows)
+    assert len({tuple(row[f"aec_local_{party.lower()}"] for party in ("ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND")) for row in rows}) > 1
+    for row in rows:
+        total = sum(float(row[f"aec_local_{party.lower()}"]) for party in ("ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"))
+        assert abs(total - 1) < 1e-9
+
+
+def test_2022_council_surface_covers_current_regions_without_target_outcomes():
+    audit = json.loads((REPO / "metadata/historical-replay-2022-council-surface-audit.json").read_text())
+    assert audit["regionCount"] == 8
+    assert audit["direct2018RegionJoinRequired"] is False
+    assert audit["regionalPollContribution"] == 0
+    assert "COUNCIL_2022_TARGET" in audit["forbiddenInputs"]
