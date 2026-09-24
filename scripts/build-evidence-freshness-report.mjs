@@ -36,15 +36,21 @@ function latest(records, dateKey) {
 }
 
 export function buildEvidenceFreshness({ modelPolls, acceptedPolls, stagedPolls, reviewDecisions = [], asOf }) {
-  const modelEligible = modelPolls.filter((poll) => String(poll.model_eligible).toLowerCase() === "true");
+  const available = (record) => {
+    const date = record.publicationDate ?? record.publication_date ?? record.fieldworkEnd;
+    return !date || String(date).slice(0, 10) <= asOf;
+  };
+  const modelEligible = modelPolls.filter((poll) => String(poll.model_eligible).toLowerCase() === "true" && available(poll));
+  const availableAccepted = acceptedPolls.filter(available);
+  const availableStaged = stagedPolls.filter(available);
   const latestModel = latest(modelEligible, "publication_date");
-  const latestAccepted = latest(acceptedPolls, "publicationDate") ?? latest(acceptedPolls, "fieldworkEnd");
-  const latestStaged = latest(stagedPolls, "publicationDate") ?? latest(stagedPolls, "fieldworkEnd");
-  const acceptedIds = new Set(acceptedPolls.map((poll) => poll.evidenceId).filter(Boolean));
+  const latestAccepted = latest(availableAccepted, "publicationDate") ?? latest(availableAccepted, "fieldworkEnd");
+  const latestStaged = latest(availableStaged, "publicationDate") ?? latest(availableStaged, "fieldworkEnd");
+  const acceptedIds = new Set(availableAccepted.map((poll) => poll.evidenceId).filter(Boolean));
   const reviewById = new Map(reviewDecisions.map((decision) => [decision.evidenceId, decision]));
   const resolvedDecisions = new Set(["approve", "defer", "hold", "reject"]);
-  const resolvedStaged = stagedPolls.filter((poll) => acceptedIds.has(poll.id) || resolvedDecisions.has(reviewById.get(poll.id)?.decision));
-  const unresolvedStaged = stagedPolls.filter((poll) => !resolvedStaged.includes(poll));
+  const resolvedStaged = availableStaged.filter((poll) => acceptedIds.has(poll.id) || resolvedDecisions.has(reviewById.get(poll.id)?.decision));
+  const unresolvedStaged = availableStaged.filter((poll) => !resolvedStaged.includes(poll));
   const latestResolved = latest(resolvedStaged, "publicationDate") ?? latest(resolvedStaged, "fieldworkEnd");
   const latestUnresolved = latest(unresolvedStaged, "publicationDate") ?? latest(unresolvedStaged, "fieldworkEnd");
   const modelDate = latestModel?.publication_date ?? null;
@@ -78,7 +84,7 @@ export function buildEvidenceFreshness({ modelPolls, acceptedPolls, stagedPolls,
       verificationStatus: latestStaged.verificationStatus ?? "awaiting-review",
     } : null,
     reviewResolution: {
-      stagedRecords: stagedPolls.length,
+      stagedRecords: availableStaged.length,
       resolvedRecords: resolvedStaged.length,
       unresolvedRecords: unresolvedStaged.length,
       latestResolvedEvidence: latestResolved ? {
