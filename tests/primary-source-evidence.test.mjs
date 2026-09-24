@@ -8,10 +8,10 @@ import { auditPollPromotion, proposedEstimateRows } from "../scripts/build-poll-
 const primary = JSON.parse(readFileSync(resolve("metadata/primary-source-evidence-2026.json"), "utf8"));
 const redbridge = primary.records.find((record) => record.proposedModelPollId === "redbridge_accent_2026-08");
 
-test("September RedBridge report is captured as fresh primary evidence but remains quarantined", () => {
+test("September RedBridge report is captured as fresh primary evidence and remains quarantined", () => {
   const september = primary.records.find((record) => record.proposedModelPollId === "redbridge_accent_2026-09");
   assert.ok(september);
-  assert.equal(september.status, "quarantined-awaiting-dossier");
+  assert.equal(september.status, "quarantined-awaiting-review");
   assert.equal(september.automaticPromotion, false);
   assert.equal(september.fieldworkEnd, "2026-09-14");
   assert.equal(september.pollPublicationDate, "2026-09-15");

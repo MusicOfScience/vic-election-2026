@@ -4,13 +4,24 @@
   "status": "recommendations-awaiting-human-decision",
   "policy": "Evidence acceptance confirms that a poll record faithfully represents its source. Model eligibility is a separate decision about comparability, independence and statistical use. This dossier makes recommendations but cannot approve either decision.",
   "summary": {
-    "stagedPolls": 7,
-    "recommendEvidenceAcceptance": 4,
+    "stagedPolls": 8,
+    "recommendEvidenceAcceptance": 5,
     "verifyThenAccept": 1,
     "holdEvidence": 2,
     "readyForModelDecisionAfterAcceptance": 2
   },
   "reviews": [
+    {
+      "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "conditional_review",
+      "rationale": "The captured first-party report supplies the fieldwork window, publication date, full and effective samples, weighting, undecided treatment, five-way toplines, respondent-allocated preference result and a stable report fingerprint. Evidence acceptance is supportable, but model admission remains conditional on demonstrating that this wave is independent of the June RedBridge sample family and on preserving its Carroll–Wilson timing regime.",
+      "requiredChecks": [
+        "Project owner confirms evidence acceptance against the captured PDF and publisher page",
+        "Confirm sample-family independence from the June RedBridge evidence before model admission",
+        "Retain the published vote-intention base of 2,160 separately from the full N=2,371 sample"
+      ]
+    },
     {
       "evidenceId": "742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72",
       "evidenceRecommendation": "verify_then_accept",

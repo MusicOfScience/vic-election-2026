@@ -118,7 +118,7 @@ export const releaseReadiness = {
       "latestPublicationDate": "2026-09-15",
       "pollster": "RedBridge / Accent Research",
       "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
-      "status": "quarantined-awaiting-dossier",
+      "status": "quarantined-awaiting-review",
       "sourceTier": "primary_pollster",
       "verificationStatus": "primary-report-captured-awaiting-human-review"
     },

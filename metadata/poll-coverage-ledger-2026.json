@@ -59,7 +59,8 @@
         "redbridge_accent_2026-06_large"
       ],
       "stagedEvidence": [
-        "redbridge_accent_2026-08"
+        "redbridge_accent_2026-08",
+        "redbridge_accent_2026-09"
       ],
       "actionableGaps": [
         {
@@ -207,7 +208,7 @@
     }
   ],
   "priorityQueue": [
-    "Review the staged RedBridge/Accent 28 July-1 August evidence and resolve sample-family/leadership-regime checks before model eligibility.",
+    "Complete the dossier review for the staged RedBridge/Accent August and September waves; resolve sample-family/leadership-regime checks before model eligibility.",
     "Review the parsed Freshwater first-party workbooks; resolve February residual rounding and the August publication-date/canonical-ID reconciliation before model eligibility.",
     "Reconcile the now-captured Resolve sample families against pollster methodology and exact component-wave metadata before model eligibility.",
     "Capture YouGov/Common Threads first-party results; reconcile the primary-methodology 9 July fieldwork end against the secondary 10 July report while keeping statewide and seat-model outputs in one dependency family.",
