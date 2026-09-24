@@ -55,7 +55,7 @@ test("derives cycle-aware Assembly party availability from candidate evidence", 
 test("records owner-approved replay input and derives one runnable cycle", () => {
   assert.deepEqual(validateHistoricalReplayInputReadiness(), {
     cycles: 4,
-    approvedReplayObservations: 4,
+    approvedReplayObservations: 6,
     runnableCycles: 1,
   });
 });

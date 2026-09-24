@@ -1,0 +1,38 @@
+{
+  "cycleId": "vic_la_2022",
+  "status": "pass-relative-surface-only-multipart-anchor-pending",
+  "rows": 87,
+  "excludedDistrict": "Narracan",
+  "shrinkage": 0.62,
+  "sources": {
+    "aecDistrictSurface": {
+      "path": "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz",
+      "sha256": "1b65fc4f865925f0f8abdfa6adb12ee674357c0867f5f7a2b8bc46d56e8f223a",
+      "effectiveDate": "2022-05-21",
+      "role": "relative contextual pattern only"
+    },
+    "vecBoundaryTpp": {
+      "path": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv",
+      "sha256": "38669e7a829bfeb7481716a4bb170762c9df3b0b20788aa34ff9a76a758b0175",
+      "effectiveDate": "2022-08-05",
+      "role": "pre-cutoff ALP/Coalition TPP local anchor"
+    },
+    "boundaryMembership": {
+      "path": "model/data/processed/district_region_membership_2026.csv",
+      "sha256": "f815161b2d8d6aa0c028f01d4e2fbeb615057ff2e659f1d116d5c52af3a921d7",
+      "effectiveDate": "2022-11-01",
+      "role": "2022 geography only"
+    }
+  },
+  "forbiddenInputs": [
+    "ASSEMBLY_2022_TARGET",
+    "COUNCIL_2022_TARGET",
+    "vec_2022_indicative_candidate_evidence.csv",
+    "2022 Victorian state-election outcomes",
+    "2018-2022 outcome-transition files"
+  ],
+  "limitations": [
+    "AEC shares are relative spatial signals, not Victorian state-election levels",
+    "statewide poll anchor and ballot-aware simulation remain separate downstream inputs"
+  ]
+}

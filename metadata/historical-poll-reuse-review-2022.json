@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
-  "reviewId": "historical-poll-review-2022-pending-2026-09-25",
-  "caseIds": ["historical-poll-2022-roymorgan-2022-11-10", "historical-poll-2022-roymorgan-2022-11-23", "historical-poll-2022-redbridge-2022-11-14"],
-  "decision": "awaiting-project-owner-approval",
+  "reviewId": "historical-poll-review-2022-roymorgan-owner-2026-09-25",
+  "caseIds": ["historical-poll-2022-roymorgan-2022-11-10", "historical-poll-2022-roymorgan-2022-11-23", "historical-poll-2022-redbridge-2022-11-14", "historical-poll-2022-freshwater-2022-11-03-06"],
+  "decision": "partially-approved",
   "scope": "Structured factual fields and provenance only; no source prose, layout or document redistribution.",
   "reuseBasis": "independently_reconstructed_factual_observation",
-  "checks": {"provenanceGate": "pending-owner-review", "methodologicalAdequacyGate": "two Roy Morgan cases pass; RedBridge numerical table remains incomplete", "ownerReuseBasisApproval": false, "notFromQuarantinedDataset": true, "current2026ForecastImpact": false, "productionAuthorisation": false}
+  "checks": {"provenanceGate": "Roy Morgan cases pass; RedBridge remains pending", "methodologicalAdequacyGate": "two Roy Morgan cases pass; RedBridge numerical table remains incomplete", "ownerReuseBasisApproval": {"historical-poll-2022-roymorgan-2022-11-10": true, "historical-poll-2022-roymorgan-2022-11-23": true, "historical-poll-2022-redbridge-2022-11-14": false}, "notFromQuarantinedDataset": true, "current2026ForecastImpact": false, "productionAuthorisation": false},
+  "ownerDecision": {"approvedCaseIds": ["historical-poll-2022-roymorgan-2022-11-10", "historical-poll-2022-roymorgan-2022-11-23"], "redbridgeStatus": "not-approved", "decidedAt": "2026-09-25", "scope": "Structured factual fields and provenance only; no source prose, layout or document redistribution."}
 }

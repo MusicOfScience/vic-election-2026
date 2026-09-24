@@ -1,0 +1,28 @@
+{
+  "cycleId": "vic_la_2022",
+  "status": "pass-pre-cutoff-relative-region-surface",
+  "source": {
+    "path": "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz",
+    "sha256": "94548a20f13b47707adb97004bca8059b30b95512d9dec17ae2b44c53d171549",
+    "publisher": "Australian Electoral Commission",
+    "effectiveDate": "2022-05-21",
+    "role": "relative multi-party regional pattern on 2022 geography"
+  },
+  "regionCount": 8,
+  "regions": [
+    "Eastern Victoria",
+    "North-Eastern Metropolitan",
+    "Northern Metropolitan",
+    "Northern Victoria",
+    "South-Eastern Metropolitan",
+    "Southern Metropolitan",
+    "Western Metropolitan",
+    "Western Victoria"
+  ],
+  "transformation": "centre raw AEC family shares and apply the frozen Council relative-pattern shrinkage; anchor statewide levels separately to pre-cutoff polling/prior",
+  "direct2018RegionJoinRequired": false,
+  "forbiddenInputs": ["COUNCIL_2022_TARGET", "2022 Victorian Council outcomes", "target-cycle count sequences"],
+  "regionalPollContribution": 0,
+  "uncertaintyRule": "fixed-broadening-when-regional-poll-absent",
+  "targetOutcomesScoringOnly": true
+}

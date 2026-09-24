@@ -127,7 +127,7 @@
       "cycleId": "vic_la_2022",
       "pollEvidence": {
         "status": "blocked",
-        "reason": "3 governed 2022 cases reconstructed (2 Roy Morgan observations plus RedBridge methodology/corroboration), but owner review is pending and RedBridge numerical adequacy is unresolved; no observation promoted"
+        "reason": "2 Roy Morgan observations are owner-approved and promoted, but the fixed minimum of 3 observations and 2 independent source families is not met; RedBridge remains numerically incomplete and Freshwater lacks an exhaustive primary table"
       },
         "ballotContest": {
           "status": "pass",
@@ -135,17 +135,18 @@
           "artefact": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv"
         },
       "incumbencyLocal": {
-        "status": "blocked",
-        "reason": "v2 2022 local adapter still needs governed multi-party district vectors and district-specific family availability; the cutoff-safe TPP baseline alone is insufficient"
+        "status": "pass",
+        "reason": "87 district rows combine the cutoff-safe VEC TPP baseline with relative multi-party AEC spatial patterns and governed district family availability; no target state-election outcomes are consumed",
+        "artefact": "model/data/validation/historical-replay-2022-local-inputs.csv"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",
         "reason": "target-cycle outcome evidence remains scoring-only"
       },
       "councilInput": {
-        "status": "blocked",
-        "reason": "2018 Council evidence exists, but the audit finds Eastern Metropolitan→North-Eastern Metropolitan is not a direct name-continuity join; an official pre-cutoff mapping or governed broad fallback is still required",
-        "artefact": "metadata/historical-replay-2022-council-region-audit.json"
+        "status": "pass-with-broad-fallback",
+        "reason": "pre-cutoff AEC regional surface covers all eight 2022 regions directly; no 2018 region-name join is required and absent regional polling contributes zero with fixed uncertainty broadening",
+        "artefact": "metadata/historical-replay-2022-council-surface-audit.json"
       },
       "cutoffValidation": {
         "status": "pass",
