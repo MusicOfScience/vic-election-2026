@@ -453,6 +453,16 @@ a { color: inherit; }
 .snapshot-history-list strong { font: 17px Georgia, serif; }
 .snapshot-history-list span { color: var(--muted-ink); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
 .snapshot-history-list code { color: var(--muted-ink); font: 10px ui-monospace, monospace; }
+.replay-readiness { padding: 28px; }
+.replay-cycle-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 8px; border-top: 1px solid var(--line); }
+.replay-cycle-list article { padding: 16px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.replay-cycle-list article:nth-child(even) { border-right: 0; }
+.replay-cycle-list article:nth-last-child(-n+2) { border-bottom: 0; }
+.replay-cycle-list article > div { display: grid; gap: 4px; }
+.replay-cycle-list strong { font: 18px Georgia, serif; text-transform: capitalize; }
+.replay-cycle-list article > div span { color: var(--muted-ink); font-size: 9px; }
+.replay-status { display: inline-block; margin-top: 13px; color: #8d4528; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.replay-cycle-list ul { margin: 9px 0 0; padding-left: 16px; color: var(--muted-ink); font-size: 9px; line-height: 1.6; text-transform: capitalize; }
 .release-ledger { padding: 27px; }
 .release-gates { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); border: 1px solid var(--line); }
 .release-gates article { min-height: 112px; padding: 17px; display: grid; align-content: start; gap: 8px; border-right: 1px solid var(--line); }
@@ -614,6 +624,10 @@ footer p { max-width: 480px; margin: 0; text-align: right; }
   .snapshot-history-list article { grid-template-columns: 1fr 1fr; gap: 12px; }
   .snapshot-history-list article > div:nth-child(3) { grid-column: 1 / -1; }
   .snapshot-history-list code { grid-column: 1 / -1; }
+  .replay-readiness { padding: 21px 16px; }
+  .replay-cycle-list { grid-template-columns: 1fr; }
+  .replay-cycle-list article, .replay-cycle-list article:nth-child(even), .replay-cycle-list article:nth-last-child(-n+2) { border-right: 0; border-bottom: 1px solid var(--line); }
+  .replay-cycle-list article:last-child { border-bottom: 0; }
   .aggregate-bars > div { grid-template-columns: 105px minmax(55px, 1fr) 50px; gap: 8px; }
   .gate-metric { grid-template-columns: auto 1fr; }
   .gate-metric i { display: none; }
