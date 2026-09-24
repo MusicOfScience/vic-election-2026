@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2022-resolve-2022-11-16-20",
+  "cycleId": "vic_la_2022",
+  "sourceId": "resolve-strategic-vic-2022-11-16-20",
+  "sourceUrl": "https://www.theage.com.au/politics/victoria/labor-coalition-neck-and-neck-as-gap-narrows-between-andrews-and-guy-20221121-p5bzxv.html",
+  "sourceSha256": "3c22410108f755d5becea4c63862109c7c6568c9cb69595203d9c652011e1b60",
+  "publicationDate": "2022-11-21",
+  "evidenceAvailableByDate": "2022-11-22",
+  "fieldwork": {
+    "start": "2022-11-16",
+    "end": "2022-11-20",
+    "dateBasis": "contemporaneous report states Wednesday-to-Sunday fieldwork; calendar dates are recorded without extending beyond the publication context",
+    "sampleSize": 1000,
+    "population": "Victorian voters",
+    "mode": "Resolve Political Monitor; mode not specified in the contemporaneous report"
+  },
+  "reportedPrimaryCategories": {
+    "ALP": 36,
+    "LIB_NAT": 36,
+    "GRN": 10,
+    "INDEPENDENT": 6,
+    "OTHER": 12
+  },
+  "groupedResidual": {"OTH_IND": 18, "components": ["INDEPENDENT", "OTHER"]},
+  "reportedTpp": {"ALP": 53, "LIB_NAT": 47},
+  "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"],
+  "sourceEvidence": {
+    "publisherNumericalSourceUrl": "https://www.pollbludger.net/2022/11/22/resolve-strategic-53-47-to-labor-in-victoria/",
+    "publisherNumericalSourceSha256": "0f525d0fc67c0fc4c629bc7cc5003ab5fd5d7293e7487538c9755d77f9202628",
+    "publisherNumericalEvidenceDate": "2022-11-22",
+    "basis": "The Age establishes the poll identity, primary major-party and Greens values, TPP, sample and fieldwork; contemporaneous Poll Bludger reporting supplies the complete independent/other split and explicitly states the response-category change. No quarantined dataset values were used."
+  },
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "gates": {
+    "provenance": {"passed": true, "basis": "The Age publication and contemporaneous reporting are before the 2022-11-25 cutoff."},
+    "methodologicalAdequacy": {"passed": true, "basis": "The combined contemporaneous sources provide pollster identity, fieldwork window, sample, primary categories, grouped residual components and TPP; mode is explicitly recorded as not specified rather than inferred."},
+    "reuseBasis": {"passed": true, "manualReviewRequired": true}
+  },
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "notes": "Prepared for owner review only. Structured factual fields and provenance are retained; no source prose, layout or report asset is redistributed. Approval would be limited to this case."
+}

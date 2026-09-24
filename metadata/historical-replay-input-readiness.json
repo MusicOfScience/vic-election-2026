@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-24",
+  "reviewedAt": "2026-09-25",
   "selectionRule": "Select the first runnable cycle only by pre-score input completeness under common rules, never by expected or observed performance.",
   "archiveCompleteIsNotRequiredForRunnable": true,
   "cycles": [
@@ -127,7 +127,7 @@
       "cycleId": "vic_la_2022",
       "pollEvidence": {
         "status": "blocked",
-        "reason": "2 Roy Morgan observations are owner-approved and promoted, but the fixed minimum of 3 observations and 2 independent source families is not met; RedBridge remains numerically incomplete and Freshwater lacks an exhaustive primary table"
+        "reason": "2 Roy Morgan observations are owner-approved and promoted; one Resolve observation passes automated gates but awaits owner approval. The fixed minimum of 3 observations and 2 independent source families is therefore not yet met; RedBridge remains numerically incomplete and Freshwater lacks an exhaustive primary table"
       },
         "ballotContest": {
           "status": "pass",
