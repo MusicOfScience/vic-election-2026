@@ -1,11 +1,18 @@
 {
-  "schemaVersion": 1,
-  "generatedBy": "scripts/build-historical-local-inputs.mjs",
   "cycleId": "vic_la_2018",
-  "status": "blocked",
+  "status": "pass",
   "cutoff": "2018-11-23",
-  "requiredArtefact": "model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv",
-  "requiredReport": "model/data/processed/vec_2014_2018_same_boundary_tpp_swing_report.json",
-  "reason": "boundary-aligned pre-cycle local pattern artefact is absent; target-cycle outcomes cannot substitute it",
-  "sourceOutcomeUse": "forbidden"
+  "inputPath": "model/data/processed/vec_2014_assembly_family_primaries.csv",
+  "inputRole": "prior-election-local-baseline",
+  "description": "2014 Assembly family primaries; prior-election local baseline available before the 2018 cutoff",
+  "sourceOutcomeUse": "pre-cutoff-derived-only",
+  "dependencyAudit": {
+    "predictionInputs": [
+      "model/data/processed/vec_2014_assembly_family_primaries.csv"
+    ],
+    "scoringOnly": [
+      "model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv"
+    ],
+    "forbiddenInPrediction": true
+  }
 }

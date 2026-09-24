@@ -1,8 +1,8 @@
 # PROD 1.0 completion ledger
 
-Updated: 2026-09-24
-Branch: `codex/historical-first-runnable-cycle`
-Base: `7297c55` (PR #95 merged)
+Updated: 2026-09-25
+Branch: `codex/historical-replay-no-leakage`
+Base: `5aec3b4` (PR #96 merged)
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -12,8 +12,8 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 | Assembly primary and Council evidence | Complete | None currently evidenced | Preserve official VEC evidence, rule versions and Narracan separation | `npm run validation:evidence`, `npm run psephology:validate` | Complete — preserve |
 | Candidate coverage and quarantine | Complete | VEC nomination status remains separate | Use controlled review for changes | `npm run candidates:validate`, `npm run candidates:review:check` | Complete — preserve |
 | Current critical-source freshness | Blocked | 15 September RedBridge/Accent report is captured and dossier-recommended for evidence acceptance, but remains quarantined pending project-owner review and separate model-eligibility checks | Record explicit owner decision; admit only if independence and comparability checks pass | `npm run release:readiness:check`, `node scripts/build-poll-promotion-audit.mjs --as-of 2026-09-24` | Open blocker — review decision required |
-| Historical poll vintages | Partial | 64/200 legacy leads matched; 3 independently reconstructed observations approved from 1 source family; sparse rule requires 2 families | Recover one targeted independent 2018 family; retain grouped categories and uncertainty | `node scripts/validate-historical-replay-input-readiness.mjs` | Open blocker |
-| Cutoff-safe ballot and incumbency | Partial | 2018 ballot universe passes, but the boundary-aligned local artefact referenced by the existing validation report is absent | Restore or regenerate the fingerprinted pre-cutoff local input; do not substitute target outcomes | `node scripts/build-historical-local-inputs.mjs vic_la_2018` | Open blocker |
+| Historical poll vintages | Partial | 3 Essential observations approved from 1 family; verified uComms/ReachTEL second family is admissible but awaiting owner approval | Record owner decision, then promote only through governed path | `node scripts/validate-historical-replay-input-readiness.mjs` | Open blocker |
+| Cutoff-safe ballot and incumbency | Partial | 2018 uses 2014 Assembly primaries as a pre-cutoff baseline; the 2014→2018 outcome-transition file is scoring-only | Wire baseline into the real historical runner and retain the dependency audit | `node scripts/build-historical-local-inputs.mjs vic_la_2018` | Open blocker |
 | Preference flows and final pairs | Partial | 39 indicative 2022 distributions remain outcome evidence; the walk-forward prior builder is now wired into future replay execution, but no source-party prior is forecast-ready | Establish walk-forward preference priors and separate final-pair scoring outcomes | `npm run validation:evidence`, guarded replay CLI, Python prior-builder tests | Open blocker |
 | Runnable frozen historical configurations | Partial | Focus cycle 2018 selected by evidence completeness; poll diversity, local input and Council input remain blocked | Complete executable inputs, derive runnable state, then run prediction before loading outcomes | `metadata/historical-replay-input-readiness.json` | Open blocker — runner guarded |
 | Complete multi-party walk-forward backtest | Blocked | Existing validation is a two-party baseline, not the released probability model | Run leakage-safe four-cycle replays against the fixed comparator/metric protocol | `metadata/historical-validation-acceptance-criteria.json` | Open blocker — evidence |
@@ -32,7 +32,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 - Cycle-aware ballot review: 2010, 2014 and 2018 have no One Nation Assembly candidates; 2022 has four. The 2018 Essential case passes provenance and methodological adequacy because its grouped Other residual is sufficient for the active four-family ballot universe, and owner approval has promoted only its structured replay input.
 - Owner decision recorded: `metadata/historical-poll-reuse-review.json`; the approved replay input contains 3 structured observations from 1 independent source family. Legacy queue replay-eligible rows remain 0; total approved replay observations are 3.
 - Fixed validation thresholds are recorded in `metadata/historical-validation-acceptance-criteria.json` before any complete replay score. Replay-input readiness remains 0/4 runnable and release readiness remains unchanged.
-- Focus cycle: `vic_la_2018`, selected by pre-score input completeness. Local blocker is the absent `model/data/processed/vec_2014_2018_same_boundary_tpp_swing.csv`; Council blocker is the absence of a pre-cutoff regional input, with the 2026 regional poll rejected.
+- Focus cycle: `vic_la_2018`, selected by pre-score input completeness. Local and Council contracts now pass using prior-election baselines and explicit uncertainty fallback; uComms/ReachTEL owner approval is the smallest evidence blocker.
 - Verification: 134 JavaScript tests, build, lint, source provenance and psephology validation pass; Python replay tests remain environment-blocked by missing `pytest` and were not bypassed.
 
-Exact next action: targeted Newspoll recovery remains blocked by missing safe primary-share fields; then restore the boundary-aligned local artefact and construct a pre-cutoff Council prior. No complete replay has yet executed.
+Exact next action: obtain owner approval for `metadata/historical-poll-reuse-case-2018-ucomms.json`; if approved, promote it and connect the separated inputs to the guarded replay runner. No complete replay has yet executed; forecast outputs and production gates are unchanged.

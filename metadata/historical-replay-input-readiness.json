@@ -4,11 +4,159 @@
   "selectionRule": "Select the first runnable cycle only by pre-score input completeness under common rules, never by expected or observed performance.",
   "archiveCompleteIsNotRequiredForRunnable": true,
   "cycles": [
-    {"cycleId":"vic_la_2010","pollEvidence":{"status":"blocked","reason":"0 approved replay observations; minimum 3 observations and 2 independent source families not met"},"ballotContest":{"status":"blocked","reason":"cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"},"incumbencyLocal":{"status":"blocked","reason":"no leakage-safe historical local-pattern builder is wired"},"preferencePrior":{"status":"pass-with-broad-fallback","reason":"walk-forward builder can use a broad uncertainty prior without target-cycle outcomes"},"councilInput":{"status":"blocked","reason":"historical pre-cutoff Council forecast inputs are not assembled"},"cutoffValidation":{"status":"pass","reason":"frozen cycle cutoff contract validates"},"replayConfig":{"status":"pass","reason":"deterministic cycle config is frozen"},"predictionScoringSeparation":{"status":"pass","reason":"guarded runner rejects outcomes before prediction freeze"},"runnable":false},
-    {"cycleId":"vic_la_2014","pollEvidence":{"status":"blocked","reason":"0 approved replay observations; minimum 3 observations and 2 independent source families not met"},"ballotContest":{"status":"blocked","reason":"cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"},"incumbencyLocal":{"status":"blocked","reason":"no leakage-safe historical local-pattern builder is wired"},"preferencePrior":{"status":"pass-with-broad-fallback","reason":"walk-forward builder can use a broad uncertainty prior without target-cycle outcomes"},"councilInput":{"status":"blocked","reason":"historical pre-cutoff Council forecast inputs are not assembled"},"cutoffValidation":{"status":"pass","reason":"frozen cycle cutoff contract validates"},"replayConfig":{"status":"pass","reason":"deterministic cycle config is frozen"},"predictionScoringSeparation":{"status":"pass","reason":"guarded runner rejects outcomes before prediction freeze"},"runnable":false},
-    {"cycleId":"vic_la_2018","pollEvidence":{"status":"blocked","reason":"3 approved observations from only 1 independent source family; common minimum is 2 families","artefact":"model/data/validation/historical-replay-poll-observations.json","targetedRecovery":"metadata/historical-poll-targeted-recovery-2018.json"},"ballotContest":{"status":"blocked","reason":"ballot universe passes, but required boundary-aligned local pattern artefact is absent","artefact":"metadata/historical-replay-local-inputs.json"},"incumbencyLocal":{"status":"blocked","reason":"no leakage-safe historical local-pattern artefact is available; target-cycle outcomes cannot substitute it","artefact":"metadata/historical-replay-local-inputs.json"},"preferencePrior":{"status":"pass-with-broad-fallback","reason":"no earlier transfer matrix is promoted; broad uncertainty is explicit and target-cycle outcomes are excluded"},"councilInput":{"status":"blocked","reason":"available 2026 regional poll is post-cutoff and no historical pre-cutoff regional input is present","artefact":"metadata/historical-replay-council-inputs.json"},"cutoffValidation":{"status":"pass","reason":"frozen cycle cutoff and approved poll availability dates validate"},"replayConfig":{"status":"pass","reason":"deterministic cycle config is frozen"},"predictionScoringSeparation":{"status":"pass","reason":"guarded runner rejects outcomes before prediction freeze"},"runnable":false},
-    {"cycleId":"vic_la_2022","pollEvidence":{"status":"blocked","reason":"0 approved replay observations; minimum 3 observations and 2 independent source families not met"},"ballotContest":{"status":"blocked","reason":"cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"},"incumbencyLocal":{"status":"blocked","reason":"no leakage-safe historical local-pattern builder is wired"},"preferencePrior":{"status":"pass-with-broad-fallback","reason":"target-cycle outcome evidence remains scoring-only"},"councilInput":{"status":"blocked","reason":"historical pre-cutoff Council forecast inputs are not assembled"},"cutoffValidation":{"status":"pass","reason":"frozen cycle cutoff contract validates"},"replayConfig":{"status":"pass","reason":"deterministic cycle config is frozen"},"predictionScoringSeparation":{"status":"pass","reason":"guarded runner rejects outcomes before prediction freeze"},"runnable":false}
+    {
+      "cycleId": "vic_la_2010",
+      "pollEvidence": {
+        "status": "blocked",
+        "reason": "0 approved replay observations; minimum 3 observations and 2 independent source families not met"
+      },
+      "ballotContest": {
+        "status": "blocked",
+        "reason": "cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"
+      },
+      "incumbencyLocal": {
+        "status": "blocked",
+        "reason": "no leakage-safe historical local-pattern builder is wired"
+      },
+      "preferencePrior": {
+        "status": "pass-with-broad-fallback",
+        "reason": "walk-forward builder can use a broad uncertainty prior without target-cycle outcomes"
+      },
+      "councilInput": {
+        "status": "blocked",
+        "reason": "historical pre-cutoff Council forecast inputs are not assembled"
+      },
+      "cutoffValidation": {
+        "status": "pass",
+        "reason": "frozen cycle cutoff contract validates"
+      },
+      "replayConfig": {
+        "status": "pass",
+        "reason": "deterministic cycle config is frozen"
+      },
+      "predictionScoringSeparation": {
+        "status": "pass",
+        "reason": "guarded runner rejects outcomes before prediction freeze"
+      },
+      "runnable": false
+    },
+    {
+      "cycleId": "vic_la_2014",
+      "pollEvidence": {
+        "status": "blocked",
+        "reason": "0 approved replay observations; minimum 3 observations and 2 independent source families not met"
+      },
+      "ballotContest": {
+        "status": "blocked",
+        "reason": "cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"
+      },
+      "incumbencyLocal": {
+        "status": "blocked",
+        "reason": "no leakage-safe historical local-pattern builder is wired"
+      },
+      "preferencePrior": {
+        "status": "pass-with-broad-fallback",
+        "reason": "walk-forward builder can use a broad uncertainty prior without target-cycle outcomes"
+      },
+      "councilInput": {
+        "status": "blocked",
+        "reason": "historical pre-cutoff Council forecast inputs are not assembled"
+      },
+      "cutoffValidation": {
+        "status": "pass",
+        "reason": "frozen cycle cutoff contract validates"
+      },
+      "replayConfig": {
+        "status": "pass",
+        "reason": "deterministic cycle config is frozen"
+      },
+      "predictionScoringSeparation": {
+        "status": "pass",
+        "reason": "guarded runner rejects outcomes before prediction freeze"
+      },
+      "runnable": false
+    },
+    {
+      "cycleId": "vic_la_2018",
+      "pollEvidence": {
+        "status": "blocked",
+        "reason": "uComms/ReachTEL factual reconstruction is admissible but awaiting project-owner approval; approved input still has only 1 independent source family",
+        "artefact": "model/data/validation/historical-replay-poll-observations.json",
+        "pendingReview": "metadata/historical-poll-reuse-case-2018-ucomms.json"
+      },
+      "ballotContest": {
+        "status": "pass",
+        "reason": "cycle ballot universe and pre-cutoff local baseline are available",
+        "artefact": "metadata/historical-replay-local-inputs.json"
+      },
+      "incumbencyLocal": {
+        "status": "pass",
+        "reason": "2014 prior-election local baseline is used; target-cycle outcome-transition artefact is scoring-only",
+        "artefact": "metadata/historical-replay-dependency-audit-2018.json"
+      },
+      "preferencePrior": {
+        "status": "pass-with-broad-fallback",
+        "reason": "no earlier transfer matrix is promoted; broad uncertainty is explicit and target-cycle outcomes are excluded"
+      },
+      "councilInput": {
+        "status": "pass-with-broad-fallback",
+        "reason": "2014 Council regional structure is used and the unavailable regional poll term contributes zero with fixed uncertainty broadening",
+        "artefact": "metadata/historical-replay-council-inputs.json"
+      },
+      "cutoffValidation": {
+        "status": "pass",
+        "reason": "frozen cycle cutoff and approved poll availability dates validate"
+      },
+      "replayConfig": {
+        "status": "pass",
+        "reason": "deterministic cycle config is frozen"
+      },
+      "predictionScoringSeparation": {
+        "status": "pass",
+        "reason": "guarded runner rejects outcomes before prediction freeze"
+      },
+      "runnable": false
+    },
+    {
+      "cycleId": "vic_la_2022",
+      "pollEvidence": {
+        "status": "blocked",
+        "reason": "0 approved replay observations; minimum 3 observations and 2 independent source families not met"
+      },
+      "ballotContest": {
+        "status": "blocked",
+        "reason": "cycle-specific pre-cutoff contest and local-feature input sufficiency is not yet assembled"
+      },
+      "incumbencyLocal": {
+        "status": "blocked",
+        "reason": "no leakage-safe historical local-pattern builder is wired"
+      },
+      "preferencePrior": {
+        "status": "pass-with-broad-fallback",
+        "reason": "target-cycle outcome evidence remains scoring-only"
+      },
+      "councilInput": {
+        "status": "blocked",
+        "reason": "historical pre-cutoff Council forecast inputs are not assembled"
+      },
+      "cutoffValidation": {
+        "status": "pass",
+        "reason": "frozen cycle cutoff contract validates"
+      },
+      "replayConfig": {
+        "status": "pass",
+        "reason": "deterministic cycle config is frozen"
+      },
+      "predictionScoringSeparation": {
+        "status": "pass",
+        "reason": "guarded runner rejects outcomes before prediction freeze"
+      },
+      "runnable": false
+    }
   ],
   "runnableCycles": 0,
-  "modelImpact": {"forecast2026":false,"productionAuthorisation":false}
+  "modelImpact": {
+    "forecast2026": false,
+    "productionAuthorisation": false
+  }
 }

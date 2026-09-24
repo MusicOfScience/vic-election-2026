@@ -22,7 +22,8 @@ export function validateHistoricalReplayInputReadiness() {
   const cycle2018 = readiness.cycles.find((cycle) => cycle.cycleId === "vic_la_2018");
   if (cycle2018?.pollEvidence.status !== "blocked" || !cycle2018.pollEvidence.reason.includes("1 independent source family")) throw new Error("historical replay readiness: 2018 sparse-poll blocker is missing");
   if (targeted.status !== "blocked-source-fields-unavailable" || targeted.replayEligible || targeted.missingRequiredFields.length < 1) throw new Error("historical replay readiness: targeted second-family recovery was overstated");
-  if (local.status !== "blocked" || council.status !== "blocked") throw new Error("historical replay readiness: blocked historical input was unexpectedly accepted");
+  if (local.status !== "pass" || council.status !== "pass-with-broad-fallback") throw new Error("historical replay readiness: governed historical fallback inputs are not assembled");
+  if (local.inputPath.includes("2014_2018") || local.forbiddenPredictionInput === local.inputPath) throw new Error("historical replay readiness: target outcome file leaked into local input");
   if (readiness.modelImpact.forecast2026 || readiness.modelImpact.productionAuthorisation || canonical.modelImpact.forecast2026 || canonical.modelImpact.productionAuthorisation) throw new Error("historical replay readiness: model impact boundary failed");
   return { cycles: readiness.cycles.length, approvedReplayObservations: canonical.observations.length, runnableCycles: readiness.runnableCycles };
 }

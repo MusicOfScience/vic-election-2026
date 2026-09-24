@@ -1,11 +1,16 @@
 {
-  "schemaVersion": 1,
-  "generatedBy": "scripts/build-historical-council-inputs.mjs",
   "cycleId": "vic_la_2018",
-  "status": "blocked",
+  "status": "pass-with-broad-fallback",
   "cutoff": "2018-11-23",
-  "requiredArtefact": "pre-cutoff regional poll or governed broad regional prior",
+  "requiredArtefact": "model/data/processed/vec_2014_council_candidate_primaries.csv",
+  "regionalPollPath": null,
+  "regionalPollContribution": 0,
+  "uncertaintyRule": "fixed-broadening-when-regional-poll-absent",
   "rejectedModernArtefact": "model/data/processed/upper_house_region_poll_2026-08.csv",
-  "reason": "the available regional poll is a 2026 input after the frozen cutoff; no historical pre-cutoff regional forecast input is present",
-  "outcomeCountSequences": "scoring-only"
+  "modernArtefactPresent": true,
+  "reason": "2014 Council regional first-preference structure supplies a governed broad prior; no target-cycle regional poll is fabricated",
+  "outcomeCountSequences": "scoring-only",
+  "predictionInputs": [
+    "model/data/processed/vec_2014_council_candidate_primaries.csv"
+  ]
 }
