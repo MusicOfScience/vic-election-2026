@@ -3,7 +3,7 @@
 Updated: 2026-09-25
 Branch: `codex/score-2022-v2`
 Base: `baee9e2a` (PR #105 merged)
-Current batch: verify sealed artefacts, load official 2022 outcomes once, and score the first certifying v2 replay.
+Current batch: verify sealed artefacts, load official 2022 outcomes once, and score the first certifying v2 replay. PR #106 is open for review.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
