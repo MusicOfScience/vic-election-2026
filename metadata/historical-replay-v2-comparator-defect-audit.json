@@ -14,5 +14,6 @@
     "the old bundle did not declare comparator information boundaries or unavailable metrics"
   ],
   "replacementBundle": "model/data/validation/historical-replays/vic_la_2022-v2-comparators-v2.json",
+  "replacementBundleSha256": "cd04d597a9016f714f0c1e98d42c4ca66a91ce53a9c72283cb04c1abaea4a748",
   "nextAction": "score the immutable certifying prediction and frozen comparator bundle in a separate outcome-loading batch"
 }
