@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "cycle-aware-ballot-universe",
+  "canonicalFamilies": ["ALP", "Coalition", "Greens", "One Nation", "Other/Independent"],
+  "sourcePolicy": "Candidate rows establish contest identity and district availability; they do not by themselves prove when a nomination list became public. Pre-cutoff availability claims require a dated contemporaneous source.",
+  "pollCategoryPolicy": {
+    "explicitShare": "retain the reported share under its canonical family",
+    "groupedResidual": "retain the reported residual as Other/Independent; do not decompose it",
+    "unreportedFamily": "missing is unknown, never numeric zero",
+    "inactiveFamily": "a family with no Assembly candidates is not required as a separate poll column for that cycle",
+    "reportedButUnavailable": "retain as a diagnostic and do not silently map it to ballot votes",
+    "districtSpecificAvailability": "apply ballot availability at district level when a family contests only some districts"
+  },
+  "cycles": [
+    {
+      "cycleId": "vic_la_2010",
+      "candidateEvidencePath": "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+      "generalElectionDistricts": 88,
+      "familyCandidateRows": {"ALP": 88, "Coalition": 94, "Greens": 88, "One Nation": 0, "Other/Independent": 232},
+      "districtsWithCandidates": {"ALP": 88, "Coalition": 88, "Greens": 88, "One Nation": 0, "Other/Independent": 86},
+      "ballotActiveFamilies": ["ALP", "Coalition", "Greens", "Other/Independent"],
+      "districtSpecificFamilies": ["Coalition", "Other/Independent"],
+      "preCutoffAvailabilityEstablished": false
+    },
+    {
+      "cycleId": "vic_la_2014",
+      "candidateEvidencePath": "model/data/processed/vec_2014_assembly_candidate_primaries.csv",
+      "generalElectionDistricts": 88,
+      "familyCandidateRows": {"ALP": 88, "Coalition": 92, "Greens": 88, "One Nation": 0, "Other/Independent": 277},
+      "districtsWithCandidates": {"ALP": 88, "Coalition": 88, "Greens": 88, "One Nation": 0, "Other/Independent": 85},
+      "ballotActiveFamilies": ["ALP", "Coalition", "Greens", "Other/Independent"],
+      "districtSpecificFamilies": ["Coalition", "Other/Independent"],
+      "preCutoffAvailabilityEstablished": false
+    },
+    {
+      "cycleId": "vic_la_2018",
+      "candidateEvidencePath": "model/data/processed/vec_2018_assembly_candidate_primaries.csv",
+      "generalElectionDistricts": 88,
+      "familyCandidateRows": {"ALP": 88, "Coalition": 90, "Greens": 88, "One Nation": 0, "Other/Independent": 241},
+      "districtsWithCandidates": {"ALP": 88, "Coalition": 87, "Greens": 88, "One Nation": 0, "Other/Independent": 79},
+      "ballotActiveFamilies": ["ALP", "Coalition", "Greens", "Other/Independent"],
+      "districtSpecificFamilies": ["Coalition", "Other/Independent"],
+      "preCutoffAvailabilityEstablished": true,
+      "preCutoffSource": {
+        "url": "https://www.abc.net.au/news/2018-11-09/summary-of-candidates-and-parties-contesting-the-2018-victorian/10483188",
+        "publishedDate": "2018-11-09",
+        "finding": "Pauline Hanson's One Nation registered but nominated no Legislative Assembly candidates"
+      }
+    },
+    {
+      "cycleId": "vic_la_2022",
+      "candidateEvidencePath": "model/data/processed/vec_2022_assembly_candidate_primaries.csv",
+      "generalElectionDistricts": 87,
+      "familyCandidateRows": {"ALP": 87, "Coalition": 92, "Greens": 87, "One Nation": 4, "Other/Independent": 461},
+      "districtsWithCandidates": {"ALP": 87, "Coalition": 87, "Greens": 87, "One Nation": 4, "Other/Independent": 87},
+      "ballotActiveFamilies": ["ALP", "Coalition", "Greens", "One Nation", "Other/Independent"],
+      "districtSpecificFamilies": ["Coalition", "One Nation", "Other/Independent"],
+      "preCutoffAvailabilityEstablished": false
+    }
+  ],
+  "modelInvariants": [
+    "same poll weighting, latent-state and simulation architecture",
+    "same canonical family crosswalk where a family is ballot-active",
+    "cycle-specific active family set and district availability",
+    "no fabricated share for an unreported or ballot-unavailable family",
+    "historical outcomes remain scoring-only"
+  ]
+}

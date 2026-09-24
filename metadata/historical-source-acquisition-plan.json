@@ -144,7 +144,8 @@
       "acceptanceRules": {
         "observationLevelProvenanceRequired": true,
         "publicationDateAtOrBeforeCycleCutoffRequired": true,
-        "explicitReuseAuthorityRequired": true,
+        "reuseBasisClassificationRequired": true,
+        "explicitReuseAuthorityRequired": false,
         "fieldworkMidpointAsPublicationDateAccepted": false
       }
     }

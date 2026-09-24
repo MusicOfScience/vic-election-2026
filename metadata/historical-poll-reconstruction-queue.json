@@ -523,7 +523,8 @@
     "sampleSizeRequired": true,
     "explicitMethodRequired": true,
     "observationSourceUrlRequired": true,
-    "explicitReuseAuthorityRequired": true,
+    "reuseBasisClassificationRequired": true,
+    "explicitReuseAuthorityRequired": false,
     "unresolvedRowsRemainQuarantined": true
   },
   "externalContact": {

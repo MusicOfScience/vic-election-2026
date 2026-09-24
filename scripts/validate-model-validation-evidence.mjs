@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
 import { validateHistoricalPollReusePolicy } from "./validate-historical-poll-reuse-policy.mjs";
+import { validateHistoricalPartyFamilyAvailability } from "./validate-historical-party-family-availability.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -41,6 +42,7 @@ function assert(condition, message) {
 
 export function validateModelValidationEvidence() {
   validateHistoricalPollReusePolicy();
+  validateHistoricalPartyFamilyAvailability();
   const contract = readJson("metadata/model-validation-evidence-contract.json");
   const acceptance = readJson("metadata/historical-validation-acceptance-criteria.json");
   const inventory = readJson("metadata/model-validation-evidence-inventory.json");
@@ -118,7 +120,7 @@ export function validateModelValidationEvidence() {
   assert(pollRequest.requiredFields.includes("sampleSize"), "polling acquisition must seek sample sizes");
   assert(pollRequest.requiredFields.includes("explicitMethod"), "polling acquisition must seek explicit methods");
   assert(pollRequest.requiredFields.includes("observationSourceUrl"), "polling acquisition must seek observation provenance");
-  assert(pollRequest.requiredFields.includes("declaredReuseLicence"), "polling acquisition must seek reuse authority");
+  assert(pollRequest.requiredFields.includes("declaredReuseLicence"), "polling acquisition must record any declared reuse authority");
   assert(pollRequest.acceptanceRules.fieldworkMidpointAsPublicationDateAccepted === false, "fieldwork midpoint cannot substitute for publication date");
 
   const pollPublicAudit = publicAudit.sources.find((source) => source.id === "historical-poll-provenance");
@@ -352,7 +354,8 @@ export function validateModelValidationEvidence() {
     && smsMorganQueue.replayEligibleRows === 0 && smsMorganQueue.residualRows === 33, "SMS Morgan queue progress is stale or unsafe");
   assert(pollQueue.coverage.cycles.every((cycle) => expectedPollRows.get(cycle.id) === cycle.candidateRows && cycle.residualRows === cycle.candidateRows), "polling queue cycle coverage is stale");
   assert(pollQueue.acceptanceRules.fieldworkMidpointAsPublicationDateAccepted === false, "polling queue cannot treat MidDate as publication date");
-  assert(pollQueue.acceptanceRules.explicitReuseAuthorityRequired === true, "polling queue must require explicit reuse authority");
+  assert(pollQueue.acceptanceRules.reuseBasisClassificationRequired === true, "polling queue must require a reuse-basis classification");
+  assert(pollQueue.acceptanceRules.explicitReuseAuthorityRequired === false, "polling queue must not treat an explicit licence as the only reuse basis");
   assert(pollQueue.externalContact.status === "deferred", "polling repository contact must remain deferred while first-party reconstruction is pending");
   assert(Object.values(pollQueue.modelImpact).every((value) => value === false), "polling reconstruction queue cannot change forecasts or gates");
 

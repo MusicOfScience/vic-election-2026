@@ -18,7 +18,7 @@
       "id": "pre-election-poll-vintages",
       "status": "partial",
       "available": "A quarantined, version-pinned candidate series contains 200 Victorian poll leads spanning all four cycles. First-party Essential, Newspoll and Roy Morgan sources now provide dated observation URLs and samples for 62 leads, including explicit method evidence for 40.",
-      "needed": "Complete first-party reconstruction for the remaining leads, close ten unresolved SMS Morgan and eight unresolved Essential observations, and establish explicit reuse authority before any row can enter a historical replay",
+      "needed": "Complete first-party reconstruction for the remaining leads and adjudicate observations under separate provenance, methodological-adequacy and reuse-basis gates before any row can enter a historical replay",
       "requiredFor": [
         "polling-only-model",
         "latent-poll-replay",

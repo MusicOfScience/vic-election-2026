@@ -74,7 +74,7 @@
         },
         {
           "path": "metadata/historical-poll-reconstruction-queue.json",
-          "sha256": "151f5e6c0e75d6591b8a8db16fbec408a7519e1f4f1e651dd015738fdbbe964b"
+          "sha256": "9aeb7078923fe933c62243d21fba93eb5b96204b823cac66de5c0ee576ed4652"
         },
         {
           "path": "metadata/historical-poll-reconstruction-evidence.json",
@@ -87,9 +87,9 @@
         "The raw candidate dataset is not imported and contributes zero rows to any forecast or historical replay.",
         "Eight of 41 Essential leads, 32 of 39 Newspoll leads and nine of 33 SMS Morgan leads remain unmatched; archived pages use capture dates for availability, and source discrepancies remain explicit.",
         "The May-June 2015 Newspoll graphic is linked by a cutoff-safe archived article that confirms its sample, but does not preserve the graphic binary; its current method text is not counted as cutoff-verified method evidence.",
-        "No reconstructed source declares reuse authority, so all 200 candidate leads remain replay-ineligible."
+        "The 200-row candidate lead list remains quarantined. Independently reconstructed factual observations are assessed under the separate provenance, methodological-adequacy and reuse-basis policy; no observation is automatically promoted."
       ],
-      "needed": "Continue first-party reconstruction across the remaining source families, close the SMS Morgan and Essential observation gaps and establish reuse authority before any row enters replay."
+      "needed": "Continue first-party reconstruction across the remaining source families and adjudicate each observation under the cycle-aware ballot universe, three evidence gates and manual promotion path."
     },
     {
       "id": "district-primary-votes-and-party-crosswalk",

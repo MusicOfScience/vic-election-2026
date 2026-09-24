@@ -19,8 +19,8 @@ export function validateHistoricalPollReusePolicy() {
   if (caseFile.reuseBasis !== "independently_reconstructed_factual_observation" || !caseFile.reuseBasisGate.passed || caseFile.rawSourceStored || caseFile.copiedAuthoredExpression) {
     throw new Error("historical poll reuse policy: independent factual case is not conservatively represented");
   }
-  if (caseFile.methodologicalAdequacyGate.passed || caseFile.replayEligible) {
-    throw new Error("historical poll reuse policy: incomplete five-family case must remain blocked");
+  if (!caseFile.methodologicalAdequacyGate.passed || caseFile.replayEligible || !caseFile.modelInputAdmissible) {
+    throw new Error("historical poll reuse policy: ballot-aware 2018 case adjudication is inconsistent");
   }
   return { policyClasses: required.length, adjudicatedCases: 1, replayEligibleCases: 0 };
 }
