@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping
 
 
+
 class ReplayContractError(ValueError):
     """Raised when a replay request would violate the frozen contract."""
 
@@ -124,7 +125,12 @@ def run_historical_replay(
     if outcomes is None:
         raise ReplayContractError("runnable cycle requires separately loaded scoring outcomes")
 
-    prediction = dict(forecast_runner(root_path, cycle, seed=seed))
+    # Keep the blocked CLI usable in minimal environments; NumPy is required
+    # only when an evidence-complete cycle actually reaches forecast execution.
+    from .preference_prior import build_walk_forward_preference_prior
+
+    preference_prior = build_walk_forward_preference_prior(cycle, preferences)
+    prediction = dict(forecast_runner(root_path, cycle, seed=seed, preference_prior=preference_prior))
     if not prediction:
         raise ReplayContractError("forecast runner returned an empty prediction")
     metrics = {"scoringPending": True}
