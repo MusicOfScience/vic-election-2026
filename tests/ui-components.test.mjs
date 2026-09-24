@@ -145,6 +145,8 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   assert.match(html, /Party colour key/);
   assert.match(html, /majority threshold is 45 seats/);
   assert.match(html, /26 Aug 2026/);
+  assert.match(html, /Experimental forecast snapshot from 26 Aug 2026/);
+  assert.match(html, /Snapshot date/);
   assert.doesNotMatch(html, /updated 26 August/);
 });
 
