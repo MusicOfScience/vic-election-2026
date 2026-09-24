@@ -22,6 +22,7 @@
     "crosswalkArtefact": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
     "expectedSha256": "61e510c16bd4fb3e5a6704476ad23b19946c3efeae0595dd1f21f908c4040f0b",
     "availableInClone": false,
+    "sourceAudit": "metadata/historical-replay-2014-crosswalk-source-audit.json",
     "recoveryInvestigation": {
       "gitHistory": "not found",
       "branchesAndTags": "not found",
@@ -30,7 +31,7 @@
       "oldHashRecovered": false
     },
     "targetOutcomeUse": "forbidden",
-    "reason": "The report-referenced crosswalk is not present at the governed path and is not recoverable from Git history, branches, LFS, or local manifests. No independently fingerprinted pre-cutoff geographic source pipeline is present in this clone, so rebuilding it would require new evidence rather than a safe transformation."
+    "reason": "The report-referenced crosswalk is not present at the governed path and all four original raw inputs are absent from the bounded local/project search. It is not recoverable from Git history, branches, LFS, or local manifests; rebuilding it requires new governed source payloads rather than a safe transformation."
   },
   "council": {
     "status": "pass-for-regional-prior",

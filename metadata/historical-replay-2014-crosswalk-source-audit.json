@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "informationCutoff": "2014-11-28",
+  "status": "blocked-original-raw-inputs-absent",
+  "searchScope": {
+    "method": "bounded-local-source-search",
+    "locations": [
+      "repository raw/source directories",
+      "/Users/hudson/Documents/GitHub/* sibling project directories",
+      "/Users/hudson/Documents and Downloads retained project staging",
+      "/Users/hudson/.codex/attachments and retained checkpoint directories",
+      "Git history, all local branches/tags and Git LFS"
+    ],
+    "uncontrolledFilesystemScan": false
+  },
+  "expectedInputs": [
+    {
+      "id": "bcp_sa1_2011_vic",
+      "expectedNames": ["2011_BCP_SA1_for_VIC_short-header.zip", "2011_BCP_SA1_for_VIC_short-header(1).zip"],
+      "status": "missing-locally",
+      "expectedHistoricalSizeBytes": 52198605,
+      "historicalSha256Evidence": "0d94aaf6…3678fe6",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "id": "mesh_block_shape_2011_vic",
+      "expectedNames": ["1270055001_mb_2011_vic_shape.zip", "1270055001_mb_2011_vic_shape(1).zip"],
+      "status": "missing-locally",
+      "expectedHistoricalSizeBytes": 39426176,
+      "historicalSha256Evidence": "6d8cdb31…defd6a9",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "id": "census_counts_mesh_block_2011",
+      "expectedNames": ["censuscounts_mb_2011_aust.csv", "censuscounts_mb_2011_aust(1).csv"],
+      "status": "missing-locally",
+      "path": null,
+      "sha256": null
+    },
+    {
+      "id": "state_assembly_2013_shape",
+      "expectedNames": ["STATEASSEMBLY2013 SHP.zip", "STATEASSEMBLY2013 SHP(2).zip"],
+      "status": "missing-locally",
+      "path": null,
+      "sha256": null
+    }
+  ],
+  "duplicateIdentityCheck": {
+    "status": "not-applicable-no-copies-found",
+    "filenameSuffixesAreNotSemantic": true,
+    "differingDuplicates": false
+  },
+  "rebuildContract": {
+    "algorithm": "2011 Victorian mesh blocks intersected with final 2013 Victorian Legislative Assembly boundaries in a projected CRS; fractional area memberships joined to 2011 BCP/SA1 and census counts; seven core features aggregated to 88 districts",
+    "targetElectionOutcomesUsed": false,
+    "forbiddenInputs": ["model/data/processed/vec_2010_2014_redistribution_adjusted_tpp_swing.csv"],
+    "expectedGeometryAudit": {"meshBlockAndSpecialPurposeRecords": 81377, "districts": 88, "featuresPerDistrict": 7, "featureCells": 616},
+    "outputPath": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
+    "outputSha256": null
+  },
+  "blockingReason": "All four original raw inputs are absent from the bounded local/project search scope. No substitute source or deterministic rebuild is authorised; the incumbencyLocal gate remains blocked."
+}
