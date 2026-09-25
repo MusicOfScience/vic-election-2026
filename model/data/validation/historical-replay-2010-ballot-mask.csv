@@ -1,0 +1,89 @@
+cycle_id,district_id,district_name,ballot_active_families,incumbent_party_family,source_evidence_status,evidence_available_by,target_outcome_dependency
+vic_la_2010,albert-park,Albert Park,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,altona,Altona,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,ballarat-east,Ballarat East,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,ballarat-west,Ballarat West,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bass,Bass,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bayswater,Bayswater,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bellarine,Bellarine,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,benalla,Benalla,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,benambra,Benambra,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bendigo-east,Bendigo East,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bendigo-west,Bendigo West,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bentleigh,Bentleigh,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,box-hill,Box Hill,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,brighton,Brighton,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,broadmeadows,Broadmeadows,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,brunswick,Brunswick,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bulleen,Bulleen,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,bundoora,Bundoora,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,burwood,Burwood,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,carrum,Carrum,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,caulfield,Caulfield,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,clayton,Clayton,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,cranbourne,Cranbourne,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,dandenong,Dandenong,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,derrimut,Derrimut,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,doncaster,Doncaster,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,eltham,Eltham,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,essendon,Essendon,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,evelyn,Evelyn,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,ferntree-gully,Ferntree Gully,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,footscray,Footscray,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,forest-hill,Forest Hill,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,frankston,Frankston,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,geelong,Geelong,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,gembrook,Gembrook,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,gippsland-east,Gippsland East,ALP;LIB_NAT;GRN;OTH_IND,OTH_IND,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,gippsland-south,Gippsland South,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,hastings,Hastings,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,hawthorn,Hawthorn,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,ivanhoe,Ivanhoe,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,keilor,Keilor,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,kew,Kew,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,kilsyth,Kilsyth,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,kororoit,Kororoit,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,lara,Lara,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,lowan,Lowan,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,lyndhurst,Lyndhurst,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,macedon,Macedon,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,malvern,Malvern,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,melbourne,Melbourne,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,melton,Melton,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,mildura,Mildura,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,mill-park,Mill Park,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,mitcham,Mitcham,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,monbulk,Monbulk,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,mordialloc,Mordialloc,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,mornington,Mornington,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,morwell,Morwell,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,mount-waverley,Mount Waverley,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,mulgrave,Mulgrave,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,murray-valley,Murray Valley,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,narracan,Narracan,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,narre-warren-north,Narre Warren North,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,narre-warren-south,Narre Warren South,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,nepean,Nepean,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,niddrie,Niddrie,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,northcote,Northcote,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,oakleigh,Oakleigh,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,pascoe-vale,Pascoe Vale,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,polwarth,Polwarth,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,prahran,Prahran,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,preston,Preston,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,richmond,Richmond,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,ripon,Ripon,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,rodney,Rodney,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,sandringham,Sandringham,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,scoresby,Scoresby,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,seymour,Seymour,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,shepparton,Shepparton,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,south-barwon,South Barwon,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,south-west-coast,South-west Coast,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,swan-hill,Swan Hill,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,tarneit,Tarneit,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,thomastown,Thomastown,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,warrandyte,Warrandyte,ALP;LIB_NAT;GRN;OTH_IND,LIB_NAT,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,williamstown,Williamstown,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,yan-yean,Yan Yean,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false
+vic_la_2010,yuroke,Yuroke,ALP;LIB_NAT;GRN;OTH_IND,ALP,pending-cutoff-final-nomination-verification,unknown-pending-verification,false

@@ -2,6 +2,26 @@
   "schemaVersion": 1,
   "modelVersion": "historical_replay_v2",
   "cycles": {
+    "vic_la_2010": {
+      "electionDate": "2010-11-27",
+      "informationCutoff": "2010-11-26",
+      "seed": 20101126,
+      "simulations": 1200,
+      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+      "pollInput": "model/data/validation/historical-replay-2010-poll-observations-pending-owner.json",
+      "localInput": "model/data/validation/historical-replay-2010-local-inputs.csv",
+      "priorFamilyInput": "model/data/processed/vec_2006_assembly_family_primaries.csv",
+      "notionalBaseline": "model/data/validation/historical-replay-2010-assembly-notional-baseline.csv",
+      "councilInput": "model/data/validation/historical-replay-2010-council-prior.csv",
+      "councilAudit": "metadata/historical-replay-2010-council-prior-audit.json",
+      "councilRegions": 8,
+      "councilSeatsPerRegion": 5,
+      "assemblyContestCount": 88,
+      "ballotAvailability": "model/data/validation/historical-replay-2010-ballot-mask.csv",
+      "preferencePrior": "broad-fallback-v2",
+      "councilRules": "vic-2010-five-seat-stv",
+      "predictionStatus": "blocked-pending-owner-poll-approval"
+    },
     "vic_la_2014": {
       "electionDate": "2014-11-29",
       "informationCutoff": "2014-11-28",

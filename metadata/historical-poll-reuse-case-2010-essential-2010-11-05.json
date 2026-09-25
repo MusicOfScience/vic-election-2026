@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "caseId": "historical-poll-2010-essential-2010-11-05",
+  "cycleId": "vic_la_2010",
+  "observationPeriod": "2010-10-01",
+  "sourceId": "essential-vic-2010-11-05-web",
+  "sourceUrl": "https://essentialvision.com.au/victoria-%e2%80%93-voting-intention",
+  "sourceSha256": "094cc8408f99c7600df060801dcba017389d4f3da163d7794619a1b4a5c639ba",
+  "methodologySourceUrl": "https://essentialvision.com.au/essential-facts-for-reading-our-poll",
+  "methodologySourceSha256": "95d0b1ef82f70d29f19684b666786b945218daf700ffb2bad16df1f73e192d5c",
+  "publicationDate": "2010-11-05",
+  "evidenceAvailableByDate": "2010-11-05",
+  "cycleInformationCutoff": "2010-11-26",
+  "fieldwork": {"periodLabel": "six-week average", "exactDatesReported": false, "sampleSize": 1465, "population": "Victorian electors", "mode": "online Your Source community panel"},
+  "reportedPrimaryCategories": {"LIB_NAT": 44, "ALP": 38, "GRN": 12, "OTH_IND": 6},
+  "modelPrimaryShares": {"LIB_NAT": 44, "ALP": 38, "GRN": 12, "OTH_IND": 6},
+  "reportedTpp": {"ALP": 50, "LIB_NAT": 50},
+  "groupedResidual": {"family": "OTH_IND", "components": ["Other/Independent"], "share": 6, "isArithmeticResidual": false},
+  "ballotActiveFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+  "reuseBasis": "independently_reconstructed_factual_observation",
+  "rawSourceStored": false,
+  "copiedAuthoredExpression": false,
+  "gates": {
+    "provenance": {"passed": true, "basis": "First-party Essential page is dated 2010-11-05, before the frozen 2010-11-26 cutoff."},
+    "methodologicalAdequacy": {"passed": true, "basis": "The first-party page supplies an observation-specific sample, exhaustive leaning-primary categories, denominator semantics and TPP. The contemporaneous 2010-08-11 Essential methodology page links the Victorian observation to the continuing Your Source online-panel, rolling-average and demographic/geographic weighting process."},
+    "reuseBasis": {"passed": true, "manualReviewRequired": true, "legalDetermination": false}
+  },
+  "ownerReviewStatus": "awaiting-project-owner-approval",
+  "modelInputAdmissible": false,
+  "replayEligible": false,
+  "notFromQuarantinedDataset": true,
+  "notes": "Structured factual fields only. The six-week average and leaning-to question are retained as reported; exact field dates remain unknown. Explicit owner approval is required before promotion."
+}

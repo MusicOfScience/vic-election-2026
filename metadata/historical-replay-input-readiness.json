@@ -7,24 +7,31 @@
     {
       "cycleId": "vic_la_2010",
       "pollEvidence": {
-        "status": "blocked",
-      "reason": "No approved 2010 replay observations are registered; only four source-matched 2010 leads are available and no second-family case has passed the fixed three-observation/two-family rule"
+        "status": "blocked-pending-owner-approval",
+        "reason": "Three 2010 observations from two independent families pass automated provenance/methodology/reuse gates, but none has explicit project-owner approval; fixed minimum remains 3 observations and 2 independent families",
+        "automatedPassObservations": 3,
+        "approvedObservations": 0,
+        "independentFamilies": 2,
+        "artefact": "model/data/validation/historical-replay-2010-poll-observations-pending-owner.json"
       },
       "ballotContest": {
         "status": "blocked",
-        "reason": "The 2010 cutoff-safe ballot/contest contract is not assembled; later 2014 contest evidence is out of cycle and cannot satisfy the 2010 cutoff"
+        "reason": "The 2010 family mask is provisionally assembled from prior-cycle structure, but a cutoff-safe district-level final-nomination source is still required; later target result pages remain forbidden",
+        "artefact": "model/data/validation/historical-replay-2010-ballot-mask.csv"
       },
       "incumbencyLocal": {
-        "status": "blocked",
-        "reason": "No governed 2006-to-2010 multi-party Assembly baseline or 2010 local translation substrate is registered"
+        "status": "pass",
+        "reason": "Same-boundary official 2006 family composition and the cutoff-safe ABC 2010 notional baseline produce 88 varied, reconciled prediction-safe local rows; demographic challenger remains at zero weight",
+        "artefact": "model/data/validation/historical-replay-2010-local-inputs.csv"
       },
       "preferencePrior": {
         "status": "pass-with-broad-fallback",
         "reason": "walk-forward builder can use a broad uncertainty prior without target-cycle outcomes"
       },
       "councilInput": {
-        "status": "blocked",
-        "reason": "2010 Council evidence exists, but a 2010-cycle prediction-safe regional input and cutoff audit are not assembled"
+        "status": "pass-with-broad-fallback",
+        "reason": "Official 2006 Council region pages provide a prior-only eight-region family surface on the unchanged 2006/2010 region system; regional polling remains absent and contributes zero with fixed broadening",
+        "artefact": "model/data/validation/historical-replay-2010-council-prior.csv"
       },
       "cutoffValidation": {
         "status": "pass",
