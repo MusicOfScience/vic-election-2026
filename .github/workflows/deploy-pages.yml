@@ -37,6 +37,7 @@ jobs:
       - run: npx next build
         env:
           GITHUB_PAGES: "true"
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
