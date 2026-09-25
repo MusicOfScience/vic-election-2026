@@ -53,8 +53,15 @@
       "predictionSha256": "3d23e92d8aa0d8d4c6e522bbc07f529d614653c5d20aa68a952a96704804fd5d",
       "comparatorBundle": "model/data/validation/historical-replays/vic_la_2010-v2-comparators-v2.json",
       "comparatorBundleSha256": "a5e464f8d84ba7cdc4a198df43006eb64824f4dc71c1d789ce55bffbcbd76b13",
-      "scored": false,
-      "certifyingScored": false
+      "scoringOutcome": {
+        "status": "pass",
+        "reason": "Frozen 2010 v2 prediction, comparator bundle and specification were verified before official VEC outcomes were loaded; 88 Assembly districts and 8 Council regions were scored once",
+        "artefact": "model/data/processed/vec_2010_assembly_final_pairs.csv",
+        "scoreArtefact": "model/data/validation/historical-replays/vic_la_2010-v2-score.json",
+        "scoreManifest": "model/data/validation/historical-replays/vic_la_2010-v2-score-manifest.json"
+      },
+      "scored": true,
+      "certifyingScored": true
     },
     {
       "cycleId": "vic_la_2014",
@@ -210,9 +217,9 @@
   ],
   "runnableCycles": 4,
   "predictedCycles": 4,
-  "scoredCycles": 3,
+  "scoredCycles": 4,
   "certifyingPredictedCycles": 3,
-  "certifyingScoredCycles": 2,
+  "certifyingScoredCycles": 3,
   "modelImpact": {
     "forecast2026": false,
     "productionAuthorisation": false

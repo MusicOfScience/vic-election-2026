@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "status": "official-vic-outcome-source-manifest",
+  "sourceAuthority": "Victorian Electoral Commission",
+  "sourceDescription": "Official 2010 Victorian state election report and district result pages",
+  "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+  "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+  "districtPages": 88,
+  "targetOutcomeDependency": true,
+  "scoringOnly": true
+}

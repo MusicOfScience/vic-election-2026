@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "status": "scoring-only-outcomes-loaded-after-sealed-prediction-and-comparator-verification",
+  "outcomesLoaded": true,
+  "assemblyOutcomePath": "model/data/processed/vec_2010_assembly_final_pairs.csv",
+  "assemblyOutcomeSha256": "00533f13f92713e28f30e173a12a786b7113cc02fb00301273e541ea4b74d9fd",
+  "assemblyDistricts": 88,
+  "finalPairAvailableDistricts": 44,
+  "finalPairUnavailableDistricts": 44,
+  "sourceManifestPath": "metadata/historical-replay-2010-assembly-outcome-audit.json",
+  "sourceManifestSha256": "ac2b7f40152f3ee51fc8051325804b4667e5a728ea3605ef6ca3d41dcf79e4fb",
+  "candidatePrimaryPath": "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+  "candidatePrimarySha256": "42b6bc386faf2cb2258be17af3303a5388e6612e86804bf628d1354b6e5d888b",
+  "councilEvidenceAuditPath": "metadata/vec-2010-council-evidence-audit.json",
+  "councilPrimaryPath": "model/data/processed/vec_2010_council_candidate_primaries.csv",
+  "targetOutcomeDependency": true,
+  "preElectionInputEligible": false,
+  "productionAuthorisation": false
+}

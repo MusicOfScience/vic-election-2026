@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "modelVersion": "historical_replay_v2",
+  "predictionSha256": "3d23e92d8aa0d8d4c6e522bbc07f529d614653c5d20aa68a952a96704804fd5d",
+  "comparatorBundleSha256": "a5e464f8d84ba7cdc4a198df43006eb64824f4dc71c1d789ce55bffbcbd76b13",
+  "comparatorSpecSha256": "f31ad1c4a221cfd076727e5c41595ca6cb316f81be9eafd2d977bb1f59603726",
+  "predictionPath": "model/data/validation/historical-replays/vic_la_2010-v2-prediction.json",
+  "comparatorBundlePath": "model/data/validation/historical-replays/vic_la_2010-v2-comparators-v2.json",
+  "comparatorSpecPath": "metadata/historical-replay-v2-comparator-spec-2010.json",
+  "assemblyOutcomePath": "model/data/processed/vec_2010_assembly_final_pairs.csv",
+  "assemblyOutcomeSha256": "00533f13f92713e28f30e173a12a786b7113cc02fb00301273e541ea4b74d9fd",
+  "assemblySourceManifestPath": "metadata/historical-replay-2010-assembly-outcome-audit.json",
+  "assemblySourceManifestSha256": "ac2b7f40152f3ee51fc8051325804b4667e5a728ea3605ef6ca3d41dcf79e4fb",
+  "primaryArtefactPath": "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+  "primaryArtefactSha256": "42b6bc386faf2cb2258be17af3303a5388e6612e86804bf628d1354b6e5d888b",
+  "councilOutcomePaths": [
+    "model/data/processed/vec_2010_council_candidate_primaries.csv",
+    "metadata/vec-2010-council-evidence-audit.json"
+  ],
+  "councilOutcomeSha256": {
+    "model/data/processed/vec_2010_council_candidate_primaries.csv": "cef38d0ff0467b703fb554d3c294b7dbce11787061d6a798aa0aef5b24b790fd",
+    "metadata/vec-2010-council-evidence-audit.json": "06c0d07c7061fe17efabb646ed14dd3185361dc52f290a5f6b24762ff8367274"
+  },
+  "criteriaPath": "metadata/historical-validation-acceptance-criteria.json",
+  "criteriaSha256": "0fe66e8080dfcf48d6b9bab7c7568b8dfdee825a239e6ff9cbffd8a39ae3d22f",
+  "scoringCommit": "da78667c2fc2dd03dd847742715e3441b0f420c1",
+  "outcomeBoundaryCrossedAfterPredictionAndComparatorVerification": true,
+  "forecastRegenerated": false,
+  "scorePath": "model/data/validation/historical-replays/vic_la_2010-v2-score.json",
+  "scoreSha256": "6503d74c2306f8bc08dae6e76f3b055a1c19f477e0b432119cbc820360d0e1b0"
+}

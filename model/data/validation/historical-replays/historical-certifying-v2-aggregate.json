@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "status": "descriptive-three-cycle-certifying-evidence; four-cycle-gate-closed",
+  "certifyingCycles": [
+    "vic_la_2022",
+    "vic_la_2014",
+    "vic_la_2010"
+  ],
+  "nonCertifyingCyclesExcluded": [
+    {
+      "cycleId": "vic_la_2018",
+      "reason": "v1 implementation defect; v2 post-hoc diagnostic"
+    }
+  ],
+  "cycles": {
+    "vic_la_2010": {
+      "scorePath": "model/data/validation/historical-replays/vic_la_2010-v2-score.json",
+      "scoreSha256": "6503d74c2306f8bc08dae6e76f3b055a1c19f477e0b432119cbc820360d0e1b0",
+      "districtCount": 88,
+      "winnerAccuracy": 0.8636363636363636,
+      "multiclassBrier": 0.1679826862373738,
+      "multiclassLogLoss": 0.24397509452042707,
+      "districtPrimaryMAE": 3.911608668926276,
+      "statewideVoteErrors": {
+        "ALP": 1.7839828316535673,
+        "LIB_NAT": -0.831513350584963,
+        "GRN": 0.8169925839970098,
+        "OTH_IND": -1.7694620650656105
+      },
+      "seatCount": {
+        "actual": {
+          "ALP": 43,
+          "LIB_NAT": 45,
+          "GRN": 0,
+          "OTH_IND": 0
+        },
+        "byFamily": {
+          "ALP": {
+            "actual": 43,
+            "mean": 33.3175,
+            "median": 33.0,
+            "meanError": -9.682499999999997,
+            "medianError": -10.0,
+            "inside80": false
+          },
+          "LIB_NAT": {
+            "actual": 45,
+            "mean": 54.6825,
+            "median": 55.0,
+            "meanError": 9.682499999999997,
+            "medianError": 10.0,
+            "inside80": false
+          },
+          "GRN": {
+            "actual": 0,
+            "mean": 0.0,
+            "median": 0.0,
+            "meanError": 0.0,
+            "medianError": 0.0,
+            "inside80": true
+          },
+          "OTH_IND": {
+            "actual": 0,
+            "mean": 0.0,
+            "median": 0.0,
+            "meanError": 0.0,
+            "medianError": 0.0,
+            "inside80": true
+          }
+        },
+        "meanAbsoluteMeanSeatError": 4.841249999999999,
+        "medianAbsoluteMedianSeatError": 5.0,
+        "interval80Coverage": 0.5
+      },
+      "finalPair": {
+        "availableDistricts": 44,
+        "unavailableDistricts": 44,
+        "accuracy": 0.8863636363636364,
+        "calibration": {
+          "status": "unavailable",
+          "reason": "frozen prediction contains only the most-likely pair, not a complete pair distribution"
+        }
+      },
+      "thresholdAssessment": {
+        "statewideVoteError": {
+          "meanAbsolutePercentagePoints": 1.3004877078252877,
+          "maximumAbsolutePercentagePoints": 1.7839828316535673,
+          "threshold": {
+            "cycleMeanAbsoluteErrorMaxPercentagePoints": 4.0,
+            "cycleMaximumAbsoluteErrorMaxPercentagePoints": 7.0
+          },
+          "status": "met"
+        },
+        "seatWinnerAccuracy": {
+          "value": 0.8636363636363636,
+          "threshold": 0.7,
+          "status": "met"
+        },
+        "seatCountError": {
+          "maximumAbsoluteMeanError": 9.682499999999997,
+          "meanAbsoluteMeanError": 4.841249999999999,
+          "threshold": {
+            "cycleAbsoluteErrorMaxSeats": 8,
+            "cycleMeanAbsoluteErrorMaxSeats": 5
+          },
+          "status": "missed"
+        },
+        "multiclassBrier": {
+          "value": 0.1679826862373738,
+          "threshold": 0.25,
+          "status": "met"
+        },
+        "multiclassLogLoss": {
+          "value": 0.24397509452042707,
+          "threshold": 1.2,
+          "status": "met"
+        },
+        "intervalCoverage80": {
+          "value": 0.5,
+          "threshold": {
+            "cycleMinimum": 0.7,
+            "cycleMaximum": 0.9
+          },
+          "status": "missed"
+        },
+        "finalPairCalibration": {
+          "status": "unavailable",
+          "reason": "frozen prediction contains only the most-likely pair, not a complete pair distribution"
+        },
+        "regionalError": {
+          "status": "unavailable",
+          "reason": "no preregistered regional primary probability output in the frozen 2010 artefact"
+        },
+        "contestType": {
+          "status": "unavailable",
+          "reason": "no preregistered contest-type partition is frozen for this single cycle"
+        }
+      }
+    },
+    "vic_la_2014": {
+      "scorePath": "model/data/validation/historical-replays/vic_la_2014-v2-score.json",
+      "scoreSha256": "e96125d51b4b85a365fb457148a0cee411f576c1d09f71b225fd7284175e4bae",
+      "districtCount": 88,
+      "winnerAccuracy": 0.7840909090909091,
+      "multiclassBrier": 0.29927978219696977,
+      "multiclassLogLoss": 1.1399020122815953,
+      "districtPrimaryMAE": 6.0829669817397125,
+      "statewideVoteErrors": {
+        "ALP": -3.133856153262819,
+        "LIB_NAT": -4.29805158108438,
+        "GRN": 6.7676409104440545,
+        "OTH_IND": 0.6642668239031426
+      },
+      "seatCount": {
+        "actual": {
+          "ALP": 47,
+          "LIB_NAT": 38,
+          "GRN": 2,
+          "OTH_IND": 1
+        },
+        "byFamily": {
+          "ALP": {
+            "actual": 47,
+            "mean": 34.64083333333333,
+            "median": 34.0,
+            "meanError": -12.359166666666667,
+            "medianError": -13.0,
+            "inside80": false
+          },
+          "LIB_NAT": {
+            "actual": 38,
+            "mean": 52.76083333333333,
+            "median": 53.0,
+            "meanError": 14.76083333333333,
+            "medianError": 15.0,
+            "inside80": false
+          },
+          "GRN": {
+            "actual": 2,
+            "mean": 0.5983333333333334,
+            "median": 0.0,
+            "meanError": -1.4016666666666666,
+            "medianError": -2.0,
+            "inside80": true
+          },
+          "OTH_IND": {
+            "actual": 1,
+            "mean": 0.0,
+            "median": 0.0,
+            "meanError": -1.0,
+            "medianError": -1.0,
+            "inside80": false
+          }
+        },
+        "meanAbsoluteMeanSeatError": 7.380416666666666,
+        "medianAbsoluteMedianSeatError": 7.75,
+        "interval80Coverage": 0.25
+      },
+      "finalPair": {
+        "availableDistricts": 45,
+        "unavailableDistricts": 43,
+        "accuracy": 0.9111111111111111,
+        "calibration": {
+          "status": "unavailable",
+          "reason": "frozen prediction contains only the most-likely pair, not a complete pair distribution"
+        }
+      },
+      "thresholdAssessment": {
+        "statewideVoteError": {
+          "meanAbsolutePercentagePoints": 3.715953867173599,
+          "maximumAbsolutePercentagePoints": 6.7676409104440545,
+          "threshold": {
+            "cycleMeanAbsoluteErrorMaxPercentagePoints": 4.0,
+            "cycleMaximumAbsoluteErrorMaxPercentagePoints": 7.0
+          },
+          "status": "met"
+        },
+        "seatWinnerAccuracy": {
+          "value": 0.7840909090909091,
+          "threshold": 0.7,
+          "status": "met"
+        },
+        "seatCountError": {
+          "maximumAbsoluteMeanError": 14.76083333333333,
+          "meanAbsoluteMeanError": 7.380416666666666,
+          "threshold": {
+            "cycleAbsoluteErrorMaxSeats": 8,
+            "cycleMeanAbsoluteErrorMaxSeats": 5
+          },
+          "status": "missed"
+        },
+        "multiclassBrier": {
+          "value": 0.29927978219696977,
+          "threshold": 0.25,
+          "status": "missed"
+        },
+        "multiclassLogLoss": {
+          "value": 1.1399020122815953,
+          "threshold": 1.2,
+          "status": "met"
+        },
+        "intervalCoverage80": {
+          "value": 0.25,
+          "threshold": {
+            "cycleMinimum": 0.7,
+            "cycleMaximum": 0.9
+          },
+          "status": "missed"
+        },
+        "finalPairCalibration": {
+          "status": "unavailable",
+          "reason": "frozen prediction contains only the most-likely pair, not a complete pair distribution"
+        },
+        "regionalError": {
+          "status": "unavailable",
+          "reason": "no preregistered regional primary probability output in the frozen 2014 artefact"
+        },
+        "contestType": {
+          "status": "unavailable",
+          "reason": "no preregistered contest-type partition is frozen for this single cycle"
+        }
+      }
+    },
+    "vic_la_2022": {
+      "scorePath": "model/data/validation/historical-replays/vic_la_2022-v2-score.json",
+      "scoreSha256": "3bc3b150a5a410bbda2c18e679ed0ae03c555a24d7f3b98a1b0e111c22abdb4e",
+      "districtCount": 87,
+      "winnerAccuracy": 0.8735632183908046,
+      "multiclassBrier": 0.19074918582375477,
+      "multiclassLogLoss": 1.7620483223466001,
+      "districtPrimaryMAE": 4.272601579826256,
+      "statewideVoteErrors": {
+        "ALP": 0.8493541795020718,
+        "LIB_NAT": -1.6754945627812177,
+        "GRN": -0.09745271970190217,
+        "predicted_poll_residual_vs_actual_nonmajor_residual": 0.9235931029810516
+      },
+      "seatCount": {
+        "actual": {
+          "ALP": 56,
+          "LIB_NAT": 27,
+          "GRN": 4,
+          "ONP": 0,
+          "OTH_IND": 0
+        },
+        "byFamily": {
+          "ALP": {
+            "meanError": 7.045833333333334,
+            "medianError": 8.0,
+            "actual": 56,
+            "mean": 63.045833333333334,
+            "median": 64.0,
+            "inside80": true
+          },
+          "LIB_NAT": {
+            "meanError": -3.140833333333333,
+            "medianError": -4.0,
+            "actual": 27,
+            "mean": 23.859166666666667,
+            "median": 23.0,
+            "inside80": true
+          },
+          "GRN": {
+            "meanError": -4.0,
+            "medianError": -4.0,
+            "actual": 4,
+            "mean": 0.0,
+            "median": 0.0,
+            "inside80": false
+          },
+          "ONP": {
+            "meanError": 0.0,
+            "medianError": 0.0,
+            "actual": 0,
+            "mean": 0.0,
+            "median": 0.0,
+            "inside80": true
+          },
+          "OTH_IND": {
+            "meanError": 0.095,
+            "medianError": 0.0,
+            "actual": 0,
+            "mean": 0.095,
+            "median": 0.0,
+            "inside80": true
+          }
+        },
+        "meanAbsoluteMeanSeatError": 2.8563333333333336,
+        "interval80Coverage": 0.8
+      },
+      "finalPair": {
+        "availableDistricts": 77,
+        "unavailableDistricts": 10,
+        "unavailableReason": "official VEC page provides only 2CP/early-majority information; no final-pair outcome was used",
+        "accuracy": 0.5194805194805194
+      },
+      "thresholdAssessment": {
+        "statewideVoteError": {
+          "meanAbsolutePercentagePoints": 0.8741004873283972,
+          "maximumAbsolutePercentagePoints": 1.6754945627812177,
+          "threshold": {
+            "meanMax": 4.0,
+            "maximumMax": 7.0
+          },
+          "status": "met"
+        },
+        "seatWinnerAccuracy": {
+          "value": 0.8735632183908046,
+          "threshold": 0.7,
+          "status": "met"
+        },
+        "seatCountError": {
+          "maximumAbsoluteMeanError": 7.045833333333334,
+          "meanAbsoluteMeanError": 2.8563333333333336,
+          "threshold": {
+            "maximum": 8.0,
+            "meanMaximum": 5.0
+          },
+          "status": "met"
+        },
+        "brierScore": {
+          "value": 0.19074918582375477,
+          "threshold": 0.25,
+          "status": "met"
+        },
+        "logLoss": {
+          "value": 1.7620483223466001,
+          "threshold": 1.2,
+          "status": "missed"
+        },
+        "intervalCoverage80": {
+          "value": 0.8,
+          "threshold": {
+            "minimum": 0.7,
+            "maximum": 0.9
+          },
+          "status": "met"
+        },
+        "finalPairCalibration": {
+          "status": "unavailable",
+          "reason": "frozen prediction contains only most-likely pair fields, and 10 official final pairs are unavailable"
+        },
+        "regionalError": {
+          "status": "unavailable",
+          "reason": "frozen prediction contains Council seat means but no regional primary estimates"
+        },
+        "contestType": {
+          "status": "unavailable",
+          "reason": "no preregistered contest-type partition is frozen for this single cycle"
+        }
+      }
+    }
+  },
+  "descriptivePooledMetrics": {
+    "winnerAccuracy": 0.8404301637060257,
+    "multiclassBrier": 0.2193372180860328,
+    "multiclassLogLoss": 1.0486418097162076,
+    "districtPrimaryMAE": 4.755725743497415
+  },
+  "metricAggregation": "unweighted mean of cycle-level metrics; not a certification decision",
+  "comparatorAggregate": "Only comparator metrics explicitly frozen and present in each cycle score may be compared; no cross-cycle baseline is asserted where metric availability differs.",
+  "probabilityCalibration": {
+    "status": "closed-incomplete",
+    "reason": "preregistered cycle-clustered slope/intercept and reliability protocol is not complete for the required four certifying cycles"
+  },
+  "completeForecastBacktest": {
+    "status": "closed-incomplete",
+    "reason": "2010, 2014 and 2022 are scored; the fourth certifying cycle is not available because 2018 is non-certifying"
+  },
+  "productionAuthorisation": "closed"
+}
