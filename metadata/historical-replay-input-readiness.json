@@ -82,8 +82,9 @@
       "certifyingPredictionFrozen": true,
       "predictionArtefact": "model/data/validation/historical-replays/vic_la_2014-v2-prediction.json",
       "predictionSha256": "7621cd120c9efdd7f891d0d69fbd711b8d5316af632547df6035e3ea096b38b0",
-      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2014-v2-comparators.json",
-      "comparatorBundleSha256": "d0178652ddcd922ae8b61cadac40ff6bab296c27f9bcc4be97cd5e34f43e3efd",
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2014-v2-comparators-v2.json",
+      "comparatorBundleSha256": "4d706fa0dc0b49b5cd6bf281550914594663da4d31d4c6613be17dc87daa1ccb",
+      "comparatorBundleDefectAudit": "metadata/historical-replay-2014-v2-comparator-defect-audit.json",
       "scored": false,
       "certifyingScored": false
     },

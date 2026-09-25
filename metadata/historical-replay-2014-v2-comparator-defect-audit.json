@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "status": "pre-score-implementation-defect-discovered-and-repaired",
+  "outcomesLoaded": false,
+  "predictionUntouched": true,
+  "oldBundlePath": "model/data/validation/historical-replays/vic_la_2014-v2-comparators.json",
+  "oldBundleSha256": "d0178652ddcd922ae8b61cadac40ff6bab296c27f9bcc4be97cd5e34f43e3efd",
+  "defect": "uniform-swing-baseline and seat-level-model used identical 88-district outputs",
+  "repair": "separate cycle-specific comparator contract and fixed pre-score independent-seat uncertainty",
+  "replacementBundlePath": "model/data/validation/historical-replays/vic_la_2014-v2-comparators-v2.json",
+  "replacementBundleSha256": "4d706fa0dc0b49b5cd6bf281550914594663da4d31d4c6613be17dc87daa1ccb",
+  "targetOutcomesConsulted": false
+}
