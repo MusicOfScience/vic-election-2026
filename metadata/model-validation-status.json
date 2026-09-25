@@ -33,7 +33,7 @@
   },
   "completeForecastBacktest": {
     "passed": false,
-    "status": "not-yet-demonstrated",
+    "status": "closed-incomplete-certifying-four-cycle-protocol",
     "label": "Complete multi-party seat model passes walk-forward backtesting",
     "requiredMetrics": [
       "statewide vote error",
@@ -47,7 +47,7 @@
   },
   "probabilityCalibration": {
     "passed": false,
-    "status": "not-yet-demonstrated",
+    "status": "closed-incomplete-cycle-clustered-protocol",
     "label": "Published win probabilities pass reliability and coverage tests",
     "requiredMetrics": [
       "reliability curve",

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-09-25",
+  "policy": "This audit classifies existing release gates; it does not open any gate or alter forecast inputs.",
+  "historicalValidation": {
+    "certifyingCycles": ["vic_la_2010", "vic_la_2014", "vic_la_2022"],
+    "nonCertifyingCycles": [{"cycleId": "vic_la_2018", "reason": "v1 implementation defect; v2 post-hoc diagnostic"}],
+    "aggregatePath": "model/data/validation/historical-replays/historical-certifying-v2-aggregate.json",
+    "aggregateSha256": "7680fa6111c01665b24c6fe16bca6ab6d67f9aa4697c8294de1be33d0a4c972e",
+    "counters": {"runnable": "4/4", "predicted": "4/4", "scored": "4/4", "certifyingPredicted": "3/4", "certifyingScored": "3/4"}
+  },
+  "gates": {
+    "sourceIntegrity": {"status": "PASS", "class": "resolved", "evidence": "metadata/release-readiness.generated.json"},
+    "criticalSourceFreshness": {"status": "BLOCKED", "class": "resolvable-current-evidence-blocker", "evidence": "metadata/release-readiness.generated.json", "reason": "The model-eligible poll registry is stale against the fixed 21-day policy; the 2026-09-15 RedBridge/Accent wave is staged but not model-eligible.", "changesForecast": true, "nextDecision": "Complete explicit evidence and model-eligibility review; do not auto-promote."},
+    "modelInputFreshness": {"status": "BLOCKED", "class": "resolvable-current-evidence-blocker", "evidence": "metadata/poll-review-dossier-2026.json", "reason": "One newer staged record remains unresolved; evidence acceptance and model eligibility are separate decisions.", "changesForecast": true, "nextDecision": "Project owner/model owner resolves the staged September RedBridge/Accent decision."},
+    "deterministicOutputs": {"status": "PASS", "class": "resolved", "evidence": "metadata/release-readiness.generated.json", "forecastSha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab", "changesForecast": false},
+    "historicalDataReadiness": {"status": "PASS", "class": "resolved", "evidence": "metadata/historical-replay-input-readiness.json", "changesForecast": false},
+    "completeForecastBacktest": {"status": "BLOCKED", "class": "structurally-blocked-under-prod-1.0-validation-protocol", "evidence": "model/data/validation/historical-replays/historical-four-cycle-validation-status.json", "reason": "Only three certifying v2 cycles exist; 2018 was consumed with an implementation defect and cannot be made fresh again.", "changesForecast": false, "nextDecision": "Keep closed; define a new prospective protocol/model version if further validation is desired."},
+    "probabilityCalibration": {"status": "BLOCKED", "class": "structurally-blocked-under-prod-1.0-validation-protocol", "evidence": "model/data/validation/historical-replays/historical-four-cycle-validation-status.json", "reason": "The required four-cycle clustered calibration evidence is incomplete; final-pair and regional-primary probability products are also unavailable.", "changesForecast": false, "nextDecision": "Keep closed; do not infer calibration from partial cycles."},
+    "candidateEvidence": {"status": "PASS", "class": "resolved", "evidence": "metadata/release-readiness.generated.json", "changesForecast": false},
+    "productionAuthorisation": {"status": "BLOCKED", "class": "downstream-blocked", "evidence": "metadata/release-readiness.generated.json", "reason": "Upstream freshness, complete-backtest and calibration gates are not all passed; production compatibility remains false.", "changesForecast": false, "nextDecision": "Remain closed."}
+  },
+  "septemberRedbridgeAccent": {
+    "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+    "evidenceAcceptance": "supportable-from-captured-first-party-report",
+    "sourceSha256": "ba588f8f3cf71b8ee7366dc43c354b6b4e42c42e34dc6c6ee3af8db103dd5ee9",
+    "publicationDate": "2026-09-15",
+    "fieldwork": {"start": "2026-09-01", "end": "2026-09-14"},
+    "sampleSize": 2371,
+    "publishedVoteIntentionBase": 2160,
+    "effectiveSampleSize": 2009,
+    "methodology": "online panel with quotas and rim weighting; undecided leaners; unresolved respondents excluded",
+    "timingRegime": "Carroll-Wilson regime retained as a required review check",
+    "sampleFamilyIndependence": "independence-not-proven",
+    "modelEligibilityRecommendation": "hold-pending-missing-independence-evidence",
+    "ownerDecisionRecorded": false,
+    "modelInputPromotion": false
+  },
+  "nextAction": "Obtain the explicit project-owner/model-eligibility decision for the staged September RedBridge/Accent evidence. If admitted under the existing policy, refresh current poll inputs in a separate reviewed batch; otherwise retain the last valid forecast. Do not alter historical v2 or production authorisation."
+}
