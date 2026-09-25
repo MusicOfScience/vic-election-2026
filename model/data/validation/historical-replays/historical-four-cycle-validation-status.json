@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "runnableCycles": 4,
+  "predictedCycles": 4,
+  "scoredCycles": 4,
+  "certifyingPredictedCycles": 3,
+  "certifyingScoredCycles": 3,
+  "certifyingCycleScores": {
+    "vic_la_2010": "6503d74c2306f8bc08dae6e76f3b055a1c19f477e0b432119cbc820360d0e1b0",
+    "vic_la_2014": "e96125d51b4b85a365fb457148a0cee411f576c1d09f71b225fd7284175e4bae",
+    "vic_la_2022": "3bc3b150a5a410bbda2c18e679ed0ae03c555a24d7f3b98a1b0e111c22abdb4e"
+  },
+  "nonCertifying2018": "scored-implementation-defect-discovered; post-hoc-v2-diagnostic",
+  "completeForecastBacktest": "closed-incomplete-certifying-four-cycle-protocol",
+  "probabilityCalibration": "closed-incomplete-cycle-clustered-protocol",
+  "productionAuthorisation": "closed",
+  "aggregateReport": "model/data/validation/historical-replays/historical-certifying-v2-aggregate.json",
+  "aggregateReportSha256": "7680fa6111c01665b24c6fe16bca6ab6d67f9aa4697c8294de1be33d0a4c972e"
+}
