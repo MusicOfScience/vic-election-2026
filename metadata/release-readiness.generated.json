@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "assessedAsOf": "2026-09-15",
+  "assessedAsOf": "2026-09-25",
   "status": "experimental-blocked",
   "policy": "retain-last-valid-forecast",
   "automation": {
@@ -100,7 +100,7 @@
   },
   "evidenceFreshness": {
     "schemaVersion": 1,
-    "assessedAsOf": "2026-09-15",
+    "assessedAsOf": "2026-09-25",
     "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
     "modelInput": {
       "latestPublicationDate": "2026-08-08",
@@ -142,7 +142,7 @@
       "id": "vec-2022-district-results",
       "critical": true,
       "dataEffectiveDate": "2022-11-26",
-      "ageDays": 1389,
+      "ageDays": 1399,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -151,7 +151,7 @@
       "id": "vec-2022-voting-centres",
       "critical": false,
       "dataEffectiveDate": "2022-11-26",
-      "ageDays": 1389,
+      "ageDays": 1399,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -160,7 +160,7 @@
       "id": "vec-historical-boundary-estimates",
       "critical": true,
       "dataEffectiveDate": "2022-11-26",
-      "ageDays": 1389,
+      "ageDays": 1399,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -169,7 +169,7 @@
       "id": "vec-2026-enrolment",
       "critical": true,
       "dataEffectiveDate": "2026-09-04",
-      "ageDays": 11,
+      "ageDays": 21,
       "stalenessThresholdDays": 62,
       "stale": false,
       "artifactsCurrent": true
@@ -178,7 +178,7 @@
       "id": "ebc-2021-boundaries",
       "critical": true,
       "dataEffectiveDate": "2022-11-01",
-      "ageDays": 1414,
+      "ageDays": 1424,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -187,7 +187,7 @@
       "id": "aec-2022-geographic-vote-surface",
       "critical": false,
       "dataEffectiveDate": "2022-05-21",
-      "ageDays": 1578,
+      "ageDays": 1588,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -196,7 +196,7 @@
       "id": "vic-2026-poll-registry",
       "critical": true,
       "dataEffectiveDate": "2026-08-07",
-      "ageDays": 39,
+      "ageDays": 49,
       "stalenessThresholdDays": 21,
       "stale": true,
       "artifactsCurrent": true
@@ -205,7 +205,7 @@
       "id": "vec-recent-by-elections",
       "critical": false,
       "dataEffectiveDate": "2025-02-08",
-      "ageDays": 584,
+      "ageDays": 594,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -214,7 +214,7 @@
       "id": "forecast-derived-outputs",
       "critical": true,
       "dataEffectiveDate": "2026-08-26",
-      "ageDays": 20,
+      "ageDays": 30,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
