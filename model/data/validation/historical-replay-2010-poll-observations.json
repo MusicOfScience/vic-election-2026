@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "scripts/apply-approved-historical-poll-review.mjs",
+  "generatedAt": "2026-09-26",
+  "cycleId": "vic_la_2010",
+  "ownerReviewId": "historical-poll-review-2010",
+  "independentSourceFamilies": 2,
+  "approvedObservationCount": 3,
+  "automatedPassObservationCount": 3,
+  "observations": [
+    {
+      "observationId": "historical-poll-2010-essential-2010-11-05",
+      "cycleId": "vic_la_2010",
+      "period": "2010-10-01",
+      "sourceId": "essential-vic-2010-11-05-web",
+      "sourceFamily": "Essential",
+      "sourceUrl": "https://essentialvision.com.au/victoria-%e2%80%93-voting-intention",
+      "sourceSha256": "094cc8408f99c7600df060801dcba017389d4f3da163d7794619a1b4a5c639ba",
+      "evidenceAvailableByDate": "2010-11-05",
+      "sampleSize": 1465,
+      "population": "Victorian electors",
+      "mode": "online Your Source community panel",
+      "primaryShares": {
+        "LIB_NAT": 44,
+        "ALP": 38,
+        "GRN": 12,
+        "OTH_IND": 6
+      },
+      "reportedCategories": {
+        "LIB_NAT": 44,
+        "ALP": 38,
+        "GRN": 12,
+        "OTH_IND": 6
+      },
+      "reportedTpp": {
+        "ALP": 50,
+        "LIB_NAT": 50
+      },
+      "groupedResidual": "OTH_IND",
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2010",
+      "replayEligible": true
+    },
+    {
+      "observationId": "historical-poll-2010-newspoll-2008-02",
+      "cycleId": "vic_la_2010",
+      "period": "2008-01-01",
+      "sourceId": "newspoll-vic-0208-2008-03-03-archive",
+      "sourceFamily": "Newspoll",
+      "sourceUrl": "https://web.archive.org/web/20080820084725id_/http://www.newspoll.com.au/image_uploads/0208%20vic%2003-03-08.pdf",
+      "sourceSha256": "a02ce6d6cd59d8b98cd3643ab497659dfb356b01bac6bf84c582fdf771d04e8d",
+      "evidenceAvailableByDate": "2008-08-20",
+      "sampleSize": 1131,
+      "population": "Victorian electors",
+      "mode": "telephone survey",
+      "primaryShares": {
+        "ALP": 43,
+        "LIB_NAT": 37,
+        "GRN": 12,
+        "OTH_IND": 8
+      },
+      "reportedCategories": {
+        "ALP": 43,
+        "LIB_NAT": 37,
+        "GRN": 12,
+        "OTH_IND": 8
+      },
+      "reportedTpp": {
+        "ALP": 56,
+        "LIB_NAT": 44
+      },
+      "groupedResidual": "OTH_IND",
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2010",
+      "replayEligible": true
+    },
+    {
+      "observationId": "historical-poll-2010-newspoll-2008-12",
+      "cycleId": "vic_la_2010",
+      "period": "2008-11-01",
+      "sourceId": "newspoll-vic-1204-2008-12-18-archive",
+      "sourceFamily": "Newspoll",
+      "sourceUrl": "https://web.archive.org/web/20091024131005id_/http://www.newspoll.com.au/image_uploads/1204%20VIC%2018-12-08.pdf",
+      "sourceSha256": "c6d35d5fa7dd477b52ecba5f9297a5d20cf5595ac20df5f5a34b189d7884b7a0",
+      "evidenceAvailableByDate": "2009-10-24",
+      "sampleSize": 1157,
+      "population": "Victorian electors",
+      "mode": "telephone survey",
+      "primaryShares": {
+        "ALP": 45,
+        "LIB_NAT": 37,
+        "GRN": 13,
+        "OTH_IND": 5
+      },
+      "reportedCategories": {
+        "ALP": 45,
+        "LIB_NAT": 37,
+        "GRN": 13,
+        "OTH_IND": 5
+      },
+      "reportedTpp": {
+        "ALP": 57,
+        "LIB_NAT": 43
+      },
+      "groupedResidual": "OTH_IND",
+      "reuseBasis": "independently_reconstructed_factual_observation",
+      "ownerReviewId": "historical-poll-review-2010",
+      "replayEligible": true
+    }
+  ],
+  "sufficiency": {
+    "minimumEligibleObservations": 3,
+    "minimumIndependentSourceFamilies": 2,
+    "status": "pass"
+  },
+  "quarantineBoundary": "No values are read from d-j-hirst/aus-polling-analyser; this file contains only approved structured factual reconstruction.",
+  "modelImpact": {
+    "forecast2026": false,
+    "productionAuthorisation": false
+  }
+}

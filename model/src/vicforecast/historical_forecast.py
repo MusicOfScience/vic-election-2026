@@ -265,9 +265,17 @@ def _generic_poll_state(root: Path, spec: dict, draws: int, seed: int) -> np.nda
     payload = json.loads(_cycle_path(root, spec["pollInput"]).read_text())
     rows = [row for row in payload["observations"] if row.get("cycleId") == spec["cycleId"] and row.get("replayEligible")]
     families = spec["activeFamilies"]
-    if len(rows) < 3 and spec["cycleId"] == "vic_la_2022":
-        raise ValueError("2022 polling requires three approved observations")
-    if len({row["sourceId"] for row in rows}) < 2:
+    if len(rows) < 3:
+        raise ValueError(f"{spec['cycleId']} polling requires at least three approved observations")
+    def source_family(row: dict) -> str:
+        if row.get("sourceFamily"):
+            return str(row["sourceFamily"])
+        source_id = str(row.get("sourceId", "")).lower()
+        for marker, family in (("roy-morgan", "Roy Morgan"), ("essential", "Essential"), ("newspoll", "Newspoll"), ("ucomms", "uComms"), ("resolve", "Resolve")):
+            if marker in source_id:
+                return family
+        return str(row.get("sourceId", "unknown"))
+    if len({source_family(row) for row in rows}) < 2:
         raise ValueError(f"{spec['cycleId']} polling requires two independent source families")
     vectors, weights = [], []
     for row in rows:

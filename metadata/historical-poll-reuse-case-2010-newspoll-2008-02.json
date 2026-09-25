@@ -19,9 +19,10 @@
   "rawSourceStored": false,
   "copiedAuthoredExpression": false,
   "gates": {"provenance": {"passed": true, "basis": "Archived contemporaneous branded Newspoll PDF was available 2008-08-20."}, "methodologicalAdequacy": {"passed": true, "basis": "The PDF reports complete primary categories, TPP, observation-specific sample and random telephone/weighting method."}, "reuseBasis": {"passed": true, "manualReviewRequired": true, "legalDetermination": false}},
-  "ownerReviewStatus": "awaiting-project-owner-approval",
-  "modelInputAdmissible": false,
-  "replayEligible": false,
+  "ownerReviewStatus": "approved-for-historical-replay",
+  "ownerReviewId": "historical-poll-review-2010-owner-2026-09-26",
+  "modelInputAdmissible": true,
+  "replayEligible": true,
   "notFromQuarantinedDataset": true,
   "notes": "The source retains its Newspoll/The Australian copyright notice. Structured factual fields only; no report layout or prose is redistributed."
 }

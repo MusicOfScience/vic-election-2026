@@ -7,12 +7,12 @@
     {
       "cycleId": "vic_la_2010",
       "pollEvidence": {
-        "status": "blocked-pending-owner-approval",
-        "reason": "Three 2010 observations from two independent families pass automated provenance/methodology/reuse gates, but none has explicit project-owner approval; fixed minimum remains 3 observations and 2 independent families",
+        "status": "pass",
+        "reason": "Three owner-approved 2010 observations from two independent families satisfy the fixed minimum of 3 observations and 2 independent source families",
         "automatedPassObservations": 3,
-        "approvedObservations": 0,
+        "approvedObservations": 3,
         "independentFamilies": 2,
-        "artefact": "model/data/validation/historical-replay-2010-poll-observations-pending-owner.json"
+        "artefact": "model/data/validation/historical-replay-2010-poll-observations.json"
       },
       "ballotContest": {
         "status": "blocked",

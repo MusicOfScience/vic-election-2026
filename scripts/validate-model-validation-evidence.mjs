@@ -553,7 +553,7 @@ export function validateModelValidationEvidence() {
   assert(historicalConfigs.outcomeScoringPolicy.unknownEvidencePublicationDate === "not-pre-cutoff-eligible", "unknown evidence dates cannot enter historical inputs");
   const expectedReplayBlockers = ["pre-election-poll-vintages", "ballot-and-contest-slates", "preference-flows-and-final-pairs"];
   const expectedReplayBlockersByCycle = {
-    vic_la_2010: ["pre-election-poll-vintages", "ballot-and-contest-slates"],
+    vic_la_2010: ["ballot-and-contest-slates"],
     vic_la_2014: ["incumbency-local-multi-party-translation"],
   };
   for (const cycle of historicalConfigs.cycles) {
