@@ -20,8 +20,40 @@
     "archiveCaptureBeforeCutoffAfterNominations": false,
     "archiveCaptureSha256": null,
     "coverage": 0,
-    "reason": "The available archive capture predates final nominations; no post-nomination district candidate listing has been proven cutoff-safe. OTH_IND availability cannot be inferred from target result pages or the provisional prior-composition mask."
+    "reason": "The available Wayback capture predates final nominations; no post-nomination district candidate listing has been proven cutoff-safe. OTH_IND availability cannot be inferred from target result pages or the provisional prior-composition mask."
   },
+  "archiveRoutesChecked": [
+    {
+      "authority": "PANDORA / National Library of Australia",
+      "collectionUrl": "https://pandora.nla.gov.au/col/10581",
+      "collectionTitle": "2010 Victorian State Election Campaign",
+      "resourceTitle": "Victoria votes 2010",
+      "resourceUrl": "https://pandora.nla.gov.au/tep/123701",
+      "nlaIdentifier": "nla.arc-123701",
+      "catalogueDate": "2010-11-29",
+      "captureTimestampProven": false,
+      "postNominationBeforeCutoff": false,
+      "coverage": 0,
+      "reason": "The collection and title are discoverable, but the exposed catalogue/title date is after the 2010-11-26 cutoff and no page-level capture metadata or complete district candidate index was retrievable."
+    },
+    {
+      "authority": "PANDORA / State Library of Victoria partner collection",
+      "collectionUrl": "https://pandora.nla.gov.au/partner/SLV/subject/6/16",
+      "collectionTitle": "2010 Victorian State Election Campaign",
+      "captureTimestampProven": false,
+      "postNominationBeforeCutoff": false,
+      "coverage": 0,
+      "reason": "The partner collection confirms the preserved campaign collection but does not expose a cutoff-safe page-level district candidate capture."
+    },
+    {
+      "authority": "Wayback Machine",
+      "originalUrl": "http://www.abc.net.au/elections/vic/2010/guide/candidateindex.htm",
+      "captureTimestamp": "2010-11-10T14:15:07Z",
+      "postNominationBeforeCutoff": false,
+      "coverage": 0,
+      "reason": "The only located capture predates final nominations."
+    }
+  ],
   "requiredFields": ["district_id", "district_name", "ballot_active_families", "incumbent_party_family"],
   "targetOutcomeDependency": false,
   "forbiddenInputs": ["model/data/processed/vec_2010_assembly_candidate_primaries.csv", "post-election result pages", "winner or preference-count artefacts"],
