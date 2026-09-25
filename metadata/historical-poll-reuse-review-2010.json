@@ -2,10 +2,31 @@
   "schemaVersion": 1,
   "reviewId": "historical-poll-review-2010",
   "cycleId": "vic_la_2010",
-  "status": "awaiting-project-owner-approval",
+  "status": "approved-for-historical-replay",
   "cases": ["historical-poll-2010-essential-2010-11-05", "historical-poll-2010-newspoll-2008-02", "historical-poll-2010-newspoll-2008-12"],
   "automatedPassCount": 3,
   "independentSourceFamilies": ["Essential", "Newspoll"],
-  "ownerDecision": null,
-  "requiredOwnerAction": "Approve or reject each structured factual observation individually; do not infer approval from PR merge."
+  "ownerDecision": {
+    "approvedCaseIds": [
+      "historical-poll-2010-essential-2010-11-05",
+      "historical-poll-2010-newspoll-2008-02",
+      "historical-poll-2010-newspoll-2008-12"
+    ],
+    "approvedAt": "2026-09-26",
+    "reuseBasis": "independently_reconstructed_factual_observation",
+    "sourceFamilies": {
+      "historical-poll-2010-essential-2010-11-05": "Essential",
+      "historical-poll-2010-newspoll-2008-02": "Newspoll",
+      "historical-poll-2010-newspoll-2008-12": "Newspoll"
+    }
+  },
+  "decision": "approved-for-historical-replay",
+  "approvedAt": "2026-09-26",
+  "checks": {
+    "provenance": true,
+    "methodologicalAdequacy": true,
+    "reuseBasis": true,
+    "ownerReuseBasisApproval": true,
+    "notFromQuarantinedDataset": true
+  }
 }

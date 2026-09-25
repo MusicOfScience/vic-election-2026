@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "cutoff": "2010-11-26",
+  "status": "blocked-pending-post-nomination-district-source",
+  "summarySource": {
+    "authority": "ABC News / Antony Green",
+    "url": "https://www.abc.net.au/news/2010-11-13/summary-of-nominations-for-the-2010-victorian-election/9389594",
+    "publishedAt": "2010-11-12",
+    "retrievedSha256": "24bd2b7538811885d152aadb837628ef308dd47251025e0599458e25d8a61a54",
+    "assemblyDistricts": 88,
+    "assemblyCandidates": 502,
+    "partyCounts": {"ALP": 88, "LIB": 79, "NAT": 15, "GRN": 88},
+    "threeCorneredDistricts": ["Bendigo East", "Bendigo West", "Gembrook", "Ripon", "Seymour", "Gippsland East"]
+  },
+  "districtSource": {
+    "requested": "ABC 2010 candidates index / electorate pages",
+    "originalUrl": "http://www.abc.net.au/elections/vic/2010/guide/candidateindex.htm",
+    "archiveCaptureBeforeNominations": "2010-11-10T14:15:07Z",
+    "archiveCaptureBeforeCutoffAfterNominations": false,
+    "archiveCaptureSha256": null,
+    "coverage": 0,
+    "reason": "The available archive capture predates final nominations; no post-nomination district candidate listing has been proven cutoff-safe. OTH_IND availability cannot be inferred from target result pages or the provisional prior-composition mask."
+  },
+  "requiredFields": ["district_id", "district_name", "ballot_active_families", "incumbent_party_family"],
+  "targetOutcomeDependency": false,
+  "forbiddenInputs": ["model/data/processed/vec_2010_assembly_candidate_primaries.csv", "post-election result pages", "winner or preference-count artefacts"],
+  "provisionalMask": {
+    "path": "model/data/validation/historical-replay-2010-ballot-mask.csv",
+    "sha256": "c1cb04195670b52c3fa4d7f5765bcfdd85df981674d1b6ffaec8fe1486a1a516",
+    "status": "not-admissible-until-district-source-is-proven"
+  }
+}

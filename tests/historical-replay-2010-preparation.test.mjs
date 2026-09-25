@@ -36,14 +36,15 @@ test("2010 local and Council priors are prior-only and structurally complete", (
   assert.match(mask[1], /unknown-pending-verification/);
 });
 
-test("2010 poll cases pass automated gates but cannot enter prediction before owner approval", () => {
-  const input = readJson("model/data/validation/historical-replay-2010-poll-observations-pending-owner.json");
+test("2010 poll cases are explicitly owner-approved and source-family diverse", () => {
+  const input = readJson("model/data/validation/historical-replay-2010-poll-observations.json");
   const review = readJson("metadata/historical-poll-reuse-review-2010.json");
   assert.equal(input.automatedPassObservationCount, 3);
-  assert.equal(input.approvedObservationCount, 0);
+  assert.equal(input.approvedObservationCount, 3);
   assert.equal(input.independentSourceFamilies, 2);
-  assert.equal(input.observations.every((row) => row.replayEligible === false), true);
-  assert.equal(review.status, "awaiting-project-owner-approval");
+  assert.equal(new Set(input.observations.map((row) => row.sourceFamily)).size, 2);
+  assert.equal(input.observations.every((row) => row.replayEligible === true), true);
+  assert.equal(review.status, "approved-for-historical-replay");
 });
 
 test("2010 readiness remains blocked only by explicit input evidence, with no prediction or outcomes", () => {
@@ -51,7 +52,7 @@ test("2010 readiness remains blocked only by explicit input evidence, with no pr
   const state = readiness.cycles.find((cycle) => cycle.cycleId === "vic_la_2010");
   const audit = readJson("metadata/historical-replay-2010-input-audit.json");
   assert.equal(state.runnable, false);
-  assert.equal(state.pollEvidence.status, "blocked-pending-owner-approval");
+  assert.equal(state.pollEvidence.status, "pass");
   assert.equal(state.ballotContest.status, "blocked");
   assert.equal(state.incumbencyLocal.status, "pass");
   assert.equal(state.councilInput.status, "pass-with-broad-fallback");

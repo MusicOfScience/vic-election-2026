@@ -25,9 +25,10 @@
     "methodologicalAdequacy": {"passed": true, "basis": "The first-party page supplies an observation-specific sample, exhaustive leaning-primary categories, denominator semantics and TPP. The contemporaneous 2010-08-11 Essential methodology page links the Victorian observation to the continuing Your Source online-panel, rolling-average and demographic/geographic weighting process."},
     "reuseBasis": {"passed": true, "manualReviewRequired": true, "legalDetermination": false}
   },
-  "ownerReviewStatus": "awaiting-project-owner-approval",
-  "modelInputAdmissible": false,
-  "replayEligible": false,
+  "ownerReviewStatus": "approved-for-historical-replay",
+  "ownerReviewId": "historical-poll-review-2010-owner-2026-09-26",
+  "modelInputAdmissible": true,
+  "replayEligible": true,
   "notFromQuarantinedDataset": true,
   "notes": "Structured factual fields only. The six-week average and leaning-to question are retained as reported; exact field dates remain unknown. Explicit owner approval is required before promotion."
 }

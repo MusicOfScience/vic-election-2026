@@ -6,6 +6,40 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (path) => JSON.parse(readFileSync(resolve(root, path), "utf8"));
 const outputPath = resolve(root, "model/data/validation/historical-replay-poll-observations.json");
 const output2014Path = resolve(root, "model/data/validation/historical-replay-2014-poll-observations.json");
+const output2010Path = resolve(root, "model/data/validation/historical-replay-2010-poll-observations.json");
+
+export function buildApprovedHistoricalPollInput2010() {
+  const review = read("metadata/historical-poll-reuse-review-2010.json");
+  if (review.decision !== "approved-for-historical-replay" || !review.checks.ownerReuseBasisApproval) throw new Error("2010 historical poll review is not approved for replay");
+  const observations = review.ownerDecision.approvedCaseIds.map((caseId) => {
+    const caseFile = read(`metadata/${caseId.replace(/^historical-poll-/, "historical-poll-reuse-case-")}.json`);
+    const sourceFamily = review.ownerDecision.sourceFamilies[caseId];
+    if (caseFile.cycleId !== "vic_la_2010" || !caseFile.replayEligible || !caseFile.modelInputAdmissible || caseFile.ownerReviewStatus !== "approved-for-historical-replay" || !caseFile.notFromQuarantinedDataset) throw new Error(`2010 case ${caseId} is not governed for replay`);
+    if (!caseFile.gates.provenance.passed || !caseFile.gates.methodologicalAdequacy.passed || !caseFile.gates.reuseBasis.passed || !sourceFamily) throw new Error(`2010 case ${caseId} has a failed gate or missing source family`);
+    return {
+      observationId: caseFile.caseId, cycleId: caseFile.cycleId, period: caseFile.observationPeriod,
+      sourceId: caseFile.sourceId, sourceFamily, sourceUrl: caseFile.sourceUrl, sourceSha256: caseFile.sourceSha256,
+      evidenceAvailableByDate: caseFile.evidenceAvailableByDate, sampleSize: caseFile.fieldwork.sampleSize,
+      population: caseFile.fieldwork.population, mode: caseFile.fieldwork.mode,
+      primaryShares: caseFile.modelPrimaryShares ?? caseFile.reportedPrimaryCategories,
+      reportedCategories: caseFile.reportedPrimaryCategories, reportedTpp: caseFile.reportedTpp,
+      groupedResidual: caseFile.groupedResidual.family, reuseBasis: caseFile.reuseBasis,
+      ownerReviewId: review.reviewId, replayEligible: true,
+    };
+  });
+  if (observations.length < 3 || new Set(observations.map((row) => row.sourceFamily)).size < 2) throw new Error("2010 fixed polling sufficiency rule is not satisfied");
+  return {
+    schemaVersion: 1, generatedBy: "scripts/apply-approved-historical-poll-review.mjs", generatedAt: review.approvedAt,
+    cycleId: "vic_la_2010", ownerReviewId: review.reviewId,
+    independentSourceFamilies: new Set(observations.map((row) => row.sourceFamily)).size,
+    approvedObservationCount: observations.length,
+    automatedPassObservationCount: observations.length,
+    observations,
+    sufficiency: {minimumEligibleObservations: 3, minimumIndependentSourceFamilies: 2, status: "pass"},
+    quarantineBoundary: "No values are read from d-j-hirst/aus-polling-analyser; this file contains only approved structured factual reconstruction.",
+    modelImpact: {forecast2026: false, productionAuthorisation: false},
+  };
+}
 
 export function buildApprovedHistoricalPollInput2014() {
   const review = read("metadata/historical-poll-reuse-review-2014.json");
@@ -155,6 +189,12 @@ if (process.argv[1]?.endsWith("apply-approved-historical-poll-review.mjs")) {
     const report2014 = buildApprovedHistoricalPollInput2014();
     if (process.argv.includes("--apply")) writeFileSync(output2014Path, `${JSON.stringify(report2014, null, 2)}\n`);
     console.log(`Approved 2014 historical poll input: ${report2014.observations.length} observations; ${report2014.independentSourceFamilies} independent source family; replay input only.`);
+    process.exit(0);
+  }
+  if (process.argv.includes("--cycle=2010")) {
+    const report2010 = buildApprovedHistoricalPollInput2010();
+    if (process.argv.includes("--apply")) writeFileSync(output2010Path, `${JSON.stringify(report2010, null, 2)}\n`);
+    console.log(`Approved 2010 historical poll input: ${report2010.observations.length} observations; ${report2010.independentSourceFamilies} independent source families; replay input only.`);
     process.exit(0);
   }
   const report = buildApprovedHistoricalPollInput();

@@ -50,7 +50,7 @@
       "informationCutoff": "2010-11-26",
       "seed": 20101126,
       "runnable": false,
-      "blockedBy": ["pre-election-poll-vintages", "ballot-and-contest-slates"],
+      "blockedBy": ["ballot-and-contest-slates"],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
         "outcomesAvailableToModel": false,
