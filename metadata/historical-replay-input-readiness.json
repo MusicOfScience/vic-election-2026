@@ -85,8 +85,11 @@
       "comparatorBundle": "model/data/validation/historical-replays/vic_la_2014-v2-comparators-v2.json",
       "comparatorBundleSha256": "4d706fa0dc0b49b5cd6bf281550914594663da4d31d4c6613be17dc87daa1ccb",
       "comparatorBundleDefectAudit": "metadata/historical-replay-2014-v2-comparator-defect-audit.json",
-      "scored": false,
-      "certifyingScored": false
+      "scored": true,
+      "certifyingScored": true,
+      "scoreArtefact": "model/data/validation/historical-replays/vic_la_2014-v2-score.json",
+      "scoreSha256": "e96125d51b4b85a365fb457148a0cee411f576c1d09f71b225fd7284175e4bae",
+      "scoreManifest": "model/data/validation/historical-replays/vic_la_2014-v2-score-manifest.json"
     },
     {
       "cycleId": "vic_la_2018",
@@ -191,9 +194,9 @@
   ],
   "runnableCycles": 3,
   "predictedCycles": 3,
-  "scoredCycles": 2,
+  "scoredCycles": 3,
   "certifyingPredictedCycles": 2,
-  "certifyingScoredCycles": 1,
+  "certifyingScoredCycles": 2,
   "modelImpact": {
     "forecast2026": false,
     "productionAuthorisation": false
