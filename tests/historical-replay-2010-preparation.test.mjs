@@ -59,3 +59,18 @@ test("2010 readiness remains blocked only by explicit input evidence, with no pr
   assert.equal(audit.predictionFrozen, false);
   assert.equal(audit.outcomesLoaded, false);
 });
+
+test("2010 ballot archive audit remains fail-closed without a post-nomination cutoff-safe capture", () => {
+  const audit = readJson("metadata/historical-replay-2010-ballot-availability-audit.json");
+  assert.equal(audit.status, "blocked-pending-post-nomination-district-source");
+  assert.equal(audit.summarySource.assemblyDistricts, 88);
+  assert.equal(audit.summarySource.assemblyCandidates, 502);
+  assert.equal(audit.districtSource.archiveCaptureBeforeCutoffAfterNominations, false);
+  assert.equal(audit.districtSource.coverage, 0);
+  assert.equal(audit.targetOutcomeDependency, false);
+  const pandora = audit.archiveRoutesChecked.find((route) => route.nlaIdentifier === "nla.arc-123701");
+  assert.ok(pandora);
+  assert.equal(pandora.postNominationBeforeCutoff, false);
+  assert.equal(pandora.captureTimestampProven, false);
+  assert.equal(pandora.coverage, 0);
+});

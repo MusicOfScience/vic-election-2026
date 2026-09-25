@@ -1,9 +1,9 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-09-25
-Branch: `codex/freeze-2010-holdout`
-Base: `80047ffd` (PR #114 merged)
-Current batch: prepare the final missing 2010 v2 certifying holdout before any target-outcome access.
+Branch: `codex/freeze-2010-final-holdout`
+Base: `cb5dfd56` (PR #115 merged)
+Current batch: close the final 2010 ballot-source gate before any target-outcome access.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -26,7 +26,7 @@ This ledger controls the finite PROD 1.0 backlog. Completed items stay closed un
 
 - Release readiness: `experimental-blocked`, 4/9 gates passing at the 24 September assessment; RedBridge freshness evidence is resolved into a dossier but not into model inputs.
 - Blocking gates: critical source freshness, unresolved newer model evidence, complete forecast backtest, probability calibration and production authorisation.
-- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 3/4 runnable, 3/4 predicted and 3/4 scored, with 2/4 certifying predictions frozen and 2/4 certifying scored cycles. 2010 is selected by pre-score completeness, has passed polling, and remains unrunnable only because the district ballot source is not cutoff-proven.
+- Forecast outputs and model configuration are unchanged by this ledger batch; historical progress is 3/4 runnable, 3/4 predicted and 3/4 scored, with 2/4 certifying predictions frozen and 2/4 certifying scored cycles. 2010 is selected by pre-score completeness, has passed polling, and remains unrunnable only because the district ballot source is not cutoff-proven. PANDORA/NLA and Wayback routes were checked without a qualifying capture.
 - Demographic challenger remains rejected at central weight `0`.
 - Preserved untracked user files: `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json`.
 - Historical poll reuse policy: `metadata/historical-poll-reuse-policy.json`. The prior queue rule treated null declared licence as a universal replay blocker; the new policy keeps the quarantined third-party dataset blocked but allows independently reconstructed factual observations to be assessed separately.
