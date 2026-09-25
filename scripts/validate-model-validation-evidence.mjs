@@ -563,7 +563,12 @@ export function validateModelValidationEvidence() {
     assert(cycle.informationCutoff === expectedDates[1], `incorrect information cutoff for ${cycle.id}`);
     assert(Date.parse(`${cycle.informationCutoff}T00:00:00Z`) < Date.parse(`${cycle.electionDate}T00:00:00Z`), `cutoff must precede election day for ${cycle.id}`);
     assert(Number.isSafeInteger(cycle.seed), `seed must be a safe integer for ${cycle.id}`);
-    if (cycle.id === "vic_la_2014") {
+    if (cycle.id === "vic_la_2010") {
+      const readiness2010 = cycleReadiness.cycles.find((item) => item.cycleId === cycle.id);
+      assert(cycle.runnable === true && cycle.blockedBy.length === 0, "2010 must be runnable after ballot reconstruction passes");
+      assert(readiness2010?.runnable === true && readiness2010?.ballotContest.status === "pass", "2010 ballot readiness must be pass");
+      assert(cycle.certifyingPredictionFrozen === true && cycle.predictionArtefact, "2010 certifying prediction must be registered");
+    } else if (cycle.id === "vic_la_2014") {
       const readiness2014 = cycleReadiness.cycles.find((item) => item.cycleId === cycle.id);
       assert(cycle.runnable === true && cycle.blockedBy.length === 0, "2014 must be runnable after governed local inputs pass");
       assert(readiness2014?.runnable === true && readiness2014?.incumbencyLocal.status === "pass", "2014 local readiness must be pass");

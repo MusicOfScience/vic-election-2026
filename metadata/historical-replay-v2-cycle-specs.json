@@ -7,7 +7,12 @@
       "informationCutoff": "2010-11-26",
       "seed": 20101126,
       "simulations": 1200,
-      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+      "activeFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
       "pollInput": "model/data/validation/historical-replay-2010-poll-observations.json",
       "localInput": "model/data/validation/historical-replay-2010-local-inputs.csv",
       "priorFamilyInput": "model/data/processed/vec_2006_assembly_family_primaries.csv",
@@ -20,14 +25,24 @@
       "ballotAvailability": "model/data/validation/historical-replay-2010-ballot-mask.csv",
       "preferencePrior": "broad-fallback-v2",
       "councilRules": "vic-2010-five-seat-stv",
-      "predictionStatus": "blocked-pending-ballot-verification"
+      "predictionStatus": "held-out-certifying-prediction-frozen",
+      "ballotAvailabilityEvidence": "metadata/historical-replay-2010-ballot-availability-audit.json",
+      "fixedFactPolicy": "metadata/historical-fixed-fact-reconstruction-policy.json",
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2010-v2-prediction.json",
+      "comparatorSpec": "metadata/historical-replay-v2-comparator-spec-2010.json",
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2010-v2-comparators-v2.json"
     },
     "vic_la_2014": {
       "electionDate": "2014-11-29",
       "informationCutoff": "2014-11-28",
       "seed": 20141128,
       "simulations": 1200,
-      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+      "activeFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
       "pollInput": "model/data/validation/historical-replay-2014-poll-observations.json",
       "localInput": "model/data/validation/historical-replay-2014-local-inputs.csv",
       "requiredLocalTranslation": "model/data/processed/historical_2014_crosswalk_core_features_long.csv",
@@ -48,7 +63,12 @@
       "informationCutoff": "2018-11-23",
       "seed": 20181123,
       "simulations": 1200,
-      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+      "activeFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "OTH_IND"
+      ],
       "pollInput": "model/data/validation/historical-replay-poll-observations.json",
       "localInput": "model/data/processed/vec_2014_assembly_family_primaries.csv",
       "councilInput": "model/data/processed/vec_2014_council_candidate_primaries.csv",
@@ -64,7 +84,13 @@
       "informationCutoff": "2022-11-25",
       "seed": 20221125,
       "simulations": 1200,
-      "activeFamilies": ["ALP", "LIB_NAT", "GRN", "ONP", "OTH_IND"],
+      "activeFamilies": [
+        "ALP",
+        "LIB_NAT",
+        "GRN",
+        "ONP",
+        "OTH_IND"
+      ],
       "pollInput": "model/data/validation/historical-replay-poll-observations.json",
       "localInput": "model/data/validation/historical-replay-2022-local-inputs.csv",
       "councilInput": "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz",

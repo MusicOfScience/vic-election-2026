@@ -1,8 +1,40 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "cycleId": "vic_la_2010",
-  "cutoff": "2010-11-26",
-  "status": "blocked-pending-post-nomination-district-source",
+  "status": "pass-fixed-fact-reconstruction",
+  "districtCount": 88,
+  "candidateCount": 502,
+  "candidateSlate": "model/data/validation/historical-replay-2010-fixed-fact-candidate-slate.csv",
+  "candidateSlateSha256": "c6c8c82b02c4a1542601e84802b6b9207cd25fa5f49f081bdfb361a8b275f033",
+  "ballotMask": "model/data/validation/historical-replay-2010-ballot-mask.csv",
+  "ballotMaskSha256": "99c564c7cda8e879ac06fbfe7084c4a3d321090a16e18d98c6eb462ec8021e7f",
+  "localInput": "model/data/validation/historical-replay-2010-local-inputs.csv",
+  "localInputChangeReason": "final cutoff-safe ballot availability only",
+  "othIndActiveDistricts": 86,
+  "othIndInactiveDistricts": 2,
+  "activeFamilies": [
+    "ALP",
+    "LIB_NAT",
+    "GRN",
+    "OTH_IND"
+  ],
+  "oneNation": "verified-unavailable",
+  "targetOutcomeDependency": false,
+  "targetOutcomeFieldsRead": false,
+  "reconstruction": {
+    "policy": "metadata/historical-fixed-fact-reconstruction-policy.json",
+    "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+    "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+    "sourceSection": "Appendix 15: List of Candidates (PDF pages 137-145)",
+    "sourcePublicationTiming": "post-election reconstruction source; not used for availability timing",
+    "factEffectiveBy": "2010-11-12",
+    "availabilityEvidenceDate": "2010-11-25"
+  },
+  "previousProvisionalMask": {
+    "path": "model/data/validation/historical-replay-2010-ballot-mask.csv",
+    "sha256": "c1cb04195670b52c3fa4d7f5765bcfdd85df981674d1b6ffaec8fe1486a1a516",
+    "status": "superseded-provisional-history"
+  },
   "summarySource": {
     "authority": "ABC News / Antony Green",
     "url": "https://www.abc.net.au/news/2010-11-13/summary-of-nominations-for-the-2010-victorian-election/9389594",
@@ -10,8 +42,20 @@
     "retrievedSha256": "24bd2b7538811885d152aadb837628ef308dd47251025e0599458e25d8a61a54",
     "assemblyDistricts": 88,
     "assemblyCandidates": 502,
-    "partyCounts": {"ALP": 88, "LIB": 79, "NAT": 15, "GRN": 88},
-    "threeCorneredDistricts": ["Bendigo East", "Bendigo West", "Gembrook", "Ripon", "Seymour", "Gippsland East"]
+    "partyCounts": {
+      "ALP": 88,
+      "LIB": 79,
+      "NAT": 15,
+      "GRN": 88
+    },
+    "threeCorneredDistricts": [
+      "Bendigo East",
+      "Bendigo West",
+      "Gembrook",
+      "Ripon",
+      "Seymour",
+      "Gippsland East"
+    ]
   },
   "districtSource": {
     "requested": "ABC 2010 candidates index / electorate pages",
@@ -54,12 +98,82 @@
       "reason": "The only located capture predates final nominations."
     }
   ],
-  "requiredFields": ["district_id", "district_name", "ballot_active_families", "incumbent_party_family"],
-  "targetOutcomeDependency": false,
-  "forbiddenInputs": ["model/data/processed/vec_2010_assembly_candidate_primaries.csv", "post-election result pages", "winner or preference-count artefacts"],
+  "requiredFields": [
+    "district_id",
+    "district_name",
+    "ballot_active_families",
+    "incumbent_party_family"
+  ],
+  "forbiddenInputs": [
+    "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+    "post-election result pages",
+    "winner or preference-count artefacts"
+  ],
   "provisionalMask": {
     "path": "model/data/validation/historical-replay-2010-ballot-mask.csv",
     "sha256": "c1cb04195670b52c3fa4d7f5765bcfdd85df981674d1b6ffaec8fe1486a1a516",
     "status": "not-admissible-until-district-source-is-proven"
+  },
+  "resolution": "contemporaneously-fixed-fact-reconstruction",
+  "fixedFactReconstruction": {
+    "policy": "metadata/historical-fixed-fact-reconstruction-policy.json",
+    "policyStatus": "adopted-before-prediction-freeze",
+    "fixity": {
+      "nominationsClosed": {
+        "registeredParty": "2010-11-11",
+        "independent": "2010-11-12"
+      },
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+      "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+      "factEffectiveBy": "2010-11-12",
+      "exceptionalChange": "candidate death can fail an election; no failed/supplementary 2010 Assembly election is recorded in the official ordinary-election timetable/report"
+    },
+    "publicOperation": {
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+      "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+      "evidence": "official timeline records close of early voting on 2010-11-25; early-voting centres and services operated for the ordinary election",
+      "availabilityEvidenceDate": "2010-11-25",
+      "corroborationUrl": "https://www.vec.vic.gov.au/-/media/29441a4337874856b0d738cd144405a4.pdf",
+      "corroborationSha256": "eee217a86712666760b57153a081de07afd9ee45dfd7c36008e4f249d6bb9c51"
+    },
+    "reconstruction": {
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+      "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+      "section": "Appendix 15: List of Candidates, PDF pages 137-145",
+      "artifact": "model/data/validation/historical-replay-2010-fixed-fact-candidate-slate.csv",
+      "artifactSha256": "c6c8c82b02c4a1542601e84802b6b9207cd25fa5f49f081bdfb361a8b275f033",
+      "fieldsRead": [
+        "district",
+        "registered party description",
+        "candidate ordinal"
+      ],
+      "targetOutcomeFieldsRead": false,
+      "targetOutcomeDependency": false
+    },
+    "reconciliation": {
+      "districts": 88,
+      "candidates": 502,
+      "partyCounts": {
+        "ALP": 88,
+        "LIBERAL": 79,
+        "NATIONALS": 15,
+        "GREENS": 88
+      },
+      "threeCorneredDistricts": [
+        "Bendigo East",
+        "Bendigo West",
+        "Gembrook",
+        "Ripon",
+        "Seymour",
+        "Gippsland East"
+      ]
+    }
+  },
+  "finalMask": {
+    "path": "model/data/validation/historical-replay-2010-ballot-mask.csv",
+    "sha256": "99c564c7cda8e879ac06fbfe7084c4a3d321090a16e18d98c6eb462ec8021e7f",
+    "othIndActiveDistricts": 86,
+    "othIndInactiveDistricts": 2,
+    "status": "admitted"
   }
 }

@@ -22,7 +22,13 @@
     }
   },
   "partyFamilyPolicy": {
-    "canonicalFamilies": ["ALP", "Coalition", "Greens", "One Nation", "Other/Independent"],
+    "canonicalFamilies": [
+      "ALP",
+      "Coalition",
+      "Greens",
+      "One Nation",
+      "Other/Independent"
+    ],
     "cycleAvailabilityPath": "metadata/historical-party-family-availability.json",
     "inactiveFamily": "not required as a separate poll category and never imputed as numeric zero",
     "groupedResidual": "retained as reported; no decomposition",
@@ -49,13 +55,17 @@
       "electionDate": "2010-11-27",
       "informationCutoff": "2010-11-26",
       "seed": 20101126,
-      "runnable": false,
-      "blockedBy": ["ballot-and-contest-slates"],
+      "runnable": true,
+      "blockedBy": [],
       "inputPolicy": {
         "publicationDateAtOrBeforeCutoff": true,
         "outcomesAvailableToModel": false,
-        "outcomesAvailableForScoring": true
-      }
+        "outcomesAvailableForScoring": true,
+        "fixedFactReconstruction": "admitted-under-governed-policy"
+      },
+      "predictionStatus": "held-out-certifying-prediction-frozen",
+      "certifyingPredictionFrozen": true,
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2010-v2-prediction.json"
     },
     {
       "id": "vic_la_2014",

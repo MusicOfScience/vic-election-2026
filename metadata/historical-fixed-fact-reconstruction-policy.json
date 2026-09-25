@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "policyId": "contemporaneously-fixed-fact-reconstruction",
+  "status": "adopted-before-2010-holdout-freeze",
+  "scope": "historical prediction inputs that were legally fixed and publicly operative before a cycle cutoff, but require a later authoritative record for structured reconstruction",
+  "conditions": [
+    "the fact was legally or operationally fixed before the information cutoff",
+    "independent evidence proves the fact was publicly operative or necessarily available before the cutoff",
+    "the later source merely records that already-fixed fact",
+    "reconstruction uses only factual fields required by the model",
+    "target outcome values are not consulted or imported",
+    "the fact could not have been changed based on the eventual election result",
+    "provenance, reconstruction source and availability proof remain separately fingerprinted",
+    "the rule is adopted before viewing or scoring the target holdout"
+  ],
+  "explicitExclusions": [
+    "polls or forecasts first published after the cutoff",
+    "later candidate withdrawals or substitutions not proven before the cutoff",
+    "election results, winners, vote totals, preference flows or observed swings",
+    "retroactive use of a later source as proof of pre-cutoff availability"
+  ],
+  "2010Application": {
+    "fact": "final Legislative Assembly candidate slate and registered-party descriptions",
+    "fixityEvidence": {
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+      "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+      "evidence": "official 2010 timetable records registered-party nominations closing 2010-11-11 and independent nominations closing 2010-11-12; the statutory failed-election exception is a candidate death between close of nominations and close of voting",
+      "factEffectiveBy": "2010-11-12"
+    },
+    "publicOperationEvidence": {
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+      "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+      "evidence": "the official 2010 election timeline records the close of early voting on 2010-11-25 and the report documents early-voting centres and ballot services for the ordinary 2010 election",
+      "availabilityEvidenceDate": "2010-11-25",
+      "independentCorroboration": {
+        "sourceUrl": "https://www.vec.vic.gov.au/-/media/29441a4337874856b0d738cd144405a4.pdf",
+        "evidence": "VEC Annual Report 2010-11 records 101 early-voting centres and 543,763 early votes counted in the 2010 State election",
+        "sourceSha256": "eee217a86712666760b57153a081de07afd9ee45dfd7c36008e4f249d6bb9c51"
+      }
+    },
+    "reconstructionSource": {
+      "sourceUrl": "https://www.vec.vic.gov.au/-/media/08680c0035b34af4b6ea2074edc763a4.pdf",
+      "sourceSha256": "be2dbabd5735ff7128fa9ac5ab3e05e99d41c3d7a4502d33959b7c3464da7567",
+      "section": "Appendix 15: List of Candidates, PDF pages 137-145",
+      "artifact": "model/data/validation/historical-replay-2010-fixed-fact-candidate-slate.csv",
+      "artifactFields": ["district_id", "district_name", "candidate_ordinal", "registered_party_raw", "party_family"],
+      "resultFieldsRead": false,
+      "targetOutcomeDependency": false
+    }
+  }
+}

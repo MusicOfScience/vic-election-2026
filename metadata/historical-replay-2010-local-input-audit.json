@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "cycleId": "vic_la_2010",
-  "status": "blocked-pending-cutoff-final-ballot-verification",
+  "status": "pass-final-ballot-availability",
   "districtCount": 88,
   "sameBoundaryPrior": true,
   "priorFamilyArtefact": "model/data/processed/vec_2006_assembly_family_primaries.csv",
@@ -13,5 +13,8 @@
     "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
     "any 2010 winner/primary/swing artefact"
   ],
-  "demographicChallengerCentralWeight": 0
+  "demographicChallengerCentralWeight": 0,
+  "ballotMaskSha256": "99c564c7cda8e879ac06fbfe7084c4a3d321090a16e18d98c6eb462ec8021e7f",
+  "localInputSha256": "9afa73706e2598e0ca6402e82bf9a5f920eff701feb552c01ded7884607dd8f3",
+  "changeReason": "final cutoff-safe ballot availability only"
 }

@@ -1,0 +1,6 @@
+# These frozen historical input CSVs intentionally retain their canonical CRLF
+# bytes. Treat them as opaque fingerprinted artefacts so diff checks do not
+# mistake the carriage return for newly added trailing whitespace.
+model/data/validation/historical-replay-2010-ballot-mask.csv -text -diff
+model/data/validation/historical-replay-2010-local-inputs.csv -text -diff
+model/data/validation/historical-replay-2010-fixed-fact-candidate-slate.csv -text -diff
