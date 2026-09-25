@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "status": "scoring-only-outcomes-loaded-after-sealed-prediction-and-comparator-verification",
+  "assemblyOutcomePath": "model/data/processed/vec_2014_assembly_final_pairs.csv",
+  "assemblyOutcomeSha256": "ce237a23ca89857b06876e1be1643e3f5e99caba756c4b7f30675bda2c1ad446",
+  "assemblyDistricts": 88,
+  "finalPairAvailableDistricts": 45,
+  "finalPairUnavailableDistricts": 43,
+  "sourceManifestPath": "metadata/vec-historical-assembly-primary-source-manifest.csv",
+  "sourceManifestSha256": "aa47f31be9c072b4d2a104f167070741dfc8261888048a42ae4373d5f9f10912",
+  "candidatePrimaryPath": "model/data/processed/vec_2014_assembly_candidate_primaries.csv",
+  "candidatePrimarySha256": "c85e014ff268f61448076736bcf4f862145caa476ed6c2c30233e28952cd3910",
+  "councilEvidenceAuditPath": "metadata/vec-2014-2022-council-evidence-audit.json",
+  "councilPrimaryPath": "model/data/processed/vec_2014_council_candidate_primaries.csv",
+  "preElectionInputEligible": false,
+  "productionAuthorisation": false
+}

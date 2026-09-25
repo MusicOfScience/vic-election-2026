@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2014",
+  "modelVersion": "historical_replay_v2",
+  "outcomesLoaded": true,
+  "predictionSha256": "7621cd120c9efdd7f891d0d69fbd711b8d5316af632547df6035e3ea096b38b0",
+  "comparatorBundleSha256": "4d706fa0dc0b49b5cd6bf281550914594663da4d31d4c6613be17dc87daa1ccb",
+  "comparatorSpecSha256": "cc217989f7981389cc0669969ceb78b7d71a83bb553f422457152106e19b621f",
+  "assembly": {
+    "districtCount": 88,
+    "winner": {
+      "accuracy": 0.7840909090909091,
+      "multiclassBrier": 0.29927978219696977,
+      "multiclassLogLoss": 1.1399020122815953,
+      "alpEventBrier": 0.1264788273358586,
+      "alpEventLogLoss": 0.35175521047130737
+    },
+    "districtPrimaryMAE": 6.0829669817397125,
+    "districtPrimaryMAEByFamily": {
+      "ALP": 6.053273929453277,
+      "LIB_NAT": 7.209971292008526,
+      "GRN": 7.301411659543265,
+      "OTH_IND": 3.767211045953779
+    },
+    "districtPrimaryMaximumAbsoluteError": 25.364611214116252,
+    "statewideFamilySharesActual": {
+      "ALP": 38.097366665206465,
+      "LIB_NAT": 41.9965747903497,
+      "GRN": 11.48014412462113,
+      "OTH_IND": 8.425914419822709
+    },
+    "statewideVoteErrors": {
+      "ALP": -3.133856153262819,
+      "LIB_NAT": -4.29805158108438,
+      "GRN": 6.7676409104440545,
+      "OTH_IND": 0.6642668239031426
+    },
+    "finalPair": {
+      "availableDistricts": 45,
+      "unavailableDistricts": 43,
+      "accuracy": 0.9111111111111111,
+      "calibration": {
+        "status": "unavailable",
+        "reason": "frozen prediction contains only the most-likely pair, not a complete pair distribution"
+      }
+    },
+    "assemblySeats": {
+      "actual": {
+        "ALP": 47,
+        "LIB_NAT": 38,
+        "GRN": 2,
+        "OTH_IND": 1
+      },
+      "byFamily": {
+        "ALP": {
+          "actual": 47,
+          "mean": 34.64083333333333,
+          "median": 34.0,
+          "meanError": -12.359166666666667,
+          "medianError": -13.0,
+          "inside80": false
+        },
+        "LIB_NAT": {
+          "actual": 38,
+          "mean": 52.76083333333333,
+          "median": 53.0,
+          "meanError": 14.76083333333333,
+          "medianError": 15.0,
+          "inside80": false
+        },
+        "GRN": {
+          "actual": 2,
+          "mean": 0.5983333333333334,
+          "median": 0.0,
+          "meanError": -1.4016666666666666,
+          "medianError": -2.0,
+          "inside80": true
+        },
+        "OTH_IND": {
+          "actual": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "meanError": -1.0,
+          "medianError": -1.0,
+          "inside80": false
+        }
+      },
+      "meanAbsoluteMeanSeatError": 7.380416666666666,
+      "medianAbsoluteMedianSeatError": 7.75,
+      "interval80Coverage": 0.25
+    }
+  },
+  "council": {
+    "regions": 8,
+    "seatsPerRegion": 5,
+    "actualSeats": {
+      "ALP": 14,
+      "LIB_NAT": 16,
+      "GRN": 5,
+      "OTH_IND": 5
+    },
+    "predictedMeanSeats": {
+      "ALP": 17.106666666666666,
+      "LIB_NAT": 22.678333333333335,
+      "GRN": 0.215,
+      "OTH_IND": 0.0
+    },
+    "absoluteErrorByFamily": {
+      "ALP": 3.1066666666666656,
+      "LIB_NAT": 6.678333333333335,
+      "GRN": 4.785,
+      "OTH_IND": 5.0
+    },
+    "regionalMeanAbsoluteSeatError": 0.6559375,
+    "regionalErrors": {
+      "eastern-metropolitan-region": {
+        "ALP": 0.8658333333333332,
+        "LIB_NAT": 0.13416666666666677,
+        "GRN": -1.0,
+        "OTH_IND": 0.0
+      },
+      "eastern-victoria-region": {
+        "ALP": -0.4191666666666667,
+        "LIB_NAT": 1.4191666666666665,
+        "GRN": 0.0,
+        "OTH_IND": -1.0
+      },
+      "northern-metropolitan-region": {
+        "ALP": 0.9966666666666666,
+        "LIB_NAT": 0.8291666666666666,
+        "GRN": -0.8258333333333333,
+        "OTH_IND": -1.0
+      },
+      "northern-victoria-region": {
+        "ALP": -0.2908333333333333,
+        "LIB_NAT": 1.2908333333333335,
+        "GRN": 0.0,
+        "OTH_IND": -1.0
+      },
+      "south-eastern-metropolitan-region": {
+        "ALP": 0.4224999999999999,
+        "LIB_NAT": 0.5775000000000001,
+        "GRN": -1.0,
+        "OTH_IND": 0.0
+      },
+      "southern-metropolitan-region": {
+        "ALP": 0.4650000000000001,
+        "LIB_NAT": 0.49416666666666664,
+        "GRN": -0.9591666666666667,
+        "OTH_IND": 0.0
+      },
+      "western-metropolitan-region": {
+        "ALP": 0.9758333333333336,
+        "LIB_NAT": 1.0241666666666664,
+        "GRN": -1.0,
+        "OTH_IND": -1.0
+      },
+      "western-victoria-region": {
+        "ALP": 0.09083333333333332,
+        "LIB_NAT": 0.9091666666666667,
+        "GRN": 0.0,
+        "OTH_IND": -1.0
+      }
+    },
+    "regionalPrimaryMetric": {
+      "status": "unavailable",
+      "reason": "frozen 2014 prediction contains no Council regional primary estimates"
+    }
+  },
+  "comparators": {
+    "uniform-swing-baseline": {
+      "status": "scored",
+      "metricAvailability": [
+        "major-party-event-probability",
+        "winner"
+      ],
+      "metrics": {
+        "winner": {
+          "accuracy": 0.8181818181818182,
+          "multiclassBrier": 0.27583425554408364,
+          "multiclassLogLoss": 0.5459640065227481,
+          "alpEventBrier": 0.12449295743904173,
+          "alpEventLogLoss": 0.40605376984656155
+        },
+        "districtPrimaryMAE": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "seatCount": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "finalPair": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "Council": {
+          "status": "not-applicable-by-pre-score-contract"
+        }
+      }
+    },
+    "polling-only": {
+      "status": "scored",
+      "metricAvailability": [
+        "district-primary",
+        "statewide-primary",
+        "winner-where-defined"
+      ],
+      "metrics": {
+        "winner": {
+          "accuracy": 0.4318181818181818,
+          "multiclassBrier": 0.5853456849179265,
+          "multiclassLogLoss": 1.0212958045772618,
+          "alpEventBrier": 0.2831947359127293,
+          "alpEventLogLoss": 0.7624213634109858
+        },
+        "districtPrimaryMAE": 8.409224890524273,
+        "seatCount": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "finalPair": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "Council": {
+          "status": "not-applicable-by-pre-score-contract"
+        }
+      }
+    },
+    "polling-plus-fundamentals": {
+      "status": "scored",
+      "metricAvailability": [
+        "district-primary",
+        "statewide-primary",
+        "winner-where-defined"
+      ],
+      "metrics": {
+        "winner": {
+          "accuracy": 0.6704545454545454,
+          "multiclassBrier": 0.48202796409953924,
+          "multiclassLogLoss": 0.8660817907900981,
+          "alpEventBrier": 0.23836833013432332,
+          "alpEventLogLoss": 0.6641370560075864
+        },
+        "districtPrimaryMAE": 6.1509082698103335,
+        "seatCount": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "finalPair": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "Council": {
+          "status": "not-applicable-by-pre-score-contract"
+        }
+      }
+    },
+    "seat-level-model": {
+      "status": "scored",
+      "metricAvailability": [
+        "district-primary",
+        "seat-count-approximation",
+        "winner"
+      ],
+      "metrics": {
+        "winner": {
+          "accuracy": 0.6704545454545454,
+          "multiclassBrier": 0.4663240155566502,
+          "multiclassLogLoss": 0.82450706789894,
+          "alpEventBrier": 0.2293072085886441,
+          "alpEventLogLoss": 0.6462188080238843
+        },
+        "districtPrimaryMAE": 6.382667884761449,
+        "seatCount": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "finalPair": {
+          "status": "not-applicable-by-pre-score-contract"
+        },
+        "Council": {
+          "status": "not-applicable-by-pre-score-contract"
+        }
+      }
+    },
+    "complete-ensemble": {
+      "status": "scored-by-frozen-prediction",
+      "metrics": {
+        "assembly": {
+          "districtCount": 88,
+          "winner": {
+            "accuracy": 0.7840909090909091,
+            "multiclassBrier": 0.29927978219696977,
+            "multiclassLogLoss": 1.1399020122815953,
+            "alpEventBrier": 0.1264788273358586,
+            "alpEventLogLoss": 0.35175521047130737
+          },
+          "districtPrimaryMAE": 6.0829669817397125,
+          "districtPrimaryMAEByFamily": {
+            "ALP": 6.053273929453277,
+            "LIB_NAT": 7.209971292008526,
+            "GRN": 7.301411659543265,
+            "OTH_IND": 3.767211045953779
+          },
+          "districtPrimaryMaximumAbsoluteError": 25.364611214116252,
+          "statewideFamilySharesActual": {
+            "ALP": 38.097366665206465,
+            "LIB_NAT": 41.9965747903497,
+            "GRN": 11.48014412462113,
+            "OTH_IND": 8.425914419822709
+          },
+          "statewideVoteErrors": {
+            "ALP": -3.133856153262819,
+            "LIB_NAT": -4.29805158108438,
+            "GRN": 6.7676409104440545,
+            "OTH_IND": 0.6642668239031426
+          },
+          "finalPair": {
+            "availableDistricts": 45,
+            "unavailableDistricts": 43,
+            "accuracy": 0.9111111111111111,
+            "calibration": {
+              "status": "unavailable",
+              "reason": "frozen prediction contains only the most-likely pair, not a complete pair distribution"
+            }
+          },
+          "assemblySeats": {
+            "actual": {
+              "ALP": 47,
+              "LIB_NAT": 38,
+              "GRN": 2,
+              "OTH_IND": 1
+            },
+            "byFamily": {
+              "ALP": {
+                "actual": 47,
+                "mean": 34.64083333333333,
+                "median": 34.0,
+                "meanError": -12.359166666666667,
+                "medianError": -13.0,
+                "inside80": false
+              },
+              "LIB_NAT": {
+                "actual": 38,
+                "mean": 52.76083333333333,
+                "median": 53.0,
+                "meanError": 14.76083333333333,
+                "medianError": 15.0,
+                "inside80": false
+              },
+              "GRN": {
+                "actual": 2,
+                "mean": 0.5983333333333334,
+                "median": 0.0,
+                "meanError": -1.4016666666666666,
+                "medianError": -2.0,
+                "inside80": true
+              },
+              "OTH_IND": {
+                "actual": 1,
+                "mean": 0.0,
+                "median": 0.0,
+                "meanError": -1.0,
+                "medianError": -1.0,
+                "inside80": false
+              }
+            },
+            "meanAbsoluteMeanSeatError": 7.380416666666666,
+            "medianAbsoluteMedianSeatError": 7.75,
+            "interval80Coverage": 0.25
+          }
+        },
+        "council": {
+          "regions": 8,
+          "seatsPerRegion": 5,
+          "actualSeats": {
+            "ALP": 14,
+            "LIB_NAT": 16,
+            "GRN": 5,
+            "OTH_IND": 5
+          },
+          "predictedMeanSeats": {
+            "ALP": 17.106666666666666,
+            "LIB_NAT": 22.678333333333335,
+            "GRN": 0.215,
+            "OTH_IND": 0.0
+          },
+          "absoluteErrorByFamily": {
+            "ALP": 3.1066666666666656,
+            "LIB_NAT": 6.678333333333335,
+            "GRN": 4.785,
+            "OTH_IND": 5.0
+          },
+          "regionalMeanAbsoluteSeatError": 0.6559375,
+          "regionalErrors": {
+            "eastern-metropolitan-region": {
+              "ALP": 0.8658333333333332,
+              "LIB_NAT": 0.13416666666666677,
+              "GRN": -1.0,
+              "OTH_IND": 0.0
+            },
+            "eastern-victoria-region": {
+              "ALP": -0.4191666666666667,
+              "LIB_NAT": 1.4191666666666665,
+              "GRN": 0.0,
+              "OTH_IND": -1.0
+            },
+            "northern-metropolitan-region": {
+              "ALP": 0.9966666666666666,
+              "LIB_NAT": 0.8291666666666666,
+              "GRN": -0.8258333333333333,
+              "OTH_IND": -1.0
+            },
+            "northern-victoria-region": {
+              "ALP": -0.2908333333333333,
+              "LIB_NAT": 1.2908333333333335,
+              "GRN": 0.0,
+              "OTH_IND": -1.0
+            },
+            "south-eastern-metropolitan-region": {
+              "ALP": 0.4224999999999999,
+              "LIB_NAT": 0.5775000000000001,
+              "GRN": -1.0,
+              "OTH_IND": 0.0
+            },
+            "southern-metropolitan-region": {
+              "ALP": 0.4650000000000001,
+              "LIB_NAT": 0.49416666666666664,
+              "GRN": -0.9591666666666667,
+              "OTH_IND": 0.0
+            },
+            "western-metropolitan-region": {
+              "ALP": 0.9758333333333336,
+              "LIB_NAT": 1.0241666666666664,
+              "GRN": -1.0,
+              "OTH_IND": -1.0
+            },
+            "western-victoria-region": {
+              "ALP": 0.09083333333333332,
+              "LIB_NAT": 0.9091666666666667,
+              "GRN": 0.0,
+              "OTH_IND": -1.0
+            }
+          },
+          "regionalPrimaryMetric": {
+            "status": "unavailable",
+            "reason": "frozen 2014 prediction contains no Council regional primary estimates"
+          }
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "criteriaPath": "metadata/historical-validation-acceptance-criteria.json",
+    "criteriaSha256": "0fe66e8080dfcf48d6b9bab7c7568b8dfdee825a239e6ff9cbffd8a39ae3d22f",
+    "cycleLevelOnly": true,
+    "completeBacktest": "unavailable-until-four-cycles",
+    "probabilityCalibration": "unavailable-until-four-cycles",
+    "cycleLevelAssessment": {
+      "statewideVoteError": {
+        "meanAbsolutePercentagePoints": 3.715953867173599,
+        "maximumAbsolutePercentagePoints": 6.7676409104440545,
+        "threshold": {
+          "cycleMeanAbsoluteErrorMaxPercentagePoints": 4.0,
+          "cycleMaximumAbsoluteErrorMaxPercentagePoints": 7.0
+        },
+        "status": "met"
+      },
+      "seatWinnerAccuracy": {
+        "value": 0.7840909090909091,
+        "threshold": 0.7,
+        "status": "met"
+      },
+      "seatCountError": {
+        "maximumAbsoluteMeanError": 14.76083333333333,
+        "meanAbsoluteMeanError": 7.380416666666666,
+        "threshold": {
+          "cycleAbsoluteErrorMaxSeats": 8,
+          "cycleMeanAbsoluteErrorMaxSeats": 5
+        },
+        "status": "missed"
+      },
+      "multiclassBrier": {
+        "value": 0.29927978219696977,
+        "threshold": 0.25,
+        "status": "missed"
+      },
+      "multiclassLogLoss": {
+        "value": 1.1399020122815953,
+        "threshold": 1.2,
+        "status": "met"
+      },
+      "intervalCoverage80": {
+        "value": 0.25,
+        "threshold": {
+          "cycleMinimum": 0.7,
+          "cycleMaximum": 0.9
+        },
+        "status": "missed"
+      },
+      "finalPairCalibration": {
+        "status": "unavailable",
+        "reason": "frozen prediction contains only the most-likely pair, not a complete pair distribution"
+      },
+      "regionalError": {
+        "status": "unavailable",
+        "reason": "no preregistered regional primary probability output in the frozen 2014 artefact"
+      },
+      "contestType": {
+        "status": "unavailable",
+        "reason": "no preregistered contest-type partition is frozen for this single cycle"
+      }
+    }
+  },
+  "scoreSha256": "e96125d51b4b85a365fb457148a0cee411f576c1d09f71b225fd7284175e4bae"
+}
