@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "status": "input-preparation-blocked-pending-poll-owner-approval-and-ballot-source",
+  "electionDate": "2010-11-27",
+  "informationCutoff": "2010-11-26",
+  "sameBoundary": {"status": "verified", "basis": "Official ABC 2010 pendulum and VEC historical structure identify the same 88 Legislative Assembly districts used in 2006 and 2010; no intervening Assembly redistribution."},
+  "priorAssembly": {"path": "model/data/processed/vec_2006_assembly_family_primaries.csv", "sourceManifest": "metadata/vec-2006-assembly-source-manifest.json", "families": ["ALP", "LIB_NAT", "GRN", "OTH_IND"], "districts": 88, "targetOutcomeDependency": false},
+  "notionalBaseline": {"path": "model/data/validation/historical-replay-2010-assembly-notional-baseline.csv", "audit": "metadata/historical-replay-2010-notional-baseline-audit.json", "districts": 88, "targetOutcomeDependency": false},
+  "localInput": {"path": "model/data/validation/historical-replay-2010-local-inputs.csv", "districts": 88, "variedVectors": true, "demographicChallengerCentralWeight": 0, "targetOutcomeDependency": false},
+  "forbiddenPredictionInputs": ["model/data/processed/vec_2006_2010_same_boundary_tpp_swing.csv", "model/data/processed/vec_2010_assembly_candidate_primaries.csv", "any 2010 election outcome, winner, swing or preference-count artefact"],
+  "ballotMask": {"path": "model/data/validation/historical-replay-2010-ballot-mask.csv", "sha256": "b87c3dd1a9a162c7a1e48442351d4f55a96a30bbc6afd3ad74f03e8ac22a2268", "status": "provisional-pending-cutoff-final-nomination-verification", "targetOutcomeDependency": false},
+  "council": {"path": "model/data/validation/historical-replay-2010-council-prior.csv", "audit": "metadata/historical-replay-2010-council-prior-audit.json", "regions": 8, "seatsPerRegion": 5, "priorOnly": true, "targetOutcomeDependency": false},
+  "polling": {"path": "model/data/validation/historical-replay-2010-poll-observations-pending-owner.json", "automatedPassObservations": 3, "approvedObservations": 0, "independentFamilies": 2, "fixedRule": "3 observations / 2 independent families", "targetOutcomeDependency": false},
+  "predictionFrozen": false,
+  "outcomesLoaded": false
+}

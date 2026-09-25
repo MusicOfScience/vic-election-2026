@@ -294,6 +294,19 @@ def _generic_poll_state(root: Path, spec: dict, draws: int, seed: int) -> np.nda
 
 def _generic_assembly_inputs(root: Path, spec: dict) -> tuple[pd.DataFrame, list[str]]:
     families = spec["activeFamilies"]
+    if spec["cycleId"] == "vic_la_2010":
+        frame = pd.read_csv(_cycle_path(root, spec["localInput"]))
+        if len(frame) != spec["assemblyContestCount"]:
+            raise ValueError("2010 local input does not cover all 88 districts")
+        columns = [f"prior_{family.lower()}_share" for family in families]
+        if any(column not in frame for column in columns):
+            raise ValueError("2010 local input is missing a mapped prior family")
+        values = frame[columns].to_numpy(float)
+        if not np.allclose(values.sum(axis=1), 1.0, atol=1e-8):
+            raise ValueError("2010 local family shares do not reconcile")
+        frame = frame.rename(columns=dict(zip(columns, families)))
+        frame["_ballot"] = frame.ballot_active_families.fillna("").map(lambda value: set(str(value).split(";")))
+        return frame, families
     if spec["cycleId"] == "vic_la_2022":
         frame = pd.read_csv(_cycle_path(root, spec["localInput"]))
         if len(frame) != spec["assemblyContestCount"] or frame.district_name.eq("Narracan").any():
@@ -318,6 +331,21 @@ def _generic_assembly_inputs(root: Path, spec: dict) -> tuple[pd.DataFrame, list
 
 
 def _generic_council_surface(root: Path, spec: dict, families: list[str]) -> pd.DataFrame:
+    if spec["cycleId"] == "vic_la_2010":
+        frame = pd.read_csv(_cycle_path(root, spec["councilInput"]))
+        if len(frame) != spec["councilRegions"] * len(families):
+            raise ValueError("2010 Council prior does not cover eight regions and four families")
+        result = frame.pivot(index="region_id", columns="party_family", values="first_preference_votes").fillna(0).reset_index()
+        if len(result) != spec["councilRegions"]:
+            raise ValueError("2010 Council prior does not cover eight regions")
+        for family in families:
+            if family not in result:
+                result[family] = 0.0
+        values = result[families].to_numpy(float, copy=True)
+        values /= values.sum(axis=1, keepdims=True)
+        result.loc[:, families] = values
+        result = result.rename(columns={"region_id": "region_name"})
+        return result
     if spec["cycleId"] == "vic_la_2014":
         frame = pd.read_csv(_cycle_path(root, spec["councilInput"]))
         if len(frame) != spec["councilRegions"]:
@@ -409,7 +437,7 @@ def run_historical_forecast_v2(root: str | Path, cycle_id: str, *, seed: int | N
             primary = np.exp(logits - logits.max()); primary /= primary.sum(); council_draws[sim, region] = _count_group_stv_generic(primary, preference, .15)
     if not np.all(council_draws.sum(axis=2) == 5) or not np.all(council_draws.sum(axis=1).sum(axis=1) == 40): raise ValueError("Council simulation did not conserve 5 seats per region and 40 statewide")
     council_regions = [{"regionName": row.region_name, "seatDistributionMean": {p: float(council_draws[:, i, j].mean()) for j, p in enumerate(families)}, "simulations": simulations} for i, row in council_frame.iterrows()]
-    return {"modelVersion": HISTORICAL_REPLAY_V2, "cycleId": cycle_id, "informationCutoff": spec["informationCutoff"], "seed": seed, "activeFamilies": families, "simulations": simulations, "pollObservationState": {"buckets": ["ALP", "LIB_NAT", "GRN", "OTH_RESIDUAL"] if cycle_id == "vic_la_2022" else families, "unreportedFamilies": ["ONP"] if cycle_id == "vic_la_2022" else [], "residualDecomposition": spec.get("groupedResidualRule", "none")}, "statewidePrimaryEstimates": {p: float(state_draws[:, j].mean() * 100) for j, p in enumerate((['ALP', 'LIB_NAT', 'GRN', 'OTH_IND'] if cycle_id == 'vic_la_2022' else families))}, "assemblyDistricts": districts, "assemblySeatSummary": {p: {"mean": float(chamber[:, j].mean()), "median": float(np.median(chamber[:, j])), "lower80": float(np.quantile(chamber[:, j], .1)), "upper80": float(np.quantile(chamber[:, j], .9))} for j, p in enumerate(families)}, "council": {"regionalPollContribution": 0, "uncertaintyRule": "fixed-broadening-when-regional-poll-absent", "regions": council_regions}, "certificationStatus": "held-out-certifying-prediction-frozen" if cycle_id == "vic_la_2022" else "diagnostic", "productionCompatible": False}
+    return {"modelVersion": HISTORICAL_REPLAY_V2, "cycleId": cycle_id, "informationCutoff": spec["informationCutoff"], "seed": seed, "activeFamilies": families, "simulations": simulations, "pollObservationState": {"buckets": ["ALP", "LIB_NAT", "GRN", "OTH_RESIDUAL"] if cycle_id == "vic_la_2022" else families, "unreportedFamilies": ["ONP"] if cycle_id == "vic_la_2022" else [], "residualDecomposition": spec.get("groupedResidualRule", "none")}, "statewidePrimaryEstimates": {p: float(state_draws[:, j].mean() * 100) for j, p in enumerate((['ALP', 'LIB_NAT', 'GRN', 'OTH_IND'] if cycle_id == 'vic_la_2022' else families))}, "assemblyDistricts": districts, "assemblySeatSummary": {p: {"mean": float(chamber[:, j].mean()), "median": float(np.median(chamber[:, j])), "lower80": float(np.quantile(chamber[:, j], .1)), "upper80": float(np.quantile(chamber[:, j], .9))} for j, p in enumerate(families)}, "council": {"regionalPollContribution": 0, "uncertaintyRule": "fixed-broadening-when-regional-poll-absent", "regions": council_regions}, "certificationStatus": "held-out-certifying-prediction-frozen" if cycle_id in {"vic_la_2010", "vic_la_2022"} else "diagnostic", "productionCompatible": False}
 
 
 def _count_irv_generic(primary: np.ndarray, preference: np.ndarray) -> tuple[int, tuple[int, int]]:

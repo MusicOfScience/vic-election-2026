@@ -11,7 +11,7 @@ const readJson = (path) => JSON.parse(readFileSync(new URL(`../${path}`, import.
 test("2014 is selected by pre-score completeness and remains outcome-isolated after freeze", () => {
   const selection = readJson("metadata/historical-replay-next-cycle-selection.json");
   const audit = readJson("metadata/historical-replay-2014-input-audit.json");
-  assert.equal(selection.selectedCycle, "vic_la_2014");
+  assert.equal(selection.selectedCycle, "vic_la_2010");
   assert.match(selection.reason, /pre-score evidence completeness/i);
   assert.equal(audit.targetElectionOutcomesUsed, false);
   assert.equal(audit.rows, 88);

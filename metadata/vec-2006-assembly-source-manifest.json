@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "priorElection": "vic_la_2006",
+  "boundaryAlignment": "same-boundary",
+  "sourceAuthority": "Victorian Electoral Commission",
+  "evidenceAvailableBy": "2006-11-25",
+  "targetOutcomeDependency": false,
+  "sources": [
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultsummary.html",
+      "sha256": "34dbe578c2fe15a31c5f321d3f931a4feece72f91b704e2d432954c370999e51",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-district-index"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultalbertparkdistrict.html",
+      "sha256": "a6ab5a0497b3edd9d1bd66e18ec6c986d6dbe336a89f637012be9a4b5867299c",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "albert-park"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultaltonadistrict.html",
+      "sha256": "1dd9633fcfadf1cb35cb4235be4ce4d980acc19ea25011c97c49eada79808913",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "altona"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultballarateastdistrict.html",
+      "sha256": "d1533c20cf19422a54894f96bf8dd6a1b390749369527ee7972e4a3d8a9749ac",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "ballarat-east"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultballaratwestdistrict.html",
+      "sha256": "bdd9fa3f96e8dab533db27c7cc1bb4c06cca332190e9ca5d1bdf06770aeb2230",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "ballarat-west"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbassdistrict.html",
+      "sha256": "b931db6076d72634318b3a86d740daafcc7f8478fb3eb57f92c31a8448890774",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bass"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbayswaterdistrict.html",
+      "sha256": "7650f5d3cf3845c6cec518b244796b64812ea71dc5fc0fc7ca0b602833a6f96e",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bayswater"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbellarinedistrict.html",
+      "sha256": "28812907b3ab370aecf573576c22a57c30b4126c0056f597c5c355d0e6ba387a",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bellarine"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbenalladistrict.html",
+      "sha256": "5c42917448b998d6589697407c2cea402a821167a797a52f4a854630d58372d4",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "benalla"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbenambradistrict.html",
+      "sha256": "975dfd93a6f1457b810f162a1805042dbf929b4169bd51286ac9a45d63386ec2",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "benambra"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbendigoeastdistrict.html",
+      "sha256": "d01c0710d884c8a7a6ae10668d639c9ae2868f5872ad4066ea3152ca126c5256",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bendigo-east"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbendigowestdistrict.html",
+      "sha256": "be0b9f8328ee562507b2292cd20cebe21b39691af2337ac289192124e3148b3d",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bendigo-west"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbentleighdistrict.html",
+      "sha256": "4bf9510e58fb4bbfcab06ae178ed734f0e8ce1614ee2cedba777df58d09ca504",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bentleigh"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultboxhilldistrict.html",
+      "sha256": "0b862064ce99e4d60050e9247d8aa2d317ee7442d3e897b6965b6b8549f8a12a",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "box-hill"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbrightondistrict.html",
+      "sha256": "46fc5c2945449be1740d39d2db23e7607a1821bc0f0821dc5a0e59892c52b038",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "brighton"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbroadmeadowsdistrict.html",
+      "sha256": "38832a8a8599a30463c473ef3efe1547bdade6030051178af5905321d7f597d4",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "broadmeadows"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbrunswickdistrict.html",
+      "sha256": "1a1d0da8707e58fff761a022bf7ad9b6b2512aa1b635063931a33d1c37cf7346",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "brunswick"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbulleendistrict.html",
+      "sha256": "ee4bcf6652476660b31daacccc7c744049538ba799723ba529b44f5469def793",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bulleen"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultbundooradistrict.html",
+      "sha256": "2f24008ecb5f26bf7d29ef32d4c3c3dabd4e58f793864c024d61ef38bb679c6b",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "bundoora"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultburwooddistrict.html",
+      "sha256": "0f339ca74a8df2c32f70e7005a5362b4f4aa6d9f93ccbd11a777ae52f0ec5099",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "burwood"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultcarrumdistrict.html",
+      "sha256": "629aa8eafb52ce41ad11a87a6037f6b8058bb0cfc5837706b60787d93719347e",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "carrum"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultcaulfielddistrict.html",
+      "sha256": "21c99ee1034f70130abd4c71a0bcb62bb2a77c5bac962361b0d3b875e220906b",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "caulfield"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultclaytondistrict.html",
+      "sha256": "5a14878a834ee507254d35bbabd4836005a8c9c4d9145d573d1aced253995c4f",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "clayton"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultcranbournedistrict.html",
+      "sha256": "99da602d3d7014498c792be0052ad559525362d59f818a545e7b71ae3653eb55",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "cranbourne"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultdandenongdistrict.html",
+      "sha256": "81936e165bd0a5e46e18df46854cea3e20c9130892f5b6a6d719be7268d93d64",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "dandenong"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultderrimutdistrict.html",
+      "sha256": "a41eccb8670b35d39dcac1b7888a8a5f64c2c540b32b937201fd9394e49cc7d0",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "derrimut"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultdoncasterdistrict.html",
+      "sha256": "2fd51bc32bb8a8e8f8c8dfb655ac08916419323ab36f54393564ea636c28dc11",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "doncaster"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultelthamdistrict.html",
+      "sha256": "9b8dfaf0dd2def24de6e648e6f6f6d43b06123e43cba90b8fd1bc0606f453224",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "eltham"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultessendondistrict.html",
+      "sha256": "659d12ecb153385656f1d60ea4038d8c368f5cede3fe5f2845b60d22b616d147",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "essendon"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultevelyndistrict.html",
+      "sha256": "d1d29a5846c88252b2fd95f57505c1580ccc1f223581b0638c93b9495c7dbad4",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "evelyn"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultferntreegullydistrict.html",
+      "sha256": "5be115330b4d1837dec3a85eb7ba0c0ea1699ee95bd00d97e63394116bbd31c3",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "ferntree-gully"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultfootscraydistrict.html",
+      "sha256": "919d26ac5242afdea104d6faeb2035c4925d2029fff292a15f5656c0e5c163ff",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "footscray"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultforesthilldistrict.html",
+      "sha256": "e027956806bbcf5809361ab508c590a06c0a1e2147e4acb4b2dcecfd7e45d293",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "forest-hill"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultfrankstondistrict.html",
+      "sha256": "7c0cd505c0f0841277ad05a14db6341215a69125f7447e93682412c3c78af262",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "frankston"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultgeelongdistrict.html",
+      "sha256": "384d67c9ab2f0dfef6ed6a37679c1972ad52a4e24cb3bc40f39e892276411a6e",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "geelong"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultgembrookdistrict.html",
+      "sha256": "79b4212fcc8c9fde29899fc9ced8c90bfa003b95e295272e8ced0dfbeea4c75d",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "gembrook"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultgippslandeastdistrict.html",
+      "sha256": "ab86b303ee74955a6cad7c12e4bd41372d0cdefdb91d1e3be438dd401db72f65",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "gippsland-east"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultgippslandsouthdistrict.html",
+      "sha256": "0cb39648d672d0438478f01dcc7c15d978428e2a6fc0d0c6738c5c0ca35002c1",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "gippsland-south"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resulthastingsdistrict.html",
+      "sha256": "88753b233b1a6aee5210c1c7a39e6e8399757095eca65ee98b69e45197a0a9c4",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "hastings"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resulthawthorndistrict.html",
+      "sha256": "40a360fdc5b119ddc98139952f8d779fbee0905140988add3c126ad6048e7d08",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "hawthorn"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultivanhoedistrict.html",
+      "sha256": "4708012fe5a93f70cdb1bcd5db7e841376317893cd5f3f33b7519ae851f8f849",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "ivanhoe"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultkeilordistrict.html",
+      "sha256": "5a7e36238ab83cf27b3ab485413aedb0d80c07fe1bcd049aa2b046c8a5b8d669",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "keilor"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultkewdistrict.html",
+      "sha256": "6216dc7623673abc70a9bfb1f8820c9374abffc05ae548537742c106d7f9b500",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "kew"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultkilsythdistrict.html",
+      "sha256": "40b1cd36bbed62f66237a304e4a57aa95fc99d0093e9fe23972241122728e3a9",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "kilsyth"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultkororoitdistrict.html",
+      "sha256": "63c9a2444e03b6631607a6d00989110fa5d446d395df9fb87a2b35253c784c84",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "kororoit"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultlaradistrict.html",
+      "sha256": "5381af9bfc0f4fa70b5c8ab5a8a89ea4f2817ddb8b7db25b87b73700334c2963",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "lara"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultlowandistrict.html",
+      "sha256": "5fc53742df9b037e30bfd1286a00646f8ab4c1a944fb2610a70ffa87829e93bd",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "lowan"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultlyndhurstdistrict.html",
+      "sha256": "cf3c79a5bd9e81073ed94a0e4b9b4dc5020e2a7a4d1d98b49266752d022c627f",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "lyndhurst"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmacedondistrict.html",
+      "sha256": "8170235e8817296574527f1376d13b80250c36802586c33793af273543b60ef8",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "macedon"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmalverndistrict.html",
+      "sha256": "994aea640e0210a1c6914337c64e69038326d00b8ad0a3010bcec8ef51322175",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "malvern"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmelbournedistrict.html",
+      "sha256": "56c5a499849a9cd7767af43ce9d2e5ef66726e3d14f6022143f6db25a93ede28",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "melbourne"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmeltondistrict.html",
+      "sha256": "e2df94d5a4fd66576f564b5e0866d2dbb00c1e5574d6ba57596ba2f90136b2a5",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "melton"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmilduradistrict.html",
+      "sha256": "df461755b8d3187999cefd25dba461d53868f5fe7d359ad1bd83f26114319f75",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "mildura"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmillparkdistrict.html",
+      "sha256": "638b99fff7723b7984fa2714599f26e4f26a02ec9e4edda5c32c711d7a3d648d",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "mill-park"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmitchamdistrict.html",
+      "sha256": "b9ba2b9f5a7c11887124d61a11d8331fa06c485d32d489c87d67897299e59e54",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "mitcham"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmonbulkdistrict.html",
+      "sha256": "adfeaa08297cf806ece151e3f3aec1bdeb1a6daa564583c6628bd69d7cebdd61",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "monbulk"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmordiallocdistrict.html",
+      "sha256": "f6437fd62bb42c46bc24c14cf3923affa5c0c266dc08078e1b05a0955072c8b3",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "mordialloc"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmorningtondistrict.html",
+      "sha256": "967aec58134fa108d67b195eb1226b8ccc8f2118830097a41d78d752d008f079",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "mornington"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmorwelldistrict.html",
+      "sha256": "f8a678db3ecab76142d7f4acee6108fb92a1e6e1af17800e6ca9b96d931ea509",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "morwell"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmountwaverleydistrict.html",
+      "sha256": "f205b1acfdffa7be6b2295c1b52e591ec294e0169e92b6e87b85c427ebaca6ec",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "mount-waverley"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmulgravedistrict.html",
+      "sha256": "2f2e967559635efec376e69f85a8ae96c41056b4810db054fc7381c143e0339f",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "mulgrave"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultmurrayvalleydistrict.html",
+      "sha256": "3c6ec503680824d83c1044431819559990f432e4b38fc09415982aa3be93da62",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "murray-valley"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultnarracandistrict.html",
+      "sha256": "d07bac55514237d832576b8a0d660f749e097536129b8d93c992880f41980889",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "narracan"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultnarrewarrennorthdistrict.html",
+      "sha256": "df94d490b343d94c52a929c09e5cfc765db628b4a3fd081eb4a5d50dd2fb79f0",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "narre-warren-north"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultnarrewarrensouthdistrict.html",
+      "sha256": "9192e9c9a6eef1b20bc5139cd3c0fd7d1618c50df7ad2b5b4203a82e27ff0705",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "narre-warren-south"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultnepeandistrict.html",
+      "sha256": "ea395c7bcb7e1467323658803af7775545a8ab63e5cb8fb3721c834dd16e1903",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "nepean"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultniddriedistrict.html",
+      "sha256": "a51540c117a239af7621c60f033d9778235e03948022cf87cfc3e366dad435d9",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "niddrie"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultnorthcotedistrict.html",
+      "sha256": "d147f99091dd2f347df3c5f8fa9bfc90c02ec4bb92c85a28f002d55d24014f72",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "northcote"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultoakleighdistrict.html",
+      "sha256": "49f316603b5c81809ff0b77229244979c0d4ef47d4ab4021ff9a33f048545269",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "oakleigh"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultpascoevaledistrict.html",
+      "sha256": "a1eb030898fe21fb863e81abf9f5f8851cf6813224eab7a5cd279547cbfb7d2b",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "pascoe-vale"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultpolwarthdistrict.html",
+      "sha256": "71321623df3744d73c39270c153a53276c0d4dc435eb3503044ab6ab2f1aec0a",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "polwarth"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultprahrandistrict.html",
+      "sha256": "d422f92fb371e9f3c45acc37c160c0c77f429d8aeee35946debb0a289d3d6c04",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "prahran"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultprestondistrict.html",
+      "sha256": "94bf210d57058c5fa3ec35e70048bdf2e783d1c227542e507da3a6c6ac2c56cb",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "preston"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultrichmonddistrict.html",
+      "sha256": "0242392671e7ea66f86c4dfb7d10908105c79b7e5e6618c81a397c36f831188d",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "richmond"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultripondistrict.html",
+      "sha256": "ee5ede3bfd2a6de7ea97c6077384fb78ca9b1948f46cd56709318905743f63a3",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "ripon"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultrodneydistrict.html",
+      "sha256": "994588e10a76b4831094627144996650e589f472acd62c9e6ab83c88acf98b85",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "rodney"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultsandringhamdistrict.html",
+      "sha256": "e85f50de6db602f0746f3c89771fb29d8b7c109b855a2ad2f379eb2cbe728738",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "sandringham"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultscoresbydistrict.html",
+      "sha256": "ee204c1487391f397f3ef5d63924ca7097278d6e34d8a3dbb99a196bef058bd8",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "scoresby"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultseymourdistrict.html",
+      "sha256": "0eb7fe0febae5e51efb65f694e4710a2abf73908a12c373f7c8676037eb1e20f",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "seymour"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultsheppartondistrict.html",
+      "sha256": "199267693bdd2e7e0224c90956c4926618f762991799c811792c89b78a2ffeca",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "shepparton"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultsouthbarwondistrict.html",
+      "sha256": "d19798bd8af444fcb6a47d1c8d97057d3e31dc34528ef9888fe7a7af5de7309d",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "south-barwon"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultsouth-westcoastdistrict.html",
+      "sha256": "c8e206708c141d3a93ea330c774b7d8e0e79dd8570447232ab27d2015e4b0f65",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "south-west-coast"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultswanhilldistrict.html",
+      "sha256": "ad357387af9b0bf1c65e21007f25638731cdb95ded82606530bd4439af929c68",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "swan-hill"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resulttarneitdistrict.html",
+      "sha256": "7bc67040297eabee4ee704d0e8239839e7d48d237242defcd48a114ecbff050a",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "tarneit"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultthomastowndistrict.html",
+      "sha256": "01a1ce8c9c7776b32589b591d86b353c4e7f422aa0152e0ec02fd74e90683d37",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "thomastown"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultwarrandytedistrict.html",
+      "sha256": "8d399ce9c15d239b5dda304ed2bd1fc0bebf27c3d2d72507293107fce521a15c",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "warrandyte"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultwilliamstowndistrict.html",
+      "sha256": "467ede63dc12f3f35f29bdcc22e38f4fd26b179abec893c692a7e1c1b86821be",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "williamstown"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultyanyeandistrict.html",
+      "sha256": "9cab13ed4f051c54da4b1cd04bfae2c5391a6a7d5dda38fa079e48bc58996aa5",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "yan-yean"
+    },
+    {
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultyurokedistrict.html",
+      "sha256": "1bfe758ab76f91a913e02caa639097a5528f757c4689e9687dfae955122c1e62",
+      "publishedDate": "2006-11-25",
+      "role": "official-2006-assembly-first-preferences",
+      "districtId": "yuroke"
+    }
+  ]
+}

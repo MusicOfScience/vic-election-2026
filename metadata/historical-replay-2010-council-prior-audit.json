@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "priorCycle": "vic_lc_2006",
+  "regionCount": 8,
+  "seatsPerRegion": 5,
+  "boundaryContinuity": "direct-eight-region-system-confirmed-by-official-2006-region-pages-and-2010-cycle-rule",
+  "targetOutcomeDependency": false,
+  "sources": [
+    {
+      "regionId": "eastern-metropolitan",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resulteasternmetropolitanregion.html",
+      "sha256": "3ab371d23797391dbb3296361c59db40da13c93cf9f515a769768abff6a26a3a",
+      "evidenceAvailableBy": "2006-11-25"
+    },
+    {
+      "regionId": "eastern-victoria",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resulteasternvictoriaregion.html",
+      "sha256": "99548b480be02625027eb4b4fba6ce9f2c2ab89fe7b99071807941d59f4a2261",
+      "evidenceAvailableBy": "2006-11-25"
+    },
+    {
+      "regionId": "northern-metropolitan",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultnorthernmetropolitanregion.html",
+      "sha256": "27e82cfa16963726d4a2c554fea438ec8918353c4d0e74545f60e8786ebfa1ce",
+      "evidenceAvailableBy": "2006-11-25"
+    },
+    {
+      "regionId": "northern-victoria",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultnorthernvictoriaregion.html",
+      "sha256": "3cfe8f1b9dd329a4930522bd2ff372ce50582a0b8b6e63965cd9a3efce06466d",
+      "evidenceAvailableBy": "2006-11-25"
+    },
+    {
+      "regionId": "south-eastern-metropolitan",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultsoutheasternmetropolitanregion.html",
+      "sha256": "8b2bdcbf8cacbe2427b604e34a484adce6098c412d35c62bba6a40ba9a0964c4",
+      "evidenceAvailableBy": "2006-11-25"
+    },
+    {
+      "regionId": "southern-metropolitan",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultsouthernmetropolitanregion.html",
+      "sha256": "81ce39127d0d31b601b1ee5d64f191c77ab7c7f0cd7dc54318da4e75699991e3",
+      "evidenceAvailableBy": "2006-11-25"
+    },
+    {
+      "regionId": "western-metropolitan",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultwesternmetropolitanregion.html",
+      "sha256": "12f459f0060ecf65ad9a150e74f3dd93ac730ef9ccd7f1f1cd34315ee8cf454d",
+      "evidenceAvailableBy": "2006-11-25"
+    },
+    {
+      "regionId": "western-victoria",
+      "url": "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/historical-results/state2006/state2006resultwesternvictoriaregion.html",
+      "sha256": "ee8d90f7feb934e67b6d42a9e276c1502cb1e160c97fb8387888158d32b94cf5",
+      "evidenceAvailableBy": "2006-11-25"
+    }
+  ]
+}

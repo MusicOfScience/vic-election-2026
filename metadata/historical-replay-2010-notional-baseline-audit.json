@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "vic_la_2010",
+  "sourceAuthority": "ABC News / Antony Green",
+  "sourceUrl": "https://www.abc.net.au/news/2010-01-25/pendulum-for-2010-victorian-election/9389340",
+  "publishedAt": "2010-01-25",
+  "retrievedSha256": "378a6d6eb03b61070e1ac65f3767a2c45398a55c8786d338d88afa556748d596",
+  "targetOutcomeDependency": false,
+  "districtCount": 88,
+  "nonMajorContestCount": 5
+}

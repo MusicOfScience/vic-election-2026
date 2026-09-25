@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "historical-poll-review-2010-essential",
+  "cycleId": "vic_la_2010",
+  "caseId": "historical-poll-2010-essential-2010-11-05",
+  "status": "awaiting-project-owner-approval",
+  "ownerDecision": null,
+  "automatedGates": {"provenance": true, "methodologicalAdequacy": true, "reuseBasis": true, "independentFromExistingFamilies": true, "notFromQuarantinedDataset": true},
+  "requiredOwnerAction": "Approve or reject the structured factual observation for historical replay; do not infer approval from PR merge."
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "historical-poll-review-2010",
+  "cycleId": "vic_la_2010",
+  "status": "awaiting-project-owner-approval",
+  "cases": ["historical-poll-2010-essential-2010-11-05", "historical-poll-2010-newspoll-2008-02", "historical-poll-2010-newspoll-2008-12"],
+  "automatedPassCount": 3,
+  "independentSourceFamilies": ["Essential", "Newspoll"],
+  "ownerDecision": null,
+  "requiredOwnerAction": "Approve or reject each structured factual observation individually; do not infer approval from PR merge."
+}
