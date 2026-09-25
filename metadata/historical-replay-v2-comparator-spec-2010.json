@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "modelVersion": "historical_replay_v2",
+  "cycleId": "vic_la_2010",
+  "informationCutoff": "2010-11-26",
+  "outcomesLoaded": false,
+  "activeFamilies": ["ALP", "LIB_NAT", "GRN", "OTH_IND"],
+  "forbiddenInputs": [
+    "model/data/processed/vec_2006_2010_same_boundary_tpp_swing.csv",
+    "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+    "2010 winners, vote totals, preference distributions and swing artefacts"
+  ],
+  "comparators": {
+    "uniform-swing-baseline": {
+      "definition": "clean same-boundary 2006 notional major-party structure plus common 2010 statewide poll movement and final ballot mask",
+      "allowedInputs": ["model/data/validation/historical-replay-2010-assembly-notional-baseline.csv", "model/data/validation/historical-replay-2010-poll-observations.json", "model/data/validation/historical-replay-2010-ballot-mask.csv"],
+      "excludedInputs": ["model/data/validation/historical-replay-2010-local-inputs.csv", "model/data/processed/vec_2006_2010_same_boundary_tpp_swing.csv"],
+      "metricAvailability": ["winner", "binary-ALP-event"]
+    },
+    "polling-only": {
+      "definition": "approved statewide 2010 polling state plus ballot masks only",
+      "allowedInputs": ["model/data/validation/historical-replay-2010-poll-observations.json", "model/data/validation/historical-replay-2010-ballot-mask.csv"],
+      "excludedInputs": ["model/data/validation/historical-replay-2010-local-inputs.csv", "model/data/validation/historical-replay-2010-assembly-notional-baseline.csv"],
+      "metricAvailability": ["statewide-primary", "district-primary", "winner"]
+    },
+    "polling-plus-fundamentals": {
+      "definition": "approved statewide polling plus governed 2006 local family composition and notional baseline",
+      "allowedInputs": ["model/data/validation/historical-replay-2010-poll-observations.json", "model/data/validation/historical-replay-2010-local-inputs.csv", "model/data/validation/historical-replay-2010-assembly-notional-baseline.csv", "model/data/validation/historical-replay-2010-ballot-mask.csv"],
+      "metricAvailability": ["district-primary", "winner"]
+    },
+    "seat-level-model": {
+      "definition": "polling plus governed local structure with fixed pre-score independent-seat uncertainty and broad preference fallback",
+      "allowedInputs": ["model/data/validation/historical-replay-2010-poll-observations.json", "model/data/validation/historical-replay-2010-local-inputs.csv", "model/data/validation/historical-replay-2010-ballot-mask.csv", "fixed pre-score independent-seat uncertainty"],
+      "chamberAggregation": "independent-seat-marginals",
+      "metricAvailability": ["district-primary", "winner", "seat-count"]
+    },
+    "complete-ensemble": {
+      "definition": "immutable reference to the frozen historical_replay_v2 prediction",
+      "metricAvailability": ["statewide-primary", "district-primary", "winner", "final-pair", "assembly-seats", "council"],
+      "valuesCopied": false
+    }
+  }
+}

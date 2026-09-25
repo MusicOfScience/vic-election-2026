@@ -349,6 +349,7 @@ def _generic_council_surface(root: Path, spec: dict, families: list[str]) -> pd.
         for family in families:
             if family not in result:
                 result[family] = 0.0
+        result = result.astype({family: float for family in families})
         values = result[families].to_numpy(float, copy=True)
         values /= values.sum(axis=1, keepdims=True)
         result.loc[:, families] = values
@@ -362,6 +363,7 @@ def _generic_council_surface(root: Path, spec: dict, families: list[str]) -> pd.
         result.columns = ["region_name", "ALP", "LIB_NAT", "GRN", "OTH_IND"]
         for family in families:
             if family not in result: result[family] = 0.0
+        result = result.astype({family: float for family in families})
         values = result[families].to_numpy(float, copy=True)
         values /= values.sum(axis=1, keepdims=True)
         result.loc[:, families] = values

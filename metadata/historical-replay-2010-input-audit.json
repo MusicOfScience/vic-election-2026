@@ -1,17 +1,76 @@
 {
   "schemaVersion": 1,
   "cycleId": "vic_la_2010",
-  "status": "input-preparation-blocked-pending-ballot-source",
+  "status": "prediction-inputs-governed",
   "electionDate": "2010-11-27",
   "informationCutoff": "2010-11-26",
-  "sameBoundary": {"status": "verified", "basis": "Official ABC 2010 pendulum and VEC historical structure identify the same 88 Legislative Assembly districts used in 2006 and 2010; no intervening Assembly redistribution."},
-  "priorAssembly": {"path": "model/data/processed/vec_2006_assembly_family_primaries.csv", "sourceManifest": "metadata/vec-2006-assembly-source-manifest.json", "families": ["ALP", "LIB_NAT", "GRN", "OTH_IND"], "districts": 88, "targetOutcomeDependency": false},
-  "notionalBaseline": {"path": "model/data/validation/historical-replay-2010-assembly-notional-baseline.csv", "audit": "metadata/historical-replay-2010-notional-baseline-audit.json", "districts": 88, "targetOutcomeDependency": false},
-  "localInput": {"path": "model/data/validation/historical-replay-2010-local-inputs.csv", "districts": 88, "variedVectors": true, "demographicChallengerCentralWeight": 0, "targetOutcomeDependency": false},
-  "forbiddenPredictionInputs": ["model/data/processed/vec_2006_2010_same_boundary_tpp_swing.csv", "model/data/processed/vec_2010_assembly_candidate_primaries.csv", "any 2010 election outcome, winner, swing or preference-count artefact"],
-  "ballotMask": {"path": "model/data/validation/historical-replay-2010-ballot-mask.csv", "sha256": "c1cb04195670b52c3fa4d7f5765bcfdd85df981674d1b6ffaec8fe1486a1a516", "audit": "metadata/historical-replay-2010-ballot-availability-audit.json", "status": "provisional-pending-cutoff-final-nomination-verification", "targetOutcomeDependency": false},
-  "council": {"path": "model/data/validation/historical-replay-2010-council-prior.csv", "audit": "metadata/historical-replay-2010-council-prior-audit.json", "regions": 8, "seatsPerRegion": 5, "priorOnly": true, "targetOutcomeDependency": false},
-  "polling": {"path": "model/data/validation/historical-replay-2010-poll-observations.json", "sha256": "463e7f41cafb08dfa3175bbd77ce1af356fd03ac5b4a02210b57e3b9d10d5e70", "automatedPassObservations": 3, "approvedObservations": 3, "independentFamilies": 2, "fixedRule": "3 observations / 2 independent families", "targetOutcomeDependency": false},
-  "predictionFrozen": false,
-  "outcomesLoaded": false
+  "sameBoundary": {
+    "status": "verified",
+    "basis": "Official ABC 2010 pendulum and VEC historical structure identify the same 88 Legislative Assembly districts used in 2006 and 2010; no intervening Assembly redistribution."
+  },
+  "priorAssembly": {
+    "path": "model/data/processed/vec_2006_assembly_family_primaries.csv",
+    "sourceManifest": "metadata/vec-2006-assembly-source-manifest.json",
+    "families": [
+      "ALP",
+      "LIB_NAT",
+      "GRN",
+      "OTH_IND"
+    ],
+    "districts": 88,
+    "targetOutcomeDependency": false
+  },
+  "notionalBaseline": {
+    "path": "model/data/validation/historical-replay-2010-assembly-notional-baseline.csv",
+    "audit": "metadata/historical-replay-2010-notional-baseline-audit.json",
+    "districts": 88,
+    "targetOutcomeDependency": false
+  },
+  "localInput": {
+    "path": "model/data/validation/historical-replay-2010-local-inputs.csv",
+    "districts": 88,
+    "variedVectors": true,
+    "demographicChallengerCentralWeight": 0,
+    "targetOutcomeDependency": false,
+    "sha256": "9afa73706e2598e0ca6402e82bf9a5f920eff701feb552c01ded7884607dd8f3",
+    "changeReason": "final cutoff-safe ballot availability only",
+    "status": "prediction-safe-final-ballot-availability"
+  },
+  "forbiddenPredictionInputs": [
+    "model/data/processed/vec_2006_2010_same_boundary_tpp_swing.csv",
+    "model/data/processed/vec_2010_assembly_candidate_primaries.csv",
+    "any 2010 election outcome, winner, swing or preference-count artefact"
+  ],
+  "ballotMask": {
+    "path": "model/data/validation/historical-replay-2010-ballot-mask.csv",
+    "sha256": "99c564c7cda8e879ac06fbfe7084c4a3d321090a16e18d98c6eb462ec8021e7f",
+    "audit": "metadata/historical-replay-2010-ballot-availability-audit.json",
+    "status": "admitted-fixed-fact-reconstruction",
+    "targetOutcomeDependency": false,
+    "candidateSlate": "model/data/validation/historical-replay-2010-fixed-fact-candidate-slate.csv",
+    "candidateSlateSha256": "c6c8c82b02c4a1542601e84802b6b920eff701feb552c01ded7884607dd8f3"
+  },
+  "council": {
+    "path": "model/data/validation/historical-replay-2010-council-prior.csv",
+    "audit": "metadata/historical-replay-2010-council-prior-audit.json",
+    "regions": 8,
+    "seatsPerRegion": 5,
+    "priorOnly": true,
+    "targetOutcomeDependency": false
+  },
+  "polling": {
+    "path": "model/data/validation/historical-replay-2010-poll-observations.json",
+    "sha256": "463e7f41cafb08dfa3175bbd77ce1af356fd03ac5b4a02210b57e3b9d10d5e70",
+    "automatedPassObservations": 3,
+    "approvedObservations": 3,
+    "independentFamilies": 2,
+    "fixedRule": "3 observations / 2 independent families",
+    "targetOutcomeDependency": false
+  },
+  "predictionFrozen": true,
+  "outcomesLoaded": false,
+  "predictionPath": "model/data/validation/historical-replays/vic_la_2010-v2-prediction.json",
+  "predictionSha256": "3d23e92d8aa0d8d4c6e522bbc07f529d614653c5d20aa68a952a96704804fd5d",
+  "comparatorBundle": "model/data/validation/historical-replays/vic_la_2010-v2-comparators-v2.json",
+  "comparatorBundleSha256": "a5e464f8d84ba7cdc4a198df43006eb64824f4dc71c1d789ce55bffbcbd76b13"
 }

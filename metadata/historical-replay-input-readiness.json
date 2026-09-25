@@ -15,9 +15,10 @@
         "artefact": "model/data/validation/historical-replay-2010-poll-observations.json"
       },
       "ballotContest": {
-        "status": "blocked",
-        "reason": "The 2010 family mask is provisionally assembled from prior-cycle structure, but a cutoff-safe district-level final-nomination source is still required; later target result pages remain forbidden",
-        "artefact": "model/data/validation/historical-replay-2010-ballot-mask.csv"
+        "status": "pass",
+        "reason": "Final 2010 ballot family mask admitted under the general contemporaneously-fixed-fact reconstruction policy: nominations closed by 2010-11-12, early voting operated by 2010-11-25, and Appendix 15 reconstructs only district/party facts; target result fields are excluded",
+        "artefact": "model/data/validation/historical-replay-2010-ballot-mask.csv",
+        "audit": "metadata/historical-replay-2010-ballot-availability-audit.json"
       },
       "incumbencyLocal": {
         "status": "pass",
@@ -45,7 +46,15 @@
         "status": "pass",
         "reason": "guarded runner rejects outcomes before prediction freeze"
       },
-      "runnable": false
+      "runnable": true,
+      "predictionFrozen": true,
+      "certifyingPredictionFrozen": true,
+      "predictionArtefact": "model/data/validation/historical-replays/vic_la_2010-v2-prediction.json",
+      "predictionSha256": "3d23e92d8aa0d8d4c6e522bbc07f529d614653c5d20aa68a952a96704804fd5d",
+      "comparatorBundle": "model/data/validation/historical-replays/vic_la_2010-v2-comparators-v2.json",
+      "comparatorBundleSha256": "a5e464f8d84ba7cdc4a198df43006eb64824f4dc71c1d789ce55bffbcbd76b13",
+      "scored": false,
+      "certifyingScored": false
     },
     {
       "cycleId": "vic_la_2014",
@@ -151,11 +160,11 @@
         "status": "pass",
         "reason": "3 owner-approved observations from 2 independent source families satisfy the fixed minimum of 3 observations and 2 independent source families; RedBridge and Freshwater remain quarantined and are not required"
       },
-        "ballotContest": {
-          "status": "pass",
-          "reason": "87-district November general-election universe and cutoff-safe VEC 2018-on-2022-boundary TPP baseline are governed; Narracan supplementary contest is excluded",
-          "artefact": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv"
-        },
+      "ballotContest": {
+        "status": "pass",
+        "reason": "87-district November general-election universe and cutoff-safe VEC 2018-on-2022-boundary TPP baseline are governed; Narracan supplementary contest is excluded",
+        "artefact": "model/data/processed/vec_2018_estimated_2022_boundary_2cp.csv"
+      },
       "incumbencyLocal": {
         "status": "pass",
         "reason": "87 district rows combine the cutoff-safe VEC TPP baseline with relative multi-party AEC spatial patterns and governed district family availability; no target state-election outcomes are consumed",
@@ -199,10 +208,10 @@
       "certifyingScored": true
     }
   ],
-  "runnableCycles": 3,
-  "predictedCycles": 3,
+  "runnableCycles": 4,
+  "predictedCycles": 4,
   "scoredCycles": 3,
-  "certifyingPredictedCycles": 2,
+  "certifyingPredictedCycles": 3,
   "certifyingScoredCycles": 2,
   "modelImpact": {
     "forecast2026": false,

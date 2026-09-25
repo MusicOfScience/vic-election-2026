@@ -52,11 +52,11 @@ test("derives cycle-aware Assembly party availability from candidate evidence", 
   });
 });
 
-test("records owner-approved replay input and derives three runnable cycles", () => {
+test("records owner-approved replay input and derives four runnable cycles", () => {
   assert.deepEqual(validateHistoricalReplayInputReadiness(), {
     cycles: 4,
     approvedReplayObservations: 7,
-    runnableCycles: 3,
+    runnableCycles: 4,
   });
 });
 
