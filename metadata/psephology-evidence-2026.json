@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-29",
+  "reviewedAt": "2026-10-01",
   "records": [
     {
       "id": "ben-raue-2026-07-27-vote-to-seat",
@@ -9,16 +9,36 @@
       "sourceUrl": "https://www.tallyroom.com.au/65163",
       "title": "How might votes turn into seats in Victoria?",
       "evidenceType": "vote_to_seat_model",
-      "geography": { "scope": "statewide", "jurisdiction": "VIC" },
+      "geography": {
+        "scope": "statewide",
+        "jurisdiction": "VIC"
+      },
       "pollDerived": true,
-      "upstreamEvidence": ["redbridge-accent-june-2026-mrp"],
+      "upstreamEvidence": [
+        "redbridge-accent-june-2026-mrp"
+      ],
       "independenceAssessment": "dependent",
       "reviewStatus": "reviewed-reference-only",
       "modelUsage": "comparison_only",
       "structuredFindings": {
-        "scenarioPrimaryVote": { "coalition": 26, "labor": 26, "oneNation": 27, "greens": 13 },
-        "seatProjectionUsingRauePreferenceFlows": { "coalition": 31, "labor": 30, "oneNation": 27, "greens": 0 },
-        "comparisonSeatProjectionFromRedBridgeAccent": { "coalition": 39, "labor": 35, "oneNation": 12, "greens": 2 }
+        "scenarioPrimaryVote": {
+          "coalition": 26,
+          "labor": 26,
+          "oneNation": 27,
+          "greens": 13
+        },
+        "seatProjectionUsingRauePreferenceFlows": {
+          "coalition": 31,
+          "labor": 30,
+          "oneNation": 27,
+          "greens": 0
+        },
+        "comparisonSeatProjectionFromRedBridgeAccent": {
+          "coalition": 39,
+          "labor": 35,
+          "oneNation": 12,
+          "greens": 2
+        }
       },
       "notes": "Useful evidence about preference-flow sensitivity and vote-to-seat translation. It reuses RedBridge/Accent MRP seat primaries and therefore is not an independent polling observation."
     },
@@ -29,15 +49,26 @@
       "sourceUrl": "https://kevinbonham.blogspot.com/2026/07/victoria-2026-election-where-sorts-of.html",
       "title": "Victoria 2026: The Election Where All Sorts Of Things Can Happen!",
       "evidenceType": "poll_aggregation_and_seat_analysis",
-      "geography": { "scope": "statewide", "jurisdiction": "VIC" },
+      "geography": {
+        "scope": "statewide",
+        "jurisdiction": "VIC"
+      },
       "pollDerived": true,
-      "upstreamEvidence": ["multiple-published-victorian-polls"],
+      "upstreamEvidence": [
+        "multiple-published-victorian-polls"
+      ],
       "independenceAssessment": "dependent",
       "reviewStatus": "reviewed-reference-only",
       "modelUsage": "comparison_only",
       "structuredFindings": {
-        "aggregatePrimaryVote": { "labor": 26.0, "coalition": 27.3, "greens": 12.8, "oneNation": 23.7, "others": 10.3 },
-        "coalitionTwoPartyPreferred": 52.0,
+        "aggregatePrimaryVote": {
+          "labor": 26,
+          "coalition": 27.3,
+          "greens": 12.8,
+          "oneNation": 23.7,
+          "others": 10.3
+        },
+        "coalitionTwoPartyPreferred": 52,
         "oneNationSeatDescription": "around the mid-teens",
         "governmentDescription": "Coalition likely to govern in minority with One Nation support on the evidence available at publication"
       },
@@ -50,9 +81,15 @@
       "sourceUrl": "https://www.abc.net.au/news/elections/nepean-by-election-2026/commentary",
       "title": "Commentary on Nepean By-election 2026",
       "evidenceType": "by_election_analysis",
-      "geography": { "scope": "district", "jurisdiction": "VIC", "district": "Nepean" },
+      "geography": {
+        "scope": "district",
+        "jurisdiction": "VIC",
+        "district": "Nepean"
+      },
       "pollDerived": false,
-      "upstreamEvidence": ["vec-nepean-2026-by-election-results"],
+      "upstreamEvidence": [
+        "vec-nepean-2026-by-election-results"
+      ],
       "independenceAssessment": "derived_from_official_results",
       "reviewStatus": "reviewed-reference-only",
       "modelUsage": "reference_only",
@@ -70,9 +107,14 @@
       "sourceUrl": "https://www.abc.net.au/news/2026-08-07/federal-implications-victoria-election-one-nation-labor/107005850",
       "title": "Published RedBridge interpretation of Victorian voter movement",
       "evidenceType": "poll_interpretation",
-      "geography": { "scope": "statewide", "jurisdiction": "VIC" },
+      "geography": {
+        "scope": "statewide",
+        "jurisdiction": "VIC"
+      },
       "pollDerived": true,
-      "upstreamEvidence": ["redbridge-august-2026-victoria-poll"],
+      "upstreamEvidence": [
+        "redbridge-august-2026-victoria-poll"
+      ],
       "independenceAssessment": "dependent",
       "reviewStatus": "reviewed-reference-only",
       "modelUsage": "reference_only",
@@ -89,9 +131,16 @@
       "sourceUrl": "https://antonygreen.com.au/2026-victorian-election-pendulum/",
       "title": "2026 Victorian Election Pendulum",
       "evidenceType": "seat_analysis",
-      "geography": { "scope": "statewide-and-district", "jurisdiction": "VIC" },
+      "geography": {
+        "scope": "statewide-and-district",
+        "jurisdiction": "VIC"
+      },
       "pollDerived": true,
-      "upstreamEvidence": ["vec-2022-state-election-results", "south-australia-2026-state-election-results", "redbridge-accent-june-2026-victoria-poll"],
+      "upstreamEvidence": [
+        "vec-2022-state-election-results",
+        "south-australia-2026-state-election-results",
+        "redbridge-accent-june-2026-victoria-poll"
+      ],
       "independenceAssessment": "partially_dependent",
       "reviewStatus": "reviewed-reference-only",
       "modelUsage": "comparison_only",
@@ -109,9 +158,64 @@
           "Green preference concentration can allow Labor to retain more seats than primary-vote comparisons imply.",
           "Coalition losses to One Nation or independents raise the number of Labor gains required for a Coalition majority."
         ],
-        "namedLaborRiskSeats": ["Bass", "Pakenham", "Hastings", "Glen Waverley", "Bayswater", "Yan Yean", "Melton", "Sunbury", "Box Hill", "Ringwood", "Monbulk", "Bendigo East", "Werribee"]
+        "namedLaborRiskSeats": [
+          "Bass",
+          "Pakenham",
+          "Hastings",
+          "Glen Waverley",
+          "Bayswater",
+          "Yan Yean",
+          "Melton",
+          "Sunbury",
+          "Box Hill",
+          "Ringwood",
+          "Monbulk",
+          "Bendigo East",
+          "Werribee"
+        ]
       },
       "notes": "A structural comparator rather than a poll observation. Preference benchmarks and geographic patterns are useful candidates for sensitivity testing, but should not be imported as Victorian parameters without validation."
+    },
+    {
+      "id": "kos-samaras-2026-10-01-resilience-vote-geography",
+      "analystSourceId": "kos-samaras-redbridge",
+      "publishedDate": "2026-10-01",
+      "sourceUrl": "https://johnmenadue.com/post/2026/10/the-one-nation-vote-is-a-map-of-government-neglect/",
+      "title": "The One Nation vote is a map of government neglect",
+      "evidenceType": "demographic_pattern",
+      "geography": {
+        "scope": "national-with-victorian-examples",
+        "jurisdiction": "AUS",
+        "focusJurisdiction": "VIC",
+        "namedAreas": [
+          "Meadow Heights",
+          "Craigieburn",
+          "Mickleham",
+          "Wallan"
+        ]
+      },
+      "pollDerived": true,
+      "upstreamEvidence": [
+        "zurich-australian-resilience-index-2026",
+        "redbridge-accent-may-2026-federal-mrp"
+      ],
+      "independenceAssessment": "dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "structuredFindings": {
+        "reportedAssociation": {
+          "predictor": "health resilience",
+          "outcome": "One Nation vote variation in the May 2026 federal MRP",
+          "reportedVarianceExplainedPct": 63,
+          "status": "author-reported; regression specification and diagnostics not published in the article"
+        },
+        "reportedDistributionPattern": "The author reports that 50 of the 53 electorates in the MRP-defined One Nation win set were in the bottom three health-resilience quintiles and none were in the top quintile.",
+        "victorianPattern": "Outer-northern Melbourne examples are described as combining financial fragility, health disadvantage, weak social resilience, long commutes and service/infrastructure deficits.",
+        "researchHypothesis": "Depleted household and community buffers may predict electoral volatility or political availability beyond conventional demographic covariates, without implying a party-specific causal mechanism.",
+        "quantitativeUse": "none_until_independent_replication_and_backtesting",
+        "candidateFeatureFamily": "community_resilience_service_deficit"
+      },
+      "notes": "High-value hypothesis-generating evidence, not a forecast input. The electoral relationship is dependent on RedBridge/Accent MRP data and the resilience index itself also uses proprietary RedBridge/Accent field-survey data. Treat the reported 63% association as unreplicated. Test a transparent public-data analogue against historical Victorian outcomes, including turnout, informal voting, fragmentation, major-party movement and minor-party support, before considering any model use."
     }
   ]
 }
