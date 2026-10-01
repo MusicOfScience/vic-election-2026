@@ -33,6 +33,12 @@ A future model contribution must have an explicit transformation, provenance, va
 
 ## Initial reviewed evidence
 
-The foundation includes reference/comparison records for Ben Raue's July 2026 Victorian vote-to-seat work, Kevin Bonham's July 2026 Victorian polling/seat analysis, Casey Briggs's Nepean by-election analysis and a published Kos Samaras/RedBridge interpretation. These records do not change current forecast weights or outputs.
+The foundation includes reference/comparison records for Ben Raue's July 2026 Victorian vote-to-seat work, Kevin Bonham's July 2026 Victorian polling/seat analysis, Casey Briggs's Nepean by-election analysis and published Kos Samaras/RedBridge interpretations. These records do not change current forecast weights or outputs.
 
 Antony Green and Mark the Ballot are registered now so subsequent discovery can attach suitable Victoria-specific structured evidence without inventing a second identity for the same source or bypassing review.
+
+## 1 October 2026 resilience hypothesis
+
+The registry now includes Kos Samaras' 1 October 2026 article, *The One Nation vote is a map of government neglect*, as `demographic_pattern` evidence. The record declares the Zurich Australian Resilience Index and the May 2026 RedBridge/Accent federal MRP as upstream evidence and classifies the item as dependent, `reviewed-reference-only` and `reference_only`.
+
+The article's reported electoral association is retained as an unreplicated analyst claim rather than a model coefficient. The associated experimental feature family, `community_resilience_service_deficit`, is specified in [`COMMUNITY_RESILIENCE_CHALLENGER.md`](COMMUNITY_RESILIENCE_CHALLENGER.md). It is a deferred research challenger, not a current forecast input or PROD 1.0 blocker.
