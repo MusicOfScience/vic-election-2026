@@ -1,11 +1,13 @@
 # PROD 1.0 completion ledger
 
-Updated: 2026-09-25
+Updated: 2026-10-01
 Branch: `codex/score-2010-holdout`
 Base: `da78667c` (PR #117 merged)
 Current batch: score the sealed 2010 holdout once and preserve the resulting outcome evidence.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
+
+Documentation note (2026-10-01): merged PR #121 added the `community_resilience_service_deficit` research specification and a dependency-labelled Kos Samaras analyst-evidence record. This is deferred, zero-weight research only: it changes no PROD 1.0 gate, forecast input, model parameter or probability, and it is not part of the current closure critical path.
 
 | Workstream | Initial status | Blocking issue | Action required | Verification | Status |
 | --- | --- | --- | --- | --- | --- |
