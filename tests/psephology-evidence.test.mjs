@@ -32,3 +32,17 @@ test("poll-derived evidence must declare its upstream dependency", () => {
   const result = validatePsephologyRegistries(sources, bad);
   assert.match(result.errors.join("\n"), /must declare upstream evidence/i);
 });
+
+test("Kos resilience article remains reference-only and dependency-labelled", () => {
+  const item = evidence.records.find((record) => record.id === "kos-samaras-2026-10-01-resilience-vote-geography");
+  assert.ok(item, "Kos resilience evidence record");
+  assert.equal(item.analystSourceId, "kos-samaras-redbridge");
+  assert.equal(item.pollDerived, true);
+  assert.equal(item.independenceAssessment, "dependent");
+  assert.equal(item.reviewStatus, "reviewed-reference-only");
+  assert.equal(item.modelUsage, "reference_only");
+  assert.ok(item.upstreamEvidence.includes("zurich-australian-resilience-index-2026"));
+  assert.ok(item.upstreamEvidence.includes("redbridge-accent-may-2026-federal-mrp"));
+  assert.equal(item.structuredFindings?.candidateFeatureFamily, "community_resilience_service_deficit");
+  assert.equal(item.structuredFindings?.quantitativeUse, "none_until_independent_replication_and_backtesting");
+});
