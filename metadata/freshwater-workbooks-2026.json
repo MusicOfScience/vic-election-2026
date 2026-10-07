@@ -25,6 +25,23 @@
       "expectedSampleSize": 1020,
       "expectedPrimaryVoteRounded": {"alp": 25, "coalition": 30, "oneNation": 22, "greens": 14, "otherParties": 9},
       "expectedTwoPartyPreferredRounded": {"alp": 48, "coalition": 52}
+    },
+    {
+      "id": "freshwater-vic-2026-09",
+      "proposedModelPollId": "freshwater_2026-09",
+      "url": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-280926.xlsx",
+      "expectedSampleSize": 1030,
+      "expectedPrimaryVoteRounded": {
+        "alp": 24,
+        "coalition": 29,
+        "oneNation": 22,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "expectedTwoPartyPreferredRounded": {
+        "alp": 47,
+        "coalition": 53
+      }
     }
   ]
 }

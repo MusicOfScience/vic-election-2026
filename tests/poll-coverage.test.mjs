@@ -50,8 +50,8 @@ test("coverage ledger keeps old non-comparable polling out of the current five-w
 
 test("Freshwater staged records now derive from parsed first-party workbooks", () => {
   const freshwater = primary.records.filter((record) => record.pollster === "Freshwater Strategy");
-  assert.equal(freshwater.length, 3);
-  assert.deepEqual(freshwater.map((record) => record.sampleSize), [1030, 1062, 1020]);
+  assert.equal(freshwater.length, 4);
+  assert.deepEqual(freshwater.map((record) => record.sampleSize), [1030, 1062, 1020, 1030]);
   assert.ok(freshwater.every((record) => record.sourceTier === "primary_pollster"));
   assert.ok(freshwater.every((record) => /primary-workbook-parsed/.test(record.verificationStatus)));
   assert.equal(research.records.filter((record) => record.pollster === "Freshwater Strategy").length, 0);

@@ -95,7 +95,12 @@ def build_shadow_report(repo_root: Path, *, draws: int | None = None) -> dict:
     estimates = pd.read_csv(model_root / "data/processed/poll_estimates_seed.csv")
     manual = json.loads((repo_root / "metadata/manual-source-evidence-2026.json").read_text())
     research = json.loads((repo_root / "metadata/research-source-evidence-2026.json").read_text())
-    staged = {record["pollster"]: record for record in [*manual.get("records", []), *research.get("records", [])] if record.get("kind") == "poll"}
+    # This is the governed August scenario, not a latest-by-pollster selector.
+    by_id = {record["id"]: record for record in [*manual.get("records", []), *research.get("records", [])] if record.get("kind") == "poll"}
+    staged = {
+        "DemosAU": by_id["742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72"],
+        "Resolve Strategic": by_id["resolve-strategic-vic-2026-08-09-15-secondary"],
+    }
 
     scenarios = {
         "canonical": [],

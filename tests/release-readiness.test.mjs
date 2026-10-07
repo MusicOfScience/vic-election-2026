@@ -3,6 +3,20 @@ import test from "node:test";
 
 import { ageInDays, buildReadiness } from "../scripts/check-release-readiness.mjs";
 
+test("October review cannot substitute freshly captured evidence for unchanged model inputs", () => {
+  const readiness = buildReadiness({ asOf: "2026-10-08" });
+  assert.equal(readiness.summary.passedRequiredGates, 4);
+  assert.equal(readiness.evidenceFreshness.modelInput.pollId, "roy_morgan_2026-08");
+  assert.equal(readiness.evidenceFreshness.modelInput.latestPublicationDate, "2026-08-08");
+  assert.equal(readiness.evidenceFreshness.stagedEvidence.evidenceId, "freshwater-2026-09-primary-workbook");
+  assert.equal(readiness.evidenceFreshness.reviewResolution.unresolvedRecords, 4);
+  assert.equal(readiness.gates.criticalSourceFreshness.passed, false);
+  assert.equal(readiness.gates.modelInputFreshness.passed, false);
+  const source = readiness.sources.find((item) => item.id === "vic-2026-poll-registry");
+  assert.equal(source.dataEffectiveDate, "2026-08-07");
+  assert.equal(source.ageDays, 62);
+});
+
 test("treats a source as current through its inclusive threshold", () => {
   assert.equal(ageInDays("2026-08-07", "2026-08-28"), 21);
   const readiness = buildReadiness({ asOf: "2026-08-28" });

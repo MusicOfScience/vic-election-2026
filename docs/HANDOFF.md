@@ -1,10 +1,10 @@
 # Project handoff
 
-Updated: 2026-10-01
+Updated: 2026-10-08
 
 ## Current state
 
-- Main includes merged PR #121, merge commit `97ded015a94f7cbde2a4092eca2c469de98b9069`. PR #121 added a governed community-resilience/service-deficit research challenger and analyst-evidence record only; it did not change forecast inputs, parameters, probabilities or release-gate state.
+- Base main includes merged PR #122, HEAD `aaad26fca59a55fea2951e38f92c0fed3dfbdca7`. PR #121 added a governed community-resilience/service-deficit research challenger and analyst-evidence record only; it did not change forecast inputs, parameters, probabilities or release-gate state.
 - Historical counters are runnable 4/4, predicted 4/4, scored 4/4, certifying predicted 3/4 and certifying scored 3/4.
 - Certifying v2 cycles are `vic_la_2010`, `vic_la_2014` and `vic_la_2022`. `vic_la_2018` remains non-certifying: v1 implementation defect; v2 post-hoc diagnostic.
 - The canonical aggregate is [`historical-certifying-v2-aggregate.json`](../model/data/validation/historical-replays/historical-certifying-v2-aggregate.json), SHA `7680fa6111c01665b24c6fe16bca6ab6d67f9aa4697c8294de1be33d0a4c972e`. Its unweighted three-cycle means are winner accuracy `0.8404301637`, multiclass Brier `0.2193372181`, multiclass log loss `1.0486418097` and district primary MAE `4.7557257435`.
@@ -20,13 +20,13 @@ Updated: 2026-10-01
 
 The machine-readable classification is [`metadata/prod-1.0-closure-audit.json`](../metadata/prod-1.0-closure-audit.json). Source integrity, deterministic outputs, historical data readiness and candidate evidence pass. Critical-source freshness and model-input freshness are resolvable current-evidence blockers. Complete backtest and probability calibration are structurally blocked under the current protocol. Production authorisation is downstream blocked.
 
-Release readiness was refreshed as of 2026-09-25 without advancing any source effective date. The model-eligible poll registry remains outside the fixed 21-day freshness window.
+Release readiness was reassessed as of 2026-10-08 without advancing any model-source effective date. The model-eligible poll registry remains outside the fixed 21-day freshness window.
 
 ## Current 2026 evidence decision
 
 The captured `redbridge-accent-vic-2026-09-14-primary` report is evidence-accepted in principle and remains quarantined. It records publication 2026-09-15, fieldwork 1–14 September, full sample 2,371, effective sample 2,009 and published vote-intention base 2,160. Sample-family independence from earlier RedBridge evidence is not proven, so model eligibility is `hold-pending-missing-independence-evidence`. No project-owner/model-eligibility decision was inferred and no poll was promoted into model inputs.
 
-The exact next decision is an explicit owner/model-eligibility determination for that staged September wave. If admitted under the existing policy, current poll inputs may be refreshed in a separate reviewed batch; otherwise retain the last valid forecast.
+The 8 October current-evidence review is recorded in [`CURRENT_EVIDENCE_2026-10-08.md`](CURRENT_EVIDENCE_2026-10-08.md) and `metadata/current-evidence-adjudication-2026-10-08.json`. The RedBridge hold remains; its staged TPP transcription is corrected to Coalition–Labor 56–44, with Labor–One Nation 53–47 separately. A retained, parsed Freshwater 24–28 September workbook supports evidence acceptance in principle but awaits explicit owner evidence and eligibility decisions. DemosAU September and newly discovered Resolve September leads remain secondary-evidence holds. Newest eligible polling remains Roy Morgan published 8 August (effective 7 August). September RedBridge alone is already outside the 21-day policy on 8 October. The exact next action is owner review of the packet and recording explicit decisions; retain the forecast until legitimate input changes justify a separate refresh.
 
 ## Deferred research challenger
 

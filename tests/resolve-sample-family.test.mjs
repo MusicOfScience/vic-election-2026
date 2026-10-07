@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 
 const ledger = JSON.parse(readFileSync(resolve("metadata/resolve-sample-family-2026.json"), "utf8"));
 const research = JSON.parse(readFileSync(resolve("metadata/research-source-evidence-2026.json"), "utf8"));
+const shadow = JSON.parse(readFileSync(resolve("metadata/staged-poll-seat-shadow-2026.json"), "utf8"));
 
 test("Resolve combined releases and monthly components are explicitly mutually exclusive", () => {
   assert.equal(ledger.policy.combinedAndComponentsMutuallyExclusive, true);
@@ -25,8 +26,10 @@ test("Resolve January-February transition is not treated as a coherent five-way 
 
 test("historical Resolve family evidence cannot displace the fixed August shadow scenario", () => {
   const stagedResolve = research.records.filter((record) => record.pollster === "Resolve Strategic");
-  assert.equal(stagedResolve.length, 1);
-  assert.equal(stagedResolve[0].proposedModelPollId, "resolve_strategic_2026-08");
+  assert.deepEqual(stagedResolve.map((record) => record.proposedModelPollId), ["resolve_strategic_2026-08", "resolve_strategic_2026-09"]);
+  const scenarioResolve = shadow.scenario.evidence.filter((record) => record.pollster === "Resolve Strategic");
+  assert.equal(scenarioResolve.length, 1);
+  assert.equal(scenarioResolve[0].id, "resolve-strategic-vic-2026-08-09-15-secondary");
   const marApr = ledger.families.find((family) => family.id === "resolve-vic-2026-mar-apr");
   assert.equal(marApr.status, "comparable-secondary-evidence-awaiting-primary-reconciliation");
   assert.equal(marApr.modelEligible, false);

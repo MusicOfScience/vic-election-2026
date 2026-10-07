@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-30",
+  "reviewedAt": "2026-10-08",
   "purpose": "Track the published Victorian Assembly polling universe separately from the subset that can be compared and admitted to the current five-party forecast model.",
   "policy": {
     "allPublishedDoesNotMeanAllPoolable": true,
@@ -35,9 +35,10 @@
         "demosau_2026-06"
       ],
       "stagedEvidence": [
-        "demosau_2026-08"
+        "demosau_2026-08",
+        "demosau_2026-09"
       ],
-      "nextAction": "Human evidence acceptance remains required for the August primary-source capture before any separate model-eligibility decision."
+      "nextAction": "Review September primary acquisition gaps and preserve August quarantine; no model eligibility inferred."
     },
     {
       "id": "roy-morgan",
@@ -95,14 +96,17 @@
     {
       "id": "freshwater",
       "label": "Freshwater Strategy",
-      "coverageClass": "canonical-current",
+      "coverageClass": "canonical-plus-staged",
       "canonicalModelEligiblePollIds": [
         "freshwater_2026-02",
         "freshwater_2026-03",
         "freshwater_2026-06",
         "freshwater_2026-08"
       ],
-      "nextAction": "Continue live monitoring; primary-workbook evidence is human-reviewed and the four current comparable waves are canonical."
+      "nextAction": "Owner reviews captured September workbook and records evidence acceptance and separate model eligibility. Earlier four canonical waves remain unchanged.",
+      "stagedEvidence": [
+        "freshwater_2026-09"
+      ]
     },
     {
       "id": "newspoll-pyxis",
@@ -119,7 +123,8 @@
       "coverageClass": "sample-family-captured-awaiting-primary-reconciliation",
       "canonicalModelEligiblePollIds": [],
       "stagedEvidence": [
-        "resolve_strategic_2026-08"
+        "resolve_strategic_2026-08",
+        "resolve_strategic_2026-09"
       ],
       "actionableGaps": [],
       "nextAction": "Reconcile Resolve/Nine primary methodology and exact component-wave metadata before any family is eligible for human acceptance or model admission.",
@@ -213,5 +218,6 @@
     "Reconcile the now-captured Resolve sample families against pollster methodology and exact component-wave metadata before model eligibility.",
     "Capture YouGov/Common Threads first-party results; reconcile the primary-methodology 9 July fieldwork end against the secondary 10 July report while keeping statewide and seat-model outputs in one dependency family.",
     "Keep pre-10-February-2026 polls in historical/reference coverage rather than imputing One Nation."
-  ]
+  ],
+  "currentEvidenceReviewPath": "metadata/current-evidence-adjudication-2026-10-08.json"
 }

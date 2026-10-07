@@ -19,9 +19,29 @@ test("September RedBridge report is captured as fresh primary evidence and remai
   assert.equal(september.effectiveSampleSize, 2009);
   assert.equal(september.publishedVoteIntentionBase, 2160);
   assert.deepEqual(september.primaryVote, { alp: 24, coalition: 29, oneNation: 25, greens: 15, otherParties: 7 });
-  assert.deepEqual(september.twoPartyPreferred, { alp: 44, coalition: 53, basis: "respondent allocated; published vote-intention base N=2,160" });
+  assert.deepEqual(september.twoPartyPreferred, { alp: 44, coalition: 56, basis: "respondent allocated; published vote-intention base N=2,160" });
+  assert.deepEqual(september.alternativeTwoPartyPreferred, { alp: 53, oneNation: 47, basis: "respondent allocated; Labor versus One Nation; Table 2" });
+  assert.match(september.correctionHistory, /PDF page 8/);
   assert.equal(september.reportSha256, "ba588f8f3cf71b8ee7366dc43c354b6b4e42c42e34dc6c6ee3af8db103dd5ee9");
   assert.match(september.reviewNotes, /211 respondents/);
+});
+
+test("new Freshwater primary evidence cannot promote without explicit acceptance and eligibility", () => {
+  const september = primary.records.find((record) => record.proposedModelPollId === "freshwater_2026-09");
+  assert.equal(september.fieldworkEnd, "2026-09-28");
+  assert.equal(september.pollPublicationDate, "2026-10-01");
+  assert.equal(september.primaryReleaseDate, "2026-10-02");
+  assert.equal(september.primaryVoteUnweightedBase, 977);
+  assert.equal(september.twoPartyPreferredUnweightedBase, 956);
+  const withoutAcceptance = auditPollPromotion(september, { modelEvents: [], acceptedPolls: [] });
+  assert.equal(withoutAcceptance.canPromoteNow, false);
+  assert.ok(withoutAcceptance.blockers.includes("human-evidence-acceptance-required"));
+  const evidenceOnly = auditPollPromotion(september, {
+    modelEvents: [],
+    acceptedPolls: [{ evidenceId: september.id, modelEligible: false }],
+  });
+  assert.equal(evidenceOnly.canPromoteNow, false);
+  assert.ok(evidenceOnly.blockers.includes("explicit-model-eligibility-required"));
 });
 
 test("RedBridge August evidence preserves corrected first-party toplines and remains quarantined", () => {
@@ -55,8 +75,8 @@ test("RedBridge promotion preview is complete but still requires human acceptanc
 
 test("Freshwater workbooks are primary parsed evidence but remain quarantined", () => {
   const freshwater = primary.records.filter((record) => record.pollster === "Freshwater Strategy");
-  assert.equal(freshwater.length, 3);
-  assert.deepEqual(freshwater.map((record) => record.sampleSize), [1030, 1062, 1020]);
+  assert.equal(freshwater.length, 4);
+  assert.deepEqual(freshwater.map((record) => record.sampleSize), [1030, 1062, 1020, 1030]);
   assert.ok(freshwater.every((record) => record.sourceTier === "primary_pollster"));
   assert.ok(freshwater.every((record) => record.verificationStatus === "primary-workbook-parsed-awaiting-human-review"));
   assert.ok(freshwater.every((record) => record.status === "quarantined-awaiting-review" && record.automaticPromotion === false));
