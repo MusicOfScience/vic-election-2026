@@ -24,7 +24,7 @@ test("review dossier keeps evidence acceptance separate from model admission", (
     assert.ok(review.rationale.length > 40);
     assert.ok(review.requiredChecks.length > 0);
   }
-  assert.equal(dossier.status, "recommendations-awaiting-human-decision");
+  assert.equal(dossier.status, "owner-decisions-recorded");
   assert.match(dossier.policy, /separate decision/i);
 });
 
