@@ -102,6 +102,76 @@
         "policy": "Preserve the discrepancy explicitly; do not alter the staged fieldwork end or admit the record to the model until reviewed."
       },
       "methodologySourceTier": "primary_pollster"
+    },
+    {
+      "id": "demosau-vic-2026-09-10-20-secondary",
+      "sourceId": "demosau-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "DemosAU",
+      "commissioner": "PremierNational",
+      "fieldworkStart": "2026-09-10",
+      "fieldworkEnd": "2026-09-20",
+      "sampleSize": 1020,
+      "effectiveSampleSize": null,
+      "population": "Victorian voters as reported; exact eligibility screen unverified",
+      "method": "Primary methodology not captured; do not carry forward August mode, weights or preference assumptions",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 25,
+        "coalition": 30,
+        "oneNation": 20,
+        "greens": 14
+      },
+      "unreportedPrimaryResidual": 11,
+      "twoPartyPreferred": {
+        "alp": 48,
+        "coalition": 52,
+        "basis": "secondary reported; preference method unverified"
+      },
+      "sourceUrl": "https://www.pollbludger.net/2026/09/29/victorian-election-demosau-poll-election-guide-and-seat-projection-model/",
+      "publicationDate": "2026-09-29",
+      "pollPublicationDate": null,
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "corroborated-secondary-awaiting-primary",
+      "proposedModelPollId": "demosau_2026-09",
+      "sourceFamily": "demosau",
+      "sampleOverlapAssessment": "Separate fieldwork from August but respondent/panel reuse unresolved",
+      "captureNotes": "Primary index/search attempts encountered captcha/parse misses; report not obtained. Others 11 is arithmetic residual, not treated as a reported category. Full method, undecided treatment, primary publication date and exact residual require primary reconciliation."
+    },
+    {
+      "id": "resolve-strategic-vic-2026-09-06-12-secondary",
+      "sourceId": "resolve-strategic-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Resolve Strategic",
+      "commissioner": "Nine Newspapers / The Age",
+      "fieldworkStart": "2026-09-06",
+      "fieldworkEnd": "2026-09-12",
+      "sampleSize": 967,
+      "effectiveSampleSize": null,
+      "population": "Victorian voters as reported; exact eligibility screen unverified",
+      "method": "Primary methodology capture pending",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 25,
+        "coalition": 28,
+        "oneNation": 23,
+        "greens": 12,
+        "otherParties": 13
+      },
+      "twoPartyPreferred": null,
+      "sourceUrl": "https://acestrategies.au/news/resolve-strategic-victoria-september-2026/",
+      "publicationDate": "2026-09-17",
+      "pollPublicationDate": null,
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "corroborated-secondary-awaiting-primary",
+      "proposedModelPollId": "resolve_strategic_2026-09",
+      "sourceFamily": "resolve-strategic",
+      "sampleOverlapAssessment": "No source-specific respondent reuse disclosure captured",
+      "captureNotes": "Newly discovered review lead, not necessarily a poll first published after 15 September: commentary attributes underlying Age publication to 14 September. Rounded categories sum to 101; exact composition and Other/Independent split unresolved. No TPP supplied. Tracker discrepancies on sample/window must be resolved against primary source."
     }
   ]
 }

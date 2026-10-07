@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "assessedAsOf": "2026-09-25",
+  "assessedAsOf": "2026-10-08",
   "status": "experimental-blocked",
   "policy": "retain-last-valid-forecast",
   "automation": {
@@ -100,7 +100,7 @@
   },
   "evidenceFreshness": {
     "schemaVersion": 1,
-    "assessedAsOf": "2026-09-25",
+    "assessedAsOf": "2026-10-08",
     "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
     "modelInput": {
       "latestPublicationDate": "2026-08-08",
@@ -114,17 +114,17 @@
       "status": "human-reviewed-not-necessarily-model-eligible"
     },
     "stagedEvidence": {
-      "latestPublicationDate": "2026-09-15",
-      "pollster": "RedBridge / Accent Research",
-      "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+      "latestPublicationDate": "2026-10-01",
+      "pollster": "Freshwater Strategy",
+      "evidenceId": "freshwater-2026-09-primary-workbook",
       "status": "quarantined-awaiting-review",
       "sourceTier": "primary_pollster",
-      "verificationStatus": "primary-report-captured-awaiting-human-review"
+      "verificationStatus": "primary-workbook-parsed-awaiting-human-review"
     },
     "reviewResolution": {
-      "stagedRecords": 8,
+      "stagedRecords": 11,
       "resolvedRecords": 7,
-      "unresolvedRecords": 1,
+      "unresolvedRecords": 4,
       "latestResolvedEvidence": {
         "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
         "pollster": "Resolve Strategic",
@@ -132,7 +132,7 @@
         "decision": "hold"
       }
     },
-    "newestEvidenceDate": "2026-09-15",
+    "newestEvidenceDate": "2026-10-01",
     "newerEvidenceAwaitingReview": true,
     "newerEvidenceExcludedByReview": true,
     "modelFreshnessUnchangedByStagedEvidence": true
@@ -142,7 +142,7 @@
       "id": "vec-2022-district-results",
       "critical": true,
       "dataEffectiveDate": "2022-11-26",
-      "ageDays": 1399,
+      "ageDays": 1412,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -151,7 +151,7 @@
       "id": "vec-2022-voting-centres",
       "critical": false,
       "dataEffectiveDate": "2022-11-26",
-      "ageDays": 1399,
+      "ageDays": 1412,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -160,7 +160,7 @@
       "id": "vec-historical-boundary-estimates",
       "critical": true,
       "dataEffectiveDate": "2022-11-26",
-      "ageDays": 1399,
+      "ageDays": 1412,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -169,7 +169,7 @@
       "id": "vec-2026-enrolment",
       "critical": true,
       "dataEffectiveDate": "2026-09-04",
-      "ageDays": 21,
+      "ageDays": 34,
       "stalenessThresholdDays": 62,
       "stale": false,
       "artifactsCurrent": true
@@ -178,7 +178,7 @@
       "id": "ebc-2021-boundaries",
       "critical": true,
       "dataEffectiveDate": "2022-11-01",
-      "ageDays": 1424,
+      "ageDays": 1437,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -187,7 +187,7 @@
       "id": "aec-2022-geographic-vote-surface",
       "critical": false,
       "dataEffectiveDate": "2022-05-21",
-      "ageDays": 1588,
+      "ageDays": 1601,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -196,7 +196,7 @@
       "id": "vic-2026-poll-registry",
       "critical": true,
       "dataEffectiveDate": "2026-08-07",
-      "ageDays": 49,
+      "ageDays": 62,
       "stalenessThresholdDays": 21,
       "stale": true,
       "artifactsCurrent": true
@@ -205,7 +205,7 @@
       "id": "vec-recent-by-elections",
       "critical": false,
       "dataEffectiveDate": "2025-02-08",
-      "ageDays": 594,
+      "ageDays": 607,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true
@@ -214,7 +214,16 @@
       "id": "forecast-derived-outputs",
       "critical": true,
       "dataEffectiveDate": "2026-08-26",
-      "ageDays": 30,
+      "ageDays": 43,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "current-evidence-review-2026-10-08",
+      "critical": false,
+      "dataEffectiveDate": "2026-10-02",
+      "ageDays": 6,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true

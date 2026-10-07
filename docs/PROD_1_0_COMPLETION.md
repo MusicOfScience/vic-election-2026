@@ -1,6 +1,6 @@
 # PROD 1.0 completion ledger
 
-Updated: 2026-10-01
+Updated: 2026-10-08
 Branch: `codex/score-2010-holdout`
 Base: `da78667c` (PR #117 merged)
 Current batch: score the sealed 2010 holdout once and preserve the resulting outcome evidence.
@@ -23,6 +23,8 @@ Documentation note (2026-10-01): merged PR #121 added the `community_resilience_
 | Probability calibration | Blocked | No held-out complete-model reliability, slope/intercept or coverage evidence | Evaluate out-of-fold probabilities and intervals under the fixed cycle-clustered protocol | `metadata/historical-validation-acceptance-criteria.json` | Open blocker — evidence |
 | Production authorisation | Blocked | Depends on freshness, complete backtest, calibration and exact artefact identity | Authorise only after upstream gates pass | `npm run release:readiness:check` | Closed pending evidence |
 | Public application and deployment | Complete but needs PROD verification | Production label remains correctly experimental | Run responsive/rendered checks after evidence gates are ready | `npm test`, `npm run lint`, deployment checks | Deferred until model gates |
+
+Current-evidence update (8 October 2026): see [`CURRENT_EVIDENCE_2026-10-08.md`](CURRENT_EVIDENCE_2026-10-08.md). New primary Freshwater September tables and secondary DemosAU/Resolve leads are staged; September RedBridge independence remains unresolved. The staged RedBridge TPP transcription is corrected without changing canonical inputs. Readiness remains 4/9, model effective date remains 7 August and forecast SHA remains unchanged. The ledger entries below preserve earlier batch history; the dated packet and machine-readable closure audit control the present evidence decision.
 
 ## Current verified state
 
@@ -47,4 +49,4 @@ Documentation note (2026-10-01): merged PR #121 added the `community_resilience_
 - The deterministic 2026 forecast remains unchanged at SHA `70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab`; no current poll, candidate, parameter, probability or production-authorisation state was changed.
 - Verification: 152 JavaScript tests, 69 isolated Python tests, lint, provenance, psephology, replay-contract, readiness, release-readiness and `git diff --check` pass locally. GitHub Actions may remain externally blocked by the account billing/spending-limit restriction. Complete backtest, probability calibration and production authorisation remain closed.
 
-Exact next action: preserve the three certifying scores and descriptive aggregate evidence. Do not tune v2; any further validation or production decision requires a separately governed protocol.
+Exact next action: project owner reviews the current-evidence packet and records explicit evidence/eligibility decisions. Preserve the three certifying scores and closed validation/authorisation gates.

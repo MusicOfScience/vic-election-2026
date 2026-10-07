@@ -62,8 +62,12 @@ def _load_staged(repo_root: Path) -> list[dict]:
     for name in ("manual-source-evidence-2026.json", "research-source-evidence-2026.json"):
         payload = json.loads((repo_root / "metadata" / name).read_text())
         records.extend(record for record in payload.get("records", []) if record.get("kind") == "poll")
-    by_pollster = {record["pollster"]: record for record in records}
-    return [by_pollster["DemosAU"], by_pollster["Resolve Strategic"]]
+    # Preserve the original August scenario when later waves are quarantined.
+    by_id = {record["id"]: record for record in records}
+    return [
+        by_id["742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72"],
+        by_id["resolve-strategic-vic-2026-08-09-15-secondary"],
+    ]
 
 
 def _scenario_registry(repo_root: Path) -> tuple[pd.DataFrame, pd.DataFrame]:

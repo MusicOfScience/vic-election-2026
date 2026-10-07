@@ -156,13 +156,16 @@ test("ships a complete checksummed source-provenance registry", async () => {
   );
   const artifacts = sourceProvenance.sources.flatMap((source) => source.artifacts);
 
-  assert.equal(sourceProvenance.summary.sourceGroups, 9);
+  assert.equal(sourceProvenance.summary.sourceGroups, 10);
   assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
-  assert.equal(sourceProvenance.summary.tracedArtifacts, 22);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 31);
   assert.equal(sourceProvenance.summary.automationStatus, "scheduled-freshness-monitoring");
-  assert.equal(artifacts.length, 22);
+  assert.equal(artifacts.length, 31);
   assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
-  assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 9);
+  assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 10);
+  const reviewSource = sourceProvenance.sources.find((source) => source.id === "current-evidence-review-2026-10-08");
+  assert.equal(reviewSource.useStatus, "gap-tracked");
+  assert.equal(reviewSource.criticalToForecast, false);
 });
 
 test("ships explicit fail-closed release gates", async () => {

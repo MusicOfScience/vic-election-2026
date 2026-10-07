@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "assessedAsOf": "2026-08-30",
+  "assessedAsOf": "2026-10-08",
   "status": "recommendations-awaiting-human-decision",
   "policy": "Evidence acceptance confirms that a poll record faithfully represents its source. Model eligibility is a separate decision about comparability, independence and statistical use. This dossier makes recommendations but cannot approve either decision.",
   "summary": {
-    "stagedPolls": 8,
-    "recommendEvidenceAcceptance": 5,
+    "stagedPolls": 11,
+    "recommendEvidenceAcceptance": 6,
     "verifyThenAccept": 1,
-    "holdEvidence": 2,
+    "holdEvidence": 4,
     "readyForModelDecisionAfterAcceptance": 2
   },
   "reviews": [
     {
       "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
       "evidenceRecommendation": "accept",
-      "modelRecommendation": "conditional_review",
-      "rationale": "The captured first-party report supplies the fieldwork window, publication date, full and effective samples, weighting, undecided treatment, five-way toplines, respondent-allocated preference result and a stable report fingerprint. Evidence acceptance is supportable, but model admission remains conditional on demonstrating that this wave is independent of the June RedBridge sample family and on preserving its Carroll–Wilson timing regime.",
+      "modelRecommendation": "hold",
+      "rationale": "First-party report and original SHA reverified; correct Coalition-Labor TPP is 56-44, with Labor-One Nation 53-47 separately. Evidence acceptance is supportable. Model eligibility remains hold-pending-missing-independence-evidence: disjoint fieldwork and regular-snapshot wording do not demonstrate respondent reuse exclusions or separation from June/MRP source family. No authorised rule converts that inference into approval. As of 8 October even admission of September fieldwork alone would exceed the fixed 21-day critical-source age limit.",
       "requiredChecks": [
         "Project owner confirms evidence acceptance against the captured PDF and publisher page",
         "Confirm sample-family independence from the June RedBridge evidence before model admission",
@@ -91,6 +91,39 @@
         "Capture first-party published results and reconcile the 9/10 July fieldwork-end discrepancy",
         "Do not count the statewide topline and 88-seat projection as independent signals",
         "Keep the seat projection comparison-only unless the MRP transformation is validated out of sample"
+      ]
+    },
+    {
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "conditional_review",
+      "rationale": "Retained first-party workbook passes the existing extractor with complete exact composition and separate valid bases. Method is comparable in principle with approved Freshwater waves, but explicit owner evidence acceptance and a separate eligibility decision remain required. No panel-reuse rule or new approval is inferred.",
+      "requiredChecks": [
+        "Owner verifies preserved workbook and original 1 October poll publication versus 2 October data release",
+        "Owner adjudicates sample dependency and questionnaire/Carroll-Wilson comparability",
+        "Preserve N=1030, primary base 977 and TPP base 956 separately"
+      ]
+    },
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-secondary",
+      "evidenceRecommendation": "hold",
+      "modelRecommendation": "hold",
+      "rationale": "Secondary reporting identifies a newer wave, but primary report, exact residual category, undecided treatment, effective sample and preference construction remain unverified. Arithmetic residual must not be promoted as a measured category.",
+      "requiredChecks": [
+        "Capture original pollster publication and full report",
+        "Reconcile complete composition, fieldwork and samples",
+        "Verify method, undecided treatment and cross-wave dependency"
+      ]
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-09-06-12-secondary",
+      "evidenceRecommendation": "hold",
+      "modelRecommendation": "hold",
+      "rationale": "Newly discovered secondary commentary about a wave reportedly published before 15 September. Original publication and methodology are not captured, rounded categories total 101 and tracker sample/window discrepancies remain unresolved.",
+      "requiredChecks": [
+        "Capture Resolve/The Age primary evidence",
+        "Reconcile sample/window, exact five-family composition and residual categories",
+        "Verify source-family dependency and original publication date"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "assessedAsOf": "2026-09-25",
+  "assessedAsOf": "2026-10-08",
   "policy": "This audit classifies existing release gates; it does not open any gate or alter forecast inputs.",
   "historicalValidation": {
     "certifyingCycles": ["vic_la_2010", "vic_la_2014", "vic_la_2022"],
@@ -11,8 +11,8 @@
   },
   "gates": {
     "sourceIntegrity": {"status": "PASS", "class": "resolved", "evidence": "metadata/release-readiness.generated.json"},
-    "criticalSourceFreshness": {"status": "BLOCKED", "class": "resolvable-current-evidence-blocker", "evidence": "metadata/release-readiness.generated.json", "reason": "The model-eligible poll registry is stale against the fixed 21-day policy; the 2026-09-15 RedBridge/Accent wave is staged but not model-eligible.", "changesForecast": true, "nextDecision": "Complete explicit evidence and model-eligibility review; do not auto-promote."},
-    "modelInputFreshness": {"status": "BLOCKED", "class": "resolvable-current-evidence-blocker", "evidence": "metadata/poll-review-dossier-2026.json", "reason": "One newer staged record remains unresolved; evidence acceptance and model eligibility are separate decisions.", "changesForecast": true, "nextDecision": "Project owner/model owner resolves the staged September RedBridge/Accent decision."},
+    "criticalSourceFreshness": {"status": "BLOCKED", "class": "resolvable-current-evidence-blocker", "evidence": "metadata/release-readiness.generated.json", "reason": "Canonical polling effective date remains 7 August, 62 days old at 8 October against fixed 21-day policy. September RedBridge alone would also be stale. Freshwater late-September workbook is captured but not owner-approved/model-eligible.", "changesForecast": true, "nextDecision": "Complete explicit evidence and model-eligibility review; do not auto-promote."},
+    "modelInputFreshness": {"status": "BLOCKED", "class": "resolvable-current-evidence-blocker", "evidence": "metadata/current-evidence-adjudication-2026-10-08.json", "reason": "September RedBridge and three newly staged review leads remain unresolved. Evidence acceptance and model admission require separate explicit decisions.", "changesForecast": true, "nextDecision": "Project owner/model owner resolves the staged September RedBridge/Accent decision."},
     "deterministicOutputs": {"status": "PASS", "class": "resolved", "evidence": "metadata/release-readiness.generated.json", "forecastSha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab", "changesForecast": false},
     "historicalDataReadiness": {"status": "PASS", "class": "resolved", "evidence": "metadata/historical-replay-input-readiness.json", "changesForecast": false},
     "completeForecastBacktest": {"status": "BLOCKED", "class": "structurally-blocked-under-prod-1.0-validation-protocol", "evidence": "model/data/validation/historical-replays/historical-four-cycle-validation-status.json", "reason": "Only three certifying v2 cycles exist; 2018 was consumed with an implementation defect and cannot be made fresh again.", "changesForecast": false, "nextDecision": "Keep closed; define a new prospective protocol/model version if further validation is desired."},
@@ -36,5 +36,6 @@
     "ownerDecisionRecorded": false,
     "modelInputPromotion": false
   },
-  "nextAction": "Obtain the explicit project-owner/model-eligibility decision for the staged September RedBridge/Accent evidence. If admitted under the existing policy, refresh current poll inputs in a separate reviewed batch; otherwise retain the last valid forecast. Do not alter historical v2 or production authorisation."
+  "currentEvidenceReviewPath": "metadata/current-evidence-adjudication-2026-10-08.json",
+  "nextAction": "Project owner reviews the current evidence packet and records explicit evidence/eligibility decisions; no further programme authorised."
 }

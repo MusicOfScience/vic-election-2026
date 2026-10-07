@@ -25,7 +25,7 @@
       },
       "twoPartyPreferred": {
         "alp": 44,
-        "coalition": 53,
+        "coalition": 56,
         "basis": "respondent allocated; published vote-intention base N=2,160"
       },
       "publishedVoteIntentionBase": 2160,
@@ -37,7 +37,13 @@
       "verificationStatus": "primary-report-captured-awaiting-human-review",
       "proposedModelPollId": "redbridge_accent_2026-09",
       "captureMode": "first-party-pollster-report",
-      "reviewNotes": "The pollster page and linked ten-page PDF provide fieldwork, sample, effective sample, vote-intention wording, method and exact rounded toplines. The published vote-intention table excludes 211 respondents from the full N=2,371 sample; retain that distinction. This record is staged only: it has not been accepted or admitted to model inputs, and sample-family independence from the June RedBridge evidence must be reviewed."
+      "reviewNotes": "The pollster page and linked ten-page PDF provide fieldwork, sample, effective sample, vote-intention wording, method and exact rounded toplines. The published vote-intention table excludes 211 respondents from the full N=2,371 sample; retain that distinction. This record is staged only: it has not been accepted or admitted to model inputs, and sample-family independence from the June RedBridge evidence must be reviewed. Rechecked on 2026-10-08 against the same report SHA-256; full methodology does not name panel vendors or disclose respondent reuse between waves. Separate fieldwork windows do not prove sample independence.",
+      "alternativeTwoPartyPreferred": {
+        "alp": 53,
+        "oneNation": 47,
+        "basis": "respondent allocated; Labor versus One Nation; Table 2"
+      },
+      "correctionHistory": "2026-10-08: Table 2, printed page 7 (PDF page 8), visually verified. Labor 44 is against Coalition, whose complementary share is 56. The adjacent 53 is Labor against One Nation, not Coalition support. Previous staged transcription incorrectly paired Labor 44 with Coalition 53. No canonical model input changed."
     },
     {
       "id": "redbridge-accent-vic-2026-08-01-primary",
@@ -239,6 +245,60 @@
         "policy": "Do not mutate the canonical event until the first-party workbook and publication-date discrepancy are reviewed."
       },
       "reviewNotes": "The first-party page/workbook resolves the publication date to 4 August. The canonical registry currently uses 5 August and the same poll ID; review that correction and the completed Greens/Other rows before any model decision."
+    },
+    {
+      "id": "freshwater-2026-09-primary-workbook",
+      "sourceId": "freshwater-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "commissioner": "Herald Sun",
+      "fieldworkStart": "2026-09-24",
+      "fieldworkEnd": "2026-09-28",
+      "sampleSize": 1030,
+      "effectiveSampleSize": null,
+      "population": "Victorian voters",
+      "method": "online panels; weighted to age-sex, age-education, 2022 state vote, 2025 federal vote and location; leaners included; remaining undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24.0121,
+        "coalition": 28.9106,
+        "oneNation": 22.1313,
+        "greens": 14.3689,
+        "otherParties": 10.5771
+      },
+      "primaryVoteRounded": {
+        "alp": 24,
+        "coalition": 29,
+        "oneNation": 22,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "twoPartyPreferred": {
+        "alp": 46.5913,
+        "coalition": 53.4087,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "primaryVoteUnweightedBase": 977,
+      "twoPartyPreferredUnweightedBase": 956,
+      "sourceUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
+      "workbookUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-280926.xlsx",
+      "workbookSha256": "e74537ac81246b6e4207963cfcf8a5bffa3f512516370baa917648c85f175e9e",
+      "workbookBytes": 153973,
+      "workbookPath": "metadata/current-evidence/2026-10-08/freshwater-september-tables.xlsx",
+      "pollPublicationDate": "2026-10-01",
+      "primaryReleaseDate": "2026-10-02",
+      "publicationDateEvidence": "Herald Sun original commissioner reporting and Poll Bludger 1 October update; first-party workbook page published 2 October. Preserve original poll publication separately from data-table release.",
+      "secondaryEvidenceUrl": "https://www.pollbludger.net/2026/09/29/victorian-election-demosau-poll-election-guide-and-seat-projection-model/",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-workbook-parsed-awaiting-human-review",
+      "proposedModelPollId": "freshwater_2026-09",
+      "captureMode": "automated-primary-workbook-extraction",
+      "extractor": "scripts/extract-freshwater-workbooks.py",
+      "sourceFamily": "freshwater",
+      "sampleOverlapAssessment": "Distinct non-overlapping fieldwork from earlier canonical Freshwater waves. No rolling pooled wave or MRP claimed. Panel vendors, repeated respondents and cross-wave exclusion rules not disclosed; owner must adjudicate comparability and dependency under existing policy.",
+      "reviewNotes": "Exact five-way composition reconciles to 100. Full N=1,030 differs from valid primary base N=977 and TPP base N=956. No effective sample size disclosed. Retain Carroll-Wilson regime; never count issue cross-tabs or regional subsets as additional independent polls. No evidence acceptance or model admission inferred."
     }
   ]
 }

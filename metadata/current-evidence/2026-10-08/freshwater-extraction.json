@@ -1,0 +1,28 @@
+{
+  "fieldworkLabel": "24 - 28 September 2026",
+  "sampleSize": 1030,
+  "primaryVoteExact": {
+    "alp": 24.0121,
+    "coalition": 28.9106,
+    "oneNation": 22.1313,
+    "greens": 14.3689,
+    "otherParties": 10.5771
+  },
+  "primaryVoteRounded": {
+    "alp": 24,
+    "coalition": 29,
+    "oneNation": 22,
+    "greens": 14,
+    "otherParties": 11
+  },
+  "primaryVoteUnweightedBase": 977,
+  "twoPartyPreferredExact": {
+    "alp": 46.5913,
+    "coalition": 53.4087
+  },
+  "twoPartyPreferredRounded": {
+    "alp": 47,
+    "coalition": 53
+  },
+  "twoPartyPreferredUnweightedBase": 956
+}

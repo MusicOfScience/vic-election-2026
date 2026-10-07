@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-10-08",
+  "baseHead": "aaad26fca59a55fea2951e38f92c0fed3dfbdca7",
+  "status": "review-ready-owner-decisions-pending",
+  "policy": "Existing evidence acceptance and explicit model-eligibility rules retained. Recommendations do not create owner approval. No model input, forecast, historical score or production authorisation changed.",
+  "newestModelEligiblePolling": {
+    "pollId": "roy_morgan_2026-08",
+    "publicationDate": "2026-08-08",
+    "fieldworkEnd": "2026-08-07",
+    "reason": "Newest model_eligible=True canonical event. No subsequent staged record has an explicit authorised eligibility/canonical action.",
+    "publicationAgeDays": 61,
+    "modelInputEffectiveDate": "2026-08-07",
+    "modelInputAgeDays": 62
+  },
+  "newestCapturedPrimaryEvidence": {
+    "evidenceId": "freshwater-2026-09-primary-workbook",
+    "pollPublicationDate": "2026-10-01",
+    "dataTablePublicationDate": "2026-10-02",
+    "fieldworkEnd": "2026-09-28",
+    "modelEligible": false
+  },
+  "receipts": [
+    {
+      "path": "metadata/current-evidence/2026-10-08/freshwater-extraction.json",
+      "sha256": "a862dc76ac393ad5b03a933345019d36e087617d0bb091ab64f4f11aa01cc883",
+      "bytes": 582,
+      "sourceUrl": null,
+      "type": "existing-script-review-output"
+    },
+    {
+      "path": "metadata/current-evidence/2026-10-08/freshwater-publication.html.gz",
+      "sha256": "07adabb443bda7332ef726c322c8a5de8cfaeda80c97043e723ba5942e6f012c",
+      "bytes": 24778,
+      "sourceUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
+      "type": "primary-source-carrier",
+      "compression": "gzip; original response preserved losslessly",
+      "originalSha256": "fe50981feeae97469111f4607860884f9ffe813b59ad76a8083744cca88f696a",
+      "originalBytes": 151611
+    },
+    {
+      "path": "metadata/current-evidence/2026-10-08/freshwater-september-tables.xlsx",
+      "sha256": "e74537ac81246b6e4207963cfcf8a5bffa3f512516370baa917648c85f175e9e",
+      "bytes": 153973,
+      "sourceUrl": "https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-280926.xlsx",
+      "type": "primary-source-carrier"
+    },
+    {
+      "path": "metadata/current-evidence/2026-10-08/live-source-report.json",
+      "sha256": "af2744d726341936ec36e0ac8da11db35b5a6391f5877238a9022d68b932bfdc",
+      "bytes": 4051,
+      "sourceUrl": null,
+      "type": "existing-script-review-output"
+    },
+    {
+      "path": "metadata/current-evidence/2026-10-08/redbridge-september-report.pdf",
+      "sha256": "ba588f8f3cf71b8ee7366dc43c354b6b4e42c42e34dc6c6ee3af8db103dd5ee9",
+      "bytes": 1904877,
+      "sourceUrl": "https://6b72024e-077a-44e2-88f5-dc1a0ed81099.usrfiles.com/ugd/b86980_046899eb40cd4f509fc7325fece7440f.pdf",
+      "type": "primary-source-carrier"
+    }
+  ],
+  "septemberRedbridge": {
+    "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+    "recommendation": "HOLD",
+    "evidenceAcceptanceRecommendation": "ACCEPT",
+    "modelEligibility": "hold-pending-missing-independence-evidence",
+    "ownerDecisionRecorded": false,
+    "sourceFamily": "redbridge-accent",
+    "canonicalJuneFamily": "redbridge_accent_vic_june_2026",
+    "methodology": {
+      "population": "Victorian voters",
+      "mode": "online panel",
+      "fullSample": 2371,
+      "effectiveSample": 2009,
+      "publishedVoteIntentionBase": 2160,
+      "excludedFromPublishedBase": 211,
+      "quotaVariables": [
+        "age",
+        "gender",
+        "location",
+        "education",
+        "2025 federal vote"
+      ],
+      "weightingVariables": [
+        "age",
+        "gender",
+        "education",
+        "religion",
+        "location"
+      ],
+      "undecidedTreatment": "leaner question; unresolved respondents excluded"
+    },
+    "known": [
+      "Separate September 1–14 fieldwork window from June 17–28 and July 28–August 1",
+      "Publisher describes regular state snapshot; PDF supplies direct question wording and five-category primary shares",
+      "One Nation explicitly offered; Liberal/National and other options depend on 2022 district candidacy",
+      "Matching original report hash; primary and valid-base samples remain separate",
+      "Coalition-Labor 56–44 and Labor-One Nation 53–47 are separate comparisons"
+    ],
+    "unknown": [
+      "Panel provider identity and respondent identifiers",
+      "Whether earlier participants were excluded or recontacted",
+      "Whether any June/MRP records were reused, refreshed or pooled",
+      "A quantified cross-wave dependence estimate"
+    ],
+    "independenceFinding": "Distinct surveys are reasonably inferable; statistical independence or absence of respondent reuse is not demonstrable. Sharing a panel alone neither proves double counting nor proves independence. Existing explicit independence blocker remains unresolved.",
+    "comparabilityFinding": "Five-family primary-vote observation is comparable in principle; retain Carroll-Wilson timing, district-specific response options and valid-vote base. No analyst/MRP output is a second observation.",
+    "doubleCountingFinding": "No demonstrated duplicate, but no exclusion of respondent/wave reuse. September primary, cross-tabs, alternative final pairs and commentary all belong to this one wave.",
+    "deterministicPolicyFinding": "Promotion audit requires human acceptance and explicit model eligibility; no automatic admission from non-overlapping dates. The Python overlap diagnostic detects same-family intersecting windows only and cannot establish independence for disjoint windows.",
+    "reasonBeyondRecency": "Verified first-party composition and methodology support evidence acceptance; they do not establish source-family independence.",
+    "correction": "2026-10-08: Table 2, printed page 7 (PDF page 8), visually verified. Labor 44 is against Coalition, whose complementary share is 56. The adjacent 53 is Labor against One Nation, not Coalition support. Previous staged transcription incorrectly paired Labor 44 with Coalition 53. No canonical model input changed.",
+    "acceptConsequence": "Only after independence/comparability and explicit approval, add one primary observation with provenance and run a reviewed deterministic refresh. As of 8 October, September 14 fieldwork is 24 days old (publication 23 days): it cannot alone satisfy the unchanged 21-day critical polling freshness policy. No forecast impact computed while ineligible.",
+    "holdConsequence": "Retain canonical inputs and last valid forecast. An owner-recorded HOLD/REJECT can resolve this review item as excluded, but does not make stale model inputs fresh and does not resolve other newer staged waves.",
+    "ownerDecisionRequired": "HOLD redbridge-accent-vic-2026-09-14-primary from model inputs pending documented sample-family independence; evidence acceptance may be recorded separately."
+  },
+  "candidateDecisions": [
+    {
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "recommendation": "HOLD model admission; recommend ACCEPT evidence",
+      "blockers": [
+        "Explicit owner evidence acceptance",
+        "Separate owner eligibility/dependency and regime adjudication"
+      ],
+      "comparability": "Same disclosed five-way online-panel weighting and leaner treatment as approved Freshwater waves; no overlapping fieldwork or reported rolling/MRP pooling. Repeat respondent exclusion undisclosed.",
+      "acceptConsequence": "If approved, September 28 effective date is 10 days old and can meet the 21-day source policy. Deterministic forecast refresh then required; numerical impact not estimated before approval.",
+      "holdConsequence": "No input change; newer evidence remains staged."
+    },
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-secondary",
+      "recommendation": "HOLD",
+      "blockers": [
+        "Primary report/publication not captured",
+        "Method, undecided treatment and overlap unresolved",
+        "Other residual is arithmetic, not verified reported category"
+      ],
+      "newerThanSeptember15": true
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-09-06-12-secondary",
+      "recommendation": "HOLD",
+      "blockers": [
+        "Original publisher capture missing",
+        "Rounded sum 101 and residual categories unresolved",
+        "Sample/window discrepancies; dependence unresolved"
+      ],
+      "newerThanSeptember15": "Secondary page is 17 September; underlying publication reportedly 14 September. Newly discovered, not a confirmed later poll."
+    }
+  ],
+  "reviewedExcludedEvidence": [
+    {
+      "url": "https://www.roymorgan.com/findings/roy-morgan-update-october-6-2026",
+      "publicationDate": "2026-10-06",
+      "decision": "EXCLUDE as independent poll; reference only",
+      "reason": "Six-month seat analysis and winnability transformation of existing voting intention; no new standalone statewide sample/method/window."
+    },
+    {
+      "url": "https://www.roymorgan.com/findings/10323-victorian-state-voting-intention-august-2026",
+      "publicationDate": "2026-09-15",
+      "decision": "EXCLUDE from statewide current-poll input",
+      "reason": "643 electors in three inner-Melbourne districts pooled over 12 months to August; different geography/time base and dependence unresolved."
+    }
+  ],
+  "sourceMonitoring": {
+    "liveReportPath": "metadata/current-evidence/2026-10-08/live-source-report.json",
+    "existingArchitectureUsed": [
+      "monitor-live-sources.mjs",
+      "discover-live-source-records.mjs",
+      "discover-demosau-victoria-polls.mjs",
+      "extract-freshwater-workbooks.py"
+    ],
+    "liveSummary": {
+      "adapters": 5,
+      "healthy": 2,
+      "unbaselined": 0,
+      "quarantined": 3,
+      "unhealthy": 0
+    },
+    "discovery": "292 records, 2 polls already tracked, 290 candidates quarantined. No candidate changes applied in this bounded polling workstream. Roy Morgan index returned no new poll. Dedicated DemosAU extractor returned zero parsed and a seed parse miss.",
+    "primarySourceSupplement": [
+      "Accent projects and September report",
+      "Freshwater insights, dated page and complete workbook",
+      "DemosAU news/index and primary report attempts (captcha/parse miss)",
+      "Roy Morgan August report, September 15 three-seat analysis and October 6 update",
+      "VEC electoral roll statistics and current nomination/election pages",
+      "Resolve/Pyxis targeted searches and secondary cross-checks"
+    ],
+    "vecFinding": "Live page fingerprints changed but markers passed. Electoral-roll page still displays 4 September effective date and August downloads; no newer enrolment payload established. Nominations remain future November event; page change is not a new ballot input. Live state was not promoted.",
+    "coverageLimitation": "Best-effort source scan, not proof of universal absence. Primary DemosAU/Resolve methodology unresolved. National polls and state breakdowns of federal intention excluded from state-election inputs."
+  },
+  "releaseGates": {
+    "before": "experimental-blocked; 4/9",
+    "after": "experimental-blocked; 4/9",
+    "unchangedBlockers": [
+      "criticalSourceFreshness",
+      "modelInputFreshness",
+      "completeForecastBacktest",
+      "probabilityCalibration",
+      "productionAuthorisation"
+    ],
+    "criticalPollThresholdDays": 21,
+    "sourceEffectiveDateAdvanced": false,
+    "modelEligibleInputsChanged": false,
+    "forecastRefreshed": false,
+    "forecastSha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab"
+  },
+  "nextAction": "Project owner reviews the current evidence packet and records explicit evidence/eligibility decisions; no further programme authorised.",
+  "validation": {
+    "shadowScenario": "August scenario pinned by evidence IDs; report regenerated with original 2000 simulations. Scenario and seat/probability results unchanged; polling floating-point differences <= 7.105427357601002e-15 percentage points. Canonical forecast untouched.",
+    "carrierExtraction": "Captured Freshwater workbook re-extracted offline using existing extractor; exact match with saved extraction.",
+    "commands": {
+      "npm test": "PASS: build and 164 JavaScript tests",
+      "python3 -m pytest model/tests": "PASS: 69 Python tests",
+      "npm run lint": "PASS",
+      "source/poll/readiness generator checks": "PASS",
+      "candidate validation and approval checks": "PASS",
+      "psephology, replay contract and validation evidence checks": "PASS; closed model gates preserved",
+      "npm run shadow:check": "PASS",
+      "run_staged_poll_seat_shadow.py --simulations 2000 --check": "PASS; original August scenario",
+      "git diff --check": "PASS",
+      "canonical forecast/hash and historical-input diff": "UNCHANGED"
+    }
+  }
+}
