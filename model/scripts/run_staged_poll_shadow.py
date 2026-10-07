@@ -89,6 +89,7 @@ def _fit(events: pd.DataFrame, estimates: pd.DataFrame, config: dict, seed: int,
 def build_shadow_report(repo_root: Path, *, draws: int | None = None) -> dict:
     model_root = repo_root / "model"
     config = yaml.safe_load((model_root / "config/experimental_forecast.yml").read_text())
+    config["as_of"] = "2026-08-26"  # Preserve the governed August scenario vintage.
     draws = int(draws or config["simulations"])
     seed = int(config["seed"])
     events = pd.read_csv(model_root / "data/processed/poll_events_seed.csv")

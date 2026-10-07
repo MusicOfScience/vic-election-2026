@@ -99,7 +99,9 @@ def _run_with_registry(model_root: Path, events: pd.DataFrame, estimates: pd.Dat
     # forecast_2026 uses one pandas module object throughout, so patching this
     # read path provides an in-memory registry view while every other dataset is
     # read normally from the audited model root.
-    with patch("vicforecast.forecast_2026.pd.read_csv", side_effect=shadow_read_csv):
+    config = yaml.safe_load((model_root / "config/experimental_forecast.yml").read_text())
+    config["as_of"] = "2026-08-26"  # Independent of later canonical refresh dates.
+    with patch("vicforecast.forecast_2026.pd.read_csv", side_effect=shadow_read_csv), patch("vicforecast.forecast_2026.load_forecast_config", return_value=config):
         return run_experimental_forecast(model_root, simulations=simulations, seed=seed)
 
 
@@ -222,7 +224,10 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
     model_root = repo_root / "model"
     config = yaml.safe_load((model_root / "config/experimental_forecast.yml").read_text())
     seed = int(config["seed"])
-    canonical = run_experimental_forecast(model_root, simulations=simulations, seed=seed)
+    config["as_of"] = "2026-08-26"
+    canonical_events = pd.read_csv(model_root / "data/processed/poll_events_seed.csv")
+    canonical_estimates = pd.read_csv(model_root / "data/processed/poll_estimates_seed.csv")
+    canonical = _run_with_registry(model_root, canonical_events, canonical_estimates, simulations=simulations, seed=seed)
     events, estimates = _scenario_registry(repo_root)
     shadow = _run_with_registry(model_root, events, estimates, simulations=simulations, seed=seed)
     report = build_impact_report(canonical, shadow, simulations=simulations, seed=seed, as_of=str(config["as_of"]))

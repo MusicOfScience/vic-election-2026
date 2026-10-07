@@ -16,7 +16,7 @@ No prediction, comparator, threshold, preference rule, uncertainty parameter, or
 
 The nine-gate classification is recorded in [`metadata/prod-1.0-closure-audit.json`](../metadata/prod-1.0-closure-audit.json): source integrity, deterministic outputs, historical data readiness and candidate evidence pass. Critical source freshness and model-input freshness are resolvable current-evidence blockers. Complete backtest and probability calibration are structurally blocked under the current PROD 1.0 protocol. Production authorisation is downstream blocked and remains closed.
 
-The release report was refreshed as of 2026-09-25 without advancing any source effective date. The model-eligible poll registry remains outside the fixed 21-day freshness window. The captured September RedBridge/Accent report is evidence-accepted in principle but remains staged pending an explicit independence review against the earlier RedBridge family. Its full sample (`N=2,371`) and published vote-intention base (`N=2,160`) remain distinct; no model input was changed.
+At the 25 September closure assessment, the model-eligible registry was outside the fixed 21-day freshness window and September RedBridge remained staged. The subsequent [8 October owner-decision refresh](FORECAST_REFRESH_2026-10-08.md) admits September Freshwater, resolves both current-evidence freshness gates and records September RedBridge evidence acceptance with continued model hold. Full RedBridge N=2,371 and voting-intention base N=2,160 remain distinct. The historical backtest/calibration conclusions in this report remain unchanged, and production authorisation remains closed.
 
 ## Future path
 

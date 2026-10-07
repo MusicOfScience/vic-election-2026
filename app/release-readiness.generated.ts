@@ -9,11 +9,9 @@ export const releaseReadiness = {
     "automaticProductionPublish": false
   },
   "summary": {
-    "passedRequiredGates": 4,
+    "passedRequiredGates": 6,
     "requiredGateCount": 9,
     "blockingGateIds": [
-      "criticalSourceFreshness",
-      "modelInputFreshness",
       "completeForecastBacktest",
       "probabilityCalibration",
       "productionAuthorisation"
@@ -25,11 +23,11 @@ export const releaseReadiness = {
       "label": "Source fingerprints match"
     },
     "criticalSourceFreshness": {
-      "passed": false,
+      "passed": true,
       "label": "Critical sources are within age policy"
     },
     "modelInputFreshness": {
-      "passed": false,
+      "passed": true,
       "label": "Newer reviewed evidence is resolved into or excluded from model inputs"
     },
     "deterministicOutputs": {
@@ -104,13 +102,13 @@ export const releaseReadiness = {
     "assessedAsOf": "2026-10-08",
     "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
     "modelInput": {
-      "latestPublicationDate": "2026-08-08",
-      "pollId": "roy_morgan_2026-08",
-      "pollster": "Roy Morgan",
+      "latestPublicationDate": "2026-10-01",
+      "pollId": "freshwater_2026-09",
+      "pollster": "Freshwater Strategy",
       "status": "model-eligible"
     },
     "acceptedEvidence": {
-      "latestPublicationDate": "2026-08-04",
+      "latestPublicationDate": "2026-10-01",
       "pollster": "Freshwater Strategy",
       "status": "human-reviewed-not-necessarily-model-eligible"
     },
@@ -124,18 +122,18 @@ export const releaseReadiness = {
     },
     "reviewResolution": {
       "stagedRecords": 11,
-      "resolvedRecords": 7,
-      "unresolvedRecords": 4,
+      "resolvedRecords": 11,
+      "unresolvedRecords": 0,
       "latestResolvedEvidence": {
-        "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
-        "pollster": "Resolve Strategic",
-        "latestPublicationDate": "2026-08-21",
-        "decision": "hold"
+        "evidenceId": "freshwater-2026-09-primary-workbook",
+        "pollster": "Freshwater Strategy",
+        "latestPublicationDate": "2026-10-01",
+        "decision": "approve"
       }
     },
     "newestEvidenceDate": "2026-10-01",
-    "newerEvidenceAwaitingReview": true,
-    "newerEvidenceExcludedByReview": true,
+    "newerEvidenceAwaitingReview": false,
+    "newerEvidenceExcludedByReview": false,
     "modelFreshnessUnchangedByStagedEvidence": true
   },
   "sources": [
@@ -196,10 +194,10 @@ export const releaseReadiness = {
     {
       "id": "vic-2026-poll-registry",
       "critical": true,
-      "dataEffectiveDate": "2026-08-07",
-      "ageDays": 62,
+      "dataEffectiveDate": "2026-09-28",
+      "ageDays": 10,
       "stalenessThresholdDays": 21,
-      "stale": true,
+      "stale": false,
       "artifactsCurrent": true
     },
     {
@@ -214,8 +212,8 @@ export const releaseReadiness = {
     {
       "id": "forecast-derived-outputs",
       "critical": true,
-      "dataEffectiveDate": "2026-08-26",
-      "ageDays": 43,
+      "dataEffectiveDate": "2026-10-08",
+      "ageDays": 0,
       "stalenessThresholdDays": null,
       "stale": false,
       "artifactsCurrent": true

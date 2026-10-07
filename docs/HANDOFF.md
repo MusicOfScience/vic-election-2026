@@ -4,7 +4,7 @@ Updated: 2026-10-08
 
 ## Current state
 
-- Base main includes merged PR #122, HEAD `aaad26fca59a55fea2951e38f92c0fed3dfbdca7`. PR #121 added a governed community-resilience/service-deficit research challenger and analyst-evidence record only; it did not change forecast inputs, parameters, probabilities or release-gate state.
+- Base main includes merged PR #123, HEAD `8ddf08a`. The current owner-decision batch admits September Freshwater and refreshes only downstream 2026 artefacts. PR #121's community-resilience challenger remains deferred.
 - Historical counters are runnable 4/4, predicted 4/4, scored 4/4, certifying predicted 3/4 and certifying scored 3/4.
 - Certifying v2 cycles are `vic_la_2010`, `vic_la_2014` and `vic_la_2022`. `vic_la_2018` remains non-certifying: v1 implementation defect; v2 post-hoc diagnostic.
 - The canonical aggregate is [`historical-certifying-v2-aggregate.json`](../model/data/validation/historical-replays/historical-certifying-v2-aggregate.json), SHA `7680fa6111c01665b24c6fe16bca6ab6d67f9aa4697c8294de1be33d0a4c972e`. Its unweighted three-cycle means are winner accuracy `0.8404301637`, multiclass Brier `0.2193372181`, multiclass log loss `1.0486418097` and district primary MAE `4.7557257435`.
@@ -18,15 +18,17 @@ Updated: 2026-10-08
 
 ## Release-gate classification
 
-The machine-readable classification is [`metadata/prod-1.0-closure-audit.json`](../metadata/prod-1.0-closure-audit.json). Source integrity, deterministic outputs, historical data readiness and candidate evidence pass. Critical-source freshness and model-input freshness are resolvable current-evidence blockers. Complete backtest and probability calibration are structurally blocked under the current protocol. Production authorisation is downstream blocked.
+The machine-readable classification is [`metadata/prod-1.0-closure-audit.json`](../metadata/prod-1.0-closure-audit.json). Generated readiness passes 6/9 gates: source integrity, critical-source freshness, model-input freshness, deterministic outputs, historical data readiness and candidate evidence. Complete backtest and probability calibration remain structurally blocked under the current protocol. Production authorisation remains downstream blocked.
 
-Release readiness was reassessed as of 2026-10-08 without advancing any model-source effective date. The model-eligible poll registry remains outside the fixed 21-day freshness window.
+Release readiness is assessed as of 2026-10-08. The owner-approved September Freshwater poll has a real fieldwork effective date of 28 September, ten days old against the unchanged 21-day policy. Poll and model effective dates advance because evidence was admitted and the forecast was regenerated.
 
 ## Current 2026 evidence decision
 
-The captured `redbridge-accent-vic-2026-09-14-primary` report is evidence-accepted in principle and remains quarantined. It records publication 2026-09-15, fieldwork 1–14 September, full sample 2,371, effective sample 2,009 and published vote-intention base 2,160. Sample-family independence from earlier RedBridge evidence is not proven, so model eligibility is `hold-pending-missing-independence-evidence`. No project-owner/model-eligibility decision was inferred and no poll was promoted into model inputs.
+The owner accepts `redbridge-accent-vic-2026-09-14-primary` as evidence and explicitly holds model eligibility pending documented sample-family independence. Publication remains 15 September, fieldwork 1–14 September, full N=2,371, effective N=2,009 and voting-intention base N=2,160. It remains absent from canonical inputs; cross-tabs and alternative final pairs are supporting material within that one wave.
 
-The 8 October current-evidence review is recorded in [`CURRENT_EVIDENCE_2026-10-08.md`](CURRENT_EVIDENCE_2026-10-08.md) and `metadata/current-evidence-adjudication-2026-10-08.json`. The RedBridge hold remains; its staged TPP transcription is corrected to Coalition–Labor 56–44, with Labor–One Nation 53–47 separately. A retained, parsed Freshwater 24–28 September workbook supports evidence acceptance in principle but awaits explicit owner evidence and eligibility decisions. DemosAU September and newly discovered Resolve September leads remain secondary-evidence holds. Newest eligible polling remains Roy Morgan published 8 August (effective 7 August). September RedBridge alone is already outside the 21-day policy on 8 October. The exact next action is owner review of the packet and recording explicit decisions; retain the forecast until legitimate input changes justify a separate refresh.
+The original review packet is preserved in [`CURRENT_EVIDENCE_2026-10-08.md`](CURRENT_EVIDENCE_2026-10-08.md); its machine-readable packet now links the owner resolution. The owner accepts and admits exactly one September Freshwater observation, retaining exact workbook composition and full N=1,030, primary base N=977 and TPP base N=956. Poll publication is 1 October; first-party table release is 2 October. Freshwater remains the same pollster/source family. DemosAU and Resolve September remain explicit evidence/model holds with their existing blockers. Canonical events increase 13→14; eligible polls increase 12→13.
+
+The deterministic refresh retains seed `20260826`, 5,000 simulations and every model coefficient, while advancing the assessment date from 26 August to 8 October. [`FORECAST_REFRESH_2026-10-08.md`](FORECAST_REFRESH_2026-10-08.md) and [`metadata/forecast-refresh-2026-10-08.json`](../metadata/forecast-refresh-2026-10-08.json) report every statewide/chamber change and all district deltas. No district crosses the declared five-percentage-point material-change threshold; no likely final pair changes. The August shadow remains pinned to 26 August and its original evidence IDs.
 
 ## Deferred research challenger
 
@@ -34,14 +36,10 @@ PR #121 records Kos Samaras' 1 October 2026 resilience argument as dependency-la
 
 This challenger is deliberately **outside the current critical path**. It is `reference_only`, has no quantitative model use, and must remain at zero central weight unless a later, separately governed, leakage-safe historical promotion test establishes incremental value. Do not begin the SA2 resilience feature build merely because the specification exists.
 
-Current project priority remains:
-
-1. resolve newer 2026 polling/evidence and the associated critical-source/model-input freshness blockers, beginning with the staged September RedBridge/Accent wave;
-2. refresh the experimental forecast only if a reviewed evidence decision changes eligible model inputs; and
-3. address complete-model backtesting and probability calibration only under a separately governed protocol consistent with the closure audit.
+Exact next action: review the owner-decision and deterministic forecast-refresh PR. No further model or research work is started in this batch.
 
 ## Preserved audit history
 
 The 2010 ballot gate was closed through the general contemporaneously-fixed-fact reconstruction policy, with direct PANDORA/NLA and Wayback capture attempts retained as failed routes. The 2014 crosswalk and ballot mask, 2022 Narracan separation, party-family mapping, and all prior score manifests remain governed. Untracked user files `docs/HANDOFF 2.md` and `metadata/historical-assembly-outcome-availability 2.json` were left untouched.
 
-The deterministic 2026 forecast remains unchanged at SHA `70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab`.
+The previous forecast SHA is `70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab`. The authorized refreshed forecast SHA is `a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2`. All 20 committed historical replay artefacts remain byte-identical, including frozen predictions, comparators and scores.

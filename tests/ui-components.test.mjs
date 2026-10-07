@@ -144,8 +144,8 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   assert.match(html, /aria-label="Forecast sections"/);
   assert.match(html, /Party colour key/);
   assert.match(html, /majority threshold is 45 seats/);
-  assert.match(html, /26 Aug 2026/);
-  assert.match(html, /Experimental forecast snapshot from 26 Aug 2026/);
+  assert.match(html, /8 Oct 2026/);
+  assert.match(html, /Experimental forecast snapshot from 8 Oct 2026/);
   assert.match(html, /Snapshot date/);
   assert.doesNotMatch(html, /updated 26 August/);
 });
@@ -177,9 +177,9 @@ test("ships explicit fail-closed release gates", async () => {
 
   assert.equal(releaseReadiness.status, "experimental-blocked");
   assert.equal(releaseReadiness.gates.sourceIntegrity.passed, true);
-  assert.equal(releaseReadiness.gates.criticalSourceFreshness.passed, false);
+  assert.equal(releaseReadiness.gates.criticalSourceFreshness.passed, true);
   assert.equal(releaseReadiness.sources.find((source) => source.id === "vec-2026-enrolment")?.stale, false);
-  assert.equal(releaseReadiness.sources.find((source) => source.id === "vic-2026-poll-registry")?.stale, true);
+  assert.equal(releaseReadiness.sources.find((source) => source.id === "vic-2026-poll-registry")?.stale, false);
   assert.equal(releaseReadiness.gates.productionAuthorisation.passed, false);
   assert.equal(releaseReadiness.automation.automaticProductionPublish, false);
   assert.match(html, /Automation may check the work/i);
@@ -208,8 +208,8 @@ test("renders the governed candidate review dossier without implying nomination"
 test("generates the public poll series from the canonical model registry", async () => {
   const { pollSeries } = await vite.ssrLoadModule("/app/poll-data.generated.ts");
 
-  assert.equal(pollSeries.length, 12);
-  assert.equal(pollSeries.at(-1).id, "roy_morgan_2026-08");
+  assert.equal(pollSeries.length, 13);
+  assert.equal(pollSeries.at(-1).id, "freshwater_2026-09");
   assert.ok(pollSeries.every((poll) => Math.abs(poll.alp + poll.coalition + poll.onp + poll.greens + poll.other - 100) < .01));
   assert.ok(pollSeries.every((poll) => poll.verificationStatus === "verified" || poll.verificationStatus === "partially_verified"));
 });
