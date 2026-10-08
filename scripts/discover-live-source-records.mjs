@@ -76,7 +76,7 @@ export function extractVecCandidatesFromHtml(html, sourceUrl) {
 export function extractGreensCandidates(html, pageUrl) {
   const records = [];
   for (const link of extractLinks(html, pageUrl)) {
-    const match = link.text.match(/^(.+?)\s+(?:Lead\s+)?Candidate for\s+(.+?)(?:\s+and\s+(?:Councillor|Mayor)\b.*)?$/i);
+    const match = link.text.match(/^(.+?)\s+(?:Lead\s+)?Candidate for\s+(.+?)(?:\s+(?:and|&)\s+(?:Councillor|Mayor)\b.*)?$/i);
     if (!match) continue;
     records.push({ kind: "candidate", name: match[1].trim(), contest: match[2].trim(), party: "Australian Greens Victoria", candidateStatus: "endorsed", sourceAuthority: "Australian Greens Victoria", sourceUrl: link.url });
   }

@@ -44,6 +44,12 @@ export function normaliseDemosText(value) {
     .trim();
 }
 
+export function isDemosAccessChallenge(value) {
+  const text = String(value ?? "");
+  return /(?:sgcaptcha|captcha|challenge|verify you are human)/i.test(text)
+    && !/DemosAU|PremierNational|Victorian poll/i.test(text);
+}
+
 function dayFirstRange(text, fallbackYear = "2026") {
   const match = text.match(/conducted\s+(?:from|between)\s+(\d{1,2})\s*(?:-|to)\s*(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)(?:[ ,]+(20\d{2}))?/i);
   if (!match) return null;
@@ -122,8 +128,9 @@ async function fetchPage(sourceUrl) {
   let directError = null;
   try {
     const { response, body } = await request(sourceUrl);
-    if (response.ok) return { body, sourceUrl, retrievalTransport: "direct", retrievalUrl: response.url };
-    directError = `HTTP ${response.status}`;
+    if (response.ok && !isDemosAccessChallenge(body)) return { body, sourceUrl, retrievalTransport: "direct", retrievalUrl: response.url };
+    if (response.ok) directError = "HTTP 200 anti-bot challenge";
+    else directError = `HTTP ${response.status}`;
   } catch (error) {
     directError = error instanceof Error ? error.message : String(error);
   }
@@ -171,7 +178,8 @@ function recompute(report) {
     polls: records.filter((r) => r.kind?.startsWith("poll")).length,
     quarantined: records.filter((r) => r.status === "quarantined-awaiting-review").length,
     alreadyTracked: records.filter((r) => r.status === "already-tracked").length,
-    extractionFailures: observations.filter((o) => o.status === "extract-failed").length,
+    extractionFailures: observations.filter((o) => ["extract-failed", "primary-source-access-failed"].includes(o.status)).length,
+    manualPrimaryReviews: observations.filter((o) => o.status === "manual-primary-review-required").length,
   };
 }
 
@@ -197,6 +205,7 @@ async function main() {
   const extracted = [];
   const errors = [];
   const transports = {};
+  const failureKinds = new Set();
   for (const url of [...urls].slice(0, 10)) {
     try {
       const page = await fetchPage(url);
@@ -207,9 +216,13 @@ async function main() {
         if (page.retrievalTransport !== "direct") record.retrievalTransport = page.retrievalTransport;
         extracted.push(record);
       } else {
+        failureKinds.add("manual-primary-review-required");
         errors.push(`${page.sourceUrl}: parse-miss ${JSON.stringify(diagnoseDemosPoll(canonical))}`);
       }
-    } catch (error) { errors.push(`${url}: ${error instanceof Error ? error.message : String(error)}`); }
+    } catch (error) {
+      failureKinds.add("primary-source-access-failed");
+      errors.push(`${url}: ${error instanceof Error ? error.message : String(error)}`);
+    }
   }
 
   const existingIds = new Set((report.records ?? []).map(identity));
@@ -226,7 +239,7 @@ async function main() {
 
   report.observations.push({
     sourceId: adapter.id,
-    status: extracted.length ? "ok" : "extract-failed",
+    status: extracted.length ? "ok" : (failureKinds.has("primary-source-access-failed") ? "primary-source-access-failed" : "manual-primary-review-required"),
     extracted: extracted.length,
     added,
     retrievalTransports: transports,
