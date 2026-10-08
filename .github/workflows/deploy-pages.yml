@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch exact pre-refresh audit baseline
+        # Keep checkout shallow; the audit needs this immutable tree, not its history.
+        run: git fetch --no-tags --depth=1 origin 8ddf08a1963973397e9d3b1869d658009282fd5f
       - uses: actions/setup-node@v4
         with:
           node-version: 22
