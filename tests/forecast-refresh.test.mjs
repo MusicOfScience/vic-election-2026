@@ -7,6 +7,7 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url));
 
 test("refresh audit reconciles exact single-wave addition and every district delta", () => {
   const report = JSON.parse(read("metadata/forecast-refresh-2026-10-08.json"));
+  assert.equal(report.baseCommit, "8ddf08a1963973397e9d3b1869d658009282fd5f");
   assert.equal(report.canonicalPolling.eligibleBefore, 12);
   assert.equal(report.canonicalPolling.eligibleAfter, 13);
   assert.equal(report.canonicalPolling.totalEventsAfter - report.canonicalPolling.totalEventsBefore, 1);

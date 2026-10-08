@@ -5,7 +5,7 @@ import { resolve } from "node:path";
 import assert from "node:assert/strict";
 
 const root = resolve(new URL("..", import.meta.url).pathname);
-const base = "8ddf08a"; // Merged PR #123; comparison is fixed to the pre-admission forecast.
+const base = "8ddf08a1963973397e9d3b1869d658009282fd5f"; // Merged PR #123; fixed pre-admission forecast.
 const old = (path) => execFileSync("git", ["show", `${base}:${path}`], { cwd: root, encoding: "utf8" });
 const current = (path) => readFileSync(resolve(root, path), "utf8");
 const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
