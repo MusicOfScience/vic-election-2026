@@ -123,6 +123,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "a343c35c0f9212584ccfa16d3ac9b72727b779ddd14a2560db515c40a551cb11",
+      "recordHash": "31dc86132a74e4bfe4e49796a5a1c61fed54039c3066b953c01a5d5c8b4c25e5",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e5531e5ab6fa83487bdc332daabd27aaa0fec53357f4c4da575eee06384e0f2b",
+      "recordHash": "affa1047e4f04eacac57edffb125f6a6085a19dc6d32f605c163d33978d214a1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "b41ee8c3b4c7c090485375e7b4f9d27e018d2e6019394ab914769f025f94dd04",
       "recordHash": "90c83443a48e59b08a120c80d707f3d900cb62a3f29739d8be8daaa13a16ff0f",
       "kind": "candidate",
@@ -173,6 +193,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "03913a9f6e3ac206cab3961c48ab1ae2a037160568856608b58ce5a2a75c0373",
+      "recordHash": "b1bce20e41494400c8f8ec7a9334819f134a29be6a84ebbaa096e3b07ba4b00c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "b672c07c94c123e9fa120f80b5b3151c70adfbf536d456ffb9c38e8ae1e399d8",
       "recordHash": "7fc63beda9c2680e769496dcc36e84569410e4c298eba7d3234a131b3c89d186",
       "kind": "candidate",
@@ -203,6 +233,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "44b1ac1bb9efb114a8f628eba41b88b84393f049921f218973ee69948ce0655e",
+      "recordHash": "66f93e2178e64917bf8124f6ce18f08426e2edb1af10171d171df277c6d0f00e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "081b189e4717b1493b65c25939ca7d984802023a75b5b9d8493e35fe1b43edf2",
       "recordHash": "d28b851a7a3f75eeb2244722304f68d85a2bc40b31c8479873e13391b696ee08",
       "kind": "candidate",
@@ -220,6 +260,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5f0ecf43e57815b6acd664f8addc4851e0c087896b0d957eb18abde823483f54",
+      "recordHash": "2d6fbb597821042a46fba3be3b0a7ed669ed70b9ad9ba69a66c87cbced4134f4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -243,6 +293,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "f4cd42f1e65c7596d4d69caad8dd8bd546d8be1ff823a8dd8bbd0faab9a18ae9",
+      "recordHash": "df9bd08bea931a0a183e6340aa8f24b9b917c934a8ab2e32876e094866b7ff69",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "0968bd79d8e2ebc5d41363b40bed4cbd29263f5f9268f8796671d75b752f86cb",
       "recordHash": "ce9ff163b0c1169bfcc6a7b6d304786b295cab8b23c61c163442207ae5e17a49",
       "kind": "candidate",
@@ -250,6 +310,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ee7fd83a5523e90246d523876f2e1ff71cd0424ef4cc42cb8f49014b2910ae73",
+      "recordHash": "84b21559bf1a20e9fd2b2953e7faa1dd4cdc1870de410e93e86359804cb8b4ab",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5807e5473497aeceaf10cf6be791836dad2ecb13e538f3136d82936e319b7c8d",
+      "recordHash": "efddafacff9c4c83d17d1ace6673d8f98d89a39bb26e6ebb999c826e18711c9e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -273,6 +353,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "c6c093476d1f23ae4c729f3e48134570d08ad2087f4529cdca127773d3dc3c3d",
+      "recordHash": "d8eb90ab93eee4a8992147dd08c9cfb28a5913d4d27e95d371e375ad09fb2ee3",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "af4b997fda1799463a4aa3698bba28f9735687813b2a7341403c4e555edf45b8",
+      "recordHash": "45c47b4d9ce3607857a022a7685db5b0aee9a952e288cd35b6495897e4905509",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "f9a2d3b376f20a19a707ca89da258447b7e609c44f252371521d3f7f91ec92c4",
       "recordHash": "4523d99c62c5ae7cf297a34eb7e948b0b155470ad1b1b7d8e7b6acd58f740188",
       "kind": "candidate",
@@ -283,6 +383,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "cf9672b9613d5a3fd3e35b050d415026a2db6e2cd33210ce68069368cfa2ef3d",
+      "recordHash": "72e066ab9edf770d076979c48dff50bfced13fd7ba96f496b94811f826882894",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "71378bbe1db7df22c0b39865692573b2e71dbe73edca30d2c367350ca4bda0ee",
       "recordHash": "e10a686d431fe7f258392abbfda1660648d90c117e4f5ae66ba3f6de2e8d34e4",
       "kind": "candidate",
@@ -290,6 +400,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "31eaea4587785d0a0f66f1dfe597193ee27c817ea69581f2200d4dfe99e504df",
+      "recordHash": "24b64b1e1fd9deaad5b8edda3d74feab951429c43df8ccf24d1b4b6cb5a9f219",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -343,6 +463,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "8f976acf438cb64750588582123cd2588fbdebde99799b3ce3144e317431b5cc",
+      "recordHash": "01604228133fbe42d0730a9bb922931a089e41b66139f45acdcb287d3380e4bd",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "8a62f6c70058411980e6f82afd7cf8fd8f8f8c3a4d2dd96a71bf2b367c7a1fae",
       "recordHash": "6f079affeb84e0dd85d0c8dbf8434ea2907f57ce23af733aff5dcf8d3c240533",
       "kind": "candidate",
@@ -363,6 +493,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "3d98881c955684c3af789a64415f2624bb35760cb76cff5d1d3f691b61372334",
+      "recordHash": "e817b53e1dd6fd9dfec23d19d5c527987d500b25019b4629f408e5ad2459f851",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "39dec1035e16e9a5d8362d0493dd2b467332e92c3dbade8f13ae5959913cc230",
       "recordHash": "a4e22894803f9ad83a2d3230f158919ad089ea000446f389ea0d10f8b21f5f80",
       "kind": "candidate",
@@ -370,6 +510,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9cce53bf26c25c94ffb27f5d87269cdd2af427637e7f5bf9dddf18ddf27e34d9",
+      "recordHash": "e52efc6ae37c7540aa7232b79abda1a81ded48f4f6206ca252a7054ede1a87af",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "38e267ab56c5701d93d8c4352fbfc1e53865ce565d8aa0986bbf84de12647ad1",
+      "recordHash": "6dff60853f18d28c74958e8a83374f3c29d73ced5bdf393b70e85bf65342d2a0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -393,6 +553,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "fe178b6b032cb79651e678c717219441915edcf952125c322d43857979989d64",
+      "recordHash": "0d3fd2da2afb2e91d3ba01c4f38afcc247af99ebccfed74ca183420103aa4c28",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "b23bc65555bead5ce9ab79c464af8af6b5d94adca388e78e9267f0eb7fe51d17",
       "recordHash": "28e88803a017fbe46881a53ad06624429fabc38bf4db6e836b7c2dd6b2e59b85",
       "kind": "candidate",
@@ -400,6 +570,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "68d828157913993e4fd71858437f23d61e3f9c728c2739609b485c359a7a5a49",
+      "recordHash": "6b431a5fc290bfbc65e4e6b8e703bf6e012ab18c93fd73ef1f01f0249dd5d530",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0a1cb319cf62df2b90de6c1a2d71a5d02fc7bce481232124505c8aae6c30610e",
+      "recordHash": "28a85d6f6b75b59575a2ea5194cb88b5ee058df56738c7202311a76bc56d899e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -423,6 +613,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "d8cc6edd78099b883d84ab59f71089656f2aca675b9b71b3901f8d6f1e4b464a",
+      "recordHash": "d516d84403d20cbd12186188a568fd96068a30cc9b7adfd5a3688610558b13b7",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "5e320fc357c933306724f149ecec737823cce98b58d9d97757e105eef6235eeb",
       "recordHash": "3635440019c30b493f2ecfef1b54806d1357157b8184b52e122edf1944938200",
       "kind": "candidate",
@@ -440,6 +640,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "4de802ccf10dc2ea86df3e5b531ffd45c921bd4d39e055bdb18a1681f69c0aef",
+      "recordHash": "e77927b07216f73b154d30180bb26d144dc99a8cfef39b756bf963d9ff442458",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -470,6 +680,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "c341a7729e140b6ba02ae586a8ac1c61c0fe6ff61ed8029a5305b4d34d20ed82",
+      "recordHash": "d602b602269975b6957094d09969268cfd9063f8735a634dddcae48849cc3ea1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "dd3650799f7daa8d04857d2f900eb5660ef8deae7db3c1fb1eab9edb69e786cd",
+      "recordHash": "86a878f5c16cd687b8931750d3ca7dc5f298ffb3f3aa3025f671c0bbd4f806ab",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -523,6 +753,36 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "75beb6de82d5e5184f80cac57211befb15d0cfcf305fa57d1f5e7515c878aad8",
+      "recordHash": "dd81f2b4bb10a04062db2c1ed9ddfd196277a85bf953057fd2e409003edf4352",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "93b32c25d266fdc187c30656a3931830c942bb91bf110a6f896c8011c04c188b",
+      "recordHash": "2ef85c5379b117021ced95a7aeb232aaae65641f867867fe664fcc14fa3baec4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a52ad7233b7546bb1769aa5300fe72730d005f5dbef492a0212d1532748b9ff9",
+      "recordHash": "680da0cae044ef20512821be66606506fa80de399cac125ab2c45beb08d8c2d1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "3daa789320897818e5a45f641bb12200915160868821402215efc064bab3548f",
       "recordHash": "162ee53c51cacdcd17e6334e4477f027d962d08312e0dd125b67a03ce6d3a055",
       "kind": "candidate",
@@ -563,6 +823,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "2c2b465fdcf3b69245cda995033392b7be8a92df971ae8204f4a0c1f8be88e76",
+      "recordHash": "86a64010ff76e39409c56b49a769ea8fc6ce6c5ce08f20ef016ca138c18f6c4e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "fb40c7bcf5a61ade8e604e9cc8b59e97015df83dbfdab78375f16fe436787e8a",
       "recordHash": "551ed3ad11592bccdf1c5e73d723d19e4bd669ba5d92bcb1c45a198edc682c34",
       "kind": "candidate",
@@ -580,6 +850,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9172eab42956cc90a673b8215458c372adc5858284f7327a05d9093bbcc17aa6",
+      "recordHash": "e075b656bcee40fab54c03aae02d103b5e2c0ed92a895343d28c015e0d0ad619",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -693,6 +973,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "390c0166ff9dd59ebbe503f42912fe2bce1fe44bff3a1ef7b23bd1e15ce95860",
+      "recordHash": "83724d7ee355f0a76400f193b69eb01c01b89ebbd8ac2a6ea272da9328d1cc7d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "1f3bddc11627a387133f5b5e690708b6e4362c5a0fbf89136aa432f8bf1674e2",
       "recordHash": "ee444d8d9363a681596f591ba069dafc41777020d2919b12c89a09b59ddd9b12",
       "kind": "candidate",
@@ -713,6 +1003,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "4b1ca1253ec93547e317fd834c3ca6ba515569ed9615fb6f1bdfacde3640d56b",
+      "recordHash": "ea8fca827ef1dde4699e231b998594d248a5f76ca27ef40e5c6a8758def8c61b",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "0621f760ec5af311d13267082716f6a5f73d82da76b670e66064ec614bfa0d46",
       "recordHash": "048f3ea3dbddf096547bf37be5bde079ce09ce240b01ae92fe8cbadfa9ce10e8",
       "kind": "candidate",
@@ -720,6 +1020,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "0bee2a0c531f27b440403278a4d5551bafc2977ae92750918a7bbb1c96482de7",
+      "recordHash": "019226eae6379c891ce62fa71916e6850d476b00ead27ede366c79d4c84f9d19",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "10c165cb979d73d1390ec3801469658c87493140e60b80af7ffd8a14b2313854",
+      "recordHash": "773e3bb97e5798c65718796e00e2ef174257cc22d0e6b1708db40b450e6f9dc4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -743,6 +1063,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "bd6c5cce59ff7949e1a313b394c37baa044aaa0226d1a04078ad965fd74f022c",
+      "recordHash": "bf8559e689bf25a0342f4056273e9a3c17c1f31d3527ebd5240ba5bd28723079",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "23f95bf5f94d9867f71fb841c2b2f9bb2f07b2481ceaab1b8f085ba7321ac1e5",
       "recordHash": "c22a10d8dc5ab9bd503830340bcbd1839a3ce73638dd4e67b6a9e1a4098546c8",
       "kind": "candidate",
@@ -760,6 +1090,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "92ce5f9996dabd11ab30dabfa88450ced889c9394d487c828e5d9f79a7c0792a",
+      "recordHash": "097a233f2b0f798dd28f85fcc3af2c7e9dee709d1066f249a6f85531c7532ec1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -783,6 +1123,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "aaa558d8f44c200ee88339a40883148e70ccf0044861ac5bebbd9723631114cd",
+      "recordHash": "4712cf1e783f142d9502bb99045dd44ead2dec6d8b0d883720f638a9e7852e00",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "64cebc849248ab873edc9724499b00b47bc014fd47da2b2c09dc34710bfadadc",
       "recordHash": "11039e15c8d9ba5ad329df06195220fec2fbc82929c036d74a9653c87bd9f550",
       "kind": "candidate",
@@ -800,6 +1150,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1f036f2287343c6176df1d77792c38003174f687479f29fc684cb86c336c8d9a",
+      "recordHash": "287209d21a5ce41d4488a830717f9f1ad2dd598cdda5e2a0926caba9663376a2",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "6696837cacccabc9eb43557fffb73d4cfa7b5ee5e2fe9a936ba6247ea8e73131",
+      "recordHash": "8c864e208d2639317d16c90b3d39da9e59b5c1e0509ce7845378547bd89d7c18",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -823,6 +1193,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "5e8878cfe911f0c102aa9c51f48da3a5554fac2af56a8e0a2c2fe53a506618e8",
+      "recordHash": "607ab06149cc94c5e1963d2506d50d53a55c9cce8d55b01d3257f528f846a342",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d1c37ff509951f3f3f609c7416ab72d38218fcd8d1c973367da734406b288b9d",
+      "recordHash": "b0871c4eeb032c58c4f801d2623c57bf5b71efb197f7c7d51425362c86ef0f8e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "e7098aec6d2aa5b67c5741733da186916ea536f7a2e62beb0885ab535ba10c1f",
       "recordHash": "a2d38bbed7d8c6037082fdea3410cdbbdb17153dfe0ca15d2198893930143f6d",
       "kind": "candidate",
@@ -830,6 +1220,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "07f5c45e4d3ee69c6f071033f42d98973fb0b72fdbbdfd01c63a63c8ee8e6629",
+      "recordHash": "c4e4242a2343a214786c8dbafe424484619e87268a8209419f19a6094e8968e4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -853,6 +1253,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "afbb98da1873cba8dcad60337aa9cfb911f26382dbfd1a0733a257455ceef073",
+      "recordHash": "fc842d2fef82687439ac554662beab8815d3ceee73c1246ed3cb9049939f0414",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "9abb7037761cd22cae709dde65250989101a9c87da38131206085f91f7353dc8",
       "recordHash": "e421d922358556f9bc5b66fb0f8d80bf5c47d0e0d7f6535444d4ec97e60a2ea3",
       "kind": "candidate",
@@ -873,6 +1283,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "581bb6fefa61144248ac999b0e0cef5933fce5b21ebca94a3b587ae3382eaa69",
+      "recordHash": "a4e022b0625284eb6618d50e4c4f76d9d51b4afd9231fc1ed3a7ae5b63b90d80",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "2e5cd98a4ad915216332cdd95115ec25cab8ddd0bacf81b4a79562730ccd3f47",
       "recordHash": "696e9b5403c23f4e2641f56e578810e00a0466e17fc2689742848d83500bcf0a",
       "kind": "candidate",
@@ -890,6 +1310,46 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "3c5a606dd23f0675d2c5e94421d44a8a2054f99de6ebfd1fbce7aba6b61ede5a",
+      "recordHash": "286e3db92c635856a4442661faaf1fb66cc0b02ca185ddc5161625faf0cefda8",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "701ec4b2bb7472d0eeb29ebcb1b42bc0cfd13baf2a2e83c3fe43ad27bad6b602",
+      "recordHash": "fe499879828f4d87a3ee269e49ae24641fbcc36d22cb7cc7b432755590d25e57",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "35949d544c25b7063ab56adadf2a76c1882067bcef05a13b5cc9f614ed9f0646",
+      "recordHash": "0999d98cafff0dc66ff016295e79079ae5849d1789b938fe1c7db76b644dd0a6",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "6d3f0ed8277610e82cfd69552bb8663eaf5b954cb79975f9c31c85f8d1404191",
+      "recordHash": "7daf1b38900a7163c13b2fe323bbc3280a3d700132205bbadaa92a3ac0775624",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -933,6 +1393,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "5123d91917bbcdb367c112a9c2b95d8aff9a38365805f16f06f8dc56d81816cf",
+      "recordHash": "ec4391e0ebb8db5c271957fbff4a4f4be31413b64bacc8babf7e13640a46de4e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "de77ac7cd8f4ddc8908f9dbd01e3a4b54e9a769f0e7bdadeb835ca2ef4ac2ab2",
+      "recordHash": "82ec45b079a20ebfc3a72b934cfe208882d28cfe0b14f66f41b48d52b480899d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "cab9fda95a3a6db38ad87b912f5deba7ae07c95f2db5294a55e89deff4596424",
       "recordHash": "a5862423e6c29e68a319e9885411075164ab82958630b03172d6547e6bdc1269",
       "kind": "candidate",
@@ -940,6 +1420,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "4c9ec12b4b591673cc7c64947af597b6d7d38f6b218f27386151fc6eddfeb922",
+      "recordHash": "66bf58fdac3ca450116a72921ff49d8d7a617363f384d657576512fc3ec755f3",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -963,6 +1453,36 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "92a63229ae30a95f16a3acf97257b8c497729dc11626f6a7b2478945e36f71d0",
+      "recordHash": "ab2a1c1fdbcf8682d093bc4a8e565ef882481daf47dd445d4398070e7f46f489",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "c8fbee575f83ef4b5707cd243b4b46bd10d9a488890b7670644f231486730cdc",
+      "recordHash": "702ca0244c3a2c9fa320edbb99c2402cc62f55602b3be570d489e05580da6d4c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d1e3fd87afb095a3afec50296a67378100942d15d026c7273e5bbbd94cf92af3",
+      "recordHash": "57596dfb3ef0f03a54feac88fae62de63dff2f5a6ac0410191086027f283101f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "3a9900c843f202e0c456084e4812a6f99f44a9e5c0d598720901869791c8b90d",
       "recordHash": "b0ae8832c92929befacc6374f129af3975ea2154b16fae6f9e5cc0186c89223f",
       "kind": "candidate",
@@ -970,6 +1490,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:19:05Z",
       "note": "The official Family First Victorian election page and candidate profile explicitly identify Lee Ann Elms as its candidate for Lowan.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cbcfa066402791c46632faaef6ab2ab4a31a4192281a370c957e33fd916fc577",
+      "recordHash": "05233603d1246f1b48c9773dbd2adfa7f6b3983b765ae86606b70b8bebe0dd23",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1003,6 +1533,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "ac6cddce0e14b85323d686b6203ec31d9b168fc8133b7dd2ebe83aafacd5e966",
+      "recordHash": "e4a86d427aa1cd87e2afea87adb63bf98a012239e43604341d11055311dce342",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "cfaec146c60e6af5311d2f7ba69ef00e62b179f86bd5a1f95222fd0a1a0c9f23",
       "recordHash": "773c9e5107a60542e7d7f8c9a3c30acdcfb1e756874b6ecbfa5b332d175ddb37",
       "kind": "candidate",
@@ -1023,6 +1563,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "f95b505d562cc090715a7f26919e754c53780d454b009b65c1b0bf5c293836d5",
+      "recordHash": "115a675e359b0cfc9c0929186920c772ff6f0d0c2df1dc0c06282e7a54304d26",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "0fc0720aef3cd6eaf867989929a9bb9499150cb850d748f6d9459d38058e8a8e",
       "recordHash": "0fcd8d4458ab794df35cb843b10afedf5d5e647e6bae3bcac8b2574d0ab4296b",
       "kind": "candidate",
@@ -1030,6 +1580,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "24e2e7bfcc3a17df50f8a090ca11993c8d33b31b0751c2fc17b6f67c3616fb23",
+      "recordHash": "09af9fa09d45acd46dd97385595f8adb9a8e8464f1adb33cd1be3dbbd3766ef0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5299d1e9c58ca0909609c6c4da7e83635cb56464e924c513e87e2d8dab22b625",
+      "recordHash": "21ec1ecac77473ce3337414187ecfe9bbe4dc5eff87d8fcc66761d635eac13dc",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1083,6 +1653,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "2fc0ced3e342e15be928ff24bada5190d44274b34143b05fc9c65ff75e2ce1c8",
+      "recordHash": "a5930186ea5f505090264c77b9002ad17e957043eb26ec0b1c3c60090fc230c7",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "c768bab3a3c063b7786bf47b2ac5de5235051815d43f87e5bf7e1ec9a9fdb6ff",
+      "recordHash": "863a6e1625da2554cc579cd58ef0e7aaa3b09565911e72cca38a3eedc106105d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "40ababb2e738bff9c28603cda59f9943018117831e9cf99782dd9d3a5e311246",
       "recordHash": "847f8f53018c8a3571c12b1cd0984a29cae37c20067d5e263e18d1ed86dea6fc",
       "kind": "candidate",
@@ -1100,6 +1690,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "bdd6a8445eb62f7ac637ecbd310c1ad22d7ca140f1ff2fb74dd0ed03b11d1f84",
+      "recordHash": "3092896e717e1ea682a66589c76723a4538a0796f8ccd5907bc79b2dd8ee839f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1123,6 +1723,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "b8871d9d68dd15db1c11e2b4e462b2e337f822fb835fa7ff2ff78e264c023367",
+      "recordHash": "04b8c8097d8e9531c866d1811adad6062479b623805c905052789c0abf6ebabf",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "743df27b828e36010052f8d016231f846acafe6771b5c2ae5974135a04a0f8d0",
       "recordHash": "f7a5b6ef0ad6a391bbe919fd45172fe788438665b19b0e7e18316f2605f740b0",
       "kind": "candidate",
@@ -1143,12 +1753,62 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "b5ab20d3218c28a61f07ca2a730f0405698b1d3ded89d960fec35dfa86d8d689",
+      "recordHash": "c951a226f3a1b70cc72bc00b29105cc7446d4a4fc580fa345df8ac2f95dd2898",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9810050c40c23487b6145049379fc169851663529ecb5b314c78ef93b154f480",
+      "recordHash": "543aea30ae3eab2df963e9ff8ddfe9c55914497b09dbf7d4399d4d64a2e1e4b1",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The relevant municipal government lists Chris Crewther among candidates publicly announced, endorsed or otherwise confirmed for the November 2026 election; this supports announced status only.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "8f4d5ef1f8fc1ad193edff2d57a4c57b2cf4cff548c63b574dfff115c12aba79",
+      "recordHash": "8dc5d4156ceb579f13be8ec1365c3a185d6440b17988c39bac4a61b1cc48bff8",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The relevant municipal government lists Chris Crewther among candidates publicly announced, endorsed or otherwise confirmed for the November 2026 election; this supports announced status only.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a5c9bbda4a23b7179f0b6887fa714aa5641ae208de8ec954985677e8ec9ccf8b",
+      "recordHash": "36b3425c21c01edb27b314eb8d93825caf53b526843ff4f344e140e6984d5169",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The relevant municipal government lists Chris Crewther among candidates publicly announced, endorsed or otherwise confirmed for the November 2026 election; this supports announced status only.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "29ae0f24218ffb5ba212c2ae7d20d43343bd9489f422b543040ffec6433c3e6a",
       "recordHash": "f860963990db3dffa6f96f51d91eb81fded64a86e0ae8b9cf6dbf5aa568ff4b6",
       "kind": "candidate",
       "decision": "approve",
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:19:05Z",
+      "note": "The relevant municipal government lists Chris Crewther among candidates publicly announced, endorsed or otherwise confirmed for the November 2026 election; this supports announced status only.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "9e639ee17635617add2d96169bf7968b54e4a52cde84ad2e3230a31a9df6fc18",
+      "recordHash": "5add3bd2810798efd5fd0d529f32f5b41d2b98fc04cc16b4f578ceea14cce72e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
       "note": "The relevant municipal government lists Chris Crewther among candidates publicly announced, endorsed or otherwise confirmed for the November 2026 election; this supports announced status only.",
       "modelInputsChanged": false
     },
@@ -1173,6 +1833,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "1b4632c717246af871e26fbc9f0ed0ef2018394dc232438e04b92453dfd89ff3",
+      "recordHash": "4f11b4103b9b4035ac2b114b8a6b716f9b43df71647edeca7e94d1e5b8d66d67",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "a887ae2dbac0fb70d3b7612454704999fbbe5b70921dfad39990fa09f02d43b2",
       "recordHash": "60c95241ada93078fcb213ed53597875509cd74723c096aa6c999f57145df948",
       "kind": "candidate",
@@ -1193,6 +1863,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "ce622f755d95e339948ab8482a8a7fd388bbf241ffafd26caae13d8ab2fde4cb",
+      "recordHash": "4af7ddb40a11c8a033213ca2f22b4dd821d7962292380780efdb59d35573e151",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "8cbd787700ff458bf8fdefe70ddb001d58623f585be0cedf7b5be54c68066c6a",
       "recordHash": "8adeff872c392e636d62ca43b7dacc9903789832d112af8d4fbdd09f74297dba",
       "kind": "candidate",
@@ -1200,6 +1880,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "e058c171ebe5dc6fec9659f629397d69feecdd32e8f502eae3e547355a51cba9",
+      "recordHash": "86ed0ed97db37533157a0af84a7956d3290bddeadb8150965e9d86eb8c6a9b05",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
       "modelInputsChanged": false
     },
     {
@@ -1263,6 +1953,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "3d843837f1f8fd6367c6cb1697adec8b49bfe5e7adc0e4e9a0503e6f9ffedaa9",
+      "recordHash": "d8fb0c1300cfac286864285b2443b38d1e18c26b4ab8145d93f3d12c7f89b19b",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "1158e79621412ebc081848229c7939153f31f2be7bb29ac8be23441f39ea4011",
+      "recordHash": "96d72ccd2a9d3108ba9e927d86145dc6bf456465cfd840d66fcf5d30c1cb1962",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "c5633d78cf77fc4090624a8e85fd7a0c9cd5c641729873006171a6ed3914b776",
       "recordHash": "04992e92f377204e1d401f494f97cb1a11cbf5e3fdbbc7bdc04295a4ae9ae8f7",
       "kind": "candidate",
@@ -1323,6 +2033,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "8f4489c48a104e693b12fc71b5ea351074acbd85df08fe97d63107582cee1b67",
+      "recordHash": "823df291fc58b1a8435b5dfb909a18d20375b242aa052c9a5a1a034922c86024",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "129e563aae40b6a8097e59c4f65ce7b4a9061f8e8029f65a2ca55fff0025d5b7",
       "recordHash": "dc28b937fc01858d56802eb83113bc9057e38f72c7988991af83be3cd66fd5b9",
       "kind": "candidate",
@@ -1333,6 +2053,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "7a91d9dd7075d0d0b0d800c2ec53cc25cc8d75277c59a690334ebd803bbaff40",
+      "recordHash": "c252f685236b82131ffb891d0bfea9cb04219fcbd29cad3cb2e38dc59b1f52cc",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "b4a899a21d77c00a1208f068d004a133187afc58a1c0acfef3ce551e7637a4ee",
       "recordHash": "8be085dfb41554c78df3c3353281858d7a588446bfaebb3e6b968b2da901f928",
       "kind": "candidate",
@@ -1340,6 +2070,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "63957e94b848b8092dccd8bffdae50a8c52f52e0c19b9fd18c5befc8e21e018c",
+      "recordHash": "691d4e4c7fca52cda73a7a2243c211c5f7caa8723e5dd56e2ce74966ab03883d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1360,6 +2100,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "3db1fd015dc2f88d28f12cb90f55a977b0927e85adb6561c180ad31fc615af48",
+      "recordHash": "a7c9185b20662d0aa18e0a6483e6e6c894de826880ce68b80f857fa7724c2d15",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1403,6 +2153,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "63dd26161de9ee3b9eaad72d60bf107959e680b4950b0577066915084b01b5f5",
+      "recordHash": "5cc00a5b5acfac16319da7105e691030cee2dd590dcbee44d44f823deeccc28c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "8bc0e56842a560e4e882471e68452da4ca38c19f62a3ba40360bf4ebd9c4cc6b",
       "recordHash": "fe67feeca9c0971c8d1d388a27f59c0185e1d2b6567ae5eb58240c2fb03b37de",
       "kind": "candidate",
@@ -1430,6 +2190,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "056589db3a43b2acddbfc4e9a311b206e4796ba7baff30ea9d35ec123eca26da",
+      "recordHash": "49f4807adf539453a9eb915dac1e30fe693c86cc0f31019c8f282974bf48b08b",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1463,6 +2233,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "f92d55ccce4b507aae6843d18265ea2d0fb06d01c6a254fd8d9c49c21527a0e4",
+      "recordHash": "9016e6cb6601fc9ee0ebf02cfec75823dfccf2947873fa3486929be6e7f5f58e",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "b14646cb6c8b1ed5708b9495ce2567e56dd49d678341fbb96529d2717d135594",
       "recordHash": "c36087ccba5cda53895143c9b65e4265b01073083f5a519c1fd562557962a958",
       "kind": "candidate",
@@ -1470,6 +2250,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d3fc90bfee4e53096bdbe6a4fb001b6b2feaf7582f5fcb18fc6a6888d9b73375",
+      "recordHash": "bbaf370c68da7daab441c98064d38ad88212c6fde2ba96cfcf4b2b7fede9f459",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1523,6 +2313,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "834fbca566e42abcb963c31461a549201ae0cb55f71035fb3da53aeae603a213",
+      "recordHash": "948891877d0d011291912a81468d1d07b7fde58d4bf917d17ae01d5f204811ae",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "bc8fa239ab2e51e287e95c69f33fb62a8d5d83d22b1e7e5c82ef7a5e1b890590",
       "recordHash": "45b0fe074d9c43d47cb991a7d2362a7b2f0c3b9085da931ddf9308cdae259481",
       "kind": "candidate",
@@ -1530,6 +2330,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "11ce18291e034ebf866a2ee57aa0cf420ad979ab86d30989ba6e77038738e7e6",
+      "recordHash": "7e35ef354252e5e291a4b0a56307e4a94b414dfa468e604c03eafc90ec623db0",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "94d60e8de0bab9b9f4a1a9fd11b55a006158922ece3c5275dac8340d2935ebf8",
+      "recordHash": "48e54c1f88407863e94d427362624248e61ebadac685373d19232270329ba625",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1553,6 +2373,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "1fc35341da1ea7ab193f5af30bed11258c2b06b938a22344cb505bb65db135ab",
+      "recordHash": "4e9ecd39ab47cd310f48a13d5323cee7cc441bf40db60d4105ed003cc8ff711c",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "bf8d55f43c52567da178f12526e06144c678c60a6a6772ceccdea33f04fcadc5",
       "recordHash": "861309a3040c27ac34e92f2d4b5d1c4eabe471c90263b8903eee269c823f85db",
       "kind": "candidate",
@@ -1573,6 +2403,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "190fadbeeffec9e1323de916a12ea841c25bfc64f7990f2d0f91b127cb4ce575",
+      "recordHash": "527a5c90938b528134c9dc0991d46c4dd9658409b3c5acbf13dbb9a71ff4d4b3",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "a33ec5c9408e447cdfe95b3395e84985adfec906a568936b64881352a69e31f2",
       "recordHash": "fa0414459b1f64b70eae0ee0c2a2d0030f6497dd3472dddc386135ad532e35c0",
       "kind": "candidate",
@@ -1583,6 +2423,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "8eaef6c06c7615acbbcf95c768c56c3719ab1174d2c69be810b0760a2c27b101",
+      "recordHash": "454ee7ac42f82937d9c0f9961930ccc3b6d03e283310ffdb2d1468412329e341",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "1fb4acdbdd5302f8c78a0cb3cf24bd6f29e44567045f94c9b4c1769daadd12a5",
       "recordHash": "266e7766da8914eefd7b9334279611e5cfad3a7c2efea644714b2a8345f3d971",
       "kind": "candidate",
@@ -1590,6 +2440,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "ae864a5b6abd41564c6da2c4e9f65faaab8803540c8827087d6ad0e88006d770",
+      "recordHash": "372f1230ae083989905615318132ba50efd23c6a2c622445d0b98a32b2802558",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "71cf0dca19f603c709c4e177e8f40a6694a85a557d4bc9d7fdc2d597cecb32e3",
+      "recordHash": "66ae0ec5f590e28849fd3fbf221044c384737a677230496094be84a7aeb838e4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1610,6 +2480,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "687f442192647938e80c2d1403319bc63916a1493f567b8d572abbc588203fbd",
+      "recordHash": "c2693d1d157e71b86a6a88eec3643f055871b50333c83b60389e64274c35793b",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1653,6 +2533,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "a717ccf2ce5ff31d0207cd3d6d6aac103f69966004af5930af3470aa4fe422c8",
+      "recordHash": "281e13c727fb92dfa797ea7f99150d3d971c4c01765e7f75b606585bd1721663",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "562a793256ecd6bd05956af6c5bb7ef5d9034075228900ac0f9edc84aa6090ce",
       "recordHash": "d411756d72367e4fe9aac19b6b7e1b9fb4a95727c3f28b8bc402544949936325",
       "kind": "candidate",
@@ -1670,6 +2560,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "72e3e8d10b6e1e53ca06e846fbc8c08924fbee7295d4a3103861f4f11a51c2ee",
+      "recordHash": "49005a7f08627a439b015e1d873f19e2ee5a270f064abfe604a5b858b9fcba30",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1693,6 +2593,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "87df5d2aef95fd174c54617a92666165fdda4d9e1cd7310ecbfa2c1da493357a",
+      "recordHash": "c7386ce98c8e857116dc232490b0e916c472a2ac578f36c4d9edf2b629041a9a",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "6e88021be661cf2319d6bc59baf363dee3c012fdc6f347cc7044ec9b89d474a4",
       "recordHash": "5365d39eba77c64300b0507546d8875e75daa4c87e195dd149566e95a3220db6",
       "kind": "candidate",
@@ -1710,6 +2620,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "d66a679e6984f85b352390ee9112d774a0ae778c1a0057f3134c968ed27cff44",
+      "recordHash": "c23a01c1a2945d15b33dc09ebb2e4e14a40f70ee85b5031b12b2f4a6ae1bb0f5",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "7a4c389ceebc1b2cf851c92f452f7de241674d9143cc6c5829884ab9bcfff903",
+      "recordHash": "69280a0e8487cc26ae793331b2ad660810bfb25851a28b709d91899686256519",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Nationals Victoria team page explicitly labels endorsed candidates and electorates, without treating sitting members as new candidates.",
       "modelInputsChanged": false
     },
     {
@@ -1743,6 +2673,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "18129660e0f8d9d470a28a9bdccef3e72c66a07dba7cf67698a850d55d562ada",
+      "recordHash": "d6cfbd5c1348a73336de0ca5123ef914235a417b98e4e4a4b11a29dee59f22cf",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "ae48c0001f751315ba8b5219d2dde795fe938e70b3e06f2f0a333b2a91e3be32",
       "recordHash": "335e7c59fa64c522b01638fcba26acab5a7d47c7adf024e7aa50a6c5932d322c",
       "kind": "candidate",
@@ -1773,6 +2713,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "db922ede178f27cb0baba431541ed597682133676ee56c77a1143c5582ffa37f",
+      "recordHash": "34e2fed6b851cd065204a60971c95fb0b8c6a5851e39b302f68eff430901d793",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "75b3cfa540856b44c8c0c67dc827fea51be03e0744bfaf2c7ec1b0c4ec114ef4",
+      "recordHash": "ec2a85d1b81761b69f34311e874cfc4d0a54b1e97a17662bf938504a19541de5",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "a9a1704ef6e4c930e18e0ac8a7f05be5e37ebe60637bb368c5ea81f3386488a0",
       "recordHash": "f61b519f2e8acc1e7f726f0256c4b123abc060caa922c262788d95f4ad16d443",
       "kind": "candidate",
@@ -1790,6 +2750,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Victorian Labor's official paginated roster separates candidates from the existing state team and links each named candidate to an electorate profile.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cd5be4fa44c7018a59ce8bfc3b060df131680974d4399af49320afe356b4a17a",
+      "recordHash": "6e0d638f27a0d512032a2d593c053ba1a06456a02172dab1e9e0e766041610e2",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1813,6 +2783,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "9ef496709b5c661b828b3479632c3e86ba71400eca36a3576fa9e4db7843cb3a",
+      "recordHash": "2388fb6af0f65a9955335c2fd9e35e315de40a422a00f649c61ca43b1385976d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "f1ec6bd84e72bfc7042586fdda832caa0b88cd4c28ddb7956461e2f008e3ca51",
+      "recordHash": "51019625b822e55703f07182916f1a3e7deefc593308b2037f0d12ba47fb76b9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "62ef6d9989a78bc8963349544b0f75a39a96190947d7ead81a69810567d71805",
       "recordHash": "1bf276eb70db922033aa12bd0d9b6a4424efcd2ef6a6185e9b548dcbfb51f7c0",
       "kind": "candidate",
@@ -1820,6 +2810,26 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "The official Victorian Greens candidate directory supplies named electorate and Council candidates with direct profile links.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "b0000d7fecef3c5ce6deaa12fa4ac31afe14abf4b7a816b31341b1e761bed1f9",
+      "recordHash": "e4414bc7398f726cf545a4f9bb0c100f7a8767fd121572f6ecc945de32402568",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "81a977d0498e200e79a0be09e8d22cfb25eda1a2195459eb1f289baa57f2b8de",
+      "recordHash": "2021405386143f6e42dc0458b21deec09a68d06c7753c515a4acb9dcd9a9cfc4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1873,6 +2883,16 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "21b839db7ac203c747c059fdf52a3210e7ed8ac902001b1912fd5e8cfbda2f9a",
+      "recordHash": "d25a10c4abf05a43fe49494d04249046663fe7786cd7559c20673757bce4f3c5",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "5410972828a9d2f8d970743084646779c2438d0e7a9a99b6bad10c2bd747d770",
       "recordHash": "b5d0409d7ac7f6ce928414947a3e6deebe58ec7ee2b740d707816636b86e95f1",
       "kind": "candidate",
@@ -1883,6 +2903,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "030e7cd98c8695eec4513d40666e3ecd60660bd75cc1e195ce7204ed4c2ac106",
+      "recordHash": "b3c53c694ac4042580adbbd08fd06816cb5d1250decb89e8f1993919296c7593",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "923c76a345a66de6ea83f7afae26900ff1f021342550627ba9a0e7b488bc4d5d",
+      "recordHash": "d57194ef37bc40c90627abad8415b9070cf12c56576c458107dae0e580c8c6e4",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "e5d3c027f490d86db01c997fecab460d5ac108af4e866a50f24ccefee10d3108",
       "recordHash": "61f9682a18d038f82e0988647e72efa638401585053f6fa43215407f5fd15b6b",
       "kind": "candidate",
@@ -1890,6 +2930,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:19:05Z",
       "note": "The official Victorian Socialists candidate directory and profiles explicitly identify candidates for the four targeted coverage-gap districts.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "a0feb99e59e80be0627f8de8381d923b658e0ef52ad205cde98e5a1ecab0f0f9",
+      "recordHash": "f92d4649995e72fa554fa685a8c2e2b28af3e8642cf1136ee385c9e5087d7c7d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -1943,6 +2993,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "7bf5f382069893cd1296214474ba4530b7ee001d855459011d41ea1805e2746f",
+      "recordHash": "28f1519dd9af11e77d792cb829ac1ffcfba061e44e90b3e030a922695d1abcd9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "cca2952f345a09cc2885e2ab8a10fdd7e2dfc29998d79709e818c9662ee04bcb",
+      "recordHash": "e3014f3ccece391a532217291d1f281037dd7697f8af719ff9918559e841a21d",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "e9458644848d15edc700c2622a168b24474e121fbc9c23b515d824690042c798",
       "recordHash": "2d6f2218574e34a63300804dc3cd9a95df080b053193e21574ada0f0e7c95aea",
       "kind": "candidate",
@@ -1973,6 +3043,26 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "995134778839e03f9d5613445395f22d0ef965c48e7d6c40bd53e8ea1e65f0d3",
+      "recordHash": "6299968dbec236c088f1e4f73b9dde0b9f6c1a74463adbe2e324884d35ba01e9",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "22a38413cfd63428970d141db1ffed679b4800b3ba8562e8a9e92c40bbb27acd",
+      "recordHash": "d509d37f2cb8e70440fbd9f6cbd9af77163739cf9fd0ba9eeae227de8ad65b59",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "54d7bb018133375e819132a569e0899f1e4aeaee5dbe46133ddf117f663c9b20",
       "recordHash": "e150862cfd81d693235919ad2a8469e7fd3d2539de6bc4dca52cb363951377dc",
       "kind": "candidate",
@@ -1990,6 +3080,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "408e564b23432ee69ff302b3f08b3e0d3cda45e8834ae88d7d7f9e4d08301edc",
+      "recordHash": "81b9c06548e681a3d6abf5561d26b46ac0d1ac97d403597c6b8e89bf58bb6b6f",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {
@@ -2020,6 +3120,16 @@
       "reviewer": "project-owner",
       "reviewedAt": "2026-08-31T12:00:00Z",
       "note": "Liberal Victoria's public structured roster explicitly marks candidate records and supplies electorate and profile fields.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "5287304e9d53599fc53988e602a38101737aa19082f5f2458c4b760909a310ea",
+      "recordHash": "1e2d149623d490b861f6237529f4ef03805e5ce6e5cab941fcbdbc374346e898",
+      "kind": "candidate",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T10:00:00Z",
+      "note": "The official Victorian One Nation candidate page publishes named candidates and their contests; Council region aliases are normalised separately.",
       "modelInputsChanged": false
     },
     {

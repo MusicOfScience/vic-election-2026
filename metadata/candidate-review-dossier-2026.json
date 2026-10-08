@@ -1,25 +1,39 @@
 {
   "schemaVersion": 1,
-  "generatedFromEvidenceAsOf": "2026-08-31T12:19:05Z",
+  "generatedFromEvidenceAsOf": "2026-10-08T10:00:00Z",
   "status": "approved-as-candidate-evidence",
   "policy": "Evidence acceptance is a separate human decision from candidate-model use and from official VEC nomination status.",
   "decision": {
-    "approvedAt": "2026-08-31T12:19:05Z",
+    "approvedAt": "2026-10-08T10:00:00Z",
     "reviewerRole": "project-owner",
-    "acceptedRecords": 194,
+    "acceptedRecords": 305,
+    "reviewedRecords": 114,
+    "recordDecisionCounts": {
+      "accept": 111,
+      "hold": 1,
+      "reject": 0,
+      "reconcile": 2
+    },
     "acceptedStatuses": {
-      "announced": 1,
-      "endorsed": 193
+      "announced": 5,
+      "endorsed": 300
     },
     "forecastUse": "excluded",
     "officialNomination": false
   },
   "summary": {
-    "stagedRecords": 194,
+    "stagedRecords": 305,
     "sourceFamilies": 8,
     "recommendEvidenceAcceptance": 8,
-    "recordsRecommendedForAcceptance": 194,
-    "acceptedRecords": 194,
+    "recordsRecommendedForAcceptance": 305,
+    "acceptedRecords": 305,
+    "reviewedRecords": 114,
+    "recordDecisionCounts": {
+      "accept": 111,
+      "hold": 1,
+      "reject": 0,
+      "reconcile": 2
+    },
     "acceptedAssemblyContests": 88,
     "assemblyContests": 88,
     "assemblyDistrictsTotal": 88,
@@ -45,8 +59,8 @@
       "sourceUrls": [
         "https://greens.org.au/vic/candidates"
       ],
-      "records": 78,
-      "assemblyContests": 74,
+      "records": 86,
+      "assemblyContests": 82,
       "councilRegions": 4,
       "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
@@ -85,8 +99,8 @@
       "sourceUrls": [
         "https://vic.liberal.org.au/api/public/teams/?category=&totalPerPage=0&search="
       ],
-      "records": 51,
-      "assemblyContests": 41,
+      "records": 63,
+      "assemblyContests": 52,
       "councilRegions": 8,
       "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
@@ -105,7 +119,7 @@
       "sourceUrls": [
         "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/The-candidates"
       ],
-      "records": 1,
+      "records": 5,
       "assemblyContests": 1,
       "councilRegions": 0,
       "recommendedStatus": "announced",
@@ -125,8 +139,8 @@
       "sourceUrls": [
         "https://vic.onenation.org.au/candidates"
       ],
-      "records": 23,
-      "assemblyContests": 14,
+      "records": 103,
+      "assemblyContests": 82,
       "councilRegions": 8,
       "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
@@ -145,8 +159,8 @@
       "sourceUrls": [
         "https://vic.nationals.org.au/our-team/"
       ],
-      "records": 5,
-      "assemblyContests": 5,
+      "records": 6,
+      "assemblyContests": 6,
       "councilRegions": 0,
       "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",
@@ -165,8 +179,8 @@
       "sourceUrls": [
         "https://www.viclabor.org.au/our-team"
       ],
-      "records": 31,
-      "assemblyContests": 31,
+      "records": 37,
+      "assemblyContests": 37,
       "councilRegions": 0,
       "recommendedStatus": "endorsed",
       "evidenceRecommendation": "accept-as-endorsed-evidence",

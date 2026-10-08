@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "assessedAsOf": "2026-10-08",
-  "baseHead": "aaad26fca59a55fea2951e38f92c0fed3dfbdca7",
-  "status": "owner-decisions-recorded-forecast-refreshed",
+  "baseHead": "132cb37",
+  "status": "owner-decisions-recorded-forecast-unchanged",
   "policy": "Existing evidence acceptance and explicit model-eligibility rules retained. Recommendations do not create owner approval. No model input, forecast, historical score or production authorisation changed.",
   "newestModelEligiblePolling": {
     "pollId": "roy_morgan_2026-08",
@@ -189,8 +189,8 @@
     "coverageLimitation": "Best-effort source scan, not proof of universal absence. Primary DemosAU/Resolve methodology unresolved. National polls and state breakdowns of federal intention excluded from state-election inputs."
   },
   "releaseGates": {
-    "before": "experimental-blocked; 4/9",
-    "after": "experimental-blocked; 4/9",
+    "before": "experimental-blocked; 6/9",
+    "after": "experimental-blocked; 6/9",
     "unchangedBlockers": [
       "criticalSourceFreshness",
       "modelInputFreshness",
@@ -202,7 +202,7 @@
     "sourceEffectiveDateAdvanced": false,
     "modelEligibleInputsChanged": false,
     "forecastRefreshed": false,
-    "forecastSha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab"
+    "forecastSha256": "a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2"
   },
   "nextAction": "Review the Freshwater admission and deterministic refresh PR.",
   "validation": {
@@ -234,6 +234,128 @@
         "probabilityCalibration",
         "productionAuthorisation"
       ]
+    }
+  },
+  "ownerAdjudication": {
+    "reviewedAt": "2026-10-08T10:00:00Z",
+    "sourcePacket": "PR #129 merged at 132cb37; immutable discovery/quarantine artefacts retained",
+    "packetArtefacts": [
+      {
+        "path": "metadata/current-evidence/2026-10-08/operational-live-source-report-2026-10-08.json",
+        "sha256": "dfe08f05564156a2e899ae0a41de089ae71ea5e1446a09e4a17e7a878acac651"
+      },
+      {
+        "path": "metadata/current-evidence/2026-10-08/operational-source-discovery-quarantine-2026-10-08.json",
+        "sha256": "c34971216382c3d8946c5962790de43ae0a4b0d88675b75e5992cda6fc4a3749"
+      },
+      {
+        "path": "metadata/current-evidence/2026-10-08/operational-monitoring-action-report-2026-10-08.json",
+        "sha256": "c6a127cde587c5597235f55f4b389fe1e6890fe35e9aef24072c3013f8c4eefd"
+      },
+      {
+        "path": "metadata/current-evidence/2026-10-08/operational-review-rehearsal-2026-10-08.json",
+        "sha256": "e714ad9066519cd1688d878452518f705afdd5fe8ee637062a50071585ce25f4"
+      }
+    ],
+    "candidateReview": {
+      "recordsReviewed": 114,
+      "canonicalNewAccepted": 111,
+      "newAcceptedAsEndorsed": 107,
+      "newAcceptedAsAnnounced": 4,
+      "held": 1,
+      "rejectedInvalid": 0,
+      "duplicateReconciled": 2,
+      "reconciledExistingByStatus": {
+        "endorsed": 1,
+        "announced": 1
+      },
+      "previousCanonicalAccepted": 194,
+      "resultingCanonicalAccepted": 305,
+      "resultingCanonicalTotals": {
+        "endorsed": 300,
+        "announced": 5
+      },
+      "forecastUse": "excluded",
+      "officialNomination": false,
+      "sourceFamilyCounts": {
+        "Australian Greens Victoria|accept|endorsed": 8,
+        "Australian Greens Victoria|hold|endorsed": 1,
+        "Mornington Peninsula Shire|accept|announced": 4,
+        "One Nation Victoria|accept|endorsed": 80,
+        "The Nationals Victoria|accept|endorsed": 1,
+        "Victorian Labor|accept|endorsed": 6,
+        "Liberal Victoria|accept|endorsed": 12,
+        "Victorian Socialists|reconcile|endorsed": 1,
+        "Mornington Peninsula Shire|reconcile|announced": 1
+      },
+      "heldRecord": "Katie Clements / Mildura & Councillor for Rural City of Mildura",
+      "duplicateRecords": [
+        "John Stanley / Warrandyte",
+        "Chris Crewther / Mornington"
+      ]
+    },
+    "royMorganUpperHouse": {
+      "decision": "ACCEPT",
+      "classification": "poll-derived / projection evidence",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "forecastUse": "excluded",
+      "independenceAssessment": "dependent",
+      "upstreamEvidence": [
+        "roy_morgan_2026-08"
+      ],
+      "fieldwork": [
+        "2026-08-05",
+        "2026-08-07"
+      ],
+      "sampleSize": 2084,
+      "seatProjection": {
+        "coalition": 11,
+        "oneNation": 10,
+        "alp": 9
+      },
+      "independentlyValidated": false
+    },
+    "vecCarriers": [
+      {
+        "id": "vec-2026-election",
+        "observedFingerprint": "32d4ad4b80e5ce6f608472e762f993014317c049a0f7d1be0b6bb8671ec77b1e",
+        "disposition": "accepted-reviewed-fingerprint",
+        "semanticChange": "No registered election milestone changed; the 28 November election and November nomination/roll-close schedule remain unchanged.",
+        "materiality": "non-material",
+        "modelInputReviewRequired": false
+      },
+      {
+        "id": "vec-2026-enrolment",
+        "observedFingerprint": "fd8511555214d15ce20c6b4a3d9b1ce5be30fc1731e2a2794cf63680b1ccbb37",
+        "disposition": "accepted-reviewed-fingerprint",
+        "semanticChange": "No newer enrolment payload was established; the page still points to the existing 4 September effective extract and August downloads.",
+        "materiality": "non-material",
+        "modelInputReviewRequired": false
+      },
+      {
+        "id": "vec-2026-candidates",
+        "observedFingerprint": "fd38480e98be4503b31cefd62a3d435a5912dae4e44a8c686f416a5665be3f31",
+        "disposition": "accepted-reviewed-fingerprint",
+        "semanticChange": "Generic candidate-information page changed informational content only; it does not provide VEC nomination records.",
+        "materiality": "non-material",
+        "modelInputReviewRequired": false
+      }
+    ],
+    "limitations": [
+      "DemosAU parser remains fail-closed; parser failure is not evidence of no new poll.",
+      "RedBridge/Accent September remains accepted but model-held pending sample-family independence.",
+      "DemosAU September and Resolve September remain HOLD."
+    ],
+    "forecast": {
+      "canonicalInputsChanged": false,
+      "refreshed": false,
+      "sha256": "a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2"
+    },
+    "nextProspectiveMilestone": {
+      "id": "writ_roll_close",
+      "cutoff": "2026-11-03T20:00:00+11:00",
+      "sealed": false
     }
   }
 }

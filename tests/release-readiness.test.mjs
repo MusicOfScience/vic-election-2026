@@ -61,8 +61,8 @@ test("recognises reviewed staged polling as explicitly excluded from model input
 
 test("opens the candidate evidence gate only at complete Assembly coverage", () => {
   const readiness = buildReadiness({ asOf: "2026-08-28" });
-  assert.equal(readiness.findings.candidateDiscovery.records, 194);
-  assert.equal(readiness.findings.candidateDiscovery.acceptedRecords, 194);
+  assert.equal(readiness.findings.candidateDiscovery.records, 305);
+  assert.equal(readiness.findings.candidateDiscovery.acceptedRecords, 305);
   assert.equal(readiness.findings.candidateDiscovery.status, "accepted-candidate-evidence-complete-coverage");
   assert.equal(readiness.findings.candidateDiscovery.assemblyContests, 88);
   assert.equal(readiness.findings.candidateDiscovery.councilRegions, 8);

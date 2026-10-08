@@ -22,7 +22,9 @@ test("candidate dossier closes the Assembly coverage gaps", () => {
 
 test("candidate evidence approval remains separate from nomination and model use", () => {
   assert.equal(dossier.status, "approved-as-candidate-evidence");
-  assert.equal(dossier.summary.acceptedRecords, 194);
+  assert.equal(dossier.summary.acceptedRecords, 305);
+  assert.equal(dossier.summary.reviewedRecords, 114);
+  assert.deepEqual(dossier.summary.recordDecisionCounts, { accept: 111, hold: 1, reject: 0, reconcile: 2 });
   assert.equal(dossier.summary.acceptedAssemblyContests, 88);
   assert.equal(dossier.decision.officialNomination, false);
   assert.equal(dossier.decision.forecastUse, "excluded");

@@ -67,6 +67,8 @@ function buildDossier() {
   });
   const missingAssemblyContests = [...universe.assembly.values()].filter((contest) => !assemblyContests.has(contest));
   const approvedFamilies = new Map((approval.familyDecisions ?? []).filter((item) => item.decision === "approve").map((item) => [item.authority, item]));
+  const recordDecisions = approval.recordDecisions ?? [];
+  const recordDecisionCounts = Object.fromEntries(["accept", "hold", "reject", "reconcile"].map((decision) => [decision, recordDecisions.filter((item) => item.decision === decision).length]));
   const fullyApproved = approval.evidenceAsOf === provisional.evidenceAsOf
     && families.every((family) => approvedFamilies.get(family.authority)?.acceptedStatus === family.recommendedStatus)
     && provisional.records.every((record) => acceptedEvidenceIds.has(record.id));
@@ -79,6 +81,8 @@ function buildDossier() {
       approvedAt: approval.approvedAt,
       reviewerRole: approval.reviewerRole,
       acceptedRecords: provisional.records.length,
+      reviewedRecords: recordDecisions.length,
+      recordDecisionCounts,
       acceptedStatuses: Object.fromEntries(["announced", "endorsed"].map((status) => [status, provisional.records.filter((record) => record.candidateStatus === status).length])),
       forecastUse: "excluded",
       officialNomination: false,
@@ -89,6 +93,8 @@ function buildDossier() {
       recommendEvidenceAcceptance: families.filter((family) => family.evidenceRecommendation.startsWith("accept-as-")).length,
       recordsRecommendedForAcceptance: families.filter((family) => family.evidenceRecommendation.startsWith("accept-as-")).reduce((sum, family) => sum + family.records, 0),
       acceptedRecords: provisional.records.filter((record) => acceptedEvidenceIds.has(record.id)).length,
+      reviewedRecords: recordDecisions.length,
+      recordDecisionCounts,
       acceptedAssemblyContests: acceptedAssemblyContests.size,
       assemblyContests: assemblyContests.size,
       assemblyDistrictsTotal: universe.assembly.size,
