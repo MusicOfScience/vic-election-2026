@@ -46,6 +46,16 @@ test("missing report and failed silent stages cannot become NO_ACTION", () => {
   assert.ok(monitoringActions(healthy(), [], { candidates: { outcome: "failure" } }).statuses.includes("WORKFLOW_FAILURE"));
 });
 
+test("DemosAU access, extraction and manual-primary states remain distinct", () => {
+  const r = healthy();
+  r["source-discovery-report"].observations = [{ sourceId: "demosau", status: "manual-primary-review-required" }];
+  assert.deepEqual(monitoringActions(r).statuses, ["POLL_REVIEW_REQUIRED"]);
+  r["source-discovery-report"].observations = [{ sourceId: "demosau", status: "primary-source-access-failed" }];
+  assert.deepEqual(monitoringActions(r).statuses, ["WORKFLOW_FAILURE"]);
+  r["source-discovery-report"].observations = [{ sourceId: "demosau", status: "extract-failed" }];
+  assert.deepEqual(monitoringActions(r).statuses, ["WORKFLOW_FAILURE"]);
+});
+
 test("review resolution requires exact carrier, not a previously reviewed ID", () => {
   const r = healthy(), record = { id: "p", kind: "poll", value: 30 };
   r["source-discovery-quarantine"].records = [record];

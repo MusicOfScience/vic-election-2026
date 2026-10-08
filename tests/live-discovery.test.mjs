@@ -40,6 +40,15 @@ test("Greens party page yields endorsed provisional candidate evidence", () => {
   ]);
 });
 
+test("Greens multi-office labels stop at Councillor after an ampersand", () => {
+  assert.deepEqual(extractGreensCandidates(
+    '<a href="/vic/person/katie">Katie Clements Candidate for Mildura & Councillor for Rural City of Mildura</a>',
+    "https://greens.org.au/vic/candidates",
+  ), [{
+    kind: "candidate", name: "Katie Clements", contest: "Mildura", party: "Australian Greens Victoria", candidateStatus: "endorsed", sourceAuthority: "Australian Greens Victoria", sourceUrl: "https://greens.org.au/vic/person/katie",
+  }]);
+});
+
 test("One Nation candidate headings yield endorsed provisional evidence", () => {
   const html = `<h3><a href="/warren-pickering">Warren Pickering for Pakenham</a></h3><p>Bio.</p><h3><a href="/fiona-lopez">Fiona Lopez for Western Metro</a></h3>`;
   assert.deepEqual(extractOneNationCandidates(html, "https://vic.onenation.org.au/candidates"), [

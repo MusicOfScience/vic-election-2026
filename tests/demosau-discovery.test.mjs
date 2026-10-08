@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { diagnoseDemosPoll, extractDemosAuVictoriaPoll, extractLinks, normaliseDemosText, readerProxyUrl } from "../scripts/discover-demosau-victoria-polls.mjs";
+import { diagnoseDemosPoll, extractDemosAuVictoriaPoll, extractLinks, isDemosAccessChallenge, normaliseDemosText, readerProxyUrl } from "../scripts/discover-demosau-victoria-polls.mjs";
 
 const expectedPrimary = { coalition: 32, alp: 23, oneNation: 22, greens: 13, otherParties: 10 };
 
@@ -31,6 +31,26 @@ test("DemosAU parser tolerates HTML entities and source punctuation", () => {
     otherParties: true,
     twoPartyPreferred: true,
   });
+});
+
+test("DemosAU reader-shaped primary text parses without assigning unrelated percentages", () => {
+  const text = [
+    "Title: Coalition Holds Election-Winning Lead in Latest Victoria Poll - DemosAU",
+    "Published Time: 2026-08-15T22:56:22+00:00",
+    "The DemosAU/PremierNational poll of 1,007 Victorians, conducted from 6-11 August, shows Jess Wilson's Liberal/National Coalition leading with a primary vote of 32% - up 2% compared to the June poll.",
+    "Under Mr Carroll, Labor is up 2 points to 23%, while One Nation is 22% (-1%), The Greens 13% (-2%) and Others10% (-1%).",
+    "Ms Wilson leads Mr Carroll as Preferred Premier 43-34%. On a two party preferred basis, the Coalition leads Labor 55% to 45%.",
+  ].join(" ");
+  const poll = extractDemosAuVictoriaPoll(text, "https://demosau.com/news/example/");
+  assert.deepEqual(poll.primaryVote, expectedPrimary);
+  assert.deepEqual(poll.twoPartyPreferred, { coalition: 55, alp: 45 });
+});
+
+test("DemosAU access challenges are not treated as primary article text", () => {
+  const challenge = '<meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/?r=/news/example/">';
+  assert.equal(isDemosAccessChallenge(challenge), true);
+  assert.equal(isDemosAccessChallenge("DemosAU Victorian poll of 1,007 voters"), false);
+  assert.equal(extractDemosAuVictoriaPoll(challenge, "https://demosau.com/news/example/"), null);
 });
 
 test("DemosAU parser refuses incomplete records and reports missing fields", () => {

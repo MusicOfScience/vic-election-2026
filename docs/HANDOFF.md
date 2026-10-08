@@ -4,7 +4,7 @@ Updated: 2026-10-08
 
 ## Current state
 
-- Base main includes merged PR #128 and the immutable PR #129 first-live-operations review packet; current operational base is `132cb37`. September Freshwater admission, deterministic refresh, prospective registration and monitoring hardening are merged. PR #121's community-resilience challenger remains deferred.
+- Base main includes merged PRs #128–#130, including the immutable PR #129 first-live-operations review packet and the governed #130 adjudication; current operational base is `415d47c`. September Freshwater admission, deterministic refresh, prospective registration, monitoring hardening and candidate adjudication are merged. PR #121's community-resilience challenger remains deferred.
 - Historical counters are runnable 4/4, predicted 4/4, scored 4/4, certifying predicted 3/4 and certifying scored 3/4.
 - Certifying v2 cycles are `vic_la_2010`, `vic_la_2014` and `vic_la_2022`. `vic_la_2018` remains non-certifying: v1 implementation defect; v2 post-hoc diagnostic.
 - The canonical aggregate is [`historical-certifying-v2-aggregate.json`](../model/data/validation/historical-replays/historical-certifying-v2-aggregate.json), SHA `7680fa6111c01665b24c6fe16bca6ab6d67f9aa4697c8294de1be33d0a4c972e`. Its unweighted three-cycle means are winner accuracy `0.8404301637`, multiclass Brier `0.2193372181`, multiclass log loss `1.0486418097` and district primary MAE `4.7557257435`.
@@ -106,7 +106,9 @@ production authorisation remain blocked. The first
 `6ffdd7f47ef45c43b039425424889638c571ccb5136181bc28508f759dc24a64`; no
 second snapshot was sealed.
 
-Exact next action: review the adjudication PR before any separate model-input decision.
+PR #130 is merged. Candidate adjudication accounting is finalised: 111 new accepted candidate-evidence records, 1 hold and 2 reconciliations; Roy Morgan's Upper House projection remains dependent, reviewed-reference-only and reference-only. The forecast and first prospective seal are unchanged. The first-live run's DemosAU discovery defect is repaired with explicit anti-bot fallback and manual-primary-review status handling; the Greens multi-office extractor now stops at both `and` and `&` Councillor/Mayor labels. The Katie Clements HOLD carrier was not rewritten, no candidate or polling evidence was admitted, and no model input changed.
+
+Exact next action: review and merge the live-discovery repair PR, then resume routine monitoring.
 
 ## Preserved audit history
 

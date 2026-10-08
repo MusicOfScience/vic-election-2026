@@ -16,7 +16,11 @@ export function monitoringActions(reports, decisions = [], steps = {}, primaryRe
     if (["changed-quarantined", "observed-unbaselined"].includes(s.status)) add("SOURCE_CHANGE_REVIEW_REQUIRED", s.id, `${s.status}: ${s.observedFingerprint}`);
     if (["fetch-failed", "invalid-quarantined"].includes(s.status)) add("WORKFLOW_FAILURE", s.id, s.status);
   }
-  for (const s of reports["source-discovery-report"]?.observations ?? []) if (s.status === "extract-failed") add("WORKFLOW_FAILURE", s.sourceId, "Source extraction failed; no absence-of-evidence conclusion permitted.");
+  for (const s of reports["source-discovery-report"]?.observations ?? []) {
+    if (s.status === "extract-failed") add("WORKFLOW_FAILURE", s.sourceId, "Source extraction failed; no absence-of-evidence conclusion permitted.");
+    if (s.status === "primary-source-access-failed") add("WORKFLOW_FAILURE", s.sourceId, "Primary source access failed; no absence-of-evidence conclusion permitted.");
+    if (s.status === "manual-primary-review-required") add("POLL_REVIEW_REQUIRED", s.sourceId, "Primary material was reached but mandatory fields were not deterministically extractable; manual primary review required.");
+  }
   for (const r of reports["source-discovery-quarantine"]?.records ?? []) {
     // Resolve only the exact reviewed carrier, never an ID alone: changed values
     // under a manually stable ID require review again. Holds remain holds.
