@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 2,
+  "assessedAsOf": "2026-10-08",
+  "status": "experimental-blocked",
+  "policy": "retain-last-valid-forecast",
+  "automation": {
+    "scheduledMonitoring": true,
+    "automaticProductionPublish": false
+  },
+  "summary": {
+    "passedRequiredGates": 6,
+    "requiredGateCount": 9,
+    "blockingGateIds": [
+      "completeForecastBacktest",
+      "probabilityCalibration",
+      "productionAuthorisation"
+    ]
+  },
+  "gates": {
+    "sourceIntegrity": {
+      "passed": true,
+      "label": "Source fingerprints match"
+    },
+    "criticalSourceFreshness": {
+      "passed": true,
+      "label": "Critical sources are within age policy"
+    },
+    "modelInputFreshness": {
+      "passed": true,
+      "label": "Newer reviewed evidence is resolved into or excluded from model inputs"
+    },
+    "deterministicOutputs": {
+      "passed": true,
+      "label": "Model outputs and configuration match"
+    },
+    "historicalDataReadiness": {
+      "passed": true,
+      "label": "Four-cycle historical dataset is ready"
+    },
+    "completeForecastBacktest": {
+      "passed": false,
+      "label": "Complete multi-party seat model passes walk-forward backtesting"
+    },
+    "probabilityCalibration": {
+      "passed": false,
+      "label": "Published win probabilities pass reliability and coverage tests"
+    },
+    "candidateEvidence": {
+      "passed": true,
+      "label": "2026 candidate evidence covers 88/88 Assembly districts"
+    },
+    "productionAuthorisation": {
+      "passed": false,
+      "label": "Complete probability model explicitly authorised"
+    }
+  },
+  "findings": {
+    "demographicChallenger": {
+      "outcome": "rejected",
+      "requiredForProduction": false,
+      "centralWeight": 0,
+      "label": "Demographic challenger failed its sealed promotion test and remains excluded",
+      "metrics": {
+        "baselineMae": 0.027804,
+        "candidateMae": 0.028121,
+        "baselineRmse": 0.036938,
+        "candidateRmse": 0.03719,
+        "baselineWinnerErrors": 21,
+        "candidateWinnerErrors": 24,
+        "betterMaeFolds": 1,
+        "betterRmseFolds": 2,
+        "folds": 4
+      }
+    },
+    "candidateDiscovery": {
+      "status": "accepted-candidate-evidence-complete-coverage",
+      "records": 194,
+      "acceptedRecords": 194,
+      "sourceFamilies": 8,
+      "assemblyContests": 88,
+      "assemblyDistrictsTotal": 88,
+      "councilRegions": 8,
+      "councilRegionsTotal": 8,
+      "acceptedAssemblyContests": 88,
+      "unclassifiedContests": [],
+      "automaticPromotion": false,
+      "label": "88/88 Assembly districts have accepted candidate evidence"
+    },
+    "validationEvidence": {
+      "scope": "Complete 2026 five-party Assembly, preference-transfer, chamber and Council probability model",
+      "complete": 3,
+      "partial": 4,
+      "missing": 0,
+      "total": 7,
+      "automaticGateOpening": false,
+      "label": "3/7 complete-model historical evidence components are complete"
+    }
+  },
+  "evidenceFreshness": {
+    "schemaVersion": 1,
+    "assessedAsOf": "2026-10-08",
+    "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
+    "modelInput": {
+      "latestPublicationDate": "2026-10-01",
+      "pollId": "freshwater_2026-09",
+      "pollster": "Freshwater Strategy",
+      "status": "model-eligible"
+    },
+    "acceptedEvidence": {
+      "latestPublicationDate": "2026-10-01",
+      "pollster": "Freshwater Strategy",
+      "status": "human-reviewed-not-necessarily-model-eligible"
+    },
+    "stagedEvidence": {
+      "latestPublicationDate": "2026-10-01",
+      "pollster": "Freshwater Strategy",
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "status": "quarantined-awaiting-review",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-workbook-parsed-awaiting-human-review"
+    },
+    "reviewResolution": {
+      "stagedRecords": 11,
+      "resolvedRecords": 11,
+      "unresolvedRecords": 0,
+      "latestResolvedEvidence": {
+        "evidenceId": "freshwater-2026-09-primary-workbook",
+        "pollster": "Freshwater Strategy",
+        "latestPublicationDate": "2026-10-01",
+        "decision": "approve"
+      }
+    },
+    "newestEvidenceDate": "2026-10-01",
+    "newerEvidenceAwaitingReview": false,
+    "newerEvidenceExcludedByReview": false,
+    "modelFreshnessUnchangedByStagedEvidence": true
+  },
+  "sources": [
+    {
+      "id": "vec-2022-district-results",
+      "critical": true,
+      "dataEffectiveDate": "2022-11-26",
+      "ageDays": 1412,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "vec-2022-voting-centres",
+      "critical": false,
+      "dataEffectiveDate": "2022-11-26",
+      "ageDays": 1412,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "vec-historical-boundary-estimates",
+      "critical": true,
+      "dataEffectiveDate": "2022-11-26",
+      "ageDays": 1412,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "vec-2026-enrolment",
+      "critical": true,
+      "dataEffectiveDate": "2026-09-04",
+      "ageDays": 34,
+      "stalenessThresholdDays": 62,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "ebc-2021-boundaries",
+      "critical": true,
+      "dataEffectiveDate": "2022-11-01",
+      "ageDays": 1437,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "aec-2022-geographic-vote-surface",
+      "critical": false,
+      "dataEffectiveDate": "2022-05-21",
+      "ageDays": 1601,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "vic-2026-poll-registry",
+      "critical": true,
+      "dataEffectiveDate": "2026-09-28",
+      "ageDays": 10,
+      "stalenessThresholdDays": 21,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "vec-recent-by-elections",
+      "critical": false,
+      "dataEffectiveDate": "2025-02-08",
+      "ageDays": 607,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "forecast-derived-outputs",
+      "critical": true,
+      "dataEffectiveDate": "2026-10-08",
+      "ageDays": 0,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    },
+    {
+      "id": "current-evidence-review-2026-10-08",
+      "critical": false,
+      "dataEffectiveDate": "2026-10-02",
+      "ageDays": 6,
+      "stalenessThresholdDays": null,
+      "stale": false,
+      "artifactsCurrent": true
+    }
+  ]
+}

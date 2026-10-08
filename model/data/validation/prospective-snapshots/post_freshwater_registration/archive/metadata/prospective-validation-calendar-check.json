@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-08T05:30:32.477859Z",
+  "reviewerRole": "source-review-agent",
+  "sources": [
+    "https://www.vec.vic.gov.au/voting/types-of-elections/state-elections",
+    "https://www.vec.vic.gov.au/voting/2026-state-election"
+  ],
+  "dates": {
+    "rollClose": "2026-11-03T20:00:00+11:00",
+    "nominationsClose": "2026-11-09T12:00:00+11:00",
+    "earlyVotingStarts": "2026-11-18",
+    "electionDay": "2026-11-28"
+  },
+  "conflict": false,
+  "sourceObservation": "Both current official VEC pages retrieved and agree; early voting 18\u201327 November, election 8am\u20136pm, writ return 19 December. No obsolete draft used.",
+  "reverificationRequiredBeforeEverySeal": true,
+  "maxReviewAgeHours": 24
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-07T19:32:08.659Z",
+  "policy": "observe-validate-quarantine-review-promote",
+  "automaticPromotion": false,
+  "summary": {
+    "adapters": 5,
+    "healthy": 2,
+    "unbaselined": 0,
+    "quarantined": 3,
+    "unhealthy": 0
+  },
+  "observations": [
+    {
+      "id": "vec-2026-election",
+      "url": "https://www.vec.vic.gov.au/voting/2026-state-election",
+      "checkedAt": "2026-10-07T19:31:40.937Z",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonicalBytes": 15200,
+      "observedFingerprint": "32d4ad4b80e5ce6f608472e762f993014317c049a0f7d1be0b6bb8671ec77b1e",
+      "acceptedFingerprint": "032f3dc629e2e4188c4c9c1e93850ad4ae73b6077dd7d5e6eb52fb341f4757f4",
+      "status": "changed-quarantined",
+      "validation": {
+        "httpOk": true,
+        "markersPassed": true,
+        "missingMarkers": [],
+        "sizePassed": true
+      },
+      "critical": true,
+      "promotionPolicy": "manual-review"
+    },
+    {
+      "id": "vec-2026-enrolment",
+      "url": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
+      "checkedAt": "2026-10-07T19:31:49.010Z",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonicalBytes": 8817,
+      "observedFingerprint": "fd8511555214d15ce20c6b4a3d9b1ce5be30fc1731e2a2794cf63680b1ccbb37",
+      "acceptedFingerprint": "ac09c087fdc8c8eaaaf100c5037e8a52b344eed05b6408d3935462a6970ede58",
+      "status": "changed-quarantined",
+      "validation": {
+        "httpOk": true,
+        "markersPassed": true,
+        "missingMarkers": [],
+        "sizePassed": true
+      },
+      "critical": true,
+      "promotionPolicy": "manual-review"
+    },
+    {
+      "id": "vec-2026-candidates",
+      "url": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate",
+      "checkedAt": "2026-10-07T19:31:57.313Z",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonicalBytes": 18323,
+      "observedFingerprint": "a8a87b0fb75550d9393d76a76b26bc7f0aea9d023bd748e9be938852879eae9e",
+      "acceptedFingerprint": "dac7456cdd6f2326ee0891d0464535a0ba71ceb31e6979f83e0b15f76aa68534",
+      "status": "changed-quarantined",
+      "validation": {
+        "httpOk": true,
+        "markersPassed": true,
+        "missingMarkers": [],
+        "sizePassed": true
+      },
+      "critical": false,
+      "promotionPolicy": "manual-review-until-official-nominations"
+    },
+    {
+      "id": "roy-morgan-vic-2026-state-poll",
+      "url": "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
+      "checkedAt": "2026-10-07T19:32:05.920Z",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonicalBytes": 12127,
+      "observedFingerprint": "8d25ac36e78f410e29d79ca7526341bb16159a921f71d1c0ea9ff0b493159df5",
+      "acceptedFingerprint": "8d25ac36e78f410e29d79ca7526341bb16159a921f71d1c0ea9ff0b493159df5",
+      "status": "healthy",
+      "validation": {
+        "httpOk": true,
+        "markersPassed": true,
+        "missingMarkers": [],
+        "sizePassed": true
+      },
+      "critical": true,
+      "promotionPolicy": "manual-review"
+    },
+    {
+      "id": "roy-morgan-vic-2026-upper-house",
+      "url": "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november",
+      "checkedAt": "2026-10-07T19:32:08.537Z",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonicalBytes": 10236,
+      "observedFingerprint": "48ccbd9f74e77ece344ef72d57beefb126ee1d4edd639eccddaff633df4b6165",
+      "acceptedFingerprint": "48ccbd9f74e77ece344ef72d57beefb126ee1d4edd639eccddaff633df4b6165",
+      "status": "healthy",
+      "validation": {
+        "httpOk": true,
+        "markersPassed": true,
+        "missingMarkers": [],
+        "sizePassed": true
+      },
+      "critical": false,
+      "promotionPolicy": "manual-review"
+    }
+  ]
+}

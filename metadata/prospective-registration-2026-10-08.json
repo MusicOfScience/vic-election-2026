@@ -1,0 +1,32 @@
+{
+  "snapshotId": "post_freshwater_registration",
+  "kind": "prospective-live",
+  "role": "secondary-dependent",
+  "electionUnit": "vic_2026_general_election",
+  "witnessedAt": "2026-10-08T06:04:57.301744Z",
+  "witnessedAtMelbourne": "2026-10-08T17:04:57.301744+11:00",
+  "sourceCommit": "9b40186f203ca8aba77d9afbee71ba5a59c46dc9",
+  "sourceMainMergedAt": "2026-10-08T16:58:51+11:00",
+  "sealCommit": "98e59a31a287d7047d9786f6bb4afe28b58c7dec",
+  "sealCommitRelationship": "Commit that first preserves this exact package and execution calendar receipts; distinct from sourceCommit and the later operational registry commit.",
+  "registeredAt": "2026-10-08T06:09:20.688962Z",
+  "archivePath": "model/data/validation/prospective-snapshots/post_freshwater_registration",
+  "manifestPath": "model/data/validation/prospective-snapshots/post_freshwater_registration/manifest.json",
+  "manifestSha256": "6ffdd7f47ef45c43b039425424889638c571ccb5136181bc28508f759dc24a64",
+  "manifestFileSha256": "8349903ce1d6d6a664f17b56532221540607e24d2b150be5bb01ee2190b75526",
+  "memberCount": 70,
+  "protocolId": "vic-2026-prospective-observational-v1",
+  "protocolSha256": "747449970bf4a0bb4304e528c9e2ec37dd77420fffb1e1ee056fd0b4af4bdb01",
+  "forecastSha256": "a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2",
+  "comparatorImplementationSha256": "d2d016c844a0719871be4628073ec187a96ac6a0d3c6ecd9247741c4a79a73f7",
+  "scorerSha256": "0b2b5791d37823d9b3456340fc6c2b531acab2ca7105e7024b6023c5c501f3e6",
+  "comparatorPredictionSha256": {
+    "prior_result": "6d4327c473e27f3c664f4a5f6e3f235f9467a52682ee5892d8f2c090eccc5247",
+    "uniform_swing": "f50396f99f9004e901418f0bc88c8c221e539388ef9c37aa7a4dd0a7d0ed7cc4"
+  },
+  "calendarReceiptPath": "metadata/prospective-registration-witness/2026-10-08/calendar-reverification.json",
+  "calendarReceiptSha256": "7a4f697ac7f9901e8a60363a3f99008fdde928b403b19f963b601b24c2195d4a",
+  "scoringAuthorised": false,
+  "productionAuthorised": false,
+  "additionalIndependentElectionReplications": 0
+}

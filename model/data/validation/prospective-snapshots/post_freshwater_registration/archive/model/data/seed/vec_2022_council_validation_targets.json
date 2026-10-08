@@ -1,0 +1,64 @@
+{
+  "election_id": "vic_lc_2022",
+  "vacancies_per_region": 5,
+  "statewide_formal_votes": 3752406,
+  "regions": [
+    {
+      "region_id": "eastern-victoria",
+      "region_name": "Eastern Victoria",
+      "formal_votes": 473318,
+      "quota": 78887,
+      "elected_order": ["HEATH, Renee", "McINTOSH, Tom", "BATH, Melina", "SHING, Harriet", "BOURMAN, Jeff"]
+    },
+    {
+      "region_id": "north-eastern-metropolitan",
+      "region_name": "North-Eastern Metropolitan",
+      "formal_votes": 480878,
+      "quota": 80147,
+      "elected_order": ["LEANE, Shaun", "BACH, Matthew", "TERPSTRA, Sonja", "McGOWAN, Nick", "PUGLIELLI, Aiv"]
+    },
+    {
+      "region_id": "northern-metropolitan",
+      "region_name": "Northern Metropolitan",
+      "formal_votes": 452430,
+      "quota": 75406,
+      "elected_order": ["WATT, Sheena", "MULHOLLAND, Evan", "RATNAM, Samantha", "ERDOGAN, Enver", "SOMYUREK, Adem"]
+    },
+    {
+      "region_id": "northern-victoria",
+      "region_name": "Northern Victoria",
+      "formal_votes": 464784,
+      "quota": 77465,
+      "elected_order": ["LOVELL, Wendy", "SYMES, Jaclyn", "BROAD, Gaelle", "PURCELL, Georgie", "TYRRELL, Rikkie-Lee"]
+    },
+    {
+      "region_id": "south-eastern-metropolitan",
+      "region_name": "South-Eastern Metropolitan",
+      "formal_votes": 469775,
+      "quota": 78296,
+      "elected_order": ["TARLAMIS, Lee", "HERMANS, Ann-Marie", "GALEA, Michael", "PAYNE, Rachel", "LIMBRICK, David"]
+    },
+    {
+      "region_id": "southern-metropolitan",
+      "region_name": "Southern Metropolitan",
+      "formal_votes": 469853,
+      "quota": 78309,
+      "elected_order": ["DAVIS, David", "BERGER, John", "CROZIER, Georgie", "COPSEY, Katherine", "BATCHELOR, Ryan"]
+    },
+    {
+      "region_id": "western-metropolitan",
+      "region_name": "Western Metropolitan",
+      "formal_votes": 449155,
+      "quota": 74860,
+      "elected_order": ["BLANDTHORN, Lizzie", "DEEMING, Moira", "STITT, Ingrid", "ETTERSHANK, David", "LUU, Trung"]
+    },
+    {
+      "region_id": "western-victoria",
+      "region_name": "Western Victoria",
+      "formal_votes": 492213,
+      "quota": 82036,
+      "elected_order": ["ERMACORA, Jacinta", "McARTHUR, Bev", "TIERNEY, Gayle", "MANSFIELD, Sarah", "McCRACKEN, Joe"]
+    }
+  ],
+  "source_notes": "Official VEC 2022 region result pages. Distribution-workbook sequence validation remains pending acquisition of the official Excel files."
+}

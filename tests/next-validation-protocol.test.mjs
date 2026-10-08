@@ -10,7 +10,7 @@ function rejects(mutate) {
   assert.throws(() => validateNextValidationProtocol(a, p));
 }
 test("approved contract preserves frozen history, engine and structural configuration", () => {
-  assert.deepEqual(validateNextValidationProtocol(), { status: "valid-approved-pre-seal", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false });
+  assert.deepEqual(validateNextValidationProtocol(), { status: "valid-approved-registration-sealed", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false });
 });
 test("2018, consumed cycles and 2006 lineage cannot be relabelled fresh", () => {
   for (const id of ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022", "vic_2006_general", "vic_2002_general"]) {
@@ -46,4 +46,13 @@ test("explicit approval is timestamped and material rule changes fail even when 
   rejects((a,p) => { p.calibration.method = "fit after result"; });
   rejects((a,p) => { p.decisionRules.performance = "auto production"; });
   rejects((a,p) => { p.sealing.currentlySealedSnapshots.push({kind:"fixture-non-empirical"}); });
+});
+
+ test("registration rejects removal, changed witness/source, fixture promotion and extra replication", () => {
+  rejects((a,p) => { p.sealing.currentlySealedSnapshots = []; });
+  rejects((a,p) => { p.sealing.currentlySealedSnapshots[0].witnessedAt = p.approval.recordedAt; });
+  rejects((a,p) => { p.sealing.currentlySealedSnapshots[0].sourceCommit = "0".repeat(40); });
+  rejects((a,p) => { p.sealing.currentlySealedSnapshots[0].kind = "fixture-non-empirical"; });
+  rejects((a,p) => { p.sealing.currentlySealedSnapshots[0].additionalIndependentElectionReplications = 1; });
+  rejects((a,p) => { p.status = "approved-awaiting-registration-seal"; });
 });

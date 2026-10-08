@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "registryReviewedAt": "2026-10-08T00:00:00.000Z",
+  "summary": {
+    "sourceGroups": 10,
+    "officialSourceGroups": 7,
+    "criticalSourceGroups": 6,
+    "tracedArtifacts": 31,
+    "automationStatus": "scheduled-freshness-monitoring"
+  },
+  "sources": [
+    {
+      "id": "vec-2022-district-results",
+      "name": "VEC 2022 state election district results",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-election-results",
+      "confidence": "official",
+      "useStatus": "accepted",
+      "modelRole": "Lower House baseline, candidate evidence and preference structure",
+      "canonicalUrl": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district",
+      "dataEffectiveDate": "2022-11-26",
+      "lastCheckedAt": "2026-08-28T00:45:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
+        "app/data.generated.ts"
+      ],
+      "notes": "Official election results remain the primary state-election anchor.",
+      "artifacts": [
+        {
+          "path": "model/data/processed/vec_2022_indicative_candidate_evidence.csv",
+          "sha256": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa",
+          "bytes": 104855,
+          "records": 323
+        },
+        {
+          "path": "app/data.generated.ts",
+          "sha256": "442ab2cb5cc255ab8e398364c2827d57bdbe57ccb3ed378e099164f2105431f9",
+          "bytes": 25459,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "vec-2022-voting-centres",
+      "name": "VEC 2022 ordinary voting-centre results",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-voting-centre-results",
+      "confidence": "official",
+      "useStatus": "display-only",
+      "modelRole": "Seat-profile evidence; not currently a central forecast input",
+      "canonicalUrl": "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district",
+      "dataEffectiveDate": "2022-11-26",
+      "lastCheckedAt": "2026-08-28T00:45:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": false,
+      "localArtifacts": [
+        "app/booth-data.generated.ts"
+      ],
+      "notes": "Contains 1,729 physical ordinary voting centres. Early, postal, absent and provisional vote modes are excluded from geographic booth comparisons.",
+      "artifacts": [
+        {
+          "path": "app/booth-data.generated.ts",
+          "sha256": "c7475f4f420bd22392f2deb99fd01c9a71d2e001d306b9dd37b7a638d8fdef2f",
+          "bytes": 537752,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "vec-historical-boundary-estimates",
+      "name": "VEC historical results and 2018 estimates on 2022 boundaries",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-historical-results",
+      "confidence": "official",
+      "useStatus": "validation-only",
+      "modelRole": "Historical swing, boundary-aware comparison and backtesting",
+      "canonicalUrl": "https://www.vec.vic.gov.au/about-us/publications/research/research-archive",
+      "dataEffectiveDate": "2022-11-26",
+      "lastCheckedAt": "2026-08-28T00:30:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "app/historical-data.generated.ts"
+      ],
+      "notes": "The 2018–22 comparison uses the VEC estimate of 2018 support on the 2022 boundaries; it is not presented as a raw booth count.",
+      "artifacts": [
+        {
+          "path": "app/historical-data.generated.ts",
+          "sha256": "cc2f3e9f610378cbcf6f0b58fd150b1966f3564340651563ef3d3c80a9685eb3",
+          "bytes": 93161,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "vec-2026-enrolment",
+      "name": "VEC district and region enrolment statistics",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-enrolment",
+      "confidence": "official",
+      "useStatus": "accepted",
+      "modelRole": "District and Upper House region weighting",
+      "canonicalUrl": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
+      "dataEffectiveDate": "2026-09-04",
+      "lastCheckedAt": "2026-09-15T01:40:21.178Z",
+      "updateFrequency": "monthly",
+      "stalenessThresholdDays": 62,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/vec_enrolment_district_2026-09-04.csv",
+        "model/data/processed/vec_enrolment_region_2026-09-04.csv",
+        "metadata/vec-enrolment-validation-2026-09-04.json"
+      ],
+      "notes": "The current model bundle uses the VEC August 2026 district and region workbooks, extracted on 4 September. The validation record retains workbook URLs, hashes, coverage and district-region total reconciliation.",
+      "artifacts": [
+        {
+          "path": "model/data/processed/vec_enrolment_district_2026-09-04.csv",
+          "sha256": "d553eaa6a071794300ba83db551836f4b8f06d36b8084db97a28903ef3f8ea44",
+          "bytes": 5103,
+          "records": 88
+        },
+        {
+          "path": "model/data/processed/vec_enrolment_region_2026-09-04.csv",
+          "sha256": "0c8b32460eba5078d05add48ebd17a9794c24dc77e471918e0299435223f986a",
+          "bytes": 673,
+          "records": 8
+        },
+        {
+          "path": "metadata/vec-enrolment-validation-2026-09-04.json",
+          "sha256": "7bcd0c2ae92d9cbf5f99ce438e801d2a0b0de49a518ade43da63b47ae64a1810",
+          "bytes": 1940,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "ebc-2021-boundaries",
+      "name": "2021 Victorian state electoral redivision",
+      "publisher": "Electoral Boundaries Commission Victoria",
+      "sourceType": "official-boundaries",
+      "confidence": "official",
+      "useStatus": "accepted",
+      "modelRole": "Current district identities and district-to-region membership",
+      "canonicalUrl": "https://www.ebc.vic.gov.au/Past-Redivisions/Default.html",
+      "dataEffectiveDate": "2022-11-01",
+      "lastCheckedAt": "2026-08-28T00:30:00Z",
+      "updateFrequency": "event-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/district_region_membership_2026.csv"
+      ],
+      "notes": "The 2021 redivision took effect for the 2022 state election and defines the current 88-district, eight-region structure.",
+      "artifacts": [
+        {
+          "path": "model/data/processed/district_region_membership_2026.csv",
+          "sha256": "f815161b2d8d6aa0c028f01d4e2fbeb615057ff2e659f1d116d5c52af3a921d7",
+          "bytes": 3312,
+          "records": 88
+        }
+      ]
+    },
+    {
+      "id": "aec-2022-geographic-vote-surface",
+      "name": "AEC 2022 federal-election geographic vote surface",
+      "publisher": "Australian Electoral Commission",
+      "sourceType": "official-federal-results",
+      "confidence": "official",
+      "useStatus": "experimental",
+      "modelRole": "Secondary local-pattern evidence with shrinkage toward the VEC baseline",
+      "canonicalUrl": "https://www.aec.gov.au/Elections/federal_elections/2022/downloads.htm",
+      "dataEffectiveDate": "2022-05-21",
+      "lastCheckedAt": "2026-08-26T04:30:00Z",
+      "updateFrequency": "static",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": false,
+      "localArtifacts": [
+        "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz",
+        "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz"
+      ],
+      "notes": "Federal voting patterns are contextual predictors, not substitutes for Victorian state-election results.",
+      "artifacts": [
+        {
+          "path": "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz",
+          "sha256": "1b65fc4f865925f0f8abdfa6adb12ee674357c0867f5f7a2b8bc46d56e8f223a",
+          "bytes": 34274,
+          "records": 950
+        },
+        {
+          "path": "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz",
+          "sha256": "94548a20f13b47707adb97004bca8059b30b95512d9dec17ae2b44c53d171549",
+          "bytes": 4732,
+          "records": 123
+        }
+      ]
+    },
+    {
+      "id": "vic-2026-poll-registry",
+      "name": "Victorian 2026 voting-intention poll registry",
+      "publisher": "Multiple pollsters and publishers",
+      "sourceType": "polling",
+      "confidence": "primary-mixed",
+      "useStatus": "experimental",
+      "modelRole": "Statewide multi-party polling state and uncertainty",
+      "canonicalUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
+      "dataEffectiveDate": "2026-09-28",
+      "lastCheckedAt": "2026-10-08T00:00:00Z",
+      "updateFrequency": "weekly",
+      "stalenessThresholdDays": 21,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/poll_events_seed.csv",
+        "model/data/processed/poll_estimates_seed.csv",
+        "model/data/processed/upper_house_region_poll_2026-08.csv",
+        "app/poll-data.generated.ts"
+      ],
+      "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. The Upper House regional estimates are partially verified and receive guarded weight because regional sample sizes were not reported. Roy Morgan is one input rather than the forecast.",
+      "artifacts": [
+        {
+          "path": "model/data/processed/poll_events_seed.csv",
+          "sha256": "f4d1df5d8d60b6beb9d4e433fd85b2ad443b1c577830542846919e632ec2074f",
+          "bytes": 7976,
+          "records": 14
+        },
+        {
+          "path": "model/data/processed/poll_estimates_seed.csv",
+          "sha256": "cea8f27868031578179463ad5e4e39d438ea4705300a90158e9597eba6b38c0f",
+          "bytes": 4672,
+          "records": 67
+        },
+        {
+          "path": "model/data/processed/upper_house_region_poll_2026-08.csv",
+          "sha256": "3387d85815972fcb3420c7316856efe28520158608cce62a5a68b42fc3dfb3d1",
+          "bytes": 2331,
+          "records": 8
+        },
+        {
+          "path": "app/poll-data.generated.ts",
+          "sha256": "045acd8857760da9d1a0ef2350954a756cf885be807a8d399111d6e658b4dc15",
+          "bytes": 9585,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "vec-recent-by-elections",
+      "name": "VEC recent state by-election and supplementary-election results",
+      "publisher": "Victorian Electoral Commission",
+      "sourceType": "official-by-election-results",
+      "confidence": "official",
+      "useStatus": "experimental",
+      "modelRole": "Guarded local evidence for Prahran, Werribee and Narracan",
+      "canonicalUrl": "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline",
+      "dataEffectiveDate": "2025-02-08",
+      "lastCheckedAt": "2026-08-26T04:30:00Z",
+      "updateFrequency": "event-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": false,
+      "localArtifacts": [
+        "model/data/seed/recent_state_by_elections.json"
+      ],
+      "notes": "Narracan's January 2023 supplementary result is handled separately. Its booth explorer remains an explicit tracked gap rather than being mixed with the ordinary 2022 acquisition.",
+      "artifacts": [
+        {
+          "path": "model/data/seed/recent_state_by_elections.json",
+          "sha256": "46e040ef205019ed565ac8df7386c956e36a529e31b407ee252552fcbaa8aad0",
+          "bytes": 11302,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "forecast-derived-outputs",
+      "name": "Deterministic 2026 forecast outputs",
+      "publisher": "Victorian Election Forecasting Laboratory",
+      "sourceType": "derived-model-output",
+      "confidence": "internal-derived",
+      "useStatus": "derived",
+      "modelRole": "Checksummed bridge from the seeded model run to the published dashboard",
+      "canonicalUrl": "https://github.com/MusicOfScience/vic-election-2026",
+      "dataEffectiveDate": "2026-10-08",
+      "lastCheckedAt": "2026-10-08T00:00:00Z",
+      "updateFrequency": "dependency-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": true,
+      "localArtifacts": [
+        "model/data/processed/experimental_forecast_2026.json",
+        "model/data/processed/experimental_forecast_2026_districts.csv",
+        "model/data/processed/experimental_forecast_2026_chamber.csv",
+        "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
+        "model/data/processed/experimental_forecast_2026_council_regions.csv",
+        "model/data/processed/experimental_forecast_2026_council.csv",
+        "app/model-output.generated.ts"
+      ],
+      "notes": "Seeded outputs are regenerated only when dependencies change. Checksums prevent an old website bundle from being paired with newer model files.",
+      "artifacts": [
+        {
+          "path": "model/data/processed/experimental_forecast_2026.json",
+          "sha256": "a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2",
+          "bytes": 6281,
+          "records": null
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_districts.csv",
+          "sha256": "550527e647368212d0afd0c52de323eccbe0826daca59050722a81ad94925d1a",
+          "bytes": 38039,
+          "records": 88
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_chamber.csv",
+          "sha256": "5296747c3436d76aa9fa1da582bc138a6e520e3c78ccc52b02d7ac902fd23b32",
+          "bytes": 261,
+          "records": 5
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
+          "sha256": "ea42777600dae483c20270ab42955d9005f7af8d697ce80c68a365ed96c3ae26",
+          "bytes": 769,
+          "records": 89
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_council_regions.csv",
+          "sha256": "6913e19bbfe53f7d5e90306a38d08f28681e5fa6051175800b4d2e50994d00a5",
+          "bytes": 4306,
+          "records": 8
+        },
+        {
+          "path": "model/data/processed/experimental_forecast_2026_council.csv",
+          "sha256": "efb76b8ad8a91ff2f92fd637545a2310db1f63a1a0d3345d44936ae64760d84c",
+          "bytes": 261,
+          "records": 5
+        },
+        {
+          "path": "app/model-output.generated.ts",
+          "sha256": "fc48eb73dde65eefc3e0c752d959963ebe07188612b5de6b1f287170398d02f6",
+          "bytes": 134434,
+          "records": null
+        }
+      ]
+    },
+    {
+      "id": "current-evidence-review-2026-10-08",
+      "name": "Current polling review and captured primary carriers",
+      "publisher": "Freshwater Strategy; RedBridge / Accent Research; project review",
+      "sourceType": "quarantined-poll-review",
+      "confidence": "primary-mixed",
+      "useStatus": "gap-tracked",
+      "modelRole": "Governed review and source carriers; owner-approved September Freshwater feeds the canonical poll registry, other staged observations remain held",
+      "canonicalUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
+      "dataEffectiveDate": "2026-10-02",
+      "lastCheckedAt": "2026-10-08T00:00:00Z",
+      "updateFrequency": "review-driven",
+      "stalenessThresholdDays": null,
+      "criticalToForecast": false,
+      "localArtifacts": [
+        "metadata/current-evidence/2026-10-08/freshwater-extraction.json",
+        "metadata/current-evidence/2026-10-08/freshwater-publication.html.gz",
+        "metadata/current-evidence/2026-10-08/freshwater-september-tables.xlsx",
+        "metadata/current-evidence/2026-10-08/live-source-report.json",
+        "metadata/current-evidence/2026-10-08/redbridge-september-report.pdf",
+        "metadata/primary-source-evidence-2026.json",
+        "metadata/research-source-evidence-2026.json",
+        "metadata/poll-review-dossier-2026.json",
+        "metadata/current-evidence-adjudication-2026-10-08.json"
+      ],
+      "notes": "Original carriers and current review remain separate from accepted polls and canonical model inputs. Discovery time is not a poll or model effective date.",
+      "artifacts": [
+        {
+          "path": "metadata/current-evidence/2026-10-08/freshwater-extraction.json",
+          "sha256": "a862dc76ac393ad5b03a933345019d36e087617d0bb091ab64f4f11aa01cc883",
+          "bytes": 582,
+          "records": null
+        },
+        {
+          "path": "metadata/current-evidence/2026-10-08/freshwater-publication.html.gz",
+          "sha256": "07adabb443bda7332ef726c322c8a5de8cfaeda80c97043e723ba5942e6f012c",
+          "bytes": 24778,
+          "records": null
+        },
+        {
+          "path": "metadata/current-evidence/2026-10-08/freshwater-september-tables.xlsx",
+          "sha256": "e74537ac81246b6e4207963cfcf8a5bffa3f512516370baa917648c85f175e9e",
+          "bytes": 153973,
+          "records": null
+        },
+        {
+          "path": "metadata/current-evidence/2026-10-08/live-source-report.json",
+          "sha256": "af2744d726341936ec36e0ac8da11db35b5a6391f5877238a9022d68b932bfdc",
+          "bytes": 4051,
+          "records": null
+        },
+        {
+          "path": "metadata/current-evidence/2026-10-08/redbridge-september-report.pdf",
+          "sha256": "ba588f8f3cf71b8ee7366dc43c354b6b4e42c42e34dc6c6ee3af8db103dd5ee9",
+          "bytes": 1904877,
+          "records": null
+        },
+        {
+          "path": "metadata/primary-source-evidence-2026.json",
+          "sha256": "c3fbec6ad8324c18e5d5ba10f89989d3ab16601c564d93be2bdcd64ff947cb23",
+          "bytes": 15722,
+          "records": null
+        },
+        {
+          "path": "metadata/research-source-evidence-2026.json",
+          "sha256": "eca206fbe61b38996af7c02893ab5958d7dcc316d5236db7d5c595b7461898df",
+          "bytes": 9549,
+          "records": null
+        },
+        {
+          "path": "metadata/poll-review-dossier-2026.json",
+          "sha256": "ac66decc32f73051b861dd0f5d43a900fa8a94023eec7aee3b61670a56596227",
+          "bytes": 8026,
+          "records": null
+        },
+        {
+          "path": "metadata/current-evidence-adjudication-2026-10-08.json",
+          "sha256": "d7752eacd2b492a968f4160c842d2cb70f3891509e0618e1e9896b6c83e33f3c",
+          "bytes": 13563,
+          "records": null
+        }
+      ]
+    }
+  ]
+}

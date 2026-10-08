@@ -31,6 +31,8 @@ jobs:
         run: bash scripts/refresh-forecast.sh
       - name: Reject uncommitted or timestamp-only drift
         run: git diff --exit-code
+      - name: Verify immutable prospective registration archive
+        run: PYTHONDONTWRITEBYTECODE=1 python model/scripts/prospective_snapshot.py --verify model/data/validation/prospective-snapshots/post_freshwater_registration
       - run: python -m pytest model/tests
       - run: npm run candidates:validate
       - run: npm run psephology:validate

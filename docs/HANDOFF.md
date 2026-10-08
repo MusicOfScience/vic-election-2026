@@ -4,7 +4,7 @@ Updated: 2026-10-08
 
 ## Current state
 
-- Base main includes merged PR #125, HEAD `dfb72710869cb8f004c7da081a72bcfd9b4e3a99`. September Freshwater admission, deterministic refresh and shallow-CI baseline repair are merged. PR #121's community-resilience challenger remains deferred.
+- Base main includes merged PR #126, HEAD `9b40186f203ca8aba77d9afbee71ba5a59c46dc9`. September Freshwater admission, deterministic refresh and shallow-CI baseline repair are merged. PR #121's community-resilience challenger remains deferred.
 - Historical counters are runnable 4/4, predicted 4/4, scored 4/4, certifying predicted 3/4 and certifying scored 3/4.
 - Certifying v2 cycles are `vic_la_2010`, `vic_la_2014` and `vic_la_2022`. `vic_la_2018` remains non-certifying: v1 implementation defect; v2 post-hoc diagnostic.
 - The canonical aggregate is [`historical-certifying-v2-aggregate.json`](../model/data/validation/historical-replays/historical-certifying-v2-aggregate.json), SHA `7680fa6111c01665b24c6fe16bca6ab6d67f9aa4697c8294de1be33d0a4c972e`. Its unweighted three-cycle means are winner accuracy `0.8404301637`, multiclass Brier `0.2193372181`, multiclass log loss `1.0486418097` and district primary MAE `4.7557257435`.
@@ -36,15 +36,37 @@ PR #121 records Kos Samaras' 1 October 2026 resilience argument as dependency-la
 
 This challenger is deliberately **outside the current critical path**. It is `reference_only`, has no quantitative model use, and must remain at zero central weight unless a later, separately governed, leakage-safe historical promotion test establishes incremental value. Do not begin the SA2 resilience feature build merely because the specification exists.
 
-## Approved prospective protocol, awaiting first seal
+## Approved prospective protocol, registration sealed
 
 The [next-validation audit](NEXT_VALIDATION_PATH.md) traces consumed historical evidence, by-elections, cross-state limits and future 2026 snapshots. 2006 Assembly/Council outcomes supplied 2010 priors; 2002 district outcomes appear in the historical display; 1999 freshness and complete replay feasibility are unverified. No clean historical complete-election holdout is selected.
 
 The [contamination inventory](../metadata/validation-evidence-contamination-audit.json) and [prospective protocol](../metadata/model-vnext-validation-protocol.json) recommend the exact current model, with no model clone, for one prospective 2026 election-level evaluation. Repeated freezes are dependent snapshots and simulations non-empirical. No pre-election complete-model production path is established by available evidence; all gates remain unchanged.
 
-The owner explicitly approved the protocol; its status is `approved-awaiting-registration-seal`. The timestamped approval and immutable material-rule fingerprint are recorded separately. [Sealing infrastructure](PROSPECTIVE_SNAPSHOT_SEALING.md) archives all exact model carriers, freezes both comparators and guards the scorer. Only non-empirical temporary fixtures were exercised. Scoring and production remain unauthorised; `currentlySealedSnapshots` is empty. No target entered the pipeline, forecast refresh or live seal occurred.
+The owner-approved protocol is now `approved-registration-sealed`. The first
+live `post_freshwater_registration` seal is a **secondary-dependent** observation
+of `vic_2026_general_election`, witnessed at `2026-10-08T06:04:57.301744Z`
+(`2026-10-08T17:04:57.301744+11:00` Melbourne). Source main was
+`9b40186f203ca8aba77d9afbee71ba5a59c46dc9`; archive-preservation commit is
+`98e59a31a287d7047d9786f6bb4afe28b58c7dec`. The operational registry commit is
+later again: these three identities must never be conflated.
 
-Exact next action: merge this approval/infrastructure PR, then execute the witnessed `post_freshwater_registration` seal in a new run.
+The [registration receipt](../metadata/prospective-registration-2026-10-08.json)
+points to the self-contained [manifest](../model/data/validation/prospective-snapshots/post_freshwater_registration/manifest.json).
+Its immutable canonical SHA is
+`6ffdd7f47ef45c43b039425424889638c571ccb5136181bc28508f759dc24a64`, covering
+70 members. Approved material rules remain
+`747449970bf4a0bb4304e528c9e2ec37dd77420fffb1e1ee056fd0b4af4bdb01`.
+The existing 8 October forecast was archived without refresh or input admission.
+No 2026 outcome was loaded or scored. Scoring and production remain unauthorised;
+readiness remains 6/9. Registration adds no independent election replication.
+
+The next scheduled snapshot is `writ_roll_close`, 3 November 2026 at 8pm Melbourne,
+subject to governed evidence/source monitoring and fresh VEC verification. It is
+not authorised for execution by this registration PR. The frozen PR #126 creator
+retains its one-time pre-registration guard; a future milestone run must reconcile
+active registration state before creation, without overwriting this archive.
+
+Exact next action: review and merge the `post_freshwater_registration` seal PR.
 
 ## Preserved audit history
 

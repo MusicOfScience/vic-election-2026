@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-08",
+  "purpose": "Track the published Victorian Assembly polling universe separately from the subset that can be compared and admitted to the current five-party forecast model.",
+  "policy": {
+    "allPublishedDoesNotMeanAllPoolable": true,
+    "currentComposition": [
+      "ALP",
+      "LIB_NAT",
+      "ONP",
+      "GRN",
+      "OTH_IND"
+    ],
+    "comparabilityBreak": "2026-02-10",
+    "comparabilityReason": "Published Victorian polling did not separately report One Nation before 10 February 2026; older support is embedded in residual/other categories and must not be reconstructed as if measured.",
+    "modelAdmission": "A discovered poll still requires provenance, complete composition, questionnaire/regime, sample-dependency and model-eligibility review."
+  },
+  "externalCoverageBenchmark": {
+    "source": "Plain Politics Victoria polling tracker",
+    "sourceUrl": "https://plainpolitics.com.au/vic/",
+    "publishedAssemblyPolls": 60,
+    "pollingOrganisations": 8,
+    "fieldworkStart": "2023-02-15",
+    "latestFieldworkEndReported": "2026-08-16",
+    "role": "coverage-audit-only",
+    "notAModelInput": true
+  },
+  "sourceFamilies": [
+    {
+      "id": "demosau",
+      "label": "DemosAU",
+      "coverageClass": "canonical-plus-staged",
+      "canonicalModelEligiblePollIds": [
+        "demosau_2026-02",
+        "demosau_2026-06"
+      ],
+      "stagedEvidence": [
+        "demosau_2026-08",
+        "demosau_2026-09"
+      ],
+      "nextAction": "Review September primary acquisition gaps and preserve August quarantine; no model eligibility inferred."
+    },
+    {
+      "id": "roy-morgan",
+      "label": "Roy Morgan",
+      "coverageClass": "canonical-current",
+      "canonicalModelEligiblePollIds": [
+        "roy_morgan_2026-02",
+        "roy_morgan_2026-04",
+        "roy_morgan_2026-08"
+      ],
+      "nextAction": "Continue live monitoring; retain published cross-tabs/preferences as supporting evidence rather than duplicate polls."
+    },
+    {
+      "id": "redbridge-accent",
+      "label": "RedBridge / Accent Research",
+      "coverageClass": "canonical-plus-staged",
+      "canonicalModelEligiblePollIds": [
+        "redbridge_accent_2026-02",
+        "redbridge_accent_2026-06_large"
+      ],
+      "stagedEvidence": [
+        "redbridge_accent_2026-08",
+        "redbridge_accent_2026-09"
+      ],
+      "actionableGaps": [
+        {
+          "label": "AFR / RedBridge / Accent August state poll",
+          "fieldworkStart": "2026-07-28",
+          "fieldworkEnd": "2026-08-01",
+          "sampleSize": 1014,
+          "effectiveSampleSize": 745,
+          "primaryVote": {
+            "LIB_NAT": 30,
+            "ALP": 23,
+            "ONP": 22,
+            "GRN": 14,
+            "OTH_IND": 11
+          },
+          "twoPartyPreferred": {
+            "LIB_NAT": 57,
+            "ALP": 43,
+            "basis": "respondent allocated"
+          },
+          "primarySourceUrl": "https://www.accent-research.com/projects/afr%2C-redbridge-group-and-accent-research-august-2026-victorian-state-poll",
+          "status": "primary-source-staged-awaiting-human-review",
+          "correctionNote": "AFR initially published conflicting 53-47 and 57-43 figures; subsequent reporting records RedBridge/Accent clarification that 57-43 is the correct respondent-allocated Coalition-Labor result.",
+          "requiredChecks": [
+            "sample-family independence from June large-sample/MRP-related research",
+            "questionnaire and undecided treatment",
+            "leadership-regime timing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "freshwater",
+      "label": "Freshwater Strategy",
+      "coverageClass": "canonical-current",
+      "canonicalModelEligiblePollIds": [
+        "freshwater_2026-02",
+        "freshwater_2026-03",
+        "freshwater_2026-06",
+        "freshwater_2026-08",
+        "freshwater_2026-09"
+      ],
+      "nextAction": "Continue live monitoring; owner-approved comparable Freshwater waves are canonical, with one pollster family retained."
+    },
+    {
+      "id": "newspoll-pyxis",
+      "label": "Newspoll / Pyxis Polling & Insights",
+      "coverageClass": "canonical-current",
+      "canonicalModelEligiblePollIds": [
+        "newspoll_pyxis_2026-07"
+      ],
+      "nextAction": "Monitor for new Victorian state releases. Pre-February observations without a separately reported One Nation share remain non-comparable to the current five-way series."
+    },
+    {
+      "id": "resolve-strategic",
+      "label": "Resolve Strategic",
+      "coverageClass": "sample-family-captured-awaiting-primary-reconciliation",
+      "canonicalModelEligiblePollIds": [],
+      "stagedEvidence": [
+        "resolve_strategic_2026-08",
+        "resolve_strategic_2026-09"
+      ],
+      "actionableGaps": [],
+      "nextAction": "Reconcile Resolve/Nine primary methodology and exact component-wave metadata before any family is eligible for human acceptance or model admission.",
+      "familyEvidence": [
+        {
+          "id": "resolve-vic-2026-mar-apr",
+          "period": "March-April 2026",
+          "status": "captured-in-sample-family-ledger"
+        },
+        {
+          "id": "resolve-vic-2026-may-jun",
+          "period": "May-June 2026",
+          "status": "publisher-topline-captured-awaiting-pollster-methodology"
+        },
+        {
+          "id": "resolve-vic-2026-aug",
+          "period": "August 2026",
+          "status": "staged-secondary-evidence-awaiting-primary-reconciliation"
+        }
+      ]
+    },
+    {
+      "id": "wolf-smith",
+      "label": "Wolf & Smith",
+      "coverageClass": "historical-non-comparable",
+      "canonicalModelEligiblePollIds": [],
+      "knownStatewideEvidence": [
+        {
+          "fieldworkEnd": "2024-08-29",
+          "status": "pre-current-regime"
+        }
+      ],
+      "exclusionReason": "One Nation was not separately reported in this period, so the observation cannot supply a coherent current five-party composition without imputation.",
+      "allowedUses": [
+        "historical two-party context",
+        "pollster coverage ledger",
+        "validation/reference"
+      ]
+    },
+    {
+      "id": "yougov-common-threads",
+      "label": "YouGov / Common Threads MRP",
+      "coverageClass": "current-comparable-primary-methodology-captured",
+      "canonicalModelEligiblePollIds": [],
+      "actionableGaps": [
+        {
+          "label": "Victorian MRP Common Threads",
+          "fieldworkStart": "2026-06-16",
+          "fieldworkEnd": "2026-07-10",
+          "sampleSize": 4003,
+          "primaryVote": {
+            "LIB_NAT": 26,
+            "ONP": 24,
+            "ALP": 23,
+            "GRN": 13,
+            "OTH_IND": 14
+          },
+          "twoPartyPreferred": {
+            "LIB_NAT": 53.8,
+            "ALP": 46.2
+          },
+          "seatProjection": {
+            "LIB_NAT": 39,
+            "ALP": 29,
+            "ONP": 17,
+            "GRN": 3
+          },
+          "method": "multilevel regression with poststratification (MRP)",
+          "commissioner": "Common Threads",
+          "methodologySourceUrl": "https://yougov.com/about/methodology/australian-polling-council",
+          "status": "primary-methodology-captured-secondary-results-awaiting-reconciliation",
+          "requiredChecks": [
+            "capture first-party results/topline report",
+            "reconcile the 9 July primary-methodology fieldwork end against the 10 July secondary report",
+            "retain commissioner/questionnaire-order context",
+            "keep statewide topline and seat-level MRP in one dependency family",
+            "leadership timing because fieldwork predates Ben Carroll premiership"
+          ],
+          "primaryMethodologySourceUrl": "https://d3nnbamw3dez3b.cloudfront.net/documents/Commonthreads_Aug9_APC_Methodology_Statement.pdf",
+          "primaryMethodologyFieldworkEnd": "2026-07-09",
+          "effectiveSampleSize": 2901,
+          "marginOfError": 1.819
+        }
+      ],
+      "nextAction": "Capture YouGov/Common Threads first-party results, reconcile the 9/10 July fieldwork-end discrepancy and complete human role review; do not treat the statewide topline and seat projection as independent evidence."
+    }
+  ],
+  "priorityQueue": [
+    "Complete the dossier review for the staged RedBridge/Accent August and September waves; resolve sample-family/leadership-regime checks before model eligibility.",
+    "Review the parsed Freshwater first-party workbooks; resolve February residual rounding and the August publication-date/canonical-ID reconciliation before model eligibility.",
+    "Reconcile the now-captured Resolve sample families against pollster methodology and exact component-wave metadata before model eligibility.",
+    "Capture YouGov/Common Threads first-party results; reconcile the primary-methodology 9 July fieldwork end against the secondary 10 July report while keeping statewide and seat-model outputs in one dependency family.",
+    "Keep pre-10-February-2026 polls in historical/reference coverage rather than imputing One Nation."
+  ],
+  "currentEvidenceReviewPath": "metadata/current-evidence-adjudication-2026-10-08.json"
+}

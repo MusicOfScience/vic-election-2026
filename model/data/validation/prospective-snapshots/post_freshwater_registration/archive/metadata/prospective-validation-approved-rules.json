@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "protocolId": "vic-2026-prospective-observational-v1",
+  "modelArrangement": "A: exact existing model under a new prospective validation identity; no model clone.",
+  "model": {
+    "forecastId": "vic_2026_experimental_joint_v1",
+    "baseCommit": "485421f69251809e849436a7e69211a3e42cf93f",
+    "baselineForecastSha256": "a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2",
+    "configurationPath": "model/config/experimental_forecast.yml",
+    "configurationSha256": "5a744c897d85822a7ca435364e25f9b7195b36d8bcb27e2beaf66e61a14c078e",
+    "structuralConfigurationSha256": "357a446d75ca069d2562fe7ce2f969ffd812b21ee0fadc6d5246ee2fb86d74d0",
+    "engineSha256": {
+      "model/src/vicforecast/__init__.py": "966bd47e37aa6e36ec9c3d8f2e552365ba84199aeaeb2503eadd8b66c33ad5a9",
+      "model/src/vicforecast/forecast_2026.py": "0f1293d4a68f06b2c0cfa227023c6232d37d6552d00509c8449e26767d7381c5",
+      "model/src/vicforecast/historical_families.py": "ac4093cfa73461d6dbc823b8ce47a606689556e9dcdfee17207391a11154a2c8",
+      "model/src/vicforecast/historical_forecast.py": "45981c2bc6710dfb917f570111e72ebc13a25a4daefef5628b94c41d86a2cadd",
+      "model/src/vicforecast/historical_replay.py": "006318749af458aadbc85abfca11cf4b959369963080d4aad59cd4be271fc8d5",
+      "model/src/vicforecast/polling/__init__.py": "fd62f13cfed1d5094f146fea56ef766925979a8170ec9633bf4018af191b6ca4",
+      "model/src/vicforecast/polling/benchmark.py": "80858a22c66c6ea05df86caa6cfa8fbac010f6b36c76bc6610e14c53ddf9a2f7",
+      "model/src/vicforecast/polling/historical_categories.py": "e1108656e205e82e186e00689ffbe901174354cf66aa457bb4515d09b1aa5c1e",
+      "model/src/vicforecast/polling/latent.py": "9213398cbb946064b49f91c08e6cf4c63a0642c85c8b131ad8b21d4ad354da34",
+      "model/src/vicforecast/polling/registry.py": "1bb58ef0d3703442eaa34f107cdf9ea69b680c5d2f7a19227fe00df03d5392e6",
+      "model/src/vicforecast/preference_prior.py": "acca8227fb5f479ac41662af91a0c585f3d806b711ef186e13e781d7e7352592",
+      "model/src/vicforecast/validation_metrics.py": "64adbdd47fce889dc93465c894585c44fd4d5b516296d57e19d39647ab6ff875",
+      "model/scripts/run_experimental_forecast.py": "67aba947e270eaf8115a2377a3f8d412b00c4aed26ec32f1b94f748d6faa8439",
+      "model/constraints.txt": "6779371d3af2d13e4da4344f3ba22777fba52905d89fa6777abd1f901da1edaa"
+    },
+    "seed": 20260826,
+    "simulations": 5000,
+    "allowedConfigurationChanges": [
+      "as_of"
+    ],
+    "structuralChangesRequireNewModelVersion": true
+  },
+  "validationUnits": [
+    "vic_2026_general_election"
+  ],
+  "independentElectionCount": 1,
+  "selectedHistoricalHoldouts": [],
+  "freezeBeforeScoring": true,
+  "snapshotsAreIndependentElections": false,
+  "simulationCountsAsEmpirical": false,
+  "productionCanOpenAutomatically": false,
+  "productionStandard": "PROD 1.0 gates unchanged. One 2026 election cannot replace a registered missing historical replication or establish cycle-clustered calibration. Separate governance/evidence required for any production decision.",
+  "snapshots": [
+    {
+      "id": "post_freshwater_registration",
+      "electionUnit": "vic_2026_general_election",
+      "cutoff": null,
+      "trigger": "Approved protocol merge and witnessed seal of existing 8 October forecast; not backdated preregistration.",
+      "role": "secondary-dependent"
+    },
+    {
+      "id": "writ_roll_close",
+      "electionUnit": "vic_2026_general_election",
+      "cutoff": "2026-11-03T20:00:00+11:00",
+      "trigger": "Official writ day/roll close at 8pm Melbourne.",
+      "role": "secondary-dependent"
+    },
+    {
+      "id": "nominations_close",
+      "electionUnit": "vic_2026_general_election",
+      "cutoff": "2026-11-09T12:00:00+11:00",
+      "trigger": "Official noon nominations close.",
+      "role": "secondary-dependent"
+    },
+    {
+      "id": "pre_early_voting",
+      "electionUnit": "vic_2026_general_election",
+      "cutoff": "2026-11-17T23:59:59+11:00",
+      "trigger": "Before early voting opens 18 November.",
+      "role": "secondary-dependent"
+    },
+    {
+      "id": "final_pre_election",
+      "electionUnit": "vic_2026_general_election",
+      "cutoff": "2026-11-27T23:59:59+11:00",
+      "trigger": "Before 28 November polling day; primary scoring snapshot.",
+      "role": "primary"
+    }
+  ],
+  "inputRules": {
+    "permitted": "Sources published, captured and explicitly model-admitted by cutoff under existing evidence/independence policies. Preserve source-family, undecided and verification states; no automatic admission.",
+    "forbidden": "Later publications/captures/admissions even with earlier fieldwork; target outcomes/leaks, election-night data, target-derived crosswalks/notionalisation, fitted calibration using 2026 targets, post-freeze model/seed/simulation changes.",
+    "updates": "Governed poll/candidate/ballot updates and as_of create new snapshot input hashes, not structural model variants. Only facts used by the exact engine enter its prediction. No coefficient, party mapping, uncertainty, feature-weight or counting changes.",
+    "lateEvidence": "Only later live snapshots; never overwrite sealed prediction.",
+    "calendarCorrection": "Reverify VEC before sealing; prospectively version schedule before affected cutoff and target exposure. Missed freeze remains unavailable; never recreate retrospectively."
+  },
+  "sealing": {
+    "required": [
+      "approved protocol commit/hash",
+      "UTC witness time and Melbourne cutoff",
+      "model/code/config/runtime/dependency hashes",
+      "source IDs and publication/capture/admission timestamps and receipts including holds/exclusions",
+      "self-contained archived inputs, ballots/mappings and output files with SHA256",
+      "probability vectors, seat distributions and interval definitions",
+      "comparator definitions and predictions hashes",
+      "scorer implementation and metric hashes",
+      "immutable manifest and snapshot commit"
+    ],
+    "existingSnapshotCommandLimitation": "create-forecast-snapshot.mjs indexes hashes but does not archive a self-contained input package or establish witnessed cutoff. Verified sealing implementation required before activation.",
+    "activationRequirements": [
+      "owner approves before target exposure",
+      "comparator/scorer implementations frozen/hashed before first evaluation seal",
+      "archival receipts prove required inputs/outputs existed by cutoff"
+    ]
+  },
+  "comparators": [
+    {
+      "id": "prior_result",
+      "definition": "Repeat official 2022 five-family district primary shares/winners under pre-2026-target boundary/ballot mappings; Council prior regional shares and family seat totals. Deterministic one-hot winner probabilities and same log-loss clipping. Missing mappings unavailable."
+    },
+    {
+      "id": "uniform_swing",
+      "definition": "Apply snapshot statewide five-family forecast-minus-official-2022 shares to prior district/region shares; truncate zero and renormalise under same cutoff-safe family availability. Fixed current preference-counting prior, no local shocks or target-fit parameters. Deterministic winner probabilities. Seal exact implementation/output before activation."
+    }
+  ],
+  "metrics": {
+    "winnerProbability": "Mean district sum-family (p-y)^2 multiclass Brier and mean -ln(p_observed) log loss, epsilon=1e-12; disclose zero-probability events/clipping count. Accuracy ties resolved ALP,LIB_NAT,ONP,GRN,OTH_IND (current family order).",
+    "primaryVotes": "Equally weighted valid district/family primary MAE in percentage points; statewide formal-vote-weighted family share errors and mean absolute error using official turnout weights only in scoring.",
+    "assemblySeats": "Per-family forecast mean/median absolute error, inclusive central 80% interval coverage/width (NumPy default linear quantiles 0.1/0.9). Hung binary Brier/log loss only for pre-sealed probability/event definition. Do not assume independent family counts.",
+    "council": "Regional-family primary-share MAE, family seat absolute errors/80% coverage and statewide totals; group-STV family approximation only, not candidate-order certification.",
+    "finalPairs": "Only probabilities/pairs exported and sealed before cutoff; otherwise unavailable, never retrospectively reconstruct predictions.",
+    "aggregation": "Only final_pre_election primary; earlier forecasts descriptive longitudinal snapshots. One election cluster, not independent districts/regions/families or repeated-election snapshots.",
+    "missing": "Explicit reason/denominator/affected metric unavailable. No zero imputation, silent deletion or substitute targets/comparators. Missing required sealed probabilities or outcome mapping invalidate affected metrics."
+  },
+  "targetUniverse": {
+    "assembly": "Contests held on 28 November in the 88 current districts; official certified formal votes and winner-family mapping under pre-sealed rules. Cancelled/deferred/supplementary contests remain separate, unavailable for original general-election targets, no inferred zeros.",
+    "council": "Eight five-member regions under actual general-election rules, family-level results; no individual candidate-order claim.",
+    "hungEvent": "No modelled family holds at least 45 Assembly seats (max across ALP,LIB_NAT,ONP,GRN,OTH_IND), matching forecast_2026.py. This family-aggregation event is not a claim about individual independent coordination, coalition negotiation or confidence-and-supply. If the target universe changes, disclose non-comparability.",
+    "outcomeAdmission": "Certified official VEC scoring-only receipt with publication/capture/hash. Incomplete results remain unavailable; writ-return date is not automatic scoring permission."
+  },
+  "calibration": {
+    "method": "Ten equal-width district-family winner-probability reliability bins with non-empty counts. Descriptive within one dependent election only; no district bootstrap as election-level calibration CI, no fitted correction applied to these evaluated targets.",
+    "oneElectionLimitation": "Chamber/hung calibration and cycle-clustered generalisation remain unestablished."
+  },
+  "decisionRules": {
+    "PASS": "Protocol integrity only: approval before target exposure, required forecasts/comparators/scorers sealed at cutoffs, hashes/universe/missingness declared, every result including negatives retained. Not predictive-performance or production PASS.",
+    "FAIL": "Leakage, backdating, tampered hash, undeclared structural change, dropped negative result or missing required primary forecast/comparator => execution FAIL; preserve record.",
+    "performance": "Report all fixed scores/comparator differences descriptively, including losses. No numerical release threshold chosen for a single election.",
+    "stop": "Pause affected evaluation on contamination/cutoff/manifest uncertainty or model change; preserve originals, no post-result replacement holdout.",
+    "newProtocol": "Changed units, cutoffs after closure, metrics/comparators/scoring/aggregation/calibration/stopping rules require prospective protocol version before exposure. Behaviour changes require new model identity too.",
+    "bugFixes": "Output-neutral tooling/documentation corrections may append audited amendment. Prediction-changing bug fix requires new model/protocol with original negative evidence preserved."
+  },
+  "simulationRole": {
+    "empiricalElectionCount": 0,
+    "allowed": "Preregister DGP, misspecification stresses, seeds, sample sizes and MC error before estimator/coverage/sensitivity/preference/chamber tests; preserve negatives.",
+    "cannotEstablish": "Real electoral calibration, fourth empirical election or Victorian complete-model production."
+  }
+}

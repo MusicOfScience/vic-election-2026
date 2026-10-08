@@ -10,7 +10,12 @@ from model.validation.prospective.governance import read, instant, canonical, ch
 from model.validation.prospective.scoring import evaluate_predictions, seat_metrics, score_snapshot, validate_scorer_readiness
 from vicforecast.forecast_2026 import PARTIES
 
-ROOT = Path(__file__).resolve().parents[2]
+REPOSITORY = Path(__file__).resolve().parents[2]
+# Exercise frozen PR #126 pre-registration creation guards using its byte-exact
+# archived source state. Active-registry checks are separate below; never rewrite
+# the live protocol to manufacture a fixture or reopen the one-time live entry.
+ROOT = REPOSITORY / 'model/data/validation/prospective-snapshots/post_freshwater_registration/archive'
+
 
 
 def test_owner_approval_and_frozen_rules():
@@ -181,3 +186,31 @@ def test_missing_metrics_never_zero_or_partial_state():
     p,y = synthetic(); y['assemblyDistricts'].pop('toy_b')
     with pytest.raises(ValueError,match='wrong district'):
         evaluate_predictions(p,y)
+
+
+def test_live_registration_offline_verification_and_scorer_guard(tmp_path):
+    import shutil
+    from model.validation.prospective.governance import digest, material_rules
+    protocol = read(REPOSITORY, 'metadata/model-vnext-validation-protocol.json')
+    entry = read(REPOSITORY, 'metadata/prospective-registration-2026-10-08.json')
+    assert protocol['status'] == 'approved-registration-sealed'
+    assert protocol['sealing']['currentlySealedSnapshots'] == [entry]
+    assert digest(canonical(material_rules(protocol))) == protocol['approval']['approvedProtocolSha256']
+    assert entry['sourceCommit'] != entry['sealCommit']
+    assert instant(entry['witnessedAt']) > instant(entry['sourceMainMergedAt'])
+    package = REPOSITORY / entry['archivePath']
+    copied = tmp_path/'detached-no-git'
+    shutil.copytree(package, copied)
+    m = sealing.verify_package(copied)
+    assert m['manifestSha256'] == entry['manifestSha256']
+    assert m['gitCommit'] == entry['sourceCommit']
+    assert m['kind'] == 'prospective-live' and m['registered']
+    assert m['role'] == 'secondary-dependent'
+    assert not any('2026' in p and ('target_outcome' in p or 'scoring-result' in p) for p in m['files'])
+    for k,v in build_comparators(copied/'archive').items():
+        assert digest(canonical(v)) == entry['comparatorPredictionSha256'][k]
+    with pytest.raises(ValueError, match='scoringAuthorised=false'):
+        validate_scorer_readiness(copied, {})
+    # Readiness guard only: no outcome path is ever passed/opened here.
+    with pytest.raises(ValueError):
+        check_governance(REPOSITORY)
