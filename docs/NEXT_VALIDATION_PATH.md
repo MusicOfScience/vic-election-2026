@@ -3,13 +3,14 @@
 Audit date: 8 October 2026. Base: merged PR #124, main commit
 `485421f69251809e849436a7e69211a3e42cf93f`.
 
-## Decision proposed for review
+## Decision approved, pending registration seal
 
 Register **the exact current experimental model** under validation protocol
 `vic-2026-prospective-observational-v1`. Preserve witnessed, self-contained 2026
 forecast freezes. Select only the future Victorian general election as an
-empirical unit. No older holdout is selected or scored in this batch. This draft
-is not owner approval and does not authorise scoring or model changes.
+empirical unit. No older holdout is selected or scored in this batch. The project owner has now explicitly approved these rules. The timestamped receipt
+and [pre-sealing infrastructure](PROSPECTIVE_SNAPSHOT_SEALING.md) preserve them;
+scoring and production remain unauthorised.
 
 **No defensible route to complete-model production validation before 28 November
 was established by the available evidence.** Keep the forecast experimental
@@ -24,7 +25,7 @@ records lineage, exposure dimensions and uncertainty. The
 [prospective protocol](../metadata/model-vnext-validation-protocol.json) fixes units,
 cutoffs, comparators, metrics, missingness, aggregation and stopping rules before
 new targets enter the pipeline. `node scripts/validate-next-validation-protocol.mjs`
-checks the draft and frozen fingerprints; it is not a release-gate adapter.
+checks the approval, immutable rules and frozen fingerprints; it is not a release-gate adapter.
 
 ## Confirmed state and immutable boundary
 
@@ -267,5 +268,5 @@ against post-hoc tuning without inventing a model variant or weakening productio
 - Jurisdiction rule-source URLs are attached to the inventory entries. No historical
   target dataset was acquired or scored in this run.
 
-Exact next action: owner review and explicit approval or rejection of
-`vic-2026-prospective-observational-v1`.
+Exact next action: merge the approval/infrastructure PR, then execute the witnessed
+`post_freshwater_registration` seal in a new run.

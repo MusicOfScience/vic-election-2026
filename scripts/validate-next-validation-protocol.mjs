@@ -7,7 +7,19 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (path) => JSON.parse(readFileSync(resolve(root, path), "utf8"));
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
 
-// Validate this proposed contract, never approve it or adapt a release gate.
+// Validate the owner-approved, immutable contract; never adapt a release gate.
+const APPROVED_RULES_SHA256 = "747449970bf4a0bb4304e528c9e2ec37dd77420fffb1e1ee056fd0b4af4bdb01";
+function sorted(value) {
+  if (Array.isArray(value)) return value.map(sorted);
+  if (value && typeof value === "object") return Object.fromEntries(Object.keys(value).sort().map((key) => [key,sorted(value[key])]));
+  return value;
+}
+export function materialRules(protocol) {
+  const rules = structuredClone(protocol);
+  for (const key of ["status","approval","nextAction","scoringAuthorised","targetOutcomesLoaded"]) delete rules[key];
+  delete rules.sealing.currentlySealedSnapshots;
+  return rules;
+}
 export function validateNextValidationProtocol(
   audit = read("metadata/validation-evidence-contamination-audit.json"),
   protocol = read("metadata/model-vnext-validation-protocol.json"),
@@ -36,8 +48,23 @@ export function validateNextValidationProtocol(
   assert.deepEqual(audit.conclusion.prospectiveEmpiricalUnits, ["vic_2026_general_election"]);
   assert.equal(audit.conclusion.preElectionCompleteModelProductionFeasible, false);
   assert.equal(audit.conclusion.productionAuthorisation, "closed");
-  assert.equal(protocol.status, "proposed-awaiting-owner-review", "activation requires separate reviewed change");
-  assert.equal(protocol.approval, null);
+  assert.equal(protocol.status, "approved-awaiting-registration-seal");
+  const approval = read("metadata/prospective-validation-approval.json");
+  const frozenRules = read("metadata/prospective-validation-approved-rules.json");
+  assert.deepEqual(protocol.approval, approval, "explicit approval receipt mismatch");
+  assert.equal(approval.reviewerRole, "project-owner");
+  assert.equal(approval.decision, "approved");
+  assert.equal(approval.protocolId, protocol.protocolId);
+  assert.match(approval.recordedAt, /^2026-10-08T\d{2}:\d{2}:\d{2}\.\d+Z$/);
+  assert.ok(Date.parse(approval.recordedAt) <= Date.now(), "future approval timestamp");
+  assert.equal(approval.approvedProtocolSha256, APPROVED_RULES_SHA256);
+  assert.equal(approval.scoringAuthorised, false);
+  assert.equal(approval.productionAuthorised, false);
+  assert.deepEqual(materialRules(protocol), frozenRules, "material rule change requires prospectively reviewed version");
+  assert.equal(hash(JSON.stringify(sorted(frozenRules))), APPROVED_RULES_SHA256);
+  const implementation = read("metadata/prospective-validation-implementation.json");
+  assert.equal(implementation.protocolSha256, APPROVED_RULES_SHA256);
+  for (const [path, sha] of Object.entries(implementation.files)) assert.equal(hash(readFileSync(resolve(root,path))),sha, `implementation drift: ${path}`);
   for (const field of ["scoringAuthorised", "targetOutcomesLoaded", "snapshotsAreIndependentElections", "simulationCountsAsEmpirical", "productionCanOpenAutomatically"]) assert.equal(protocol[field], false, field);
   assert.equal(protocol.freezeBeforeScoring, true);
   assert.equal(protocol.simulationRole.empiricalElectionCount, 0);
@@ -69,6 +96,6 @@ export function validateNextValidationProtocol(
   assert.deepEqual(protocol.comparators.map((c) => c.id), ["prior_result", "uniform_swing"]);
   for (const field of ["winnerProbability", "primaryVotes", "assemblySeats", "council", "finalPairs", "aggregation", "missing"]) assert.ok(protocol.metrics[field]);
   for (const field of ["PASS", "FAIL", "performance", "stop", "newProtocol", "bugFixes"]) assert.ok(protocol.decisionRules[field]);
-  return { status: "valid-draft", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false };
+  return { status: "valid-approved-pre-seal", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false };
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) console.log(JSON.stringify(validateNextValidationProtocol()));

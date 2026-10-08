@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "protocolId": "vic-2026-prospective-observational-v1",
+  "protocolSha256": "747449970bf4a0bb4304e528c9e2ec37dd77420fffb1e1ee056fd0b4af4bdb01",
+  "status": "frozen-pre-registration-implementation",
+  "scoringAuthorised": false,
+  "productionAuthorised": false,
+  "comparatorImplementations": {
+    "prior_result": "d2d016c844a0719871be4628073ec187a96ac6a0d3c6ecd9247741c4a79a73f7",
+    "uniform_swing": "d2d016c844a0719871be4628073ec187a96ac6a0d3c6ecd9247741c4a79a73f7"
+  },
+  "scorerSha256": "0b2b5791d37823d9b3456340fc6c2b531acab2ca7105e7024b6023c5c501f3e6",
+  "files": {
+    "model/validation/prospective/governance.py": "c425305d3bd226167bc5974e7c37726ecb8b70ed14b8a28a916f71794995801e",
+    "model/validation/prospective/comparators.py": "d2d016c844a0719871be4628073ec187a96ac6a0d3c6ecd9247741c4a79a73f7",
+    "model/validation/prospective/scoring.py": "0b2b5791d37823d9b3456340fc6c2b531acab2ca7105e7024b6023c5c501f3e6",
+    "model/validation/prospective/package.py": "65a49adbff7f0db56662ff0b95d58e700042f41bdb6667396cb43866a8f17c88",
+    "model/scripts/prospective_snapshot.py": "b8890d8a2b82341b7723879a4358631b5394bb9bdd1dae8471f4c8a0e3080b8f",
+    "metadata/prospective-validation-input-contract.json": "4efc08f923f39fe90ef3ae72c17e48d01007948ecd764d51ab3d1bd2c8da878a"
+  },
+  "amendmentPolicy": "No casual mutation. Any implementation change needs reviewed fingerprint amendment before a new seal; material rule changes require a prospectively versioned protocol. Earlier sealed packages retain exact code."
+}
