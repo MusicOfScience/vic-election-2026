@@ -795,7 +795,9 @@
         "reconstruction": "not-established",
         "diagnostics": "not-established",
         "humanOutcomeExposure": "not-established"
-      }
+      },
+      "primaryRuleReviewedAt": "2026-10-08",
+      "sourceCheckState": "primary source retrieved; no target outcomes acquired"
     },
     {
       "id": "qld_elections",
@@ -820,7 +822,9 @@
         "reconstruction": "not-established",
         "diagnostics": "not-established",
         "humanOutcomeExposure": "not-established"
-      }
+      },
+      "primaryRuleReviewedAt": "2026-10-08",
+      "sourceCheckState": "primary source retrieved; no target outcomes acquired"
     },
     {
       "id": "sa_elections",
@@ -845,7 +849,9 @@
         "reconstruction": "not-established",
         "diagnostics": "not-established",
         "humanOutcomeExposure": "not-established"
-      }
+      },
+      "primaryRuleReviewedAt": "2026-10-08",
+      "sourceCheckState": "primary indexed search evidence; direct open timed out on recheck"
     },
     {
       "id": "wa_elections",
@@ -870,7 +876,9 @@
         "reconstruction": "not-established",
         "diagnostics": "not-established",
         "humanOutcomeExposure": "not-established"
-      }
+      },
+      "primaryRuleReviewedAt": "2026-10-08",
+      "sourceCheckState": "primary source retrieved; no target outcomes acquired"
     },
     {
       "id": "tas_elections",
@@ -895,7 +903,9 @@
         "reconstruction": "not-established",
         "diagnostics": "not-established",
         "humanOutcomeExposure": "not-established"
-      }
+      },
+      "primaryRuleReviewedAt": "2026-10-08",
+      "sourceCheckState": "primary source retrieved; no target outcomes acquired"
     },
     {
       "id": "act_elections",
@@ -920,7 +930,9 @@
         "reconstruction": "not-established",
         "diagnostics": "not-established",
         "humanOutcomeExposure": "not-established"
-      }
+      },
+      "primaryRuleReviewedAt": "2026-10-08",
+      "sourceCheckState": "primary indexed search evidence; direct open timed out on recheck"
     },
     {
       "id": "vic_2026_general_election",
@@ -976,23 +988,28 @@
   "primarySourceChecks": [
     {
       "url": "https://www.vec.vic.gov.au/voting/types-of-elections/state-elections",
-      "observed": "Writ/roll close 3 November (roll 8pm); nominations noon 9 November; early voting opens 18 November; election 28 November 8am\u20136pm; return writ 19 December."
+      "observed": "Writ/roll close 3 November (roll 8pm); nominations noon 9 November; early voting opens 18 November; election 28 November 8am\u20136pm; return writ 19 December.",
+      "reviewedAt": "2026-10-08"
     },
     {
       "url": "https://www.vec.vic.gov.au/voting/2026-state-election",
-      "observed": "Confirms 2026 dates, early voting 18\u201327 November."
+      "observed": "Confirms 2026 dates, early voting 18\u201327 November.",
+      "reviewedAt": "2026-10-08"
     },
     {
       "url": "https://www.vec.vic.gov.au/about-us/publications/state-election-reports-and-plans",
-      "observed": "Report existence only for 1999/2002/2006 and older by-elections; target PDFs not acquired."
+      "observed": "Report existence only for 1999/2002/2006 and older by-elections; target PDFs not acquired.",
+      "reviewedAt": "2026-10-08"
     },
     {
       "url": "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline",
-      "observed": "Contest inventory only, no result links opened."
+      "observed": "Contest inventory only, no result links opened.",
+      "reviewedAt": "2026-10-08"
     },
     {
       "url": "https://www.vec.vic.gov.au/-/media/eba7837f188d4f76a5aab7db06d824a4.pdf",
-      "observed": "VEC source description: Council reform from 22 provinces/44 members to eight regions/40 members in 2006; no full report download."
+      "observed": "VEC source description: Council reform from 22 provinces/44 members to eight regions/40 members in 2006; no full report download.",
+      "reviewedAt": "2026-10-08"
     }
   ],
   "repositoryLineageSha256": {

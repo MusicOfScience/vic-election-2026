@@ -132,7 +132,7 @@
   "targetUniverse": {
     "assembly": "Contests held on 28 November in the 88 current districts; official certified formal votes and winner-family mapping under pre-sealed rules. Cancelled/deferred/supplementary contests remain separate, unavailable for original general-election targets, no inferred zeros.",
     "council": "Eight five-member regions under actual general-election rules, family-level results; no individual candidate-order claim.",
-    "hungEvent": "No single ALP or LIB_NAT family holds at least 45 Assembly seats; this arithmetic event is not a claim about coalition negotiation or confidence-and-supply. Match pre-sealed engine definition; if universe changes, disclose non-comparability.",
+    "hungEvent": "No modelled family holds at least 45 Assembly seats (max across ALP,LIB_NAT,ONP,GRN,OTH_IND), matching forecast_2026.py. This family-aggregation event is not a claim about individual independent coordination, coalition negotiation or confidence-and-supply. If the target universe changes, disclose non-comparability.",
     "outcomeAdmission": "Certified official VEC scoring-only receipt with publication/capture/hash. Incomplete results remain unavailable; writ-return date is not automatic scoring permission."
   },
   "calibration": {
