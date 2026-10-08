@@ -1,0 +1,611 @@
+{
+  "schemaVersion": 1,
+  "statuses": [
+    "CANDIDATE_REVIEW_REQUIRED",
+    "POLL_REVIEW_REQUIRED",
+    "SOURCE_CHANGE_REVIEW_REQUIRED",
+    "WORKFLOW_FAILURE"
+  ],
+  "actions": [
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "030e7cd98c8695eec4513d40666e3ecd60660bd75cc1e195ce7204ed4c2ac106",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "03913a9f6e3ac206cab3961c48ab1ae2a037160568856608b58ce5a2a75c0373",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "056589db3a43b2acddbfc4e9a311b206e4796ba7baff30ea9d35ec123eca26da",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "07f5c45e4d3ee69c6f071033f42d98973fb0b72fdbbdfd01c63a63c8ee8e6629",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "0a1cb319cf62df2b90de6c1a2d71a5d02fc7bce481232124505c8aae6c30610e",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "0bee2a0c531f27b440403278a4d5551bafc2977ae92750918a7bbb1c96482de7",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "0e14ef7b79ef52e527491ceaa31419cbe9929fffe0c0cc359d9a5bf990188d5d",
+      "detail": "mornington-peninsula-candidate-confirmations: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "10c165cb979d73d1390ec3801469658c87493140e60b80af7ffd8a14b2313854",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "1158e79621412ebc081848229c7939153f31f2be7bb29ac8be23441f39ea4011",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "11ce18291e034ebf866a2ee57aa0cf420ad979ab86d30989ba6e77038738e7e6",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "18129660e0f8d9d470a28a9bdccef3e72c66a07dba7cf67698a850d55d562ada",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "190fadbeeffec9e1323de916a12ea841c25bfc64f7990f2d0f91b127cb4ce575",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "1b4632c717246af871e26fbc9f0ed0ef2018394dc232438e04b92453dfd89ff3",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "1f036f2287343c6176df1d77792c38003174f687479f29fc684cb86c336c8d9a",
+      "detail": "labor-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "1fc35341da1ea7ab193f5af30bed11258c2b06b938a22344cb505bb65db135ab",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "21b839db7ac203c747c059fdf52a3210e7ed8ac902001b1912fd5e8cfbda2f9a",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "22a38413cfd63428970d141db1ffed679b4800b3ba8562e8a9e92c40bbb27acd",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "24e2e7bfcc3a17df50f8a090ca11993c8d33b31b0751c2fc17b6f67c3616fb23",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "2c2b465fdcf3b69245cda995033392b7be8a92df971ae8204f4a0c1f8be88e76",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "2fc0ced3e342e15be928ff24bada5190d44274b34143b05fc9c65ff75e2ce1c8",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "31eaea4587785d0a0f66f1dfe597193ee27c817ea69581f2200d4dfe99e504df",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "35949d544c25b7063ab56adadf2a76c1882067bcef05a13b5cc9f614ed9f0646",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "38e267ab56c5701d93d8c4352fbfc1e53865ce565d8aa0986bbf84de12647ad1",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "390c0166ff9dd59ebbe503f42912fe2bce1fe44bff3a1ef7b23bd1e15ce95860",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "3c5a606dd23f0675d2c5e94421d44a8a2054f99de6ebfd1fbce7aba6b61ede5a",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "3d843837f1f8fd6367c6cb1697adec8b49bfe5e7adc0e4e9a0503e6f9ffedaa9",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "3d98881c955684c3af789a64415f2624bb35760cb76cff5d1d3f691b61372334",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "3db1fd015dc2f88d28f12cb90f55a977b0927e85adb6561c180ad31fc615af48",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "408e564b23432ee69ff302b3f08b3e0d3cda45e8834ae88d7d7f9e4d08301edc",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "44b1ac1bb9efb114a8f628eba41b88b84393f049921f218973ee69948ce0655e",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "4b1ca1253ec93547e317fd834c3ca6ba515569ed9615fb6f1bdfacde3640d56b",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "4c9ec12b4b591673cc7c64947af597b6d7d38f6b218f27386151fc6eddfeb922",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "4de802ccf10dc2ea86df3e5b531ffd45c921bd4d39e055bdb18a1681f69c0aef",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "5123d91917bbcdb367c112a9c2b95d8aff9a38365805f16f06f8dc56d81816cf",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "5287304e9d53599fc53988e602a38101737aa19082f5f2458c4b760909a310ea",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "5299d1e9c58ca0909609c6c4da7e83635cb56464e924c513e87e2d8dab22b625",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "5807e5473497aeceaf10cf6be791836dad2ecb13e538f3136d82936e319b7c8d",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "581bb6fefa61144248ac999b0e0cef5933fce5b21ebca94a3b587ae3382eaa69",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "5e8878cfe911f0c102aa9c51f48da3a5554fac2af56a8e0a2c2fe53a506618e8",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "5f0ecf43e57815b6acd664f8addc4851e0c087896b0d957eb18abde823483f54",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "63957e94b848b8092dccd8bffdae50a8c52f52e0c19b9fd18c5befc8e21e018c",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "63dd26161de9ee3b9eaad72d60bf107959e680b4950b0577066915084b01b5f5",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "6696837cacccabc9eb43557fffb73d4cfa7b5ee5e2fe9a936ba6247ea8e73131",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "687f442192647938e80c2d1403319bc63916a1493f567b8d572abbc588203fbd",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "68d828157913993e4fd71858437f23d61e3f9c728c2739609b485c359a7a5a49",
+      "detail": "labor-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "6d3f0ed8277610e82cfd69552bb8663eaf5b954cb79975f9c31c85f8d1404191",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "701ec4b2bb7472d0eeb29ebcb1b42bc0cfd13baf2a2e83c3fe43ad27bad6b602",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "71cf0dca19f603c709c4e177e8f40a6694a85a557d4bc9d7fdc2d597cecb32e3",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "72e3e8d10b6e1e53ca06e846fbc8c08924fbee7295d4a3103861f4f11a51c2ee",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "75b3cfa540856b44c8c0c67dc827fea51be03e0744bfaf2c7ec1b0c4ec114ef4",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "75beb6de82d5e5184f80cac57211befb15d0cfcf305fa57d1f5e7515c878aad8",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "7a4c389ceebc1b2cf851c92f452f7de241674d9143cc6c5829884ab9bcfff903",
+      "detail": "nationals-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "7a91d9dd7075d0d0b0d800c2ec53cc25cc8d75277c59a690334ebd803bbaff40",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "7bf5f382069893cd1296214474ba4530b7ee001d855459011d41ea1805e2746f",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "81a977d0498e200e79a0be09e8d22cfb25eda1a2195459eb1f289baa57f2b8de",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "834fbca566e42abcb963c31461a549201ae0cb55f71035fb3da53aeae603a213",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "87df5d2aef95fd174c54617a92666165fdda4d9e1cd7310ecbfa2c1da493357a",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "8eaef6c06c7615acbbcf95c768c56c3719ab1174d2c69be810b0760a2c27b101",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "8f4489c48a104e693b12fc71b5ea351074acbd85df08fe97d63107582cee1b67",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "8f4d5ef1f8fc1ad193edff2d57a4c57b2cf4cff548c63b574dfff115c12aba79",
+      "detail": "mornington-peninsula-candidate-confirmations: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "8f976acf438cb64750588582123cd2588fbdebde99799b3ce3144e317431b5cc",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "9172eab42956cc90a673b8215458c372adc5858284f7327a05d9093bbcc17aa6",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "923c76a345a66de6ea83f7afae26900ff1f021342550627ba9a0e7b488bc4d5d",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "92a63229ae30a95f16a3acf97257b8c497729dc11626f6a7b2478945e36f71d0",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "92ce5f9996dabd11ab30dabfa88450ced889c9394d487c828e5d9f79a7c0792a",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "93b32c25d266fdc187c30656a3931830c942bb91bf110a6f896c8011c04c188b",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "94d60e8de0bab9b9f4a1a9fd11b55a006158922ece3c5275dac8340d2935ebf8",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "9810050c40c23487b6145049379fc169851663529ecb5b314c78ef93b154f480",
+      "detail": "mornington-peninsula-candidate-confirmations: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "995134778839e03f9d5613445395f22d0ef965c48e7d6c40bd53e8ea1e65f0d3",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "99bc46595d3d989917991ef82995aa39a9c199db9d389a7eab80863ef14ad308",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "9cce53bf26c25c94ffb27f5d87269cdd2af427637e7f5bf9dddf18ddf27e34d9",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "9e639ee17635617add2d96169bf7968b54e4a52cde84ad2e3230a31a9df6fc18",
+      "detail": "mornington-peninsula-candidate-confirmations: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "9ef496709b5c661b828b3479632c3e86ba71400eca36a3576fa9e4db7843cb3a",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "a0feb99e59e80be0627f8de8381d923b658e0ef52ad205cde98e5a1ecab0f0f9",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "a343c35c0f9212584ccfa16d3ac9b72727b779ddd14a2560db515c40a551cb11",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "a52ad7233b7546bb1769aa5300fe72730d005f5dbef492a0212d1532748b9ff9",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "a5c9bbda4a23b7179f0b6887fa714aa5641ae208de8ec954985677e8ec9ccf8b",
+      "detail": "mornington-peninsula-candidate-confirmations: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "a69fbccbe2df1c84ae26f32d375b473dfe73bac657604cafa9183200a013f443",
+      "detail": "victorian-socialists-coverage-gaps: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "a717ccf2ce5ff31d0207cd3d6d6aac103f69966004af5930af3470aa4fe422c8",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "aaa558d8f44c200ee88339a40883148e70ccf0044861ac5bebbd9723631114cd",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "ac6cddce0e14b85323d686b6203ec31d9b168fc8133b7dd2ebe83aafacd5e966",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "ae864a5b6abd41564c6da2c4e9f65faaab8803540c8827087d6ad0e88006d770",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "af4b997fda1799463a4aa3698bba28f9735687813b2a7341403c4e555edf45b8",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "afbb98da1873cba8dcad60337aa9cfb911f26382dbfd1a0733a257455ceef073",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "b0000d7fecef3c5ce6deaa12fa4ac31afe14abf4b7a816b31341b1e761bed1f9",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "b5ab20d3218c28a61f07ca2a730f0405698b1d3ded89d960fec35dfa86d8d689",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "b8871d9d68dd15db1c11e2b4e462b2e337f822fb835fa7ff2ff78e264c023367",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "bd6c5cce59ff7949e1a313b394c37baa044aaa0226d1a04078ad965fd74f022c",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "bdd6a8445eb62f7ac637ecbd310c1ad22d7ca140f1ff2fb74dd0ed03b11d1f84",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "c341a7729e140b6ba02ae586a8ac1c61c0fe6ff61ed8029a5305b4d34d20ed82",
+      "detail": "liberal-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "c6c093476d1f23ae4c729f3e48134570d08ad2087f4529cdca127773d3dc3c3d",
+      "detail": "labor-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "c768bab3a3c063b7786bf47b2ac5de5235051815d43f87e5bf7e1ec9a9fdb6ff",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "c8fbee575f83ef4b5707cd243b4b46bd10d9a488890b7670644f231486730cdc",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "cbcfa066402791c46632faaef6ab2ab4a31a4192281a370c957e33fd916fc577",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "cca2952f345a09cc2885e2ab8a10fdd7e2dfc29998d79709e818c9662ee04bcb",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "cd5be4fa44c7018a59ce8bfc3b060df131680974d4399af49320afe356b4a17a",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "ce622f755d95e339948ab8482a8a7fd388bbf241ffafd26caae13d8ab2fde4cb",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "cf9672b9613d5a3fd3e35b050d415026a2db6e2cd33210ce68069368cfa2ef3d",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "d1c37ff509951f3f3f609c7416ab72d38218fcd8d1c973367da734406b288b9d",
+      "detail": "greens-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "d1e3fd87afb095a3afec50296a67378100942d15d026c7273e5bbbd94cf92af3",
+      "detail": "labor-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "d3fc90bfee4e53096bdbe6a4fb001b6b2feaf7582f5fcb18fc6a6888d9b73375",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "d66a679e6984f85b352390ee9112d774a0ae778c1a0057f3134c968ed27cff44",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "d8cc6edd78099b883d84ab59f71089656f2aca675b9b71b3901f8d6f1e4b464a",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "db922ede178f27cb0baba431541ed597682133676ee56c77a1143c5582ffa37f",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "dd3650799f7daa8d04857d2f900eb5660ef8deae7db3c1fb1eab9edb69e786cd",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "de77ac7cd8f4ddc8908f9dbd01e3a4b54e9a769f0e7bdadeb835ca2ef4ac2ab2",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "e058c171ebe5dc6fec9659f629397d69feecdd32e8f502eae3e547355a51cba9",
+      "detail": "labor-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "e5531e5ab6fa83487bdc332daabd27aaa0fec53357f4c4da575eee06384e0f2b",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "ee7fd83a5523e90246d523876f2e1ff71cd0424ef4cc42cb8f49014b2910ae73",
+      "detail": "labor-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "f1ec6bd84e72bfc7042586fdda832caa0b88cd4c28ddb7956461e2f008e3ca51",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "f4cd42f1e65c7596d4d69caad8dd8bd546d8be1ff823a8dd8bbd0faab9a18ae9",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "f92d55ccce4b507aae6843d18265ea2d0fb06d01c6a254fd8d9c49c21527a0e4",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "f95b505d562cc090715a7f26919e754c53780d454b009b65c1b0bf5c293836d5",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "identity": "fe178b6b032cb79651e678c717219441915edcf952125c322d43857979989d64",
+      "detail": "one-nation-victoria-candidates: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "POLL_REVIEW_REQUIRED",
+      "identity": "1fc4ee654c4e9ff49d4b963f69ee95ad2c690be923ec876e0d982f04a1ce2ba8",
+      "detail": "roy-morgan-vic-2026-upper-house: quarantined evidence; model eligibility requires a separate governed decision."
+    },
+    {
+      "status": "SOURCE_CHANGE_REVIEW_REQUIRED",
+      "identity": "vec-2026-candidates",
+      "detail": "changed-quarantined: fd38480e98be4503b31cefd62a3d435a5912dae4e44a8c686f416a5665be3f31"
+    },
+    {
+      "status": "SOURCE_CHANGE_REVIEW_REQUIRED",
+      "identity": "vec-2026-election",
+      "detail": "changed-quarantined: 32d4ad4b80e5ce6f608472e762f993014317c049a0f7d1be0b6bb8671ec77b1e"
+    },
+    {
+      "status": "SOURCE_CHANGE_REVIEW_REQUIRED",
+      "identity": "vec-2026-enrolment",
+      "detail": "changed-quarantined: fd8511555214d15ce20c6b4a3d9b1ce5be30fc1731e2a2794cf63680b1ccbb37"
+    },
+    {
+      "status": "WORKFLOW_FAILURE",
+      "identity": "demosau-victoria-state-polls",
+      "detail": "Source extraction failed; no absence-of-evidence conclusion permitted."
+    }
+  ],
+  "materialFingerprint": "87780a621bfc5df1a9ecb9c3f925d0faf463bdacea1c7afb4163018ef06abb1d",
+  "automaticPromotion": false,
+  "modelInputsChanged": false,
+  "forecastRefreshed": false
+}
+
