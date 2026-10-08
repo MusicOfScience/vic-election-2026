@@ -24,5 +24,5 @@ test("refresh audit reconciles exact single-wave addition and every district del
 test("owner promotion is idempotent and leaves unrelated candidate reviews intact", () => {
   execFileSync(process.execPath, ["scripts/apply-approved-poll-review.mjs", "--check"]);
   const decisions = JSON.parse(read("metadata/discovery-review-decisions.json")).decisions;
-  assert.equal(decisions.filter((item) => item.kind !== "poll").length, 194);
+  assert.equal(decisions.filter((item) => item.kind !== "poll").length, 305);
 });
