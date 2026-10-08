@@ -18,13 +18,18 @@ export function candidateIdentity(record) {
   return `${record.contest}|${record.name}`.trim().toLowerCase();
 }
 
+export function isVecSource(url) {
+  try { const u = new URL(url); return u.protocol === "https:" && ["vec.vic.gov.au", "www.vec.vic.gov.au"].includes(u.hostname); } catch { return false; }
+}
+
 export function candidateFromDiscovery(record, reviewedAt, note = "") {
-  const official = record.sourceAuthority === "VEC" && ["nominated", "withdrawn", "elected", "not-elected"].includes(record.officialStatus);
+  const officialStatus = record.officialStatus ?? record.candidateStatus;
+  const official = record.sourceAuthority === "VEC" && isVecSource(record.sourceUrl) && ["nominated", "withdrawn", "elected", "not-elected"].includes(officialStatus);
   return {
     name: record.name,
     contest: record.contest,
     party: record.party ?? null,
-    status: official ? record.officialStatus : "endorsed",
+    status: official ? officialStatus : record.candidateStatus === "announced" ? "announced" : "endorsed",
     sourceUrl: record.sourceUrl,
     sourceAuthority: record.sourceAuthority ?? record.party ?? "primary-source",
     evidenceId: record.id,

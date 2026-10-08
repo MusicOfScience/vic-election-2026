@@ -2,6 +2,7 @@
 from __future__ import annotations
 import hashlib
 import json
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -42,7 +43,7 @@ def instant(value):
 
 def check_governance(root, *, implementation=True):
     protocol, approval, rules = (read(root, p) for p in (PROTOCOL, APPROVAL, RULES))
-    if protocol['status'] != 'approved-awaiting-registration-seal':
+    if protocol['status'] not in ('approved-awaiting-registration-seal', 'approved-registration-sealed'):
         raise ValueError('approved protocol required')
     if approval['reviewerRole'] != 'project-owner' or approval['decision'] != 'approved':
         raise ValueError('explicit project-owner approval required')
@@ -56,8 +57,8 @@ def check_governance(root, *, implementation=True):
         raise ValueError('approved material rules changed: new prospective version required')
     if protocol['scoringAuthorised'] or approval['scoringAuthorised'] or approval['productionAuthorised']:
         raise ValueError('this registration batch authorises neither scoring nor production')
-    if protocol['sealing']['currentlySealedSnapshots']:
-        raise ValueError('first seal must be registered in a separate reviewed run')
+    if protocol['status'] == 'approved-awaiting-registration-seal' and protocol['sealing']['currentlySealedSnapshots']:
+        raise ValueError('unregistered protocol cannot contain seals')
     for path, expected in protocol['model']['engineSha256'].items():
         if digest((Path(root) / path).read_bytes()) != expected:
             raise ValueError(f'model changed: {path}')
@@ -72,4 +73,9 @@ def check_governance(root, *, implementation=True):
         for path, expected in frozen['files'].items():
             if digest((Path(root) / path).read_bytes()) != expected:
                 raise ValueError(f'unfrozen implementation change: {path}')
+    if protocol['status'] == 'approved-registration-sealed':
+        try:
+            subprocess.run(['node', str(Path(root)/'scripts/validate-prospective-registration.mjs'), str(root)], check=True, capture_output=True)
+        except subprocess.CalledProcessError as error:
+            raise ValueError('existing sealed snapshot registry failed verification') from error
     return protocol, approval

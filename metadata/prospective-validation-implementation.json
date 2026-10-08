@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "protocolId": "vic-2026-prospective-observational-v1",
   "protocolSha256": "747449970bf4a0bb4304e528c9e2ec37dd77420fffb1e1ee056fd0b4af4bdb01",
-  "status": "frozen-pre-registration-implementation",
+  "status": "frozen-active-registration-implementation",
+  "amendmentPurpose": "Operational active-registration and append-only milestone guards; comparator/scorer and approved material rules unchanged. PR #127 archive retains the original implementation.",
   "scoringAuthorised": false,
   "productionAuthorised": false,
   "comparatorImplementations": {
@@ -11,12 +12,13 @@
   },
   "scorerSha256": "0b2b5791d37823d9b3456340fc6c2b531acab2ca7105e7024b6023c5c501f3e6",
   "files": {
-    "model/validation/prospective/governance.py": "c425305d3bd226167bc5974e7c37726ecb8b70ed14b8a28a916f71794995801e",
+    "model/validation/prospective/governance.py": "459fc69acb1fbc856b2f76e0cf037af010b6f1f5acb327dbabf884ecd9f7bbef",
     "model/validation/prospective/comparators.py": "d2d016c844a0719871be4628073ec187a96ac6a0d3c6ecd9247741c4a79a73f7",
     "model/validation/prospective/scoring.py": "0b2b5791d37823d9b3456340fc6c2b531acab2ca7105e7024b6023c5c501f3e6",
-    "model/validation/prospective/package.py": "65a49adbff7f0db56662ff0b95d58e700042f41bdb6667396cb43866a8f17c88",
+    "model/validation/prospective/package.py": "a8b447d662d169450e3839e57369e006bd625932803dc418d0c711e32d41ef16",
     "model/scripts/prospective_snapshot.py": "b8890d8a2b82341b7723879a4358631b5394bb9bdd1dae8471f4c8a0e3080b8f",
-    "metadata/prospective-validation-input-contract.json": "4efc08f923f39fe90ef3ae72c17e48d01007948ecd764d51ab3d1bd2c8da878a"
+    "metadata/prospective-validation-input-contract.json": "4efc08f923f39fe90ef3ae72c17e48d01007948ecd764d51ab3d1bd2c8da878a",
+    "scripts/validate-prospective-registration.mjs": "4029a8b7557188da54661f83ed3c8083813a786efbbdc47cf7dd4557483c02f6"
   },
   "amendmentPolicy": "No casual mutation. Any implementation change needs reviewed fingerprint amendment before a new seal; material rule changes require a prospectively versioned protocol. Earlier sealed packages retain exact code."
 }

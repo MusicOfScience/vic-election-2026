@@ -14,6 +14,7 @@ if [[ "${1:-}" == "--changed-since" ]]; then
   run_forecast=0; run_model_export=0; run_polls=0; run_provenance=0
   while IFS= read -r changed_path; do
     case "${changed_path}" in
+      model/data/validation/*|model/validation/*|model/scripts/prospective_snapshot.py) ;;
       model/src/*|model/config/*|model/data/*|model/scripts/*)
         run_forecast=1; run_model_export=1; run_provenance=1
         [[ "${changed_path}" == *poll* || "${changed_path}" == *upper_house* ]] && run_polls=1
@@ -25,9 +26,16 @@ if [[ "${1:-}" == "--changed-since" ]]; then
   done < <(git -C "${project_root}" diff --name-only "${base_ref}"...HEAD)
 fi
 
+if [[ "${3:-}" == "--plan" ]]; then
+  printf 'forecast=%s model_export=%s polls=%s provenance=%s\n' "$run_forecast" "$run_model_export" "$run_polls" "$run_provenance"
+  exit 0
+fi
+node "${project_root}/scripts/validate-next-validation-protocol.mjs"
+
 if [[ "${run_forecast}" == "1" ]]; then python3 "${project_root}/model/scripts/run_experimental_forecast.py" --root "${project_root}/model"; fi
 if [[ "${run_model_export}" == "1" ]]; then node "${project_root}/scripts/generate-model-output.mjs" "${project_root}/model"; fi
 if [[ "${run_polls}" == "1" ]]; then node "${project_root}/scripts/generate-poll-data.mjs"; fi
 if [[ "${run_provenance}" == "1" ]]; then node "${project_root}/scripts/generate-source-provenance.mjs"; fi
 node "${project_root}/scripts/check-release-readiness.mjs"
+node "${project_root}/scripts/validate-next-validation-protocol.mjs"
 echo "Deterministic forecast artefacts regenerated. Review the Git diff before release."

@@ -508,3 +508,106 @@ new valid production forecast deploys
 ```
 
 The automation is complete only when these behaviours are demonstrated, not merely when workflow YAML exists.
+
+## Prospective election operations — implemented state after PR #127
+
+This section describes the current implementation, rather than treating the
+architecture above as completed. The current forecast is a live experimental
+product; the prospective archive is historical evidence. They are separate paths:
+`model/data/processed/experimental_forecast_2026.json` versus
+`model/data/validation/prospective-snapshots/<snapshotId>/`. The active registry is
+`metadata/model-vnext-validation-protocol.json:sealing.currentlySealedSnapshots`;
+each entry supplies its own witness time, forecast identity and immutable manifest.
+A later current forecast may post-date the latest seal. Later polling must never
+be inserted into an earlier archive.
+
+### Source coverage and remaining manual obligations
+
+| Route | Current implementation | Human obligation |
+|---|---|---|
+| VEC election / enrolment / candidate page | Five live fingerprint adapters include these three VEC pages; candidate-list discovery follows VEC links. Enrolment marker currently names August 2026. | Review changed carriers; a new enrolment month may fail the marker until explicitly reviewed. Reverify calendar before every milestone seal. |
+| Roy Morgan | Two pinned state/upper-house publications fingerprinted; publication-index discovery follows Victorian state-poll links. | Capture a new primary publication and assess comparability/dependency. |
+| DemosAU | Dedicated index/seed discovery and disclosed fallback transport. | Resolve methodology/carrier gaps; parsing never establishes eligibility. |
+| Freshwater | Four known XLSX URLs (February, March, August, September), method/figure checks and comparison against captured workbook hashes. | Check for **new publication URLs manually**; this is not a pollster-index discovery service. Capture new tables before review. |
+| Candidate parties / local sources | Labor, Liberal, Greens, Nationals, One Nation, Victorian Socialists, Family First and Mornington Peninsula routes; some scoped electorates only. | Announcements/endorsements remain provisional. Only primary VEC nomination evidence can confer official status. |
+| RedBridge/Accent, Resolve and other publishers | Manually captured primary/blocked and secondary evidence registries replay into quarantine. No comprehensive automatic publication discovery. | Check canonical publishers during routine review; secondary reporting prompts primary acquisition, not admission. Existing holds remain holds. |
+
+Live observation hashes and extracted records do not themselves constitute durable
+raw-carrier archives. Before accepting or admitting anything, preserve the primary
+carrier and its provenance through the existing governed source/evidence route.
+Network/markup failures must be investigated; they do not mean no new evidence
+exists. Whole-page fingerprints can change because of navigation or editorial
+content. Such changes request review and do not assert changed quantitative inputs.
+
+### Cadence and actionable signals
+
+The UTC 20:17 daily dispatcher runs the full monitor **Tuesday and Friday Melbourne**
+until 2 November, **daily from 3–28 November inclusive**, then resumes twice weekly.
+Manual dispatch and main pushes run immediately. Outside the campaign the other
+daily dispatches only check the cadence, avoiding unnecessary acquisition work.
+Two checks per week give a 3–4 day review interval against the existing 21-day
+polling freshness policy. Daily acquisition during writ/nominations and the final
+week supports candidate changes and nearby cutoffs without hourly cost/noise.
+This cadence does not authorise automated acceptance, model admission or scoring.
+The optional assessment date changes only the report date, never cadence or inputs.
+
+All discovery/review stages retain `if: always()`: freshness failure does not hide
+later discovery. `monitoring-action-report.json`, GitHub run summaries and warning
+annotations distinguish `NO_ACTION`, `SOURCE_CHANGE_REVIEW_REQUIRED`,
+`FRESHNESS_WARNING`, `POLL_REVIEW_REQUIRED`, `CANDIDATE_REVIEW_REQUIRED` and
+`WORKFLOW_FAILURE`. Missing reports, extraction failures and failed validation
+stages fail closed. The already closed three production gates do not generate a
+freshness warning just because they are closed. Exact reviewed carrier hashes
+suppress repeated manual evidence alerts; changed values under the same ID return
+to review. Workbook byte changes remain visible even if rounded toplines match.
+
+A maintainer must watch the workflow and review its summary after scheduled runs.
+Enable GitHub workflow failure notifications for acquisition failures. Review-only
+warnings are visible in the run summary/annotations; they are **not** guaranteed
+email/push alerts. No issues or commits are created, so no duplicate issues or
+timestamp-only commits occur. Reports remain GitHub artifacts for 90 days;
+durable accepted evidence and decision records belong in reviewed commits.
+The stable material fingerprint excludes check timestamps. New run summaries
+record acquisition history without claiming the model has changed.
+
+### Routine governed sequence between milestones
+
+1. Inspect the run summary and download reports for actionable sources/records.
+2. Capture canonical primary carriers, dates, method, source family and dependency
+   evidence; keep new records quarantined. Unknown records from trusted pages also
+   require review. Do not overwrite accepted source fingerprints automatically.
+3. Use the human review manifest and `scripts/apply-discovery-decision.mjs` for
+   explicit reviewer decisions. Evidence acceptance and model eligibility are
+   separate. Accepted polls remain `modelEligible:false` through that command.
+4. Resolve eligibility through the existing owner/poll-review contracts, then
+   update canonical inputs only for explicitly authorised observations. HOLD is
+   valid; a changed URL or newer publication supplies no automatic permission.
+5. Only if canonical model inputs genuinely changed, run the established
+   `bash scripts/refresh-forecast.sh --changed-since BASE_REF` against the reviewed
+   input commit. Preserve fixed seed/configuration, allowing the registered
+   assessment-date update. Verify deterministic exports/provenance/readiness and
+   inspect forecast deltas before publishing the current experimental forecast.
+   Validation archives and the snapshot CLI do not trigger forecast refreshes.
+6. Both before and after refresh the approved-protocol/registry validator verifies
+   sealed member hashes. Prior archives, comparators and scorer identities remain
+   immutable. No refresh command writes into prospective-snapshot directories.
+7. At a registered milestone only, follow `PROSPECTIVE_SNAPSHOT_SEALING.md` from
+   clean, remote-verified merged main with fresh VEC receipts. Create a new package;
+   never regenerate an earlier seal. Append the verified record to the active
+   registry in a reviewed PR, preserving every prior entry and receipt.
+
+### Next milestone readiness
+
+`writ_roll_close` remains **2026-11-03T20:00:00+11:00**, secondary-dependent,
+under the same single `vic_2026_general_election` unit. The active-registration
+sealer validates existing seals before allowing a new ID. Duplicate IDs and existing
+destinations fail. The final 60-second execution window, actual witness clock,
+cutoff-safe inputs and fresh conflict-free VEC review remain mandatory. Prepare
+inputs before the window; a missed cutoff cannot be backfilled.
+
+A temporary `--fixture --snapshot-id writ_roll_close` package exercises this route
+without registering an empirical snapshot. It cannot enter the active registry.
+No second live seal has been created. Scoring and production remain unauthorised;
+readiness remains 6/9. Operational implementation amendments are fingerprinted
+before future seals; the first archive retains its original code, configuration,
+comparators, scorer and forecast, independent of current implementation changes.

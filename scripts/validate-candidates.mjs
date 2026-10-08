@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { isVecSource } from "./apply-discovery-decision.mjs";
 import { classifyContest, loadContestUniverse } from "./candidate-contests.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const registry = JSON.parse(readFileSync(resolve(root, "metadata/candidates-2026.json"), "utf8"));
@@ -15,7 +16,7 @@ for (const candidate of registry.candidates) {
   const key = `${candidate.contest}|${candidate.name}`.toLowerCase();
   if (keys.has(key)) throw new Error(`candidate registry: duplicate ${candidate.name} / ${candidate.contest}`);
   keys.add(key);
-  if (official.has(candidate.status) && candidate.sourceAuthority !== "VEC") throw new Error(`candidate registry: ${candidate.name} cannot be ${candidate.status} without VEC authority`);
+  if (official.has(candidate.status) && (candidate.sourceAuthority !== "VEC" || !isVecSource(candidate.sourceUrl))) throw new Error(`candidate registry: ${candidate.name} cannot be ${candidate.status} without VEC authority`);
   if (!classifyContest(candidate.contest, contestUniverse)) throw new Error(`candidate registry: unknown contest ${candidate.contest}`);
 }
 const provisionalIds = new Set();
