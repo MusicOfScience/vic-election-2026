@@ -75,8 +75,8 @@ export const releaseReadiness = {
     },
     "candidateDiscovery": {
       "status": "accepted-candidate-evidence-complete-coverage",
-      "records": 194,
-      "acceptedRecords": 194,
+      "records": 305,
+      "acceptedRecords": 305,
       "sourceFamilies": 8,
       "assemblyContests": 88,
       "assemblyDistrictsTotal": 88,
