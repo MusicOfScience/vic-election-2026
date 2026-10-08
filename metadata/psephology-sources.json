@@ -9,6 +9,15 @@
   },
   "sources": [
     {
+      "id": "roy-morgan",
+      "displayName": "Roy Morgan Research",
+      "platform": "Roy Morgan Research",
+      "canonicalUrl": "https://www.roymorgan.com/",
+      "sourceFamily": "roy-morgan",
+      "evidenceClasses": ["poll_interpretation", "upper_house", "seat_analysis"],
+      "independenceNotes": "Roy Morgan projections and analysis inherit the dependency structure of the underlying Roy Morgan polling wave; do not count a derived projection as another polling observation."
+    },
+    {
       "id": "antony-green",
       "displayName": "Antony Green",
       "platform": "Antony Green's Election Blog",

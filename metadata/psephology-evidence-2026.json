@@ -3,6 +3,27 @@
   "reviewedAt": "2026-10-01",
   "records": [
     {
+      "id": "roy-morgan-2026-08-17-upper-house-projection",
+      "analystSourceId": "roy-morgan",
+      "publishedDate": "2026-08-17",
+      "sourceUrl": "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november",
+      "title": "Victorian State Voting Intention: L-NP Coalition and One Nation set for a majority in Victoria's Upper House in November",
+      "evidenceType": "upper_house",
+      "geography": { "scope": "Victoria Legislative Council", "jurisdiction": "VIC" },
+      "pollDerived": true,
+      "upstreamEvidence": ["roy_morgan_2026-08"],
+      "independenceAssessment": "dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "structuredFindings": {
+        "fieldwork": { "start": "2026-08-05", "end": "2026-08-07" },
+        "sampleSize": 2084,
+        "method": "special SMS poll; representative Victoria-wide cross-section",
+        "seatProjection": { "coalition": 11, "oneNation": 10, "alp": 9 }
+      },
+      "notes": "Accepted as poll-derived projection/reference evidence only. It is dependent on the August Roy Morgan Victorian polling wave, is not independently validated, is not a new canonical polling observation, and is excluded from statewide and Council model inputs."
+    },
+    {
       "id": "ben-raue-2026-07-27-vote-to-seat",
       "analystSourceId": "ben-raue-tally-room",
       "publishedDate": "2026-07-27",
