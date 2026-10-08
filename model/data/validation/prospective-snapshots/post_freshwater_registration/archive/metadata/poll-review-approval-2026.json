@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "approvedAt": "2026-10-08T00:00:00Z",
+  "previousApprovalAt": "2026-08-30T09:10:00Z",
+  "reviewerRole": "project-owner",
+  "scope": "Retain the seven August owner decisions and implement the four explicit October owner decisions. Evidence acceptance and model eligibility remain separate. September Freshwater is admitted; September RedBridge is accepted but held pending independence evidence; September DemosAU and Resolve remain held.",
+  "evidenceDecisions": [
+    { "evidenceId": "742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72", "decision": "defer" },
+    { "evidenceId": "redbridge-accent-vic-2026-08-01-primary", "decision": "approve" },
+    { "evidenceId": "freshwater-2026-02-primary-workbook", "decision": "approve" },
+    { "evidenceId": "freshwater-2026-03-primary-workbook", "decision": "approve" },
+    { "evidenceId": "freshwater-2026-08-primary-workbook", "decision": "approve" },
+    { "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary", "decision": "hold" },
+    { "evidenceId": "yougov-common-threads-vic-mrp-2026-06-16-07-10-secondary", "decision": "hold" },
+    { "evidenceId": "redbridge-accent-vic-2026-09-14-primary", "decision": "approve", "reason": "Genuine first-party evidence accepted; model admission remains pending documented respondent/sample-family independence." },
+    { "evidenceId": "freshwater-2026-09-primary-workbook", "decision": "approve", "reason": "Captured first-party workbook, complete composition and disclosed methodology/bases; comparable disjoint Freshwater wave with no reported pooling. Repeat-respondent exclusion is undisclosed and retained as a limitation." },
+    { "evidenceId": "demosau-vic-2026-09-10-20-secondary", "decision": "hold", "reason": "Primary report/publication, complete residual, mode, undecideds and sample dependence remain insufficiently verified." },
+    { "evidenceId": "resolve-strategic-vic-2026-09-06-12-secondary", "decision": "hold", "reason": "Primary capture, arithmetic/category and fieldwork/publication discrepancies remain unresolved." }
+  ],
+  "modelEligibilityDecisions": [
+    { "evidenceId": "freshwater-2026-02-primary-workbook", "pollId": "freshwater_2026-02", "decision": "eligible", "canonicalAction": "add" },
+    { "evidenceId": "freshwater-2026-03-primary-workbook", "pollId": "freshwater_2026-03", "decision": "eligible", "canonicalAction": "add" },
+    { "evidenceId": "freshwater-2026-08-primary-workbook", "pollId": "freshwater_2026-08", "decision": "eligible", "canonicalAction": "repair-existing" },
+    { "evidenceId": "redbridge-accent-vic-2026-08-01-primary", "pollId": "redbridge_accent_2026-08", "decision": "pending", "canonicalAction": "none", "blocker": "Confirm sample-family independence from the June RedBridge evidence before model admission." },
+    { "evidenceId": "redbridge-accent-vic-2026-09-14-primary", "pollId": "redbridge_accent_2026-09", "decision": "pending", "canonicalAction": "none", "blocker": "Documented respondent/sample-family independence from prior RedBridge/Accent material remains unresolved. Disjoint dates do not prove independence." },
+    { "evidenceId": "freshwater-2026-09-primary-workbook", "pollId": "freshwater_2026-09", "decision": "eligible", "canonicalAction": "add", "sourceFamily": "freshwater", "reason": "Explicit project-owner admission under existing comparable-wave policy; same Freshwater family, no reported rolling/MRP pooling, undisclosed repeat respondents recorded as limitation." },
+    { "evidenceId": "demosau-vic-2026-09-10-20-secondary", "pollId": "demosau_2026-09", "decision": "hold", "canonicalAction": "none", "blocker": "Primary report/publication, residual, mode, undecideds and sample dependence unverified." },
+    { "evidenceId": "resolve-strategic-vic-2026-09-06-12-secondary", "pollId": "resolve_strategic_2026-09", "decision": "hold", "canonicalAction": "none", "blocker": "Primary capture, category arithmetic and fieldwork/publication discrepancies unresolved." }
+  ]
+}

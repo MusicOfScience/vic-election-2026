@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "protocolId": "vic-2026-prospective-observational-v1",
+  "reviewerRole": "project-owner",
+  "decision": "approved",
+  "recordedAt": "2026-10-08T05:23:59.812327Z",
+  "decisionSource": "Explicit project-owner instruction in this session: APPROVE vic-2026-prospective-observational-v1 for the exact current experimental model.",
+  "approvedProtocolSha256": "747449970bf4a0bb4304e528c9e2ec37dd77420fffb1e1ee056fd0b4af4bdb01",
+  "fingerprintDefinition": "SHA256 of UTF-8 JSON with recursively sorted keys, compact separators, literal Unicode, no NaN; material rules exclude only operational status/approval/nextAction/scoring state and sealed-snapshot registry.",
+  "rulesPath": "metadata/prospective-validation-approved-rules.json",
+  "proposalCommit": "dfb72710869cb8f004c7da081a72bcfd9b4e3a99",
+  "proposalPullRequest": "https://github.com/MusicOfScience/vic-election-2026/pull/125",
+  "proposalFileSha256": "7c1b6f0f39198c43379e912479aaeb10e240576d45b17f7b42579cf1b99059b2",
+  "scoringAuthorised": false,
+  "productionAuthorised": false
+}

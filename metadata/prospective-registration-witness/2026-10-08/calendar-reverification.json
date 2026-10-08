@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-10-08T06:04:47.030755Z",
+  "authority": "Victorian Electoral Commission",
+  "sources": [
+    "https://www.vec.vic.gov.au/voting/types-of-elections/state-elections",
+    "https://www.vec.vic.gov.au/voting/2026-state-election"
+  ],
+  "representation": "Web retrieval service parsed text and source metadata, not raw HTML; exact returned representation preserved.",
+  "carrierPath": "vec-primary-pages.retrieved.txt.gz",
+  "carrierSha256": "b524e6afe0407b9abc49709911d1b9488d8f6b3708a7106515d723cce583704c",
+  "dates": {
+    "rollClose": "2026-11-03T20:00:00+11:00",
+    "nominationsClose": "2026-11-09T12:00:00+11:00",
+    "earlyVotingStarts": "2026-11-18",
+    "electionDay": "2026-11-28"
+  },
+  "conflict": false,
+  "relationship": "Execution-time calendar corroboration. The unmodified sealed package retains the committed PR #126 calendar check, still within 24 hours. This receipt does not amend that package or alter its source commit.",
+  "uncompressedSha256": "1e397fb8d10ea102e0aaab372ae3907bb40fcb5cd7e689cb51330880a41ebee9",
+  "encoding": "gzip, mtime=0; exact retrieved text bytes recoverable"
+}
