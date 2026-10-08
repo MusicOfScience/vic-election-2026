@@ -165,8 +165,7 @@ only on toy synthetic values. No electoral target is loaded or scored in this ba
 Every future performance report remains descriptive for one election; neither the
 scorer nor protocol approval changes the nine release gates.
 
-Exact next action: merge this PR, then execute the witnessed
-`post_freshwater_registration` seal in a new run.
+Exact next action: review and merge the `post_freshwater_registration` seal PR.
 
 A future scoring action must supply a separately governed operational protocol
 copy with explicit scoring authorisation and the original owner receipt. The
@@ -174,3 +173,40 @@ scorer checks that its material-rules hash is still the approved hash. The archi
 pre-election protocol remains immutable with `scoringAuthorised=false`; it is never
 rewritten to enable scoring. Without that future governed copy, scoring continues
 to fail closed.
+
+## First live registration (after merged PR #126)
+
+[The operational receipt](../metadata/prospective-registration-2026-10-08.json)
+records the actual seal from clean remote-verified main, the later preservation
+commit and the later-again registry update. The protocol's operational state is
+`approved-registration-sealed`; material rules, creation/comparator/scorer code
+and their fingerprints are unchanged. The original pre-registration protocol
+inside the archive is preserved, not rewritten to mimic the active registry.
+
+The package was created once, then verified in a separate command. It contains
+70 hashed members plus its manifest. Its canonical manifest SHA is
+`6ffdd7f47ef45c43b039425424889638c571ccb5136181bc28508f759dc24a64`;
+the exact manifest-file byte SHA is separately recorded. Comparator-object hashes
+use the exact canonical Python JSON object bytes (including floating-point forms),
+not a different language's numeric reserialisation.
+
+Execution-time calendar retrieval at `2026-10-08T06:04:47.030755Z` corroborated the
+committed PR #126 calendar receipt, which was still within 24 hours. The package
+preserves that committed receipt byte-for-byte so its clean source identity stays
+true. The additional execution receipt and exact parsed primary-source retrieval
+are preserved alongside it under `metadata/prospective-registration-witness/`;
+the registration record hashes both. The retrieved text is losslessly gzipped,
+with its compressed and uncompressed hashes. It is not represented as raw HTML.
+No live web page is needed for archive verification. No new polling/candidate
+review or quantitative admission occurred.
+
+Copied source carriers retain their original bytes, including inherited whitespace.
+Git treats `archive/` carriers as byte artefacts; manifest, prediction and registry
+records remain textual for review. Both archive verification and governance checks
+still hash every member. No frozen source was edited to appease whitespace checks.
+
+Tests exercise the frozen creator against the archived pre-registration source
+state in non-empirical fixture mode. Separate tests verify the actual live registry,
+detached package, comparator determinism and refusal of premature scoring. This
+does not reopen the one-time creator against an active live registry. No scoring
+permission, production gate or second election unit is inferred from registration.

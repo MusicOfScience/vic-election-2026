@@ -3,7 +3,7 @@
 Audit date: 8 October 2026. Base: merged PR #124, main commit
 `485421f69251809e849436a7e69211a3e42cf93f`.
 
-## Decision approved, pending registration seal
+## Decision approved, registration seal preserved
 
 Register **the exact current experimental model** under validation protocol
 `vic-2026-prospective-observational-v1`. Preserve witnessed, self-contained 2026
@@ -268,5 +268,9 @@ against post-hoc tuning without inventing a model variant or weakening productio
 - Jurisdiction rule-source URLs are attached to the inventory entries. No historical
   target dataset was acquired or scored in this run.
 
-Exact next action: merge the approval/infrastructure PR, then execute the witnessed
-`post_freshwater_registration` seal in a new run.
+The first witnessed registration seal now exists; see the
+[registration receipt](../metadata/prospective-registration-2026-10-08.json).
+It is secondary-dependent, supplies no score or independent election replication,
+and changes no production gate.
+
+Exact next action: review and merge the `post_freshwater_registration` seal PR.

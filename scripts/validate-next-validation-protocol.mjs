@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { validateProspectiveRegistration } from "./validate-prospective-registration.mjs";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -48,7 +49,7 @@ export function validateNextValidationProtocol(
   assert.deepEqual(audit.conclusion.prospectiveEmpiricalUnits, ["vic_2026_general_election"]);
   assert.equal(audit.conclusion.preElectionCompleteModelProductionFeasible, false);
   assert.equal(audit.conclusion.productionAuthorisation, "closed");
-  assert.equal(protocol.status, "approved-awaiting-registration-seal");
+  assert.equal(protocol.status, "approved-registration-sealed");
   const approval = read("metadata/prospective-validation-approval.json");
   const frozenRules = read("metadata/prospective-validation-approved-rules.json");
   assert.deepEqual(protocol.approval, approval, "explicit approval receipt mismatch");
@@ -71,7 +72,7 @@ export function validateNextValidationProtocol(
   assert.equal(protocol.independentElectionCount, 1);
   assert.deepEqual(protocol.validationUnits, ["vic_2026_general_election"]);
   assert.deepEqual(protocol.selectedHistoricalHoldouts, []);
-  assert.deepEqual(protocol.sealing.currentlySealedSnapshots, []);
+  validateProspectiveRegistration(protocol, root);
   assert.ok(protocol.sealing.activationRequirements.length >= 3);
   assert.equal(protocol.snapshots.filter((s) => s.role === "primary").length, 1);
   assert.equal(protocol.snapshots.find((s) => s.role === "primary").id, "final_pre_election");
@@ -96,6 +97,6 @@ export function validateNextValidationProtocol(
   assert.deepEqual(protocol.comparators.map((c) => c.id), ["prior_result", "uniform_swing"]);
   for (const field of ["winnerProbability", "primaryVotes", "assemblySeats", "council", "finalPairs", "aggregation", "missing"]) assert.ok(protocol.metrics[field]);
   for (const field of ["PASS", "FAIL", "performance", "stop", "newProtocol", "bugFixes"]) assert.ok(protocol.decisionRules[field]);
-  return { status: "valid-approved-pre-seal", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false };
+  return { status: "valid-approved-registration-sealed", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false };
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) console.log(JSON.stringify(validateNextValidationProtocol()));
