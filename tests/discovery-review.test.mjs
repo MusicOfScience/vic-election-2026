@@ -20,7 +20,7 @@ test("party evidence cannot confer official nomination status", () => {
 });
 
 test("VEC evidence may carry official nomination status", () => {
-  const discovered = { id: "c2", kind: "candidate", name: "Alex Example", contest: "Footscray", party: "Independent", officialStatus: "nominated", sourceAuthority: "VEC", sourceUrl: "https://vec.example" };
+  const discovered = { id: "c2", kind: "candidate", name: "Alex Example", contest: "Footscray", party: "Independent", officialStatus: "nominated", sourceAuthority: "VEC", sourceUrl: "https://www.vec.vic.gov.au/candidates" };
   assert.equal(candidateFromDiscovery(discovered, "2026-08-29T00:00:00Z").status, "nominated");
 });
 

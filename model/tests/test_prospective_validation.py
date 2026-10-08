@@ -212,5 +212,18 @@ def test_live_registration_offline_verification_and_scorer_guard(tmp_path):
     with pytest.raises(ValueError, match='scoringAuthorised=false'):
         validate_scorer_readiness(copied, {})
     # Readiness guard only: no outcome path is ever passed/opened here.
-    with pytest.raises(ValueError):
-        check_governance(REPOSITORY)
+    assert check_governance(REPOSITORY)[0]['status'] == 'approved-registration-sealed'
+
+
+def test_active_registration_future_fixture_and_duplicate_refusal(tmp_path):
+    p, _ = check_governance(REPOSITORY)
+    first = REPOSITORY / p['sealing']['currentlySealedSnapshots'][0]['archivePath']
+    before = {str(path.relative_to(first)): path.read_bytes() for path in first.rglob('*') if path.is_file()}
+    with pytest.raises(ValueError, match='already sealed'):
+        sealing.build_package(REPOSITORY, tmp_path/'duplicate')
+    m = sealing.build_package(REPOSITORY, tmp_path/'fixture', snapshot_id='writ_roll_close', fixture=True)
+    assert m['kind'] == 'fixture-non-empirical' and not m['registered']
+    assert m['independentElectionCount'] == 0
+    assert m['electionUnit'] == 'vic_2026_general_election'
+    assert before == {str(path.relative_to(first)): path.read_bytes() for path in first.rglob('*') if path.is_file()}
+    assert p['sealing']['currentlySealedSnapshots'] == read(REPOSITORY, 'metadata/model-vnext-validation-protocol.json')['sealing']['currentlySealedSnapshots']

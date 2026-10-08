@@ -207,6 +207,6 @@ still hash every member. No frozen source was edited to appease whitespace check
 
 Tests exercise the frozen creator against the archived pre-registration source
 state in non-empirical fixture mode. Separate tests verify the actual live registry,
-detached package, comparator determinism and refusal of premature scoring. This
-does not reopen the one-time creator against an active live registry. No scoring
+detached package, comparator determinism and refusal of premature scoring. Tests also exercise the active-registration creator for a later milestone in
+temporary fixture mode. Duplicate live IDs remain forbidden. No scoring
 permission, production gate or second election unit is inferred from registration.

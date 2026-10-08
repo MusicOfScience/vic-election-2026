@@ -62,11 +62,19 @@ readiness remains 6/9. Registration adds no independent election replication.
 
 The next scheduled snapshot is `writ_roll_close`, 3 November 2026 at 8pm Melbourne,
 subject to governed evidence/source monitoring and fresh VEC verification. It is
-not authorised for execution by this registration PR. The frozen PR #126 creator
-retains its one-time pre-registration guard; a future milestone run must reconcile
-active registration state before creation, without overwriting this archive.
+not sealed yet. PR #127 merged at `4bc46db903aa05a9e12431d4724f9c8f9dd0a5da`;
+the first registration package and receipt are now committed on main.
 
-Exact next action: review and merge the `post_freshwater_registration` seal PR.
+The [prospective operations contract](AUTOMATION_SPEC.md#prospective-election-operations--implemented-state-after-pr-127)
+records actual source coverage, manual publication checks, review signals and the
+governed input/conditional-refresh sequence. Routine monitoring continues between
+snapshots: Tuesday/Friday Melbourne until the writ period, daily 3–28 November.
+The current operational sealer accepts active registration, verifies earlier
+packages and permits only new IDs at their registered windows. Its temporary
+milestone fixtures are non-empirical and never registered. Approved material rules,
+first seal bytes, current forecast and 6/9 readiness remain unchanged.
+
+Exact next action: review and merge the prospective-operations PR.
 
 ## Preserved audit history
 

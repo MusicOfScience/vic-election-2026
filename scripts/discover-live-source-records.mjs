@@ -7,7 +7,6 @@ import { canonicaliseHtml } from "./monitor-live-sources.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const adaptersPath = resolve(root, "metadata/live-source-adapters.json");
 const candidatesPath = resolve(root, "metadata/candidates-2026.json");
-const liveStatePath = resolve(root, "metadata/live-source-state.json");
 const pollsPath = resolve(root, "model/data/processed/poll_events_seed.csv");
 
 function arg(name, fallback) {
@@ -285,8 +284,10 @@ function identity(record) {
   return `${record.kind}|${record.pollster}|${record.fieldworkStart}|${record.fieldworkEnd}|${record.sampleSize}`.toLowerCase();
 }
 
-function isKnown(record, candidates, polls) {
-  if (record.kind === "candidate") return candidates.some((item) => identity(item) === identity(record));
+export function isKnown(record, candidates, polls) {
+  if (record.kind === "candidate") return candidates.some((item) => identity(item) === identity(record)
+    && item.party === record.party
+    && (record.sourceAuthority !== "VEC" || (item.sourceAuthority === "VEC" && item.status === (record.officialStatus ?? record.candidateStatus))));
   if (record.kind === "poll") return polls.some((item) => item.pollster === record.pollster && item.fieldwork_start === record.fieldworkStart && item.fieldwork_end === record.fieldworkEnd && Number(item.sample_size) === record.sampleSize);
   return false;
 }
@@ -326,11 +327,11 @@ async function discoverLaborCandidates(firstPage, found) {
   if (found.length === initialCount) throw new Error("Victorian Labor roster returned no explicitly labelled candidates");
 }
 
-async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, polls) {
+export function discoveryStatus(known) { return known ? "already-tracked" : "quarantined-awaiting-review"; }
+
+async function discoverFromAdapter(adapter, candidates, polls) {
   const page = await fetchPage(adapter.url);
   const canonical = canonicaliseHtml(page.html);
-  const currentFingerprint = sha256(canonical);
-  const baselineHealthy = acceptedFingerprint && acceptedFingerprint === currentFingerprint;
   const found = [];
 
   if (adapter.discovery.extractor === "roy-morgan-state-poll") {
@@ -367,8 +368,7 @@ async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, pol
 
   return found.map((record) => {
     const known = isKnown(record, candidates, polls);
-    const acceptedSource = (adapter.discovery.acceptedSourceUrls ?? []).includes(record.sourceUrl);
-    const status = known ? "already-tracked" : (baselineHealthy || acceptedSource) ? "baseline-observed" : "quarantined-awaiting-review";
+    const status = discoveryStatus(known);
     return wrapRecord(record, adapter.id, status);
   });
 }
@@ -376,14 +376,12 @@ async function discoverFromAdapter(adapter, acceptedFingerprint, candidates, pol
 async function main() {
   const config = JSON.parse(readFileSync(adaptersPath, "utf8"));
   const registry = JSON.parse(readFileSync(candidatesPath, "utf8"));
-  const liveState = JSON.parse(readFileSync(liveStatePath, "utf8"));
   const polls = parseCsv(readFileSync(pollsPath, "utf8"));
-  const accepted = new Map((liveState.sources ?? []).map((source) => [source.id, source.acceptedFingerprint]));
   const records = [], observations = [];
 
   for (const adapter of config.adapters.filter((item) => item.discovery?.enabled)) {
     try {
-      const extracted = await discoverFromAdapter(adapter, accepted.get(adapter.id), registry.candidates ?? [], polls);
+      const extracted = await discoverFromAdapter(adapter, registry.candidates ?? [], polls);
       records.push(...extracted);
       observations.push({ sourceId: adapter.id, status: "ok", extracted: extracted.length });
     } catch (error) {

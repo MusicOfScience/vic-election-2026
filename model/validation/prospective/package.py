@@ -269,6 +269,8 @@ def build_package(root, destination, *, snapshot_id='post_freshwater_registratio
         raise ValueError('use model/constraints.txt runtime before deterministic sealing')
     protocol, approval = check_governance(root)
     started = now()
+    if not fixture and any(s['snapshotId'] == snapshot_id for s in protocol['sealing']['currentlySealedSnapshots']):
+        raise ValueError('snapshot already sealed; immutable archive cannot be replaced')
     if fixture:
         snapshot = next((s for s in protocol['snapshots'] if s['id'] == snapshot_id), None)
         if snapshot is None: raise ValueError('unknown fixture template')
@@ -302,7 +304,7 @@ def build_package(root, destination, *, snapshot_id='post_freshwater_registratio
     paths |= set(protocol['model']['engineSha256']) | set(read(root, IMPLEMENTATION)['files'])
     paths.add('model/'+config['council']['regional_poll_path'])
     paths |= {'model/'+v['path'] for v in forecast['outputs'].values()}
-    paths |= set(git(root, 'ls-files', 'metadata/current-evidence/2026-10-08').splitlines())
+    paths |= set(git(root, 'ls-files', 'metadata/current-evidence').splitlines())
     receipts = {}
     if not fixture:
         for p in sorted(paths):

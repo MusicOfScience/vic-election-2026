@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 20 * * 1,4"
+    - cron: "17 20 * * *"
   workflow_dispatch:
     inputs:
       as_of:
@@ -15,7 +15,21 @@ permissions:
   contents: read
 
 jobs:
+  cadence:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.cadence.outputs.run }}
+      day: ${{ steps.cadence.outputs.day }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: cadence
+        run: node scripts/monitoring-cadence.mjs
   freshness:
+    needs: cadence
+    if: needs.cadence.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,63 +37,83 @@ jobs:
         with:
           node-version: 22
       - name: Assess critical-source freshness
+        id: freshness
         shell: bash
         run: |
           assessment_date="${{ inputs.as_of }}"
-          if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
+          if [[ -z "${assessment_date}" ]]; then assessment_date="${{ needs.cadence.outputs.day }}"; fi
           node scripts/check-release-readiness.mjs --as-of "${assessment_date}" --report release-readiness-report.json --require-fresh
       - name: Observe and validate live upstream sources
+        id: monitor_1
         if: always()
         run: node scripts/monitor-live-sources.mjs --report live-source-report.json --fail-on-unhealthy
       - name: Discover structured candidate and poll records
+        id: monitor_2
         if: always()
         run: node scripts/discover-live-source-records.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
       - name: Discover DemosAU Victorian state polls
+        id: monitor_3
         if: always()
         run: node scripts/discover-demosau-victoria-polls.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json
       - name: Extract Freshwater primary workbooks
+        id: monitor_4
         if: always()
         run: python3 scripts/extract-freshwater-workbooks.py --output freshwater-primary-report.json
       - name: Stage manually captured blocked-source evidence
+        id: monitor_5
         if: always()
         run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/manual-source-evidence-2026.json
       - name: Stage first-party poll evidence awaiting review
+        id: monitor_6
         if: always()
         run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/primary-source-evidence-2026.json
       - name: Stage corroborated secondary evidence
+        id: monitor_7
         if: always()
         run: node scripts/stage-manual-source-evidence.mjs --report source-discovery-report.json --quarantine source-discovery-quarantine.json --manual metadata/research-source-evidence-2026.json
       - name: Build human review manifest
+        id: monitor_8
         if: always()
         run: node scripts/build-discovery-review-manifest.mjs --input source-discovery-quarantine.json --output discovery-review-manifest.json
       - name: Build model versus analyst comparison
+        id: monitor_9
         if: always()
         run: node scripts/build-analyst-comparison.mjs --output analyst-comparison-report.json
       - name: Distinguish evidence freshness from model freshness
+        id: monitor_10
         if: always()
         shell: bash
         run: |
           assessment_date="${{ inputs.as_of }}"
-          if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
+          if [[ -z "${assessment_date}" ]]; then assessment_date="${{ needs.cadence.outputs.day }}"; fi
           node scripts/build-evidence-freshness-report.mjs --as-of "${assessment_date}" --output evidence-freshness-report.json
       - name: Preview staged-poll promotion blockers
+        id: monitor_11
         if: always()
         shell: bash
         run: |
           assessment_date="${{ inputs.as_of }}"
-          if [[ -z "${assessment_date}" ]]; then assessment_date="$(date -u +%F)"; fi
+          if [[ -z "${assessment_date}" ]]; then assessment_date="${{ needs.cadence.outputs.day }}"; fi
           node scripts/build-poll-promotion-audit.mjs --as-of "${assessment_date}" --output poll-promotion-audit.json
       - name: Audit published polling coverage
+        id: monitor_12
         if: always()
         run: node scripts/build-poll-coverage-report.mjs --output poll-coverage-report.json
       - name: Validate candidate registry
+        id: monitor_13
         if: always()
         run: node scripts/validate-candidates.mjs
+      - name: Publish actionable governed review summary
+        if: always()
+        env:
+          MONITOR_STEPS: ${{ toJSON(steps) }}
+        run: node scripts/build-monitoring-action-report.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: operational-readiness-reports
           path: |
+            monitoring-action-report.json
             release-readiness-report.json
             live-source-report.json
             source-discovery-report.json
