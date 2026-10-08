@@ -259,12 +259,22 @@
     ],
     "candidateReview": {
       "recordsReviewed": 114,
-      "acceptedAsEndorsed": 108,
-      "acceptedAsAnnounced": 4,
+      "canonicalNewAccepted": 111,
+      "newAcceptedAsEndorsed": 107,
+      "newAcceptedAsAnnounced": 4,
       "held": 1,
       "rejectedInvalid": 0,
       "duplicateReconciled": 2,
-      "canonicalNewAccepted": 111,
+      "reconciledExistingByStatus": {
+        "endorsed": 1,
+        "announced": 1
+      },
+      "previousCanonicalAccepted": 194,
+      "resultingCanonicalAccepted": 305,
+      "resultingCanonicalTotals": {
+        "endorsed": 300,
+        "announced": 5
+      },
       "forecastUse": "excluded",
       "officialNomination": false,
       "sourceFamilyCounts": {

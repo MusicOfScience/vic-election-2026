@@ -76,13 +76,15 @@ first seal bytes, current forecast and 6/9 readiness remain unchanged.
 
 ## First-live operations adjudication
 
-PR #129 recorded a genuine `REVIEW_REQUIRED` result on 8 October. The owner
-adjudication reviewed all 114 new candidate records: 108 were accepted as
-endorsed evidence and 4 as announced evidence; 1 malformed second-office
-contest was held, 2 same-person/same-contest records were reconciled, and no
-record was rejected as invalid. Source-family totals for newly accepted
-records were Greens 8, One Nation 80, Nationals 1, Labor 6, Liberal 12 and
-Mornington Peninsula Shire 4; Victorian Socialists' duplicate was reconciled.
+PR #129 produced 114 candidate records for review. Of these, 111 were newly
+accepted into canonical candidate evidence — 107 as endorsed and 4 as
+announced — 1 malformed second-office contest was held, none were rejected,
+and 2 existing same-person/same-contest identities were reconciled without
+duplicate admission. Newly accepted source-family totals were Greens 8,
+One Nation 80, Nationals 1, Labor 6, Liberal 12 and Mornington Peninsula
+Shire 4: 107 endorsed in total. The reconciled existing identities were
+Victorian Socialists' John Stanley and Mornington Peninsula Shire's Chris
+Crewther. The held record was Katie Clements.
 All accepted candidate evidence remains `forecastUse: excluded` and
 `officialNomination: false`.
 

@@ -421,8 +421,8 @@ export const sourceProvenance = {
         },
         {
           "path": "metadata/current-evidence-adjudication-2026-10-08.json",
-          "sha256": "e7de418f20a0b9c94d1370a81bdc9687840bf68807562b7e42a06db082a50fc3",
-          "bytes": 18143,
+          "sha256": "dcc213682dbe7299ecf5e513911237c34e433291ad010e05bac3f2acc4389d2e",
+          "bytes": 18416,
           "records": null
         }
       ]
