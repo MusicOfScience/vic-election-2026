@@ -9,8 +9,8 @@ function rejects(mutate) {
   mutate(a, p);
   assert.throws(() => validateNextValidationProtocol(a, p));
 }
-test("draft preserves frozen history, engine and structural configuration", () => {
-  assert.deepEqual(validateNextValidationProtocol(), { status: "valid-draft", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false });
+test("approved contract preserves frozen history, engine and structural configuration", () => {
+  assert.deepEqual(validateNextValidationProtocol(), { status: "valid-approved-pre-seal", independentElectionCount: 1, scoringAuthorised: false, productionAuthorised: false });
 });
 test("2018, consumed cycles and 2006 lineage cannot be relabelled fresh", () => {
   for (const id of ["vic_la_2010", "vic_la_2014", "vic_la_2018", "vic_la_2022", "vic_2006_general", "vic_2002_general"]) {
@@ -34,4 +34,16 @@ test("scoring, automatic production, retrospective freezes and historical select
   rejects((a, p) => { p.snapshots[4].cutoff = "2026-11-29T00:00:00+11:00"; });
   rejects((a, p) => { p.model.allowedConfigurationChanges.push("simulations"); });
   rejects((a, p) => { p.model.engineSha256[Object.keys(p.model.engineSha256)[0]] = "0".repeat(64); });
+});
+
+test("explicit approval is timestamped and material rule changes fail even when structural counters agree", () => {
+  assert.equal(protocol.approval.decision,"approved");
+  assert.equal(protocol.approval.reviewerRole,"project-owner");
+  assert.ok(Number.isFinite(Date.parse(protocol.approval.recordedAt)));
+  rejects((a,p) => { p.approval.recordedAt = "2026-01-01T00:00:00Z"; });
+  rejects((a,p) => { p.status = "proposed-awaiting-owner-review"; });
+  rejects((a,p) => { p.metrics.winnerProbability = "different score"; });
+  rejects((a,p) => { p.calibration.method = "fit after result"; });
+  rejects((a,p) => { p.decisionRules.performance = "auto production"; });
+  rejects((a,p) => { p.sealing.currentlySealedSnapshots.push({kind:"fixture-non-empirical"}); });
 });

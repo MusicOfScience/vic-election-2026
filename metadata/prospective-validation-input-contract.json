@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "forecastId": "vic_2026_experimental_joint_v1",
+  "partyOrder": [
+    "ALP",
+    "LIB_NAT",
+    "ONP",
+    "GRN",
+    "OTH_IND"
+  ],
+  "councilPartyToFamily": {
+    "": "OTH_IND",
+    "Angry Victorians Party": "OTH_IND",
+    "Animal Justice Party": "OTH_IND",
+    "Australian Greens": "GRN",
+    "Australian Labor Party - Victorian Branch": "ALP",
+    "Companions and Pets Party": "OTH_IND",
+    "Derryn Hinch's Justice Party": "OTH_IND",
+    "Family First Victoria": "OTH_IND",
+    "Fiona Patten's Reason Party": "OTH_IND",
+    "Freedom Party of Victoria": "OTH_IND",
+    "Health Australia Party": "OTH_IND",
+    "Labour DLP": "OTH_IND",
+    "Legalise Cannabis Victoria": "OTH_IND",
+    "Liberal": "LIB_NAT",
+    "Liberal Democrats": "OTH_IND",
+    "New Democrats": "OTH_IND",
+    "Pauline Hanson's One Nation": "ONP",
+    "Sack Dan Andrews Restore Democracy": "OTH_IND",
+    "Shooters, Fishers & Farmers Vic": "OTH_IND",
+    "Sustainable Australia Party \u2013 Stop Overdevelopment / Corruption": "OTH_IND",
+    "The Nationals": "LIB_NAT",
+    "Transport Matters": "OTH_IND",
+    "United Australia Party": "OTH_IND",
+    "Victorian Socialists": "OTH_IND"
+  },
+  "councilExhaustionProbability": 0.1,
+  "familyAvailability": "Exact current engine models all five families in all districts/regions; this is not verified candidate-specific 2026 ballot availability. Repeating a 2022 verified zero primary is allowed; missing rows/mappings are unavailable.",
+  "boundaryMapping": "Identity by current district/region IDs and names from pre-target district-region membership. Unknown IDs unavailable; no target-based crosswalks.",
+  "narracanPolicy": "No November 2022 contest; prior-result and uniform-swing district and Assembly chamber comparator are unavailable. No January 2023 substitution.",
+  "unexportedMetrics": [
+    "full final-pair probability distribution/conditional winner probabilities",
+    "joint Assembly family seat draws",
+    "Council regional seat interval bounds/joint draw distributions"
+  ],
+  "sourceTimingPolicy": "Original publication/capture/admission instants reported where recorded; legacy capture/admission upper bounds are witnessed repository commit times with exact label, never invented original capture or owner approval dates."
+}
