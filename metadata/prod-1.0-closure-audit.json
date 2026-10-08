@@ -110,5 +110,5 @@
     "modelInputPromotion": false
   },
   "currentEvidenceReviewPath": "metadata/current-evidence-adjudication-2026-10-08.json",
-  "nextAction": "Review the Freshwater admission and deterministic refresh PR."
+  "nextAction": "Review and explicitly approve or reject vic-2026-prospective-observational-v1; see docs/NEXT_VALIDATION_PATH.md. Closed PROD 1.0 gates remain unchanged."
 }
