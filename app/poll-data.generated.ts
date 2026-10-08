@@ -263,5 +263,27 @@ export const pollSeries = [
     "onp": 23.5,
     "greens": 12.5,
     "other": 12
+  },
+  {
+    "id": "freshwater_2026-09",
+    "date": "28 Sept",
+    "fieldworkStart": "2026-09-24",
+    "fieldworkEnd": "2026-09-28",
+    "publicationDate": "2026-10-01",
+    "pollster": "Freshwater Strategy",
+    "commissioner": "Herald Sun",
+    "n": 1030,
+    "effectiveN": null,
+    "method": "online panels; weighted to age-sex, age-education, 2022 state vote, 2025 federal vote and location; leaners included; remaining undecideds removed",
+    "voteBase": "decided_reallocated",
+    "verificationStatus": "verified",
+    "sourceTier": "primary_publisher",
+    "sourceUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
+    "sourceDocumentTitle": "Freshwater Strategy 2026-09 Victorian polling workbook",
+    "alp": 24.0121,
+    "coalition": 28.9106,
+    "onp": 22.1313,
+    "greens": 14.3689,
+    "other": 10.5771
   }
 ] as const;

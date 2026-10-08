@@ -3,18 +3,18 @@ import test from "node:test";
 
 import { ageInDays, buildReadiness } from "../scripts/check-release-readiness.mjs";
 
-test("October review cannot substitute freshly captured evidence for unchanged model inputs", () => {
+test("October owner admission and explicit holds resolve current polling freshness", () => {
   const readiness = buildReadiness({ asOf: "2026-10-08" });
-  assert.equal(readiness.summary.passedRequiredGates, 4);
-  assert.equal(readiness.evidenceFreshness.modelInput.pollId, "roy_morgan_2026-08");
-  assert.equal(readiness.evidenceFreshness.modelInput.latestPublicationDate, "2026-08-08");
+  assert.equal(readiness.summary.passedRequiredGates, 6);
+  assert.equal(readiness.evidenceFreshness.modelInput.pollId, "freshwater_2026-09");
+  assert.equal(readiness.evidenceFreshness.modelInput.latestPublicationDate, "2026-10-01");
   assert.equal(readiness.evidenceFreshness.stagedEvidence.evidenceId, "freshwater-2026-09-primary-workbook");
-  assert.equal(readiness.evidenceFreshness.reviewResolution.unresolvedRecords, 4);
-  assert.equal(readiness.gates.criticalSourceFreshness.passed, false);
-  assert.equal(readiness.gates.modelInputFreshness.passed, false);
+  assert.equal(readiness.evidenceFreshness.reviewResolution.unresolvedRecords, 0);
+  assert.equal(readiness.gates.criticalSourceFreshness.passed, true);
+  assert.equal(readiness.gates.modelInputFreshness.passed, true);
   const source = readiness.sources.find((item) => item.id === "vic-2026-poll-registry");
-  assert.equal(source.dataEffectiveDate, "2026-08-07");
-  assert.equal(source.ageDays, 62);
+  assert.equal(source.dataEffectiveDate, "2026-09-28");
+  assert.equal(source.ageDays, 10);
 });
 
 test("treats a source as current through its inclusive threshold", () => {
@@ -24,7 +24,7 @@ test("treats a source as current through its inclusive threshold", () => {
 });
 
 test("fails closed once a critical source exceeds its threshold", () => {
-  const readiness = buildReadiness({ asOf: "2026-08-29" });
+  const readiness = buildReadiness({ asOf: "2026-10-20" });
   assert.equal(readiness.gates.criticalSourceFreshness.passed, false);
   assert.equal(readiness.status, "experimental-blocked");
 });

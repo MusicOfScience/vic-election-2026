@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 const readJson = (path) => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), "utf8"));
 
@@ -15,11 +16,11 @@ test("historical closure keeps 2018 non-certifying and preserves the three-cycle
   assert.ok(Math.abs(aggregate.descriptivePooledMetrics.multiclassLogLoss - 1.0486418097) < 1e-9);
 });
 
-test("closure audit classifies current evidence blockers without promoting September polling", () => {
+test("closure audit resolves current freshness while preserving structural validation blockers", () => {
   const audit = readJson("metadata/prod-1.0-closure-audit.json");
   assert.equal(audit.gates.sourceIntegrity.status, "PASS");
-  assert.equal(audit.gates.criticalSourceFreshness.class, "resolvable-current-evidence-blocker");
-  assert.equal(audit.gates.modelInputFreshness.class, "resolvable-current-evidence-blocker");
+  assert.equal(audit.gates.criticalSourceFreshness.class, "resolved");
+  assert.equal(audit.gates.modelInputFreshness.class, "resolved");
   assert.equal(audit.gates.completeForecastBacktest.class, "structurally-blocked-under-prod-1.0-validation-protocol");
   assert.equal(audit.gates.probabilityCalibration.class, "structurally-blocked-under-prod-1.0-validation-protocol");
   assert.equal(audit.septemberRedbridgeAccent.sampleFamilyIndependence, "independence-not-proven");
@@ -27,9 +28,10 @@ test("closure audit classifies current evidence blockers without promoting Septe
   assert.equal(audit.gates.productionAuthorisation.class, "downstream-blocked");
 });
 
-test("canonical 2010 Council metric and 2026 forecast identity remain unchanged", () => {
+test("canonical 2010 Council metric is preserved and closure identifies the refreshed forecast", () => {
   const score = readJson("model/data/validation/historical-replays/vic_la_2010-v2-score.json");
   const audit = readJson("metadata/prod-1.0-closure-audit.json");
   assert.equal(score.council.regionalMeanAbsoluteSeatError, 0.27911458333333333);
-  assert.equal(audit.gates.deterministicOutputs.forecastSha256, "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab");
+  const bytes = readFileSync(new URL("../model/data/processed/experimental_forecast_2026.json", import.meta.url));
+  assert.equal(audit.gates.deterministicOutputs.forecastSha256, createHash("sha256").update(bytes).digest("hex"));
 });

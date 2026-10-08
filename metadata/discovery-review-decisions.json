@@ -73,6 +73,46 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+      "recordHash": "9f536fcc565e4841b3e14b7c53c0d01d95c157614f6eda4d51c87410aa5bd07e",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T00:00:00Z",
+      "note": "Genuine first-party evidence accepted; model admission remains pending documented respondent/sample-family independence.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "recordHash": "6813e4bf54abd2d52f6814b329e5ee69a38b32add42935376a165de4aae41b26",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T00:00:00Z",
+      "note": "Captured first-party workbook, complete composition and disclosed methodology/bases; comparable disjoint Freshwater wave with no reported pooling. Repeat-respondent exclusion is undisclosed and retained as a limitation.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-secondary",
+      "recordHash": "3eba75fe1d6840eb55e079a1816e7788859bf5e70b8bb76f8500b2d8bfe77fc6",
+      "kind": "poll",
+      "decision": "hold",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T00:00:00Z",
+      "note": "Primary report/publication, complete residual, mode, undecideds and sample dependence remain insufficiently verified.",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-09-06-12-secondary",
+      "recordHash": "51e063250aafcf938193920000aa7d70fc4be7f948ca38f2e493d4e8fbeeb092",
+      "kind": "poll",
+      "decision": "hold",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-08T00:00:00Z",
+      "note": "Primary capture, arithmetic/category and fieldwork/publication discrepancies remain unresolved.",
+      "modelInputsChanged": false
+    },
+    {
       "evidenceId": "5d449b0e7201bdff7c7adfde262366be434b5598c8a7af736be7f27f86ec076d",
       "recordHash": "0555747eb23cf17c16af53f03753664e384e2b8c01c3b4dcb4591600c480e7ab",
       "kind": "candidate",

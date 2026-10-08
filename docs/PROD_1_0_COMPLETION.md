@@ -1,9 +1,9 @@
 # PROD 1.0 completion ledger
 
 Updated: 2026-10-08
-Branch: `codex/score-2010-holdout`
-Base: `da78667c` (PR #117 merged)
-Current batch: score the sealed 2010 holdout once and preserve the resulting outcome evidence.
+Branch: `codex/approve-freshwater-september-refresh`
+Base: `8ddf08a` (PR #123 merged)
+Current batch: record owner polling decisions and refresh downstream experimental 2026 outputs.
 
 This ledger controls the finite PROD 1.0 backlog. Completed items stay closed unless a regression or new evidence invalidates them. Production authorisation remains closed until every required gate is supported by evidence.
 
@@ -14,7 +14,8 @@ Documentation note (2026-10-01): merged PR #121 added the `community_resilience_
 | Source integrity and deterministic artefacts | Complete | None currently evidenced | Preserve fingerprints and generated-output checks | `npm run data:provenance:check`, `npm run release:readiness:check` | Complete — preserve |
 | Assembly primary and Council evidence | Complete | None currently evidenced | Preserve official VEC evidence, rule versions and Narracan separation | `npm run validation:evidence`, `npm run psephology:validate` | Complete — preserve |
 | Candidate coverage and quarantine | Complete | VEC nomination status remains separate | Use controlled review for changes | `npm run candidates:validate`, `npm run candidates:review:check` | Complete — preserve |
-| Current critical-source freshness | Blocked | 15 September RedBridge/Accent report is captured and dossier-recommended for evidence acceptance, but remains quarantined pending project-owner review and separate model-eligibility checks | Record explicit owner decision; admit only if independence and comparability checks pass | `npm run release:readiness:check`, `node scripts/build-poll-promotion-audit.mjs --as-of 2026-09-24` | Open blocker — review decision required |
+| Current critical-source freshness | Complete | September Freshwater is owner-admitted, effective 28 September | Monitor under unchanged 21-day policy | `npm run release:readiness:check` | PASS as of 8 October |
+| Current model-input freshness | Complete | Explicit owner decisions resolve all staged September records | Freshwater admitted; RedBridge, DemosAU and Resolve held | `npm run release:readiness:check` | PASS as generated |
 | Historical poll vintages | Partial | 2018 has 4 approved observations from 2 families; 2022 has 3 approved observations from 2 families; 2014 has 4 approved observations from 2 families; 2010 has 3 owner-approved observations from Essential/Newspoll | Preserve governed inputs; do not import lead dataset | focused 2010 preparation tests and readiness validation | All cycle poll gates are governed |
 | Cutoff-safe ballot and incumbency | Complete for 2014 freeze | 2014 uses a hash-verified 2011/2013 geographic bridge, 2010 family prior, ABC notional baseline and cutoff-safe ballot mask; target transitions remain forbidden | Preserve manifests and do not load outcomes before the scoring batch | `model/scripts/build_historical_2014_crosswalk.py`, `model/scripts/build_historical_2014_local_inputs.py` | Complete — 2014 sealed |
 | Preference flows and final pairs | Partial | 39 indicative 2022 distributions remain outcome evidence; the walk-forward prior builder is now wired into future replay execution, but no source-party prior is forecast-ready | Establish walk-forward preference priors and separate final-pair scoring outcomes | `npm run validation:evidence`, guarded replay CLI, Python prior-builder tests | Open blocker |
@@ -24,7 +25,7 @@ Documentation note (2026-10-01): merged PR #121 added the `community_resilience_
 | Production authorisation | Blocked | Depends on freshness, complete backtest, calibration and exact artefact identity | Authorise only after upstream gates pass | `npm run release:readiness:check` | Closed pending evidence |
 | Public application and deployment | Complete but needs PROD verification | Production label remains correctly experimental | Run responsive/rendered checks after evidence gates are ready | `npm test`, `npm run lint`, deployment checks | Deferred until model gates |
 
-Current-evidence update (8 October 2026): see [`CURRENT_EVIDENCE_2026-10-08.md`](CURRENT_EVIDENCE_2026-10-08.md). New primary Freshwater September tables and secondary DemosAU/Resolve leads are staged; September RedBridge independence remains unresolved. The staged RedBridge TPP transcription is corrected without changing canonical inputs. Readiness remains 4/9, model effective date remains 7 August and forecast SHA remains unchanged. The ledger entries below preserve earlier batch history; the dated packet and machine-readable closure audit control the present evidence decision.
+Current owner-decision update (8 October 2026, merged PR #123 base): see [`FORECAST_REFRESH_2026-10-08.md`](FORECAST_REFRESH_2026-10-08.md). September Freshwater is owner-accepted, eligible and added as one observation; September RedBridge is accepted but held pending independence evidence; DemosAU and Resolve remain held. Canonical eligible polling is 13 observations, newest effective 28 September and published 1 October. Generated readiness is 6/9, with both freshness gates passing. Forecast SHA is `a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2`. Complete-backtest, calibration and production-authorisation gates remain closed. Ledger entries below preserve earlier batch history.
 
 ## Current verified state
 

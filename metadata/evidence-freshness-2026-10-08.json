@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-10-08",
+  "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
+  "modelInput": {
+    "latestPublicationDate": "2026-10-01",
+    "pollId": "freshwater_2026-09",
+    "pollster": "Freshwater Strategy",
+    "status": "model-eligible"
+  },
+  "acceptedEvidence": {
+    "latestPublicationDate": "2026-10-01",
+    "pollster": "Freshwater Strategy",
+    "status": "human-reviewed-not-necessarily-model-eligible"
+  },
+  "stagedEvidence": {
+    "latestPublicationDate": "2026-10-01",
+    "pollster": "Freshwater Strategy",
+    "evidenceId": "freshwater-2026-09-primary-workbook",
+    "status": "quarantined-awaiting-review",
+    "sourceTier": "primary_pollster",
+    "verificationStatus": "primary-workbook-parsed-awaiting-human-review"
+  },
+  "reviewResolution": {
+    "stagedRecords": 11,
+    "resolvedRecords": 11,
+    "unresolvedRecords": 0,
+    "latestResolvedEvidence": {
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "pollster": "Freshwater Strategy",
+      "latestPublicationDate": "2026-10-01",
+      "decision": "approve"
+    }
+  },
+  "newestEvidenceDate": "2026-10-01",
+  "newerEvidenceAwaitingReview": false,
+  "newerEvidenceExcludedByReview": false,
+  "modelFreshnessUnchangedByStagedEvidence": true
+}

@@ -1,7 +1,9 @@
 {
   "schemaVersion": 1,
   "assessedAsOf": "2026-10-08",
-  "status": "recommendations-awaiting-human-decision",
+  "status": "owner-decisions-recorded",
+  "ownerDecisionPath": "metadata/poll-review-approval-2026.json",
+  "modelEligibilityPath": "metadata/poll-model-eligibility-decisions.json",
   "policy": "Evidence acceptance confirms that a poll record faithfully represents its source. Model eligibility is a separate decision about comparability, independence and statistical use. This dossier makes recommendations but cannot approve either decision.",
   "summary": {
     "stagedPolls": 11,

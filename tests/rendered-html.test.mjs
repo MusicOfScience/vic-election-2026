@@ -42,5 +42,5 @@ test("renders the joint experimental forecast dashboard", async () => {
   assert.match(html, /Skip to forecast navigation/i);
   assert.match(html, /aria-label="Forecast sections"/i);
   assert.match(html, /Party colour key/i);
-  assert.match(html, /26 Aug 2026/i);
+  assert.match(html, /8 Oct 2026/i);
 });

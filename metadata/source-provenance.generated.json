@@ -207,9 +207,9 @@
       "confidence": "primary-mixed",
       "useStatus": "experimental",
       "modelRole": "Statewide multi-party polling state and uncertainty",
-      "canonicalUrl": "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
-      "dataEffectiveDate": "2026-08-07",
-      "lastCheckedAt": "2026-08-26T04:30:00Z",
+      "canonicalUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
+      "dataEffectiveDate": "2026-09-28",
+      "lastCheckedAt": "2026-10-08T00:00:00Z",
       "updateFrequency": "weekly",
       "stalenessThresholdDays": 21,
       "criticalToForecast": true,
@@ -223,15 +223,15 @@
       "artifacts": [
         {
           "path": "model/data/processed/poll_events_seed.csv",
-          "sha256": "8bf9fe10fc4839bea01341ee6a1e0a5d48d09084697c829b3ce62f95e38b5858",
-          "bytes": 7091,
-          "records": 13
+          "sha256": "f4d1df5d8d60b6beb9d4e433fd85b2ad443b1c577830542846919e632ec2074f",
+          "bytes": 7976,
+          "records": 14
         },
         {
           "path": "model/data/processed/poll_estimates_seed.csv",
-          "sha256": "35ff2acb57606d66d28f09b79d4b1427e6f43af5387e15473d228def856bf43b",
-          "bytes": 4018,
-          "records": 62
+          "sha256": "cea8f27868031578179463ad5e4e39d438ea4705300a90158e9597eba6b38c0f",
+          "bytes": 4672,
+          "records": 67
         },
         {
           "path": "model/data/processed/upper_house_region_poll_2026-08.csv",
@@ -241,8 +241,8 @@
         },
         {
           "path": "app/poll-data.generated.ts",
-          "sha256": "ae24d87fcbff710bac0dacfda920dd2799e1c700a7a954e2b0b0ed8f9aae1a95",
-          "bytes": 8710,
+          "sha256": "045acd8857760da9d1a0ef2350954a756cf885be807a8d399111d6e658b4dc15",
+          "bytes": 9585,
           "records": null
         }
       ]
@@ -283,8 +283,8 @@
       "useStatus": "derived",
       "modelRole": "Checksummed bridge from the seeded model run to the published dashboard",
       "canonicalUrl": "https://github.com/MusicOfScience/vic-election-2026",
-      "dataEffectiveDate": "2026-08-26",
-      "lastCheckedAt": "2026-08-28T01:30:00Z",
+      "dataEffectiveDate": "2026-10-08",
+      "lastCheckedAt": "2026-10-08T00:00:00Z",
       "updateFrequency": "dependency-driven",
       "stalenessThresholdDays": null,
       "criticalToForecast": true,
@@ -301,56 +301,56 @@
       "artifacts": [
         {
           "path": "model/data/processed/experimental_forecast_2026.json",
-          "sha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab",
-          "bytes": 6289,
+          "sha256": "a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2",
+          "bytes": 6281,
           "records": null
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_districts.csv",
-          "sha256": "cca02adb6d8c7c347225358e2851799f9795ff8eac5d444f0f06b72f6e98b768",
-          "bytes": 38069,
+          "sha256": "550527e647368212d0afd0c52de323eccbe0826daca59050722a81ad94925d1a",
+          "bytes": 38039,
           "records": 88
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_chamber.csv",
-          "sha256": "0876eda8009011309ba0f734b3410ec824254769b97edf0623b36559fe9a529d",
-          "bytes": 267,
+          "sha256": "5296747c3436d76aa9fa1da582bc138a6e520e3c78ccc52b02d7ac902fd23b32",
+          "bytes": 261,
           "records": 5
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
-          "sha256": "ac7bfedb322c0047e94b54ae8654953d139281a9f57f76defe6b8964bc53e6d8",
-          "bytes": 762,
+          "sha256": "ea42777600dae483c20270ab42955d9005f7af8d697ce80c68a365ed96c3ae26",
+          "bytes": 769,
           "records": 89
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council_regions.csv",
-          "sha256": "f55df453186d9a1854ccae79cb68c5e9bb70be8f46bdf3e33988f0554c61e9e7",
-          "bytes": 4292,
+          "sha256": "6913e19bbfe53f7d5e90306a38d08f28681e5fa6051175800b4d2e50994d00a5",
+          "bytes": 4306,
           "records": 8
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council.csv",
-          "sha256": "b6f3feac80a354f8ec8fa699dab70df768c0d774f0747b82dbc7d932a86139b9",
+          "sha256": "efb76b8ad8a91ff2f92fd637545a2310db1f63a1a0d3345d44936ae64760d84c",
           "bytes": 261,
           "records": 5
         },
         {
           "path": "app/model-output.generated.ts",
-          "sha256": "375ff2b0e4401c0ecf07b8e65c2997305b6af007f3bbd31207f6c93aaf024fc3",
-          "bytes": 134451,
+          "sha256": "fc48eb73dde65eefc3e0c752d959963ebe07188612b5de6b1f287170398d02f6",
+          "bytes": 134434,
           "records": null
         }
       ]
     },
     {
       "id": "current-evidence-review-2026-10-08",
-      "name": "Current polling review and quarantined primary carriers",
+      "name": "Current polling review and captured primary carriers",
       "publisher": "Freshwater Strategy; RedBridge / Accent Research; project review",
       "sourceType": "quarantined-poll-review",
       "confidence": "primary-mixed",
       "useStatus": "gap-tracked",
-      "modelRole": "Review evidence only; no quantitative model use or source effective-date advancement",
+      "modelRole": "Governed review and source carriers; owner-approved September Freshwater feeds the canonical poll registry, other staged observations remain held",
       "canonicalUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
       "dataEffectiveDate": "2026-10-02",
       "lastCheckedAt": "2026-10-08T00:00:00Z",
@@ -414,14 +414,14 @@
         },
         {
           "path": "metadata/poll-review-dossier-2026.json",
-          "sha256": "fa89e96fe0ec1370fa3de439868adf33de161dab1fc7c600c11af10bb8b14c39",
-          "bytes": 7899,
+          "sha256": "ac66decc32f73051b861dd0f5d43a900fa8a94023eec7aee3b61670a56596227",
+          "bytes": 8026,
           "records": null
         },
         {
           "path": "metadata/current-evidence-adjudication-2026-10-08.json",
-          "sha256": "6ef257502b5c695e5a80e0c1431d32e82765cf3c3f539c7b4f681dba84edfb73",
-          "bytes": 12870,
+          "sha256": "d7752eacd2b492a968f4160c842d2cb70f3891509e0618e1e9896b6c83e33f3c",
+          "bytes": 13563,
           "records": null
         }
       ]

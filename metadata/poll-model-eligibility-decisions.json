@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "policy": "Model eligibility is decided separately from evidence acceptance. Eligible records enter the canonical registry only through an explicit canonical action.",
-  "decidedAt": "2026-08-30T09:10:00Z",
+  "decidedAt": "2026-10-08T00:00:00Z",
   "reviewerRole": "project-owner",
   "decisions": [
     {
@@ -28,6 +28,35 @@
       "decision": "pending",
       "canonicalAction": "none",
       "blocker": "Confirm sample-family independence from the June RedBridge evidence before model admission."
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+      "pollId": "redbridge_accent_2026-09",
+      "decision": "pending",
+      "canonicalAction": "none",
+      "blocker": "Documented respondent/sample-family independence from prior RedBridge/Accent material remains unresolved. Disjoint dates do not prove independence."
+    },
+    {
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "pollId": "freshwater_2026-09",
+      "decision": "eligible",
+      "canonicalAction": "add",
+      "sourceFamily": "freshwater",
+      "reason": "Explicit project-owner admission under existing comparable-wave policy; same Freshwater family, no reported rolling/MRP pooling, undisclosed repeat respondents recorded as limitation."
+    },
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-secondary",
+      "pollId": "demosau_2026-09",
+      "decision": "hold",
+      "canonicalAction": "none",
+      "blocker": "Primary report/publication, residual, mode, undecideds and sample dependence unverified."
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-09-06-12-secondary",
+      "pollId": "resolve_strategic_2026-09",
+      "decision": "hold",
+      "canonicalAction": "none",
+      "blocker": "Primary capture, category arithmetic and fieldwork/publication discrepancies unresolved."
     }
   ]
 }

@@ -96,17 +96,15 @@
     {
       "id": "freshwater",
       "label": "Freshwater Strategy",
-      "coverageClass": "canonical-plus-staged",
+      "coverageClass": "canonical-current",
       "canonicalModelEligiblePollIds": [
         "freshwater_2026-02",
         "freshwater_2026-03",
         "freshwater_2026-06",
-        "freshwater_2026-08"
-      ],
-      "nextAction": "Owner reviews captured September workbook and records evidence acceptance and separate model eligibility. Earlier four canonical waves remain unchanged.",
-      "stagedEvidence": [
+        "freshwater_2026-08",
         "freshwater_2026-09"
-      ]
+      ],
+      "nextAction": "Continue live monitoring; owner-approved comparable Freshwater waves are canonical, with one pollster family retained."
     },
     {
       "id": "newspoll-pyxis",

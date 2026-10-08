@@ -14,24 +14,24 @@
     "shadowPollCount": 14,
     "canonicalMean": {
       "ALP": 25.61276168692021,
-      "LIB_NAT": 27.713326292381225,
-      "ONP": 23.258996896323524,
+      "LIB_NAT": 27.71332629238123,
+      "ONP": 23.25899689632352,
       "GRN": 13.384802512170236,
       "OTH_IND": 10.030112612204828
     },
     "shadowMean": {
-      "ALP": 25.258598767125658,
-      "LIB_NAT": 28.12061677055365,
+      "ALP": 25.25859876712566,
+      "LIB_NAT": 28.120616770553646,
       "ONP": 23.097904192630278,
-      "GRN": 13.135001756617132,
-      "OTH_IND": 10.387878513073257
+      "GRN": 13.135001756617134,
+      "OTH_IND": 10.387878513073256
     },
     "deltaMean": {
-      "ALP": -0.3541629197945504,
-      "LIB_NAT": 0.40729047817242403,
-      "ONP": -0.1610927036932459,
-      "GRN": -0.24980075555310322,
-      "OTH_IND": 0.3577659008684293
+      "ALP": -0.35416291979454684,
+      "LIB_NAT": 0.4072904781724169,
+      "ONP": -0.16109270369324236,
+      "GRN": -0.24980075555310144,
+      "OTH_IND": 0.3577659008684275
     }
   },
   "assembly": {
@@ -829,24 +829,24 @@
     ]
   },
   "inputFingerprint": {
-    "combinedSha256": "8b08f099f6229f518dfaead0b936ffc06fb73e01617205129159eea8c7d44ff6",
+    "combinedSha256": "586e5ca859d4673a709456334fe8c2656e933d3cb3fdb9934bf356b693a257cd",
     "files": {
       "metadata/manual-source-evidence-2026.json": "06a82229ad96f77a4af6628e6bc2bb283f6cb35ab719e9d50829d74aa0d71fd3",
       "metadata/research-source-evidence-2026.json": "eca206fbe61b38996af7c02893ab5958d7dcc316d5236db7d5c595b7461898df",
-      "model/config/experimental_forecast.yml": "57fbc079258a13b600afc6dbd244c5ceaca5219ccc5697e0ffaba2b7145ae0b0",
+      "model/config/experimental_forecast.yml": "5a744c897d85822a7ca435364e25f9b7195b36d8bcb27e2beaf66e61a14c078e",
       "model/constraints.txt": "6779371d3af2d13e4da4344f3ba22777fba52905d89fa6777abd1f901da1edaa",
       "model/data/processed/aec_2022_state_district_party_surface_vic.csv.gz": "1b65fc4f865925f0f8abdfa6adb12ee674357c0867f5f7a2b8bc46d56e8f223a",
       "model/data/processed/aec_2022_state_region_party_surface_vic.csv.gz": "94548a20f13b47707adb97004bca8059b30b95512d9dec17ae2b44c53d171549",
       "model/data/processed/district_region_membership_2026.csv": "f815161b2d8d6aa0c028f01d4e2fbeb615057ff2e659f1d116d5c52af3a921d7",
-      "model/data/processed/poll_estimates_seed.csv": "35ff2acb57606d66d28f09b79d4b1427e6f43af5387e15473d228def856bf43b",
-      "model/data/processed/poll_events_seed.csv": "8bf9fe10fc4839bea01341ee6a1e0a5d48d09084697c829b3ce62f95e38b5858",
+      "model/data/processed/poll_estimates_seed.csv": "cea8f27868031578179463ad5e4e39d438ea4705300a90158e9597eba6b38c0f",
+      "model/data/processed/poll_events_seed.csv": "f4d1df5d8d60b6beb9d4e433fd85b2ad443b1c577830542846919e632ec2074f",
       "model/data/processed/upper_house_region_poll_2026-08.csv": "3387d85815972fcb3420c7316856efe28520158608cce62a5a68b42fc3dfb3d1",
       "model/data/processed/vec_2022_indicative_candidate_evidence.csv": "dde62cda12d969bff2d558b1250195f78b4e8c41de9a3f395030f041a8b543aa",
       "model/data/processed/vec_enrolment_district_2026-09-04.csv": "d553eaa6a071794300ba83db551836f4b8f06d36b8084db97a28903ef3f8ea44",
       "model/data/processed/vec_enrolment_region_2026-09-04.csv": "0c8b32460eba5078d05add48ebd17a9794c24dc77e471918e0299435223f986a",
       "model/data/seed/recent_state_by_elections.json": "46e040ef205019ed565ac8df7386c956e36a529e31b407ee252552fcbaa8aad0",
-      "model/scripts/run_staged_poll_seat_shadow.py": "7394557577fb0fa5ab3d4c02226a3d5ff667ec0de4fd3c1c730cdfb98a085886",
-      "model/scripts/run_staged_poll_shadow.py": "da8590c01426a5d55cdaf5b9501813ba73e1bee28fb4dc395481d26b768276fb",
+      "model/scripts/run_staged_poll_seat_shadow.py": "7b1483f7ec5e673646ef9ca993e1b768f6b7cb911d21ac6303e9e0b0d073b6ea",
+      "model/scripts/run_staged_poll_shadow.py": "7f7990f8c5a3b65239bc8e4d9ab63689e662736292fd019ac65174d482078e77",
       "model/src/vicforecast/forecast_2026.py": "0f1293d4a68f06b2c0cfa227023c6232d37d6552d00509c8449e26767d7381c5",
       "model/src/vicforecast/polling/latent.py": "9213398cbb946064b49f91c08e6cf4c63a0642c85c8b131ad8b21d4ad354da34",
       "model/src/vicforecast/polling/registry.py": "1bb58ef0d3703442eaa34f107cdf9ea69b680c5d2f7a19227fe00df03d5392e6"

@@ -125,6 +125,81 @@
       "modelEligible": true,
       "reviewedAt": "2026-08-30T09:10:00Z",
       "reviewerRole": "project-owner"
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+      "kind": "poll",
+      "pollster": "RedBridge / Accent Research",
+      "fieldworkStart": "2026-09-01",
+      "fieldworkEnd": "2026-09-14",
+      "publicationDate": "2026-09-15",
+      "sampleSize": 2371,
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted across age, gender, education, religion and location; undecided leaner; unresolved respondents excluded from published vote-intention figures",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24,
+        "coalition": 29,
+        "oneNation": 25,
+        "greens": 15,
+        "otherParties": 7
+      },
+      "twoPartyPreferred": {
+        "alp": 44,
+        "coalition": 56,
+        "basis": "respondent allocated; published vote-intention base N=2,160"
+      },
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-september-2026-victorian-state-poll",
+      "sourceId": "redbridge-accent-victoria-state-polls",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "modelEligible": false,
+      "reviewedAt": "2026-10-08T00:00:00Z",
+      "reviewerRole": "project-owner"
+    },
+    {
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "kind": "poll",
+      "pollster": "Freshwater Strategy",
+      "fieldworkStart": "2026-09-24",
+      "fieldworkEnd": "2026-09-28",
+      "publicationDate": "2026-10-01",
+      "sampleSize": 1030,
+      "method": "online panels; weighted to age-sex, age-education, 2022 state vote, 2025 federal vote and location; leaners included; remaining undecideds removed",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24.0121,
+        "coalition": 28.9106,
+        "oneNation": 22.1313,
+        "greens": 14.3689,
+        "otherParties": 10.5771
+      },
+      "twoPartyPreferred": {
+        "alp": 46.5913,
+        "coalition": 53.4087,
+        "basis": "first-party workbook valid Coalition-Labor TPP"
+      },
+      "sourceUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
+      "sourceId": "freshwater-victoria-state-polls",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "modelEligible": true,
+      "reviewedAt": "2026-10-08T00:00:00Z",
+      "reviewerRole": "project-owner",
+      "sourceFamily": "freshwater",
+      "workbookPath": "metadata/current-evidence/2026-10-08/freshwater-september-tables.xlsx",
+      "workbookSha256": "e74537ac81246b6e4207963cfcf8a5bffa3f512516370baa917648c85f175e9e",
+      "extractor": "scripts/extract-freshwater-workbooks.py",
+      "primaryReleaseDate": "2026-10-02",
+      "primaryVoteRounded": {
+        "alp": 24,
+        "coalition": 29,
+        "oneNation": 22,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "primaryVoteUnweightedBase": 977,
+      "twoPartyPreferredUnweightedBase": 956,
+      "sampleOverlapAssessment": "Distinct non-overlapping fieldwork from earlier canonical Freshwater waves. No rolling pooled wave or MRP claimed. Panel vendors, repeated respondents and cross-wave exclusion rules not disclosed; owner must adjudicate comparability and dependency under existing policy."
     }
   ]
 }

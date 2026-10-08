@@ -23,8 +23,8 @@ test("poll coverage ledger separates published coverage from comparable/model-el
   assert.equal(report.externalBenchmark.publishedAssemblyPolls, 60);
   assert.equal(report.externalBenchmark.pollingOrganisations, 8);
   assert.equal(report.repository.sourceFamiliesDeclared, 8);
-  assert.equal(report.repository.registryEvents, 13);
-  assert.equal(report.repository.modelEligibleEvents, 12);
+  assert.equal(report.repository.registryEvents, 14);
+  assert.equal(report.repository.modelEligibleEvents, 13);
   assert.equal(report.repository.stagedPollRecords, manual.records.length + primary.records.length + research.records.length);
   assert.equal(report.repository.declaredGapsResolvedByStaging, 2);
   assert.equal(report.repository.actionableGapItems, 0);

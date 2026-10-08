@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "assessedAsOf": "2026-10-08",
   "baseHead": "aaad26fca59a55fea2951e38f92c0fed3dfbdca7",
-  "status": "review-ready-owner-decisions-pending",
+  "status": "owner-decisions-recorded-forecast-refreshed",
   "policy": "Existing evidence acceptance and explicit model-eligibility rules retained. Recommendations do not create owner approval. No model input, forecast, historical score or production authorisation changed.",
   "newestModelEligiblePolling": {
     "pollId": "roy_morgan_2026-08",
@@ -65,7 +65,7 @@
     "recommendation": "HOLD",
     "evidenceAcceptanceRecommendation": "ACCEPT",
     "modelEligibility": "hold-pending-missing-independence-evidence",
-    "ownerDecisionRecorded": false,
+    "ownerDecisionRecorded": true,
     "sourceFamily": "redbridge-accent",
     "canonicalJuneFamily": "redbridge_accent_vic_june_2026",
     "methodology": {
@@ -204,7 +204,7 @@
     "forecastRefreshed": false,
     "forecastSha256": "70ed0b9b6abc45ed66dd4ac44ed727d8841d2b19358a473d0eb1c2574a9a1aab"
   },
-  "nextAction": "Project owner reviews the current evidence packet and records explicit evidence/eligibility decisions; no further programme authorised.",
+  "nextAction": "Review the Freshwater admission and deterministic refresh PR.",
   "validation": {
     "shadowScenario": "August scenario pinned by evidence IDs; report regenerated with original 2000 simulations. Scenario and seat/probability results unchanged; polling floating-point differences <= 7.105427357601002e-15 percentage points. Canonical forecast untouched.",
     "carrierExtraction": "Captured Freshwater workbook re-extracted offline using existing extractor; exact match with saved extraction.",
@@ -219,6 +219,21 @@
       "run_staged_poll_seat_shadow.py --simulations 2000 --check": "PASS; original August scenario",
       "git diff --check": "PASS",
       "canonical forecast/hash and historical-input diff": "UNCHANGED"
+    }
+  },
+  "ownerDecisionResolution": {
+    "approvalPath": "metadata/poll-review-approval-2026.json",
+    "eligibilityPath": "metadata/poll-model-eligibility-decisions.json",
+    "forecastComparisonPath": "metadata/forecast-refresh-2026-10-08.json",
+    "note": "Original findings below preserve the PR #123 pre-decision review. The explicit owner decisions supersede pending-owner wording: RedBridge accepted/pending; Freshwater accepted/eligible/add; DemosAU and Resolve hold. Only Freshwater entered the canonical registry.",
+    "generatedReadiness": {
+      "passedRequiredGates": 6,
+      "requiredGateCount": 9,
+      "blockingGateIds": [
+        "completeForecastBacktest",
+        "probabilityCalibration",
+        "productionAuthorisation"
+      ]
     }
   }
 }
