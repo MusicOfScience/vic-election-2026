@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "assessmentDate": "2026-10-08",
+  "runType": "live-operational-rehearsal",
+  "sourceCommit": "060f7ca61203c159a65370582664b552ae75f112",
+  "retrievedAt": "2026-10-08T09:39:28.250Z",
+  "classification": "REVIEW_REQUIRED",
+  "automaticPromotion": false,
+  "modelInputsChanged": false,
+  "forecastRefreshed": false,
+  "sourceReports": {
+    "liveSourceReport": {
+      "path": "metadata/current-evidence/2026-10-08/operational-live-source-report-2026-10-08.json",
+      "sha256": "3c76e6c4849fbfac31edfaa5f9429fc0d3a04f1d89542140525bfd9f6187ad09"
+    },
+    "quarantine": {
+      "path": "metadata/current-evidence/2026-10-08/operational-source-discovery-quarantine-2026-10-08.json",
+      "sha256": "c56f671832cc6a950a8b79956e9c0e4b7ff589902917e307227698384d6bd5ac"
+    },
+    "actionReport": {
+      "path": "metadata/current-evidence/2026-10-08/operational-monitoring-action-report-2026-10-08.json",
+      "sha256": "de24ade1087929370642e8d5c504fb41b3a129ea3d3c3d05a8403885c4a0a86f"
+    }
+  },
+  "changedCarriers": [
+    {
+      "sourceId": "vec-2026-election",
+      "checkedAt": "2026-10-08T09:38:57.227Z",
+      "observedFingerprint": "32d4ad4b80e5ce6f608472e762f993014317c049a0f7d1be0b6bb8671ec77b1e",
+      "acceptedFingerprint": "032f3dc629e2e4188c4c1c9e93850ad4ae73b6077dd7d5e6eb52fb341f4757f4",
+      "status": "changed-quarantined",
+      "tier": "primary",
+      "reviewReason": "VEC carrier changed; inspect current election calendar and markers before any milestone operation."
+    },
+    {
+      "sourceId": "vec-2026-enrolment",
+      "checkedAt": "2026-10-08T09:39:02.929Z",
+      "observedFingerprint": "fd8511555214d15ce20c6b4a3d9b1ce5be30fc1731e2a2794cf63680b1ccbb37",
+      "acceptedFingerprint": "ac09c087fdc8c8eaaaf100c5037e8a52b344eed05b6408d3935462a6970ede58",
+      "status": "changed-quarantined",
+      "tier": "primary",
+      "reviewReason": "VEC enrolment carrier changed; freshness and current-month marker require review."
+    },
+    {
+      "sourceId": "vec-2026-candidates",
+      "checkedAt": "2026-10-08T09:39:11.536Z",
+      "observedFingerprint": "fd38480e98be4503b31cefd62a3d435a5912dae4e44a8c686f416a5665be3f31",
+      "acceptedFingerprint": "dac7456cdd6f2326ee0891d0464535a0ba71ceb31e6979f83e0b15f76aa68534",
+      "status": "changed-quarantined",
+      "tier": "primary",
+      "reviewReason": "VEC candidate carrier changed; no party or non-VEC source confers official nomination."
+    }
+  ],
+  "newCandidateEvidence": {
+    "discoveredRecords": 290,
+    "baselineRecords": 194,
+    "newRecords": 114,
+    "changedExistingRecords": 0,
+    "newBySource": {
+      "greens-victoria-candidates": 9,
+      "mornington-peninsula-candidate-confirmations": 5,
+      "one-nation-victoria-candidates": 80,
+      "nationals-victoria-candidates": 1,
+      "labor-victoria-candidates": 6,
+      "liberal-victoria-candidates": 12,
+      "victorian-socialists-coverage-gaps": 1
+    },
+    "status": "quarantined-awaiting-review",
+    "forecastUse": "excluded",
+    "officialNomination": false,
+    "reviewReason": "Party endorsement, announcement or local confirmation is credible candidate evidence only; official nomination remains VEC-only."
+  },
+  "newPollEvidence": [
+    {
+      "id": "1fc4ee654c4e9ff49d4b963f69ee95ad2c690be923ec876e0d982f04a1ce2ba",
+      "sourceId": "roy-morgan-vic-2026-upper-house",
+      "dataHash": "42efc46f17169d6b067e72f211a8559c104fe639f1d2c827428fe1eb37414fb8",
+      "sourceTier": "primary",
+      "sourceFamily": "roy-morgan",
+      "sourceUrl": "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november",
+      "fieldworkStart": "2026-08-05",
+      "fieldworkEnd": "2026-08-07",
+      "sampleSize": 2084,
+      "geography": "Victoria Legislative Council",
+      "projection": {"coalition": 11, "oneNation": 10, "alp": 9},
+      "status": "quarantined-awaiting-review",
+      "reviewReason": "Upper-house projection from the same Roy Morgan wave as the accepted statewide observation; dependency and model role require explicit review."
+    }
+  ],
+  "workflowSignals": [
+    {
+      "sourceId": "demosau-victoria-state-polls",
+      "status": "WORKFLOW_FAILURE",
+      "detail": "The known DemosAU article was retrieved through the direct transport but parser markers did not resolve; no absence-of-evidence conclusion permitted.",
+      "sourceUrl": "https://demosau.com/news/coalition-holds-election-winning-lead-in-latest-victoria-poll/"
+    }
+  ],
+  "manualPublicationSweep": {
+    "freshwater": {
+      "result": "unchanged-known-wave",
+      "firstPartyIndexSha256": "2be925a08f5b58177f94c47f9caeb911dffb8298c42d0a908f4262727a2c02eb",
+      "latestPublication": "2026-10-02 Herald Sun / Freshwater Strategy September Polling Data",
+      "fieldwork": "2026-09-24 to 2026-09-28",
+      "workbookSha256": "e74537ac81246b6e4207963cfcf8a5bffa3f512516370baa917648c85f175e9e",
+      "decision": "No newer wave found; existing Freshwater admission unchanged."
+    },
+    "redbridgeAccent": {
+      "result": "unchanged-known-wave",
+      "pageSha256": "90eadd0148b6333f7e313da0b5482ebe80356ead8063fc23b512686b158da0d5",
+      "latestRelevantPublication": "2026-09-15 AFR / RedBridge Group and Accent Research September 2026 Victorian state poll",
+      "decision": "No newer Victorian statewide poll or independence documentation found; September hold unchanged."
+    },
+    "resolveStrategic": {
+      "result": "unchanged-known-wave",
+      "routeSha256": "1c5ec34bab1aa4a51e6caddc87d71e79fe41740de7c289b08a1cd72b7a2c8660",
+      "latestRelevantPublication": "2026-09 Resolve Strategic Victorian poll",
+      "decision": "No newer first-party evidence resolving the September publication, arithmetic or methodology blockers found; hold unchanged."
+    },
+    "demosAU": {
+      "result": "unresolved-manual-check",
+      "decision": "No newer first-party Victorian poll located; the known August route remains parser-blocked and the September hold remains unresolved."
+    },
+    "royMorgan": {
+      "result": "new-material-found-not-new-statewide-poll",
+      "pageSha256": "9170178b4e0f6f6a30eb3ad35f43124b0618b9fe0790a66c92068b0b96ac8ed6",
+      "publication": "2026-10-06 Roy Morgan Victorian Winnability Score analysis",
+      "decision": "Derived seat-analysis product based on prior six months of Roy Morgan data; not a new statewide voting-intention observation and not admitted."
+    }
+  },
+  "holds": {
+    "redbridgeAccentSeptember": "unchanged-hold",
+    "demosAUSeptember": "unchanged-hold",
+    "resolveSeptember": "unchanged-hold"
+  },
+  "governance": {
+    "evidenceDiscovery": true,
+    "evidenceAcceptance": false,
+    "modelEligibility": false,
+    "canonicalModelInclusion": false,
+    "scoring": false,
+    "snapshotSealed": false
+  }
+}
+
