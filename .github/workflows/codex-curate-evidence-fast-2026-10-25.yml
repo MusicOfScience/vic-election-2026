@@ -1,0 +1,137 @@
+name: Temporary fast 25 October evidence curation
+
+on:
+  push:
+    branches:
+      - codex/refresh-evidence-2026-10-25
+
+permissions:
+  contents: write
+
+jobs:
+  curate-fast:
+    if: ${{ contains(github.event.head_commit.message, '[curate2]') && !contains(github.event.head_commit.message, '[skip curate2]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/refresh-evidence-2026-10-25
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Patch governed evidence metadata
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p,v) => fs.writeFileSync(p, JSON.stringify(v,null,2)+'\n');
+          const checkedAt='2026-10-25T04:45:00.000Z';
+
+          const sources=read('metadata/sources.json');
+          sources.registryReviewedAt=checkedAt;
+          const enrol=sources.sources.find(s=>s.id==='vec-2026-enrolment');
+          enrol.lastCheckedAt=checkedAt;
+          enrol.notes='The active model still uses the VEC August 2026 district and region workbooks extracted on 4 September. The VEC now lists September 2026 workbooks and 4,694,947 electors as at 6 October; those newer workbooks remain pending deterministic capture, extraction and district/region reconciliation before promotion.';
+          const polls=sources.sources.find(s=>s.id==='vic-2026-poll-registry');
+          polls.lastCheckedAt=checkedAt;
+          polls.notes='September Freshwater remains the newest admitted statewide observation. October RedBridge/Accent and Resolve, plus the now-primary-verified September DemosAU wave, are staged for owner review. The August Roy Morgan Upper House table remains the active regional model input while the 20 October July-September study awaits a complete five-family regional table.';
+          const forecast=sources.sources.find(s=>s.id==='forecast-derived-outputs');
+          forecast.dataEffectiveDate='2026-10-25'; forecast.lastCheckedAt=checkedAt;
+          forecast.notes='Deterministically regenerated at the 25 October assessment date using the unchanged 13 model-eligible statewide observations; newer public evidence remains staged under the admission policy.';
+          if(!sources.sources.some(s=>s.id==='current-evidence-review-2026-10-25')) sources.sources.push({
+            id:'current-evidence-review-2026-10-25',name:'25 October current election evidence review',publisher:'Victorian Electoral Commission; RedBridge / Accent Research; DemosAU; Roy Morgan; project review',sourceType:'quarantined-current-evidence-review',confidence:'primary-mixed',useStatus:'gap-tracked',modelRole:'Governed review of newer polling, Council evidence, enrolment and candidate-source changes; no held observation is silently promoted',canonicalUrl:'https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/',dataEffectiveDate:'2026-10-20',lastCheckedAt:checkedAt,updateFrequency:'review-driven',stalenessThresholdDays:null,criticalToForecast:false,localArtifacts:['metadata/current-evidence-adjudication-2026-10-25.json','metadata/current-evidence/2026-10-25/live-source-report.json','metadata/current-evidence/2026-10-25/source-discovery-report.json','metadata/current-evidence/2026-10-25/source-discovery-quarantine.json','metadata/current-evidence/2026-10-25/discovery-review-manifest.json','metadata/current-evidence/2026-10-25/evidence-freshness-report.json','metadata/current-evidence/2026-10-25/poll-promotion-audit.json','metadata/current-evidence/2026-10-25/poll-coverage-report.json','metadata/forecast-refresh-2026-10-25.json'],notes:'Evidence review only. Acceptance and model eligibility remain separate; discovery time is never treated as a poll effective date.'
+          });
+          write('metadata/sources.json',sources);
+
+          const adapters=read('metadata/live-source-adapters.json');
+          const ve=adapters.adapters.find(a=>a.id==='vec-2026-enrolment');
+          ve.expectedMarkers=['Electoral roll statistics','District statistics','Region statistics','September 2026'];
+          const uh=adapters.adapters.find(a=>a.id==='roy-morgan-vic-2026-upper-house');
+          uh.url='https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026';
+          uh.expectedMarkers=['Upper House','2,845 electors','Northern Metropolitan','Western Metropolitan'];
+          const ri=adapters.adapters.find(a=>a.id==='roy-morgan-latest-releases');
+          ri.discovery.acceptedSourceUrls=[...new Set([...(ri.discovery.acceptedSourceUrls||[]),uh.url])];
+          write('metadata/live-source-adapters.json',adapters);
+
+          const primary=read('metadata/primary-source-evidence-2026.json');
+          if(!primary.records.some(r=>r.id==='redbridge-accent-vic-2026-10-08-primary')) primary.records.unshift({
+            id:'redbridge-accent-vic-2026-10-08-primary',sourceId:'redbridge-accent-victoria-state-polls',status:'quarantined-awaiting-review',automaticPromotion:false,kind:'poll',pollster:'RedBridge / Accent Research',commissioner:'Australian Financial Review',fieldworkStart:'2026-10-02',fieldworkEnd:'2026-10-08',sampleSize:1008,effectiveSampleSize:775,method:'online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted for age, gender, education, religion and location; 77% weighting efficiency; undecided leaner; 7% unresolved excluded',geography:'Victoria',primaryVote:{alp:24,coalition:30,oneNation:24,greens:16,otherParties:6},twoPartyPreferred:{alp:44,coalition:56,basis:'respondent allocated; topline corroborated by contemporary election-poll ledgers'},sourceUrl:'https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll',pollPublicationDate:'2026-10-11',sourceTier:'primary_pollster',verificationStatus:'primary-methodology-topline-corroborated-awaiting-human-review',proposedModelPollId:'redbridge_accent_2026-10',captureMode:'first-party-methodology-page-plus-corroborated-toplines',reviewNotes:'First-party Accent page verifies dates, N, effective N, panel mode, quotas, weighting and undecided handling. Model admission remains held under the existing RedBridge/Accent sample-family independence rule; disjoint fieldwork does not establish respondent-level independence.'
+          });
+          write('metadata/primary-source-evidence-2026.json',primary);
+
+          const research=read('metadata/research-source-evidence-2026.json');
+          let demos=research.records.find(r=>r.id==='demosau-vic-2026-09-10-20-secondary');
+          if(demos){
+            Object.assign(demos,{effectiveSampleSize:572,population:'Victorians aged 18+ eligible to vote',method:'internet panels; rim weighted by age × gender, education, personal income, residential tenure, language, region, 2025 federal vote and left-right self-identification; state vote intention first substantive question; undecided leaner then unresolved excluded',primaryVote:{alp:25,coalition:30,oneNation:20,greens:14,otherParties:11},twoPartyPreferred:{alp:48,coalition:52,basis:'DemosAU published; Greens informed by 2022 state flows, One Nation and others from respondent-allocated 2026 Victorian polling'},sourceUrl:'https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/',publicationDate:'2026-10-14',pollPublicationDate:'2026-10-14',sourceTier:'primary_pollster',verificationStatus:'primary-publication-and-methodology-captured-awaiting-owner-rereview',sampleOverlapAssessment:'Separate non-overlapping fieldwork from the 6–11 August wave. Same survey family; respondent/panel reuse across waves is not disclosed. Existing project policy does not itself forbid comparable disjoint waves, but explicit owner eligibility remains required.',captureNotes:'Primary DemosAU release and DemosAU methodology listing are now captured. Earlier blockers concerning the primary publication, complete residual category, internet-panel mode and undecided treatment are resolved. Ace Strategies independently reports effective N=572 and reproduces the weighting and preference method. The existing 8 October owner HOLD remains authoritative until explicitly re-adjudicated.'});
+            delete demos.unreportedPrimaryResidual;
+          }
+          if(!research.records.some(r=>r.id==='resolve-strategic-vic-2026-10-06-10-secondary')) research.records.unshift({id:'resolve-strategic-vic-2026-10-06-10-secondary',sourceId:'resolve-strategic-victoria-secondary',status:'quarantined-awaiting-review',automaticPromotion:false,kind:'poll',pollster:'Resolve Strategic',fieldworkStart:'2026-10-06',fieldworkEnd:'2026-10-10',sampleSize:1000,geography:'Victoria',primaryVote:{alp:25,coalition:28,oneNation:23,greens:15,otherParties:9},publicationDate:'2026-10-13',sourceTier:'reputable_secondary',verificationStatus:'secondary-topline-awaiting-primary-carrier',sourceUrl:'https://electiontracker.au/elections/vic/2026/polls',reviewNotes:'Reputable secondary ledgers agree on fieldwork and toplines. No first-party survey carrier/full methodology captured in this review. No two-party-preferred figure is inferred; hold from model inputs.'});
+          if(!research.records.some(r=>r.id==='roy-morgan-upper-house-jul-sep-2026-primary')) research.records.unshift({id:'roy-morgan-upper-house-jul-sep-2026-primary',sourceId:'roy-morgan-vic-2026-upper-house',status:'quarantined-awaiting-review',automaticPromotion:false,kind:'poll-upper-house',pollster:'Roy Morgan',fieldworkStart:'2026-07-01',fieldworkEnd:'2026-09-30',sampleSize:2845,geography:'Victoria — eight Legislative Council regions',publicationDate:'2026-10-20',sourceTier:'primary_pollster',verificationStatus:'primary-article-captured-incomplete-five-family-table',sourceUrl:'https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026',publishedSeatBaseline:{coalition:12,alp:10,oneNation:6,greens:8,unresolved:4},reviewNotes:'Fresh first-party eight-region study. Accessible article text does not expose every five-family regional share. Replace rather than stack with the August regional table only after complete tables/cross-tabs are captured and reconciled; do not derive missing cells by subtraction.'});
+          write('metadata/research-source-evidence-2026.json',research);
+
+          const adjud=read('metadata/current-evidence-adjudication-2026-10-25.json');
+          const d=adjud.assemblyPolling.find(x=>x.evidenceId==='demosau-vic-2026-09-10-20-secondary');
+          if(d) Object.assign(d,{effectiveSampleSize:572,primaryVoteRounded:{alp:25,coalition:30,oneNation:20,greens:14,otherParties:11},twoPartyPreferred:{coalition:52,alp:48,basis:'DemosAU published'},sourceUrl:'https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/',sourceTier:'primary_pollster',evidenceRecommendation:'ACCEPT',modelRecommendation:'HOLD_PENDING_EXPLICIT_OWNER_ELIGIBILITY_AND_DEPENDENCY_REVIEW',blocker:'Primary publication, residual category, mode and undecided treatment are now verified. The prior 8 October owner HOLD must be explicitly re-adjudicated; cross-wave respondent/panel reuse remains undisclosed although fieldwork is disjoint.',canonicalAction:'none'});
+          write('metadata/current-evidence-adjudication-2026-10-25.json',adjud);
+          NODE
+
+      - name: Run current source monitor and governed review reports
+        shell: bash
+        run: |
+          mkdir -p metadata/current-evidence/2026-10-25
+          node scripts/monitor-live-sources.mjs --report metadata/current-evidence/2026-10-25/live-source-report.json
+          node scripts/discover-live-source-records.mjs --report metadata/current-evidence/2026-10-25/source-discovery-report.json --quarantine metadata/current-evidence/2026-10-25/source-discovery-quarantine.json
+          node scripts/discover-demosau-victoria-polls.mjs --report metadata/current-evidence/2026-10-25/source-discovery-report.json --quarantine metadata/current-evidence/2026-10-25/source-discovery-quarantine.json || true
+          node scripts/build-discovery-review-manifest.mjs --input metadata/current-evidence/2026-10-25/source-discovery-quarantine.json --output metadata/current-evidence/2026-10-25/discovery-review-manifest.json
+          node scripts/build-evidence-freshness-report.mjs --as-of 2026-10-25 --output metadata/current-evidence/2026-10-25/evidence-freshness-report.json
+          node scripts/build-poll-promotion-audit.mjs --as-of 2026-10-25 --output metadata/current-evidence/2026-10-25/poll-promotion-audit.json
+          node scripts/build-poll-coverage-report.mjs --output metadata/current-evidence/2026-10-25/poll-coverage-report.json
+          node scripts/validate-candidates.mjs
+
+      - name: Generate provenance and true 25 October release readiness
+        shell: bash
+        run: |
+          node scripts/generate-source-provenance.mjs
+          node scripts/check-release-readiness.mjs --as-of 2026-10-25
+
+      - name: Compare 8 October main to the committed 25 October forecast
+        shell: bash
+        run: |
+          git fetch --no-tags origin main
+          node <<'NODE'
+          const fs=require('fs'), cp=require('child_process');
+          const old=p=>cp.execFileSync('git',['show',`origin/main:${p}`],{encoding:'utf8'});
+          const cur=p=>fs.readFileSync(p,'utf8');
+          const csv=t=>{const l=t.trim().split(/\r?\n/),h=l.shift().split(',');return l.map(x=>{const v=x.split(',');return Object.fromEntries(h.map((k,i)=>[k,v[i]??'']))})};
+          const d=(a,b)=>({before:+a,after:+b,change:+b-(+a)});
+          const before=JSON.parse(old('model/data/processed/experimental_forecast_2026.json')),after=JSON.parse(cur('model/data/processed/experimental_forecast_2026.json')),parties=after.party_order;
+          const ob=Object.fromEntries(csv(old('model/data/processed/experimental_forecast_2026_chamber.csv')).map(r=>[r.party,r]));
+          const oc=Object.fromEntries(csv(old('model/data/processed/experimental_forecast_2026_council.csv')).map(r=>[r.party,r]));
+          const od=Object.fromEntries(csv(old('model/data/processed/experimental_forecast_2026_districts.csv')).map(r=>[r.district_id,r]));
+          const fam=(path,prior)=>Object.fromEntries(csv(cur(path)).map(r=>[r.party,Object.fromEntries(['mean','median','lower80','upper80','majority_probability'].map(k=>[k,d(prior[r.party][k],r[k])]))]));
+          const changes=csv(cur('model/data/processed/experimental_forecast_2026_districts.csv')).map(r=>{const p=od[r.district_id],wins=Object.fromEntries(parties.map(q=>[q,d(p[`win_${q.toLowerCase()}`],r[`win_${q.toLowerCase()}`])]));return{districtId:r.district_id,districtName:r.district_name,maximumAbsoluteProbabilityChange:Math.max(...Object.values(wins).map(x=>Math.abs(x.change))),winProbabilities:wins,favouredParty:{before:p.favoured_party,after:r.favoured_party},likelyFinalPair:{before:p.likely_final_pair,after:r.likely_final_pair}}}).sort((a,b)=>b.maximumAbsoluteProbabilityChange-a.maximumAbsoluteProbabilityChange);
+          const report={schemaVersion:1,assessedAsOf:'2026-10-25',baseCommit:'b380fbc8a2113e5ce1ff3ea4ac456274f5d142b1',changeReason:'Assessment-date advance with the same 13 admitted statewide observations. Newer public evidence remains staged/held, so deltas measure recency/uncertainty effects rather than incorporation of October polls.',polling:{countBefore:before.polling.poll_count,countAfter:after.polling.poll_count,statewidePrimary:Object.fromEntries(parties.map(p=>[p,Object.fromEntries(['mean','lower80','upper80'].map(k=>[k,d(before.polling[k][p],after.polling[k][p])]))]))},assembly:{hungProbability:d(before.assembly.hung_probability,after.assembly.hung_probability),families:fam('model/data/processed/experimental_forecast_2026_chamber.csv',ob),largestDistrictChanges:changes.slice(0,25),materialDistricts:changes.filter(x=>x.maximumAbsoluteProbabilityChange>=.05),favouredPartyChanges:changes.filter(x=>x.favouredParty.before!==x.favouredParty.after),likelyFinalPairChanges:changes.filter(x=>x.likelyFinalPair.before!==x.likelyFinalPair.after)},council:{majorPartyNoControlProbability:d(before.council.major_party_no_control_probability,after.council.major_party_no_control_probability),families:fam('model/data/processed/experimental_forecast_2026_council.csv',oc)},governance:{productionCompatible:after.production_compatible,newModelEligiblePolls:0,ownerGatePreserved:true}};
+          fs.writeFileSync('metadata/forecast-refresh-2026-10-25.json',JSON.stringify(report,null,2)+'\n');
+          console.log(JSON.stringify({hung:report.assembly.hungProbability,largest:changes[0],material:report.assembly.materialDistricts.length,favouredChanges:report.assembly.favouredPartyChanges.length,finalPairChanges:report.assembly.likelyFinalPairChanges.length}));
+          NODE
+          node scripts/generate-source-provenance.mjs
+
+      - name: Verify deterministic metadata outputs
+        shell: bash
+        run: |
+          node scripts/generate-source-provenance.mjs --check
+          node scripts/generate-poll-data.mjs --check
+          node scripts/check-release-readiness.mjs --as-of 2026-10-25 --check
+          node scripts/validate-candidates.mjs
+          node scripts/validate-psephology-evidence.mjs
+
+      - name: Commit curated evidence
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Curate 25 October election evidence and readiness [skip refresh] [skip curate2]'
+          git push origin HEAD:codex/refresh-evidence-2026-10-25
