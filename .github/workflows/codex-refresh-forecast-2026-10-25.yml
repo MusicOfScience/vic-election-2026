@@ -1,0 +1,44 @@
+name: Temporary deterministic forecast refresh 2026-10-25
+
+on:
+  push:
+    branches:
+      - codex/refresh-evidence-2026-10-25
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    if: ${{ !contains(github.event.head_commit.message, '[skip refresh]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/refresh-evidence-2026-10-25
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: npm ci
+      - run: python -m pip install -c model/constraints.txt -e './model[dev]'
+      - name: Regenerate deterministic forecast artefacts
+        run: bash scripts/refresh-forecast.sh
+      - name: Run focused model tests
+        run: python -m pytest model/tests -q
+      - name: Commit deterministic artefacts back to refresh branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Regenerate 25 October forecast artefacts [skip refresh]"
+          git push origin HEAD:codex/refresh-evidence-2026-10-25
