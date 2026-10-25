@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-25",
+  "mode": "current-evidence-shadow-only",
+  "policy": "This file records current public evidence for governed sensitivity runs. It does not confer evidence acceptance or canonical model eligibility. Existing project-owner admission decisions remain in force unless explicitly superseded.",
+  "assemblyPolls": [
+    {
+      "id": "demosau-vic-2026-09-10-20-primary",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-model-eligibility-decision",
+      "pollster": "DemosAU",
+      "commissioner": "PremierNational",
+      "fieldworkStart": "2026-09-10",
+      "fieldworkEnd": "2026-09-20",
+      "publicationDate": "2026-10-14",
+      "sampleSize": 1020,
+      "method": "internet panels; effective margin of error reported as +/-4.1%",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 30,
+        "alp": 25,
+        "oneNation": 20,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "twoPartyPreferred": {
+        "coalition": 52,
+        "alp": 48,
+        "basis": "published DemosAU/PremierNational result"
+      },
+      "sourceUrl": "https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "first-party-pollster-publication",
+      "proposedModelPollId": "demosau_2026-09",
+      "captureMode": "manual-primary-source-capture",
+      "modelEligibilityDecision": "pending",
+      "blocker": "Primary publication now resolves the earlier topline/method/residual blocker; repeat-respondent or cross-wave sample independence is not disclosed, so canonical model admission remains an explicit owner decision."
+    },
+    {
+      "id": "redbridge-accent-vic-2026-10-02-08-current",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-model-eligibility-decision",
+      "pollster": "RedBridge / Accent Research",
+      "commissioner": "Australian Financial Review",
+      "fieldworkStart": "2026-10-02",
+      "fieldworkEnd": "2026-10-08",
+      "publicationDate": "2026-10-11",
+      "sampleSize": 1008,
+      "effectiveSampleSize": 775,
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted across age, gender, education, religion and location; undecided leaner; unresolved respondents excluded",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 30,
+        "alp": 24,
+        "oneNation": 24,
+        "greens": 16,
+        "otherParties": 6
+      },
+      "twoPartyPreferred": {
+        "coalition": 56,
+        "alp": 44,
+        "basis": "respondent allocated; topline corroborated by multiple contemporary polling ledgers"
+      },
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "first-party-methodology-and-report-link; topline-cross-checked",
+      "proposedModelPollId": "redbridge_accent_2026-10",
+      "captureMode": "manual-primary-source-capture",
+      "modelEligibilityDecision": "pending",
+      "blocker": "The existing owner rule for RedBridge/Accent requires documented respondent/sample-family independence from prior waves. The October methodology confirms a separate fieldwork window but does not disclose cross-wave respondent reuse."
+    },
+    {
+      "id": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-primary-source-reconciliation",
+      "pollster": "Resolve Strategic",
+      "commissioner": "The Age",
+      "fieldworkStart": "2026-10-06",
+      "fieldworkEnd": "2026-10-10",
+      "publicationDate": "2026-10-13",
+      "sampleSize": 1000,
+      "method": "published media poll; primary-source methodology not captured in the project evidence trail",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 28,
+        "alp": 25,
+        "oneNation": 23,
+        "greens": 15,
+        "otherParties": 9
+      },
+      "sourceUrl": "https://electiontracker.au/elections/vic/2026/polls",
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "secondary-ledger-corroborated",
+      "proposedModelPollId": "resolve_strategic_2026-10",
+      "captureMode": "corroborated-secondary-capture",
+      "modelEligibilityDecision": "hold",
+      "blocker": "Primary pollster/publisher methodology and a canonical primary-source capture remain required under the existing project policy."
+    }
+  ],
+  "assemblyScenarios": {
+    "latest_primary": [
+      "demosau-vic-2026-09-10-20-primary",
+      "redbridge-accent-vic-2026-10-02-08-current"
+    ],
+    "latest_primary_plus_resolve": [
+      "demosau-vic-2026-09-10-20-primary",
+      "redbridge-accent-vic-2026-10-02-08-current",
+      "resolve-strategic-vic-2026-10-06-10-secondary"
+    ]
+  },
+  "councilEvidence": {
+    "id": "roy-morgan-upper-house-jul-sep-2026",
+    "status": "reference-only-pending-full-five-way-region-table-capture",
+    "pollster": "Roy Morgan",
+    "publicationDate": "2026-10-20",
+    "fieldworkPeriod": "2026-07 through 2026-09",
+    "sampleSize": 2845,
+    "averageRegionSample": 360,
+    "publishedMinimumSeatAllocation": {
+      "LIB_NAT": 12,
+      "ALP": 10,
+      "ONP": 6,
+      "GRN": 8,
+      "UNRESOLVED": 4
+    },
+    "publishedBlocMinimums": {
+      "LIB_NAT_plus_ONP": 18,
+      "ALP_plus_GRN": 18
+    },
+    "unresolvedRegions": [
+      "Western Victoria",
+      "Northern Metropolitan",
+      "Southern Metropolitan",
+      "Western Metropolitan"
+    ],
+    "sourceUrl": "https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026",
+    "sourceTier": "primary_pollster",
+    "modelInjection": false,
+    "reasonNotInjected": "The published prose exposes the four major-party regional values needed for most regions but does not expose the complete five-way primary table for every region in machine-readable text. Do not infer missing ONP/OTH values for Northern Metropolitan or Southern Metropolitan."
+  }
+}

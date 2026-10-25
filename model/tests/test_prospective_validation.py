@@ -111,7 +111,9 @@ def test_unsealed_and_unauthorised_scoring_never_opens_outcomes(archive, tmp_pat
 
 
 def test_live_seal_refuses_feature_branch_without_producing_snapshot(tmp_path, monkeypatch):
-    # Always force the feature-branch guard; never attempt a real seal even on main CI.
+    # Isolate the branch guard from time-varying calendar freshness. This test is
+    # about refusing feature-branch sealing; calendar freshness is tested separately.
+    monkeypatch.setattr(sealing, 'check_calendar', lambda *args, **kwargs: None)
     original = sealing.git
     monkeypatch.setattr(sealing,'git',lambda root,*args: 'codex/test-fixture' if args == ('branch','--show-current') else original(root,*args))
     with pytest.raises(ValueError, match='clean merged main'):
