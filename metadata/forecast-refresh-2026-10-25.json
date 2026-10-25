@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-10-25",
+  "status": "temporary-seed-overwritten-by-curation-workflow",
+  "note": "This seed exists only so source-provenance validation can fingerprint the declared path before the same workflow deterministically overwrites it with the full 8 October to 25 October comparison and regenerates provenance."
+}
