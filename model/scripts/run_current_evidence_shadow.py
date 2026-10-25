@@ -153,7 +153,6 @@ def _summarise_run(run) -> dict:
                 for party in PARTIES
             },
             "regions": _json_rows(run.council_regions),
-            "seatDistribution": _json_rows(run.council_seat_distribution),
         },
     }
 
