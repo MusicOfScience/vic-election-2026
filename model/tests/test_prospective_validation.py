@@ -33,17 +33,60 @@ def test_actual_clock_cutoff_and_no_backdating():
         sealing.check_window(p, 'writ_roll_close', cutoff+timedelta(microseconds=1))
     with pytest.raises(ValueError, match='not yet due'):
         sealing.check_window(p, 'writ_roll_close', cutoff-timedelta(days=1))
+    with pytest.raises(ValueError, match='precede approval'):
+        sealing.check_window(p, 'post_freshwater_registration', instant(p['approval']['recordedAt'])-timedelta(seconds=1))
 
 
-def test_fixture_is_unmistakable_and_zero_replication(archive):
-    manifest = sealing.verify_package(archive)
-    assert manifest['kind'] == 'fixture-non-empirical' and manifest['independentElectionCount'] == 0
-    assert not manifest['registered'] and manifest['snapshotId'].startswith('fixture/')
+def test_unapproved_seal_refused(tmp_path):
+    import shutil
+    for path in ['metadata/model-vnext-validation-protocol.json','metadata/prospective-validation-approval.json','metadata/prospective-validation-approved-rules.json']:
+        target = tmp_path/path; target.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(ROOT/path,target)
+    protocol = read(tmp_path,'metadata/model-vnext-validation-protocol.json')
+    protocol['status'] = 'proposed-awaiting-owner-review'
+    (tmp_path/'metadata/model-vnext-validation-protocol.json').write_text(json.dumps(protocol))
+    with pytest.raises(ValueError,match='approved protocol required'):
+        sealing.build_package(tmp_path,tmp_path/'no',fixture=True)
+    assert not (tmp_path/'no').exists()
 
 
-def test_archive_rejects_tampering_and_extra_files(archive):
-    source = archive/'predictions.json'; original = source.read_bytes(); source.write_bytes(original+b' ')
-    with pytest.raises(ValueError, match='hash mismatch'):
+@pytest.fixture
+def archive(tmp_path):
+    before = sealing.now()
+    manifest = sealing.build_package(ROOT, tmp_path/'fixture', fixture=True)
+    assert before <= instant(manifest['witnessedAt']) <= sealing.now()
+    return tmp_path/'fixture'
+
+
+def test_fixture_construction_hashes_and_comparators(archive):
+    m = sealing.verify_package(archive)
+    assert m['kind'] == 'fixture-non-empirical' and not m['registered']
+    assert m['snapshotId'].startswith('fixture/')
+    assert m['independentElectionCount'] == 0
+    assert read(ROOT,'metadata/model-vnext-validation-protocol.json')['sealing']['currentlySealedSnapshots'] == []
+    assert len(m['files']) > 35
+    for path, receipt in m['files'].items():
+        assert hashlib.sha256((archive/path).read_bytes()).hexdigest() == receipt['sha256']
+    copied = read(archive,'predictions.json')
+    assert copied['prior_result'] == build_comparators(ROOT)['prior_result']
+    assert copied['current_model']['assemblyDistricts']['albert-park']['probabilities']['ALP'] == .693
+    assert read(archive,'source-ledger.json')['admittedPolls'].__len__() == 13
+    assert not m['productionAuthorised'] and not m['scoringAuthorised']
+
+
+def test_tampering_extra_files_and_fixture_promotion_fail(archive):
+    source = archive/'manifest.json'; original = source.read_bytes(); manifest = json.loads(original)
+    manifest['kind'] = 'prospective-live'; manifest['registered'] = True; manifest['independentElectionCount'] = 1
+    manifest['snapshotId'] = manifest['snapshotId'].removeprefix('fixture/')
+    manifest.pop('manifestSha256'); manifest['manifestSha256'] = hashlib.sha256(canonical(manifest)).hexdigest()
+    source.write_bytes(canonical(manifest))
+    with pytest.raises(ValueError, match='fixture availability'):
+        sealing.verify_package(archive)
+    source.write_bytes(original)
+    changed = json.loads(original); changed['forecastSha256'] = '0'*64
+    changed.pop('manifestSha256'); changed['manifestSha256'] = hashlib.sha256(canonical(changed)).hexdigest()
+    source.write_bytes(canonical(changed))
+    with pytest.raises(ValueError, match='forecast identity mismatch'):
         sealing.verify_package(archive)
     source.write_bytes(original)
     (archive/'unexpected').write_text('not governed')
@@ -68,9 +111,8 @@ def test_unsealed_and_unauthorised_scoring_never_opens_outcomes(archive, tmp_pat
 
 
 def test_live_seal_refuses_feature_branch_without_producing_snapshot(tmp_path, monkeypatch):
-    # Isolate the feature-branch guard against the byte-exact archived source.
-    # Its historical calendar receipt is intentionally immutable and will age;
-    # calendar freshness is tested independently and must not mask this guard.
+    # Always force and isolate the feature-branch guard; never attempt a real seal even on main CI.
+    # The archived source calendar is intentionally immutable, so its wall-clock age must not mask this guard.
     original = sealing.git
     monkeypatch.setattr(sealing, 'check_calendar', lambda root, witnessed: None)
     monkeypatch.setattr(sealing,'git',lambda root,*args: 'codex/test-fixture' if args == ('branch','--show-current') else original(root,*args))
@@ -93,23 +135,97 @@ def test_deterministic_registered_comparators_and_missingness():
     contract = read(ROOT,'metadata/prospective-validation-input-contract.json')
     assert contract['councilPartyToFamily']['Liberal Democrats'] == 'OTH_IND'
     assert contract['councilPartyToFamily']["Pauline Hanson's One Nation"] == 'ONP'
+    fixture = lambda v: dict(zip(PARTIES,v))
+    moved = swing(fixture([50,30,0,10,10]),fixture([25,25,30,10,10]),fixture([40,35,0,10,15]))
+    assert list(moved.values()) == [35.,20.,30.,10.,5.]
+    moved = swing(fixture([10,60,0,10,20]),fixture([5,15,60,10,10]),fixture([40,35,0,10,15]))
+    assert moved['ALP'] == 0 and sum(moved.values()) == pytest.approx(100)
 
 
-def test_scoring_arithmetic_is_deterministic_and_missingness_explicit():
-    forecasts = {
-        'a': {'assemblyDistricts': {'x': {'status':'available','probabilities': {'ALP':.6,'LIB_NAT':.4,'ONP':0.,'GRN':0.,'OTH_IND':0.}},
-                                    'y': unavailable('no forecast')},
-              'assemblySeats': {'status':'unavailable'}, 'councilSeats': {'status':'unavailable'}},
-        'b': {'assemblyDistricts': {'x': {'status':'available','probabilities': {'ALP':.4,'LIB_NAT':.6,'ONP':0.,'GRN':0.,'OTH_IND':0.}}},
-              'assemblySeats': {'status':'unavailable'}, 'councilSeats': {'status':'unavailable'}}}
-    targets = {'assemblyDistricts': {'x':'ALP','y':'LIB_NAT'}, 'assemblySeats': {'ALP':40,'LIB_NAT':35,'ONP':8,'GRN':4,'OTH_IND':1}, 'councilSeats': {'ALP':12,'LIB_NAT':13,'ONP':8,'GRN':4,'OTH_IND':3}}
-    result = evaluate_predictions(forecasts, targets)
-    assert result['a']['assemblyWinner']['n'] == 1 and result['a']['assemblyWinner']['missing'] == ['y']
-    assert result['b']['assemblyWinner']['brier'] > result['a']['assemblyWinner']['brier']
-    assert result == evaluate_predictions(forecasts, targets)
+def synthetic():
+    # Toy named units are not Victorian target rows or scoring receipts.
+    primary = dict(zip(PARTIES,[50,50,0,0,0]))
+    seats = dict(zip(PARTIES,[2,0,0,0,0]))
+    summaries = {p:{'mean':float(seats[p]),'median':float(seats[p]),'lower80':float(seats[p]),'upper80':float(seats[p])} for p in PARTIES}
+    pred = {'assemblyDistricts': {
+        'toy_a':{'primary':primary,'probabilities':dict(zip(PARTIES,[.5,.5,0,0,0])), 'finalPair':{'label':'ALP–LIB_NAT','probability':.75}},
+        'toy_b':{'primary':primary,'probabilities':dict(zip(PARTIES,[0,1,0,0,0]))}},
+        'assemblySeats':summaries, 'hungProbability':.8,
+        'councilRegions':{'toy_region':{'primary':primary,'seats':summaries}},'councilSeats':summaries}
+    target = {'assemblyDistricts': {
+        'toy_a':{'primary':primary,'winner':'ALP','formalVotes':10,'finalPair':'ALP–LIB_NAT'},
+        'toy_b':{'primary':dict(zip(PARTIES,[0,0,0,100,0])),'winner':'GRN','formalVotes':30}},
+        'assemblySeats':seats,'councilRegions':{'toy_region':{'primary':primary,'seats':seats}},'councilSeats':seats}
+    return pred,target
 
 
-def test_seat_metrics_are_proper_and_finite():
-    metric = seat_metrics([{'ALP':.7,'LIB_NAT':.3,'ONP':0.,'GRN':0.,'OTH_IND':0.}], ['ALP'])
-    assert metric['brier'] == pytest.approx(.18)
-    assert metric['logLoss'] > 0 and metric['n'] == 1
+def test_synthetic_metrics_known_arithmetic_and_tie_order():
+    p,y = synthetic(); result = evaluate_predictions(p,y)
+    assert result['assembly']['multiclassBrier'] == 1.25
+    assert result['assembly']['winnerAccuracy'] == .5  # ALP wins .5/.5 tie.
+    assert result['assembly']['zeroProbabilityEvents'] == 1
+    assert result['assembly']['clippedEvents'] == 1
+    assert result['assembly']['logLoss'] == pytest.approx((-.5*__import__('math').log(.5)) + (-.5*__import__('math').log(1e-12)))
+    assert result['assembly']['statewide']['observed']['GRN'] == 75
+    assert result['assembly']['primaryCellDenominator'] == 10
+    assert sum(b['count'] for b in result['assembly']['reliability']) == 10
+    assert result['finalPairs']['brier'] == .0625
+    assert result['hung']['brier'] == pytest.approx(.04)
+    assert result['councilRegionalFamilyPrimaryMae'] == 0
+    assert result['descriptiveOnly'] and not result['productionAuthorised']
+    interval = seat_metrics({'ALP':{'mean':1.5,'median':2,'lower80':1,'upper80':2}}, {'ALP':2})
+    assert interval['ALP']['coverage80'] == 1 and interval['ALP']['width80'] == 1
+
+
+def test_missing_metrics_never_zero_or_partial_state():
+    p,y = synthetic(); p['assemblyDistricts']['toy_b'] = unavailable('No mapping.')
+    result = evaluate_predictions(p,y)
+    assert result['assembly']['denominator'] == 1
+    assert result['assembly']['missing'][0]['districtId'] == 'toy_b'
+    assert result['assembly']['statewide']['status'] == 'unavailable'
+    p,y = synthetic(); del p['assemblyDistricts']['toy_a']['finalPair']
+    assert evaluate_predictions(p,y)['finalPairs']['status'] == 'unavailable'
+    p,y = synthetic(); y['assemblyDistricts'].pop('toy_b')
+    with pytest.raises(ValueError,match='wrong district'):
+        evaluate_predictions(p,y)
+
+
+def test_live_registration_offline_verification_and_scorer_guard(tmp_path):
+    import shutil
+    from model.validation.prospective.governance import digest, material_rules
+    protocol = read(REPOSITORY, 'metadata/model-vnext-validation-protocol.json')
+    entry = read(REPOSITORY, 'metadata/prospective-registration-2026-10-08.json')
+    assert protocol['status'] == 'approved-registration-sealed'
+    assert protocol['sealing']['currentlySealedSnapshots'] == [entry]
+    assert digest(canonical(material_rules(protocol))) == protocol['approval']['approvedProtocolSha256']
+    assert entry['sourceCommit'] != entry['sealCommit']
+    assert instant(entry['witnessedAt']) > instant(entry['sourceMainMergedAt'])
+    package = REPOSITORY / entry['archivePath']
+    copied = tmp_path/'detached-no-git'
+    shutil.copytree(package, copied)
+    m = sealing.verify_package(copied)
+    assert m['manifestSha256'] == entry['manifestSha256']
+    assert m['gitCommit'] == entry['sourceCommit']
+    assert m['kind'] == 'prospective-live' and m['registered']
+    assert m['role'] == 'secondary-dependent'
+    assert not any('2026' in p and ('target_outcome' in p or 'scoring-result' in p) for p in m['files'])
+    for k,v in build_comparators(copied/'archive').items():
+        assert digest(canonical(v)) == entry['comparatorPredictionSha256'][k]
+    with pytest.raises(ValueError, match='scoringAuthorised=false'):
+        validate_scorer_readiness(copied, {})
+    # Readiness guard only: no outcome path is ever passed/opened here.
+    assert check_governance(REPOSITORY)[0]['status'] == 'approved-registration-sealed'
+
+
+def test_active_registration_future_fixture_and_duplicate_refusal(tmp_path):
+    p, _ = check_governance(REPOSITORY)
+    first = REPOSITORY / p['sealing']['currentlySealedSnapshots'][0]['archivePath']
+    before = {str(path.relative_to(first)): path.read_bytes() for path in first.rglob('*') if path.is_file()}
+    with pytest.raises(ValueError, match='already sealed'):
+        sealing.build_package(REPOSITORY, tmp_path/'duplicate')
+    m = sealing.build_package(REPOSITORY, tmp_path/'fixture', snapshot_id='writ_roll_close', fixture=True)
+    assert m['kind'] == 'fixture-non-empirical' and not m['registered']
+    assert m['independentElectionCount'] == 0
+    assert m['electionUnit'] == 'vic_2026_general_election'
+    assert before == {str(path.relative_to(first)): path.read_bytes() for path in first.rglob('*') if path.is_file()}
+    assert p['sealing']['currentlySealedSnapshots'] == read(REPOSITORY, 'metadata/model-vnext-validation-protocol.json')['sealing']['currentlySealedSnapshots']
