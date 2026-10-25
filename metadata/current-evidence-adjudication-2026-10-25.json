@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-10-25",
+  "baseHead": "b380fbc8a2113e5ce1ff3ea4ac456274f5d142b1",
+  "status": "review-packet-staged-owner-gate-preserved",
+  "reviewerRole": "analysis-agent",
+  "policy": "Evidence acceptance and model eligibility remain separate. This packet records source-backed recommendations and does not impersonate project-owner approval or silently promote held evidence.",
+  "assemblyPolling": [
+    {
+      "evidenceId": "redbridge-accent-vic-2026-10-08-primary",
+      "pollster": "RedBridge / Accent Research",
+      "fieldworkStart": "2026-10-02",
+      "fieldworkEnd": "2026-10-08",
+      "publicationDate": "2026-10-11",
+      "sampleSize": 1008,
+      "effectiveSampleSize": 775,
+      "primaryVoteRounded": {
+        "alp": 24,
+        "coalition": 30,
+        "oneNation": 24,
+        "greens": 16,
+        "otherParties": 6
+      },
+      "coalitionLaborTpp": {
+        "coalition": 56,
+        "alp": 44,
+        "basis": "respondent allocated"
+      },
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighting for age, gender, education, religion and location; 77% weighting efficiency; leaner question; 7% unresolved excluded",
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll",
+      "sourceTier": "primary_pollster",
+      "evidenceRecommendation": "ACCEPT",
+      "modelRecommendation": "HOLD",
+      "blocker": "The existing RedBridge/Accent sample-family independence rule remains unresolved. Separate fieldwork windows and the publisher description of regular state snapshots do not establish respondent-level independence or exclude reuse from prior RedBridge/Accent waves/MRP-related material.",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "pollster": "Resolve Strategic",
+      "fieldworkStart": "2026-10-06",
+      "fieldworkEnd": "2026-10-10",
+      "sampleSize": 1000,
+      "primaryVoteRounded": {
+        "alp": 25,
+        "coalition": 28,
+        "oneNation": 23,
+        "greens": 15,
+        "otherParties": 9
+      },
+      "sourceTier": "reputable_secondary",
+      "evidenceRecommendation": "HOLD",
+      "modelRecommendation": "HOLD",
+      "blocker": "No first-party survey carrier/methodology capture has been established in this review. Do not infer a two-party-preferred result.",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-secondary",
+      "pollster": "DemosAU",
+      "fieldworkStart": "2026-09-10",
+      "fieldworkEnd": "2026-09-20",
+      "sampleSize": 1020,
+      "primaryVoteRounded": {
+        "alp": 25,
+        "coalition": 30,
+        "oneNation": 20,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "sourceTier": "reputable_secondary",
+      "evidenceRecommendation": "HOLD",
+      "modelRecommendation": "HOLD",
+      "blocker": "Existing October 8 blockers remain: primary report/publication, complete residual category, mode, undecided treatment and sample dependence are not sufficiently verified.",
+      "canonicalAction": "none"
+    }
+  ],
+  "councilEvidence": {
+    "evidenceId": "roy-morgan-upper-house-jul-sep-2026-primary",
+    "publisher": "Roy Morgan",
+    "publicationDate": "2026-10-20",
+    "fieldworkStart": "2026-07-01",
+    "fieldworkEnd": "2026-09-30",
+    "sampleSize": 2845,
+    "regionSampleDescription": "approximately 340 electors per country region and 370 per metropolitan region",
+    "publishedSeatBaseline": {
+      "coalition": 12,
+      "alp": 10,
+      "oneNation": 6,
+      "greens": 8,
+      "unresolved": 4
+    },
+    "sourceUrl": "https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026",
+    "evidenceRecommendation": "ACCEPT",
+    "modelRecommendation": "HOLD_PENDING_COMPLETE_TABLE",
+    "reason": "This is fresh first-party regional evidence and should replace rather than stack with the August Roy Morgan regional table once a complete eight-region five-family table is captured. The first-party article text does not publish exact One Nation values for Northern Metropolitan and Southern Metropolitan or exact Other/Independent shares for all regions. Missing values must not be reverse-engineered into a canonical model input without the full tables/cross-tabs.",
+    "canonicalAction": "none"
+  },
+  "officialEnrolment": {
+    "publisher": "Victorian Electoral Commission",
+    "listingUrl": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
+    "latestEffectiveDate": "2026-10-06",
+    "latestTotal": 4694947,
+    "activeModelTotal": 4683403,
+    "activeModelExtractDate": "2026-09-04",
+    "electorIncrease": 11544,
+    "recommendation": "PROMOTE_AFTER_WORKBOOK_CAPTURE_AND_RECONCILIATION",
+    "reason": "The VEC now lists September 2026 district and region workbooks. The active model still uses the August workbooks extracted on 4 September. Promote only after the official workbooks are captured, parsed, coverage-checked and district/region totals reconcile to 4,694,947."
+  },
+  "electoralLaw": {
+    "sourceUrl": "https://www.vec.vic.gov.au/about-us/legislation/electoral-act-amendments-2026",
+    "finding": "No newly discovered redistribution. The enacted 2026 rules remain material: group voting tickets removed; nominations close noon 9 November; registered parties may withdraw disendorsed nominees before nominations close; how-to-vote registration runs 10-20 November; early voting begins 18 November.",
+    "modelConsequence": "Retain voter-directed Council preference treatment. No additional boundary change is required."
+  },
+  "candidateEvidence": {
+    "finding": "Announced/preselected candidate evidence has continued to change since the 8 October registry, but official nominations do not open until 4 November and close on 9 November.",
+    "recommendation": "Run the existing candidate discovery/review pipeline and keep newly discovered records quarantined until source-specific validation/owner review. Do not convert announcement counts into official nomination status."
+  },
+  "canonicalForecastDecision": {
+    "modelEligibleInputsChanged": false,
+    "assessmentDateAdvancedTo": "2026-10-25",
+    "reason": "No new statewide Assembly poll passes the existing explicit admission rules in this review. The exact forecast should therefore be rerun at the new assessment date using the unchanged eligible registry, which tests the effect of recency/staleness on uncertainty without smuggling held observations into the model.",
+    "ownerDecisionRequiredForNewPollAdmission": true
+  }
+}
