@@ -1,0 +1,246 @@
+name: Temporary 25 October evidence curation
+
+on:
+  push:
+    branches:
+      - codex/refresh-evidence-2026-10-25
+
+permissions:
+  contents: write
+
+jobs:
+  curate:
+    if: ${{ contains(github.event.head_commit.message, '[curate]') && !contains(github.event.head_commit.message, '[skip curate]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/refresh-evidence-2026-10-25
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Patch current evidence metadata without promoting held observations
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const write = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2) + '\n');
+          const checkedAt = '2026-10-25T04:45:00.000Z';
+
+          const sources = read('metadata/sources.json');
+          sources.registryReviewedAt = checkedAt;
+          const enrol = sources.sources.find(s => s.id === 'vec-2026-enrolment');
+          enrol.lastCheckedAt = checkedAt;
+          enrol.notes = 'The active model still uses the VEC August 2026 district and region workbooks extracted on 4 September. The VEC page now lists September 2026 workbooks and 4,694,947 electors as at 6 October; those newer workbooks remain pending deterministic capture, extraction and district/region reconciliation before promotion.';
+          const polls = sources.sources.find(s => s.id === 'vic-2026-poll-registry');
+          polls.lastCheckedAt = checkedAt;
+          polls.notes = 'Each poll retains its source URL, verification state, vote base, questionnaire regime and model-eligibility flag. September Freshwater remains the newest admitted statewide observation. October RedBridge/Accent and Resolve are staged but held under the existing review rules. The August Roy Morgan Upper House table remains the active regional input while the 20 October July-September Roy Morgan regional study awaits complete five-family table capture.';
+          const forecast = sources.sources.find(s => s.id === 'forecast-derived-outputs');
+          forecast.dataEffectiveDate = '2026-10-25';
+          forecast.lastCheckedAt = checkedAt;
+          forecast.notes = 'Seeded outputs were deterministically regenerated at the 25 October assessment date using the unchanged 13 model-eligible statewide observations. Checksums prevent an old website bundle from being paired with newer model files.';
+          if (!sources.sources.some(s => s.id === 'current-evidence-review-2026-10-25')) {
+            sources.sources.push({
+              id: 'current-evidence-review-2026-10-25',
+              name: '25 October current election evidence review',
+              publisher: 'Victorian Electoral Commission; RedBridge / Accent Research; Roy Morgan; project review',
+              sourceType: 'quarantined-current-evidence-review',
+              confidence: 'primary-mixed',
+              useStatus: 'gap-tracked',
+              modelRole: 'Governed review of newer polling, Council evidence, enrolment and candidate-source changes; no held observation is silently promoted',
+              canonicalUrl: 'https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll',
+              dataEffectiveDate: '2026-10-20',
+              lastCheckedAt: checkedAt,
+              updateFrequency: 'review-driven',
+              stalenessThresholdDays: null,
+              criticalToForecast: false,
+              localArtifacts: [
+                'metadata/current-evidence-adjudication-2026-10-25.json',
+                'metadata/current-evidence/2026-10-25/live-source-report.json',
+                'metadata/current-evidence/2026-10-25/source-discovery-report.json',
+                'metadata/current-evidence/2026-10-25/source-discovery-quarantine.json',
+                'metadata/current-evidence/2026-10-25/discovery-review-manifest.json',
+                'metadata/current-evidence/2026-10-25/evidence-freshness-report.json',
+                'metadata/current-evidence/2026-10-25/poll-promotion-audit.json',
+                'metadata/current-evidence/2026-10-25/poll-coverage-report.json'
+              ],
+              notes: 'This source group records reviewed or quarantined evidence only. Evidence acceptance and model eligibility remain separate, and discovery time is never treated as a poll effective date.'
+            });
+          }
+          write('metadata/sources.json', sources);
+
+          const adapters = read('metadata/live-source-adapters.json');
+          const vecEnrol = adapters.adapters.find(a => a.id === 'vec-2026-enrolment');
+          vecEnrol.expectedMarkers = ['Electoral roll statistics', 'District statistics', 'Region statistics', 'September 2026'];
+          const upper = adapters.adapters.find(a => a.id === 'roy-morgan-vic-2026-upper-house');
+          upper.url = 'https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026';
+          upper.expectedMarkers = ['Upper House', '2,845 electors', 'Northern Metropolitan', 'Western Metropolitan'];
+          const rmIndex = adapters.adapters.find(a => a.id === 'roy-morgan-latest-releases');
+          rmIndex.discovery.acceptedSourceUrls = [...new Set([...(rmIndex.discovery.acceptedSourceUrls || []), upper.url])];
+          write('metadata/live-source-adapters.json', adapters);
+
+          const primary = read('metadata/primary-source-evidence-2026.json');
+          if (!primary.records.some(r => r.id === 'redbridge-accent-vic-2026-10-08-primary')) {
+            primary.records.unshift({
+              id: 'redbridge-accent-vic-2026-10-08-primary',
+              sourceId: 'redbridge-accent-victoria-state-polls',
+              status: 'quarantined-awaiting-review',
+              automaticPromotion: false,
+              kind: 'poll',
+              pollster: 'RedBridge / Accent Research',
+              commissioner: 'Australian Financial Review',
+              fieldworkStart: '2026-10-02',
+              fieldworkEnd: '2026-10-08',
+              sampleSize: 1008,
+              effectiveSampleSize: 775,
+              method: 'online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted for age, gender, education, religion and location; undecided leaner; 7% unresolved excluded',
+              geography: 'Victoria',
+              primaryVote: { alp: 24, coalition: 30, oneNation: 24, greens: 16, otherParties: 6 },
+              twoPartyPreferred: { alp: 44, coalition: 56, basis: 'respondent allocated; topline corroborated by contemporary election-poll ledgers' },
+              sourceUrl: 'https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll',
+              pollPublicationDate: '2026-10-11',
+              sourceTier: 'primary_pollster',
+              verificationStatus: 'primary-methodology-topline-corroborated-awaiting-human-review',
+              proposedModelPollId: 'redbridge_accent_2026-10',
+              captureMode: 'first-party-methodology-page-plus-corroborated-toplines',
+              reviewNotes: 'First-party Accent page verifies dates, N, effective N, panel mode, quotas, weighting and undecided handling. Published toplines are corroborated by Australian Election Tracker and other contemporary psephological coverage. Model admission remains held under the existing RedBridge/Accent sample-family independence rule; disjoint fieldwork does not establish respondent-level independence.'
+            });
+          }
+          write('metadata/primary-source-evidence-2026.json', primary);
+
+          const research = read('metadata/research-source-evidence-2026.json');
+          if (!research.records.some(r => r.id === 'resolve-strategic-vic-2026-10-06-10-secondary')) {
+            research.records.unshift({
+              id: 'resolve-strategic-vic-2026-10-06-10-secondary',
+              sourceId: 'resolve-strategic-victoria-secondary',
+              status: 'quarantined-awaiting-review',
+              automaticPromotion: false,
+              kind: 'poll',
+              pollster: 'Resolve Strategic',
+              fieldworkStart: '2026-10-06',
+              fieldworkEnd: '2026-10-10',
+              sampleSize: 1000,
+              geography: 'Victoria',
+              primaryVote: { alp: 25, coalition: 28, oneNation: 23, greens: 15, otherParties: 9 },
+              publicationDate: '2026-10-13',
+              sourceTier: 'reputable_secondary',
+              verificationStatus: 'secondary-topline-awaiting-primary-carrier',
+              sourceUrl: 'https://electiontracker.au/elections/vic/2026/polls',
+              reviewNotes: 'Current reputable secondary ledgers agree on fieldwork and toplines. No first-party survey carrier or full methodology was captured in this review, and no two-party-preferred figure is inferred. Hold from model inputs.'
+            });
+          }
+          if (!research.records.some(r => r.id === 'roy-morgan-upper-house-jul-sep-2026-primary')) {
+            research.records.unshift({
+              id: 'roy-morgan-upper-house-jul-sep-2026-primary',
+              sourceId: 'roy-morgan-vic-2026-upper-house',
+              status: 'quarantined-awaiting-review',
+              automaticPromotion: false,
+              kind: 'poll-upper-house',
+              pollster: 'Roy Morgan',
+              fieldworkStart: '2026-07-01',
+              fieldworkEnd: '2026-09-30',
+              sampleSize: 2845,
+              geography: 'Victoria — eight Legislative Council regions',
+              publicationDate: '2026-10-20',
+              sourceTier: 'primary_pollster',
+              verificationStatus: 'primary-article-captured-incomplete-five-family-table',
+              sourceUrl: 'https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026',
+              publishedSeatBaseline: { coalition: 12, alp: 10, oneNation: 6, greens: 8, unresolved: 4 },
+              reviewNotes: 'Fresh first-party eight-region study. The article publishes many regional party shares and a 12/10/6/8 seat baseline but does not expose every five-family regional share in accessible article text. Replace rather than stack with the August regional table only after complete tables/cross-tabs are captured and reconciled; do not derive missing cells by subtraction.'
+            });
+          }
+          write('metadata/research-source-evidence-2026.json', research);
+          NODE
+
+      - name: Run governed source observation and discovery
+        shell: bash
+        continue-on-error: true
+        run: |
+          mkdir -p metadata/current-evidence/2026-10-25
+          node scripts/monitor-live-sources.mjs --report metadata/current-evidence/2026-10-25/live-source-report.json --fail-on-unhealthy
+          node scripts/discover-live-source-records.mjs --report metadata/current-evidence/2026-10-25/source-discovery-report.json --quarantine metadata/current-evidence/2026-10-25/source-discovery-quarantine.json
+          node scripts/discover-demosau-victoria-polls.mjs --report metadata/current-evidence/2026-10-25/source-discovery-report.json --quarantine metadata/current-evidence/2026-10-25/source-discovery-quarantine.json
+          node scripts/build-discovery-review-manifest.mjs --input metadata/current-evidence/2026-10-25/source-discovery-quarantine.json --output metadata/current-evidence/2026-10-25/discovery-review-manifest.json
+          node scripts/build-evidence-freshness-report.mjs --as-of 2026-10-25 --output metadata/current-evidence/2026-10-25/evidence-freshness-report.json
+          node scripts/build-poll-promotion-audit.mjs --as-of 2026-10-25 --output metadata/current-evidence/2026-10-25/poll-promotion-audit.json
+          node scripts/build-poll-coverage-report.mjs --output metadata/current-evidence/2026-10-25/poll-coverage-report.json
+          node scripts/validate-candidates.mjs
+
+      - name: Refresh model, provenance and 25 October readiness
+        shell: bash
+        run: |
+          python -m pip install -c model/constraints.txt -e './model[dev]'
+          bash scripts/refresh-forecast.sh
+          node scripts/generate-source-provenance.mjs
+          node scripts/check-release-readiness.mjs --as-of 2026-10-25
+          python -m pytest model/tests -q
+
+      - name: Build 8 October to 25 October comparison
+        shell: bash
+        run: |
+          git fetch --no-tags origin main
+          python <<'PY'
+          import csv, io, json, subprocess
+          from pathlib import Path
+          root=Path('.')
+          def old(path): return subprocess.check_output(['git','show',f'origin/main:{path}'],text=True)
+          def rows(text): return list(csv.DictReader(io.StringIO(text)))
+          def current(path): return Path(path).read_text()
+          def d(a,b): return {'before':float(a),'after':float(b),'change':float(b)-float(a)}
+          before=json.loads(old('model/data/processed/experimental_forecast_2026.json'))
+          after=json.loads(current('model/data/processed/experimental_forecast_2026.json'))
+          parties=after['party_order']
+          ob={r['party']:r for r in rows(old('model/data/processed/experimental_forecast_2026_chamber.csv'))}
+          oa={r['district_id']:r for r in rows(old('model/data/processed/experimental_forecast_2026_districts.csv'))}
+          oc={r['party']:r for r in rows(old('model/data/processed/experimental_forecast_2026_council.csv'))}
+          def families(path, prior):
+              out={}
+              for r in rows(current(path)):
+                  p=prior[r['party']]
+                  out[r['party']]={k:d(p[k],r[k]) for k in ('mean','median','lower80','upper80','majority_probability')}
+              return out
+          changes=[]
+          for r in rows(current('model/data/processed/experimental_forecast_2026_districts.csv')):
+              p=oa[r['district_id']]
+              wins={party:d(p[f'win_{party.lower()}'],r[f'win_{party.lower()}']) for party in parties}
+              changes.append({'districtId':r['district_id'],'districtName':r['district_name'],
+                'maximumAbsoluteProbabilityChange':max(abs(x['change']) for x in wins.values()),
+                'winProbabilities':wins,'favouredParty':{'before':p['favoured_party'],'after':r['favoured_party']},
+                'likelyFinalPair':{'before':p['likely_final_pair'],'after':r['likely_final_pair']}})
+          changes.sort(key=lambda x:x['maximumAbsoluteProbabilityChange'],reverse=True)
+          report={'schemaVersion':1,'assessedAsOf':'2026-10-25','baseCommit':'b380fbc8a2113e5ce1ff3ea4ac456274f5d142b1',
+            'changeReason':'Assessment-date advance from 8 October to 25 October with the same 13 admitted statewide poll observations; newer public evidence remains staged/held under existing governance. Deltas therefore measure recency/uncertainty effects, not incorporation of the held October polls.',
+            'polling':{'countBefore':before['polling']['poll_count'],'countAfter':after['polling']['poll_count'],
+              'statewidePrimary':{p:{k:d(before['polling'][k][p],after['polling'][k][p]) for k in ('mean','lower80','upper80')} for p in parties}},
+            'assembly':{'hungProbability':d(before['assembly']['hung_probability'],after['assembly']['hung_probability']),
+              'families':families('model/data/processed/experimental_forecast_2026_chamber.csv',ob),
+              'largestDistrictChanges':changes[:25],
+              'materialDistricts':[x for x in changes if x['maximumAbsoluteProbabilityChange']>=0.05],
+              'favouredPartyChanges':[x for x in changes if x['favouredParty']['before']!=x['favouredParty']['after']],
+              'likelyFinalPairChanges':[x for x in changes if x['likelyFinalPair']['before']!=x['likelyFinalPair']['after']]},
+            'council':{'majorPartyNoControlProbability':d(before['council']['major_party_no_control_probability'],after['council']['major_party_no_control_probability']),
+              'families':families('model/data/processed/experimental_forecast_2026_council.csv',oc)},
+            'governance':{'productionCompatible':after['production_compatible'],'newModelEligiblePolls':0,'ownerGatePreserved':True}}
+          Path('metadata/forecast-refresh-2026-10-25.json').write_text(json.dumps(report,indent=2)+'\n')
+          print('largest district delta',changes[0]['districtName'],changes[0]['maximumAbsoluteProbabilityChange'])
+          print('material districts',len(report['assembly']['materialDistricts']))
+          print('favoured-party changes',len(report['assembly']['favouredPartyChanges']))
+          print('final-pair changes',len(report['assembly']['likelyFinalPairChanges']))
+          PY
+
+      - name: Regenerate provenance after comparison report
+        run: node scripts/generate-source-provenance.mjs
+
+      - name: Commit curated evidence and deterministic artefacts
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Curate 25 October evidence and freshness state [skip refresh] [skip curate]"
+          git push origin HEAD:codex/refresh-evidence-2026-10-25
