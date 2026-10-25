@@ -31,6 +31,11 @@ def _load_evidence(repo_root: Path) -> dict:
     return json.loads(path.read_text())
 
 
+def _json_rows(frame: pd.DataFrame) -> list[dict]:
+    """Convert model DataFrames to JSON-native rows without type guessing."""
+    return json.loads(frame.to_json(orient="records"))
+
+
 def _run_with_registry(
     model_root: Path,
     events: pd.DataFrame,
@@ -124,6 +129,8 @@ def _summarise_run(run) -> dict:
                 }
                 for party in PARTIES
             },
+            "districts": _json_rows(run.districts),
+            "seatDistribution": _json_rows(run.seat_distribution),
         },
         "council": {
             "majorPartyNoControlProbability": float(
@@ -145,6 +152,8 @@ def _summarise_run(run) -> dict:
                 }
                 for party in PARTIES
             },
+            "regions": _json_rows(run.council_regions),
+            "seatDistribution": _json_rows(run.council_seat_distribution),
         },
     }
 
