@@ -66,11 +66,18 @@
         "greens": 14,
         "otherParties": 11
       },
-      "sourceTier": "reputable_secondary",
-      "evidenceRecommendation": "HOLD",
-      "modelRecommendation": "HOLD",
-      "blocker": "Existing October 8 blockers remain: primary report/publication, complete residual category, mode, undecided treatment and sample dependence are not sufficiently verified.",
-      "canonicalAction": "none"
+      "sourceTier": "primary_pollster",
+      "evidenceRecommendation": "ACCEPT",
+      "modelRecommendation": "HOLD_PENDING_EXPLICIT_OWNER_ELIGIBILITY_AND_DEPENDENCY_REVIEW",
+      "blocker": "Primary publication, residual category, mode and undecided treatment are now verified. The prior 8 October owner HOLD must be explicitly re-adjudicated; cross-wave respondent/panel reuse remains undisclosed although fieldwork is disjoint.",
+      "canonicalAction": "none",
+      "effectiveSampleSize": 572,
+      "twoPartyPreferred": {
+        "coalition": 52,
+        "alp": 48,
+        "basis": "DemosAU published"
+      },
+      "sourceUrl": "https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/"
     }
   ],
   "councilEvidence": {

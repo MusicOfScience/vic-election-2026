@@ -4,6 +4,54 @@
   "policy": "Reputable secondary reporting may be staged when primary pollster/publisher evidence has not yet been captured or its linked data workbook cannot yet be parsed. Such records remain quarantined, must disclose their evidence tier, and cannot become model inputs without primary-source reconciliation or an explicit reviewed exception.",
   "records": [
     {
+      "id": "roy-morgan-upper-house-jul-sep-2026-primary",
+      "sourceId": "roy-morgan-vic-2026-upper-house",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll-upper-house",
+      "pollster": "Roy Morgan",
+      "fieldworkStart": "2026-07-01",
+      "fieldworkEnd": "2026-09-30",
+      "sampleSize": 2845,
+      "geography": "Victoria — eight Legislative Council regions",
+      "publicationDate": "2026-10-20",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-article-captured-incomplete-five-family-table",
+      "sourceUrl": "https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026",
+      "publishedSeatBaseline": {
+        "coalition": 12,
+        "alp": 10,
+        "oneNation": 6,
+        "greens": 8,
+        "unresolved": 4
+      },
+      "reviewNotes": "Fresh first-party eight-region study. Accessible article text does not expose every five-family regional share. Replace rather than stack with the August regional table only after complete tables/cross-tabs are captured and reconciled; do not derive missing cells by subtraction."
+    },
+    {
+      "id": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "sourceId": "resolve-strategic-victoria-secondary",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "Resolve Strategic",
+      "fieldworkStart": "2026-10-06",
+      "fieldworkEnd": "2026-10-10",
+      "sampleSize": 1000,
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 25,
+        "coalition": 28,
+        "oneNation": 23,
+        "greens": 15,
+        "otherParties": 9
+      },
+      "publicationDate": "2026-10-13",
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "secondary-topline-awaiting-primary-carrier",
+      "sourceUrl": "https://electiontracker.au/elections/vic/2026/polls",
+      "reviewNotes": "Reputable secondary ledgers agree on fieldwork and toplines. No first-party survey carrier/full methodology captured in this review. No two-party-preferred figure is inferred; hold from model inputs."
+    },
+    {
       "id": "resolve-strategic-vic-2026-08-09-15-secondary",
       "sourceId": "resolve-strategic-victoria-state-polls",
       "status": "quarantined-awaiting-review",
@@ -114,31 +162,31 @@
       "fieldworkStart": "2026-09-10",
       "fieldworkEnd": "2026-09-20",
       "sampleSize": 1020,
-      "effectiveSampleSize": null,
-      "population": "Victorian voters as reported; exact eligibility screen unverified",
-      "method": "Primary methodology not captured; do not carry forward August mode, weights or preference assumptions",
+      "effectiveSampleSize": 572,
+      "population": "Victorians aged 18+ eligible to vote",
+      "method": "internet panels; rim weighted by age × gender, education, personal income, residential tenure, language, region, 2025 federal vote and left-right self-identification; state vote intention first substantive question; undecided leaner then unresolved excluded",
       "geography": "Victoria",
       "primaryVote": {
         "alp": 25,
         "coalition": 30,
         "oneNation": 20,
-        "greens": 14
+        "greens": 14,
+        "otherParties": 11
       },
-      "unreportedPrimaryResidual": 11,
       "twoPartyPreferred": {
         "alp": 48,
         "coalition": 52,
-        "basis": "secondary reported; preference method unverified"
+        "basis": "DemosAU published; Greens informed by 2022 state flows, One Nation and others from respondent-allocated 2026 Victorian polling"
       },
-      "sourceUrl": "https://www.pollbludger.net/2026/09/29/victorian-election-demosau-poll-election-guide-and-seat-projection-model/",
-      "publicationDate": "2026-09-29",
-      "pollPublicationDate": null,
-      "sourceTier": "reputable_secondary",
-      "verificationStatus": "corroborated-secondary-awaiting-primary",
+      "sourceUrl": "https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/",
+      "publicationDate": "2026-10-14",
+      "pollPublicationDate": "2026-10-14",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-publication-and-methodology-captured-awaiting-owner-rereview",
       "proposedModelPollId": "demosau_2026-09",
       "sourceFamily": "demosau",
-      "sampleOverlapAssessment": "Separate fieldwork from August but respondent/panel reuse unresolved",
-      "captureNotes": "Primary index/search attempts encountered captcha/parse misses; report not obtained. Others 11 is arithmetic residual, not treated as a reported category. Full method, undecided treatment, primary publication date and exact residual require primary reconciliation."
+      "sampleOverlapAssessment": "Separate non-overlapping fieldwork from the 6–11 August wave. Same survey family; respondent/panel reuse across waves is not disclosed. Existing project policy does not itself forbid comparable disjoint waves, but explicit owner eligibility remains required.",
+      "captureNotes": "Primary DemosAU release and DemosAU methodology listing are now captured. Earlier blockers concerning the primary publication, complete residual category, internet-panel mode and undecided treatment are resolved. Ace Strategies independently reports effective N=572 and reproduces the weighting and preference method. The existing 8 October owner HOLD remains authoritative until explicitly re-adjudicated."
     },
     {
       "id": "resolve-strategic-vic-2026-09-06-12-secondary",

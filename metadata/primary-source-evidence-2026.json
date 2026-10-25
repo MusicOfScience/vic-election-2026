@@ -3,6 +3,40 @@
   "policy": "Primary-source polling evidence may be staged for review when the publisher supplies sufficient methodology and the reported toplines can be reconciled. Staging never implies human acceptance or model eligibility.",
   "records": [
     {
+      "id": "redbridge-accent-vic-2026-10-08-primary",
+      "sourceId": "redbridge-accent-victoria-state-polls",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "kind": "poll",
+      "pollster": "RedBridge / Accent Research",
+      "commissioner": "Australian Financial Review",
+      "fieldworkStart": "2026-10-02",
+      "fieldworkEnd": "2026-10-08",
+      "sampleSize": 1008,
+      "effectiveSampleSize": 775,
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted for age, gender, education, religion and location; 77% weighting efficiency; undecided leaner; 7% unresolved excluded",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24,
+        "coalition": 30,
+        "oneNation": 24,
+        "greens": 16,
+        "otherParties": 6
+      },
+      "twoPartyPreferred": {
+        "alp": 44,
+        "coalition": 56,
+        "basis": "respondent allocated; topline corroborated by contemporary election-poll ledgers"
+      },
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll",
+      "pollPublicationDate": "2026-10-11",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-methodology-topline-corroborated-awaiting-human-review",
+      "proposedModelPollId": "redbridge_accent_2026-10",
+      "captureMode": "first-party-methodology-page-plus-corroborated-toplines",
+      "reviewNotes": "First-party Accent page verifies dates, N, effective N, panel mode, quotas, weighting and undecided handling. Model admission remains held under the existing RedBridge/Accent sample-family independence rule; disjoint fieldwork does not establish respondent-level independence."
+    },
+    {
       "id": "redbridge-accent-vic-2026-09-14-primary",
       "sourceId": "redbridge-accent-victoria-state-polls",
       "status": "quarantined-awaiting-review",

@@ -1,6 +1,1395 @@
 {
   "schemaVersion": 1,
   "assessedAsOf": "2026-10-25",
-  "status": "temporary-seed-overwritten-by-curation-workflow",
-  "note": "This seed exists only so source-provenance validation can fingerprint the declared path before the same workflow deterministically overwrites it with the full 8 October to 25 October comparison and regenerates provenance."
+  "baseCommit": "b380fbc8a2113e5ce1ff3ea4ac456274f5d142b1",
+  "changeReason": "Assessment-date advance with the same 13 admitted statewide observations. Newer public evidence remains staged/held, so deltas measure recency/uncertainty effects rather than incorporation of October polls.",
+  "polling": {
+    "countBefore": 13,
+    "countAfter": 13,
+    "statewidePrimary": {
+      "ALP": {
+        "mean": {
+          "before": 25.335569543355373,
+          "after": 25.317396226887645,
+          "change": -0.018173316467727574
+        },
+        "lower80": {
+          "before": 23.94739266775629,
+          "after": 23.81882981256741,
+          "change": -0.12856285518887844
+        },
+        "upper80": {
+          "before": 26.687419788507533,
+          "after": 26.794874573926073,
+          "change": 0.1074547854185397
+        }
+      },
+      "LIB_NAT": {
+        "mean": {
+          "before": 27.7977530410657,
+          "after": 27.792746388455235,
+          "change": -0.005006652610465068
+        },
+        "lower80": {
+          "before": 26.20729403052012,
+          "after": 26.01983326665154,
+          "change": -0.18746076386858235
+        },
+        "upper80": {
+          "before": 29.439573211911,
+          "after": 29.622800959011514,
+          "change": 0.18322774710051348
+        }
+      },
+      "ONP": {
+        "mean": {
+          "before": 23.103746658632,
+          "after": 23.103689924704746,
+          "change": -0.00005673392725569215
+        },
+        "lower80": {
+          "before": 21.546553355404804,
+          "after": 21.363220783469142,
+          "change": -0.18333257193566155
+        },
+        "upper80": {
+          "before": 24.65666650797578,
+          "after": 24.84914078929156,
+          "change": 0.19247428131578204
+        }
+      },
+      "GRN": {
+        "mean": {
+          "before": 13.531135172827286,
+          "after": 13.536069763463153,
+          "change": 0.004934590635867764
+        },
+        "lower80": {
+          "before": 12.810038175984753,
+          "after": 12.758885046905966,
+          "change": -0.05115312907878611
+        },
+        "upper80": {
+          "before": 14.278340090229197,
+          "after": 14.345074306145479,
+          "change": 0.06673421591628248
+        }
+      },
+      "OTH_IND": {
+        "mean": {
+          "before": 10.231795584119599,
+          "after": 10.25009769648919,
+          "change": 0.018302112369591228
+        },
+        "lower80": {
+          "before": 9.383332867245114,
+          "after": 9.255299815716118,
+          "change": -0.12803305152899647
+        },
+        "upper80": {
+          "before": 11.12903215093604,
+          "after": 11.309138925994258,
+          "change": 0.18010677505821882
+        }
+      }
+    }
+  },
+  "assembly": {
+    "hungProbability": {
+      "before": 0.776,
+      "after": 0.768,
+      "change": -0.008000000000000007
+    },
+    "families": {
+      "ALP": {
+        "mean": {
+          "before": 38.2896,
+          "after": 38.2394,
+          "change": -0.05019999999999669
+        },
+        "median": {
+          "before": 38,
+          "after": 38,
+          "change": 0
+        },
+        "lower80": {
+          "before": 29,
+          "after": 29,
+          "change": 0
+        },
+        "upper80": {
+          "before": 48,
+          "after": 48,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0.193,
+          "after": 0.1972,
+          "change": 0.0041999999999999815
+        }
+      },
+      "LIB_NAT": {
+        "mean": {
+          "before": 31.0216,
+          "after": 31.0236,
+          "change": 0.0019999999999988916
+        },
+        "median": {
+          "before": 31,
+          "after": 31,
+          "change": 0
+        },
+        "lower80": {
+          "before": 23,
+          "after": 23,
+          "change": 0
+        },
+        "upper80": {
+          "before": 40,
+          "after": 40,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0.031,
+          "after": 0.0348,
+          "change": 0.003799999999999998
+        }
+      },
+      "ONP": {
+        "mean": {
+          "before": 16.2792,
+          "after": 16.321,
+          "change": 0.04180000000000206
+        },
+        "median": {
+          "before": 16,
+          "after": 16,
+          "change": 0
+        },
+        "lower80": {
+          "before": 10,
+          "after": 10,
+          "change": 0
+        },
+        "upper80": {
+          "before": 23,
+          "after": 23,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      },
+      "GRN": {
+        "mean": {
+          "before": 2.4032,
+          "after": 2.4092,
+          "change": 0.005999999999999783
+        },
+        "median": {
+          "before": 2,
+          "after": 2,
+          "change": 0
+        },
+        "lower80": {
+          "before": 1,
+          "after": 1,
+          "change": 0
+        },
+        "upper80": {
+          "before": 4,
+          "after": 4,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      },
+      "OTH_IND": {
+        "mean": {
+          "before": 0.0064,
+          "after": 0.0068,
+          "change": 0.0003999999999999993
+        },
+        "median": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        },
+        "lower80": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        },
+        "upper80": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      }
+    },
+    "largestDistrictChanges": [
+      {
+        "districtId": "eureka",
+        "districtName": "Eureka",
+        "maximumAbsoluteProbabilityChange": 0.006199999999999983,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.6212,
+            "after": 0.615,
+            "change": -0.006199999999999983
+          },
+          "LIB_NAT": {
+            "before": 0.1384,
+            "after": 0.1402,
+            "change": 0.001799999999999996
+          },
+          "ONP": {
+            "before": 0.2404,
+            "after": 0.2448,
+            "change": 0.004399999999999987
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–ONP",
+          "after": "ALP–ONP"
+        }
+      },
+      {
+        "districtId": "mildura",
+        "districtName": "Mildura",
+        "maximumAbsoluteProbabilityChange": 0.006000000000000005,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.853,
+            "after": 0.847,
+            "change": -0.006000000000000005
+          },
+          "ONP": {
+            "before": 0.147,
+            "after": 0.153,
+            "change": 0.006000000000000005
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ONP",
+          "after": "LIB_NAT–ONP"
+        }
+      },
+      {
+        "districtId": "hastings",
+        "districtName": "Hastings",
+        "maximumAbsoluteProbabilityChange": 0.0058,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.1254,
+            "after": 0.1236,
+            "change": -0.00180000000000001
+          },
+          "LIB_NAT": {
+            "before": 0.7772,
+            "after": 0.7732,
+            "change": -0.0040000000000000036
+          },
+          "ONP": {
+            "before": 0.0974,
+            "after": 0.1032,
+            "change": 0.0058
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ALP",
+          "after": "LIB_NAT–ALP"
+        }
+      },
+      {
+        "districtId": "gippsland-east",
+        "districtName": "Gippsland East",
+        "maximumAbsoluteProbabilityChange": 0.005400000000000071,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.8012,
+            "after": 0.7958,
+            "change": -0.005400000000000071
+          },
+          "ONP": {
+            "before": 0.1988,
+            "after": 0.2042,
+            "change": 0.005399999999999988
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ONP",
+          "after": "LIB_NAT–ONP"
+        }
+      },
+      {
+        "districtId": "berwick",
+        "districtName": "Berwick",
+        "maximumAbsoluteProbabilityChange": 0.005199999999999982,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.068,
+            "after": 0.0694,
+            "change": 0.0013999999999999985
+          },
+          "LIB_NAT": {
+            "before": 0.8966,
+            "after": 0.8914,
+            "change": -0.005199999999999982
+          },
+          "ONP": {
+            "before": 0.0354,
+            "after": 0.0392,
+            "change": 0.003799999999999998
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ALP",
+          "after": "LIB_NAT–ALP"
+        }
+      },
+      {
+        "districtId": "gippsland-south",
+        "districtName": "Gippsland South",
+        "maximumAbsoluteProbabilityChange": 0.0050000000000000044,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.7402,
+            "after": 0.7352,
+            "change": -0.0050000000000000044
+          },
+          "ONP": {
+            "before": 0.2598,
+            "after": 0.2648,
+            "change": 0.0050000000000000044
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ONP",
+          "after": "LIB_NAT–ONP"
+        }
+      },
+      {
+        "districtId": "yan-yean",
+        "districtName": "Yan Yean",
+        "maximumAbsoluteProbabilityChange": 0.0050000000000000044,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.0834,
+            "after": 0.0848,
+            "change": 0.0013999999999999985
+          },
+          "LIB_NAT": {
+            "before": 0.1962,
+            "after": 0.1998,
+            "change": 0.003599999999999992
+          },
+          "ONP": {
+            "before": 0.7204,
+            "after": 0.7154,
+            "change": -0.0050000000000000044
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ONP",
+          "after": "ONP"
+        },
+        "likelyFinalPair": {
+          "before": "ONP–ALP",
+          "after": "ONP–ALP"
+        }
+      },
+      {
+        "districtId": "melton",
+        "districtName": "Melton",
+        "maximumAbsoluteProbabilityChange": 0.0047999999999999154,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.209,
+            "after": 0.2102,
+            "change": 0.0012000000000000066
+          },
+          "LIB_NAT": {
+            "before": 0.0748,
+            "after": 0.0784,
+            "change": 0.003599999999999992
+          },
+          "ONP": {
+            "before": 0.7162,
+            "after": 0.7114,
+            "change": -0.0047999999999999154
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ONP",
+          "after": "ONP"
+        },
+        "likelyFinalPair": {
+          "before": "ONP–ALP",
+          "after": "ONP–ALP"
+        }
+      },
+      {
+        "districtId": "tarneit",
+        "districtName": "Tarneit",
+        "maximumAbsoluteProbabilityChange": 0.0046000000000000485,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.7456,
+            "after": 0.741,
+            "change": -0.0046000000000000485
+          },
+          "LIB_NAT": {
+            "before": 0.111,
+            "after": 0.1136,
+            "change": 0.002600000000000005
+          },
+          "ONP": {
+            "before": 0.1434,
+            "after": 0.1454,
+            "change": 0.0020000000000000018
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–ONP",
+          "after": "ALP–ONP"
+        }
+      },
+      {
+        "districtId": "euroa",
+        "districtName": "Euroa",
+        "maximumAbsoluteProbabilityChange": 0.0044000000000000705,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.658,
+            "after": 0.6536,
+            "change": -0.0044000000000000705
+          },
+          "ONP": {
+            "before": 0.342,
+            "after": 0.3464,
+            "change": 0.0043999999999999595
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ONP",
+          "after": "LIB_NAT–ONP"
+        }
+      },
+      {
+        "districtId": "eildon",
+        "districtName": "Eildon",
+        "maximumAbsoluteProbabilityChange": 0.0042000000000000925,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.0156,
+            "after": 0.0156,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.92,
+            "after": 0.9158,
+            "change": -0.0042000000000000925
+          },
+          "ONP": {
+            "before": 0.0644,
+            "after": 0.0686,
+            "change": 0.004199999999999995
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ALP",
+          "after": "LIB_NAT–ALP"
+        }
+      },
+      {
+        "districtId": "cranbourne",
+        "districtName": "Cranbourne",
+        "maximumAbsoluteProbabilityChange": 0.004200000000000009,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.3406,
+            "after": 0.34,
+            "change": -0.0005999999999999894
+          },
+          "LIB_NAT": {
+            "before": 0.0972,
+            "after": 0.1014,
+            "change": 0.004200000000000009
+          },
+          "ONP": {
+            "before": 0.5622,
+            "after": 0.5586,
+            "change": -0.0036000000000000476
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ONP",
+          "after": "ONP"
+        },
+        "likelyFinalPair": {
+          "before": "ONP–ALP",
+          "after": "ONP–ALP"
+        }
+      },
+      {
+        "districtId": "monbulk",
+        "districtName": "Monbulk",
+        "maximumAbsoluteProbabilityChange": 0.0041999999999999815,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.4136,
+            "after": 0.4162,
+            "change": 0.002599999999999991
+          },
+          "LIB_NAT": {
+            "before": 0.5486,
+            "after": 0.5444,
+            "change": -0.0041999999999999815
+          },
+          "ONP": {
+            "before": 0.0378,
+            "after": 0.0394,
+            "change": 0.0015999999999999973
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ALP",
+          "after": "LIB_NAT–ALP"
+        }
+      },
+      {
+        "districtId": "bass",
+        "districtName": "Bass",
+        "maximumAbsoluteProbabilityChange": 0.0038000000000000256,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.0456,
+            "after": 0.0458,
+            "change": 0.0001999999999999988
+          },
+          "LIB_NAT": {
+            "before": 0.447,
+            "after": 0.4432,
+            "change": -0.0038000000000000256
+          },
+          "ONP": {
+            "before": 0.5074,
+            "after": 0.511,
+            "change": 0.0036000000000000476
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ONP",
+          "after": "ONP"
+        },
+        "likelyFinalPair": {
+          "before": "ONP–ALP",
+          "after": "ONP–ALP"
+        }
+      },
+      {
+        "districtId": "macedon",
+        "districtName": "Macedon",
+        "maximumAbsoluteProbabilityChange": 0.0033999999999999586,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.573,
+            "after": 0.5696,
+            "change": -0.0033999999999999586
+          },
+          "LIB_NAT": {
+            "before": 0.1642,
+            "after": 0.1668,
+            "change": 0.002599999999999991
+          },
+          "ONP": {
+            "before": 0.2628,
+            "after": 0.2636,
+            "change": 0.0008000000000000229
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–ONP",
+          "after": "ALP–ONP"
+        }
+      },
+      {
+        "districtId": "caulfield",
+        "districtName": "Caulfield",
+        "maximumAbsoluteProbabilityChange": 0.0032000000000000917,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.7818,
+            "after": 0.7786,
+            "change": -0.0032000000000000917
+          },
+          "LIB_NAT": {
+            "before": 0.214,
+            "after": 0.2172,
+            "change": 0.0032000000000000084
+          },
+          "ONP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "GRN": {
+            "before": 0.0042,
+            "after": 0.0042,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–LIB_NAT",
+          "after": "ALP–LIB_NAT"
+        }
+      },
+      {
+        "districtId": "murray-plains",
+        "districtName": "Murray Plains",
+        "maximumAbsoluteProbabilityChange": 0.0032000000000000917,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.925,
+            "after": 0.9218,
+            "change": -0.0032000000000000917
+          },
+          "ONP": {
+            "before": 0.075,
+            "after": 0.0782,
+            "change": 0.0032000000000000084
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "LIB_NAT",
+          "after": "LIB_NAT"
+        },
+        "likelyFinalPair": {
+          "before": "LIB_NAT–ONP",
+          "after": "LIB_NAT–ONP"
+        }
+      },
+      {
+        "districtId": "werribee",
+        "districtName": "Werribee",
+        "maximumAbsoluteProbabilityChange": 0.0031999999999999806,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.6506,
+            "after": 0.6474,
+            "change": -0.0031999999999999806
+          },
+          "LIB_NAT": {
+            "before": 0.0652,
+            "after": 0.0672,
+            "change": 0.0020000000000000018
+          },
+          "ONP": {
+            "before": 0.2842,
+            "after": 0.2854,
+            "change": 0.0011999999999999789
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–ONP",
+          "after": "ALP–ONP"
+        }
+      },
+      {
+        "districtId": "bundoora",
+        "districtName": "Bundoora",
+        "maximumAbsoluteProbabilityChange": 0.0030000000000000027,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.9494,
+            "after": 0.9464,
+            "change": -0.0030000000000000027
+          },
+          "LIB_NAT": {
+            "before": 0.0288,
+            "after": 0.03,
+            "change": 0.0011999999999999997
+          },
+          "ONP": {
+            "before": 0.0218,
+            "after": 0.0236,
+            "change": 0.0017999999999999995
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–ONP",
+          "after": "ALP–ONP"
+        }
+      },
+      {
+        "districtId": "melbourne",
+        "districtName": "Melbourne",
+        "maximumAbsoluteProbabilityChange": 0.0028000000000000247,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.4748,
+            "after": 0.472,
+            "change": -0.0028000000000000247
+          },
+          "LIB_NAT": {
+            "before": 0.0188,
+            "after": 0.0188,
+            "change": 0
+          },
+          "ONP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "GRN": {
+            "before": 0.5064,
+            "after": 0.5092,
+            "change": 0.0028000000000000247
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "GRN",
+          "after": "GRN"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–GRN",
+          "after": "ALP–GRN"
+        }
+      },
+      {
+        "districtId": "pascoe-vale",
+        "districtName": "Pascoe Vale",
+        "maximumAbsoluteProbabilityChange": 0.0028000000000000247,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.9466,
+            "after": 0.9438,
+            "change": -0.0028000000000000247
+          },
+          "LIB_NAT": {
+            "before": 0.029,
+            "after": 0.0302,
+            "change": 0.0011999999999999997
+          },
+          "ONP": {
+            "before": 0.0008,
+            "after": 0.0008,
+            "change": 0
+          },
+          "GRN": {
+            "before": 0.0236,
+            "after": 0.0252,
+            "change": 0.0016000000000000007
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–LIB_NAT",
+          "after": "ALP–LIB_NAT"
+        }
+      },
+      {
+        "districtId": "ripon",
+        "districtName": "Ripon",
+        "maximumAbsoluteProbabilityChange": 0.0028000000000000247,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.0758,
+            "after": 0.077,
+            "change": 0.0011999999999999927
+          },
+          "LIB_NAT": {
+            "before": 0.366,
+            "after": 0.3676,
+            "change": 0.0015999999999999903
+          },
+          "ONP": {
+            "before": 0.5582,
+            "after": 0.5554,
+            "change": -0.0028000000000000247
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ONP",
+          "after": "ONP"
+        },
+        "likelyFinalPair": {
+          "before": "ONP–ALP",
+          "after": "ONP–ALP"
+        }
+      },
+      {
+        "districtId": "sunbury",
+        "districtName": "Sunbury",
+        "maximumAbsoluteProbabilityChange": 0.0028000000000000247,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.199,
+            "after": 0.199,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.1268,
+            "after": 0.1296,
+            "change": 0.002799999999999997
+          },
+          "ONP": {
+            "before": 0.6742,
+            "after": 0.6714,
+            "change": -0.0028000000000000247
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ONP",
+          "after": "ONP"
+        },
+        "likelyFinalPair": {
+          "before": "ONP–ALP",
+          "after": "ONP–ALP"
+        }
+      },
+      {
+        "districtId": "morwell",
+        "districtName": "Morwell",
+        "maximumAbsoluteProbabilityChange": 0.0026000000000000467,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "LIB_NAT": {
+            "before": 0.105,
+            "after": 0.1076,
+            "change": 0.002600000000000005
+          },
+          "ONP": {
+            "before": 0.895,
+            "after": 0.8924,
+            "change": -0.0026000000000000467
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ONP",
+          "after": "ONP"
+        },
+        "likelyFinalPair": {
+          "before": "ONP–LIB_NAT",
+          "after": "ONP–LIB_NAT"
+        }
+      },
+      {
+        "districtId": "ringwood",
+        "districtName": "Ringwood",
+        "maximumAbsoluteProbabilityChange": 0.0026000000000000467,
+        "winProbabilities": {
+          "ALP": {
+            "before": 0.6936,
+            "after": 0.691,
+            "change": -0.0026000000000000467
+          },
+          "LIB_NAT": {
+            "before": 0.3064,
+            "after": 0.309,
+            "change": 0.002599999999999991
+          },
+          "ONP": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "GRN": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          },
+          "OTH_IND": {
+            "before": 0,
+            "after": 0,
+            "change": 0
+          }
+        },
+        "favouredParty": {
+          "before": "ALP",
+          "after": "ALP"
+        },
+        "likelyFinalPair": {
+          "before": "ALP–LIB_NAT",
+          "after": "ALP–LIB_NAT"
+        }
+      }
+    ],
+    "materialDistricts": [],
+    "favouredPartyChanges": [],
+    "likelyFinalPairChanges": []
+  },
+  "council": {
+    "majorPartyNoControlProbability": {
+      "before": 1,
+      "after": 1,
+      "change": 0
+    },
+    "families": {
+      "ALP": {
+        "mean": {
+          "before": 11.591,
+          "after": 11.5716,
+          "change": -0.019399999999999196
+        },
+        "median": {
+          "before": 12,
+          "after": 12,
+          "change": 0
+        },
+        "lower80": {
+          "before": 10,
+          "after": 10,
+          "change": 0
+        },
+        "upper80": {
+          "before": 13,
+          "after": 13,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      },
+      "LIB_NAT": {
+        "mean": {
+          "before": 12.582,
+          "after": 12.5648,
+          "change": -0.01720000000000077
+        },
+        "median": {
+          "before": 13,
+          "after": 13,
+          "change": 0
+        },
+        "lower80": {
+          "before": 11,
+          "after": 11,
+          "change": 0
+        },
+        "upper80": {
+          "before": 14,
+          "after": 14,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      },
+      "ONP": {
+        "mean": {
+          "before": 9.9918,
+          "after": 9.9986,
+          "change": 0.006800000000000139
+        },
+        "median": {
+          "before": 10,
+          "after": 10,
+          "change": 0
+        },
+        "lower80": {
+          "before": 8,
+          "after": 8,
+          "change": 0
+        },
+        "upper80": {
+          "before": 12,
+          "after": 12,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      },
+      "GRN": {
+        "mean": {
+          "before": 2.9794,
+          "after": 2.9932,
+          "change": 0.013799999999999812
+        },
+        "median": {
+          "before": 3,
+          "after": 3,
+          "change": 0
+        },
+        "lower80": {
+          "before": 2,
+          "after": 2,
+          "change": 0
+        },
+        "upper80": {
+          "before": 4,
+          "after": 4,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      },
+      "OTH_IND": {
+        "mean": {
+          "before": 2.8558,
+          "after": 2.8718,
+          "change": 0.016000000000000014
+        },
+        "median": {
+          "before": 3,
+          "after": 3,
+          "change": 0
+        },
+        "lower80": {
+          "before": 1,
+          "after": 1,
+          "change": 0
+        },
+        "upper80": {
+          "before": 5,
+          "after": 5,
+          "change": 0
+        },
+        "majority_probability": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        }
+      }
+    }
+  },
+  "governance": {
+    "productionCompatible": false,
+    "newModelEligiblePolls": 0,
+    "ownerGatePreserved": true
+  }
 }

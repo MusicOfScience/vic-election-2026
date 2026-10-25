@@ -9,7 +9,12 @@
       "url": "https://www.vec.vic.gov.au/voting/2026-state-election",
       "critical": true,
       "minimumCanonicalBytes": 1000,
-      "expectedMarkers": ["2026 state election", "28 November", "3 November", "9 November"],
+      "expectedMarkers": [
+        "2026 state election",
+        "28 November",
+        "3 November",
+        "9 November"
+      ],
       "promotionPolicy": "manual-review"
     },
     {
@@ -18,7 +23,12 @@
       "url": "https://www.vec.vic.gov.au/enrolment/electoral-roll-statistics",
       "critical": true,
       "minimumCanonicalBytes": 1000,
-      "expectedMarkers": ["Electoral roll statistics", "District statistics", "Region statistics", "August 2026"],
+      "expectedMarkers": [
+        "Electoral roll statistics",
+        "District statistics",
+        "Region statistics",
+        "September 2026"
+      ],
       "promotionPolicy": "manual-review"
     },
     {
@@ -27,7 +37,12 @@
       "url": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate",
       "critical": false,
       "minimumCanonicalBytes": 1000,
-      "expectedMarkers": ["2026 state election", "Candidate nominations", "4 November", "9 November"],
+      "expectedMarkers": [
+        "2026 state election",
+        "Candidate nominations",
+        "4 November",
+        "9 November"
+      ],
       "promotionPolicy": "manual-review-until-official-nominations",
       "discovery": {
         "enabled": true,
@@ -42,7 +57,13 @@
       "url": "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
       "critical": true,
       "minimumCanonicalBytes": 1000,
-      "expectedMarkers": ["Victorian State Voting Intention", "August 5-7, 2026", "2,084 electors", "L-NP Coalition 26%", "ALP 26%"],
+      "expectedMarkers": [
+        "Victorian State Voting Intention",
+        "August 5-7, 2026",
+        "2,084 electors",
+        "L-NP Coalition 26%",
+        "ALP 26%"
+      ],
       "promotionPolicy": "manual-review",
       "discovery": {
         "enabled": true,
@@ -53,10 +74,15 @@
     {
       "id": "roy-morgan-vic-2026-upper-house",
       "publisher": "Roy Morgan",
-      "url": "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november",
+      "url": "https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026",
       "critical": false,
       "minimumCanonicalBytes": 1000,
-      "expectedMarkers": ["Upper House", "Northern Metropolitan", "Western Metropolitan", "Western Victoria"],
+      "expectedMarkers": [
+        "Upper House",
+        "2,845 electors",
+        "Northern Metropolitan",
+        "Western Metropolitan"
+      ],
       "promotionPolicy": "manual-review",
       "discovery": {
         "enabled": true,
@@ -78,7 +104,8 @@
         "match": "Victorian State Voting Intention",
         "acceptedSourceUrls": [
           "https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026",
-          "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november"
+          "https://www.roymorgan.com/findings/victorian-state-voting-intention-l-np-coalition-and-one-nation-set-for-a-majority-in-victorias-upper-house-in-november",
+          "https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026"
         ]
       }
     },
@@ -188,7 +215,12 @@
         "extractor": "victorian-socialists-candidates",
         "candidateStatus": "endorsed",
         "authority": "Victorian Socialists",
-        "targetContests": ["Dandenong", "Kalkallo", "Thomastown", "Warrandyte"],
+        "targetContests": [
+          "Dandenong",
+          "Kalkallo",
+          "Thomastown",
+          "Warrandyte"
+        ],
         "policy": "coverage-gap collection; other contests remain available to later full-source review"
       }
     },
@@ -205,7 +237,9 @@
         "extractor": "family-first-victoria-candidates",
         "candidateStatus": "endorsed",
         "authority": "Family First Party Australia",
-        "targetContests": ["Lowan"],
+        "targetContests": [
+          "Lowan"
+        ],
         "policy": "coverage-gap collection; other contests remain available to later full-source review"
       }
     },
@@ -222,7 +256,9 @@
         "extractor": "mornington-peninsula-candidates",
         "candidateStatus": "announced",
         "authority": "Mornington Peninsula Shire",
-        "targetContests": ["Mornington"],
+        "targetContests": [
+          "Mornington"
+        ],
         "policy": "coverage-gap confirmation from the relevant municipal government; never treated as party endorsement or VEC nomination"
       }
     }

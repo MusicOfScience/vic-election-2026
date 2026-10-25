@@ -1,0 +1,935 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-10-25",
+  "mode": "preview-only",
+  "automaticWriteEnabled": false,
+  "policy": "This report may describe proposed model rows but never writes model inputs. Evidence acceptance and model eligibility are separate explicit decisions.",
+  "summary": {
+    "stagedPolls": 13,
+    "promotableNow": 0,
+    "blocked": 13
+  },
+  "audits": [
+    {
+      "evidenceId": "742928caa5d8de2992ce2ede9b97d61c61c6742715a220df4611d675217a1f72",
+      "pollster": "DemosAU",
+      "proposedModelPollId": "demosau_2026-08",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": false,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "human-evidence-acceptance-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "demosau_2026-08",
+          "pollster": "DemosAU",
+          "commissioner": "PremierNational",
+          "fieldwork_start": "2026-08-06",
+          "fieldwork_end": "2026-08-11",
+          "publication_date": "2026-08-15",
+          "sample_size": 1007,
+          "effective_sample_size": null,
+          "method": "DemosAU / PremierNational state poll",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "awaiting-human-review",
+          "model_eligible": true,
+          "source_url": "https://demosau.com/news/coalition-holds-election-winning-lead-in-latest-victoria-poll/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "demosau_2026-08",
+            "party_id": "LIB_NAT",
+            "primary_pct": 32,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-08",
+            "party_id": "ALP",
+            "primary_pct": 23,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-08",
+            "party_id": "ONP",
+            "primary_pct": 22,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-08",
+            "party_id": "GRN",
+            "primary_pct": 13,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-08",
+            "party_id": "OTH",
+            "primary_pct": 10,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-10-08-primary",
+      "pollster": "RedBridge / Accent Research",
+      "proposedModelPollId": "redbridge_accent_2026-10",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": false,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "human-evidence-acceptance-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "redbridge_accent_2026-10",
+          "pollster": "RedBridge / Accent Research",
+          "commissioner": "Australian Financial Review",
+          "fieldwork_start": "2026-10-02",
+          "fieldwork_end": "2026-10-08",
+          "publication_date": "2026-10-11",
+          "sample_size": 1008,
+          "effective_sample_size": 775,
+          "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted for age, gender, education, religion and location; 77% weighting efficiency; undecided leaner; 7% unresolved excluded",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "primary-methodology-topline-corroborated-awaiting-human-review",
+          "model_eligible": true,
+          "source_url": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "redbridge_accent_2026-10",
+            "party_id": "LIB_NAT",
+            "primary_pct": 30,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-10",
+            "party_id": "ALP",
+            "primary_pct": 24,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-10",
+            "party_id": "ONP",
+            "primary_pct": 24,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-10",
+            "party_id": "GRN",
+            "primary_pct": 16,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-10",
+            "party_id": "OTH",
+            "primary_pct": 6,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-09-14-primary",
+      "pollster": "RedBridge / Accent Research",
+      "proposedModelPollId": "redbridge_accent_2026-09",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": true,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "explicit-model-eligibility-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "redbridge_accent_2026-09",
+          "pollster": "RedBridge / Accent Research",
+          "commissioner": "Australian Financial Review",
+          "fieldwork_start": "2026-09-01",
+          "fieldwork_end": "2026-09-14",
+          "publication_date": "2026-09-15",
+          "sample_size": 2371,
+          "effective_sample_size": 2009,
+          "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted across age, gender, education, religion and location; undecided leaner; unresolved respondents excluded from published vote-intention figures",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "human-reviewed-source-evidence",
+          "model_eligible": true,
+          "source_url": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-september-2026-victorian-state-poll"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "redbridge_accent_2026-09",
+            "party_id": "LIB_NAT",
+            "primary_pct": 29,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-09",
+            "party_id": "ALP",
+            "primary_pct": 24,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-09",
+            "party_id": "ONP",
+            "primary_pct": 25,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-09",
+            "party_id": "GRN",
+            "primary_pct": 15,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-09",
+            "party_id": "OTH",
+            "primary_pct": 7,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-08-01-primary",
+      "pollster": "RedBridge / Accent Research",
+      "proposedModelPollId": "redbridge_accent_2026-08",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": true,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "explicit-model-eligibility-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "redbridge_accent_2026-08",
+          "pollster": "RedBridge / Accent Research",
+          "commissioner": "Australian Financial Review",
+          "fieldwork_start": "2026-07-28",
+          "fieldwork_end": "2026-08-01",
+          "publication_date": "2026-08-03",
+          "sample_size": 1014,
+          "effective_sample_size": 745,
+          "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted; undecided leaner then unresolved excluded",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "human-reviewed-source-evidence",
+          "model_eligible": true,
+          "source_url": "https://www.accent-research.com/projects/afr%2C-redbridge-group-and-accent-research-august-2026-victorian-state-poll"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "redbridge_accent_2026-08",
+            "party_id": "LIB_NAT",
+            "primary_pct": 30,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-08",
+            "party_id": "ALP",
+            "primary_pct": 23,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-08",
+            "party_id": "ONP",
+            "primary_pct": 22,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-08",
+            "party_id": "GRN",
+            "primary_pct": 14,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "redbridge_accent_2026-08",
+            "party_id": "OTH",
+            "primary_pct": 11,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "freshwater-2026-02-primary-workbook",
+      "pollster": "Freshwater Strategy",
+      "proposedModelPollId": "freshwater_2026-02",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": true,
+      "modelEligibleDecision": true,
+      "duplicateId": true,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "canonical-poll-id-already-exists"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "freshwater_2026-02",
+          "pollster": "Freshwater Strategy",
+          "commissioner": "Herald Sun",
+          "fieldwork_start": "2026-02-19",
+          "fieldwork_end": "2026-02-23",
+          "publication_date": "2026-03-04",
+          "sample_size": 1030,
+          "effective_sample_size": null,
+          "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "human-reviewed-source-evidence",
+          "model_eligible": true,
+          "source_url": "https://freshwaterstrategy.com/2026/03/11/herald-sun-freshwater-strategy-february-polling-data/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "freshwater_2026-02",
+            "party_id": "LIB_NAT",
+            "primary_pct": 26.8263,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-02",
+            "party_id": "ALP",
+            "primary_pct": 27.5543,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-02",
+            "party_id": "ONP",
+            "primary_pct": 22.6102,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-02",
+            "party_id": "GRN",
+            "primary_pct": 13.1181,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-02",
+            "party_id": "OTH",
+            "primary_pct": 9.8911,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "freshwater-2026-03-primary-workbook",
+      "pollster": "Freshwater Strategy",
+      "proposedModelPollId": "freshwater_2026-03",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": true,
+      "modelEligibleDecision": true,
+      "duplicateId": true,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "canonical-poll-id-already-exists"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "freshwater_2026-03",
+          "pollster": "Freshwater Strategy",
+          "commissioner": "Herald Sun",
+          "fieldwork_start": "2026-03-19",
+          "fieldwork_end": "2026-03-23",
+          "publication_date": "2026-03-24",
+          "sample_size": 1062,
+          "effective_sample_size": null,
+          "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "human-reviewed-source-evidence",
+          "model_eligible": true,
+          "source_url": "https://freshwaterstrategy.com/2026/04/02/herald-sun-freshwater-strategy-march-polling-data/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "freshwater_2026-03",
+            "party_id": "LIB_NAT",
+            "primary_pct": 29.5888,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-03",
+            "party_id": "ALP",
+            "primary_pct": 27.115,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-03",
+            "party_id": "ONP",
+            "primary_pct": 20.3898,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-03",
+            "party_id": "GRN",
+            "primary_pct": 13.8359,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-03",
+            "party_id": "OTH",
+            "primary_pct": 9.0705,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "freshwater-2026-08-primary-workbook",
+      "pollster": "Freshwater Strategy",
+      "proposedModelPollId": "freshwater_2026-08",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": true,
+      "modelEligibleDecision": true,
+      "duplicateId": true,
+      "primaryVoteTotal": 99.99999999999999,
+      "canPromoteNow": false,
+      "blockers": [
+        "canonical-poll-id-already-exists"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "freshwater_2026-08",
+          "pollster": "Freshwater Strategy",
+          "commissioner": "Herald Sun",
+          "fieldwork_start": "2026-07-31",
+          "fieldwork_end": "2026-08-03",
+          "publication_date": "2026-08-04",
+          "sample_size": 1020,
+          "effective_sample_size": null,
+          "method": "online panel; weighted to Victorian voter age-sex, education, 2022 state vote, 2025 federal vote and location; leaners included and unresolved undecideds removed",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "human-reviewed-source-evidence",
+          "model_eligible": true,
+          "source_url": "https://freshwaterstrategy.com/2026/08/04/herald-sun-freshwater-strategy-august-polling-data/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "freshwater_2026-08",
+            "party_id": "LIB_NAT",
+            "primary_pct": 30.3013,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-08",
+            "party_id": "ALP",
+            "primary_pct": 24.6592,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-08",
+            "party_id": "ONP",
+            "primary_pct": 21.6056,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-08",
+            "party_id": "GRN",
+            "primary_pct": 14.4694,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-08",
+            "party_id": "OTH",
+            "primary_pct": 8.9645,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "freshwater-2026-09-primary-workbook",
+      "pollster": "Freshwater Strategy",
+      "proposedModelPollId": "freshwater_2026-09",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": true,
+      "modelEligibleDecision": true,
+      "duplicateId": true,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "canonical-poll-id-already-exists"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "freshwater_2026-09",
+          "pollster": "Freshwater Strategy",
+          "commissioner": "Herald Sun",
+          "fieldwork_start": "2026-09-24",
+          "fieldwork_end": "2026-09-28",
+          "publication_date": "2026-10-01",
+          "sample_size": 1030,
+          "effective_sample_size": null,
+          "method": "online panels; weighted to age-sex, age-education, 2022 state vote, 2025 federal vote and location; leaners included; remaining undecideds removed",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "human-reviewed-source-evidence",
+          "model_eligible": true,
+          "source_url": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "freshwater_2026-09",
+            "party_id": "LIB_NAT",
+            "primary_pct": 28.9106,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-09",
+            "party_id": "ALP",
+            "primary_pct": 24.0121,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-09",
+            "party_id": "ONP",
+            "primary_pct": 22.1313,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-09",
+            "party_id": "GRN",
+            "primary_pct": 14.3689,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "freshwater_2026-09",
+            "party_id": "OTH",
+            "primary_pct": 10.5771,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "pollster": "Resolve Strategic",
+      "proposedModelPollId": null,
+      "sourceTier": "reputable_secondary",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": false,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "canonical-poll-id-required",
+        "human-evidence-acceptance-required",
+        "primary-source-reconciliation-or-reviewed-exception-required",
+        "canonical-poll-publication-date-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": null,
+          "pollster": "Resolve Strategic",
+          "commissioner": "",
+          "fieldwork_start": "2026-10-06",
+          "fieldwork_end": "2026-10-10",
+          "publication_date": null,
+          "sample_size": 1000,
+          "effective_sample_size": null,
+          "method": null,
+          "geography": "Victoria",
+          "source_tier": "reputable_secondary",
+          "verification_status": "secondary-topline-awaiting-primary-carrier",
+          "model_eligible": true,
+          "source_url": "https://electiontracker.au/elections/vic/2026/polls"
+        },
+        "pollEstimateRows": [
+          {
+            "party_id": "LIB_NAT",
+            "primary_pct": 28,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "party_id": "ALP",
+            "primary_pct": 25,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "party_id": "ONP",
+            "primary_pct": 23,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "party_id": "GRN",
+            "primary_pct": 15,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "party_id": "OTH",
+            "primary_pct": 9,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-08-09-15-secondary",
+      "pollster": "Resolve Strategic",
+      "proposedModelPollId": "resolve_strategic_2026-08",
+      "sourceTier": "reputable_secondary",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": false,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "human-evidence-acceptance-required",
+        "primary-source-reconciliation-or-reviewed-exception-required",
+        "canonical-poll-publication-date-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "resolve_strategic_2026-08",
+          "pollster": "Resolve Strategic",
+          "commissioner": "Nine Newspapers / The Age",
+          "fieldwork_start": "2026-08-09",
+          "fieldwork_end": "2026-08-15",
+          "publication_date": null,
+          "sample_size": 1000,
+          "effective_sample_size": null,
+          "method": "Resolve Strategic Victorian state voting-intention poll; primary methodology capture pending",
+          "geography": "Victoria",
+          "source_tier": "reputable_secondary",
+          "verification_status": "corroborated-secondary-awaiting-primary",
+          "model_eligible": true,
+          "source_url": "https://theconversation.com/victorian-polls-have-coalition-leading-labor-by-narrow-to-large-margins-289893"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "resolve_strategic_2026-08",
+            "party_id": "LIB_NAT",
+            "primary_pct": 27,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-08",
+            "party_id": "ALP",
+            "primary_pct": 25,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-08",
+            "party_id": "ONP",
+            "primary_pct": 23,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-08",
+            "party_id": "GRN",
+            "primary_pct": 12,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-08",
+            "party_id": "IND",
+            "primary_pct": 7,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-08",
+            "party_id": "OTH",
+            "primary_pct": 6,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "yougov-common-threads-vic-mrp-2026-06-16-07-10-secondary",
+      "pollster": "YouGov",
+      "proposedModelPollId": "yougov_common_threads_mrp_2026-07",
+      "sourceTier": "reputable_secondary",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": false,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "human-evidence-acceptance-required",
+        "primary-source-reconciliation-or-reviewed-exception-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "yougov_common_threads_mrp_2026-07",
+          "pollster": "YouGov",
+          "commissioner": "Common Threads",
+          "fieldwork_start": "2026-06-16",
+          "fieldwork_end": "2026-07-10",
+          "publication_date": "2026-08-09",
+          "sample_size": 4003,
+          "effective_sample_size": 2901,
+          "method": "online panel; multilevel regression with post-stratification (MRP) across all 88 Victorian Assembly electorates",
+          "geography": "Victoria",
+          "source_tier": "reputable_secondary",
+          "verification_status": "primary-methodology-captured-secondary-topline-awaiting-primary-results",
+          "model_eligible": true,
+          "source_url": "https://www.pollbludger.net/2026/08/10/victorian-election-minus-16-weeks/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "yougov_common_threads_mrp_2026-07",
+            "party_id": "LIB_NAT",
+            "primary_pct": 26,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "yougov_common_threads_mrp_2026-07",
+            "party_id": "ALP",
+            "primary_pct": 23,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "yougov_common_threads_mrp_2026-07",
+            "party_id": "ONP",
+            "primary_pct": 24,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "yougov_common_threads_mrp_2026-07",
+            "party_id": "GRN",
+            "primary_pct": 13,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "yougov_common_threads_mrp_2026-07",
+            "party_id": "OTH",
+            "primary_pct": 14,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-secondary",
+      "pollster": "DemosAU",
+      "proposedModelPollId": "demosau_2026-09",
+      "sourceTier": "primary_pollster",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": false,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 100,
+      "canPromoteNow": false,
+      "blockers": [
+        "human-evidence-acceptance-required"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "demosau_2026-09",
+          "pollster": "DemosAU",
+          "commissioner": "PremierNational",
+          "fieldwork_start": "2026-09-10",
+          "fieldwork_end": "2026-09-20",
+          "publication_date": "2026-10-14",
+          "sample_size": 1020,
+          "effective_sample_size": 572,
+          "method": "internet panels; rim weighted by age × gender, education, personal income, residential tenure, language, region, 2025 federal vote and left-right self-identification; state vote intention first substantive question; undecided leaner then unresolved excluded",
+          "geography": "Victoria",
+          "source_tier": "primary_pollster",
+          "verification_status": "primary-publication-and-methodology-captured-awaiting-owner-rereview",
+          "model_eligible": true,
+          "source_url": "https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "demosau_2026-09",
+            "party_id": "LIB_NAT",
+            "primary_pct": 30,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-09",
+            "party_id": "ALP",
+            "primary_pct": 25,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-09",
+            "party_id": "ONP",
+            "primary_pct": 20,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-09",
+            "party_id": "GRN",
+            "primary_pct": 14,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "demosau_2026-09",
+            "party_id": "OTH",
+            "primary_pct": 11,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-09-06-12-secondary",
+      "pollster": "Resolve Strategic",
+      "proposedModelPollId": "resolve_strategic_2026-09",
+      "sourceTier": "reputable_secondary",
+      "evidenceStatus": "quarantined-awaiting-review",
+      "acceptedEvidence": false,
+      "modelEligibleDecision": false,
+      "duplicateId": false,
+      "primaryVoteTotal": 101,
+      "canPromoteNow": false,
+      "blockers": [
+        "human-evidence-acceptance-required",
+        "primary-source-reconciliation-or-reviewed-exception-required",
+        "canonical-poll-publication-date-required",
+        "primary-vote-total-must-equal-100"
+      ],
+      "proposedChanges": {
+        "pollEvent": {
+          "poll_id": "resolve_strategic_2026-09",
+          "pollster": "Resolve Strategic",
+          "commissioner": "Nine Newspapers / The Age",
+          "fieldwork_start": "2026-09-06",
+          "fieldwork_end": "2026-09-12",
+          "publication_date": null,
+          "sample_size": 967,
+          "effective_sample_size": null,
+          "method": "Primary methodology capture pending",
+          "geography": "Victoria",
+          "source_tier": "reputable_secondary",
+          "verification_status": "corroborated-secondary-awaiting-primary",
+          "model_eligible": true,
+          "source_url": "https://acestrategies.au/news/resolve-strategic-victoria-september-2026/"
+        },
+        "pollEstimateRows": [
+          {
+            "poll_id": "resolve_strategic_2026-09",
+            "party_id": "LIB_NAT",
+            "primary_pct": 28,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-09",
+            "party_id": "ALP",
+            "primary_pct": 25,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-09",
+            "party_id": "ONP",
+            "primary_pct": 23,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-09",
+            "party_id": "GRN",
+            "primary_pct": 12,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          },
+          {
+            "poll_id": "resolve_strategic_2026-09",
+            "party_id": "OTH",
+            "primary_pct": 13,
+            "estimate_status": "reported",
+            "notes": "preview only; not written by promotion audit"
+          }
+        ]
+      }
+    }
+  ]
+}

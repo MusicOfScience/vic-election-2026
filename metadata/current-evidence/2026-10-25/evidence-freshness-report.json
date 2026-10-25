@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-10-25",
+  "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
+  "modelInput": {
+    "latestPublicationDate": "2026-10-01",
+    "pollId": "freshwater_2026-09",
+    "pollster": "Freshwater Strategy",
+    "status": "model-eligible"
+  },
+  "acceptedEvidence": {
+    "latestPublicationDate": "2026-10-01",
+    "pollster": "Freshwater Strategy",
+    "status": "human-reviewed-not-necessarily-model-eligible"
+  },
+  "stagedEvidence": {
+    "latestPublicationDate": "2026-10-20",
+    "pollster": "Roy Morgan",
+    "evidenceId": "roy-morgan-upper-house-jul-sep-2026-primary",
+    "status": "quarantined-awaiting-review",
+    "sourceTier": "primary_pollster",
+    "verificationStatus": "primary-article-captured-incomplete-five-family-table"
+  },
+  "reviewResolution": {
+    "stagedRecords": 14,
+    "resolvedRecords": 11,
+    "unresolvedRecords": 3,
+    "latestResolvedEvidence": {
+      "evidenceId": "demosau-vic-2026-09-10-20-secondary",
+      "pollster": "DemosAU",
+      "latestPublicationDate": "2026-10-14",
+      "decision": "hold"
+    }
+  },
+  "newestEvidenceDate": "2026-10-20",
+  "newerEvidenceAwaitingReview": true,
+  "newerEvidenceExcludedByReview": true,
+  "modelFreshnessUnchangedByStagedEvidence": true
+}

@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-08",
+  "purpose": "Track the published Victorian Assembly polling universe separately from the subset that can be compared and admitted to the current five-party forecast model.",
+  "policy": {
+    "allPublishedDoesNotMeanAllPoolable": true,
+    "currentComposition": [
+      "ALP",
+      "LIB_NAT",
+      "ONP",
+      "GRN",
+      "OTH_IND"
+    ],
+    "comparabilityBreak": "2026-02-10",
+    "comparabilityReason": "Published Victorian polling did not separately report One Nation before 10 February 2026; older support is embedded in residual/other categories and must not be reconstructed as if measured.",
+    "modelAdmission": "A discovered poll still requires provenance, complete composition, questionnaire/regime, sample-dependency and model-eligibility review."
+  },
+  "externalBenchmark": {
+    "source": "Plain Politics Victoria polling tracker",
+    "sourceUrl": "https://plainpolitics.com.au/vic/",
+    "publishedAssemblyPolls": 60,
+    "pollingOrganisations": 8,
+    "fieldworkStart": "2023-02-15",
+    "latestFieldworkEndReported": "2026-08-16",
+    "role": "coverage-audit-only",
+    "notAModelInput": true
+  },
+  "repository": {
+    "registryEvents": 14,
+    "modelEligibleEvents": 13,
+    "stagedPollRecords": 13,
+    "sourceFamiliesDeclared": 8,
+    "sourceFamiliesWithCanonicalEligiblePolling": 5,
+    "currentSourceFamiliesWithActionableGaps": 0,
+    "actionableGapItems": 0,
+    "declaredGapsResolvedByStaging": 2
+  },
+  "integrity": {
+    "allDeclaredCanonicalIdsExist": true,
+    "declaredCanonicalIdsAreUnique": true,
+    "unknownDeclaredCanonicalIds": [],
+    "duplicateDeclaredCanonicalIds": []
+  },
+  "sourceFamilies": [
+    {
+      "id": "demosau",
+      "label": "DemosAU",
+      "coverageClass": "canonical-plus-staged",
+      "canonicalModelEligiblePollIds": [
+        "demosau_2026-02",
+        "demosau_2026-06"
+      ],
+      "stagedEvidence": [
+        "demosau_2026-08",
+        "demosau_2026-09"
+      ],
+      "actionableGapCount": 0,
+      "exclusionReason": null,
+      "nextAction": "Review September primary acquisition gaps and preserve August quarantine; no model eligibility inferred."
+    },
+    {
+      "id": "roy-morgan",
+      "label": "Roy Morgan",
+      "coverageClass": "canonical-current",
+      "canonicalModelEligiblePollIds": [
+        "roy_morgan_2026-02",
+        "roy_morgan_2026-04",
+        "roy_morgan_2026-08"
+      ],
+      "stagedEvidence": [],
+      "actionableGapCount": 0,
+      "exclusionReason": null,
+      "nextAction": "Continue live monitoring; retain published cross-tabs/preferences as supporting evidence rather than duplicate polls."
+    },
+    {
+      "id": "redbridge-accent",
+      "label": "RedBridge / Accent Research",
+      "coverageClass": "canonical-plus-staged",
+      "canonicalModelEligiblePollIds": [
+        "redbridge_accent_2026-02",
+        "redbridge_accent_2026-06_large"
+      ],
+      "stagedEvidence": [
+        "redbridge_accent_2026-08",
+        "redbridge_accent_2026-09"
+      ],
+      "actionableGapCount": 0,
+      "exclusionReason": null,
+      "nextAction": null
+    },
+    {
+      "id": "freshwater",
+      "label": "Freshwater Strategy",
+      "coverageClass": "canonical-current",
+      "canonicalModelEligiblePollIds": [
+        "freshwater_2026-02",
+        "freshwater_2026-03",
+        "freshwater_2026-06",
+        "freshwater_2026-08",
+        "freshwater_2026-09"
+      ],
+      "stagedEvidence": [],
+      "actionableGapCount": 0,
+      "exclusionReason": null,
+      "nextAction": "Continue live monitoring; owner-approved comparable Freshwater waves are canonical, with one pollster family retained."
+    },
+    {
+      "id": "newspoll-pyxis",
+      "label": "Newspoll / Pyxis Polling & Insights",
+      "coverageClass": "canonical-current",
+      "canonicalModelEligiblePollIds": [
+        "newspoll_pyxis_2026-07"
+      ],
+      "stagedEvidence": [],
+      "actionableGapCount": 0,
+      "exclusionReason": null,
+      "nextAction": "Monitor for new Victorian state releases. Pre-February observations without a separately reported One Nation share remain non-comparable to the current five-way series."
+    },
+    {
+      "id": "resolve-strategic",
+      "label": "Resolve Strategic",
+      "coverageClass": "sample-family-captured-awaiting-primary-reconciliation",
+      "canonicalModelEligiblePollIds": [],
+      "stagedEvidence": [
+        "resolve_strategic_2026-08",
+        "resolve_strategic_2026-09"
+      ],
+      "actionableGapCount": 0,
+      "exclusionReason": null,
+      "nextAction": "Reconcile Resolve/Nine primary methodology and exact component-wave metadata before any family is eligible for human acceptance or model admission."
+    },
+    {
+      "id": "wolf-smith",
+      "label": "Wolf & Smith",
+      "coverageClass": "historical-non-comparable",
+      "canonicalModelEligiblePollIds": [],
+      "stagedEvidence": [],
+      "actionableGapCount": 0,
+      "exclusionReason": "One Nation was not separately reported in this period, so the observation cannot supply a coherent current five-party composition without imputation.",
+      "nextAction": null
+    },
+    {
+      "id": "yougov-common-threads",
+      "label": "YouGov / Common Threads MRP",
+      "coverageClass": "current-comparable-primary-methodology-captured",
+      "canonicalModelEligiblePollIds": [],
+      "stagedEvidence": [],
+      "actionableGapCount": 0,
+      "exclusionReason": null,
+      "nextAction": "Capture YouGov/Common Threads first-party results, reconcile the 9/10 July fieldwork-end discrepancy and complete human role review; do not treat the statewide topline and seat projection as independent evidence."
+    }
+  ],
+  "stagedCoverageResolutions": [
+    {
+      "sourceFamilyId": "redbridge-accent",
+      "sourceFamily": "RedBridge / Accent Research",
+      "evidenceId": "redbridge-accent-vic-2026-08-01-primary",
+      "proposedModelPollId": "redbridge_accent_2026-08",
+      "fieldworkStart": "2026-07-28",
+      "fieldworkEnd": "2026-08-01",
+      "status": "quarantined-awaiting-review"
+    },
+    {
+      "sourceFamilyId": "yougov-common-threads",
+      "sourceFamily": "YouGov / Common Threads MRP",
+      "evidenceId": "yougov-common-threads-vic-mrp-2026-06-16-07-10-secondary",
+      "proposedModelPollId": "yougov_common_threads_mrp_2026-07",
+      "fieldworkStart": "2026-06-16",
+      "fieldworkEnd": "2026-07-10",
+      "status": "quarantined-awaiting-review"
+    }
+  ],
+  "actionableGaps": [],
+  "priorityQueue": [
+    "Complete the dossier review for the staged RedBridge/Accent August and September waves; resolve sample-family/leadership-regime checks before model eligibility.",
+    "Review the parsed Freshwater first-party workbooks; resolve February residual rounding and the August publication-date/canonical-ID reconciliation before model eligibility.",
+    "Reconcile the now-captured Resolve sample families against pollster methodology and exact component-wave metadata before model eligibility.",
+    "Capture YouGov/Common Threads first-party results; reconcile the primary-methodology 9 July fieldwork end against the secondary 10 July report while keeping statewide and seat-model outputs in one dependency family.",
+    "Keep pre-10-February-2026 polls in historical/reference coverage rather than imputing One Nation."
+  ]
+}
