@@ -1,12 +1,17 @@
 :root {
   /* App conventions: election authorities identify parties/codes but do not prescribe a universal colour palette. */
-  --party-labor: #d84a42;
+  /* Labor is deliberately cooler/crimson and One Nation more amber to preserve separation under warm display filters. */
+  --party-labor: #d9475b;
+  --party-labor-ink: #a12438;
+  --party-labor-light: #ff8292;
   --party-coalition: #2e63ad;
   --party-liberal: #2e63ad;
   --party-national: #003b2b;
   --party-national-accent: #f2c94c;
   --party-greens: #009c3d;
-  --party-one-nation: #e36f14;
+  --party-one-nation: #f29a00;
+  --party-one-nation-ink: #925300;
+  --party-one-nation-light: #ffb43b;
   --party-independent: #69727b;
   --party-teal: #1597a5;
   --party-other: #a58b55;
@@ -28,14 +33,29 @@ svg [fill="#d19b2a"], svg [fill="#7d6a92"] { fill: var(--party-other-independent
 svg [stroke="#6e4da0"] { stroke: var(--party-one-nation) !important; }
 svg [stroke="#d19b2a"], svg [stroke="#7d6a92"] { stroke: var(--party-other-independent) !important; }
 
+/* Secondary identity cues reduce dependence on red/orange hue alone. */
+.poll-series-chart svg [stroke="#6e4da0"] { stroke-dasharray: 6 3; }
+.seat-arc circle[fill="#6e4da0"] { stroke: #ffe1a3; stroke-width: 1.15; }
+
 .arc-party-legend span:nth-child(1) i { background-color: var(--party-labor) !important; }
 .arc-party-legend span:nth-child(2) i { background-color: var(--party-coalition) !important; }
 .arc-party-legend span:nth-child(3) i { background-color: var(--party-one-nation) !important; }
 .arc-party-legend span:nth-child(4) i { background-color: var(--party-greens) !important; }
 .arc-party-legend span:nth-child(5) i { background-color: var(--party-other-independent) !important; }
 
-/* Keep the forecast hero on the same party language as every other chart. */
-.seat-totals .onp strong { color: var(--party-one-nation) !important; }
+/* Class-based charts use the brighter mark colours. */
+.labor { --party: var(--party-labor); }
+.onp { --party: var(--party-one-nation); }
+
+/* White-text solid blocks need darker party inks; light-surface party numerals need readable inks. */
+.party-chip.labor, .seat-verdict.labor, .seat-tile.labor { --party: var(--party-labor-ink); }
+.party-chip.onp, .seat-verdict.onp, .seat-tile.onp { --party: var(--party-one-nation-ink); }
+.battle-party.labor { --party: var(--party-labor-ink); }
+.battle-party.onp { --party: var(--party-one-nation-ink); }
+
+/* Hero numerals sit on navy, so use high-luminance companions rather than the general mark colours. */
+.seat-totals .labor strong { color: var(--party-labor-light) !important; }
+.seat-totals .onp strong { color: var(--party-one-nation-light) !important; }
 
 /* The old vertical marks looked data-bearing but were decorative. Keep the majority threshold in text instead. */
 .forecast-hero::after { display: none !important; }
