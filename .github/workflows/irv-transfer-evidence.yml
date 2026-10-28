@@ -25,6 +25,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install -c model/constraints.txt numpy
       - name: Extract corrected clean original-parcel evidence
         run: |
           python model/scripts/extract_historical_assembly_original_parcel_transfers.py \
@@ -43,6 +45,7 @@ jobs:
             --evidence artifacts/irv/historical-original-parcel-transfers.json \
             --output artifacts/irv/c1-walkforward-freeze-candidate.json
       - name: Upload pre-outcome evidence and C1 freeze candidate
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: irv-transfer-evidence-c1-freeze
