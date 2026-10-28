@@ -1,0 +1,74 @@
+# Pre-score fitting gate for candidate-resolved OTH/Independent IRV architecture.
+name: Candidate-resolution IRV pre-score fit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/candidate-resolution-irv-calibration
+    paths:
+      - 'model/scripts/audit_historical_assembly_effective_transfer_events.py'
+      - 'model/scripts/fit_oth_candidate_retention_walkforward.py'
+      - 'docs/CANDIDATE_RESOLUTION_IRV_CALIBRATION_PROTOCOL.md'
+      - 'metadata/candidate-resolution-irv-preregistration-2026-10-29.json'
+      - '.github/workflows/candidate-resolution-irv-fit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  fit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install -c model/constraints.txt numpy
+      - name: Regenerate official VEC effective exclusion-parcel evidence
+        run: |
+          python model/scripts/audit_historical_assembly_effective_transfer_events.py \
+            --cache-dir .cache/candidate-resolution-irv \
+            --workers 10 \
+            --output artifacts/candidate-resolution/historical-effective-transfer-events.json
+      - name: Fit preregistered walk-forward OTH retention distributions
+        run: |
+          python model/scripts/fit_oth_candidate_retention_walkforward.py \
+            --evidence artifacts/candidate-resolution/historical-effective-transfer-events.json \
+            --preregistration metadata/candidate-resolution-irv-preregistration-2026-10-29.json \
+            --output artifacts/candidate-resolution/oth-retention-walkforward-fit.json
+      - name: Enforce identification gate before any historical score exists
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('artifacts/candidate-resolution/oth-retention-walkforward-fit.json')
+          fit = json.loads(path.read_text())
+          if fit['status'] != 'pre-outcome-walk-forward-operational-fit':
+              raise SystemExit(f"fit gate failed: {fit['status']}")
+          if not all(target['identified'] for target in fit['targets']):
+              raise SystemExit('one or more walk-forward q_oth targets failed the frozen evidence gate')
+          print(json.dumps({
+              'status': fit['status'],
+              'targets': [
+                  {
+                      'targetYear': target['targetYear'],
+                      'eligibleEvents': target['eligibleEvents'],
+                      'districtElectionUnits': target['districtElectionUnits'],
+                      'q50': target['summary']['q50'],
+                      'q05': target['summary']['q05'],
+                      'q95': target['summary']['q95'],
+                  }
+                  for target in fit['targets']
+              ],
+          }, indent=2))
+          PY
+      - name: Upload pre-score evidence and fit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-resolution-irv-pre-score-fit
+          path: artifacts/candidate-resolution/*.json
+          if-no-files-found: error
