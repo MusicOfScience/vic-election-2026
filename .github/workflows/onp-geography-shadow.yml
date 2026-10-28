@@ -1,0 +1,160 @@
+name: ONP geography shadow
+
+on:
+  push:
+    branches:
+      - "codex/phon-geographic-heterogeneity-shadow"
+    paths:
+      - "docs/PHON_GEOGRAPHIC_HETEROGENEITY_SHADOW.md"
+      - "model/scripts/build_aec_2025_onp_geography.py"
+      - "model/scripts/audit_aec_2022_point_crosswalk.py"
+      - "model/scripts/compare_onp_geography_2022_2025.py"
+      - "model/scripts/onp_geography_shadow_common.py"
+      - "model/scripts/run_onp_geography_shadow.py"
+      - "model/scripts/run_onp_2025_geography_shadow.py"
+      - "model/scripts/run_onp_2025_residual_retention_shadow.py"
+      - ".github/workflows/onp-geography-shadow.yml"
+  pull_request:
+    paths:
+      - "docs/PHON_GEOGRAPHIC_HETEROGENEITY_SHADOW.md"
+      - "model/scripts/build_aec_2025_onp_geography.py"
+      - "model/scripts/audit_aec_2022_point_crosswalk.py"
+      - "model/scripts/compare_onp_geography_2022_2025.py"
+      - "model/scripts/onp_geography_shadow_common.py"
+      - "model/scripts/run_onp_geography_shadow.py"
+      - "model/scripts/run_onp_2025_geography_shadow.py"
+      - "model/scripts/run_onp_2025_residual_retention_shadow.py"
+      - ".github/workflows/onp-geography-shadow.yml"
+  workflow_dispatch:
+    inputs:
+      simulations:
+        description: Simulations per treatment
+        required: false
+        default: "5000"
+
+permissions:
+  contents: read
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install reproducible model environment
+        run: python -m pip install -c model/constraints.txt -e './model'
+      - name: Compile shadow scripts
+        run: |
+          python -m py_compile \
+            model/scripts/build_aec_2025_onp_geography.py \
+            model/scripts/audit_aec_2022_point_crosswalk.py \
+            model/scripts/compare_onp_geography_2022_2025.py \
+            model/scripts/onp_geography_shadow_common.py \
+            model/scripts/run_onp_geography_shadow.py \
+            model/scripts/run_onp_2025_geography_shadow.py \
+            model/scripts/run_onp_2025_residual_retention_shadow.py
+      - name: Build official AEC 2025 ONP Assembly surface
+        run: python model/scripts/build_aec_2025_onp_geography.py
+      - name: Audit physical-point crosswalk on AEC 2022
+        run: python model/scripts/audit_aec_2022_point_crosswalk.py
+      - name: Compare 2022 and 2025 spatial signals
+        run: python model/scripts/compare_onp_geography_2022_2025.py
+      - name: Validate Phase B construction
+        run: |
+          python - <<'PY'
+          import json
+          import pandas as pd
+          surface = pd.read_csv('model/data/validation/aec_2025_onp_state_district_surface.csv')
+          audit = json.load(open('metadata/aec-2025-onp-geography-audit.json'))
+          comparison = json.load(open('metadata/onp-geography-2022-2025-comparison.json'))
+          crosswalk = json.load(open('metadata/aec-2022-point-crosswalk-audit.json'))
+          assert len(surface) == 88
+          assert surface['district_name'].nunique() == 88
+          assert audit['districtCount'] == 88
+          assert comparison['districts'] == 88
+          assert crosswalk['districts'] == 88
+          assert 0.02 < audit['locatedStateOnpShare'] < 0.15
+          assert surface['onp_share'].between(0, 0.35).all()
+          # The Phase-B mapping method must recover the existing 2022 ecological
+          # surface strongly enough to count as a methodologically matched update.
+          assert crosswalk['pearsonSignalCorrelation'] >= 0.95
+          assert crosswalk['spearmanRankCorrelation'] >= 0.95
+          print({
+              'locatedStateOnpShare2025': audit['locatedStateOnpShare'],
+              'locatedPollingPlaces2025': audit['locatedPollingPlaces'],
+              'unmatchedCoordinatePlaces2025': len(audit['unmatchedCoordinatePlaces']),
+              '2022to2025Pearson': comparison['pearsonSignalCorrelation'],
+              '2022to2025Spearman': comparison['spearmanRankCorrelation'],
+              '2022to2025Slope': comparison['linearFit2025On2022']['slope'],
+              'pointCrosswalk2022Pearson': crosswalk['pearsonSignalCorrelation'],
+              'pointCrosswalk2022Spearman': crosswalk['spearmanRankCorrelation'],
+              'pointCrosswalk2022Slope': crosswalk['linearFitPointOnExisting']['slope'],
+          })
+          PY
+      - name: Run Phase A existing-surface persistence sensitivity
+        shell: bash
+        run: |
+          simulations="${{ inputs.simulations }}"
+          if [[ -z "${simulations}" ]]; then simulations="5000"; fi
+          PYTHONPATH="model/src:model/scripts" python model/scripts/run_onp_geography_shadow.py --simulations "${simulations}"
+      - name: Run Phase B AEC-2025 challenger matrix
+        shell: bash
+        run: |
+          simulations="${{ inputs.simulations }}"
+          if [[ -z "${simulations}" ]]; then simulations="5000"; fi
+          PYTHONPATH="model/src:model/scripts" python model/scripts/run_onp_2025_geography_shadow.py --simulations "${simulations}"
+      - name: Run Phase B residual-retention challenger
+        shell: bash
+        run: |
+          simulations="${{ inputs.simulations }}"
+          if [[ -z "${simulations}" ]]; then simulations="5000"; fi
+          PYTHONPATH="model/src:model/scripts" python model/scripts/run_onp_2025_residual_retention_shadow.py --simulations "${simulations}"
+      - name: Validate geography treatment isolation
+        run: |
+          python - <<'PY'
+          import json
+          reports = {
+              'phaseA': json.load(open('model/data/validation/onp-geography-shadow-2022-surface.json')),
+              'phaseB': json.load(open('model/data/validation/onp-geography-shadow-2025-surface.json')),
+              'phaseBResidual': json.load(open('model/data/validation/onp-geography-shadow-2025-residual-retention.json')),
+          }
+          for label, report in reports.items():
+              control = report['treatments']['1.0'] if label == 'phaseA' else report['control']
+              target = control['weightedMeanDistrictOnpPrimary']
+              treatments = report['treatments']
+              for treatment, payload in treatments.items():
+                  calibration = payload['centralVoteCalibration']
+                  assert calibration['absoluteResidualPercentagePoints'] < 1e-8
+                  # Central vote is exactly matched by construction. Monte Carlo
+                  # weighted district means may move slightly because shocks and
+                  # softmax are nonlinear; >0.25pp is too large for an isolated
+                  # geography treatment and must fail the shadow run.
+                  drift = abs(payload['weightedMeanDistrictOnpPrimary'] - target)
+                  assert drift <= 0.25, (label, treatment, drift)
+          print('Central vote conservation passed; simulated weighted ONP drift <= 0.25pp for every treatment.')
+          PY
+      - name: Hash shadow outputs
+        run: |
+          sha256sum \
+            model/data/validation/aec_2025_onp_state_district_surface.csv \
+            metadata/aec-2025-onp-geography-audit.json \
+            metadata/aec-2022-point-crosswalk-audit.json \
+            metadata/onp-geography-2022-2025-comparison.json \
+            model/data/validation/onp-geography-shadow-2022-surface.json \
+            model/data/validation/onp-geography-shadow-2025-surface.json \
+            model/data/validation/onp-geography-shadow-2025-residual-retention.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: onp-geography-shadow
+          path: |
+            model/data/validation/aec_2025_onp_state_district_surface.csv
+            metadata/aec-2025-onp-geography-audit.json
+            metadata/aec-2022-point-crosswalk-audit.json
+            metadata/onp-geography-2022-2025-comparison.json
+            model/data/validation/onp-geography-shadow-2022-surface.json
+            model/data/validation/onp-geography-shadow-2025-surface.json
+            model/data/validation/onp-geography-shadow-2025-residual-retention.json
+          retention-days: 90
