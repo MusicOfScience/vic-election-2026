@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "status": "preregistered-before-r1-fit-or-score",
+  "preregisteredDate": "2026-10-29",
+  "protocol": "docs/CANDIDATE_RESOLUTION_IRV_CALIBRATION_PROTOCOL.md",
+  "protocolCommit": "01d4a79d1be5847ab167a02b1cebccb43708709c",
+  "productionInput": false,
+  "forecastOutputsMayBeRead": false,
+  "r0": {
+    "name": "C0-current-five-family-benchmark",
+    "parties": ["ALP", "LIB_NAT", "ONP", "GRN", "OTH_IND"],
+    "preferenceConcentration": 72,
+    "simulationsPerTarget": 5000,
+    "electionSeed": 20261028
+  },
+  "r1": {
+    "name": "OTH_IND-candidate-resolved-operational-IRV",
+    "resolvedFamilies": ["OTH_IND"],
+    "collapsedFamilies": ["ALP", "LIB_NAT", "ONP", "GRN"],
+    "crossFamilyMeans": "current PREFERENCE_PRIOR unchanged",
+    "primaryOthDestinationAllocation": "equal-among-continuing-oth-candidates",
+    "sensitivityOthDestinationAllocation": "proportional-to-current-tallies",
+    "fitNewCrossFamilyMeans": false
+  },
+  "qOth": {
+    "interpretation": "effective elimination-stage OTH-to-OTH parcel retention; not original voter preference",
+    "eligibleSourceFamily": "OTH_IND",
+    "requiresContinuingOthCandidate": true,
+    "unit": "district-election mean of eligible event retention shares",
+    "bootstrap": "district-election block bootstrap",
+    "bootstrapDraws": 5000,
+    "bootstrapSeed": 20261029,
+    "minimumEligibleEvents": 20,
+    "minimumDistrictElectionUnits": 10,
+    "ballotWeightedPseudoSampleForbidden": true
+  },
+  "walkForward": {
+    "2014": [2010],
+    "2018": [2010, 2014],
+    "2022": [2010, 2014, 2018]
+  },
+  "primaryMetrics": [
+    "winner_modal_accuracy",
+    "winner_mean_brier",
+    "winner_mean_log_loss",
+    "pair_modal_accuracy",
+    "pair_mean_brier",
+    "pair_mean_log_loss",
+    "zero_probability_observed_pairs",
+    "phantom_oth_modal_pair_errors"
+  ],
+  "supportRule": {
+    "minimumPairLogLossImprovement": 0.05,
+    "pairBrierMayWorsen": false,
+    "maximumAbsoluteWinnerBrierWorsening": 0.02,
+    "phantomOthModalPairErrorsMustFall": true,
+    "allocationSensitivityMustPreserveConclusionDirection": true
+  },
+  "prohibitedBeforeHistoricalScore": [
+    "inspect 2026 R1 Assembly output",
+    "use October 2026 seat polling or analyst seat calls for fitting or model selection",
+    "fit new cross-family preference means",
+    "select allocation rule by score",
+    "lower q_oth identification gate",
+    "promote R1 into PROD"
+  ]
+}
