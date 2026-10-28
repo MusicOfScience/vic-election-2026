@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "shadow-calibration-retained-production-promotion-rejected",
+  "canonicalForecastChanged": false,
+  "canonicalModelParametersChanged": false,
+  "headline": "Historical federal geography supports high but uncertain ONP spatial persistence; the calibrated 2026 shadow modestly lowers aggregate ONP seats but materially changes seat identity and does not validate final-pair machinery.",
+  "historicalCalibration": {
+    "primarySeries": "AEC Senate first preferences by physical polling place mapped to current 88 Assembly districts",
+    "cycles": [2016, 2019, 2022, 2025],
+    "pairwise": [
+      {"from": 2016, "to": 2019, "pearson": 0.9843220139858988, "spearman": 0.9856644711352189, "weightedSlope": 0.8784350651501489, "weightedR2": 0.967844801931547},
+      {"from": 2019, "to": 2022, "pearson": 0.9644459466102463, "spearman": 0.9562185199535066, "weightedSlope": 0.7412031680254595, "weightedR2": 0.9269916196643725},
+      {"from": 2022, "to": 2025, "pearson": 0.9654449117008915, "spearman": 0.9544573984713468, "weightedSlope": 0.936091546536422, "weightedR2": 0.9292982951763914}
+    ],
+    "tripletTargetHorizonPointFits": [
+      {"years": [2016, 2019, 2022], "aTarget": 0.8510382451550709, "kappaTarget": 0.9728960259428047},
+      {"years": [2019, 2022, 2025], "aTarget": 0.9853683118925601, "kappaTarget": 0.6699504348206082}
+    ]
+  },
+  "frozenPersistence": {
+    "freezePath": "metadata/onp-spatial-persistence-freeze-v2-2026-10-28.json",
+    "workflowRun": 40676227917,
+    "artifactDigest": "sha256:809a6d34ed4ee0732dd8db1bfab812d8b60eabdac801e82a70102d5acde87f57",
+    "mixtureSha256": "14d6f36d593085a50369b5d7e51d3052afd075afaf0435a5b681773c866eeebd",
+    "draws": 10000,
+    "aTargetMean": 0.9158457376317005,
+    "aTargetQ05": 0.8234890787282557,
+    "aTargetQ95": 1.0,
+    "kappaTargetMean": 0.8082094316778153,
+    "kappaTargetQ05": 0.5997166731062634,
+    "kappaTargetQ95": 1.0,
+    "aKappaCorrelation": -0.9216897391001865,
+    "rule": "equal-weight empirical mixture of the two triplet-specific region-block bootstrap distributions; joint pairs preserved"
+  },
+  "shadow2026": {
+    "workflowRun": 40677049969,
+    "artifactDigest": "sha256:1650439bdf5bdd98fac2f9fe67e54b391f2b2357fc6693db80d2745edc9dbbbf",
+    "jsonSha256": "0e1bf9d860859eaea7ce2d17230b071df64d359ccdafcf56a8e61b0ae0fe6353",
+    "simulations": 5000,
+    "persistenceSelectionSeed": 20261028,
+    "canonicalElectionSeed": 20260826,
+    "commonRandomNumbers": true,
+    "control": {
+      "meanSeats": {"ALP": 38.2896, "LIB_NAT": 31.0216, "ONP": 16.2792, "GRN": 2.4032, "OTH_IND": 0.0064},
+      "majorityProbability": {"ALP": 0.193, "LIB_NAT": 0.031},
+      "hungProbability": 0.776
+    },
+    "challenger": {
+      "meanSeats": {"ALP": 39.2946, "LIB_NAT": 31.108, "ONP": 15.2614, "GRN": 2.3284, "OTH_IND": 0.0076},
+      "majorityProbability": {"ALP": 0.2454, "LIB_NAT": 0.0386},
+      "hungProbability": 0.716
+    },
+    "changes": {
+      "deltaMeanSeats": {"ALP": 1.005, "LIB_NAT": 0.0864, "ONP": -1.0178, "GRN": -0.0748, "OTH_IND": 0.0012},
+      "deltaLaborMajorityProbability": 0.0524,
+      "deltaCoalitionMajorityProbability": 0.0076,
+      "deltaHungProbability": -0.06,
+      "modalWinnerChanges": 15,
+      "modalFinalPairChanges": 21,
+      "seatsOnpWinProbabilityShiftAtLeast5pp": 38,
+      "seatsOnpWinProbabilityShiftAtLeast10pp": 31
+    },
+    "regimeDiagnostic": {
+      "2016-2019-2022": {"simulations": 2548, "onpMeanSeats": 15.295918367346939, "hungProbability": 0.7237048665620094},
+      "2019-2022-2025": {"simulations": 2452, "onpMeanSeats": 15.22553017944535, "hungProbability": 0.7079934747145188}
+    },
+    "maximumCentralVoteCalibrationResidualPercentagePoints": 5.551115123125783e-15
+  },
+  "heldOutRoyMorgan": {
+    "usedForCalibration": false,
+    "sample": 283,
+    "fieldwork": "2026-10-21/2026-10-26",
+    "pooledOnpPrimaryHastingsMorwellPakenham": 39,
+    "modelMeanPrimaryControl": 32.79461296766804,
+    "modelMeanPrimaryChallenger": 34.874105829515486,
+    "assessment": "directionally supportive of new geography but insufficient and inconsistent with several modelled final-pair identities; not a promotion-grade validation target"
+  },
+  "promotionGates": {
+    "historicalPersistenceCalibration": "pass",
+    "frozenBefore2026Output": "pass",
+    "betweenEraUncertaintyRetained": "pass",
+    "jointDependencePreserved": "pass",
+    "sourceProvenance": "pass",
+    "statewideVoteIsolation": "pass",
+    "controlReproduction": "pass",
+    "chamberRobustAcrossHistoricalRegimes": "pass-with-caveat",
+    "seatIdentityRobust": "fail",
+    "heldOutSeatEvidence": "partial-supportive",
+    "preferenceFinalPairValidation": "fail-existing-blocker",
+    "fullDistrictSpatialUncertainty": "not-represented-lower-bound",
+    "productionAuthorisation": "blocked"
+  },
+  "decision": "Retain and merge the calibrated persistence research infrastructure and frozen challenger. Do not alter canonical PROD. Move the next governed workstream to multi-party elimination order, preference-flow and final-pair probability calibration.",
+  "governance": {
+    "productionInput": false,
+    "canonicalForecastArtifactsWritten": false,
+    "royMorganReadOnlyAfterShadowHash": true
+  }
+}
