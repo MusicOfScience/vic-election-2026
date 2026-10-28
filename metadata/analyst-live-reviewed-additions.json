@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-29",
+  "records": [
+    {
+      "id": "antony-green-2026-10-18-onp-federal-map",
+      "analystSourceId": "antony-green",
+      "publishedDate": "2026-10-18",
+      "sourceUrl": "https://antonygreen.com.au/vic2026-mapping-one-nations-2025-federal-result/",
+      "title": "VIC2026 – Mapping One Nation’s 2025 Federal Result",
+      "evidenceType": "geographic_pattern",
+      "pollDerived": false,
+      "upstreamEvidence": ["aec-2025-house-results"],
+      "independenceAssessment": "derived_from_official_results",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "summary": "Green maps the 2025 federal House result onto Victorian state electorates. One Nation averaged 8.2% in rural/regional seats, 6.2% in outer Melbourne and 3.5% in inner Melbourne. He explicitly presents this as geographic pattern evidence, not a 2026 vote forecast.",
+      "notes": "Useful held-out diagnostic for the ONP geography workstream; do not multiply the mapped 2025 vote mechanically into a state-election forecast."
+    },
+    {
+      "id": "roy-morgan-2026-10-20-upper-house-update",
+      "analystSourceId": "roy-morgan",
+      "publishedDate": "2026-10-20",
+      "sourceUrl": "https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026",
+      "title": "Victorian Upper House evenly split between L-NP/One Nation and ALP/Greens",
+      "evidenceType": "upper_house",
+      "pollDerived": true,
+      "upstreamEvidence": ["roy-morgan-july-september-2026-upper-house"],
+      "independenceAssessment": "dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "summary": "Roy Morgan's July–September regional survey (n=2,845) projects 12 Coalition, 10 Labor, 8 Greens and 6 One Nation Council seats, with four seats unresolved by its stated method. This supersedes the older August Roy Morgan Council snapshot as the fresher comparison.",
+      "notes": "Reference evidence only. Regional samples are modest and the unresolved seats are material; do not manufacture a complete 40-seat allocation."
+    },
+    {
+      "id": "roy-morgan-2026-10-27-eastern-seat-poll",
+      "analystSourceId": "roy-morgan",
+      "publishedDate": "2026-10-27",
+      "sourceUrl": "https://www.roymorgan.com/findings/10371-victorian-state-voting-intention-eastern-victoria-seats-october-2026",
+      "title": "One Nation and L-NP Coalition set to win key seats of Bass, Hastings, Morwell and Pakenham",
+      "evidenceType": "district_polling",
+      "pollDerived": true,
+      "upstreamEvidence": ["roy-morgan-eastern-victoria-2026-10-21-26"],
+      "independenceAssessment": "dependent",
+      "reviewStatus": "reviewed-reference-only",
+      "modelUsage": "reference_only",
+      "summary": "A small Roy Morgan SMS poll of 283 electors across Bass, Hastings, Morwell and Pakenham points to Coalition/One Nation strength in all four seats. It is useful directional evidence but too small for treating the four seat calls as high-precision estimates.",
+      "notes": "Held out from fitting. Use as external validation of geography/final-pair behaviour only, with explicit small-sample caution."
+    }
+  ]
+}
