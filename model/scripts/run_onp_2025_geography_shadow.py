@@ -23,7 +23,7 @@ from onp_geography_shadow_common import conserve_central_onp_primary, central_we
 
 
 NEW_SURFACE = "data/validation/aec_2025_onp_state_district_surface.csv"
-TREATMENTS = (0.50, 0.75, 1.00)
+TREATMENTS = (0.50, 0.62, 0.75, 1.00)
 
 
 def _normalise_name(value: str) -> str:
@@ -158,7 +158,7 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         comparisons[str(lam)] = _compare(control, summary)
 
     return {
-        "schemaVersion": 3,
+        "schemaVersion": 4,
         "mode": "onp-aec-2025-geography-shadow",
         "asOf": str(config["as_of"]),
         "simulationsPerTreatment": simulations,
@@ -170,6 +170,7 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         "challengerSurface": "AEC 2025 House ordinary polling-place geography mapped to current Assembly districts",
         "districtJoinRule": "case-insensitive trimmed district name",
         "challengerLambdas": list(TREATMENTS),
+        "configuredAecLocalPatternShrinkageDiagnostic": 0.62,
         "centralVoteConservation": True,
         "conservationRule": "common additive ONP logit intercept solved per treatment at frozen canonical latent mean",
         "control": control,
