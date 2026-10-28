@@ -8,6 +8,7 @@ on:
     paths:
       - 'model/scripts/audit_historical_assembly_preference_pages.py'
       - 'model/scripts/extract_historical_assembly_original_parcel_transfers.py'
+      - 'model/scripts/audit_historical_assembly_effective_transfer_events.py'
       - 'model/scripts/fit_irv_c1_walkforward.py'
       - 'model/scripts/score_irv_c0_historical.py'
       - 'model/scripts/score_irv_c1_historical.py'
@@ -38,6 +39,10 @@ jobs:
         run: |
           python model/scripts/extract_historical_assembly_original_parcel_transfers.py \
             --output artifacts/irv/historical-original-parcel-transfers.json
+      - name: Audit all candidate-level effective exclusion parcels
+        run: |
+          python model/scripts/audit_historical_assembly_effective_transfer_events.py \
+            --output artifacts/irv/historical-effective-transfer-events.json
       - name: Fit preregistered C1 rows without scoring outcomes
         run: |
           python model/scripts/fit_irv_c1_walkforward.py \
