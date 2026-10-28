@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "policy": "comparison-only-not-forecast-input",
+  "updatedAt": "2026-10-29",
+  "models": [
+    {
+      "id": "redbridge-samaras-newspoll-scenario-2026-10-26",
+      "publisher": "Kos Samaras / RedBridge Group",
+      "modelName": "Newspoll-through-earlier-MRP scenario",
+      "modelKind": "scenario-update",
+      "publishedDate": "2026-10-26",
+      "fieldworkLabel": "Applies 15–22 October Newspoll primaries to an earlier Victorian MRP",
+      "sampleSize": null,
+      "projection": {
+        "coalition": 59,
+        "labor": 25,
+        "oneNation": 0,
+        "greens": 4,
+        "otherIndependent": 0,
+        "totalSeats": 88
+      },
+      "sourceUrl": "https://www.pollbludger.net/2026/10/26/newspoll-labor-24-coalition-33-one-nation-20-in-victoria/",
+      "sourceTier": "reputable-secondary-capture-of-published-analyst-scenario",
+      "verificationStatus": "secondary-capture",
+      "caution": "This is a scenario projection reported from a published Kos Samaras post, not a new MRP survey. It applies Newspoll primaries to an earlier RedBridge Victorian MRP and should be read as sensitivity evidence only."
+    },
+    {
+      "id": "roy-morgan-victoria-winnability-2026-10-09",
+      "publisher": "Roy Morgan Research",
+      "modelName": "Victorian lower-house winnability projection",
+      "modelKind": "seat-by-seat-projection",
+      "publishedDate": "2026-10-09",
+      "fieldworkLabel": "Roy Morgan Single Source · March–September 2026",
+      "sampleSize": 7708,
+      "projection": {
+        "coalition": 31,
+        "labor": 40,
+        "oneNation": 11,
+        "greens": 6,
+        "otherIndependent": 0,
+        "totalSeats": 88
+      },
+      "sourceUrl": "https://www.roymorgan.com/findings/10346-victorian-state-voting-intention-by-seat-winnability-september-2026",
+      "corroboratingSourceUrl": "https://www.pollbludger.net/2026/10/10/victorian-election-minus-seven-weeks/",
+      "sourceTier": "primary-publisher-with-secondary-breakdown-reconciliation",
+      "verificationStatus": "primary-method-and-group-result; exact party split corroborated-secondary",
+      "caution": "Roy Morgan describes this as a seat-by-seat winnability analysis using six months of Single Source data and respondent preferences. The primary article reports grouped chamber totals; the 40 Labor / 31 Coalition / 11 One Nation / 6 Greens split is corroborated by contemporaneous Poll Bludger reporting."
+    },
+    {
+      "id": "yougov-common-threads-victoria-mrp-2026-08-09",
+      "publisher": "YouGov / Common Threads",
+      "modelName": "Victorian MRP",
+      "modelKind": "mrp",
+      "publishedDate": "2026-08-09",
+      "fieldworkLabel": "16 June–10 July 2026 · pre-Carroll leadership",
+      "sampleSize": 4003,
+      "projection": {
+        "coalition": 39,
+        "labor": 29,
+        "oneNation": 17,
+        "greens": 3,
+        "otherIndependent": 0,
+        "totalSeats": 88
+      },
+      "sourceUrl": "https://www.pollbludger.net/2026/08/10/victorian-election-minus-16-weeks/",
+      "primaryMethodologyUrl": "https://yougov.com/about/methodology/australian-polling-council",
+      "sourceTier": "primary-methodology-captured-secondary-results",
+      "verificationStatus": "primary-methodology-captured; published topline and seat projection corroborated-secondary",
+      "caution": "The statewide MRP primary vote included 14% Others, but the published median seat projection allocated all 88 seats to Coalition, Labor, One Nation and Greens. Other / independent is therefore shown explicitly as 0 seats rather than omitted."
+    }
+  ]
+}
