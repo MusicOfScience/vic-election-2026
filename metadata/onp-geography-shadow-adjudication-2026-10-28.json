@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "shadow-challenger-retained-production-promotion-rejected",
+  "canonicalForecastChanged": false,
+  "canonicalModelParametersChanged": false,
+  "headline": "2025 ONP geography contains reproducible new spatial information, but seat outputs are too sensitive to unvalidated spatial persistence and final-pair conversion for production promotion.",
+  "methodValidation": {
+    "aec2022PointCrosswalkVsExistingSurface": {
+      "pearson": 0.9882035346,
+      "spearman": 0.9859906988,
+      "slope": 1.0187903311,
+      "rSquared": 0.976546242,
+      "result": "pass"
+    },
+    "house2022VsHouse2025": {
+      "pearson": 0.8363636577,
+      "spearman": 0.7959388539,
+      "slope": 0.7748835803,
+      "rSquared": 0.699504168,
+      "result": "material-persistence-with-structured-change"
+    },
+    "house2025VsSenate2025": {
+      "pearson": 0.9109998179,
+      "spearman": 0.905870861,
+      "slope": 0.9101876783,
+      "rSquared": 0.8299206682,
+      "result": "robust-with-dependent-evidence-caveat"
+    }
+  },
+  "control": {
+    "surface": "AEC_2022_ecological_auxiliary",
+    "lambda": 1.0,
+    "meanSeats": {"ALP": 38.2896, "LIB_NAT": 31.0216, "ONP": 16.2792, "GRN": 2.4032, "OTH_IND": 0.0064},
+    "majorityProbability": {"ALP": 0.193, "LIB_NAT": 0.031},
+    "hungProbability": 0.776
+  },
+  "configuredShrinkageDiagnostic": {
+    "surface": "AEC_2022_ecological_auxiliary",
+    "lambda": 0.62,
+    "meanSeats": {"ALP": 39.1334, "LIB_NAT": 35.2784, "ONP": 11.2608, "GRN": 2.322, "OTH_IND": 0.0054},
+    "majorityProbability": {"ALP": 0.2526, "LIB_NAT": 0.1058},
+    "hungProbability": 0.6416,
+    "deltaOnpMeanSeatsVsControl": -5.0184,
+    "result": "material-architecture-sensitivity"
+  },
+  "aec2025Challenger": {
+    "lambda0.62": {
+      "meanSeats": {"ALP": 39.7784, "LIB_NAT": 34.6762, "ONP": 11.2456, "GRN": 2.2926, "OTH_IND": 0.0072},
+      "majorityProbability": {"ALP": 0.2848, "LIB_NAT": 0.0956},
+      "hungProbability": 0.6196
+    },
+    "lambda0.75": {
+      "meanSeats": {"ALP": 39.4848, "LIB_NAT": 32.9776, "ONP": 13.227, "GRN": 2.3036, "OTH_IND": 0.007},
+      "majorityProbability": {"ALP": 0.2642, "LIB_NAT": 0.0638},
+      "hungProbability": 0.672
+    },
+    "lambda1.00": {
+      "meanSeats": {"ALP": 39.1248, "LIB_NAT": 29.6364, "ONP": 16.8878, "GRN": 2.3426, "OTH_IND": 0.0084},
+      "majorityProbability": {"ALP": 0.2294, "LIB_NAT": 0.026},
+      "hungProbability": 0.7446,
+      "modalWinnerChangesVsControl": 15,
+      "modalFinalPairChangesVsControl": 24,
+      "seatsWithOnpWinProbabilityShiftAtLeast5pp": 40,
+      "seatsWithOnpWinProbabilityShiftAtLeast10pp": 34
+    }
+  },
+  "promotionGates": {
+    "reproducibleSpatialConstruction": "pass",
+    "statewideVoteConservation": "pass",
+    "crosswalkMethodReplication": "pass",
+    "houseSenateRobustness": "pass-with-dependence-caveat",
+    "stableAcrossPlausibleLambda": "fail",
+    "heldOutSeatValidation": "inconclusive-final-pair-mismatch",
+    "preferenceFinalPairValidation": "fail-existing-blocker",
+    "uncertaintyRepresentation": "open",
+    "productionAuthorisation": "blocked"
+  },
+  "sampledLambda": {
+    "reported": false,
+    "reason": "No numerical prior distribution was sealed before fixed-lambda outputs were inspected; selecting one now would be post-hoc."
+  },
+  "decision": "Retain 2025 geography as a governed shadow challenger. Do not alter canonical PROD. Calibrate ONP spatial persistence from external pre-election evidence before any future promotion decision.",
+  "workflowEvidence": {
+    "mainRunId": 40668909476,
+    "mainArtifactDigest": "sha256:4a936bb29ca8bcbafbd3b09c0352d43cacdec54a44759856f32fb8a82c9e91ab",
+    "houseSenateRunId": 40668427478,
+    "houseSenateArtifactDigest": "sha256:bd85ceb2b23dd853e0c6bcbe73576c5158121189f7e019b01f02df2d1d0426aa"
+  }
+}
