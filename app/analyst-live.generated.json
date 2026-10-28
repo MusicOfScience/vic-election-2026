@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-29T00:00:00.000Z",
+  "policy": "discovery-only-no-automatic-promotion",
+  "refreshStatus": {
+    "mode": "committed-baseline",
+    "sourcesAttempted": 0,
+    "sourcesSucceeded": 0,
+    "sourcesFailed": 0
+  },
+  "records": [
+    {
+      "sourceId": "william-bowe-poll-bludger",
+      "sourceName": "William Bowe / The Poll Bludger",
+      "publishedDate": "2026-10-26",
+      "title": "Newspoll: Labor 24, Coalition 33, One Nation 20 in Victoria",
+      "sourceUrl": "https://www.pollbludger.net/2026/10/26/newspoll-labor-24-coalition-33-one-nation-20-in-victoria/",
+      "status": "discovered-pending-review"
+    },
+    {
+      "sourceId": "william-bowe-poll-bludger",
+      "sourceName": "William Bowe / The Poll Bludger",
+      "publishedDate": "2026-10-13",
+      "title": "Victorian polls: RedBridge Group and Resolve Strategic",
+      "sourceUrl": "https://www.pollbludger.net/2026/10/13/victorian-polls-redbridge-group-and-resolve-strategic-2/",
+      "status": "discovered-pending-review"
+    },
+    {
+      "sourceId": "william-bowe-poll-bludger",
+      "sourceName": "William Bowe / The Poll Bludger",
+      "publishedDate": "2026-10-10",
+      "title": "Victorian election minus seven weeks",
+      "sourceUrl": "https://www.pollbludger.net/2026/10/10/victorian-election-minus-seven-weeks/",
+      "status": "discovered-pending-review"
+    }
+  ]
+}
