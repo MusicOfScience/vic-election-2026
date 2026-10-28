@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-before-heldout-2018-2022-score",
+  "frozenDate": "2026-10-29",
+  "workflowRun": 40756820783,
+  "artifactId": 12847382680,
+  "artifactZipSha256": "9cc9533359442e0f772a589484a2445c9baf1e48e7cf6118bbb056b49146201d",
+  "selectionArtifactSha256": "2a63a1eaadc29dd46f5e6afb8046ce2e22eab3e7bf1df2b6e73333294a9ea5a1",
+  "qOthFitSha256": "d965b6c1447adfe69332f17e3ca03064cf317736073b0afbbe65e7f8fe60084e",
+  "grid": [4, 8, 12, 18, 24, 36, 48, 72, 108, 144],
+  "controlConcentration": 72,
+  "selections": {
+    "equal": {
+      "2018": {
+        "concentration": 4.0,
+        "objective": 0.12024473076636104,
+        "tieRule": "choose-higher-concentration",
+        "tieTolerance": 0.000001,
+        "trainingYears": [2014]
+      },
+      "2022": {
+        "concentration": 4.0,
+        "objective": 0.17180236930647919,
+        "tieRule": "choose-higher-concentration",
+        "tieTolerance": 0.000001,
+        "trainingYears": [2014, 2018]
+      }
+    },
+    "proportional": {
+      "2018": {
+        "concentration": 4.0,
+        "objective": 0.11887351818235314,
+        "tieRule": "choose-higher-concentration",
+        "tieTolerance": 0.000001,
+        "trainingYears": [2014]
+      },
+      "2022": {
+        "concentration": 4.0,
+        "objective": 0.16395129942705178,
+        "tieRule": "choose-higher-concentration",
+        "tieTolerance": 0.000001,
+        "trainingYears": [2014, 2018]
+      }
+    }
+  },
+  "trainingEvidenceHashes": {
+    "equal": {
+      "2018TrainingEvidenceSha256": "9b93e1810a31765a1d879d37024ec9f51b9fc96162724f4b7cc6f85e3ab209b8",
+      "2022TrainingEvidenceSha256": "844091723ceab66d6fc5fbc0e8fee442cbf55afbfea8498dc901827d14e8f309"
+    },
+    "proportional": {
+      "2018TrainingEvidenceSha256": "36110458e317c0fb73931aee2bcc7e4e102ef94538a1137199d36d632eb2f91a",
+      "2022TrainingEvidenceSha256": "e9067c0a30eae5d08ddb2de94c226eeda588d01c234096a51fe4ae0ab07e215f"
+    }
+  },
+  "boundaryObservation": "All four preregistered selections land at the lower grid boundary (4). This is recorded as a calibration caveat and does not authorise extending the grid after seeing held-out outcomes.",
+  "guardrails": {
+    "heldout2022OutcomeScoredBeforeFreeze": false,
+    "selectionRuleChangedAfterTrainingScore": false,
+    "uses2026ForecastOutput": false,
+    "uses2026SeatPolling": false,
+    "modifiesPreferenceMeans": false,
+    "modifiesCandidateResolutionArchitecture": false,
+    "productionInput": false
+  }
+}

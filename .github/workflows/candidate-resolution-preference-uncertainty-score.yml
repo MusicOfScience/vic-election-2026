@@ -1,0 +1,112 @@
+name: Candidate-resolved preference uncertainty held-out score
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/candidate-resolution-preference-uncertainty
+    paths:
+      - 'metadata/candidate-resolution-preference-concentration-freeze-2026-10-29.json'
+      - '.github/workflows/candidate-resolution-preference-uncertainty-score.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install model and numerical dependencies
+        run: python -m pip install -c model/constraints.txt -e './model[dev]'
+      - name: Regenerate official VEC effective exclusion-parcel evidence
+        run: |
+          python model/scripts/audit_historical_assembly_effective_transfer_events.py \
+            --cache-dir .cache/candidate-resolution-irv \
+            --workers 10 \
+            --output artifacts/candidate-resolution/historical-effective-transfer-events.json
+      - name: Regenerate frozen PR 140 q_oth fit
+        run: |
+          python model/scripts/fit_oth_candidate_retention_walkforward.py \
+            --evidence artifacts/candidate-resolution/historical-effective-transfer-events.json \
+            --preregistration metadata/candidate-resolution-irv-preregistration-2026-10-29.json \
+            --output artifacts/candidate-resolution/oth-retention-walkforward-fit.json
+      - name: Verify PR 140 evidence freeze
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          freeze = json.loads(Path('metadata/candidate-resolution-irv-qoth-freeze-2026-10-29.json').read_text())
+          for key, name in (
+              ('effectiveTransferEvidenceSha256', 'historical-effective-transfer-events.json'),
+              ('qOthFitSha256', 'oth-retention-walkforward-fit.json'),
+          ):
+              path = Path('artifacts/candidate-resolution') / name
+              digest = hashlib.sha256(path.read_bytes()).hexdigest()
+              if digest != freeze[key]:
+                  raise SystemExit(f'{key} mismatch: {digest} != {freeze[key]}')
+          PY
+      - name: Download exact frozen Gate A selection artefact
+        uses: actions/download-artifact@v4
+        with:
+          name: candidate-resolution-preference-concentration-selection
+          path: .frozen-gate-a
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: MusicOfScience/vic-election-2026
+          run-id: 40756820783
+      - name: Verify exact pre-held-out selection freeze
+        run: |
+          mkdir -p artifacts/candidate-resolution
+          cp .frozen-gate-a/preference-concentration-selection.json artifacts/candidate-resolution/preference-concentration-selection.json
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          freeze = json.loads(Path('metadata/candidate-resolution-preference-concentration-freeze-2026-10-29.json').read_text())
+          path = Path('artifacts/candidate-resolution/preference-concentration-selection.json')
+          digest = hashlib.sha256(path.read_bytes()).hexdigest()
+          if digest != freeze['selectionArtifactSha256']:
+              raise SystemExit(f'selection SHA mismatch: {digest} != {freeze["selectionArtifactSha256"]}')
+          selected = json.loads(path.read_text())
+          assert selected['selections'] == freeze['selections']
+          assert selected['trainingEvidenceHashes'] == freeze['trainingEvidenceHashes']
+          print('selection freeze verified:', digest)
+          PY
+      - name: Score frozen selections on held-out 2018 and 2022
+        run: |
+          python model/scripts/score_candidate_resolved_preference_uncertainty.py \
+            --fit artifacts/candidate-resolution/oth-retention-walkforward-fit.json \
+            --selection artifacts/candidate-resolution/preference-concentration-selection.json \
+            --selection-freeze metadata/candidate-resolution-preference-concentration-freeze-2026-10-29.json \
+            --output artifacts/candidate-resolution/preference-uncertainty-heldout-score.json
+      - name: Enforce production boundary and print adjudication
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('artifacts/candidate-resolution/preference-uncertainty-heldout-score.json').read_text())
+          guard = result['guardrails']
+          assert guard['uses2026ForecastOutput'] is False
+          assert guard['uses2026SeatPolling'] is False
+          assert guard['modifiesCanonicalForecast'] is False
+          assert guard['modifiesPreferenceMeans'] is False
+          assert guard['modifiesCandidateResolutionArchitecture'] is False
+          assert guard['productionPromotionAuthorised'] is False
+          print(json.dumps({
+              'selections': result['selections'],
+              'researchSupportChecks': result['researchSupportChecks'],
+              'productionCandidateChecks': result['productionCandidateChecks'],
+              'adjudication': result['adjudication'],
+          }, indent=2, sort_keys=True))
+          PY
+      - name: Upload held-out score and regenerated frozen evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-resolution-preference-uncertainty-heldout-score
+          path: artifacts/candidate-resolution/*.json
+          if-no-files-found: error

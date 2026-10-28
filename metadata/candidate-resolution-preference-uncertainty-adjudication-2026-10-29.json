@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "status": "historically-supported-uncertainty-correction-not-production-candidate",
+  "date": "2026-10-29",
+  "workstream": "candidate-resolution-preference-uncertainty",
+  "gateA": {
+    "workflowRun": 40756820783,
+    "artifactId": 12847382680,
+    "artifactZipSha256": "9cc9533359442e0f772a589484a2445c9baf1e48e7cf6118bbb056b49146201d",
+    "selectionArtifactSha256": "2a63a1eaadc29dd46f5e6afb8046ce2e22eab3e7bf1df2b6e73333294a9ea5a1",
+    "selectedConcentration": 4,
+    "allSelectionsAtLowerGridBoundary": true,
+    "postHocGridExtensionAuthorised": false
+  },
+  "gateB": {
+    "workflowRun": 40759176362,
+    "artifactId": 12846633088,
+    "artifactZipSha256": "b3b26712073e46945f0f2ad48d758b4313c86f15b4b27e48490ee91cd67f6fd1",
+    "heldoutScoreSha256": "00ae0c61344a08f76e9f31be398ae5ad34279c3d62e174a600a31ea271fc6f62"
+  },
+  "primaryEqualAllocationPooled2018To2022": {
+    "r0_c0": {
+      "winnerModalAccuracy": 0.9257142857142857,
+      "winnerMeanBrier": 0.13095808594285716,
+      "winnerMeanLogLoss": 0.34009094739578916,
+      "pairModalAccuracy": 0.888,
+      "pairMeanBrier": 0.20768360768,
+      "pairMeanLogLoss": 1.13578239156481,
+      "phantomOthModalPairErrors": 12,
+      "zeroProbabilityObservedPairs": 9
+    },
+    "r1_concentration72": {
+      "winnerModalAccuracy": 0.9142857142857143,
+      "winnerMeanBrier": 0.15038054857142857,
+      "winnerMeanLogLoss": 0.5008047274487032,
+      "pairModalAccuracy": 0.952,
+      "pairMeanBrier": 0.09219873408000001,
+      "pairMeanLogLoss": 0.45784414851804606,
+      "phantomOthModalPairErrors": 0,
+      "zeroProbabilityObservedPairs": 3
+    },
+    "u1_concentration4": {
+      "winnerModalAccuracy": 0.8742857142857143,
+      "winnerMeanBrier": 0.14746592548571427,
+      "winnerMeanLogLoss": 0.24775837167215692,
+      "pairModalAccuracy": 0.952,
+      "pairMeanBrier": 0.06629499071999999,
+      "pairMeanLogLoss": 0.0959189214340813,
+      "phantomOthModalPairErrors": 0,
+      "zeroProbabilityObservedPairs": 0
+    }
+  },
+  "heldoutTargets": {
+    "2018": {
+      "r0_c0": {
+        "winnerModalAccuracy": 0.9091,
+        "winnerMeanBrier": 0.1637,
+        "winnerMeanLogLoss": 0.4673,
+        "pairModalAccuracy": 0.9167,
+        "pairMeanBrier": 0.1667,
+        "pairMeanLogLoss": 1.0409,
+        "zeroProbabilityObservedPairs": 3
+      },
+      "r1_concentration72": {
+        "winnerModalAccuracy": 0.8977,
+        "winnerMeanBrier": 0.1942,
+        "winnerMeanLogLoss": 0.7870,
+        "pairModalAccuracy": 0.9375,
+        "pairMeanBrier": 0.1250,
+        "pairMeanLogLoss": 0.7531,
+        "zeroProbabilityObservedPairs": 2
+      },
+      "u1_concentration4": {
+        "winnerModalAccuracy": 0.8295,
+        "winnerMeanBrier": 0.1877,
+        "winnerMeanLogLoss": 0.3228,
+        "pairModalAccuracy": 0.9375,
+        "pairMeanBrier": 0.0907,
+        "pairMeanLogLoss": 0.1234,
+        "zeroProbabilityObservedPairs": 0
+      }
+    },
+    "2022": {
+      "r0_c0": {
+        "winnerModalAccuracy": 0.9425,
+        "winnerMeanBrier": 0.0979,
+        "winnerMeanLogLoss": 0.2114,
+        "pairModalAccuracy": 0.8701,
+        "pairMeanBrier": 0.2333,
+        "pairMeanLogLoss": 1.1949,
+        "zeroProbabilityObservedPairs": 6
+      },
+      "r1_concentration72": {
+        "winnerModalAccuracy": 0.9310,
+        "winnerMeanBrier": 0.1060,
+        "winnerMeanLogLoss": 0.2113,
+        "pairModalAccuracy": 0.9610,
+        "pairMeanBrier": 0.0718,
+        "pairMeanLogLoss": 0.2738,
+        "zeroProbabilityObservedPairs": 1
+      },
+      "u1_concentration4": {
+        "winnerModalAccuracy": 0.9195,
+        "winnerMeanBrier": 0.1068,
+        "winnerMeanLogLoss": 0.1718,
+        "pairModalAccuracy": 0.9610,
+        "pairMeanBrier": 0.0511,
+        "pairMeanLogLoss": 0.0788,
+        "zeroProbabilityObservedPairs": 0
+      }
+    }
+  },
+  "researchSupportGate": {
+    "result": "pass",
+    "equalAllocationAllMetricChecksPassed": true,
+    "proportionalAllocationAllMetricChecksPassed": true,
+    "sameQualitativeConclusionUnderSensitivity": true,
+    "winnerLogLossImprovementVsR1_72": 0.2530463557765463,
+    "pairLogLossAdvantageVsR0_C0": 1.0398634701307288,
+    "pairBrierChangeVsR1_72": -0.025903743360000023,
+    "winnerBrierChangeVsR1_72": -0.002914623085714302,
+    "pairModalAccuracyDropPpVsR1_72": 0.0,
+    "catastrophicTargetReversal": false
+  },
+  "productionCandidateGate": {
+    "result": "fail",
+    "winnerLogLossNoWorseThanR0_C0": true,
+    "winnerBrierTolerancePassed": false,
+    "winnerBrierMarginAboveR0_C0": 0.016507839542857117,
+    "winnerBrierMaximumAllowedMargin": 0.01,
+    "pairLogLossBetterThanR0_C0": true,
+    "pairBrierBetterThanR0_C0": true,
+    "zeroProbabilityObservedPairsNonIncreasingVsR1_72": true
+  },
+  "adjudication": {
+    "historicallySupportedUncertaintyCorrection": true,
+    "globalConcentration4ProductionReady": false,
+    "globalConcentration72SupportedForCandidateResolvedArchitecture": false,
+    "extendGridBelow4PostHoc": false,
+    "separateGoverned2026ShadowAuthorised": false,
+    "productionPromotionAuthorised": false,
+    "canonicalProdModified": false,
+    "nextQuestion": "Test a preregistered richer preference-uncertainty structure only if it is historically identifiable; do not choose a post-hoc intermediate or lower global concentration from the 2026 forecast effect."
+  }
+}
