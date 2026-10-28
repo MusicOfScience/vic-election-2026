@@ -1,0 +1,73 @@
+name: ONP spatial persistence calibration
+
+on:
+  push:
+    branches:
+      - "codex/onp-spatial-persistence-calibration"
+    paths:
+      - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md"
+      - "model/scripts/calibrate_onp_spatial_persistence.py"
+      - ".github/workflows/onp-spatial-persistence-calibration.yml"
+  pull_request:
+    paths:
+      - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md"
+      - "model/scripts/calibrate_onp_spatial_persistence.py"
+      - ".github/workflows/onp-spatial-persistence-calibration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install reproducible model environment
+        run: python -m pip install -c model/constraints.txt -e './model'
+      - name: Compile calibration script
+        run: python -m py_compile model/scripts/calibrate_onp_spatial_persistence.py
+      - name: Run historical calibration only
+        run: PYTHONPATH="model/scripts:model/src" python model/scripts/calibrate_onp_spatial_persistence.py
+      - name: Validate frozen pre-2026 calibration artefact
+        run: |
+          python - <<'PY'
+          import json
+          import pandas as pd
+          surface = pd.read_csv('model/data/validation/onp-senate-spatial-surfaces-2016-2025.csv')
+          bootstrap = pd.read_csv('model/data/validation/onp-spatial-persistence-bootstrap.csv')
+          report = json.load(open('metadata/onp-spatial-persistence-calibration-2026-10-28.json'))
+          assert len(surface) == 352
+          assert set(surface.year.unique()) == {2016, 2019, 2022, 2025}
+          assert surface.groupby('year').district_name.nunique().eq(88).all()
+          assert len(bootstrap) == 5000
+          assert bootstrap[['aTarget','kappaTarget']].apply(lambda s: s.between(0, 1).all()).all()
+          assert report['status'] == 'frozen-pre-2026-seat-run'
+          assert report['governance']['assembly2026SimulatorExecuted'] is False
+          assert report['governance']['assembly2026OutputsRead'] is False
+          assert report['governance']['royMorganRead'] is False
+          assert report['bootstrap']['draws'] == 5000
+          print({
+              'point': report['pooledPointEstimate'],
+              'aTarget': report['bootstrap']['summary']['aTarget'],
+              'kappaTarget': report['bootstrap']['summary']['kappaTarget'],
+          })
+          PY
+      - name: Hash calibration outputs
+        run: |
+          sha256sum \
+            model/data/validation/onp-senate-spatial-surfaces-2016-2025.csv \
+            model/data/validation/onp-spatial-persistence-bootstrap.csv \
+            metadata/onp-spatial-persistence-calibration-2026-10-28.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: onp-spatial-persistence-calibration
+          path: |
+            model/data/validation/onp-senate-spatial-surfaces-2016-2025.csv
+            model/data/validation/onp-spatial-persistence-bootstrap.csv
+            metadata/onp-spatial-persistence-calibration-2026-10-28.json
+          retention-days: 90
