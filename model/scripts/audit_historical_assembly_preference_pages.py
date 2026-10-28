@@ -14,7 +14,8 @@ import hashlib
 import html
 import json
 import re
-from collections import Counter, defaultdict
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin
@@ -86,11 +87,10 @@ def fetch(url: str, cache: Path) -> bytes:
 
 
 def distribution_link(source: str, base_url: str) -> str | None:
-    patterns = (
+    for pattern in (
         r'href=["\']([^"\']*distribution[^"\']*district\.html)["\']',
         r'href=["\']([^"\']*distribution[^"\']*\.html)["\']',
-    )
-    for pattern in patterns:
+    ):
         match = re.search(pattern, source, flags=re.I)
         if match:
             return urljoin(base_url, match.group(1))
@@ -101,9 +101,7 @@ def classify_label(value: str) -> str:
     text = norm(value)
     if not text:
         return "blank"
-    if "first" in text and "pref" in text:
-        return "first-preference"
-    if "1st" in text and "pref" in text:
+    if ("first" in text or "1st" in text) and "pref" in text:
         return "first-preference"
     if "final total" in text:
         return "final-total"
@@ -118,78 +116,77 @@ def classify_label(value: str) -> str:
     return "other"
 
 
-def audit_cycle(year: int, cache: Path) -> tuple[list[dict], dict]:
-    final_path = ROOT / f"model/data/processed/vec_{year}_assembly_final_pairs.csv"
-    if not final_path.exists():
-        raise FileNotFoundError(final_path)
-    rows = list(csv.DictReader(final_path.open(encoding="utf-8")))
-    district_rows: list[dict] = []
-    template_counts: Counter[str] = Counter()
-    label_counts: Counter[str] = Counter()
-    failures: list[dict] = []
-
-    for row in rows:
-        district = row["district_name"]
-        source_url = row.get("source_url") or row.get("outcome_source_url")
-        if not source_url:
-            failures.append({"district": district, "stage": "source-url", "error": "missing source URL"})
-            continue
-        try:
-            source_payload = fetch(source_url, cache / str(year))
-            source = source_payload.decode("utf-8", "replace")
-            link = distribution_link(source, source_url)
-            # Some governed final-pair artefacts already point at a distribution page.
-            outcome_url = row.get("outcome_source_url") or ""
-            if link is None and "distribution" in outcome_url.casefold():
-                link = outcome_url
-            if link is None:
-                district_rows.append({
-                    "district": district,
-                    "source_url": source_url,
-                    "source_sha256": sha(source_payload),
-                    "distribution_url": None,
-                    "status": "no-distribution-link",
-                })
-                continue
-            dist_payload = fetch(link, cache / str(year))
-            parser = TableParser()
-            parser.feed(dist_payload.decode("utf-8", "replace"))
-            candidates = []
-            for table_index, table in enumerate(parser.tables):
-                if len(table) < 2:
-                    continue
-                width = max(len(r) for r in table)
-                first = table[0]
-                first_cell = first[0] if first else ""
-                labels = [r[0] if r else "" for r in table[1:]]
-                classes = [classify_label(x) for x in labels]
-                score = int((not first_cell.strip()) and width >= 3) + int("final-total" in classes) + int(len(table) >= 4)
-                if score >= 2:
-                    sig = f"w{width}:rows{len(table)}:first={classify_label(first_cell)}:labels={','.join(classes)}"
-                    template_counts[sig] += 1
-                    label_counts.update(classes)
-                    candidates.append({
-                        "table_index": table_index,
-                        "width": width,
-                        "rows": len(table),
-                        "header_cells": first,
-                        "row_labels": labels,
-                        "row_label_classes": classes,
-                        "signature": sig,
-                    })
-            district_rows.append({
+def audit_one(row: dict[str, str], year: int, cache: Path) -> dict:
+    district = row["district_name"]
+    source_url = row.get("source_url") or row.get("outcome_source_url")
+    if not source_url:
+        return {"district": district, "status": "failure", "stage": "source-url", "error": "missing source URL"}
+    try:
+        source_payload = fetch(source_url, cache / str(year))
+        source = source_payload.decode("utf-8", "replace")
+        link = distribution_link(source, source_url)
+        outcome_url = row.get("outcome_source_url") or ""
+        if link is None and "distribution" in outcome_url.casefold():
+            link = outcome_url
+        if link is None:
+            return {
                 "district": district,
                 "source_url": source_url,
                 "source_sha256": sha(source_payload),
-                "distribution_url": link,
-                "distribution_sha256": sha(dist_payload),
-                "status": "distribution-fetched",
-                "tables_total": len(parser.tables),
-                "candidate_distribution_tables": candidates,
-            })
-        except Exception as exc:  # audit must record rather than silently drop
-            failures.append({"district": district, "stage": "fetch-or-parse", "error": f"{type(exc).__name__}: {exc}"})
+                "distribution_url": None,
+                "status": "no-distribution-link",
+            }
+        dist_payload = fetch(link, cache / str(year))
+        parser = TableParser()
+        parser.feed(dist_payload.decode("utf-8", "replace"))
+        candidates = []
+        for table_index, table in enumerate(parser.tables):
+            if len(table) < 2:
+                continue
+            width = max(len(r) for r in table)
+            first = table[0]
+            first_cell = first[0] if first else ""
+            labels = [r[0] if r else "" for r in table[1:]]
+            classes = [classify_label(x) for x in labels]
+            score = int((not first_cell.strip()) and width >= 3) + int("final-total" in classes) + int(len(table) >= 4)
+            if score >= 2:
+                candidates.append({
+                    "table_index": table_index,
+                    "width": width,
+                    "rows": len(table),
+                    "header_cells": first,
+                    "row_labels": labels,
+                    "row_label_classes": classes,
+                    "signature": f"w{width}:rows{len(table)}:first={classify_label(first_cell)}:labels={','.join(classes)}",
+                })
+        return {
+            "district": district,
+            "source_url": source_url,
+            "source_sha256": sha(source_payload),
+            "distribution_url": link,
+            "distribution_sha256": sha(dist_payload),
+            "status": "distribution-fetched",
+            "tables_total": len(parser.tables),
+            "candidate_distribution_tables": candidates,
+        }
+    except Exception as exc:
+        return {"district": district, "status": "failure", "stage": "fetch-or-parse", "error": f"{type(exc).__name__}: {exc}"}
 
+
+def audit_cycle(year: int, cache: Path, workers: int) -> tuple[list[dict], dict]:
+    final_path = ROOT / f"model/data/processed/vec_{year}_assembly_final_pairs.csv"
+    rows = list(csv.DictReader(final_path.open(encoding="utf-8")))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        district_rows = list(pool.map(lambda row: audit_one(row, year, cache), rows))
+    district_rows.sort(key=lambda row: row["district"])
+
+    template_counts: Counter[str] = Counter()
+    label_counts: Counter[str] = Counter()
+    for row in district_rows:
+        for table in row.get("candidate_distribution_tables", []):
+            template_counts[table["signature"]] += 1
+            label_counts.update(table["row_label_classes"])
+    failures = [r for r in district_rows if r.get("status") == "failure"]
     summary = {
         "year": year,
         "district_rows": len(rows),
@@ -208,12 +205,13 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache-dir", type=Path, default=ROOT / ".cache/irv-preference-audit")
     ap.add_argument("--output", type=Path, required=True)
+    ap.add_argument("--workers", type=int, default=8)
     args = ap.parse_args()
 
     all_rows: dict[str, list[dict]] = {}
     summaries = []
     for year in CYCLES:
-        rows, summary = audit_cycle(year, args.cache_dir)
+        rows, summary = audit_cycle(year, args.cache_dir, args.workers)
         all_rows[str(year)] = rows
         summaries.append(summary)
         print(json.dumps(summary, sort_keys=True))
