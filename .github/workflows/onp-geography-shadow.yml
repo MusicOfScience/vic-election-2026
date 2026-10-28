@@ -12,6 +12,7 @@ on:
       - "model/scripts/onp_geography_shadow_common.py"
       - "model/scripts/run_onp_geography_shadow.py"
       - "model/scripts/run_onp_2025_geography_shadow.py"
+      - "model/scripts/run_onp_2025_residual_retention_shadow.py"
       - ".github/workflows/onp-geography-shadow.yml"
   pull_request:
     paths:
@@ -22,6 +23,7 @@ on:
       - "model/scripts/onp_geography_shadow_common.py"
       - "model/scripts/run_onp_geography_shadow.py"
       - "model/scripts/run_onp_2025_geography_shadow.py"
+      - "model/scripts/run_onp_2025_residual_retention_shadow.py"
       - ".github/workflows/onp-geography-shadow.yml"
   workflow_dispatch:
     inputs:
@@ -52,7 +54,8 @@ jobs:
             model/scripts/compare_onp_geography_2022_2025.py \
             model/scripts/onp_geography_shadow_common.py \
             model/scripts/run_onp_geography_shadow.py \
-            model/scripts/run_onp_2025_geography_shadow.py
+            model/scripts/run_onp_2025_geography_shadow.py \
+            model/scripts/run_onp_2025_residual_retention_shadow.py
       - name: Build official AEC 2025 ONP Assembly surface
         run: python model/scripts/build_aec_2025_onp_geography.py
       - name: Audit physical-point crosswalk on AEC 2022
@@ -96,27 +99,36 @@ jobs:
         run: |
           simulations="${{ inputs.simulations }}"
           if [[ -z "${simulations}" ]]; then simulations="5000"; fi
-          PYTHONPATH="model/src" python model/scripts/run_onp_geography_shadow.py --simulations "${simulations}"
+          PYTHONPATH="model/src:model/scripts" python model/scripts/run_onp_geography_shadow.py --simulations "${simulations}"
       - name: Run Phase B AEC-2025 challenger matrix
         shell: bash
         run: |
           simulations="${{ inputs.simulations }}"
           if [[ -z "${simulations}" ]]; then simulations="5000"; fi
-          PYTHONPATH="model/src" python model/scripts/run_onp_2025_geography_shadow.py --simulations "${simulations}"
+          PYTHONPATH="model/src:model/scripts" python model/scripts/run_onp_2025_geography_shadow.py --simulations "${simulations}"
+      - name: Run Phase B residual-retention challenger
+        shell: bash
+        run: |
+          simulations="${{ inputs.simulations }}"
+          if [[ -z "${simulations}" ]]; then simulations="5000"; fi
+          PYTHONPATH="model/src:model/scripts" python model/scripts/run_onp_2025_residual_retention_shadow.py --simulations "${simulations}"
       - name: Validate geography treatment isolation
         run: |
           python - <<'PY'
           import json
-          a = json.load(open('model/data/validation/onp-geography-shadow-2022-surface.json'))
-          b = json.load(open('model/data/validation/onp-geography-shadow-2025-surface.json'))
-          for label, report in [('phaseA', a), ('phaseB', b)]:
+          reports = {
+              'phaseA': json.load(open('model/data/validation/onp-geography-shadow-2022-surface.json')),
+              'phaseB': json.load(open('model/data/validation/onp-geography-shadow-2025-surface.json')),
+              'phaseBResidual': json.load(open('model/data/validation/onp-geography-shadow-2025-residual-retention.json')),
+          }
+          for label, report in reports.items():
               control = report['treatments']['1.0'] if label == 'phaseA' else report['control']
               target = control['weightedMeanDistrictOnpPrimary']
               treatments = report['treatments']
               for treatment, payload in treatments.items():
                   calibration = payload['centralVoteCalibration']
                   assert calibration['absoluteResidualPercentagePoints'] < 1e-8
-                  # Central vote is exactly matched by construction.  Monte Carlo
+                  # Central vote is exactly matched by construction. Monte Carlo
                   # weighted district means may move slightly because shocks and
                   # softmax are nonlinear; >0.25pp is too large for an isolated
                   # geography treatment and must fail the shadow run.
@@ -132,7 +144,8 @@ jobs:
             metadata/aec-2022-point-crosswalk-audit.json \
             metadata/onp-geography-2022-2025-comparison.json \
             model/data/validation/onp-geography-shadow-2022-surface.json \
-            model/data/validation/onp-geography-shadow-2025-surface.json
+            model/data/validation/onp-geography-shadow-2025-surface.json \
+            model/data/validation/onp-geography-shadow-2025-residual-retention.json
       - uses: actions/upload-artifact@v4
         with:
           name: onp-geography-shadow
@@ -143,4 +156,5 @@ jobs:
             metadata/onp-geography-2022-2025-comparison.json
             model/data/validation/onp-geography-shadow-2022-surface.json
             model/data/validation/onp-geography-shadow-2025-surface.json
+            model/data/validation/onp-geography-shadow-2025-residual-retention.json
           retention-days: 90
