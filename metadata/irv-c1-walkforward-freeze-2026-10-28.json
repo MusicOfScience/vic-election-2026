@@ -1,0 +1,72 @@
+{
+  "evidence_diagnostics": {
+    "admissible_event_count": 7,
+    "all_clean_events_by_source_family": {
+      "GRN": 10,
+      "OTH_IND": 153
+    },
+    "excluded_reason_counts": {
+      "heterogeneous-source-family": 153,
+      "multiple-candidates-in-collapsed-destination-family": 3
+    }
+  },
+  "evidence_sha256": "1d2d8545a70c59245a94e0868fb1b155026a6d344f13cb6925671cf0c9cac392",
+  "guardrails": {
+    "historical_final_pair_or_winner_outcomes_loaded": false,
+    "uses_2026_forecast_output": false,
+    "uses_target_cycle_transfer_events": false
+  },
+  "model": "C1-preregistered-clean-original-parcel-walk-forward",
+  "party_order": ["ALP", "LIB_NAT", "ONP", "GRN", "OTH_IND"],
+  "rules": {
+    "OTH_IND_empirical_row_allowed": false,
+    "broad_fallback_concentration": 2.0,
+    "concentration_grid": [2, 4, 8, 12, 18, 24, 36, 48, 72, 108, 144],
+    "minimum_events": 12,
+    "minimum_training_elections": 2,
+    "multiple_candidates_in_same_destination_family_allowed": false,
+    "within_source_family_transfer_allowed": false
+  },
+  "schemaVersion": 1,
+  "source_freeze": {
+    "workflow_run": 40685079236,
+    "artifact_id": 12813434146,
+    "artifact_digest": "sha256:490cbe4b8e3c6d1a30c0757cd750c2345049e8254e44246c413c42c697e9e4fd",
+    "freeze_candidate_sha256": "056127783aebb1bea4ed0f5ab20b0685ece4c98d3e82b1ecacd620c0f8b6e78c"
+  },
+  "targets": {
+    "2014": {
+      "rows": {
+        "ALP": {"concentration": 2.0, "mean": [0.0, 0.25, 0.25, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "GRN": {"concentration": 2.0, "mean": [0.25, 0.25, 0.25, 0.0, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 1, "training_years": [2010]},
+        "LIB_NAT": {"concentration": 2.0, "mean": [0.25, 0.0, 0.25, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "ONP": {"concentration": 2.0, "mean": [0.25, 0.25, 0.0, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "OTH_IND": {"concentration": 2.0, "mean": [0.25, 0.25, 0.25, 0.25, 0.0], "reason": "OTH_IND-is-semantically-heterogeneous", "status": "broad-fallback", "training_events": 0, "training_years": []}
+      },
+      "training_event_count": 1,
+      "training_years": [2010]
+    },
+    "2018": {
+      "rows": {
+        "ALP": {"concentration": 2.0, "mean": [0.0, 0.25, 0.25, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "GRN": {"concentration": 2.0, "mean": [0.25, 0.25, 0.25, 0.0, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 1, "training_years": [2010]},
+        "LIB_NAT": {"concentration": 2.0, "mean": [0.25, 0.0, 0.25, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "ONP": {"concentration": 2.0, "mean": [0.25, 0.25, 0.0, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "OTH_IND": {"concentration": 2.0, "mean": [0.25, 0.25, 0.25, 0.25, 0.0], "reason": "OTH_IND-is-semantically-heterogeneous", "status": "broad-fallback", "training_events": 0, "training_years": []}
+      },
+      "training_event_count": 1,
+      "training_years": [2010]
+    },
+    "2022": {
+      "rows": {
+        "ALP": {"concentration": 2.0, "mean": [0.0, 0.25, 0.25, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "GRN": {"concentration": 2.0, "mean": [0.25, 0.25, 0.25, 0.0, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 7, "training_years": [2010, 2018]},
+        "LIB_NAT": {"concentration": 2.0, "mean": [0.25, 0.0, 0.25, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "ONP": {"concentration": 2.0, "mean": [0.25, 0.25, 0.0, 0.25, 0.25], "reason": "fewer-than-12-admissible-events", "status": "broad-fallback", "training_events": 0, "training_years": []},
+        "OTH_IND": {"concentration": 2.0, "mean": [0.25, 0.25, 0.25, 0.25, 0.0], "reason": "OTH_IND-is-semantically-heterogeneous", "status": "broad-fallback", "training_events": 0, "training_years": []}
+      },
+      "training_event_count": 7,
+      "training_years": [2010, 2018]
+    }
+  }
+}
