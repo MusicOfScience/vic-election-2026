@@ -1,0 +1,75 @@
+name: IRV C0 historical score
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/irv-final-pair-calibration
+    paths:
+      - 'model/scripts/score_irv_c0_historical.py'
+      - 'docs/IRV_FINAL_PAIR_CALIBRATION_PROTOCOL.md'
+      - 'docs/IRV_FINAL_PAIR_CALIBRATION_AMENDMENT_1.md'
+      - '.github/workflows/irv-c0-score.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install model environment
+        run: python -m pip install -c model/constraints.txt -e './model[dev]'
+      - name: Score C0 conditional historical IRV
+        run: |
+          python model/scripts/score_irv_c0_historical.py \
+            --simulations 5000 \
+            --concentration 72 \
+            --seed 20261028 \
+            --output artifacts/irv/c0-historical-score.json
+      - name: Validate corrected scoring universe
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('artifacts/irv/c0-historical-score.json')
+          score = json.loads(path.read_text())
+          assert score['schemaVersion'] == 2
+          assert score['model'] == 'C0-current-production-preference-mechanism'
+          assert score['guardrails']['uses_2026_forecast_output'] is False
+          assert score['guardrails']['historical_outcomes_are_scoring_only'] is True
+          assert score['guardrails']['two_candidate_preferred_fallbacks_score_as_irv_pairs'] is False
+          assert score['overall']['districts_scored_winner'] == 351
+          assert score['overall']['districts_scored_final_pair'] > 0
+          # Same-family observed final pairs are retained deliberately. They are
+          # structural diagnostics of information lost by the five-family
+          # aggregation, not evidence to delete in order to make C0 scoreable.
+          assert score['overall']['observed_same_family_final_pairs'] >= 0
+          print(json.dumps(score['overall'], sort_keys=True))
+          for cycle in score['cycles']:
+              print(json.dumps({
+                  'cycle': cycle['cycle'],
+                  'districts_scored_winner': cycle['districts_scored_winner'],
+                  'districts_scored_final_pair': cycle['districts_scored_final_pair'],
+                  'observed_same_family_final_pairs': cycle['observed_same_family_final_pairs'],
+                  'winner_modal_accuracy': cycle['winner_modal_accuracy'],
+                  'winner_mean_brier': cycle['winner_mean_brier'],
+                  'winner_mean_log_loss': cycle['winner_mean_log_loss'],
+                  'pair_modal_accuracy': cycle['pair_modal_accuracy'],
+                  'pair_mean_brier': cycle['pair_mean_brier'],
+                  'pair_mean_log_loss': cycle['pair_mean_log_loss'],
+              }, sort_keys=True))
+          PY
+      - name: Hash C0 benchmark
+        run: sha256sum artifacts/irv/c0-historical-score.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: irv-c0-historical-score
+          path: artifacts/irv/c0-historical-score.json
+          if-no-files-found: error
