@@ -38,7 +38,9 @@ function normaliseUrl(href, baseUrl) {
 
 function isoDate(value) {
   if (!value) return null;
-  const exact = String(value).match(/\b(20\d{2}-\d{2}-\d{2})\b/);
+  // Preserve the publisher's explicit calendar date. Converting an offset-aware
+  // datetime to UTC first can move Australian publication dates back one day.
+  const exact = String(value).match(/(?:^|\D)(20\d{2}-\d{2}-\d{2})(?=\D|$)/);
   if (exact) return exact[1];
   const parsed = Date.parse(String(value));
   return Number.isFinite(parsed) ? new Date(parsed).toISOString().slice(0, 10) : null;
