@@ -8,6 +8,7 @@ on:
     paths:
       - 'model/scripts/score_irv_c0_historical.py'
       - 'docs/IRV_FINAL_PAIR_CALIBRATION_PROTOCOL.md'
+      - 'docs/IRV_FINAL_PAIR_CALIBRATION_AMENDMENT_1.md'
       - '.github/workflows/irv-c0-score.yml'
 
 permissions:
@@ -31,6 +32,39 @@ jobs:
             --concentration 72 \
             --seed 20261028 \
             --output artifacts/irv/c0-historical-score.json
+      - name: Validate corrected scoring universe
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('artifacts/irv/c0-historical-score.json')
+          score = json.loads(path.read_text())
+          assert score['schemaVersion'] == 2
+          assert score['model'] == 'C0-current-production-preference-mechanism'
+          assert score['guardrails']['uses_2026_forecast_output'] is False
+          assert score['guardrails']['historical_outcomes_are_scoring_only'] is True
+          assert score['guardrails']['two_candidate_preferred_fallbacks_score_as_irv_pairs'] is False
+          assert score['overall']['districts_scored_winner'] == 351
+          assert score['overall']['observed_same_family_final_pairs'] == 0
+          assert score['overall']['districts_scored_final_pair'] > 0
+          assert all(cycle['observed_same_family_final_pairs'] == 0 for cycle in score['cycles'])
+          print(json.dumps(score['overall'], sort_keys=True))
+          for cycle in score['cycles']:
+              print(json.dumps({
+                  'cycle': cycle['cycle'],
+                  'districts_scored_winner': cycle['districts_scored_winner'],
+                  'districts_scored_final_pair': cycle['districts_scored_final_pair'],
+                  'winner_modal_accuracy': cycle['winner_modal_accuracy'],
+                  'winner_mean_brier': cycle['winner_mean_brier'],
+                  'winner_mean_log_loss': cycle['winner_mean_log_loss'],
+                  'pair_modal_accuracy': cycle['pair_modal_accuracy'],
+                  'pair_mean_brier': cycle['pair_mean_brier'],
+                  'pair_mean_log_loss': cycle['pair_mean_log_loss'],
+              }, sort_keys=True))
+          PY
+      - name: Hash C0 benchmark
+        run: sha256sum artifacts/irv/c0-historical-score.json
       - uses: actions/upload-artifact@v4
         with:
           name: irv-c0-historical-score
