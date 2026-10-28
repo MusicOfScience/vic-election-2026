@@ -1,0 +1,68 @@
+name: ONP geography House-Senate robustness
+
+on:
+  push:
+    branches:
+      - "codex/phon-geographic-heterogeneity-shadow"
+    paths:
+      - "model/scripts/build_aec_2025_onp_geography.py"
+      - "model/scripts/build_aec_2025_onp_senate_robustness.py"
+      - ".github/workflows/onp-geography-robustness.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  robustness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install reproducible model environment
+        run: python -m pip install -c model/constraints.txt -e './model'
+      - name: Compile robustness scripts
+        run: |
+          python -m py_compile \
+            model/scripts/build_aec_2025_onp_geography.py \
+            model/scripts/build_aec_2025_onp_senate_robustness.py
+      - name: Build 2025 House surface
+        run: python model/scripts/build_aec_2025_onp_geography.py
+      - name: Build Senate robustness surface and compare
+        run: python model/scripts/build_aec_2025_onp_senate_robustness.py
+      - name: Validate robustness output
+        run: |
+          python - <<'PY'
+          import json
+          import pandas as pd
+          senate = pd.read_csv('model/data/validation/aec_2025_onp_senate_state_district_surface.csv')
+          audit = json.load(open('metadata/onp-geography-2025-house-senate-robustness.json'))
+          assert len(senate) == 88 and senate['district_name'].nunique() == 88
+          assert audit['districts'] == 88
+          assert audit['senateDivisionFiles'] == 38
+          assert 0.02 < audit['locatedStateOnpShare'] < 0.10
+          print({
+              'senateLocatedStateOnpShare': audit['locatedStateOnpShare'],
+              'houseSenatePearson': audit['pearsonHouseSenateSignalCorrelation'],
+              'houseSenateSpearman': audit['spearmanHouseSenateRankCorrelation'],
+              'slope': audit['linearFitSenateOnHouse']['slope'],
+              'rSquared': audit['linearFitSenateOnHouse']['rSquared'],
+          })
+          PY
+      - name: Hash outputs
+        run: |
+          sha256sum \
+            model/data/validation/aec_2025_onp_state_district_surface.csv \
+            model/data/validation/aec_2025_onp_senate_state_district_surface.csv \
+            metadata/onp-geography-2025-house-senate-robustness.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: onp-geography-house-senate-robustness
+          path: |
+            model/data/validation/aec_2025_onp_state_district_surface.csv
+            model/data/validation/aec_2025_onp_senate_state_district_surface.csv
+            metadata/onp-geography-2025-house-senate-robustness.json
+          retention-days: 90
