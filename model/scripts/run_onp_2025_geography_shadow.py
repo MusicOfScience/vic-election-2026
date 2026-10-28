@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Run the official-data AEC-2025 ONP geographic challenger against current geography.
 
-Shadow research only. The canonical model files are never written. The runner
-replaces only the district ONP spatial propensity returned by build_assembly_seed
-and uses common random numbers with the current AEC-2022 control.
+Shadow research only. The canonical model files are never written. Each 2025
+spatial treatment is calibrated with one common additive ONP logit intercept so
+its central enrolment-weighted statewide ONP primary matches the current 2022
+geography control. Common random numbers are used throughout.
 """
 from __future__ import annotations
 
@@ -18,6 +19,7 @@ import yaml
 
 import vicforecast.forecast_2026 as forecast_module
 from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
+from onp_geography_shadow_common import conserve_central_onp_primary, central_weighted_onp_primary
 
 
 NEW_SURFACE = "data/validation/aec_2025_onp_state_district_surface.csv"
@@ -32,20 +34,15 @@ def _current_seed(model_root: Path, config: dict) -> pd.DataFrame:
     return forecast_module.build_assembly_seed(model_root, config).copy()
 
 
-def _challenger_seed(model_root: Path, config: dict, lam: float) -> pd.DataFrame:
-    seed = _current_seed(model_root, config)
+def _challenger_seed(model_root: Path, config: dict, lam: float, current_seed: pd.DataFrame) -> pd.DataFrame:
+    seed = current_seed.copy()
     challenger = pd.read_csv(model_root / NEW_SURFACE)
     seed_keys = seed[["district_name"]].copy()
     seed_keys["district_key"] = seed_keys.district_name.map(_normalise_name)
     challenger = challenger[["district_name", "onp_log_ratio_to_located_state"]].copy()
     challenger["district_key"] = challenger.district_name.map(_normalise_name)
     challenger = challenger.rename(columns={"district_name": "challenger_district_name"})
-    merged = seed_keys.merge(
-        challenger,
-        on="district_key",
-        how="left",
-        validate="one_to_one",
-    )
+    merged = seed_keys.merge(challenger, on="district_key", how="left", validate="one_to_one")
     if merged["onp_log_ratio_to_located_state"].isna().any() or len(merged) != len(seed):
         missing = merged.loc[merged["onp_log_ratio_to_located_state"].isna(), "district_name"].tolist()
         raise ValueError(f"2025 challenger is missing model districts: {missing}")
@@ -54,22 +51,13 @@ def _challenger_seed(model_root: Path, config: dict, lam: float) -> pd.DataFrame
     weights /= weights.sum()
     current = seed["onp_local_log"].to_numpy(float)
     current_centre = float(np.sum(current * weights))
-
     raw = merged["onp_log_ratio_to_located_state"].to_numpy(float)
     raw_centre = float(np.sum(raw * weights))
-    centred = raw - raw_centre
-    seed["onp_local_log"] = current_centre + float(lam) * centred
+    seed["onp_local_log"] = current_centre + float(lam) * (raw - raw_centre)
     return seed
 
 
-def _run(model_root: Path, *, simulations: int, seed: int, challenger_lambda: float | None):
-    config = forecast_module.load_forecast_config(model_root)
-    replacement = (
-        _current_seed(model_root, config)
-        if challenger_lambda is None
-        else _challenger_seed(model_root, config, challenger_lambda)
-    )
-
+def _run_with_seed(model_root: Path, replacement: pd.DataFrame, *, simulations: int, seed: int):
     def shadow_builder(root, config=None):
         return replacement.copy()
 
@@ -85,11 +73,12 @@ def _weighted_onp_primary(result, seed_frame: pd.DataFrame) -> float:
     return float(np.sum(weights * primaries))
 
 
-def _summary(result, seed_frame: pd.DataFrame) -> dict:
+def _summary(result, seed_frame: pd.DataFrame, calibration: dict) -> dict:
     chamber = result.chamber.set_index("party")
     return {
         "hungProbability": float(result.chamber.hung_probability.iloc[0]),
         "weightedMeanDistrictOnpPrimary": _weighted_onp_primary(result, seed_frame),
+        "centralVoteCalibration": calibration,
         "parties": {
             party: {
                 "meanSeats": float(chamber.loc[party, "mean"]),
@@ -125,16 +114,11 @@ def _compare(control: dict, challenger: dict) -> dict:
     ranked = sorted(rows, key=lambda row: abs(row["deltaWinONP"]), reverse=True)
     return {
         "deltaHungProbability": challenger["hungProbability"] - control["hungProbability"],
-        "deltaWeightedMeanDistrictOnpPrimary": (
-            challenger["weightedMeanDistrictOnpPrimary"] - control["weightedMeanDistrictOnpPrimary"]
-        ),
+        "deltaWeightedMeanDistrictOnpPrimary": challenger["weightedMeanDistrictOnpPrimary"] - control["weightedMeanDistrictOnpPrimary"],
         "partyDeltas": {
             party: {
                 "meanSeats": challenger["parties"][party]["meanSeats"] - control["parties"][party]["meanSeats"],
-                "majorityProbability": (
-                    challenger["parties"][party]["majorityProbability"]
-                    - control["parties"][party]["majorityProbability"]
-                ),
+                "majorityProbability": challenger["parties"][party]["majorityProbability"] - control["parties"][party]["majorityProbability"],
             }
             for party in PARTIES
         },
@@ -149,26 +133,36 @@ def _compare(control: dict, challenger: dict) -> dict:
 def run_shadow(repo_root: Path, *, simulations: int) -> dict:
     model_root = repo_root / "model"
     config = yaml.safe_load((model_root / "config/experimental_forecast.yml").read_text())
-    seed = int(config["seed"])
+    seed_value = int(config["seed"])
     current_seed = _current_seed(model_root, config)
-    control_result = _run(model_root, simulations=simulations, seed=seed, challenger_lambda=None)
-    control = _summary(control_result, current_seed)
+    target = central_weighted_onp_primary(model_root, config, current_seed) * 100.0
+    control_result = _run_with_seed(model_root, current_seed, simulations=simulations, seed=seed_value)
+    control_calibration = {
+        "rule": "control geography; no calibration required",
+        "targetCentralWeightedPrimary": target,
+        "candidateBeforeCalibration": target,
+        "candidateAfterCalibration": target,
+        "additiveLogitOffset": 0.0,
+        "absoluteResidualPercentagePoints": 0.0,
+    }
+    control = _summary(control_result, current_seed, control_calibration)
 
     treatments = {}
     comparisons = {}
     for lam in TREATMENTS:
-        challenger_seed = _challenger_seed(model_root, config, lam)
-        result = _run(model_root, simulations=simulations, seed=seed, challenger_lambda=lam)
-        summary = _summary(result, challenger_seed)
+        raw = _challenger_seed(model_root, config, lam, current_seed)
+        calibrated, calibration = conserve_central_onp_primary(model_root, config, raw, current_seed)
+        result = _run_with_seed(model_root, calibrated, simulations=simulations, seed=seed_value)
+        summary = _summary(result, calibrated, calibration)
         treatments[str(lam)] = summary
         comparisons[str(lam)] = _compare(control, summary)
 
     return {
-        "schemaVersion": 2,
+        "schemaVersion": 3,
         "mode": "onp-aec-2025-geography-shadow",
         "asOf": str(config["as_of"]),
         "simulationsPerTreatment": simulations,
-        "seed": seed,
+        "seed": seed_value,
         "commonRandomNumbers": True,
         "canonicalModelInputsChanged": False,
         "canonicalForecastArtifactsWritten": False,
@@ -176,10 +170,8 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         "challengerSurface": "AEC 2025 House ordinary polling-place geography mapped to current Assembly districts",
         "districtJoinRule": "case-insensitive trimmed district name",
         "challengerLambdas": list(TREATMENTS),
-        "centringRule": (
-            "Each 2025 signal is enrolment-weight centred and shifted to the current surface's "
-            "enrolment-weighted mean log propensity before lambda scaling."
-        ),
+        "centralVoteConservation": True,
+        "conservationRule": "common additive ONP logit intercept solved per treatment at frozen canonical latent mean",
         "control": control,
         "treatments": treatments,
         "comparisonsVsCurrent": comparisons,
@@ -196,10 +188,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--simulations", type=int, default=5000)
-    parser.add_argument(
-        "--output",
-        default="model/data/validation/onp-geography-shadow-2025-surface.json",
-    )
+    parser.add_argument("--output", default="model/data/validation/onp-geography-shadow-2025-surface.json")
     args = parser.parse_args()
     repo_root = args.repo_root.resolve()
     report = run_shadow(repo_root, simulations=args.simulations)
@@ -208,10 +197,7 @@ def main() -> None:
         output = repo_root / output
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
-    print(
-        f"AEC-2025 ONP geography shadow complete: {args.simulations} simulations x "
-        f"{1 + len(TREATMENTS)} runs; canonical artefacts untouched."
-    )
+    print(f"AEC-2025 ONP geography shadow complete: {args.simulations} simulations x {1 + len(TREATMENTS)} runs; central ONP vote conserved; canonical artefacts untouched.")
 
 
 if __name__ == "__main__":
