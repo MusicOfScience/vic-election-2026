@@ -1,155 +1,135 @@
 # PHON geographic heterogeneity — governed shadow workstream
 
-Updated: 2026-10-28
-Status: shadow-only research and validation; no canonical parameter or forecast change
+Updated: 28 October 2026  
+Status: completed shadow experiment; **no canonical parameter or forecast change**
 
 ## Purpose
 
-Recent Victorian polling places One Nation in the low-20s statewide, while independent electoral geography indicates that support is unlikely to be distributed uniformly across Assembly districts. This workstream tests whether updating and/or changing the persistence of PHON geography materially changes district final-pair composition or statewide government probabilities.
+This workstream tested whether the 2026 Assembly model's dedicated One Nation geography should be updated from its AEC 2022 federal ecological surface and whether the spatial signal's persistence is adequately calibrated.
 
-This document does **not** authorise a production change. The 8 October canonical forecast remains frozen. All tests described here are challenger/shadow analyses until they pass the repository's existing validation and owner-admission gates.
+The experiment is now adjudicated. Full results are in [`PHON_GEOGRAPHIC_HETEROGENEITY_RESULTS_2026-10-28.md`](PHON_GEOGRAPHIC_HETEROGENEITY_RESULTS_2026-10-28.md) and the machine-readable decision is in [`metadata/onp-geography-shadow-adjudication-2026-10-28.json`](../metadata/onp-geography-shadow-adjudication-2026-10-28.json).
 
-## Code-audit correction: the current model already contains PHON geography
+**Decision: retain the 2025 surface as a governed shadow challenger; do not alter canonical PROD.**
 
-Inspection of `model/src/vicforecast/forecast_2026.py` after opening this workstream found that the current Assembly model is **not geographically uniform for One Nation**. `build_assembly_seed()` derives `onp_local_log` from the AEC 2022 ecological surface with statewide contest coverage; the simulation then replaces the sparse 2022 Victorian state-ballot ONP pattern with that federal ecological propensity before applying regional and district shocks.
+## Code-audit correction: the current model already contains ONP geography
 
-This materially narrows the original risk statement. The live question is not whether to add geographic heterogeneity from zero. It is whether the **2022-derived PHON spatial surface is stale or mis-scaled for 2026**, and whether a 2025 federal-derived surface improves the model prospectively.
+The original investigation began from a concern that current ONP support might be spread too uniformly across Assembly districts. Inspection of `model/src/vicforecast/forecast_2026.py` showed that this framing was wrong: the model already derives a dedicated `onp_local_log` from the AEC 2022 federal ecological surface and substitutes it into the Assembly simulation.
 
-The current model therefore becomes the control. It must not be described as a uniform-PHON model.
+The live question therefore became whether the **2022-derived spatial surface is stale or mis-scaled for 2026**, not whether geography should be introduced from zero.
 
-## Revised model-risk statement
+A second architectural issue emerged. The general AEC local pattern is configured with `aec_local_pattern_shrinkage: 0.62` and an ONP generic `local_logit_limit: 0.45`. The simulation applies the generic limits and then overwrites the ONP column with its dedicated `onp_local_log`, whose construction is separately clipped at `-1.20` / `+1.10`. The current ONP treatment is therefore a deliberate special case whose full spatial persistence requires validation.
 
-Potential misspecification under investigation:
+## Shadow model
 
-> The current 2026 Assembly model may use a stale or incorrectly persistent One Nation spatial propensity because its dedicated PHON geography is derived from the 2022 AEC ecological surface. A 2025 federal-derived district surface may alter relative PHON strength, final-two composition and seat conversion in rural, regional and outer-suburban seats.
+For district `i` the conceptual treatment is:
 
-A secondary sensitivity question is how strongly the existing spatial deviations should persist. This can be tested immediately on the existing 2022 surface, but that test is diagnostic only and cannot substitute for constructing the 2025 challenger.
+`logit(ONP_i) = alpha_state + lambda * delta_i + candidate_i + local_shock_i + residual_i`
 
-## Independent evidence supporting investigation
+where `alpha_state` is the unchanged statewide latent ONP level, `delta_i` is relative district geographic propensity and `lambda` controls persistence / shrinkage. No current seat polling is used to construct `delta_i`.
 
-The shadow hypothesis is motivated by evidence that predates or is independent of the current four-seat Morgan observation:
+Because softmax transforms are nonlinear, every final treatment solves one common additive ONP logit intercept so its central enrolment-weighted ONP primary matches the current control. Geography therefore redistributes a fixed central statewide vote rather than silently changing the statewide vote level.
 
-1. 2025 federal Victorian results show a strong rural / outer-suburban PHON gradient and very weak inner-Melbourne support.
-2. Antony Green has independently mapped 2025 federal results onto current Victorian Assembly geography and identifies concentrated PHON propensity in rural/regional and selected outer-metropolitan districts.
-3. Seats & Swings has published 88-seat electoral- and demographic-geography estimates whose relative ordering is broadly consistent with the same spatial pattern.
-4. Roy Morgan's 21–26 October four-seat SMS poll is held out from fitting and treated as external validation-only evidence because of its small seat-level effective samples.
+## Phase A — current 2022 surface
 
-These sources are not all statistically independent: several derive from overlapping electoral geography. They must therefore not be counted as separate observations in a likelihood or used to inflate confidence.
+The current AEC-2022 ONP surface was run with common random numbers at `lambda = 0.00`, `0.50`, `0.62`, `0.75` and `1.00`. The `0.62` treatment is a config-consistency diagnostic because `0.62` is the AEC local-pattern shrinkage already declared for the general Assembly surface; it was not selected after seeing seat outputs.
 
-## Shadow specification
+The result is highly sensitive to `lambda`. At an effectively fixed statewide ONP vote, moving from `1.00` to `0.62` changes ONP expected Assembly seats from 16.28 to 11.26 and hung-parliament probability from 77.60% to 64.16%.
 
-For district `i`, represent the PHON latent primary conceptually as:
+This does not establish `0.62` as the correct ONP value. It establishes that the current `1.00` exception is a material model parameter requiring calibration.
 
-`logit(PHON_i) = alpha_state + lambda * delta_i + candidate_i + local_shock_i + residual_i`
+## Phase B — official 2025 challenger
 
-where:
+`model/scripts/build_aec_2025_onp_geography.py` constructs an 88-district 2025 challenger from final official AEC 2025 House first preferences by polling place, AEC polling-place coordinates and the 88 current `STATE_ASSEMBLY_2022` polygons from Vicmap Admin. Non-geolocatable declaration votes are reported rather than guessed into districts.
 
-- `alpha_state` is the statewide latent PHON level from the admitted statewide polling scenario;
-- `delta_i` is a pre-election district geographic propensity estimated independently of the validation targets;
-- `lambda` controls persistence/shrinkage of the spatial signal;
-- `candidate_i` is a separately governed candidate effect, centred at zero and not hand-tuned to current polling;
-- `local_shock_i` captures electorate-specific campaign movement;
-- `residual_i` captures remaining uncertainty.
+### Crosswalk falsification test
 
-The statewide level must be re-centred for each `lambda` so that introducing heterogeneity redistributes support rather than silently adding statewide PHON vote.
+The same physical polling-place assignment method was retrospectively applied to the 2022 federal election and compared with the repository's existing 2022 `allocated_ballots` surface:
 
-## Required shadow treatments
+- Pearson: **0.9882**
+- Spearman: **0.9860**
+- slope: **1.0188**
+- R²: **0.9765**
 
-### Phase A — existing-surface sensitivity
+The 2025 differences therefore cannot reasonably be dismissed as a simple spatial-join artefact.
 
-Run the current AEC-2022 PHON surface with common random numbers at:
+### 2022 → 2025 change
 
-1. `lambda = 0.00` — uniform spatial counterfactual;
-2. `lambda = 0.50` — strong shrinkage;
-3. `lambda = 0.75` — intermediate shrinkage;
-4. `lambda = 1.00` — current model treatment and therefore the control.
+Across all 88 districts:
 
-`model/scripts/run_onp_geography_shadow.py` implements this diagnostic without writing canonical forecast artefacts. It deliberately labels the source as the existing AEC-2022 ecological auxiliary. Results from Phase A can identify sensitivity to spatial persistence but cannot establish that the 2025 geography should replace the current surface.
+- Pearson: **0.8364**
+- Spearman: **0.7959**
+- fitted 2025-on-2022 slope: **0.7749**
+- R²: **0.6995**
 
-### Phase B — 2025 challenger
+There is strong broad persistence but material structured change.
 
-`model/scripts/build_aec_2025_onp_geography.py` now defines the primary reproducible challenger construction. It uses final official AEC **2025 House first preferences by polling place**, AEC polling-place coordinates, and the 88 `STATE_ASSEMBLY_2022` polygons exposed by Vicmap Admin. The builder performs the point-in-polygon crosswalk without adding a GIS dependency and emits both an 88-seat relative surface and a provenance/audit JSON.
+### House-versus-Senate robustness
 
-House results are used deliberately rather than Senate results for the primary challenger: the current 2022 ecological auxiliary is a federal local-pattern surface, Antony Green's independent 2025 mapping also uses House results, and House results avoid introducing a chamber change into the year-on-year comparison. Senate geography remains a useful robustness check, not the primary replacement surface.
+A zero-weight 2025 Senate mapping tests whether the House surface is merely a candidate-field artefact:
 
-The builder excludes non-geolocatable declaration votes from the district surface and reports them rather than allocating them heuristically. This avoids false precision but means the surface is an ecological polling-place approximation, not a reconstruction of every elector's home district.
+- Pearson House/Senate: **0.9110**
+- Spearman: **0.9059**
+- slope: **0.9102**
+- R²: **0.8300**
 
-Before any simulation, Phase B must pass these checks:
+The broad 2025 geography survives the chamber change. House and Senate are overlapping evidence from the same election and are not treated as statistically independent.
 
-1. exactly 88 unique Assembly polygons and 88 output districts;
-2. AEC/Vicmap source payload hashes recorded;
-3. no Morgan, 2026 seat polling or candidate-effect input used in construction;
-4. statewide located-vote ONP share reconciled against the corresponding AEC ordinary-vote universe, with any denominator difference explained;
-5. district ranking and broad rural/outer/inner gradient compared against Antony Green as an **independent diagnostic**, not fitted to his map;
-6. 2022-vs-2025 district log-ratio correlation, regression slope, rank correlation and largest residual/change seats reported;
-7. anomalous seats reviewed for known federal candidate-field effects before any production interpretation.
+## Final fixed-lambda results
 
-Only after these checks should the 2025 surface enter the shadow simulator. The final challenger set should include fixed `lambda = 0.50`, `0.75`, `1.00` and a pre-declared sampled-lambda treatment. Do not choose a posterior-favourable lambda after seeing validation evidence.
+### Current 2022 surface
 
-All variants must use common random numbers where practical and identical non-PHON coefficients, polling evidence, preference machinery and candidate files.
+| lambda | Labor | Coalition | ONP | Greens | P(Labor maj.) | P(Coalition maj.) | P(hung) |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 0.00 | 40.50 | 40.40 | 4.52 | 2.57 | 33.18% | 28.86% | 37.96% |
+| 0.50 | 39.52 | 36.51 | 9.66 | 2.29 | 27.74% | 13.84% | 58.42% |
+| **0.62** | **39.13** | **35.28** | **11.26** | **2.32** | **25.26%** | **10.58%** | **64.16%** |
+| 0.75 | 38.77 | 33.85 | 13.03 | 2.34 | 23.34% | 7.02% | 69.64% |
+| **1.00 current** | **38.29** | **31.02** | **16.28** | **2.40** | **19.30%** | **3.10%** | **77.60%** |
 
-## Evidence governance
+### 2025 House challenger
 
-### Fit / construction data
+| lambda | Labor | Coalition | ONP | Greens | P(Labor maj.) | P(Coalition maj.) | P(hung) |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 0.50 | 40.08 | 36.14 | 9.47 | 2.30 | 30.40% | 12.98% | 56.62% |
+| **0.62** | **39.78** | **34.68** | **11.25** | **2.29** | **28.48%** | **9.56%** | **61.96%** |
+| 0.75 | 39.48 | 32.98 | 13.23 | 2.30 | 26.42% | 6.38% | 67.20% |
+| **1.00** | **39.12** | **29.64** | **16.89** | **2.34** | **22.94%** | **2.60%** | **74.46%** |
 
-Permitted:
+At full persistence the aggregate ONP seat total looks deceptively stable — 16.89 versus the current 16.28 — while the modal winner changes in 15 districts and the modal final pair changes in 24. Forty districts move by at least five percentage points in ONP win probability and 34 move by at least ten points.
 
-- pre-election 2025 federal electoral geography;
-- official AEC/VEC spatial crosswalks;
-- pre-declared demographic predictors if tested as a separate challenger;
-- admitted statewide Victorian polling according to existing project rules.
+The 2022 and 2025 surfaces can therefore yield similar ONP totals for substantially different geographic reasons.
 
-### Validation-only data
+## Held-out evidence
 
-Do not fit to:
-
-- Roy Morgan 21–26 October Bass/Hastings/Morwell/Pakenham claims;
-- campaign-source seat commentary;
-- post-hoc analyst seat calls;
-- election outcomes.
-
-These may be used only for prospective validation or qualitative diagnostic comparison.
-
-## Evaluation metrics
-
-Compare every challenger with the control on:
-
-- district primary MAE where independent seat evidence is available;
-- final-pair composition probabilities;
-- winner probabilities;
-- expected seats by ALP / Coalition / PHON / Greens / Other;
-- `P(ALP >= 45)`, `P(Coalition >= 45)`, `P(hung Assembly)`;
-- number and identity of seats whose modal final pair changes;
-- number and identity of seats whose winner probability moves >=5pp and >=10pp;
-- sensitivity to `lambda`;
-- leave-one-pollster-out statewide polling sensitivity;
-- calibration / scoring results once admissible held-out evidence becomes available.
-
-A geographically richer model is not preferred merely because it produces more dramatic seat variation.
-
-## Specific diagnostic seats
-
-High-priority diagnostics include Pakenham, Morwell, Hastings, Bass, Shepparton, Murray Plains, Mildura, Euroa, Narre Warren North, Narre Warren South, Cranbourne, Mill Park, Thomastown, Bayswater, Box Hill, Glen Waverley, Ashwood and Ringwood.
-
-These seats span expected high-PHON, three-way-contest and low-PHON/eastern-Melbourne environments.
+Roy Morgan's 21–26 October Bass/Hastings/Morwell/Pakenham SMS poll remains validation-only and was never read by construction or simulation code. The 2025 challenger improves the directional ONP primary story in several of those seats but does not reproduce Morgan's published modal final-pair claims. Given Morgan's combined four-seat sample of only 283, this is not a hard failure target; equally, it provides no basis for declaring the preference/elimination machinery validated.
 
 ## Promotion gate
 
-No revised PHON geographic component may enter the canonical forecast unless all of the following are satisfied:
+| Gate | Result |
+| --- | --- |
+| reproducible pre-election spatial construction | **PASS** |
+| statewide-vote conservation | **PASS** |
+| crosswalk method replication | **PASS** |
+| House/Senate spatial robustness | **PASS, dependence caveat** |
+| stable across plausible `lambda` | **FAIL** |
+| held-out/prospective seat improvement | **INCONCLUSIVE** |
+| preference/final-pair behaviour validated | **FAIL / existing blocker** |
+| uncertainty adequately represented | **OPEN** |
+| normal production authorisation | **BLOCKED** |
 
-1. the spatial feature is constructed from pre-election evidence with reproducible provenance;
-2. statewide vote is conserved after geographic redistribution;
-3. challenger results are stable across plausible `lambda` values rather than dependent on one selected value;
-4. improvement is demonstrated on held-out or genuinely prospective evidence, not only in-sample plausibility;
-5. results do not depend critically on a single statewide poll or pollster;
-6. preference/final-pair behaviour remains coherent under the existing IRV engine;
-7. uncertainty is not spuriously narrowed by treating derivative evidence as independent;
-8. normal repository validation, readiness and owner-authorisation gates remain satisfied.
+No revised ONP geography may enter the canonical forecast on the evidence in this PR.
 
-Until then, the revised geographic model is shadow-only.
+## Why no sampled-lambda output is reported
 
-## Current interpretation
+The protocol required a probabilistic persistence treatment whose distribution was pre-declared. A numerical distribution was not sealed before the fixed-lambda outputs were inspected. Selecting one now would be post-hoc parameter choice.
 
-The code audit changes the scientific interpretation of this workstream. The current model already encodes substantial PHON geographic heterogeneity, so the earlier framing of PROD as effectively uniform was wrong. The immediate task is now a **surface-update and persistence-validation problem**, not a geography-versus-no-geography problem.
+The sampled treatment is therefore deliberately not manufactured. A future persistence distribution must be derived from external pre-election evidence and frozen before its 2026 Assembly output is examined.
 
-Phase A can establish how sensitive current outputs are to the strength of the existing 2022 spatial pattern. Phase B is now specified as a reproducible official-data build rather than an analyst-derived seat table. Morgan remains held out. Independent analyst mappings are diagnostics only. No production change is authorised by this workstream.
+## Final interpretation
+
+The experiment produces two robust conclusions:
+
+1. **The 2025 geography is worth keeping.** It survives crosswalk replication and same-election House/Senate robustness and contains material information not present in the 2022 surface.
+2. **The current seat forecast is too sensitive to unvalidated ONP spatial persistence for the challenger to be promoted.** The more urgent task is calibration of `lambda` and preference/final-pair behaviour, not choosing whichever geographic treatment produces the most plausible headline seats.
+
+Canonical PROD remains frozen. The 2025 surface is retained as a shadow challenger and prospective calibration asset.
