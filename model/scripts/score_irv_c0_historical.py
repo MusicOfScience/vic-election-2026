@@ -19,7 +19,7 @@ import itertools
 import json
 import math
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -54,8 +54,11 @@ def load_primaries(year: int) -> dict[str, dict]:
     rows = list(csv.DictReader(path.open(encoding="utf-8")))
     out: dict[str, dict] = {}
     for row in rows:
-        # Exclude supplementary/post-cycle contests such as Narracan January 2023.
-        if row.get("contest") not in {"general-election", "general_election", ""}:
+        # The legacy 2010 family artefact predates the `contest` column. Treat
+        # a missing value as the general-election universe; later artefacts
+        # still explicitly exclude supplementary/post-cycle contests.
+        contest = row.get("contest") or ""
+        if contest not in {"general-election", "general_election", ""}:
             continue
         did = row["district_id"]
         fam = FAMILY_MAP.get(row["party_family"])
@@ -104,6 +107,8 @@ def score_cycle(year: int, simulations: int, concentration: float, seed: int) ->
     primaries = load_primaries(year)
     outcomes = load_outcomes(year)
     ids = sorted(set(primaries) & set(outcomes))
+    if not ids:
+        raise ValueError(f"{year}: no overlapping historical primary/outcome districts")
     rng = np.random.default_rng(seed + year)
     winner_counts = {did: np.zeros(len(PARTIES), dtype=int) for did in ids}
     pair_counts = {did: Counter() for did in ids}
