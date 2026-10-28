@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "policy": "discovery-only-no-automatic-promotion",
+  "sources": [
+    {
+      "id": "antony-green",
+      "displayName": "Antony Green",
+      "url": "https://antonygreen.com.au/category/australia-elections-state/victoria/",
+      "titlePattern": "Victoria|Victorian|VIC2026|One Nation"
+    },
+    {
+      "id": "ben-raue-tally-room",
+      "displayName": "Ben Raue / The Tally Room",
+      "url": "https://www.tallyroom.com.au/?s=Victoria",
+      "titlePattern": "Victoria|Victorian|One Nation"
+    },
+    {
+      "id": "kevin-bonham",
+      "displayName": "Dr Kevin Bonham",
+      "url": "https://kevinbonham.blogspot.com/",
+      "titlePattern": "Victoria|Victorian|state election"
+    },
+    {
+      "id": "roy-morgan",
+      "displayName": "Roy Morgan Research",
+      "url": "https://www.roymorgan.com/",
+      "titlePattern": "Victorian State Voting Intention|Victorian Election|Victoria's Upper House"
+    },
+    {
+      "id": "william-bowe-poll-bludger",
+      "displayName": "William Bowe / The Poll Bludger",
+      "url": "https://www.pollbludger.net/category/victorian-politics/victorian-election-2026/",
+      "titlePattern": "Victoria|Victorian|Newspoll|DemosAU|RedBridge|Resolve"
+    }
+  ]
+}
