@@ -10,7 +10,7 @@
   --party-independent: #69727b;
   --party-teal: #1597a5;
   --party-other: #a58b55;
-  --party-other-independent: #817d76;
+  --party-other-independent: #9aa3ab;
 
   --labor: var(--party-labor);
   --coalition: var(--party-coalition);
@@ -31,6 +31,24 @@ svg [fill="#d19b2a"], svg [fill="#7d6a92"] { fill: var(--party-other-independent
 .arc-party-legend span:nth-child(3) i { background-color: var(--party-one-nation) !important; }
 .arc-party-legend span:nth-child(4) i { background-color: var(--party-greens) !important; }
 .arc-party-legend span:nth-child(5) i { background-color: var(--party-other-independent) !important; }
+
+/* Keep the forecast hero on the same party language as every other chart. */
+.seat-totals .onp strong { color: var(--party-one-nation) !important; }
+
+/* The old vertical marks looked data-bearing but were decorative. Keep the majority threshold in text instead. */
+.forecast-hero::after { display: none !important; }
+.majority-line { display: none !important; }
+.parliament-card::after {
+  content: "Each dot = one electorate. The semicircle is a chamber-style layout grouped by forecast winner; dot position is not geographic.";
+  display: block;
+  margin: 12px auto 0;
+  max-width: 520px;
+  color: #9eb0c0;
+  font-size: 8.5px;
+  line-height: 1.45;
+  letter-spacing: .035em;
+  text-align: center;
+}
 
 /* How-to-read belongs in the main navigation rail rather than floating over content. */
 .how-to-read-trigger {
@@ -115,4 +133,5 @@ svg [fill="#d19b2a"], svg [fill="#7d6a92"] { fill: var(--party-other-independent
   .how-to-read-terms article:nth-child(2n) { border-right: 0; }
   .how-to-read-terms article:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
   .how-to-read-terms article:nth-last-child(-n+2) { border-bottom: 0; }
+  .parliament-card::after { margin-top: 10px; padding: 0 6px; font-size: 8px; }
 }
