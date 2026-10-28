@@ -7,11 +7,13 @@ on:
     paths:
       - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md"
       - "model/scripts/calibrate_onp_spatial_persistence.py"
+      - "model/scripts/run_onp_spatial_persistence_calibration.py"
       - ".github/workflows/onp-spatial-persistence-calibration.yml"
   pull_request:
     paths:
       - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md"
       - "model/scripts/calibrate_onp_spatial_persistence.py"
+      - "model/scripts/run_onp_spatial_persistence_calibration.py"
       - ".github/workflows/onp-spatial-persistence-calibration.yml"
   workflow_dispatch:
 
@@ -29,10 +31,13 @@ jobs:
           python-version: "3.12"
       - name: Install reproducible model environment
         run: python -m pip install -c model/constraints.txt -e './model'
-      - name: Compile calibration script
-        run: python -m py_compile model/scripts/calibrate_onp_spatial_persistence.py
+      - name: Compile calibration scripts
+        run: |
+          python -m py_compile \
+            model/scripts/calibrate_onp_spatial_persistence.py \
+            model/scripts/run_onp_spatial_persistence_calibration.py
       - name: Run historical calibration only
-        run: PYTHONPATH="model/scripts:model/src" python model/scripts/calibrate_onp_spatial_persistence.py
+        run: PYTHONPATH="model/scripts:model/src" python model/scripts/run_onp_spatial_persistence_calibration.py
       - name: Validate frozen pre-2026 calibration artefact
         run: |
           python - <<'PY'
