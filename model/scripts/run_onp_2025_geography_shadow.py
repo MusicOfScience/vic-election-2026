@@ -24,6 +24,10 @@ NEW_SURFACE = "data/validation/aec_2025_onp_state_district_surface.csv"
 TREATMENTS = (0.50, 0.75, 1.00)
 
 
+def _normalise_name(value: str) -> str:
+    return str(value).strip().upper()
+
+
 def _current_seed(model_root: Path, config: dict) -> pd.DataFrame:
     return forecast_module.build_assembly_seed(model_root, config).copy()
 
@@ -31,9 +35,14 @@ def _current_seed(model_root: Path, config: dict) -> pd.DataFrame:
 def _challenger_seed(model_root: Path, config: dict, lam: float) -> pd.DataFrame:
     seed = _current_seed(model_root, config)
     challenger = pd.read_csv(model_root / NEW_SURFACE)
-    merged = seed[["district_name"]].merge(
-        challenger[["district_name", "onp_log_ratio_to_located_state"]],
-        on="district_name",
+    seed_keys = seed[["district_name"]].copy()
+    seed_keys["district_key"] = seed_keys.district_name.map(_normalise_name)
+    challenger = challenger[["district_name", "onp_log_ratio_to_located_state"]].copy()
+    challenger["district_key"] = challenger.district_name.map(_normalise_name)
+    challenger = challenger.rename(columns={"district_name": "challenger_district_name"})
+    merged = seed_keys.merge(
+        challenger,
+        on="district_key",
         how="left",
         validate="one_to_one",
     )
@@ -155,7 +164,7 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         comparisons[str(lam)] = _compare(control, summary)
 
     return {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "mode": "onp-aec-2025-geography-shadow",
         "asOf": str(config["as_of"]),
         "simulationsPerTreatment": simulations,
@@ -165,6 +174,7 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         "canonicalForecastArtifactsWritten": False,
         "controlSurface": "existing AEC_2022_ecological_auxiliary",
         "challengerSurface": "AEC 2025 House ordinary polling-place geography mapped to current Assembly districts",
+        "districtJoinRule": "case-insensitive trimmed district name",
         "challengerLambdas": list(TREATMENTS),
         "centringRule": (
             "Each 2025 signal is enrolment-weight centred and shifted to the current surface's "
