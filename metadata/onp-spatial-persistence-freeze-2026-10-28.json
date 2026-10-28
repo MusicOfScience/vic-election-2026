@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "frozen-pre-2026-seat-run",
+  "protocolPath": "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md",
+  "protocolCommit": "5e568b234372b3750c6a346da49be44b59ac3166",
+  "calibrationWorkflowRun": 40675638485,
+  "workflowArtifactDigest": "sha256:d66745afcb317b009f94a96c218ca190b06dedfc159041886a2e4ce80da38baf",
+  "targetHorizon": {"from": "2025-05-03", "to": "2026-11-28", "days": 574},
+  "fixedWeights": "VEC district enrolment 2026-09-04",
+  "boundarySource": "Vicmap Admin current Assembly polygons",
+  "boundarySha256": "cc207d312a98280c0733ccc62b0dc0b427b917e8a480332191b0178bea0d5796",
+  "sources": [
+    {"year": 2016, "eventId": 20499, "electionDate": "2016-07-02", "senateMenuUrl": "https://results.aec.gov.au/20499/Website/SenateDivisionDownloadMenu-20499-VIC-Csv.htm", "senateMenuSha256": "d6cd57c3c692d79fba76178dd4a82319513439f3018e93c3ac7ae402e879b734", "senateDivisionFileCount": 37, "senateDivisionPayloadSetSha256": "df0e9b43d47f8566b20f2ad6d4e11616cbcb34d0b6f6be530330e78cb9a4c7c6", "placesUrl": "https://results.aec.gov.au/20499/Website/Downloads/GeneralPollingPlacesDownload-20499.csv", "placesSha256": "df3f08ea4471afe8bc3dc526ce9049ee2ef0a8069c08b9e91a085fe970ccbedc", "districtCount": 88, "locatedStateOnpShare": 0.017285511128098906, "locatedFormalVotes": 2846488.0, "locatedOnpVotes": 49203.0, "locatedPollingPlaces": 1801, "unmatchedCoordinatePlaces": 1, "unlocatedVoteShareAcrossRows": 0.0144780416195658},
+    {"year": 2019, "eventId": 24310, "electionDate": "2019-05-18", "senateMenuUrl": "https://results.aec.gov.au/24310/Website/SenateDivisionDownloadMenu-24310-VIC-Csv.htm", "senateMenuSha256": "e0650a447259f821e4fbeb4d6b203f43f3e097030e45bc3ee774c3f7dc53e71b", "senateDivisionFileCount": 38, "senateDivisionPayloadSetSha256": "6f0ff873bd1f95fb72fb17d010c3037c551a54c1b632e14472934d701da6d8ba", "placesUrl": "https://results.aec.gov.au/24310/Website/Downloads/GeneralPollingPlacesDownload-24310.csv", "placesSha256": "013ddadddc6ffc3b1ee7185bc61febab99722d6c03a5e4aaa5758b9ab0533ac6", "districtCount": 88, "locatedStateOnpShare": 0.027363569914905086, "locatedFormalVotes": 3094662.0, "locatedOnpVotes": 84681.0, "locatedPollingPlaces": 1920, "unmatchedCoordinatePlaces": 1, "unlocatedVoteShareAcrossRows": 0.013317995315060133},
+    {"year": 2022, "eventId": 27966, "electionDate": "2022-05-21", "senateMenuUrl": "https://results.aec.gov.au/27966/Website/SenateDivisionDownloadMenu-27966-VIC-Csv.htm", "senateMenuSha256": "a7465415bddccc4cb8f02bc09955e0139869609550525ef4b9dca1895899f237", "senateDivisionFileCount": 39, "senateDivisionPayloadSetSha256": "53d80b4626f677c02880b5fd06c4f8e4130a3dd4b7df8c63fe3191264787d9cc", "placesUrl": "https://results.aec.gov.au/27966/Website/Downloads/GeneralPollingPlacesDownload-27966.csv", "placesSha256": "287a8b7d5679d51a5847630b691905266c5f83d38b911f4889832b23c199318e", "districtCount": 88, "locatedStateOnpShare": 0.027660596014277734, "locatedFormalVotes": 2982546.0, "locatedOnpVotes": 82499.0, "locatedPollingPlaces": 1853, "unmatchedCoordinatePlaces": 79, "unlocatedVoteShareAcrossRows": 0.006976527384717829},
+    {"year": 2025, "eventId": 31496, "electionDate": "2025-05-03", "senateMenuUrl": "https://results.aec.gov.au/31496/Website/SenateDivisionDownloadMenu-31496-VIC-Csv.htm", "senateMenuSha256": "112f2fe83cdb1391ebf0c3196d9bf7603197969c73902dd57ce116d71f851013", "senateDivisionFileCount": 38, "senateDivisionPayloadSetSha256": "ee4f587401a84dd6e0fa645da3636b17b5e25dbadcd73e0981221e699f8dfabd", "placesUrl": "https://results.aec.gov.au/31496/Website/Downloads/GeneralPollingPlacesDownload-31496.csv", "placesSha256": "34dd99a7779d97ec2552db7140bda0e201522b9eb08608b64e05f780ce7338d6", "districtCount": 88, "locatedStateOnpShare": 0.042298922108300066, "locatedFormalVotes": 3194384.0, "locatedOnpVotes": 135119.0, "locatedPollingPlaces": 1893, "unmatchedCoordinatePlaces": 39, "unlocatedVoteShareAcrossRows": 0.00740195233056937}
+  ],
+  "cycleSurface": {"rows": 352, "sha256": "fc726cda5f5ac4039ff0593adb4b141ea624254e49892e89bf9b6537ead628a3", "generatedPath": "model/data/validation/onp-senate-spatial-surfaces-2016-2025.csv"},
+  "pairwiseDiagnostics": [
+    {"from": 2016, "to": 2019, "pearson": 0.9843220139858988, "spearman": 0.9856644711352189, "weightedSlope": 0.8784350651501489, "weightedR2": 0.967844801931547},
+    {"from": 2019, "to": 2022, "pearson": 0.9644459466102463, "spearman": 0.9562185199535066, "weightedSlope": 0.7412031680254595, "weightedR2": 0.9269916196643725},
+    {"from": 2022, "to": 2025, "pearson": 0.9654449117008915, "spearman": 0.9544573984713468, "weightedSlope": 0.936091546536422, "weightedR2": 0.9292982951763914}
+  ],
+  "tripletPointFits": [
+    {"years": [2016, 2019, 2022], "beta01": 0.8784350651501487, "middlePersistentSd": 0.7740099209053578, "middleInnovationSd": 0.14108123764558778, "a": 0.7343077497935028, "kappa": 0.9487495398044974, "intervalDays": 1099, "aTarget": 0.8510382451550709, "kappaTarget": 0.9728960259428047},
+    {"years": [2019, 2022, 2025], "beta01": 0.7412031680254596, "middlePersistentSd": 0.5831508772060003, "middleInnovationSd": 0.16365504060521538, "a": 0.9726975975416943, "kappa": 0.4713024037709153, "intervalDays": 1078, "aTarget": 0.9853683118925601, "kappaTarget": 0.6699504348206082}
+  ],
+  "pooledPointEstimate": {"aTarget": 0.9182032785238154, "kappaTarget": 0.8214232303817064},
+  "bootstrap": {
+    "draws": 5000,
+    "seed": 20261028,
+    "block": "eight Victorian Legislative Council regions, sampled with replacement",
+    "jointEmpiricalDistribution": true,
+    "drawsSha256": "978f56f3ebcbe22bcd88e71c861464fddb488ad63ac7599c5ab147bd804e96ae",
+    "generatedPath": "model/data/validation/onp-spatial-persistence-bootstrap.csv",
+    "summary": {
+      "aTarget": {"mean": 0.9158457376317005, "median": 0.9156375353172233, "q05": 0.8996730251637135, "q10": 0.9036063035717914, "q25": 0.9093912795971312, "q75": 0.9221341358522157, "q90": 0.9288480550308804, "q95": 0.9322196195578579},
+      "kappaTarget": {"mean": 0.8082094316778153, "median": 0.808408840109176, "q05": 0.7589099792126194, "q10": 0.7721317638468084, "q25": 0.7928000841050302, "q75": 0.828730568980929, "q90": 0.8419083042467832, "q95": 0.8491623292965319},
+      "aTargetTriplet1": {"mean": 0.8478862589212735, "median": 0.8494808059692307, "q05": 0.8123960305054236, "q10": 0.823487304756351, "q25": 0.8373476902205862, "q75": 0.860735866470911, "q90": 0.8710760653005833, "q95": 0.8782754477439211},
+      "aTargetTriplet2": {"mean": 0.9838052163421275, "median": 0.9860200542655617, "q05": 0.956137597572, "q10": 0.9626673326495064, "q25": 0.9727085276902742, "q75": 1.0, "q90": 1.0, "q95": 1.0},
+      "kappaTargetTriplet1": {"mean": 0.9499572881000613, "median": 0.9749281994322323, "q05": 0.8233337299008983, "q10": 0.8609461190183831, "q25": 0.9178852101925292, "q75": 1.0, "q90": 1.0, "q95": 1.0},
+      "kappaTargetTriplet2": {"mean": 0.6664615752555696, "median": 0.6683857180880466, "q05": 0.5918569956051655, "q10": 0.5997633320819143, "q25": 0.6196862617113686, "q75": 0.7025184962009193, "q90": 0.7345850171326871, "q95": 0.7535648731513638}
+    }
+  },
+  "leaveOneRegionOut": [
+    {"omittedRegion": "Eastern Victoria", "aTarget": 0.9100292629296807, "kappaTarget": 0.8023235100014068},
+    {"omittedRegion": "North-Eastern Metropolitan", "aTarget": 0.9173674700714087, "kappaTarget": 0.8311555805428572},
+    {"omittedRegion": "Northern Metropolitan", "aTarget": 0.9218756834483828, "kappaTarget": 0.8158519560358195},
+    {"omittedRegion": "Northern Victoria", "aTarget": 0.9243868335523917, "kappaTarget": 0.8312390236591107},
+    {"omittedRegion": "South-Eastern Metropolitan", "aTarget": 0.917680470709707, "kappaTarget": 0.8348178332373577},
+    {"omittedRegion": "Southern Metropolitan", "aTarget": 0.9175133047416609, "kappaTarget": 0.83495797361263},
+    {"omittedRegion": "Western Metropolitan", "aTarget": 0.9201465497827296, "kappaTarget": 0.7988453845913297},
+    {"omittedRegion": "Western Victoria", "aTarget": 0.9164718936572311, "kappaTarget": 0.809608608526736}
+  ],
+  "fullGeneratedCalibrationSha256": "5fb1c6bd9fb5d32face92a0e28c153f3a4278f67f546e6348e626ae05fa2d9ba",
+  "governance": {"productionInput": false, "assembly2026SimulatorExecuted": false, "assembly2026OutputsRead": false, "royMorganRead": false, "campaignSeatClaimsRead": false, "analystSeatCallsRead": false},
+  "allowedNextUse": "A later shadow runner may regenerate the checksummed empirical bootstrap from the versioned protocol/code and consume that frozen joint distribution. No parameter may be retuned against 2026 seat outputs."
+}
