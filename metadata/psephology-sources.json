@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-29",
+  "reviewedAt": "2026-10-29",
   "principles": {
     "sourceFamilyIsUnitOfIndependence": true,
     "commentaryIsNotPolling": true,
@@ -70,6 +70,15 @@
       "sourceFamily": "mark-the-ballot",
       "evidenceClasses": ["poll_aggregation", "bayesian_model", "pollster_effect", "trend_analysis"],
       "independenceNotes": "Polling aggregations are transformations of underlying polls, not independent observations. Use for model comparison, calibration and methodological challenge unless a distinct non-poll evidence product is identified."
+    },
+    {
+      "id": "william-bowe-poll-bludger",
+      "displayName": "William Bowe / The Poll Bludger",
+      "platform": "The Poll Bludger",
+      "canonicalUrl": "https://www.pollbludger.net/",
+      "sourceFamily": "william-bowe-poll-bludger",
+      "evidenceClasses": ["poll_aggregation", "seat_model", "poll_interpretation", "trend_analysis"],
+      "independenceNotes": "Poll Bludger polling aggregates, seat models and commentary transform underlying polling and are not independent polling observations. Treat them as comparison and diagnostic evidence unless a separately validated transformation is approved."
     }
   ]
 }

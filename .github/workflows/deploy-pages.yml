@@ -3,6 +3,9 @@ name: Deploy website to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # 07:37 AEDT during the 2026 Victorian campaign; follows the source monitor.
+    - cron: "37 20 * * *"
   workflow_dispatch:
 
 permissions:
@@ -37,6 +40,9 @@ jobs:
       - run: python -m pytest model/tests
       - run: npm test
       - run: npm run lint
+      - name: Refresh public analyst discovery feed
+        continue-on-error: true
+        run: node scripts/build-analyst-live-feed.mjs --output app/analyst-live.generated.json
       - run: npx next build
         env:
           GITHUB_PAGES: "true"
