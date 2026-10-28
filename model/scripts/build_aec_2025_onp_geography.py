@@ -42,8 +42,18 @@ def _sha(payload: bytes) -> str:
 
 
 def _csv(payload: bytes) -> list[dict[str, str]]:
+    """Parse AEC downloads that may include a one-line metadata preamble."""
     text = payload.decode("utf-8-sig")
-    return list(csv.DictReader(io.StringIO(text)))
+    lines = text.splitlines()
+    header_index = None
+    for index, line in enumerate(lines[:10]):
+        folded = line.lower().replace("_", "")
+        if "pollingplaceid" in folded and "," in line:
+            header_index = index
+            break
+    if header_index is None:
+        raise ValueError("could not identify AEC CSV header containing PollingPlaceID")
+    return list(csv.DictReader(io.StringIO("\n".join(lines[header_index:]))))
 
 
 def _field(row: dict[str, str], *candidates: str) -> str:
@@ -83,14 +93,18 @@ def _point_in_geometry(x: float, y: float, geometry: dict) -> bool:
 
 
 def _district_name(properties: dict) -> str:
-    preferred = ("district_name", "districtname", "electorate_name", "electoratename", "name")
+    preferred = (
+        "district_name", "districtname", "electorate_name", "electoratename",
+        "state_district", "statedistrict", "name",
+    )
     folded = {str(k).lower().replace("_", ""): k for k in properties}
     for candidate in preferred:
         key = folded.get(candidate.replace("_", ""))
         if key is not None and properties[key]:
             return str(properties[key]).strip()
     for key, value in properties.items():
-        if "name" in str(key).lower() and value:
+        key_text = str(key).lower()
+        if ("district" in key_text or "electorate" in key_text) and "name" in key_text and value:
             return str(value).strip()
     raise KeyError(f"cannot identify district-name field from {list(properties)}")
 
@@ -110,7 +124,12 @@ def _boundaries() -> tuple[bytes, list[dict]]:
 
 def _is_onp(row: dict[str, str]) -> bool:
     values = " ".join(str(value) for value in row.values()).upper()
-    return "ONE NATION" in values or "PAULINE HANSON" in values or _field(row, "PartyAb", "PartyAbbreviation").upper() in {"ON", "ONP"}
+    if "ONE NATION" in values or "PAULINE HANSON" in values:
+        return True
+    try:
+        return _field(row, "PartyAb", "PartyAbbreviation").upper() in {"ON", "ONP"}
+    except KeyError:
+        return False
 
 
 def build() -> tuple[list[dict], dict]:
@@ -124,13 +143,13 @@ def build() -> tuple[list[dict], dict]:
     coords: dict[str, tuple[float, float, str]] = {}
     for row in places:
         try:
-            state = _field(row, "StateAb", "State")
-            if state.upper() != "VIC":
+            state = _field(row, "StateAb", "State", "PremisesStateAb")
+            if state.upper() not in {"VIC", "VICTORIA"}:
                 continue
             pid = _field(row, "PollingPlaceID", "PollingPlaceId")
             lon = _float(row, "Longitude")
             lat = _float(row, "Latitude")
-            name = _field(row, "PollingPlace", "PollingPlaceName")
+            name = _field(row, "PollingPlace", "PollingPlaceName", "PollingPlaceNm")
             if math.isfinite(lon) and math.isfinite(lat):
                 coords[pid] = (lon, lat, name)
         except (KeyError, ValueError):
@@ -193,6 +212,7 @@ def build() -> tuple[list[dict], dict]:
             "vicmapAssemblyGeoJSON": {"url": VICMAP_QUERY, "sha256": _sha(boundary_payload), "featureCount": len(boundaries)},
         },
         "districtCount": len(rows),
+        "coordinatePollingPlacesInVictoria": len(coords),
         "locatedPollingPlaces": len(assignment),
         "unmatchedCoordinatePlaces": unmatched_places,
         "usedResultRows": used_rows,
