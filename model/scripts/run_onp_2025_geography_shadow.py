@@ -209,7 +209,7 @@ def main() -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     print(
-        f"AEC-2025 ONP geography shadow complete: {simulations} simulations x "
+        f"AEC-2025 ONP geography shadow complete: {args.simulations} simulations x "
         f"{1 + len(TREATMENTS)} runs; canonical artefacts untouched."
     )
 
