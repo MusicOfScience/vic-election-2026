@@ -7,14 +7,16 @@ on:
       - codex/candidate-resolution-preference-uncertainty
     paths:
       - 'metadata/candidate-resolution-preference-concentration-freeze-2026-10-29.json'
+      - '.github/workflows/candidate-resolution-preference-uncertainty-score.yml'
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   score:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -49,13 +51,18 @@ jobs:
               if digest != freeze[key]:
                   raise SystemExit(f'{key} mismatch: {digest} != {freeze[key]}')
           PY
-      - name: Regenerate Gate A training-only selection
-        run: |
-          python model/scripts/select_candidate_resolved_preference_concentration.py \
-            --fit artifacts/candidate-resolution/oth-retention-walkforward-fit.json \
-            --output artifacts/candidate-resolution/preference-concentration-selection.json
+      - name: Download exact frozen Gate A selection artefact
+        uses: actions/download-artifact@v4
+        with:
+          name: candidate-resolution-preference-concentration-selection
+          path: .frozen-gate-a
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: MusicOfScience/vic-election-2026
+          run-id: 40756820783
       - name: Verify exact pre-held-out selection freeze
         run: |
+          mkdir -p artifacts/candidate-resolution
+          cp .frozen-gate-a/preference-concentration-selection.json artifacts/candidate-resolution/preference-concentration-selection.json
           python - <<'PY'
           import hashlib, json
           from pathlib import Path
