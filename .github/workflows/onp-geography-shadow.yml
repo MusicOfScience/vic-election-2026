@@ -1,6 +1,16 @@
 name: ONP geography shadow
 
 on:
+  push:
+    branches:
+      - "codex/phon-geographic-heterogeneity-shadow"
+    paths:
+      - "docs/PHON_GEOGRAPHIC_HETEROGENEITY_SHADOW.md"
+      - "model/scripts/build_aec_2025_onp_geography.py"
+      - "model/scripts/compare_onp_geography_2022_2025.py"
+      - "model/scripts/run_onp_geography_shadow.py"
+      - "model/scripts/run_onp_2025_geography_shadow.py"
+      - ".github/workflows/onp-geography-shadow.yml"
   pull_request:
     paths:
       - "docs/PHON_GEOGRAPHIC_HETEROGENEITY_SHADOW.md"
