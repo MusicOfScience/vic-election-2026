@@ -2,9 +2,8 @@
 """Run governed ONP geographic-persistence shadow sensitivities.
 
 This runner does not write canonical forecast artefacts. It scales the existing
-AEC-2022 ecological ONP district propensity already used by the model and runs
-common-random-number counterfactuals. It is an infrastructure/sensitivity test,
-not the proposed AEC-2025 challenger.
+AEC-2022 ecological ONP district propensity and uses a solved common ONP logit
+intercept so each treatment preserves the control's central statewide vote level.
 """
 from __future__ import annotations
 
@@ -19,31 +18,26 @@ import yaml
 
 import vicforecast.forecast_2026 as forecast_module
 from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
+from onp_geography_shadow_common import conserve_central_onp_primary, central_weighted_onp_primary
 
 
-def _scaled_seed(model_root: Path, config: dict, lam: float) -> pd.DataFrame:
+def _scaled_seed(control: pd.DataFrame, lam: float) -> pd.DataFrame:
     """Scale the existing ONP spatial deviation while preserving its weighted centre."""
-    seed = forecast_module.build_assembly_seed(model_root, config).copy()
+    seed = control.copy()
     raw = seed["onp_local_log"].to_numpy(float)
     weights = seed["enrolled_electors"].to_numpy(float)
-    weights = weights / weights.sum()
+    weights /= weights.sum()
     centre = float(np.sum(raw * weights))
     seed["onp_local_log"] = centre + float(lam) * (raw - centre)
     return seed
 
 
-def _run(model_root: Path, *, simulations: int, seed: int, lam: float):
-    config = forecast_module.load_forecast_config(model_root)
-    scaled = _scaled_seed(model_root, config, lam)
-
+def _run_with_seed(model_root: Path, replacement: pd.DataFrame, *, simulations: int, seed: int):
     def shadow_builder(root, config=None):
-        return scaled.copy()
+        return replacement.copy()
 
     with patch("vicforecast.forecast_2026.build_assembly_seed", side_effect=shadow_builder):
-        result = run_experimental_forecast(model_root, simulations=simulations, seed=seed)
-    # Defensive assertion: the patched builder must not mutate the stored seed.
-    assert np.allclose(scaled["onp_local_log"], _scaled_seed(model_root, config, lam)["onp_local_log"])
-    return result, scaled
+        return run_experimental_forecast(model_root, simulations=simulations, seed=seed)
 
 
 def _weighted_onp_primary(result, seed_frame: pd.DataFrame) -> float:
@@ -57,12 +51,13 @@ def _weighted_onp_primary(result, seed_frame: pd.DataFrame) -> float:
     return float(np.sum(weights * primaries))
 
 
-def _summary(result, seed_frame: pd.DataFrame) -> dict:
+def _summary(result, seed_frame: pd.DataFrame, calibration: dict) -> dict:
     chamber = result.chamber.set_index("party")
     districts = result.districts.copy()
     return {
         "hungProbability": float(result.chamber.hung_probability.iloc[0]),
         "weightedMeanDistrictOnpPrimary": _weighted_onp_primary(result, seed_frame),
+        "centralVoteCalibration": calibration,
         "parties": {
             party: {
                 "meanSeats": float(chamber.loc[party, "mean"]),
@@ -97,9 +92,7 @@ def _compare(control: dict, challenger: dict) -> dict:
     ranked = sorted(seats.items(), key=lambda item: abs(item[1]["deltaWinONP"]), reverse=True)
     return {
         "deltaHungProbability": challenger["hungProbability"] - control["hungProbability"],
-        "deltaWeightedMeanDistrictOnpPrimary": (
-            challenger["weightedMeanDistrictOnpPrimary"] - control["weightedMeanDistrictOnpPrimary"]
-        ),
+        "deltaWeightedMeanDistrictOnpPrimary": challenger["weightedMeanDistrictOnpPrimary"] - control["weightedMeanDistrictOnpPrimary"],
         "partyDeltas": {
             party: {
                 "meanSeats": challenger["parties"][party]["meanSeats"] - control["parties"][party]["meanSeats"],
@@ -109,34 +102,46 @@ def _compare(control: dict, challenger: dict) -> dict:
         },
         "modalWinnerChanges": [name for name, row in seats.items() if row["modalWinnerChanged"]],
         "modalFinalPairChanges": [name for name, row in seats.items() if row["modalFinalPairChanged"]],
-        "largestONPWinProbabilityChanges": [
-            {"district": name, **row} for name, row in ranked[:20]
-        ],
+        "largestONPWinProbabilityChanges": [{"district": name, **row} for name, row in ranked[:20]],
     }
 
 
 def run_shadow(repo_root: Path, *, simulations: int) -> dict:
     model_root = repo_root / "model"
     config = yaml.safe_load((model_root / "config/experimental_forecast.yml").read_text())
-    seed = int(config["seed"])
-    # lambda=1 is the current model's AEC-2022 ONP geography treatment.
+    seed_value = int(config["seed"])
+    control_seed = forecast_module.build_assembly_seed(model_root, config).copy()
+    target = central_weighted_onp_primary(model_root, config, control_seed) * 100.0
     treatments = (0.0, 0.5, 0.75, 1.0)
     runs = {}
     for lam in treatments:
-        result, seed_frame = _run(model_root, simulations=simulations, seed=seed, lam=lam)
-        runs[lam] = _summary(result, seed_frame)
+        raw = _scaled_seed(control_seed, lam)
+        if lam == 1.0:
+            calibrated = control_seed.copy()
+            calibration = {
+                "rule": "control geography; no calibration required",
+                "targetCentralWeightedPrimary": target,
+                "candidateBeforeCalibration": target,
+                "candidateAfterCalibration": target,
+                "additiveLogitOffset": 0.0,
+                "absoluteResidualPercentagePoints": 0.0,
+            }
+        else:
+            calibrated, calibration = conserve_central_onp_primary(model_root, config, raw, control_seed)
+        result = _run_with_seed(model_root, calibrated, simulations=simulations, seed=seed_value)
+        runs[lam] = _summary(result, calibrated, calibration)
     control = runs[1.0]
     return {
-        "schemaVersion": 2,
+        "schemaVersion": 3,
         "mode": "onp-geography-shadow-sensitivity-only",
         "asOf": str(config["as_of"]),
         "simulationsPerTreatment": simulations,
-        "seed": seed,
+        "seed": seed_value,
         "commonRandomNumbers": True,
         "canonicalModelInputsChanged": False,
         "canonicalForecastArtifactsWritten": False,
         "sourceSurface": "existing AEC_2022_ecological_auxiliary",
-        "importantLimitation": "This tests persistence/shrinkage of the geography already in PROD. It does not test a new source surface.",
+        "centralVoteConservation": True,
         "controlLambda": 1.0,
         "treatments": {str(lam): runs[lam] for lam in treatments},
         "comparisonsVsCurrent": {str(lam): _compare(control, runs[lam]) for lam in treatments if lam != 1.0},
@@ -162,10 +167,7 @@ def main() -> None:
     else:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered)
-    print(
-        f"ONP geography shadow complete: {args.simulations} simulations x 4 treatments; "
-        "canonical artefacts untouched."
-    )
+    print(f"ONP geography shadow complete: {args.simulations} simulations x 4 treatments; central ONP vote conserved; canonical artefacts untouched.")
 
 
 if __name__ == "__main__":
