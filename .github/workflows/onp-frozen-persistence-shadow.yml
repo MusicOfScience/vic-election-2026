@@ -66,8 +66,10 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import pandas as pd
           report = json.load(open('model/data/validation/onp-frozen-persistence-2026-shadow.json'))
-          canonical = json.load(open('model/data/processed/experimental_forecast_2026.json'))
+          manifest = json.load(open('model/data/processed/experimental_forecast_2026.json'))
+          canonical = pd.read_csv('model/data/processed/experimental_forecast_2026_chamber.csv').set_index('party')
           assert report['canonicalModelInputsChanged'] is False
           assert report['canonicalForecastArtifactsWritten'] is False
           assert report['governance']['royMorganRead'] is False
@@ -75,11 +77,10 @@ jobs:
           assert report['persistenceSelectionSeed'] == 20261028
           assert report['centralVoteCalibration']['maximumAbsoluteResidualPercentagePoints'] < 1e-8
           # Side-by-side control must reproduce the frozen canonical Assembly run.
-          chamber = {row['party']: row for row in canonical['assembly']['chamber']}
           for party in ('ALP','LIB_NAT','ONP','GRN','OTH_IND'):
-              assert abs(report['control']['parties'][party]['meanSeats'] - chamber[party]['mean']) < 1e-12
-              assert abs(report['control']['parties'][party]['majorityProbability'] - chamber[party]['majority_probability']) < 1e-12
-          assert abs(report['control']['hungProbability'] - chamber['ALP']['hung_probability']) < 1e-12
+              assert abs(report['control']['parties'][party]['meanSeats'] - float(canonical.loc[party, 'mean'])) < 1e-12
+              assert abs(report['control']['parties'][party]['majorityProbability'] - float(canonical.loc[party, 'majority_probability'])) < 1e-12
+          assert abs(report['control']['hungProbability'] - float(manifest['assembly']['hung_probability'])) < 1e-12
           print({
               'controlONP': report['control']['parties']['ONP']['meanSeats'],
               'challengerONP': report['challenger']['parties']['ONP']['meanSeats'],
