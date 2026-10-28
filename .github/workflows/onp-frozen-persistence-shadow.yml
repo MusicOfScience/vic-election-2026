@@ -1,0 +1,99 @@
+name: ONP frozen persistence 2026 shadow
+
+on:
+  push:
+    branches:
+      - "codex/onp-spatial-persistence-calibration"
+    paths:
+      - "metadata/onp-spatial-persistence-freeze-v2-2026-10-28.json"
+      - "docs/ONP_SPATIAL_PERSISTENCE_2026_SHADOW_PROTOCOL.md"
+      - "model/scripts/run_onp_frozen_persistence_2026_shadow.py"
+      - ".github/workflows/onp-frozen-persistence-shadow.yml"
+  pull_request:
+    paths:
+      - "metadata/onp-spatial-persistence-freeze-v2-2026-10-28.json"
+      - "docs/ONP_SPATIAL_PERSISTENCE_2026_SHADOW_PROTOCOL.md"
+      - "model/scripts/run_onp_frozen_persistence_2026_shadow.py"
+      - ".github/workflows/onp-frozen-persistence-shadow.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install reproducible model environment
+        run: python -m pip install -c model/constraints.txt -e './model'
+      - name: Compile governed scripts
+        run: |
+          python -m py_compile \
+            model/scripts/build_aec_2025_onp_geography.py \
+            model/scripts/calibrate_onp_spatial_persistence.py \
+            model/scripts/run_onp_spatial_persistence_calibration.py \
+            model/scripts/freeze_onp_spatial_persistence_mixture.py \
+            model/scripts/onp_geography_shadow_common.py \
+            model/scripts/run_onp_2025_residual_retention_shadow.py \
+            model/scripts/run_onp_frozen_persistence_2026_shadow.py
+      - name: Regenerate historical persistence evidence
+        run: PYTHONPATH="model/scripts:model/src" python model/scripts/run_onp_spatial_persistence_calibration.py
+      - name: Regenerate amended joint persistence mixture
+        run: python model/scripts/freeze_onp_spatial_persistence_mixture.py
+      - name: Enforce frozen persistence hash before 2026 run
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          freeze = json.load(open('metadata/onp-spatial-persistence-freeze-v2-2026-10-28.json'))
+          path = Path('model/data/validation/onp-spatial-persistence-mixture.csv')
+          actual = hashlib.sha256(path.read_bytes()).hexdigest()
+          assert freeze['status'] == 'frozen-pre-2026-seat-run-amended'
+          assert actual == freeze['mixture']['sha256'], (actual, freeze['mixture']['sha256'])
+          assert freeze['workflowRun'] == 40676227917
+          print({'mixtureSha256': actual, 'draws': freeze['mixture']['draws']})
+          PY
+      - name: Build official AEC 2025 House Assembly surface
+        run: python model/scripts/build_aec_2025_onp_geography.py
+      - name: Run frozen-persistence 2026 Assembly shadow
+        run: PYTHONPATH="model/scripts:model/src" python model/scripts/run_onp_frozen_persistence_2026_shadow.py --simulations 5000
+      - name: Validate shadow isolation and control reproduction
+        run: |
+          python - <<'PY'
+          import json
+          import pandas as pd
+          report = json.load(open('model/data/validation/onp-frozen-persistence-2026-shadow.json'))
+          manifest = json.load(open('model/data/processed/experimental_forecast_2026.json'))
+          canonical = pd.read_csv('model/data/processed/experimental_forecast_2026_chamber.csv').set_index('party')
+          assert report['canonicalModelInputsChanged'] is False
+          assert report['canonicalForecastArtifactsWritten'] is False
+          assert report['governance']['royMorganRead'] is False
+          assert report['simulations'] == 5000
+          assert report['persistenceSelectionSeed'] == 20261028
+          assert report['centralVoteCalibration']['maximumAbsoluteResidualPercentagePoints'] < 1e-8
+          # Side-by-side control must reproduce the frozen canonical Assembly run.
+          for party in ('ALP','LIB_NAT','ONP','GRN','OTH_IND'):
+              assert abs(report['control']['parties'][party]['meanSeats'] - float(canonical.loc[party, 'mean'])) < 1e-12
+              assert abs(report['control']['parties'][party]['majorityProbability'] - float(canonical.loc[party, 'majority_probability'])) < 1e-12
+          assert abs(report['control']['hungProbability'] - float(manifest['assembly']['hung_probability'])) < 1e-12
+          print({
+              'controlONP': report['control']['parties']['ONP']['meanSeats'],
+              'challengerONP': report['challenger']['parties']['ONP']['meanSeats'],
+              'controlHung': report['control']['hungProbability'],
+              'challengerHung': report['challenger']['hungProbability'],
+              'winnerChanges': len(report['comparisonVsCurrent']['modalWinnerChanges']),
+              'finalPairChanges': len(report['comparisonVsCurrent']['modalFinalPairChanges']),
+          })
+          PY
+      - name: Hash shadow output
+        run: sha256sum model/data/validation/onp-frozen-persistence-2026-shadow.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: onp-frozen-persistence-2026-shadow
+          path: model/data/validation/onp-frozen-persistence-2026-shadow.json
+          retention-days: 90

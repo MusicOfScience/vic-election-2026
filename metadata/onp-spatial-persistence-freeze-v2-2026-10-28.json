@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-10-28",
+  "status": "frozen-pre-2026-seat-run-amended",
+  "supersedes": "metadata/onp-spatial-persistence-freeze-2026-10-28.json",
+  "protocol": "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md",
+  "protocolCommit": "5e568b234372b3750c6a346da49be44b59ac3166",
+  "amendment": "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_AMENDMENT_1.md",
+  "amendmentCommit": "555341060baac81b0bfe0b69dd75bfbdd0fe5e38",
+  "workflowRun": 40676227917,
+  "workflowHeadSha": "c98b84bd484b2bd9252ecb04d8b4ca73cedcb06e",
+  "workflowArtifactId": 12810716946,
+  "workflowArtifactDigest": "sha256:809a6d34ed4ee0732dd8db1bfab812d8b60eabdac801e82a70102d5acde87f57",
+  "baseCalibrationSha256": "5fb1c6bd9fb5d32face92a0e28c153f3a4278f67f546e6348e626ae05fa2d9ba",
+  "cycleSurfacesSha256": "fc726cda5f5ac4039ff0593adb4b141ea624254e49892e89bf9b6537ead628a3",
+  "baseBootstrapSha256": "978f56f3ebcbe22bcd88e71c861464fddb488ad63ac7599c5ab147bd804e96ae",
+  "mixture": {
+    "rule": "equal-weight empirical mixture of the two triplet-specific region-block bootstrap distributions; joint (a,kappa) pairs preserved",
+    "draws": 10000,
+    "triplet1Draws": 5000,
+    "triplet2Draws": 5000,
+    "sha256": "14d6f36d593085a50369b5d7e51d3052afd075afaf0435a5b681773c866eeebd",
+    "generatedPath": "model/data/validation/onp-spatial-persistence-mixture.csv",
+    "aTarget": {"mean": 0.9158457376317005, "median": 0.9209599988226991, "q05": 0.8234890787282557, "q10": 0.8341560540246414, "q25": 0.8494822696474338, "q75": 0.9860200542655616, "q90": 1.0, "q95": 1.0},
+    "kappaTarget": {"mean": 0.8082094316778153, "median": 0.7746301070470379, "q05": 0.5997166731062634, "q10": 0.6117542472541244, "q25": 0.6677932653478937, "q75": 0.9748811233204664, "q90": 1.0, "q95": 1.0},
+    "aKappaCorrelation": -0.9216897391001865
+  },
+  "targetHorizon": {"from": "2025-05-03", "to": "2026-11-28", "days": 574},
+  "tripletPointFits": [
+    {"years": [2016, 2019, 2022], "aTarget": 0.8510382451550709, "kappaTarget": 0.9728960259428047},
+    {"years": [2019, 2022, 2025], "aTarget": 0.9853683118925601, "kappaTarget": 0.6699504348206082}
+  ],
+  "governance": {
+    "productionInput": false,
+    "assembly2026SimulatorExecutedBeforeFreeze": false,
+    "assembly2026OutputsReadBeforeFreeze": false,
+    "royMorganUsedForCalibration": false,
+    "campaignSeatClaimsUsedForCalibration": false,
+    "analystSeatCallsUsedForCalibration": false
+  },
+  "allowedNextUse": "Only the checksummed 10000-draw joint mixture above may be consumed by the subsequent 2026 shadow simulation. The earlier pooled-average freeze is diagnostic only and must be rejected as a simulation input."
+}
