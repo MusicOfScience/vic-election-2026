@@ -7,6 +7,7 @@ on:
     paths:
       - "docs/PHON_GEOGRAPHIC_HETEROGENEITY_SHADOW.md"
       - "model/scripts/build_aec_2025_onp_geography.py"
+      - "model/scripts/audit_aec_2022_point_crosswalk.py"
       - "model/scripts/compare_onp_geography_2022_2025.py"
       - "model/scripts/run_onp_geography_shadow.py"
       - "model/scripts/run_onp_2025_geography_shadow.py"
@@ -15,6 +16,7 @@ on:
     paths:
       - "docs/PHON_GEOGRAPHIC_HETEROGENEITY_SHADOW.md"
       - "model/scripts/build_aec_2025_onp_geography.py"
+      - "model/scripts/audit_aec_2022_point_crosswalk.py"
       - "model/scripts/compare_onp_geography_2022_2025.py"
       - "model/scripts/run_onp_geography_shadow.py"
       - "model/scripts/run_onp_2025_geography_shadow.py"
@@ -44,11 +46,14 @@ jobs:
         run: |
           python -m py_compile \
             model/scripts/build_aec_2025_onp_geography.py \
+            model/scripts/audit_aec_2022_point_crosswalk.py \
             model/scripts/compare_onp_geography_2022_2025.py \
             model/scripts/run_onp_geography_shadow.py \
             model/scripts/run_onp_2025_geography_shadow.py
       - name: Build official AEC 2025 ONP Assembly surface
         run: python model/scripts/build_aec_2025_onp_geography.py
+      - name: Audit physical-point crosswalk on AEC 2022
+        run: python model/scripts/audit_aec_2022_point_crosswalk.py
       - name: Compare 2022 and 2025 spatial signals
         run: python model/scripts/compare_onp_geography_2022_2025.py
       - name: Validate Phase B construction
@@ -59,20 +64,24 @@ jobs:
           surface = pd.read_csv('model/data/validation/aec_2025_onp_state_district_surface.csv')
           audit = json.load(open('metadata/aec-2025-onp-geography-audit.json'))
           comparison = json.load(open('metadata/onp-geography-2022-2025-comparison.json'))
+          crosswalk = json.load(open('metadata/aec-2022-point-crosswalk-audit.json'))
           assert len(surface) == 88
           assert surface['district_name'].nunique() == 88
           assert audit['districtCount'] == 88
           assert comparison['districts'] == 88
+          assert crosswalk['districts'] == 88
           assert 0.02 < audit['locatedStateOnpShare'] < 0.15
           assert surface['onp_share'].between(0, 0.35).all()
           print({
-              'locatedStateOnpShare': audit['locatedStateOnpShare'],
-              'locatedPollingPlaces': audit['locatedPollingPlaces'],
-              'unmatchedCoordinatePlaces': len(audit['unmatchedCoordinatePlaces']),
-              'pearson': comparison['pearsonSignalCorrelation'],
-              'spearman': comparison['spearmanRankCorrelation'],
-              'slope': comparison['linearFit2025On2022']['slope'],
-              'rSquared': comparison['linearFit2025On2022']['rSquared'],
+              'locatedStateOnpShare2025': audit['locatedStateOnpShare'],
+              'locatedPollingPlaces2025': audit['locatedPollingPlaces'],
+              'unmatchedCoordinatePlaces2025': len(audit['unmatchedCoordinatePlaces']),
+              '2022to2025Pearson': comparison['pearsonSignalCorrelation'],
+              '2022to2025Spearman': comparison['spearmanRankCorrelation'],
+              '2022to2025Slope': comparison['linearFit2025On2022']['slope'],
+              'pointCrosswalk2022Pearson': crosswalk['pearsonSignalCorrelation'],
+              'pointCrosswalk2022Spearman': crosswalk['spearmanRankCorrelation'],
+              'pointCrosswalk2022Slope': crosswalk['linearFitPointOnExisting']['slope'],
           })
           PY
       - name: Run Phase A existing-surface persistence sensitivity
@@ -81,7 +90,7 @@ jobs:
           simulations="${{ inputs.simulations }}"
           if [[ -z "${simulations}" ]]; then simulations="5000"; fi
           PYTHONPATH="model/src" python model/scripts/run_onp_geography_shadow.py --simulations "${simulations}"
-      - name: Run Phase B official-2025 challenger matrix
+      - name: Run Phase B physical-point 2025 challenger matrix (diagnostic only)
         shell: bash
         run: |
           simulations="${{ inputs.simulations }}"
@@ -92,6 +101,7 @@ jobs:
           sha256sum \
             model/data/validation/aec_2025_onp_state_district_surface.csv \
             metadata/aec-2025-onp-geography-audit.json \
+            metadata/aec-2022-point-crosswalk-audit.json \
             metadata/onp-geography-2022-2025-comparison.json \
             model/data/validation/onp-geography-shadow-2022-surface.json \
             model/data/validation/onp-geography-shadow-2025-surface.json
@@ -101,6 +111,7 @@ jobs:
           path: |
             model/data/validation/aec_2025_onp_state_district_surface.csv
             metadata/aec-2025-onp-geography-audit.json
+            metadata/aec-2022-point-crosswalk-audit.json
             metadata/onp-geography-2022-2025-comparison.json
             model/data/validation/onp-geography-shadow-2022-surface.json
             model/data/validation/onp-geography-shadow-2025-surface.json
