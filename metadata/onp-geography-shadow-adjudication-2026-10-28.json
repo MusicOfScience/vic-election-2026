@@ -1,16 +1,17 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "date": "2026-10-28",
   "status": "shadow-challenger-retained-production-promotion-rejected",
   "canonicalForecastChanged": false,
   "canonicalModelParametersChanged": false,
-  "headline": "2025 ONP geography contains reproducible new spatial information, but seat outputs are too sensitive to unvalidated spatial persistence and final-pair conversion for production promotion.",
+  "headline": "2025 ONP geography contains reproducible new spatial information. Aggregate ONP seat totals are relatively robust once persistent geography is separated from new 2025 residual information, but seat identities and final-pair conversion remain too unstable for production promotion.",
   "methodValidation": {
     "aec2022PointCrosswalkVsExistingSurface": {
-      "pearson": 0.9882035346,
-      "spearman": 0.9859906988,
-      "slope": 1.0187903311,
-      "rSquared": 0.976546242,
+      "pearson": 0.9882286509,
+      "spearman": 0.985981473,
+      "slope": 1.0188368613,
+      "rSquared": 0.9765958664,
+      "meanAbsoluteCenteredSignalDifference": 0.0786719852,
       "result": "pass"
     },
     "house2022VsHouse2025": {
@@ -18,6 +19,7 @@
       "spearman": 0.7959388539,
       "slope": 0.7748835803,
       "rSquared": 0.699504168,
+      "meanAbsoluteCenteredSignalChange": 0.2518074234,
       "result": "material-persistence-with-structured-change"
     },
     "house2025VsSenate2025": {
@@ -26,6 +28,14 @@
       "slope": 0.9101876783,
       "rSquared": 0.8299206682,
       "result": "robust-with-dependent-evidence-caveat"
+    },
+    "weightedResidualDecomposition": {
+      "slope2025On2022": 0.8729965852,
+      "rSquared": 0.6822720035,
+      "std2022Signal": 0.5579142535,
+      "std2025Signal": 0.5896594003,
+      "std2025Residual": 0.3323754731,
+      "result": "persistent-component-plus-material-new-residual"
     }
   },
   "control": {
@@ -42,9 +52,9 @@
     "majorityProbability": {"ALP": 0.2526, "LIB_NAT": 0.1058},
     "hungProbability": 0.6416,
     "deltaOnpMeanSeatsVsControl": -5.0184,
-    "result": "material-architecture-sensitivity"
+    "result": "material-global-geography-strength-sensitivity"
   },
-  "aec2025Challenger": {
+  "aec2025FixedSurfaceChallenger": {
     "lambda0.62": {
       "meanSeats": {"ALP": 39.7784, "LIB_NAT": 34.6762, "ONP": 11.2456, "GRN": 2.2926, "OTH_IND": 0.0072},
       "majorityProbability": {"ALP": 0.2848, "LIB_NAT": 0.0956},
@@ -65,26 +75,71 @@
       "seatsWithOnpWinProbabilityShiftAtLeast10pp": 34
     }
   },
+  "residualRetentionChallenger": {
+    "decomposition": "centred delta_2025 = weighted_beta * centred delta_2022 + residual_2025",
+    "interpretation": "Separates the persistent spatial component from genuinely new 2025 local information; all treatments conserve the central statewide ONP vote.",
+    "retention0.00": {
+      "meanSeats": {"ALP": 38.4974, "LIB_NAT": 32.4378, "ONP": 14.6954, "GRN": 2.3626},
+      "hungProbability": 0.7396,
+      "modalWinnerChangesVsControl": 2,
+      "seatsWithOnpWinProbabilityShiftAtLeast5pp": 16,
+      "seatsWithOnpWinProbabilityShiftAtLeast10pp": 3
+    },
+    "retention0.25": {
+      "meanSeats": {"ALP": 39.0372, "LIB_NAT": 31.8094, "ONP": 14.7882, "GRN": 2.3586},
+      "hungProbability": 0.7156,
+      "modalWinnerChangesVsControl": 4,
+      "seatsWithOnpWinProbabilityShiftAtLeast5pp": 23,
+      "seatsWithOnpWinProbabilityShiftAtLeast10pp": 13
+    },
+    "retention0.50": {
+      "meanSeats": {"ALP": 39.4262, "LIB_NAT": 31.212, "ONP": 15.0002, "GRN": 2.3552},
+      "hungProbability": 0.7062,
+      "modalWinnerChangesVsControl": 7,
+      "seatsWithOnpWinProbabilityShiftAtLeast5pp": 30,
+      "seatsWithOnpWinProbabilityShiftAtLeast10pp": 21
+    },
+    "retention0.75": {
+      "meanSeats": {"ALP": 39.3744, "LIB_NAT": 30.4538, "ONP": 15.8142, "GRN": 2.35},
+      "hungProbability": 0.722,
+      "modalWinnerChangesVsControl": 13,
+      "seatsWithOnpWinProbabilityShiftAtLeast5pp": 37,
+      "seatsWithOnpWinProbabilityShiftAtLeast10pp": 27
+    },
+    "retention1.00": {
+      "meanSeats": {"ALP": 39.1248, "LIB_NAT": 29.6364, "ONP": 16.8878, "GRN": 2.3426},
+      "hungProbability": 0.7446,
+      "modalWinnerChangesVsControl": 15,
+      "seatsWithOnpWinProbabilityShiftAtLeast5pp": 40,
+      "seatsWithOnpWinProbabilityShiftAtLeast10pp": 34
+    },
+    "result": "aggregate-onp-seat-count-relatively-robust-but-seat-identity-highly-unstable"
+  },
   "promotionGates": {
     "reproducibleSpatialConstruction": "pass",
     "statewideVoteConservation": "pass",
     "crosswalkMethodReplication": "pass",
     "houseSenateRobustness": "pass-with-dependence-caveat",
-    "stableAcrossPlausibleLambda": "fail",
+    "globalGeographyStrengthCalibrated": "fail",
+    "aggregateChamberRobustAcrossResidualRetention": "pass-with-caveat",
+    "seatIdentityRobustAcrossResidualRetention": "fail",
     "heldOutSeatValidation": "inconclusive-final-pair-mismatch",
     "preferenceFinalPairValidation": "fail-existing-blocker",
-    "uncertaintyRepresentation": "open",
+    "uncertaintyRepresentation": "improved-in-shadow-not-production-calibrated",
     "productionAuthorisation": "blocked"
   },
   "sampledLambda": {
     "reported": false,
     "reason": "No numerical prior distribution was sealed before fixed-lambda outputs were inspected; selecting one now would be post-hoc."
   },
-  "decision": "Retain 2025 geography as a governed shadow challenger. Do not alter canonical PROD. Calibrate ONP spatial persistence from external pre-election evidence before any future promotion decision.",
+  "recommendedFutureArchitecture": "delta_2026_i = beta * delta_2022_i + kappa * residual_2025_i + epsilon_i, with kappa and residual uncertainty calibrated from external pre-election evidence before examining 2026 Assembly outputs.",
+  "decision": "Retain the 2025 geography and residual-retention machinery as governed shadow challengers. Do not alter canonical PROD. The main remaining risk is seat identity/final-pair geography rather than an obviously grossly wrong aggregate ONP seat count. Calibrate spatial persistence and new-information retention from external pre-election evidence before any future promotion decision.",
   "workflowEvidence": {
-    "mainRunId": 40668909476,
-    "mainArtifactDigest": "sha256:4a936bb29ca8bcbafbd3b09c0352d43cacdec54a44759856f32fb8a82c9e91ab",
+    "mainFixedLambdaRunId": 40668909476,
+    "mainFixedLambdaArtifactDigest": "sha256:4a936bb29ca8bcbafbd3b09c0352d43cacdec54a44759856f32fb8a82c9e91ab",
     "houseSenateRunId": 40668427478,
-    "houseSenateArtifactDigest": "sha256:bd85ceb2b23dd853e0c6bcbe73576c5158121189f7e019b01f02df2d1d0426aa"
+    "houseSenateArtifactDigest": "sha256:bd85ceb2b23dd853e0c6bcbe73576c5158121189f7e019b01f02df2d1d0426aa",
+    "residualRetentionRunId": 40670889750,
+    "residualRetentionArtifactDigest": "sha256:a2045109f64dea7dd5a4e7db6ee017a3977cce556a746647cec0846c17f50554"
   }
 }
