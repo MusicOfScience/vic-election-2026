@@ -68,9 +68,23 @@ Run the current AEC-2022 PHON surface with common random numbers at:
 
 ### Phase B — 2025 challenger
 
-Construct a reproducible 88-district 2025 federal PHON spatial surface and compare it with the current 2022 surface under identical statewide evidence, preference machinery and random draws. Only after that surface is provenance-checked should fixed and sampled persistence treatments be run.
+`model/scripts/build_aec_2025_onp_geography.py` now defines the primary reproducible challenger construction. It uses final official AEC **2025 House first preferences by polling place**, AEC polling-place coordinates, and the 88 `STATE_ASSEMBLY_2022` polygons exposed by Vicmap Admin. The builder performs the point-in-polygon crosswalk without adding a GIS dependency and emits both an 88-seat relative surface and a provenance/audit JSON.
 
-The final challenger set should include fixed `lambda = 0.50`, `0.75`, `1.00` and a pre-declared sampled-lambda treatment. Do not choose a posterior-favourable lambda after seeing validation evidence.
+House results are used deliberately rather than Senate results for the primary challenger: the current 2022 ecological auxiliary is a federal local-pattern surface, Antony Green's independent 2025 mapping also uses House results, and House results avoid introducing a chamber change into the year-on-year comparison. Senate geography remains a useful robustness check, not the primary replacement surface.
+
+The builder excludes non-geolocatable declaration votes from the district surface and reports them rather than allocating them heuristically. This avoids false precision but means the surface is an ecological polling-place approximation, not a reconstruction of every elector's home district.
+
+Before any simulation, Phase B must pass these checks:
+
+1. exactly 88 unique Assembly polygons and 88 output districts;
+2. AEC/Vicmap source payload hashes recorded;
+3. no Morgan, 2026 seat polling or candidate-effect input used in construction;
+4. statewide located-vote ONP share reconciled against the corresponding AEC ordinary-vote universe, with any denominator difference explained;
+5. district ranking and broad rural/outer/inner gradient compared against Antony Green as an **independent diagnostic**, not fitted to his map;
+6. 2022-vs-2025 district log-ratio correlation, regression slope, rank correlation and largest residual/change seats reported;
+7. anomalous seats reviewed for known federal candidate-field effects before any production interpretation.
+
+Only after these checks should the 2025 surface enter the shadow simulator. The final challenger set should include fixed `lambda = 0.50`, `0.75`, `1.00` and a pre-declared sampled-lambda treatment. Do not choose a posterior-favourable lambda after seeing validation evidence.
 
 All variants must use common random numbers where practical and identical non-PHON coefficients, polling evidence, preference machinery and candidate files.
 
@@ -138,4 +152,4 @@ Until then, the revised geographic model is shadow-only.
 
 The code audit changes the scientific interpretation of this workstream. The current model already encodes substantial PHON geographic heterogeneity, so the earlier framing of PROD as effectively uniform was wrong. The immediate task is now a **surface-update and persistence-validation problem**, not a geography-versus-no-geography problem.
 
-Phase A can establish how sensitive current outputs are to the strength of the existing 2022 spatial pattern. Phase B is the substantive test: build the 2025 88-seat surface with reproducible provenance, hold Morgan out, and determine whether the newer geography improves prospective explanatory/calibration performance enough to justify promotion.
+Phase A can establish how sensitive current outputs are to the strength of the existing 2022 spatial pattern. Phase B is now specified as a reproducible official-data build rather than an analyst-derived seat table. Morgan remains held out. Independent analyst mappings are diagnostics only. No production change is authorised by this workstream.
