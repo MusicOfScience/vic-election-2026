@@ -1,0 +1,36 @@
+name: IRV final-pair calibration
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/irv-final-pair-calibration
+    paths:
+      - 'model/scripts/audit_historical_assembly_preference_pages.py'
+      - 'model/scripts/calibrate_historical_assembly_preferences.py'
+      - 'model/scripts/run_irv_final_pair_shadow.py'
+      - 'docs/IRV_FINAL_PAIR_CALIBRATION_PROTOCOL.md'
+      - '.github/workflows/irv-final-pair-calibration.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit historical VEC preference-distribution pages
+        run: |
+          python model/scripts/audit_historical_assembly_preference_pages.py \
+            --output artifacts/irv/historical-preference-page-audit.json
+      - name: Upload schema audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: irv-historical-preference-page-audit
+          path: artifacts/irv/historical-preference-page-audit.json
+          if-no-files-found: error
