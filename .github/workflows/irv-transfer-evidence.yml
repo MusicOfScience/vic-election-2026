@@ -1,0 +1,49 @@
+name: IRV transfer evidence and C1 freeze
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/irv-final-pair-calibration
+    paths:
+      - 'model/scripts/extract_historical_assembly_original_parcel_transfers.py'
+      - 'model/scripts/audit_historical_assembly_effective_transfer_events.py'
+      - 'model/scripts/fit_irv_c1_walkforward.py'
+      - 'docs/IRV_FINAL_PAIR_CALIBRATION_AMENDMENT_1.md'
+      - '.github/workflows/irv-transfer-evidence.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Extract corrected clean original-parcel evidence
+        run: |
+          python model/scripts/extract_historical_assembly_original_parcel_transfers.py \
+            --cache-dir .cache/irv-transfer \
+            --workers 10 \
+            --output artifacts/irv/historical-original-parcel-transfers.json
+      - name: Audit all candidate-level effective exclusion parcels
+        run: |
+          python model/scripts/audit_historical_assembly_effective_transfer_events.py \
+            --cache-dir .cache/irv-transfer \
+            --workers 10 \
+            --output artifacts/irv/historical-effective-transfer-events.json
+      - name: Fit preregistered C1 without scoring outcomes
+        run: |
+          python model/scripts/fit_irv_c1_walkforward.py \
+            --evidence artifacts/irv/historical-original-parcel-transfers.json \
+            --output artifacts/irv/c1-walkforward-freeze-candidate.json
+      - name: Upload pre-outcome evidence and C1 freeze candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: irv-transfer-evidence-c1-freeze
+          path: artifacts/irv/*.json
+          if-no-files-found: error
