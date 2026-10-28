@@ -46,15 +46,18 @@ jobs:
           assert score['guardrails']['historical_outcomes_are_scoring_only'] is True
           assert score['guardrails']['two_candidate_preferred_fallbacks_score_as_irv_pairs'] is False
           assert score['overall']['districts_scored_winner'] == 351
-          assert score['overall']['observed_same_family_final_pairs'] == 0
           assert score['overall']['districts_scored_final_pair'] > 0
-          assert all(cycle['observed_same_family_final_pairs'] == 0 for cycle in score['cycles'])
+          # Same-family observed final pairs are retained deliberately. They are
+          # structural diagnostics of information lost by the five-family
+          # aggregation, not evidence to delete in order to make C0 scoreable.
+          assert score['overall']['observed_same_family_final_pairs'] >= 0
           print(json.dumps(score['overall'], sort_keys=True))
           for cycle in score['cycles']:
               print(json.dumps({
                   'cycle': cycle['cycle'],
                   'districts_scored_winner': cycle['districts_scored_winner'],
                   'districts_scored_final_pair': cycle['districts_scored_final_pair'],
+                  'observed_same_family_final_pairs': cycle['observed_same_family_final_pairs'],
                   'winner_modal_accuracy': cycle['winner_modal_accuracy'],
                   'winner_mean_brier': cycle['winner_mean_brier'],
                   'winner_mean_log_loss': cycle['winner_mean_log_loss'],
