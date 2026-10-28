@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-before-r1-historical-outcome-score",
+  "frozenDate": "2026-10-29",
+  "workflowRun": 40710083717,
+  "artifactId": 12825532350,
+  "artifactZipSha256": "f9715fc05fad20a10ab11249bb079b2f4fabcab52e4fe94e2f1bb45521e4b403",
+  "effectiveTransferEvidenceSha256": "6180e2f699c28a7d3d458ae613b9e3a2f5e3cb6ba345f873ba1367134dd7e239",
+  "qOthFitSha256": "d965b6c1447adfe69332f17e3ca03064cf317736073b0afbbe65e7f8fe60084e",
+  "preregistration": "metadata/candidate-resolution-irv-preregistration-2026-10-29.json",
+  "protocol": "docs/CANDIDATE_RESOLUTION_IRV_CALIBRATION_PROTOCOL.md",
+  "interpretation": "Operational elimination-stage OTH-to-OTH parcel retention; later mixed parcels are not original voter-preference observations.",
+  "targets": [
+    {
+      "targetYear": 2014,
+      "trainingYears": [2010],
+      "eligibleEvents": 93,
+      "districtElectionUnits": 40,
+      "bootstrapMean": 0.3304598593397789,
+      "q05": 0.3046896183150695,
+      "q50": 0.33049946417013965,
+      "q95": 0.3556371475694939
+    },
+    {
+      "targetYear": 2018,
+      "trainingYears": [2010, 2014],
+      "eligibleEvents": 228,
+      "districtElectionUnits": 84,
+      "bootstrapMean": 0.3655830215417368,
+      "q05": 0.34674921665717884,
+      "q50": 0.3655557656898144,
+      "q95": 0.3846895603887444
+    },
+    {
+      "targetYear": 2022,
+      "trainingYears": [2010, 2014, 2018],
+      "eligibleEvents": 332,
+      "districtElectionUnits": 118,
+      "bootstrapMean": 0.3717927925617835,
+      "q05": 0.3548820504454331,
+      "q50": 0.37180565341984706,
+      "q95": 0.3879949591978071
+    }
+  ],
+  "knownEvidenceCoverageCaveat": {
+    "2010DistributionFailures": ["Melton", "Narre Warren South"],
+    "action": "remain fail-closed; no manual candidate reconciliation added for this calibration"
+  },
+  "guardrails": {
+    "historicalR1OutcomesInspectedBeforeFreeze": false,
+    "uses2026ForecastOutput": false,
+    "uses2026SeatPolling": false,
+    "fitsCrossFamilyMeans": false,
+    "productionInput": false
+  }
+}
