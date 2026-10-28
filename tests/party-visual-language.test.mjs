@@ -9,6 +9,7 @@ const select = readFileSync(new URL("../components/ui/select.tsx", import.meta.u
 test("One Nation uses orange throughout the app visual language", () => {
   assert.match(css, /--party-one-nation:\s*#e36f14/i);
   assert.match(css, /\[fill="#6e4da0"\].*party-one-nation/s);
+  assert.match(css, /\[stroke="#6e4da0"\].*party-one-nation/s);
   assert.match(css, /seat-totals \.onp strong[\s\S]*party-one-nation/);
 });
 
