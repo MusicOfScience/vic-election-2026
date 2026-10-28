@@ -19,12 +19,14 @@
   --other: var(--party-other-independent);
 }
 
-/* Existing chart code contains legacy literal fills. Override them globally until generated chart metadata is migrated. */
+/* Existing chart code contains legacy literal colours. Override them globally until generated chart metadata is migrated. */
 svg [fill="#d84a42"] { fill: var(--party-labor) !important; }
 svg [fill="#2e63ad"] { fill: var(--party-coalition) !important; }
 svg [fill="#159867"] { fill: var(--party-greens) !important; }
 svg [fill="#6e4da0"] { fill: var(--party-one-nation) !important; }
 svg [fill="#d19b2a"], svg [fill="#7d6a92"] { fill: var(--party-other-independent) !important; }
+svg [stroke="#6e4da0"] { stroke: var(--party-one-nation) !important; }
+svg [stroke="#d19b2a"], svg [stroke="#7d6a92"] { stroke: var(--party-other-independent) !important; }
 
 .arc-party-legend span:nth-child(1) i { background-color: var(--party-labor) !important; }
 .arc-party-legend span:nth-child(2) i { background-color: var(--party-coalition) !important; }
