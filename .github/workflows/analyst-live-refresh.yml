@@ -1,0 +1,55 @@
+name: Analyst live refresh validation
+
+on:
+  push:
+    branches:
+      - codex/analyst-evidence-live-refresh
+    paths:
+      - 'app/analyst-evidence-guide.tsx'
+      - 'app/analyst-live.generated.json'
+      - 'metadata/analyst-*.json'
+      - 'metadata/psephology-sources.json'
+      - 'scripts/build-analyst-live-feed.mjs'
+      - 'tests/analyst-live-feed.test.mjs'
+      - '.github/workflows/analyst-live-refresh.yml'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Run analyst live-feed regression tests
+        run: node --test tests/analyst-live-feed.test.mjs
+      - name: Exercise live analyst discovery
+        run: node scripts/build-analyst-live-feed.mjs --output app/analyst-live.generated.json
+      - name: Validate live snapshot contract
+        run: |
+          node - <<'JS'
+          const fs = require('node:fs');
+          const feed = JSON.parse(fs.readFileSync('app/analyst-live.generated.json', 'utf8'));
+          if (feed.schemaVersion !== 1) throw new Error('unexpected schemaVersion');
+          if (feed.policy !== 'discovery-only-no-automatic-promotion') throw new Error('automatic-promotion guardrail missing');
+          if (!Array.isArray(feed.records)) throw new Error('records is not an array');
+          if (feed.refreshStatus.sourcesAttempted < 5) throw new Error('not all configured sources were attempted');
+          if (feed.refreshStatus.sourcesSucceeded < 1) throw new Error('no analyst source refreshed successfully');
+          for (const record of feed.records) {
+            if (!record.sourceName || !record.title || !record.sourceUrl) throw new Error('incomplete discovery record');
+            if (record.status !== 'discovered-pending-review') throw new Error('unreviewed record escaped quarantine label');
+          }
+          console.log(JSON.stringify({
+            generatedAt: feed.generatedAt,
+            records: feed.records.length,
+            refreshStatus: feed.refreshStatus,
+          }, null, 2));
+          JS
