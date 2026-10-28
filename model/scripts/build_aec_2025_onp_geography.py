@@ -18,7 +18,9 @@ import hashlib
 import io
 import json
 import math
+import time
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -31,10 +33,20 @@ OUTPUT = ROOT / "model/data/validation/aec_2025_onp_state_district_surface.csv"
 AUDIT = ROOT / "metadata/aec-2025-onp-geography-audit.json"
 
 
-def _get(url: str) -> bytes:
+def _get(url: str, *, attempts: int = 4) -> bytes:
     req = Request(url, headers={"User-Agent": "vic-election-2026-research/1.0"})
-    with urlopen(req, timeout=90) as response:
-        return response.read()
+    for attempt in range(attempts):
+        try:
+            with urlopen(req, timeout=90) as response:
+                return response.read()
+        except HTTPError as exc:
+            if exc.code not in {429, 500, 502, 503, 504} or attempt == attempts - 1:
+                raise
+        except URLError:
+            if attempt == attempts - 1:
+                raise
+        time.sleep(2 ** attempt)
+    raise RuntimeError("unreachable retry state")
 
 
 def _sha(payload: bytes) -> str:
@@ -92,6 +104,28 @@ def _point_in_geometry(x: float, y: float, geometry: dict) -> bool:
     return False
 
 
+def _iter_points(coords):
+    if (
+        isinstance(coords, (list, tuple))
+        and len(coords) >= 2
+        and isinstance(coords[0], (int, float))
+        and isinstance(coords[1], (int, float))
+    ):
+        yield float(coords[0]), float(coords[1])
+        return
+    for child in coords:
+        yield from _iter_points(child)
+
+
+def _geometry_bbox(geometry: dict) -> tuple[float, float, float, float]:
+    points = list(_iter_points(geometry["coordinates"]))
+    if not points:
+        raise ValueError("empty boundary geometry")
+    xs = [point[0] for point in points]
+    ys = [point[1] for point in points]
+    return min(xs), min(ys), max(xs), max(ys)
+
+
 def _district_name(properties: dict) -> str:
     preferred = (
         "district_name", "districtname", "electorate_name", "electoratename",
@@ -109,17 +143,39 @@ def _district_name(properties: dict) -> str:
     raise KeyError(f"cannot identify district-name field from {list(properties)}")
 
 
-def _boundaries() -> tuple[bytes, list[dict]]:
-    query = urlencode({
-        "where": "1=1", "outFields": "*", "returnGeometry": "true",
-        "outSR": "4326", "f": "geojson",
-    })
-    payload = _get(f"{VICMAP_QUERY}?{query}")
-    geo = json.loads(payload)
-    features = geo.get("features", [])
+def _boundaries() -> tuple[bytes, list[dict], int]:
+    """Fetch Vicmap in small pages so the public ArcGIS service does not time out."""
+    page_size = 5
+    offset = 0
+    features: list[dict] = []
+    payloads: list[bytes] = []
+    while True:
+        query = urlencode({
+            "where": "1=1",
+            "outFields": "*",
+            "returnGeometry": "true",
+            "outSR": "4326",
+            "f": "geojson",
+            "orderByFields": "OBJECTID",
+            "resultOffset": offset,
+            "resultRecordCount": page_size,
+        })
+        payload = _get(f"{VICMAP_QUERY}?{query}")
+        payloads.append(payload)
+        geo = json.loads(payload)
+        page = geo.get("features", [])
+        if not page:
+            break
+        features.extend(page)
+        offset += len(page)
+        if len(page) < page_size:
+            break
+        if offset > 200:
+            raise ValueError("Vicmap pagination exceeded defensive limit")
     if len(features) != 88:
         raise ValueError(f"expected 88 Assembly polygons, got {len(features)}")
-    return payload, features
+    combined = b"\n".join(payloads)
+    return combined, features, len(payloads)
 
 
 def _is_onp(row: dict[str, str]) -> bool:
@@ -135,11 +191,19 @@ def _is_onp(row: dict[str, str]) -> bool:
 def build() -> tuple[list[dict], dict]:
     results_payload = _get(AEC_RESULTS)
     places_payload = _get(AEC_PLACES)
-    boundary_payload, boundaries = _boundaries()
+    boundary_payload, boundaries, boundary_requests = _boundaries()
     results = _csv(results_payload)
     places = _csv(places_payload)
 
-    # Polling-place IDs are stable join keys; filter to Victoria before mapping.
+    result_place_ids: set[str] = set()
+    for row in results:
+        try:
+            result_place_ids.add(_field(row, "PollingPlaceID", "PollingPlaceId"))
+        except KeyError:
+            continue
+
+    # Polling-place IDs are stable join keys; filter to Victoria and to IDs
+    # actually present in the VIC House result before doing spatial work.
     coords: dict[str, tuple[float, float, str]] = {}
     for row in places:
         try:
@@ -147,6 +211,8 @@ def build() -> tuple[list[dict], dict]:
             if state.upper() not in {"VIC", "VICTORIA"}:
                 continue
             pid = _field(row, "PollingPlaceID", "PollingPlaceId")
+            if pid not in result_place_ids:
+                continue
             lon = _float(row, "Longitude")
             lat = _float(row, "Latitude")
             name = _field(row, "PollingPlace", "PollingPlaceName", "PollingPlaceNm")
@@ -155,14 +221,27 @@ def build() -> tuple[list[dict], dict]:
         except (KeyError, ValueError):
             continue
 
+    prepared = [(feature, _geometry_bbox(feature["geometry"])) for feature in boundaries]
     assignment: dict[str, str] = {}
     unmatched_places: list[dict] = []
     for pid, (lon, lat, name) in coords.items():
-        matches = [feature for feature in boundaries if _point_in_geometry(lon, lat, feature["geometry"])]
+        candidates = [
+            feature
+            for feature, (xmin, ymin, xmax, ymax) in prepared
+            if xmin <= lon <= xmax and ymin <= lat <= ymax
+        ]
+        matches = [feature for feature in candidates if _point_in_geometry(lon, lat, feature["geometry"])]
         if len(matches) == 1:
             assignment[pid] = _district_name(matches[0]["properties"])
         else:
-            unmatched_places.append({"pollingPlaceId": pid, "pollingPlace": name, "longitude": lon, "latitude": lat, "matches": len(matches)})
+            unmatched_places.append({
+                "pollingPlaceId": pid,
+                "pollingPlace": name,
+                "longitude": lon,
+                "latitude": lat,
+                "bboxCandidates": len(candidates),
+                "matches": len(matches),
+            })
 
     totals: dict[str, float] = {}
     onp: dict[str, float] = {}
@@ -192,7 +271,12 @@ def build() -> tuple[list[dict], dict]:
         if formal <= 0:
             raise ValueError(f"no located House first-preference votes for {name}")
         votes = onp.get(name, 0.0)
-        rows.append({"district_name": name, "located_formal_votes": round(formal), "onp_votes": round(votes), "onp_share": votes / formal})
+        rows.append({
+            "district_name": name,
+            "located_formal_votes": round(formal),
+            "onp_votes": round(votes),
+            "onp_share": votes / formal,
+        })
 
     weighted_state = sum(row["onp_votes"] for row in rows) / sum(row["located_formal_votes"] for row in rows)
     for row in rows:
@@ -207,12 +291,22 @@ def build() -> tuple[list[dict], dict]:
         "targetGeography": "Victorian Assembly STATE_ASSEMBLY_2022 (88 districts)",
         "method": "AEC House ordinary polling-place first preferences spatially assigned by AEC polling-place coordinates to Vicmap Assembly polygons",
         "sources": {
-            "aecHousePollingPlaceFirstPreferences": {"url": AEC_RESULTS, "sha256": _sha(results_payload), "status": "final"},
+            "aecHousePollingPlaceFirstPreferences": {
+                "url": AEC_RESULTS,
+                "sha256": _sha(results_payload),
+                "status": "final",
+            },
             "aecPollingPlaces": {"url": AEC_PLACES, "sha256": _sha(places_payload)},
-            "vicmapAssemblyGeoJSON": {"url": VICMAP_QUERY, "sha256": _sha(boundary_payload), "featureCount": len(boundaries)},
+            "vicmapAssemblyGeoJSON": {
+                "url": VICMAP_QUERY,
+                "sha256CombinedPagedResponses": _sha(boundary_payload),
+                "featureCount": len(boundaries),
+                "requestCount": boundary_requests,
+            },
         },
         "districtCount": len(rows),
-        "coordinatePollingPlacesInVictoria": len(coords),
+        "resultPollingPlaceIds": len(result_place_ids),
+        "coordinatePollingPlacesInVictoriaUsedForJoin": len(coords),
         "locatedPollingPlaces": len(assignment),
         "unmatchedCoordinatePlaces": unmatched_places,
         "usedResultRows": used_rows,
@@ -243,10 +337,17 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
-        writer.writeheader(); writer.writerows(rows)
+        writer.writeheader()
+        writer.writerows(rows)
     args.audit.parent.mkdir(parents=True, exist_ok=True)
     args.audit.write_text(json.dumps(audit, indent=2) + "\n")
-    print(json.dumps({"districts": len(rows), "locatedStateOnpShare": audit["locatedStateOnpShare"], "output": str(args.output)}, indent=2))
+    print(json.dumps({
+        "districts": len(rows),
+        "locatedStateOnpShare": audit["locatedStateOnpShare"],
+        "locatedPollingPlaces": audit["locatedPollingPlaces"],
+        "unmatchedCoordinatePlaces": len(audit["unmatchedCoordinatePlaces"]),
+        "output": str(args.output),
+    }, indent=2))
 
 
 if __name__ == "__main__":
