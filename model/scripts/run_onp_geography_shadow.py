@@ -112,7 +112,9 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
     seed_value = int(config["seed"])
     control_seed = forecast_module.build_assembly_seed(model_root, config).copy()
     target = central_weighted_onp_primary(model_root, config, control_seed) * 100.0
-    treatments = (0.0, 0.5, 0.75, 1.0)
+    # 0.62 is not post-hoc tuning: it is the AEC local-pattern shrinkage already
+    # declared in experimental_forecast.yml for the general Assembly surface.
+    treatments = (0.0, 0.5, 0.62, 0.75, 1.0)
     runs = {}
     for lam in treatments:
         raw = _scaled_seed(control_seed, lam)
@@ -132,7 +134,7 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         runs[lam] = _summary(result, calibrated, calibration)
     control = runs[1.0]
     return {
-        "schemaVersion": 3,
+        "schemaVersion": 4,
         "mode": "onp-geography-shadow-sensitivity-only",
         "asOf": str(config["as_of"]),
         "simulationsPerTreatment": simulations,
@@ -143,6 +145,7 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         "sourceSurface": "existing AEC_2022_ecological_auxiliary",
         "centralVoteConservation": True,
         "controlLambda": 1.0,
+        "configuredAecLocalPatternShrinkageDiagnostic": 0.62,
         "treatments": {str(lam): runs[lam] for lam in treatments},
         "comparisonsVsCurrent": {str(lam): _compare(control, runs[lam]) for lam in treatments if lam != 1.0},
     }
@@ -167,7 +170,7 @@ def main() -> None:
     else:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered)
-    print(f"ONP geography shadow complete: {args.simulations} simulations x 4 treatments; central ONP vote conserved; canonical artefacts untouched.")
+    print(f"ONP geography shadow complete: {args.simulations} simulations x {len(report['treatments'])} treatments; central ONP vote conserved; canonical artefacts untouched.")
 
 
 if __name__ == "__main__":
