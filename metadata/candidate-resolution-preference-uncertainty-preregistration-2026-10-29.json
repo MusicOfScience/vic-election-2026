@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "workstream": "candidate-resolution-preference-uncertainty",
+  "status": "preregistered-before-new-uncertainty-scoring",
+  "productionBoundary": {
+    "read2026AssemblyOutputs": false,
+    "generate2026AssemblyShadow": false,
+    "modifyCanonicalForecast": false,
+    "modifyPreferenceMeans": false,
+    "modifyCandidateResolutionArchitecture": false
+  },
+  "fixedArchitecture": {
+    "source": "PR #140 historically-supported R1 architecture",
+    "primaryOthAllocation": "equal-among-continuing-OTH-candidates",
+    "sensitivityOthAllocation": "current-tally-proportional",
+    "qOthCalibration": "unchanged-from-PR-140",
+    "preferenceMeans": "existing-PREFERENCE_PRIOR"
+  },
+  "parameter": {
+    "name": "dirichlet_concentration",
+    "grid": [4, 8, 12, 18, 24, 36, 48, 72, 108, 144],
+    "control": 72
+  },
+  "walkForward": {
+    "2018": {"train": [2014], "target": 2018},
+    "2022": {"train": [2014, 2018], "target": 2022},
+    "selectionObjective": "0.5*winner_mean_log_loss + 0.5*final_pair_mean_log_loss",
+    "tieTolerance": 1e-6,
+    "tieRule": "choose-higher-concentration"
+  },
+  "primaryHeldOutTargets": [2018, 2022],
+  "researchSupportGate": {
+    "winnerLogLossImprovementVsR1_72Min": 0.03,
+    "pairLogLossAdvantageVsR0_C0Min": 0.05,
+    "pairBrierMaxWorseningVsR1_72": 0.01,
+    "winnerBrierMustNotWorsenVsR1_72": true,
+    "pairModalAccuracyMaxDropPpVsR1_72": 1.5,
+    "requireSameQualitativeConclusionUnderProportionalSensitivity": true,
+    "perTargetCatastrophicLogLossWorseningMax": 0.10
+  },
+  "productionCandidateGate": {
+    "winnerLogLossNoWorseThanR0_C0": true,
+    "winnerBrierMaxAboveR0_C0": 0.01,
+    "pairLogLossBetterThanR0_C0": true,
+    "pairBrierBetterThanR0_C0": true,
+    "zeroProbabilityObservedPairsMustNotIncreaseVsR1_72": true,
+    "authorisesProductionPromotion": false,
+    "authorisesOnlySeparateGoverned2026Shadow": true
+  },
+  "prohibitedPostScoreAdaptations": [
+    "change-concentration-grid",
+    "change-objective-weights",
+    "change-tie-rule",
+    "refit-preference-means",
+    "change-candidate-resolution-architecture",
+    "change-q_oth-definition",
+    "add-district-specific-concentration",
+    "select-OTH-allocation-rule-by-score",
+    "inspect-or-tune-against-2026-seat-output",
+    "relax-failed-gate"
+  ],
+  "allowedAdjudications": [
+    "historically-supported-uncertainty-correction",
+    "historically-inconclusive",
+    "historically-rejected"
+  ]
+}
