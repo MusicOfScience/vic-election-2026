@@ -6,14 +6,18 @@ on:
       - "codex/onp-spatial-persistence-calibration"
     paths:
       - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md"
+      - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_AMENDMENT_1.md"
       - "model/scripts/calibrate_onp_spatial_persistence.py"
       - "model/scripts/run_onp_spatial_persistence_calibration.py"
+      - "model/scripts/freeze_onp_spatial_persistence_mixture.py"
       - ".github/workflows/onp-spatial-persistence-calibration.yml"
   pull_request:
     paths:
       - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_PROTOCOL.md"
+      - "docs/ONP_SPATIAL_PERSISTENCE_CALIBRATION_AMENDMENT_1.md"
       - "model/scripts/calibrate_onp_spatial_persistence.py"
       - "model/scripts/run_onp_spatial_persistence_calibration.py"
+      - "model/scripts/freeze_onp_spatial_persistence_mixture.py"
       - ".github/workflows/onp-spatial-persistence-calibration.yml"
   workflow_dispatch:
 
@@ -35,10 +39,11 @@ jobs:
         run: |
           python -m py_compile \
             model/scripts/calibrate_onp_spatial_persistence.py \
-            model/scripts/run_onp_spatial_persistence_calibration.py
+            model/scripts/run_onp_spatial_persistence_calibration.py \
+            model/scripts/freeze_onp_spatial_persistence_mixture.py
       - name: Run historical calibration only
         run: PYTHONPATH="model/scripts:model/src" python model/scripts/run_onp_spatial_persistence_calibration.py
-      - name: Validate frozen pre-2026 calibration artefact
+      - name: Validate base pre-2026 calibration artefact
         run: |
           python - <<'PY'
           import json
@@ -50,29 +55,45 @@ jobs:
           assert set(surface.year.unique()) == {2016, 2019, 2022, 2025}
           assert surface.groupby('year').district_name.nunique().eq(88).all()
           assert len(bootstrap) == 5000
-          assert bootstrap[['aTarget','kappaTarget']].apply(lambda s: s.between(0, 1).all()).all()
           assert report['status'] == 'frozen-pre-2026-seat-run'
           assert report['governance']['assembly2026SimulatorExecuted'] is False
           assert report['governance']['assembly2026OutputsRead'] is False
           assert report['governance']['royMorganRead'] is False
-          assert report['bootstrap']['draws'] == 5000
-          print({
-              'point': report['pooledPointEstimate'],
-              'aTarget': report['bootstrap']['summary']['aTarget'],
-              'kappaTarget': report['bootstrap']['summary']['kappaTarget'],
-          })
+          PY
+      - name: Build amended between-era mixture freeze
+        run: python model/scripts/freeze_onp_spatial_persistence_mixture.py
+      - name: Validate amended mixture freeze
+        run: |
+          python - <<'PY'
+          import json
+          import pandas as pd
+          mix = pd.read_csv('model/data/validation/onp-spatial-persistence-mixture.csv')
+          freeze = json.load(open('metadata/onp-spatial-persistence-freeze-v2-generated.json'))
+          assert len(mix) == 10000
+          assert mix.sourceTriplet.value_counts().to_dict() == {'2016-2019-2022': 5000, '2019-2022-2025': 5000}
+          assert mix[['aTarget','kappaTarget']].apply(lambda s: s.between(0,1).all()).all()
+          assert freeze['status'] == 'frozen-pre-2026-seat-run-amended'
+          assert freeze['governance']['assembly2026SimulatorExecuted'] is False
+          assert freeze['governance']['assembly2026OutputsRead'] is False
+          # Between-era disagreement must remain visible rather than be averaged away.
+          assert freeze['mixture']['kappaTarget']['q95'] - freeze['mixture']['kappaTarget']['q05'] >= 0.25
+          print(freeze['mixture'])
           PY
       - name: Hash calibration outputs
         run: |
           sha256sum \
             model/data/validation/onp-senate-spatial-surfaces-2016-2025.csv \
             model/data/validation/onp-spatial-persistence-bootstrap.csv \
-            metadata/onp-spatial-persistence-calibration-2026-10-28.json
+            model/data/validation/onp-spatial-persistence-mixture.csv \
+            metadata/onp-spatial-persistence-calibration-2026-10-28.json \
+            metadata/onp-spatial-persistence-freeze-v2-generated.json
       - uses: actions/upload-artifact@v4
         with:
           name: onp-spatial-persistence-calibration
           path: |
             model/data/validation/onp-senate-spatial-surfaces-2016-2025.csv
             model/data/validation/onp-spatial-persistence-bootstrap.csv
+            model/data/validation/onp-spatial-persistence-mixture.csv
             metadata/onp-spatial-persistence-calibration-2026-10-28.json
+            metadata/onp-spatial-persistence-freeze-v2-generated.json
           retention-days: 90
