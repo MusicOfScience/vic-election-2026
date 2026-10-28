@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "workstream": "assembly-irv-candidate-resolution",
+  "pr": 140,
+  "canonicalForecastChanged": false,
+  "productionPromotion": "rejected-deferred",
+  "adjudication": "historically-supported-architecture-only",
+  "r0": {
+    "model": "C0-current-five-family-benchmark",
+    "matched2014To2022": {
+      "winnerDistricts": 263,
+      "finalPairDistricts": 170,
+      "winnerModalAccuracy": 0.9391634980988594,
+      "winnerMeanBrier": 0.10382771741444866,
+      "winnerMeanLogLoss": 0.2935450513478753,
+      "pairModalAccuracy": 0.9058823529411765,
+      "pairMeanBrier": 0.17623794682352942,
+      "pairMeanLogLoss": 0.9976695297737047,
+      "zeroProbabilityObservedPairs": 11,
+      "phantomOthModalPairErrors": 12
+    },
+    "reproducedToMachineTolerance": true
+  },
+  "r1Equal": {
+    "model": "OTH_IND-candidate-resolved-equal-allocation",
+    "matched2014To2022": {
+      "winnerDistricts": 263,
+      "finalPairDistricts": 170,
+      "winnerModalAccuracy": 0.9315589353612167,
+      "winnerMeanBrier": 0.11935161460076045,
+      "winnerMeanLogLoss": 0.42625785843363456,
+      "pairModalAccuracy": 0.9529411764705882,
+      "pairMeanBrier": 0.0913225985882353,
+      "pairMeanLogLoss": 0.4991855275334371,
+      "zeroProbabilityObservedPairs": 5,
+      "phantomOthModalPairErrors": 0,
+      "exactOthPairDistricts": 13,
+      "exactOthPairModalAccuracy": 0.7692307692307693,
+      "exactOthPairMeanObservedProbability": 0.7692307692307693
+    },
+    "frozenSupportChecks": {
+      "pairLogLossImprovement": 0.4984840022402676,
+      "minimumPairLogLossImprovementPassed": true,
+      "pairBrierNonWorseningPassed": true,
+      "winnerBrierChange": 0.015523897186311794,
+      "winnerBrierTolerancePassed": true,
+      "phantomOthModalPairErrorsChange": -12,
+      "phantomOthModalPairErrorsFallPassed": true,
+      "allMetricChecksPassed": true
+    }
+  },
+  "r1ProportionalSensitivity": {
+    "model": "OTH_IND-candidate-resolved-proportional-allocation-sensitivity",
+    "matched2014To2022": {
+      "winnerDistricts": 263,
+      "finalPairDistricts": 170,
+      "winnerModalAccuracy": 0.9315589353612167,
+      "winnerMeanBrier": 0.11931843072243346,
+      "winnerMeanLogLoss": 0.4262474810449006,
+      "pairModalAccuracy": 0.9529411764705882,
+      "pairMeanBrier": 0.09054452,
+      "pairMeanLogLoss": 0.4596832723197037,
+      "zeroProbabilityObservedPairs": 4,
+      "phantomOthModalPairErrors": 0,
+      "exactOthPairDistricts": 13,
+      "exactOthPairModalAccuracy": 0.7692307692307693,
+      "exactOthPairMeanObservedProbability": 0.769323076923077
+    },
+    "frozenSupportChecks": {
+      "pairLogLossImprovement": 0.5379862574540011,
+      "minimumPairLogLossImprovementPassed": true,
+      "pairBrierNonWorseningPassed": true,
+      "winnerBrierChange": 0.015490713307984808,
+      "winnerBrierTolerancePassed": true,
+      "phantomOthModalPairErrorsChange": -12,
+      "phantomOthModalPairErrorsFallPassed": true,
+      "allMetricChecksPassed": true
+    }
+  },
+  "qOthCalibration": {
+    "interpretation": "operational elimination-stage OTH-to-OTH parcel retention; not original voter preference",
+    "effectiveTransferEvidenceSha256": "6180e2f699c28a7d3d458ae613b9e3a2f5e3cb6ba345f873ba1367134dd7e239",
+    "fitSha256": "d965b6c1447adfe69332f17e3ca03064cf317736073b0afbbe65e7f8fe60084e",
+    "targets": {
+      "2014": {"eligibleEvents": 93, "districtElectionUnits": 40, "q05": 0.3046896183150695, "q50": 0.33049946417013965, "q95": 0.3556371475694939},
+      "2018": {"eligibleEvents": 228, "districtElectionUnits": 84, "q05": 0.34674921665717884, "q50": 0.3655557656898144, "q95": 0.3846895603887444},
+      "2022": {"eligibleEvents": 332, "districtElectionUnits": 118, "q05": 0.3548820504454331, "q50": 0.37180565341984706, "q95": 0.3879949591978071}
+    }
+  },
+  "adverseFindings": [
+    "Winner modal accuracy declines slightly under R1.",
+    "Winner mean Brier worsens by about 0.0155, within the frozen architecture-screening tolerance.",
+    "Winner mean log loss worsens materially from 0.2935 to about 0.4263; this was reported but not a frozen pass/fail criterion and must not be ignored."
+  ],
+  "interpretation": [
+    "Resolving heterogeneous OTH_IND candidates is historically supported as an Assembly elimination-order/final-pair architecture correction.",
+    "The 12 phantom OTH modal-pair errors diagnosed in C0 fall to zero under both frozen allocation rules.",
+    "Candidate resolution alone is not a complete production replacement because winner-probability calibration degrades.",
+    "Preference-uncertainty calibration should be tested as a separate preregistered workstream using the supported candidate-resolution architecture."
+  ],
+  "decisions": {
+    "retainCandidateResolvedResearchArchitecture": true,
+    "retainQOthOperationalCalibration": true,
+    "promoteR1ToProduction": false,
+    "run2026R1ShadowInThisPr": false,
+    "alterProductionPreferenceMeans": false,
+    "alterProductionPreferenceConcentration": false,
+    "alterCanonical2026Forecast": false,
+    "nextWorkstreamPreferenceUncertaintyCalibration": true,
+    "newPrRequiredBefore2026CandidateResolvedShadow": true
+  },
+  "reproducibility": {
+    "preScoreFitWorkflowRun": 40710083717,
+    "preScoreFitArtifactId": 12825532350,
+    "preScoreFitArtifactZipSha256": "f9715fc05fad20a10ab11249bb079b2f4fabcab52e4fe94e2f1bb45521e4b403",
+    "historicalScoreWorkflowRun": 40710790066,
+    "historicalScoreArtifactId": 12825967575,
+    "historicalScoreArtifactZipSha256": "cda0cb042d0279cac44fa13a6414f939300400d535c17d5f3eda18c35ab98595",
+    "historicalScoreJsonSha256": "269b7f518705d7d2072e508e5f6ab194b8b4b98c8cf631786c6d690a21a2f98e"
+  }
+}
