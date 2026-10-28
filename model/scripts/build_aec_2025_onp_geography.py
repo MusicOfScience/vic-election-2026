@@ -128,8 +128,8 @@ def _geometry_bbox(geometry: dict) -> tuple[float, float, float, float]:
 
 def _district_name(properties: dict) -> str:
     preferred = (
-        "district_name", "districtname", "electorate_name", "electoratename",
-        "state_district", "statedistrict", "name",
+        "district", "district_label", "district_name", "districtname",
+        "electorate_name", "electoratename", "state_district", "statedistrict", "name",
     )
     folded = {str(k).lower().replace("_", ""): k for k in properties}
     for candidate in preferred:
