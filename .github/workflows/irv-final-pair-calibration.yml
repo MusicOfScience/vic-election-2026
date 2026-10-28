@@ -8,10 +8,12 @@ on:
     paths:
       - 'model/scripts/audit_historical_assembly_preference_pages.py'
       - 'model/scripts/extract_historical_assembly_original_parcel_transfers.py'
+      - 'model/scripts/fit_irv_c1_walkforward.py'
       - 'model/scripts/score_irv_c0_historical.py'
-      - 'model/scripts/calibrate_historical_assembly_preferences.py'
+      - 'model/scripts/score_irv_c1_historical.py'
       - 'model/scripts/run_irv_final_pair_shadow.py'
       - 'docs/IRV_FINAL_PAIR_CALIBRATION_PROTOCOL.md'
+      - 'docs/IRV_FINAL_PAIR_CALIBRATION_AMENDMENT_1.md'
       - '.github/workflows/irv-final-pair-calibration.yml'
 
 permissions:
@@ -36,6 +38,11 @@ jobs:
         run: |
           python model/scripts/extract_historical_assembly_original_parcel_transfers.py \
             --output artifacts/irv/historical-original-parcel-transfers.json
+      - name: Fit preregistered C1 rows without scoring outcomes
+        run: |
+          python model/scripts/fit_irv_c1_walkforward.py \
+            --evidence artifacts/irv/historical-original-parcel-transfers.json \
+            --output artifacts/irv/c1-walkforward-freeze-candidate.json
       - name: Score current C0 preference mechanism on historical outcomes
         run: |
           python model/scripts/score_irv_c0_historical.py \
