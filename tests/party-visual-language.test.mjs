@@ -22,6 +22,9 @@ test("forecast chamber graphic does not imply meaning with decorative centre lin
   assert.match(css, /forecast-hero::after\s*\{\s*display:\s*none/i);
   assert.match(css, /majority-line\s*\{\s*display:\s*none/i);
   assert.match(css, /Each dot = one electorate/i);
+  assert.match(css, /modal forecast winner/i);
+  assert.match(css, /not an expected chamber seat count/i);
+  assert.match(css, /party can appear in the key with zero dots/i);
   assert.match(css, /not geographic/i);
 });
 

@@ -41,7 +41,7 @@ svg [stroke="#d19b2a"], svg [stroke="#7d6a92"] { stroke: var(--party-other-indep
 .forecast-hero::after { display: none !important; }
 .majority-line { display: none !important; }
 .parliament-card::after {
-  content: "Each dot = one electorate. The semicircle is a chamber-style layout grouped by forecast winner; dot position is not geographic.";
+  content: "Each dot = one electorate and shows that electorate’s modal forecast winner, not an expected chamber seat count. The semicircle is chamber-style only; dot position is not geographic. The key lists every modelled party family, so a party can appear in the key with zero dots when it is not the modal winner in any electorate.";
   display: block;
   margin: 12px auto 0;
   max-width: 520px;
