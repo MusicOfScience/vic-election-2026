@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Run governed ONP geographic-persistence shadow sensitivities.
 
-This runner does not write canonical forecast artefacts.  It scales the existing
+This runner does not write canonical forecast artefacts. It scales the existing
 AEC-2022 ecological ONP district propensity already used by the model and runs
-common-random-number counterfactuals.  It is an infrastructure/sensitivity test,
-not the proposed AEC-2025 challenger: the latter requires a separately
-provenanced 2025 district surface before it can be evaluated.
+common-random-number counterfactuals. It is an infrastructure/sensitivity test,
+not the proposed AEC-2025 challenger.
 """
 from __future__ import annotations
 
@@ -36,7 +35,6 @@ def _scaled_seed(model_root: Path, config: dict, lam: float) -> pd.DataFrame:
 def _run(model_root: Path, *, simulations: int, seed: int, lam: float):
     config = forecast_module.load_forecast_config(model_root)
     scaled = _scaled_seed(model_root, config, lam)
-    real_builder = forecast_module.build_assembly_seed
 
     def shadow_builder(root, config=None):
         return scaled.copy()
@@ -45,14 +43,26 @@ def _run(model_root: Path, *, simulations: int, seed: int, lam: float):
         result = run_experimental_forecast(model_root, simulations=simulations, seed=seed)
     # Defensive assertion: the patched builder must not mutate the stored seed.
     assert np.allclose(scaled["onp_local_log"], _scaled_seed(model_root, config, lam)["onp_local_log"])
-    return result
+    return result, scaled
 
 
-def _summary(result) -> dict:
+def _weighted_onp_primary(result, seed_frame: pd.DataFrame) -> float:
+    weights = seed_frame["enrolled_electors"].to_numpy(float)
+    weights /= weights.sum()
+    districts = result.districts.set_index("district_name")
+    primaries = np.array([
+        float(districts.loc[name, "primary_onp"])
+        for name in seed_frame["district_name"]
+    ])
+    return float(np.sum(weights * primaries))
+
+
+def _summary(result, seed_frame: pd.DataFrame) -> dict:
     chamber = result.chamber.set_index("party")
     districts = result.districts.copy()
     return {
         "hungProbability": float(result.chamber.hung_probability.iloc[0]),
+        "weightedMeanDistrictOnpPrimary": _weighted_onp_primary(result, seed_frame),
         "parties": {
             party: {
                 "meanSeats": float(chamber.loc[party, "mean"]),
@@ -87,6 +97,9 @@ def _compare(control: dict, challenger: dict) -> dict:
     ranked = sorted(seats.items(), key=lambda item: abs(item[1]["deltaWinONP"]), reverse=True)
     return {
         "deltaHungProbability": challenger["hungProbability"] - control["hungProbability"],
+        "deltaWeightedMeanDistrictOnpPrimary": (
+            challenger["weightedMeanDistrictOnpPrimary"] - control["weightedMeanDistrictOnpPrimary"]
+        ),
         "partyDeltas": {
             party: {
                 "meanSeats": challenger["parties"][party]["meanSeats"] - control["parties"][party]["meanSeats"],
@@ -108,10 +121,13 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
     seed = int(config["seed"])
     # lambda=1 is the current model's AEC-2022 ONP geography treatment.
     treatments = (0.0, 0.5, 0.75, 1.0)
-    runs = {lam: _summary(_run(model_root, simulations=simulations, seed=seed, lam=lam)) for lam in treatments}
+    runs = {}
+    for lam in treatments:
+        result, seed_frame = _run(model_root, simulations=simulations, seed=seed, lam=lam)
+        runs[lam] = _summary(result, seed_frame)
     control = runs[1.0]
     return {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "mode": "onp-geography-shadow-sensitivity-only",
         "asOf": str(config["as_of"]),
         "simulationsPerTreatment": simulations,
@@ -120,7 +136,7 @@ def run_shadow(repo_root: Path, *, simulations: int) -> dict:
         "canonicalModelInputsChanged": False,
         "canonicalForecastArtifactsWritten": False,
         "sourceSurface": "existing AEC_2022_ecological_auxiliary",
-        "importantLimitation": "This tests persistence/shrinkage of the geography already in PROD. It does not yet test the proposed AEC-2025 geography update.",
+        "importantLimitation": "This tests persistence/shrinkage of the geography already in PROD. It does not test a new source surface.",
         "controlLambda": 1.0,
         "treatments": {str(lam): runs[lam] for lam in treatments},
         "comparisonsVsCurrent": {str(lam): _compare(control, runs[lam]) for lam in treatments if lam != 1.0},
@@ -146,7 +162,10 @@ def main() -> None:
     else:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered)
-    print(f"ONP geography shadow complete: {simulations} simulations x 4 treatments; canonical artefacts untouched.")
+    print(
+        f"ONP geography shadow complete: {args.simulations} simulations x 4 treatments; "
+        "canonical artefacts untouched."
+    )
 
 
 if __name__ == "__main__":
