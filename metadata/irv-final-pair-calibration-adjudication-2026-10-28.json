@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "workstream": "assembly-irv-preference-final-pair-calibration",
+  "pr": 138,
+  "canonicalForecastChanged": false,
+  "productionPromotion": "rejected-deferred",
+  "c0": {
+    "model": "current-production-preference-mechanism",
+    "allFourCycles": {
+      "winnerDistricts": 351,
+      "finalPairDistricts": 214,
+      "winnerModalAccuracy": 0.9458689458689459,
+      "winnerMeanBrier": 0.08933688,
+      "winnerMeanLogLoss": 0.23604818578550094,
+      "pairModalAccuracy": 0.9252336448598131,
+      "pairMeanBrier": 0.14000210878504674,
+      "pairMeanLogLoss": 0.7925430847736035
+    },
+    "matched2014To2022": {
+      "winnerDistricts": 263,
+      "finalPairDistricts": 170,
+      "winnerModalAccuracy": 0.9391634980988594,
+      "winnerMeanBrier": 0.10382771741444867,
+      "winnerMeanLogLoss": 0.2935450513478753,
+      "pairModalAccuracy": 0.9058823529411765,
+      "pairMeanBrier": 0.17623794682352942,
+      "pairMeanLogLoss": 0.9976695297737047
+    },
+    "resultSha256": "d77fd981c891f8d359b139a957eba0c2d12bfa86eb6a48600725c603e62e59d2",
+    "workflowRun": 40692782605,
+    "artifactId": 12817408939,
+    "artifactDigest": "sha256:0c16ef0367f22729bc7fa56f94dfef950995009859d78c0059f8574b58fac3be"
+  },
+  "c1": {
+    "model": "preregistered-clean-original-parcel-walk-forward",
+    "identification": "failed-all-rows-broad-fallback",
+    "admissibleEvents": 7,
+    "empiricalRows": 0,
+    "matched2014To2022": {
+      "winnerDistricts": 263,
+      "finalPairDistricts": 170,
+      "winnerModalAccuracy": 0.9049429657794676,
+      "winnerMeanBrier": 0.1610868982509506,
+      "winnerMeanLogLoss": 0.2631107467881236,
+      "pairModalAccuracy": 0.9058823529411765,
+      "pairMeanBrier": 0.13085904141176474,
+      "pairMeanLogLoss": 0.5718205548771677
+    },
+    "freezeCandidateSha256": "056127783aebb1bea4ed0f5ab20b0685ece4c98d3e82b1ecacd620c0f8b6e78c",
+    "resultSha256": "3bdd1c410888f00548c77876f3971965e3a9f8521d2f2e40df4e39f79ba638d7",
+    "workflowRun": 40693404541,
+    "artifactId": 12817988630,
+    "artifactDigest": "sha256:107f755259081cb8d8ef5278f81b6f77fd9d0bd32257b3cecf1113a842b6d565"
+  },
+  "errorAnatomy": {
+    "c0WrongFinalPairs": 16,
+    "wrongPairsWithModalOtherIndependentButObservedPairWithoutIt": 12,
+    "shareOfWrongPairsWithPhantomOtherIndependent": 0.75,
+    "wrongPairsAssignedZeroProbabilityIn5000Draws": 11,
+    "remainingWrongPairClass": "Greens elimination-order cases",
+    "interpretation": "family aggregation, especially OTH_IND, is a first-order final-pair architecture risk"
+  },
+  "findings": [
+    "C0 retains useful directional information and is not falsified as a mean preference prior.",
+    "C0 concentration 72 is too sharp for modern final-pair probability inference on the historical diagnostic.",
+    "C1 cannot identify a sharper five-family transfer matrix under the preregistered evidence rules.",
+    "Broad C1 leaves modal final-pair accuracy unchanged on 2014-2022 but materially improves pair Brier and log loss.",
+    "C2/C3 source-family fitting is not identified on the current evidence and must not be forced.",
+    "Collapsing heterogeneous Other/Independent candidates into one contender is the dominant observed final-pair error mechanism."
+  ],
+  "decisions": {
+    "retainResearchInfrastructure": true,
+    "promoteC1": false,
+    "run2026C1Shadow": false,
+    "alterProductionPreferencePrior": false,
+    "alterProductionConcentration": false,
+    "proceedToC2C3SourceFamilyFit": false
+  },
+  "nextWorkstream": {
+    "candidateMinorPartyResolution": true,
+    "preferenceUncertaintyCalibration": true,
+    "effectiveMixedParcelsMayBeOperationalEvidenceOnly": true,
+    "newPrRequiredBefore2026Shadow": true
+  }
+}
