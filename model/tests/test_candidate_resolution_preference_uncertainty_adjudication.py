@@ -33,6 +33,13 @@ def test_lower_grid_boundary_is_not_reinterpreted_as_production_optimum():
     freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
     result = json.loads(ADJUDICATION.read_text(encoding="utf-8"))
 
-    assert freeze["allSelectionsAtLowerGridBoundary"] is True
-    assert freeze["postHocGridExtensionAuthorised"] is False
+    selected = [
+        freeze["selections"][allocation][year]["concentration"]
+        for allocation in ("equal", "proportional")
+        for year in ("2018", "2022")
+    ]
+    assert selected == [4.0, 4.0, 4.0, 4.0]
+    assert min(freeze["grid"]) == 4
+    assert "lower grid boundary" in freeze["boundaryObservation"]
     assert result["adjudication"]["extendGridBelow4PostHoc"] is False
+    assert result["adjudication"]["globalConcentration4ProductionReady"] is False
