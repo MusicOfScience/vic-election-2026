@@ -1,0 +1,68 @@
+name: IRV C1 frozen historical score
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/irv-final-pair-calibration
+    paths:
+      - 'model/scripts/score_irv_c0_historical.py'
+      - 'model/scripts/score_irv_c1_historical.py'
+      - 'metadata/irv-c1-walkforward-freeze-2026-10-28.json'
+      - '.github/workflows/irv-c1-score.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install model environment
+        run: python -m pip install -c model/constraints.txt -e './model[dev]'
+      - name: Score frozen C1 consequence
+        run: |
+          python model/scripts/score_irv_c1_historical.py \
+            --freeze metadata/irv-c1-walkforward-freeze-2026-10-28.json \
+            --simulations 5000 \
+            --seed 20261028 \
+            --output artifacts/irv/c1-historical-score.json
+      - name: Validate frozen scoring universe
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          score = json.loads(Path('artifacts/irv/c1-historical-score.json').read_text())
+          assert score['model'] == 'C1-frozen-preregistered-broad-fallback-consequence'
+          assert score['guardrails']['uses_2026_forecast_output'] is False
+          assert score['guardrails']['historical_outcomes_are_scoring_only'] is True
+          assert score['guardrails']['thresholds_relaxed_after_evidence_inspection'] is False
+          assert score['overall']['districts_scored_winner'] == 263
+          assert score['overall']['districts_scored_final_pair'] == 170
+          assert all(all(v == 'broad-fallback' for v in cycle['row_status'].values()) for cycle in score['cycles'])
+          print(json.dumps(score['overall'], sort_keys=True))
+          for cycle in score['cycles']:
+              print(json.dumps({
+                  'cycle': cycle['cycle'],
+                  'training_event_count': cycle['training_event_count'],
+                  'training_years': cycle['training_years'],
+                  'winner_modal_accuracy': cycle['winner_modal_accuracy'],
+                  'winner_mean_brier': cycle['winner_mean_brier'],
+                  'winner_mean_log_loss': cycle['winner_mean_log_loss'],
+                  'pair_modal_accuracy': cycle['pair_modal_accuracy'],
+                  'pair_mean_brier': cycle['pair_mean_brier'],
+                  'pair_mean_log_loss': cycle['pair_mean_log_loss'],
+              }, sort_keys=True))
+          PY
+      - name: Hash C1 benchmark
+        run: sha256sum artifacts/irv/c1-historical-score.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: irv-c1-historical-score
+          path: artifacts/irv/c1-historical-score.json
+          if-no-files-found: error
