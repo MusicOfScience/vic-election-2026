@@ -174,6 +174,12 @@ def extract_one(row: dict[str, str], year: int, registry: dict[tuple[str, str], 
         source_payload = fetch(source_url, cache_dir / str(year))
         source = source_payload.decode("utf-8", "replace")
         dist_url = distribution_link(source, source_url)
+        # Some governed outcome rows, notably 2022, already point directly to
+        # the official distribution page.  In that case there is no parent-page
+        # hyperlink to discover; reuse the governed outcome URL itself.
+        outcome_url = row.get("outcome_source_url") or ""
+        if dist_url is None and "distribution" in outcome_url.casefold():
+            dist_url = outcome_url
         if dist_url is None:
             return {"district_name": district, "status": "no-distribution-link", "source_url": source_url, "source_sha256": sha(source_payload)}
         dist_payload = fetch(dist_url, cache_dir / str(year))
