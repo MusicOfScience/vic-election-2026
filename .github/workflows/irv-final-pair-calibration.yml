@@ -7,6 +7,7 @@ on:
       - codex/irv-final-pair-calibration
     paths:
       - 'model/scripts/audit_historical_assembly_preference_pages.py'
+      - 'model/scripts/extract_historical_assembly_original_parcel_transfers.py'
       - 'model/scripts/score_irv_c0_historical.py'
       - 'model/scripts/calibrate_historical_assembly_preferences.py'
       - 'model/scripts/run_irv_final_pair_shadow.py'
@@ -31,6 +32,10 @@ jobs:
         run: |
           python model/scripts/audit_historical_assembly_preference_pages.py \
             --output artifacts/irv/historical-preference-page-audit.json
+      - name: Extract clean first-exclusion transfer evidence
+        run: |
+          python model/scripts/extract_historical_assembly_original_parcel_transfers.py \
+            --output artifacts/irv/historical-original-parcel-transfers.json
       - name: Score current C0 preference mechanism on historical outcomes
         run: |
           python model/scripts/score_irv_c0_historical.py \
