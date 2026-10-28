@@ -5,23 +5,31 @@ Status: shadow-only research and validation; no canonical parameter or forecast 
 
 ## Purpose
 
-Recent Victorian polling places One Nation in the low-20s statewide, while independent electoral geography indicates that support is unlikely to be distributed uniformly across Assembly districts. This workstream tests whether the current model over-shrinks PHON geography and whether a geographically heterogeneous PHON component materially changes district final-pair composition or statewide government probabilities.
+Recent Victorian polling places One Nation in the low-20s statewide, while independent electoral geography indicates that support is unlikely to be distributed uniformly across Assembly districts. This workstream tests whether updating and/or changing the persistence of PHON geography materially changes district final-pair composition or statewide government probabilities.
 
 This document does **not** authorise a production change. The 8 October canonical forecast remains frozen. All tests described here are challenger/shadow analyses until they pass the repository's existing validation and owner-admission gates.
 
-## Model-risk statement
+## Code-audit correction: the current model already contains PHON geography
+
+Inspection of `model/src/vicforecast/forecast_2026.py` after opening this workstream found that the current Assembly model is **not geographically uniform for One Nation**. `build_assembly_seed()` derives `onp_local_log` from the AEC 2022 ecological surface with statewide contest coverage; the simulation then replaces the sparse 2022 Victorian state-ballot ONP pattern with that federal ecological propensity before applying regional and district shocks.
+
+This materially narrows the original risk statement. The live question is not whether to add geographic heterogeneity from zero. It is whether the **2022-derived PHON spatial surface is stale or mis-scaled for 2026**, and whether a 2025 federal-derived surface improves the model prospectively.
+
+The current model therefore becomes the control. It must not be described as a uniform-PHON model.
+
+## Revised model-risk statement
 
 Potential misspecification under investigation:
 
-> The current 2026 Assembly model may over-shrink One Nation support geographically, producing district primaries that are too close to the statewide latent mean and therefore mis-stating final-two composition in rural, regional and outer-suburban seats.
+> The current 2026 Assembly model may use a stale or incorrectly persistent One Nation spatial propensity because its dedicated PHON geography is derived from the 2022 AEC ecological surface. A 2025 federal-derived district surface may alter relative PHON strength, final-two composition and seat conversion in rural, regional and outer-suburban seats.
 
-The risk is primarily about **vote geography and elimination order**, not necessarily the statewide PHON primary itself.
+A secondary sensitivity question is how strongly the existing spatial deviations should persist. This can be tested immediately on the existing 2022 surface, but that test is diagnostic only and cannot substitute for constructing the 2025 challenger.
 
 ## Independent evidence supporting investigation
 
 The shadow hypothesis is motivated by evidence that predates or is independent of the current four-seat Morgan observation:
 
-1. 2025 federal Victorian Senate and lower-house results show a strong rural / outer-suburban PHON gradient and very weak inner-Melbourne support.
+1. 2025 federal Victorian results show a strong rural / outer-suburban PHON gradient and very weak inner-Melbourne support.
 2. Antony Green has independently mapped 2025 federal results onto current Victorian Assembly geography and identifies concentrated PHON propensity in rural/regional and selected outer-metropolitan districts.
 3. Seats & Swings has published 88-seat electoral- and demographic-geography estimates whose relative ordering is broadly consistent with the same spatial pattern.
 4. Roy Morgan's 21–26 October four-seat SMS poll is held out from fitting and treated as external validation-only evidence because of its small seat-level effective samples.
@@ -47,13 +55,22 @@ The statewide level must be re-centred for each `lambda` so that introducing het
 
 ## Required shadow treatments
 
-Run at minimum:
+### Phase A — existing-surface sensitivity
 
-1. **Control:** current production-compatible geography treatment with the same statewide evidence set.
-2. **Fixed lambda = 0.50:** deliberately conservative persistence.
-3. **Fixed lambda = 0.75:** intermediate challenger.
-4. **Fixed lambda = 1.00:** full persistence stress case.
-5. **Sampled lambda:** probabilistic persistence treatment over a pre-declared range/distribution; do not choose a posterior-favourable value after seeing election-target evidence.
+Run the current AEC-2022 PHON surface with common random numbers at:
+
+1. `lambda = 0.00` — uniform spatial counterfactual;
+2. `lambda = 0.50` — strong shrinkage;
+3. `lambda = 0.75` — intermediate shrinkage;
+4. `lambda = 1.00` — current model treatment and therefore the control.
+
+`model/scripts/run_onp_geography_shadow.py` implements this diagnostic without writing canonical forecast artefacts. It deliberately labels the source as the existing AEC-2022 ecological auxiliary. Results from Phase A can identify sensitivity to spatial persistence but cannot establish that the 2025 geography should replace the current surface.
+
+### Phase B — 2025 challenger
+
+Construct a reproducible 88-district 2025 federal PHON spatial surface and compare it with the current 2022 surface under identical statewide evidence, preference machinery and random draws. Only after that surface is provenance-checked should fixed and sampled persistence treatments be run.
+
+The final challenger set should include fixed `lambda = 0.50`, `0.75`, `1.00` and a pre-declared sampled-lambda treatment. Do not choose a posterior-favourable lambda after seeing validation evidence.
 
 All variants must use common random numbers where practical and identical non-PHON coefficients, polling evidence, preference machinery and candidate files.
 
@@ -98,32 +115,13 @@ A geographically richer model is not preferred merely because it produces more d
 
 ## Specific diagnostic seats
 
-High-priority diagnostics include:
-
-- Pakenham
-- Morwell
-- Hastings
-- Bass
-- Shepparton
-- Murray Plains
-- Mildura
-- Euroa
-- Narre Warren North
-- Narre Warren South
-- Cranbourne
-- Mill Park
-- Thomastown
-- Bayswater
-- Box Hill
-- Glen Waverley
-- Ashwood
-- Ringwood
+High-priority diagnostics include Pakenham, Morwell, Hastings, Bass, Shepparton, Murray Plains, Mildura, Euroa, Narre Warren North, Narre Warren South, Cranbourne, Mill Park, Thomastown, Bayswater, Box Hill, Glen Waverley, Ashwood and Ringwood.
 
 These seats span expected high-PHON, three-way-contest and low-PHON/eastern-Melbourne environments.
 
 ## Promotion gate
 
-No heterogeneous PHON component may enter the canonical forecast unless all of the following are satisfied:
+No revised PHON geographic component may enter the canonical forecast unless all of the following are satisfied:
 
 1. the spatial feature is constructed from pre-election evidence with reproducible provenance;
 2. statewide vote is conserved after geographic redistribution;
@@ -134,10 +132,10 @@ No heterogeneous PHON component may enter the canonical forecast unless all of t
 7. uncertainty is not spuriously narrowed by treating derivative evidence as independent;
 8. normal repository validation, readiness and owner-authorisation gates remain satisfied.
 
-Until then, the heterogeneous model is shadow-only.
+Until then, the revised geographic model is shadow-only.
 
 ## Current interpretation
 
-The present evidence is sufficient to reject a naive assumption that a statewide PHON primary in the low-20s should imply roughly low-20s support in every district. It is **not** sufficient to choose a production value of `lambda`, manually adjust individual seats, or convert small-sample seat polling into hard local priors.
+The code audit changes the scientific interpretation of this workstream. The current model already encodes substantial PHON geographic heterogeneity, so the earlier framing of PROD as effectively uniform was wrong. The immediate task is now a **surface-update and persistence-validation problem**, not a geography-versus-no-geography problem.
 
-The immediate technical objective is therefore controlled comparison of the existing model against the five treatments above, with Morgan and analyst commentary held out from fitting.
+Phase A can establish how sensitive current outputs are to the strength of the existing 2022 spatial pattern. Phase B is the substantive test: build the 2025 88-seat surface with reproducible provenance, hold Morgan out, and determine whether the newer geography improves prospective explanatory/calibration performance enough to justify promotion.
