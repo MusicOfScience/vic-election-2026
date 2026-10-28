@@ -81,6 +81,19 @@ def norm(value: str) -> str:
     return " ".join(value.casefold().split())
 
 
+def surname(value: str) -> str:
+    """Return the surname token used by VEC's `SURNAME, Given` tables.
+
+    The 2010 PDF-derived candidate registry contains a handful of damaged given
+    names (for example `COLTMAN,` and `ELLIOTT,`) while the official HTML
+    distribution pages contain the full names. A surname fallback is therefore
+    allowed only when the surname identifies exactly one governed candidate in
+    the same district. Ambiguity remains a hard failure.
+    """
+    text = norm(value)
+    return text.split(",", 1)[0].strip()
+
+
 def slug(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-")
 
@@ -142,6 +155,29 @@ def candidate_registry(year: int) -> dict[tuple[str, str], str]:
     return registry
 
 
+def resolve_candidate_family(
+    registry: dict[tuple[str, str], str], district_key: str, candidate: str
+) -> tuple[str, str]:
+    """Resolve exact name first, then a unique same-district surname only."""
+    candidate_key = norm(candidate)
+    exact = registry.get((district_key, candidate_key))
+    if exact is not None:
+        return exact, "exact"
+    target_surname = surname(candidate)
+    matches = [
+        (name, family)
+        for (district, name), family in registry.items()
+        if district == district_key and surname(name) == target_surname
+    ]
+    if len(matches) == 1:
+        return matches[0][1], "unique-district-surname"
+    if not matches:
+        raise ValueError(f"candidate missing from governed registry: {candidate!r}")
+    raise ValueError(
+        f"candidate surname is ambiguous in governed registry: {candidate!r} -> {[name for name, _ in matches]!r}"
+    )
+
+
 def find_distribution_table(source: str) -> list[list[str]]:
     parser = TableParser()
     parser.feed(source)
@@ -175,7 +211,7 @@ def extract_one(row: dict[str, str], year: int, registry: dict[tuple[str, str], 
         source = source_payload.decode("utf-8", "replace")
         dist_url = distribution_link(source, source_url)
         # Some governed outcome rows, notably 2022, already point directly to
-        # the official distribution page.  In that case there is no parent-page
+        # the official distribution page. In that case there is no parent-page
         # hyperlink to discover; reuse the governed outcome URL itself.
         outcome_url = row.get("outcome_source_url") or ""
         if dist_url is None and "distribution" in outcome_url.casefold():
@@ -211,25 +247,24 @@ def extract_one(row: dict[str, str], year: int, registry: dict[tuple[str, str], 
             raise ValueError(f"destination transfers do not sum to original parcel ({sum(transfer_votes)} vs {source_first})")
 
         district_key = norm(district)
-        source_family = registry.get((district_key, norm(source_candidate)))
-        if source_family is None:
-            raise ValueError(f"source candidate missing from governed registry: {source_candidate!r}")
+        source_family, source_match_method = resolve_candidate_family(registry, district_key, source_candidate)
 
         family_votes = {party: 0 for party in MODEL_PARTIES}
         family_candidate_count = {party: 0 for party in MODEL_PARTIES}
         candidate_destinations = []
+        fallback_match_count = int(source_match_method != "exact")
         for index, candidate in enumerate(candidates):
             if index == source_index:
                 continue
-            family = registry.get((district_key, norm(candidate)))
-            if family is None:
-                raise ValueError(f"destination candidate missing from governed registry: {candidate!r}")
+            family, match_method = resolve_candidate_family(registry, district_key, candidate)
+            fallback_match_count += int(match_method != "exact")
             family_votes[family] += transfer_votes[index]
             family_candidate_count[family] += 1
             candidate_destinations.append({
                 "candidate": candidate,
                 "family": family,
                 "votes": transfer_votes[index],
+                "registry_match_method": match_method,
             })
 
         within_family_votes = family_votes[source_family]
@@ -241,6 +276,8 @@ def extract_one(row: dict[str, str], year: int, registry: dict[tuple[str, str], 
             "district_name": district,
             "source_candidate": source_candidate,
             "source_family": source_family,
+            "source_registry_match_method": source_match_method,
+            "registry_surname_fallback_matches": fallback_match_count,
             "source_votes": source_first,
             "destination_votes": family_votes,
             "destination_candidate_count": family_candidate_count,
@@ -288,24 +325,27 @@ def main() -> None:
             "clean_original_parcel_events": len(clean),
             "no_distribution_link": sum(row["status"] == "no-distribution-link" for row in results),
             "failures": len(failures),
+            "registry_surname_fallback_matches": sum(int(row.get("registry_surname_fallback_matches", 0)) for row in clean),
             "source_family_event_counts": dict(sorted(source_counts.items())),
             "failure_details": failures,
         })
 
     within_family_events = [e for e in events if e["within_source_family_transfer_votes"] > 0]
     payload = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "purpose": "clean first-exclusion/original-parcel Assembly preference evidence for PR #138",
         "guardrails": {
             "uses_2026_forecast_output": False,
             "fits_preference_parameters": False,
             "later_mixed_parcel_exclusions_used": False,
             "official_vec_only": True,
+            "candidate_name_fallback": "unique surname within district only; ambiguous surnames fail closed",
         },
         "summary": {
             "clean_original_parcel_events": len(events),
             "within_source_family_transfer_events": len(within_family_events),
             "within_source_family_transfer_votes": sum(e["within_source_family_transfer_votes"] for e in events),
+            "registry_surname_fallback_matches": sum(int(e.get("registry_surname_fallback_matches", 0)) for e in events),
         },
         "cycles": cycle_summaries,
         "events": sorted(events, key=lambda e: (e["election_year"], e["district_name"])),
@@ -315,6 +355,8 @@ def main() -> None:
     print(json.dumps(payload["summary"], sort_keys=True))
     for cycle in cycle_summaries:
         print(json.dumps({k: v for k, v in cycle.items() if k != "failure_details"}, sort_keys=True))
+    if any(cycle["failures"] for cycle in cycle_summaries):
+        print(json.dumps({"failure_details": {str(c["year"]): c["failure_details"] for c in cycle_summaries if c["failures"]}}, sort_keys=True))
     print(json.dumps({"output": str(args.output), "sha256": sha(args.output.read_bytes())}, sort_keys=True))
 
 
