@@ -5,7 +5,7 @@ C0 is deliberately the production mechanism under test: the current fixed 5x5
 PREFERENCE_PRIOR, Dirichlet concentration 72, one preference draw shared by all
 districts in a simulated election, and the production `_count_irv` function.
 
-The replay is *conditional on observed historical five-family primaries*. This
+The replay is conditional on observed historical five-family primaries. This
 isolates preference/elimination/family-aggregation performance from polling and
 primary-vote forecast error. Historical final-pair and winner outcomes are
 scoring-only and never enter the simulated preferences.
@@ -44,9 +44,22 @@ FAMILY_MAP = {
 PAIR_CATEGORIES = tuple(itertools.combinations_with_replacement(range(len(PARTIES)), 2))
 EPS = 1e-6
 
+# These represent genuine observed IRV final-two evidence.  In particular,
+# 2018's `two-candidate-preferred-final-page` fallback is deliberately excluded:
+# a VEC 2CP pair is useful reporting, but it is not necessarily the actual IRV
+# final pair and therefore cannot score the elimination model.
+OBSERVED_IRV_PAIR_KINDS = {
+    "results-after-distribution",
+    "distribution-page-final-total",
+}
+
 
 def sha(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
+
+
+def truthy(value: object) -> bool:
+    return str(value).strip().casefold() in {"1", "true", "yes"}
 
 
 def load_primaries(year: int) -> dict[str, dict]:
@@ -64,7 +77,14 @@ def load_primaries(year: int) -> dict[str, dict]:
         fam = FAMILY_MAP.get(row["party_family"])
         if fam is None:
             raise ValueError(f"{year} {did}: unknown family {row['party_family']!r}")
-        rec = out.setdefault(did, {"district_name": row["district_name"], "votes": {p: 0.0 for p in PARTIES}, "formal": float(row["formal_votes"])})
+        rec = out.setdefault(
+            did,
+            {
+                "district_name": row["district_name"],
+                "votes": {p: 0.0 for p in PARTIES},
+                "formal": float(row["formal_votes"]),
+            },
+        )
         if not math.isclose(rec["formal"], float(row["formal_votes"])):
             raise ValueError(f"{year} {did}: inconsistent formal vote total")
         rec["votes"][fam] += float(row["first_preference_votes"])
@@ -85,14 +105,29 @@ def load_outcomes(year: int) -> dict[str, dict]:
         winner = FAMILY_MAP.get(row.get("winner_party_family") or row.get("elected_party_family") or "")
         if winner is None:
             raise ValueError(f"{year} {did}: unknown winner family")
+
+        table_kind = (row.get("outcome_table_kind") or "").strip()
+        final_pair_flag = row.get("final_pair_available")
+        pair_is_observed_irv = (
+            table_kind in OBSERVED_IRV_PAIR_KINDS
+            and (final_pair_flag in (None, "") or truthy(final_pair_flag))
+        )
         f1 = FAMILY_MAP.get(row.get("finalist_1_party_family") or "")
         f2 = FAMILY_MAP.get(row.get("finalist_2_party_family") or "")
-        pair = None if f1 is None or f2 is None else tuple(sorted((PARTIES.index(f1), PARTIES.index(f2))))
+        pair = None
+        if pair_is_observed_irv and f1 is not None and f2 is not None:
+            pair = tuple(sorted((PARTIES.index(f1), PARTIES.index(f2))))
+
+        if table_kind == "two-candidate-preferred-final-page" and pair is not None:
+            raise AssertionError(f"{year} {did}: 2CP fallback leaked into IRV final-pair scoring")
+
         out[did] = {
             "district_name": row["district_name"],
             "winner": PARTIES.index(winner),
             "pair": pair,
             "pair_raw": [row.get("finalist_1_party_family"), row.get("finalist_2_party_family")],
+            "pair_table_kind": table_kind or None,
+            "pair_scoring_status": "observed-irv-final-pair" if pair is not None else "not-scored-as-irv-final-pair",
         }
     return out
 
@@ -125,12 +160,15 @@ def score_cycle(year: int, simulations: int, concentration: float, seed: int) ->
 
     district_scores = []
     impossible_observed_pairs = 0
+    excluded_pair_kinds: Counter[str] = Counter()
     for did in ids:
         outcome = outcomes[did]
         wp = winner_counts[did] / simulations
         winner_obs = outcome["winner"]
         pair_obs = outcome["pair"]
         winner_modal = int(np.argmax(wp))
+        if pair_obs is None:
+            excluded_pair_kinds[outcome.get("pair_table_kind") or "missing-kind"] += 1
         rec = {
             "district_id": did,
             "district_name": outcome["district_name"],
@@ -147,6 +185,7 @@ def score_cycle(year: int, simulations: int, concentration: float, seed: int) ->
             "pair_brier": None,
             "pair_log_loss": None,
             "pair_structurally_impossible": False,
+            "pair_outcome_table_kind": outcome.get("pair_table_kind"),
         }
         if pair_obs is not None:
             pp = np.array([pair_counts[did][cat] / simulations for cat in PAIR_CATEGORIES], dtype=float)
@@ -172,6 +211,7 @@ def score_cycle(year: int, simulations: int, concentration: float, seed: int) ->
         "cycle": f"vic_la_{year}",
         "districts_scored_winner": len(district_scores),
         "districts_scored_final_pair": len(pair_rows),
+        "districts_excluded_from_pair_scoring_by_kind": dict(sorted(excluded_pair_kinds.items())),
         "observed_same_family_final_pairs": impossible_observed_pairs,
         "winner_modal_accuracy": float(np.mean([r["winner_correct"] for r in district_scores])),
         "winner_mean_brier": float(np.mean([r["winner_brier"] for r in district_scores])),
@@ -195,9 +235,10 @@ def main() -> None:
     all_districts = [d for c in cycles for d in c["districts"]]
     pair_rows = [d for d in all_districts if d["pair_observed"] is not None]
     summary = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "model": "C0-current-production-preference-mechanism",
         "conditional_on": "observed historical five-family first preferences",
+        "pair_scoring_rule": "official observed IRV final pairs only; indicative 2CP fallbacks excluded",
         "simulations_per_cycle": args.simulations,
         "preference_prior_concentration": args.concentration,
         "seed": args.seed,
@@ -205,6 +246,7 @@ def main() -> None:
             "uses_2026_forecast_output": False,
             "uses_2026_seat_polling": False,
             "historical_outcomes_are_scoring_only": True,
+            "two_candidate_preferred_fallbacks_score_as_irv_pairs": False,
         },
         "overall": {
             "districts_scored_winner": len(all_districts),
