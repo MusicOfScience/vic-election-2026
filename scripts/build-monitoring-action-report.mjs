@@ -17,7 +17,7 @@ export function monitoringActions(reports, decisions = [], steps = {}, primaryRe
     if (["fetch-failed", "invalid-quarantined"].includes(s.status)) add("WORKFLOW_FAILURE", s.id, s.status);
   }
   for (const s of reports["source-discovery-report"]?.observations ?? []) {
-    if (s.status === "extract-failed") add("WORKFLOW_FAILURE", s.sourceId, "Source extraction failed; no absence-of-evidence conclusion permitted.");
+    if (s.status === "extract-failed") add("WORKFLOW_FAILURE", s.sourceId, `Source extraction failed: ${s.error ?? "no error detail reported"}; no absence-of-evidence conclusion permitted.`);
     if (s.status === "primary-source-access-failed") add("WORKFLOW_FAILURE", s.sourceId, "Primary source access failed; no absence-of-evidence conclusion permitted.");
     if (s.status === "manual-primary-review-required") add("POLL_REVIEW_REQUIRED", s.sourceId, "Primary material was reached but mandatory fields were not deterministically extractable; manual primary review required.");
   }

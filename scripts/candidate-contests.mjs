@@ -30,7 +30,7 @@ const COUNCIL_CONTEST_ALIASES = new Map([
   ["western metro", "western metropolitan"],
 ]);
 
-function contestKey(value) {
+export function contestKey(value) {
   const key = String(value ?? "")
     .normalize("NFKC")
     .trim()
