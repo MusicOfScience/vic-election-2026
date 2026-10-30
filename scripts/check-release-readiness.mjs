@@ -78,12 +78,17 @@ export function buildReadiness({ asOf }) {
   const historicalDataReady = validation.historicalDataReadiness?.passed === true
     && expectedCycles.every((cycle) => validation.historicalDataReadiness.cycles?.includes(cycle));
   const modelPolls = parseCsv(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
+  const campaign = readJson("metadata/current-evidence-shadow-2026-10-31.json");
   const stagedPolls = [
+    ...campaign.assemblyPolls,
     ...(manual.records ?? []),
     ...(primary.records ?? []).map((record) => ({ ...record, publicationDate: record.pollPublicationDate ?? record.publicationDate })),
     ...(research.records ?? []),
   ];
-  const reviewDecisions = (reviewLog.decisions ?? []).filter((decision) => decision.kind === "poll");
+  const reviewDecisions = [
+    ...(reviewLog.decisions ?? []).filter((decision) => decision.kind === "poll"),
+    ...campaign.assemblyPolls.filter((poll) => poll.modelEligibilityDecision === "hold").map((poll) => ({ evidenceId: poll.id, decision: "hold" })),
+  ];
   const evidenceFreshness = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, reviewDecisions, asOf });
   const modelInputCurrent = !evidenceFreshness.newerEvidenceAwaitingReview;
   const contestUniverse = loadContestUniverse(root);

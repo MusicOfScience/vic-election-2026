@@ -4,6 +4,7 @@ import { useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { CircleAlert } from "lucide-react";
 import { pollSeries } from "./poll-data.generated";
+import campaignEvidence from "../metadata/current-evidence-shadow-2026-10-31.json";
 import manualEvidence from "../metadata/manual-source-evidence-2026.json";
 import primaryEvidence from "../metadata/primary-source-evidence-2026.json";
 import researchEvidence from "../metadata/research-source-evidence-2026.json";
@@ -22,6 +23,7 @@ export function EvidenceFreshnessStatus() {
 
   const modelEnd = pollSeries.at(-1)?.fieldworkEnd ?? null;
   const stagedRecords = [
+    ...campaignEvidence.assemblyPolls.map((record) => ({ ...record, status: "quarantined-awaiting-review", evidenceBasis: "reviewed for sensitivity; canonical admission pending" })),
     ...manualEvidence.records.map((record) => ({ ...record, publicationDate: record.publicationDate, evidenceBasis: "primary-source capture" })),
     ...primaryEvidence.records.map((record) => ({ ...record, publicationDate: record.pollPublicationDate, evidenceBasis: "first-party polling evidence; human review pending" })),
     ...researchEvidence.records.map((record) => ({ ...record, publicationDate: record.publicationDate, evidenceBasis: "corroborated secondary reporting; primary capture pending" })),
@@ -49,7 +51,7 @@ export function EvidenceFreshnessStatus() {
       <div className="evidence-freshness-callout" role="note" aria-label="Polling freshness explanation">
         <CircleAlert size={18} />
         <div>
-          <strong>Why the polling freshness gate is closed</strong>
+          <strong>Newer evidence remains outside the retained forecast</strong>
           <p>{staged.pollster} evidence ending {readableDate(staged.fieldworkEnd)} is newer than the admitted model polling ending {readableDate(modelEnd)}. Its current evidence basis is {staged.evidenceBasis}; it remains staged for review and cannot refresh the forecast until evidence acceptance and model eligibility are explicitly approved.</p>
         </div>
       </div>,

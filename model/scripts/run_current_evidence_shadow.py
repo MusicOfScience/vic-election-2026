@@ -26,8 +26,8 @@ from run_staged_poll_seat_shadow import (
 from vicforecast.forecast_2026 import PARTIES, run_experimental_forecast
 
 
-def _load_evidence(repo_root: Path) -> dict:
-    path = repo_root / "metadata/current-evidence-shadow-2026-10-25.json"
+def _load_evidence(repo_root: Path, evidence_path: str = "metadata/current-evidence-shadow-2026-10-25.json") -> dict:
+    path = repo_root / evidence_path
     return json.loads(path.read_text())
 
 
@@ -85,7 +85,7 @@ def _scenario_registry(
         if poll_id in existing_ids:
             raise ValueError(f"shadow poll_id already exists in canonical registry: {poll_id}")
         events = pd.concat(
-            [events, pd.DataFrame([_event_row(record, list(events.columns))])],
+            [events, pd.DataFrame([{**_event_row(record, list(events.columns)), **({"effective_sample_size": record["effectiveSampleSize"]} if record.get("effectiveSampleSize") else {})}])],
             ignore_index=True,
         )
         estimates = pd.concat(
@@ -186,8 +186,8 @@ def _compare(base, scenario) -> dict:
     }
 
 
-def build_report(repo_root: Path, *, simulations: int) -> dict:
-    evidence = _load_evidence(repo_root)
+def build_report(repo_root: Path, *, simulations: int, evidence_path: str = "metadata/current-evidence-shadow-2026-10-25.json") -> dict:
+    evidence = _load_evidence(repo_root, evidence_path)
     model_root = repo_root / "model"
     config = yaml.safe_load((model_root / "config/experimental_forecast.yml").read_text())
     seed = int(config["seed"])
@@ -233,8 +233,7 @@ def build_report(repo_root: Path, *, simulations: int) -> dict:
         "policy": evidence["policy"],
         "interpretation": {
             "canonicalCurrentDate": "Existing canonical registry re-aged to the current evidence date. This is not a newly published canonical forecast.",
-            "latestPrimary": "Adds the latest first-party DemosAU and RedBridge/Accent waves only in memory.",
-            "latestPrimaryPlusResolve": "Also adds the latest Resolve topline from corroborated secondary evidence only in memory.",
+            "scenarios": evidence.get("scenarioDescriptions", {"latest_primary": "DemosAU and RedBridge first-party waves", "latest_primary_plus_resolve": "Also includes secondary-captured Resolve"}),
             "council": "Roy Morgan July-September regional evidence is recorded but is not injected into the STV model until a complete five-way regional table is captured without inference. Council changes in these scenarios therefore arise only from statewide polling changes, not the new regional Roy Morgan dataset."
         },
         "evidence": {
@@ -257,23 +256,16 @@ def main() -> None:
     parser.add_argument("--repo-root", default=Path(__file__).resolve().parents[2])
     parser.add_argument("--output", default="current-evidence-shadow-2026-10-25.json")
     parser.add_argument("--simulations", type=int, default=5000)
+    parser.add_argument("--evidence", default="metadata/current-evidence-shadow-2026-10-25.json")
     args = parser.parse_args()
     repo_root = Path(args.repo_root).resolve()
-    report = build_report(repo_root, simulations=args.simulations)
+    report = build_report(repo_root, simulations=args.simulations, evidence_path=args.evidence)
     output = Path(args.output)
     if not output.is_absolute():
         output = repo_root / output
     output.write_text(json.dumps(report, indent=2) + "\n")
 
-    primary = report["scenarios"]["latest_primary"]
-    expanded = report["scenarios"]["latest_primary_plus_resolve"]
-    print(
-        "Current-evidence shadow: "
-        f"canonical-date hung={report['canonicalCurrentDate']['assembly']['hungProbability']:.3f}; "
-        f"primary hung={primary['summary']['assembly']['hungProbability']:.3f}; "
-        f"expanded hung={expanded['summary']['assembly']['hungProbability']:.3f}. "
-        "Canonical files untouched."
-    )
+    print("Current-evidence shadow:", {name: scenario["summary"]["assembly"]["hungProbability"] for name, scenario in report["scenarios"].items()}, "Canonical files untouched.")
 
 
 if __name__ == "__main__":
