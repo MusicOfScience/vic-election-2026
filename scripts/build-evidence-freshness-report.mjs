@@ -110,12 +110,17 @@ function main() {
   const primary = JSON.parse(readFileSync(resolve(root, "metadata/primary-source-evidence-2026.json"), "utf8"));
   const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
   const reviewLog = JSON.parse(readFileSync(resolve(root, "metadata/discovery-review-decisions.json"), "utf8"));
+  const campaign = JSON.parse(readFileSync(resolve(root, "metadata/current-evidence-shadow-2026-10-31.json"), "utf8"));
   const stagedPolls = [
+    ...campaign.assemblyPolls,
     ...(manual.records ?? []),
     ...(primary.records ?? []).map((record) => ({ ...record, publicationDate: record.pollPublicationDate ?? record.publicationDate })),
     ...(research.records ?? []),
   ];
-  const reviewDecisions = (reviewLog.decisions ?? []).filter((decision) => decision.kind === "poll");
+  const reviewDecisions = [
+    ...(reviewLog.decisions ?? []).filter((decision) => decision.kind === "poll"),
+    ...campaign.assemblyPolls.filter((poll) => poll.modelEligibilityDecision === "hold").map((poll) => ({ evidenceId: poll.id, decision: "hold" })),
+  ];
   const report = buildEvidenceFreshness({ modelPolls, acceptedPolls: accepted.polls ?? [], stagedPolls, reviewDecisions, asOf });
   writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
   console.log(`Evidence freshness: model=${report.modelInput?.latestPublicationDate ?? "none"}; newest evidence=${report.newestEvidenceDate ?? "none"}; awaiting review=${report.newerEvidenceAwaitingReview}.`);

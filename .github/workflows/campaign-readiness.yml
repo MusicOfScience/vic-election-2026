@@ -1,0 +1,42 @@
+name: Campaign readiness sensitivity
+on:
+  pull_request:
+    paths:
+      - 'metadata/current-evidence-shadow-2026-10-31.json'
+      - 'metadata/current-evidence-results-2026-10-31.json'
+      - 'metadata/campaign-*-2026-10-31.json'
+      - 'model/scripts/run_current_evidence_shadow.py'
+      - 'model/scripts/diagnose_campaign_preferences.py'
+      - 'scripts/*campaign*.mjs'
+      - '.github/workflows/campaign-readiness.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: python -m pip install -c model/constraints.txt -e './model'
+      - run: node scripts/check-campaign-record.mjs
+      - run: node scripts/build-campaign-status.mjs --check && node scripts/build-campaign-summary.mjs --check
+      - name: Reproduce current evidence sensitivities
+        run: |
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src python model/scripts/run_current_evidence_shadow.py --evidence metadata/current-evidence-shadow-2026-10-31.json --output /tmp/campaign-reproduced.json --simulations 5000
+          cmp metadata/current-evidence-results-2026-10-31.json /tmp/campaign-reproduced.json
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src python model/scripts/diagnose_campaign_preferences.py
+          git diff --exit-code
+      - uses: actions/upload-artifact@v4
+        with:
+          name: campaign-readiness-2026-10-31
+          path: |
+            metadata/current-evidence-results-2026-10-31.json
+            metadata/campaign-preference-diagnostic-2026-10-31.json
+            metadata/campaign-run-record-2026-10-31.json
+          retention-days: 90

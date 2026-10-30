@@ -1,0 +1,246 @@
+{
+  "asOf": "2026-10-31",
+  "simulations": 5000,
+  "seed": 20260826,
+  "reportSha256": "d9ca0353bfff849191275428668c2b0b5dc337d6be0483d87a70af497b8b6b1c",
+  "canonicalReaged": {
+    "pollCount": 13,
+    "pollingMean": {
+      "ALP": 25.338258231738035,
+      "LIB_NAT": 27.76584775419496,
+      "ONP": 23.1170427782515,
+      "GRN": 13.523261905035016,
+      "OTH_IND": 10.255589330780426
+    },
+    "hungProbability": 0.7742,
+    "parties": {
+      "ALP": {
+        "meanSeats": 38.2258,
+        "medianSeats": 38,
+        "majorityProbability": 0.1958
+      },
+      "LIB_NAT": {
+        "meanSeats": 30.987,
+        "medianSeats": 31,
+        "majorityProbability": 0.03
+      },
+      "ONP": {
+        "meanSeats": 16.368,
+        "medianSeats": 16,
+        "majorityProbability": 0
+      },
+      "GRN": {
+        "meanSeats": 2.4112,
+        "medianSeats": 2,
+        "majorityProbability": 0
+      },
+      "OTH_IND": {
+        "meanSeats": 0.008,
+        "medianSeats": 0,
+        "majorityProbability": 0
+      }
+    }
+  },
+  "scenarios": {
+    "morgan_only": {
+      "pollCount": 14,
+      "pollingMean": {
+        "ALP": 24.197004903183387,
+        "LIB_NAT": 28.689077907021534,
+        "ONP": 22.64205498832335,
+        "GRN": 13.212809887411643,
+        "OTH_IND": 11.259052314059959
+      },
+      "hungProbability": 0.8109999999999999,
+      "parties": {
+        "ALP": {
+          "meanSeats": 33.9942,
+          "medianSeats": 34,
+          "majorityProbability": 0.0792
+        },
+        "LIB_NAT": {
+          "meanSeats": 35.6206,
+          "medianSeats": 35,
+          "majorityProbability": 0.1098
+        },
+        "ONP": {
+          "meanSeats": 15.9372,
+          "medianSeats": 16,
+          "majorityProbability": 0
+        },
+        "GRN": {
+          "meanSeats": 2.4372,
+          "medianSeats": 2,
+          "majorityProbability": 0
+        },
+        "OTH_IND": {
+          "meanSeats": 0.0108,
+          "medianSeats": 0,
+          "majorityProbability": 0
+        }
+      }
+    },
+    "newspoll_and_morgan": {
+      "pollCount": 15,
+      "pollingMean": {
+        "ALP": 24.13200203101041,
+        "LIB_NAT": 29.41905648676781,
+        "ONP": 22.221363992329003,
+        "GRN": 13.36812839410608,
+        "OTH_IND": 10.859449095786792
+      },
+      "hungProbability": 0.7658,
+      "parties": {
+        "ALP": {
+          "meanSeats": 33.3364,
+          "medianSeats": 33,
+          "majorityProbability": 0.062
+        },
+        "LIB_NAT": {
+          "meanSeats": 37.5776,
+          "medianSeats": 37,
+          "majorityProbability": 0.1722
+        },
+        "ONP": {
+          "meanSeats": 14.5654,
+          "medianSeats": 14,
+          "majorityProbability": 0
+        },
+        "GRN": {
+          "meanSeats": 2.514,
+          "medianSeats": 3,
+          "majorityProbability": 0
+        },
+        "OTH_IND": {
+          "meanSeats": 0.0066,
+          "medianSeats": 0,
+          "majorityProbability": 0
+        }
+      }
+    },
+    "expanded_current_evidence": {
+      "pollCount": 18,
+      "pollingMean": {
+        "ALP": 24.3345249377148,
+        "LIB_NAT": 29.425958773389407,
+        "ONP": 22.23683071799593,
+        "GRN": 13.846564146955561,
+        "OTH_IND": 10.156121423944386
+      },
+      "hungProbability": 0.7852,
+      "parties": {
+        "ALP": {
+          "meanSeats": 34.4296,
+          "medianSeats": 35,
+          "majorityProbability": 0.0804
+        },
+        "LIB_NAT": {
+          "meanSeats": 36.7778,
+          "medianSeats": 36,
+          "majorityProbability": 0.1344
+        },
+        "ONP": {
+          "meanSeats": 14.121,
+          "medianSeats": 14,
+          "majorityProbability": 0
+        },
+        "GRN": {
+          "meanSeats": 2.6676,
+          "medianSeats": 3,
+          "majorityProbability": 0
+        },
+        "OTH_IND": {
+          "meanSeats": 0.004,
+          "medianSeats": 0,
+          "majorityProbability": 0
+        }
+      }
+    }
+  },
+  "preferenceDiagnostic": {
+    "ALP_vs_Coalition": {
+      "parties": [
+        "ALP",
+        "LIB_NAT"
+      ],
+      "published": [
+        44,
+        56
+      ],
+      "modelMean": [
+        45.59165615676253,
+        54.40834384323752
+      ],
+      "modelLower80": [
+        43.026492288794465,
+        51.7372031994129
+      ],
+      "modelUpper80": [
+        48.2627968005871,
+        56.97350771120553
+      ],
+      "deltaModelMinusPublished": [
+        1.5916561567625322,
+        -1.5916561567624825
+      ]
+    },
+    "ALP_vs_ONP": {
+      "parties": [
+        "ALP",
+        "ONP"
+      ],
+      "published": [
+        54.5,
+        45.5
+      ],
+      "modelMean": [
+        48.69461417409337,
+        51.305385825906626
+      ],
+      "modelLower80": [
+        45.69182761323783,
+        48.20079455410997
+      ],
+      "modelUpper80": [
+        51.79920544589003,
+        54.30817238676218
+      ],
+      "deltaModelMinusPublished": [
+        -5.805385825906633,
+        5.805385825906626
+      ]
+    },
+    "three_party": {
+      "parties": [
+        "ALP",
+        "LIB_NAT",
+        "ONP"
+      ],
+      "published": [
+        43,
+        33,
+        24
+      ],
+      "modelMean": [
+        36.816477197618404,
+        35.201267742649584,
+        27.982255059731916
+      ],
+      "modelLower80": [
+        35.4526107422112,
+        33.96786031348344,
+        26.72613300891285
+      ],
+      "modelUpper80": [
+        38.18578552848523,
+        36.49467468444311,
+        29.29282119045796
+      ],
+      "deltaModelMinusPublished": [
+        -6.183522802381596,
+        2.201267742649584,
+        3.9822550597319157
+      ]
+    }
+  }
+}

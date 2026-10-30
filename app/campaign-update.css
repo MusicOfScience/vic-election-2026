@@ -1,0 +1,17 @@
+.campaign-notice { margin: 0 0 24px; padding: 22px; background: #fff4df; border: 1px solid #aa7020; border-radius: 14px; color: #39280d; }
+.campaign-notice > strong { font-size: 1.15rem; }
+.campaign-notice p { line-height: 1.65; margin: 10px 0; }
+.campaign-notice dl { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin: 18px 0; }
+.campaign-notice dt { font-size: .8rem; }
+.campaign-notice dd { font-weight: 700; margin: 5px 0 0; }
+.campaign-update .surface { padding: 24px; }
+.campaign-update p, .campaign-update li { line-height: 1.7; }
+.campaign-update a { text-decoration: underline; text-underline-offset: 3px; }
+.campaign-polls { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.campaign-polls article { border-top: 1px solid #c9c5bb; padding-top: 18px; min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 700px) { .campaign-notice dl { grid-template-columns: repeat(2,minmax(0,1fr)); } .campaign-polls { grid-template-columns: 1fr; } .campaign-update .surface { padding: 18px; } }
+
+.campaign-table { overflow-x: auto; }
+.campaign-table table { border-collapse: collapse; width: 100%; min-width: 650px; text-align: left; }
+.campaign-table th, .campaign-table td { border-bottom: 1px solid #c9c5bb; padding: 12px 10px; }
+.campaign-table caption { text-align: left; margin: 12px 0; }

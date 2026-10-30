@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "mode": "diagnostic-only-no-fitting",
+  "seed": 20260826,
+  "draws": 5000,
+  "primaryVector": [
+    22.5,
+    29.5,
+    22,
+    12.5,
+    13.5
+  ],
+  "comparisons": {
+    "ALP_vs_Coalition": {
+      "parties": [
+        "ALP",
+        "LIB_NAT"
+      ],
+      "published": [
+        44,
+        56
+      ],
+      "modelMean": [
+        45.59165615676253,
+        54.40834384323752
+      ],
+      "modelLower80": [
+        43.026492288794465,
+        51.7372031994129
+      ],
+      "modelUpper80": [
+        48.2627968005871,
+        56.97350771120553
+      ],
+      "deltaModelMinusPublished": [
+        1.5916561567625322,
+        -1.5916561567624825
+      ]
+    },
+    "ALP_vs_ONP": {
+      "parties": [
+        "ALP",
+        "ONP"
+      ],
+      "published": [
+        54.5,
+        45.5
+      ],
+      "modelMean": [
+        48.69461417409337,
+        51.305385825906626
+      ],
+      "modelLower80": [
+        45.69182761323783,
+        48.20079455410997
+      ],
+      "modelUpper80": [
+        51.79920544589003,
+        54.30817238676218
+      ],
+      "deltaModelMinusPublished": [
+        -5.805385825906633,
+        5.805385825906626
+      ]
+    },
+    "three_party": {
+      "parties": [
+        "ALP",
+        "LIB_NAT",
+        "ONP"
+      ],
+      "published": [
+        43,
+        33,
+        24
+      ],
+      "modelMean": [
+        36.816477197618404,
+        35.201267742649584,
+        27.982255059731916
+      ],
+      "modelLower80": [
+        35.4526107422112,
+        33.96786031348344,
+        26.72613300891285
+      ],
+      "modelUpper80": [
+        38.18578552848523,
+        36.49467468444311,
+        29.29282119045796
+      ],
+      "deltaModelMinusPublished": [
+        -6.183522802381596,
+        2.201267742649584,
+        3.9822550597319157
+      ]
+    }
+  },
+  "excludedMatchup": {
+    "parties": [
+      "LIB_NAT",
+      "ONP"
+    ],
+    "reported": [
+      74,
+      29
+    ],
+    "reason": "Source sums to 103; no correction inferred."
+  },
+  "limitations": [
+    "Fixed published primaries; intervals reflect preference-prior dispersion only, not total election or survey uncertainty.",
+    "Forced statewide comparisons do not estimate district final-pair survival or government formation.",
+    "Published outcomes from one survey are dependent; no fitting, independent observations or model promotion."
+  ]
+}

@@ -1,6 +1,20 @@
 # Project handoff
 
-Updated: 2026-10-08
+Updated: 2026-10-31
+
+## Current campaign implementation
+
+Main at review: `ef15e9f` (merged #142). The app remains an experimental 8 October forecast; canonical polling ends 28 September. #140 candidate resolution and #142 uncertainty research are retained but not production-promoted.
+
+This batch adds current public currency/readiness, a Campaign update view, reviewed 31 October sensitivity evidence, unchanged-engine scenario outputs, a no-fitting preference diagnostic and a VEC-only nomination reconciliation command. See [campaign readiness](CAMPAIGN_READINESS_2026-10-31.md) for results, exact scope, remaining input decisions and nomination workflow.
+
+Current assessment is 4/9 gates at 31 October after registering unresolved campaign evidence (previous monitor: 5/9); the historical 8 October readiness record remains 6/9. No canonical inputs or forecast outputs changed, no research model was promoted, and no prospective seal or outcome score was created.
+
+Next: adjudicate explicit poll eligibility decisions, capture complete Council regional evidence, and reconcile actual VEC nominations after publication. The app separates newer reviewed evidence from older retained predictions.
+
+## Historical handoff — 8 October
+
+The sections below preserve the operational history and decisions as recorded on 8 October. Their next-action statements are historical and are superseded by the current campaign implementation above.
 
 ## Current state
 
