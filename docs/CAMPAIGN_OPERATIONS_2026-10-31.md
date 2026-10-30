@@ -28,7 +28,7 @@ The captured One Nation roster yields 103 entries: 97 match accepted identities/
 
 The machine reconciliation packet records every captured entry and its action. Existing candidate evidence remains excluded from the forecast; no accepted registry record, candidate decision or model input changes in this batch.
 
-A full local discovery sweep after the identity repair reached all 12 enabled routes without extraction errors. The final distinct-carrier sweep is recorded separately when complete. Exact duplicate removal must not be confused with collapsing dependent source evidence into a new independent observation.
+The final full local discovery sweep reached all 12 enabled routes without extraction errors. It retained 309 distinct source records: 288 already tracked and 21 quarantined for review, comprising 20 candidate carriers and one poll-derived carrier. The durable `live-discovery-review.json` preserves those provisional review items and source observations. Distinct sources can concern the same person; these counts are not unique new candidates. Exact duplicate removal must not be confused with collapsing dependent source evidence into a new independent observation.
 
 **GitHub runner access remains unresolved.** Run `41143280032`, attempt 2, was retried once. Its retained artifact `13019884016` still reports HTTP 403 from One Nation and Family First. The workflow correctly fails closed. Local HTTP 200 responses do not establish recovery in GitHub Actions. No source was disabled, no failure was suppressed, and no proxy or unverified alternate carrier was substituted.
 
