@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { auditPollPromotion } from "./build-poll-promotion-audit.mjs";
@@ -27,6 +27,9 @@ const byId = new Map(records.map((record) => [record.id, record]));
 const recommendationById = new Map(dossier.reviews.map((review) => [review.evidenceId, review]));
 const priorAccepted = readJson("metadata/accepted-polls-2026.json");
 const priorReviews = readJson("metadata/discovery-review-decisions.json");
+const campaignApproval = existsSync(resolve(root, "metadata/poll-admission-approval-2026-10-31.json")) ? readJson("metadata/poll-admission-approval-2026-10-31.json") : null;
+const campaignIds = new Set(campaignApproval?.approved === true ? campaignApproval.evidenceDecisions.map((item) => item.evidenceId) : []);
+const priorModelDecisions = readJson("metadata/poll-model-eligibility-decisions.json");
 const reviewDate = (id) => priorReviews.decisions.find((item) => item.evidenceId === id)?.reviewedAt ?? approval.approvedAt;
 
 if (approval.evidenceDecisions.length !== dossier.reviews.length) throw new Error("approval must decide every dossier record");
@@ -54,16 +57,17 @@ accepted.polls = approval.evidenceDecisions.filter((item) => item.decision === "
       primaryVoteRounded: record.primaryVoteRounded, primaryVoteUnweightedBase: record.primaryVoteUnweightedBase,
       twoPartyPreferredUnweightedBase: record.twoPartyPreferredUnweightedBase, sampleOverlapAssessment: record.sampleOverlapAssessment } : {}) };
 });
+accepted.polls.push(...priorAccepted.polls.filter((poll) => campaignIds.has(poll.evidenceId)));
 writeJson(acceptedPath, accepted);
 
 writeJson("metadata/discovery-review-decisions.json", { schemaVersion: 1, policy: "explicit-human-review-required",
   decisions: [...approval.evidenceDecisions.map((item) => { const record = byId.get(item.evidenceId); return {
     evidenceId: item.evidenceId, recordHash: hash(record), kind: record.kind, decision: item.decision,
     reviewer: approval.reviewerRole, reviewedAt: reviewDate(item.evidenceId), note: item.reason ?? recommendationById.get(item.evidenceId).rationale,
-    modelInputsChanged: false }; }), ...priorReviews.decisions.filter((item) => item.kind !== "poll")] });
+    modelInputsChanged: false }; }), ...priorReviews.decisions.filter((item) => item.kind !== "poll" || campaignIds.has(item.evidenceId))] });
 writeJson("metadata/poll-model-eligibility-decisions.json", { schemaVersion: 1,
   policy: "Model eligibility is decided separately from evidence acceptance. Eligible records enter the canonical registry only through an explicit canonical action.",
-  decidedAt: approval.approvedAt, reviewerRole: approval.reviewerRole, decisions: approval.modelEligibilityDecisions });
+  decidedAt: approval.approvedAt, reviewerRole: approval.reviewerRole, decisions: [...approval.modelEligibilityDecisions, ...priorModelDecisions.decisions.filter((item) => campaignIds.has(item.evidenceId))] });
 
 const eventsPath = resolve(root, "model/data/processed/poll_events_seed.csv");
 const estimatesPath = resolve(root, "model/data/processed/poll_estimates_seed.csv");
@@ -129,4 +133,4 @@ for (const [path, content] of plannedWrites) {
     if (readFileSync(path, "utf8") !== content) throw new Error(`approved poll review stale: ${path}`);
   } else writeFileSync(path, content);
 }
-console.log(`${process.argv.includes("--check") ? "Verified" : "Applied"} ${accepted.polls.length} accepted evidence records and ${approval.modelEligibilityDecisions.filter((item) => item.decision === "eligible").length} separate model-eligibility decisions.`);
+console.log(`${process.argv.includes("--check") ? "Verified" : "Applied"} ${accepted.polls.length} accepted evidence records and ${approval.modelEligibilityDecisions.filter((item) => item.decision === "eligible").length + (campaignApproval?.modelEligibilityDecisions.filter((item) => item.decision === "eligible").length ?? 0)} separate model-eligibility decisions.`);

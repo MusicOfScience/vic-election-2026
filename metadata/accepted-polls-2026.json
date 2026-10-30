@@ -200,6 +200,156 @@
       "primaryVoteUnweightedBase": 977,
       "twoPartyPreferredUnweightedBase": 956,
       "sampleOverlapAssessment": "Distinct non-overlapping fieldwork from earlier canonical Freshwater waves. No rolling pooled wave or MRP claimed. Panel vendors, repeated respondents and cross-wave exclusion rules not disclosed; owner must adjudicate comparability and dependency under existing policy."
+    },
+    {
+      "id": "demosau-vic-2026-09-10-20-primary",
+      "kind": "poll",
+      "status": "accepted-model-eligible",
+      "pollster": "DemosAU",
+      "commissioner": "PremierNational",
+      "fieldworkStart": "2026-09-10",
+      "fieldworkEnd": "2026-09-20",
+      "publicationDate": "2026-10-14",
+      "sampleSize": 1020,
+      "method": "Internet panels; rim weighted by age x gender, education, personal income, residential tenure, language, region, 2025 federal vote and left-right self-identification; leaner asked; unresolved undecideds excluded",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 30,
+        "alp": 25,
+        "oneNation": 20,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "twoPartyPreferred": {
+        "coalition": 52,
+        "alp": 48,
+        "basis": "published DemosAU/PremierNational result",
+        "method": "Greens: 2022 preference flows; ONP/Other: respondent-allocated 2026 polling. Reported flows GRN 90-10 Labor, ONP 81-19 Coalition, Other 58-42 Labor. Supporting reference only; no preference model fitting."
+      },
+      "sourceUrl": "https://demosau.com/wp-content/uploads/2026/10/DemosAU-Report-Victoria-Poll-September-2026.pdf",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "proposedModelPollId": "demosau_2026-09",
+      "captureMode": "manual-primary-source-capture",
+      "modelEligibilityDecision": "eligible",
+      "blocker": null,
+      "effectiveSampleSize": 572,
+      "pollPublicationDate": "2026-10-14",
+      "sourceId": "demosau-victoria-state-polls",
+      "undecidedTreatment": "initial undecideds asked a leaner; remaining undecideds excluded",
+      "sampleFamily": "demosau",
+      "sourceCapture": {
+        "retrievalMode": "search-service-primary-PDF-text",
+        "retrievedAt": "2026-10-31",
+        "pages": [
+          1,
+          2,
+          3,
+          11
+        ],
+        "binaryCaptureStatus": "not-captured; direct file retrieval returned HTML instead of a PDF",
+        "effectiveSampleSizeSource": "PDF page 2: effective sample size after weighting",
+        "sampleReuse": "not stated in captured report"
+      },
+      "evidenceId": "demosau-vic-2026-09-10-20-primary",
+      "modelEligible": true,
+      "reviewerRole": "project-owner",
+      "reviewedAt": "2026-10-30T22:22:10.610909+00:00",
+      "approvalPath": "metadata/poll-admission-approval-2026-10-31.json"
+    },
+    {
+      "id": "roy-morgan-vic-2026-10-26-29-primary",
+      "kind": "poll",
+      "status": "accepted-model-eligible",
+      "pollster": "Roy Morgan",
+      "fieldworkStart": "2026-10-26",
+      "fieldworkEnd": "2026-10-29",
+      "publicationDate": "2026-10-30",
+      "sampleSize": 3610,
+      "method": "SMS; representative Victoria-wide cross-section; effective sample size, detailed weighting, undecided treatment and repeat-respondent overlap not disclosed in captured release",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 22.5,
+        "coalition": 29.5,
+        "oneNation": 22,
+        "greens": 12.5,
+        "independents": 7.5,
+        "otherParties": 6
+      },
+      "twoPartyPreferred": {
+        "alp": 44,
+        "coalition": 56
+      },
+      "threePartyPreferred": {
+        "ALP": 43,
+        "LIB_NAT": 33,
+        "ONP": 24
+      },
+      "alternativePairwise": [
+        {
+          "parties": [
+            "ALP",
+            "ONP"
+          ],
+          "values": [
+            54.5,
+            45.5
+          ],
+          "status": "reported-reference-only"
+        },
+        {
+          "parties": [
+            "LIB_NAT",
+            "ONP"
+          ],
+          "values": [
+            74,
+            29
+          ],
+          "status": "source-arithmetic-conflict-excluded",
+          "sum": 103
+        }
+      ],
+      "sourceUrl": "https://www.roymorgan.com/findings/10373-victorian-state-voting-intention-october-2026",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "human-reviewed-source-evidence",
+      "proposedModelPollId": "roy_morgan_2026-10-29",
+      "captureMode": "manual-primary-source-capture",
+      "modelEligibilityDecision": "eligible",
+      "blocker": null,
+      "sourceCapture": {
+        "htmlSha256": "d19033784fe9873e250e8368c772e14f1467062a5abd26867143bcc5e919cce5",
+        "pdfSha256": "3ccf4b76c841b423caf3f8169a4d41cfc548e089b81093f350121b04a024f4eb",
+        "pdfUrl": "https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/10/30060517/10373-Victorian-State-Voting-Intention-October-2026-1.pdf",
+        "checkedPages": [
+          1,
+          2,
+          3
+        ]
+      },
+      "earlierWave": {
+        "fieldworkStart": "2026-10-08",
+        "fieldworkEnd": "2026-10-09",
+        "primaryVote": {
+          "alp": 22.5,
+          "coalition": 26,
+          "oneNation": 25,
+          "greens": 14,
+          "independents": 7,
+          "otherParties": 5.5
+        },
+        "sampleSize": null,
+        "status": "reference-only-missing-wave-sample-size-no-injection"
+      },
+      "pollPublicationDate": "2026-10-30",
+      "sourceId": "roy-morgan-victoria-state-polls",
+      "sampleFamily": "roy_morgan",
+      "undecidedTreatment": "undisclosed in captured release; published first-preference composition sums to 100",
+      "evidenceId": "roy-morgan-vic-2026-10-26-29-primary",
+      "modelEligible": true,
+      "reviewerRole": "project-owner",
+      "reviewedAt": "2026-10-30T22:22:10.610909+00:00",
+      "approvalPath": "metadata/poll-admission-approval-2026-10-31.json"
     }
   ]
 }

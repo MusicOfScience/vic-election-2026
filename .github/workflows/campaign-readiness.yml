@@ -5,6 +5,8 @@ on:
       - 'metadata/current-evidence-shadow-2026-10-31.json'
       - 'metadata/current-evidence-results-2026-10-31.json'
       - 'metadata/campaign-*-2026-10-31.json'
+      - 'metadata/poll-admission*.json'
+      - 'metadata/poll-admission-proposal-2026-10-31/**'
       - 'model/scripts/run_current_evidence_shadow.py'
       - 'model/scripts/diagnose_campaign_preferences.py'
       - 'scripts/*campaign*.mjs'
@@ -18,6 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch immutable research input trees
+        run: |
+          git fetch --no-tags --depth=1 origin d254030d9f04066d04d6de280dc5d50700c60d66
+          git fetch --no-tags --depth=1 origin 9b32cdae813e1a06f3cda1512d136275604e63a3
+      - name: Prepare original research worktrees
+        run: |
+          git worktree add --detach /tmp/frozen-campaign d254030d9f04066d04d6de280dc5d50700c60d66
+          git worktree add --detach /tmp/frozen-admission 9b32cdae813e1a06f3cda1512d136275604e63a3
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -29,10 +39,15 @@ jobs:
       - run: node scripts/build-campaign-status.mjs --check && node scripts/build-campaign-summary.mjs --check
       - name: Reproduce current evidence sensitivities
         run: |
-          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src python model/scripts/run_current_evidence_shadow.py --evidence metadata/current-evidence-shadow-2026-10-31.json --output /tmp/campaign-reproduced.json --simulations 5000
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/tmp/frozen-campaign/model/src python /tmp/frozen-campaign/model/scripts/run_current_evidence_shadow.py --evidence metadata/current-evidence-shadow-2026-10-31.json --output /tmp/campaign-reproduced.json --simulations 5000
           python scripts/compare-campaign-json.py metadata/current-evidence-results-2026-10-31.json /tmp/campaign-reproduced.json
-          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src:model/scripts python -c 'import json; from pathlib import Path; from diagnose_campaign_preferences import build_report; Path("/tmp/preference-reproduced.json").write_text(json.dumps(build_report(), indent=2))'
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/tmp/frozen-campaign/model/src:/tmp/frozen-campaign/model/scripts python -c 'import json; from pathlib import Path; from diagnose_campaign_preferences import build_report; Path("/tmp/preference-reproduced.json").write_text(json.dumps(build_report(), indent=2))'
           python scripts/compare-campaign-json.py metadata/campaign-preference-diagnostic-2026-10-31.json /tmp/preference-reproduced.json
+          git diff --exit-code
+      - name: Reproduce pending admission sensitivity without admission
+        run: |
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/tmp/frozen-admission/model/src python /tmp/frozen-admission/model/scripts/run_current_evidence_shadow.py --evidence metadata/poll-admission-review-2026-10-31.json --output /tmp/admission-reproduced.json --simulations 5000
+          python scripts/compare-campaign-json.py metadata/poll-admission-sensitivity-2026-10-31.json /tmp/admission-reproduced.json
           git diff --exit-code
       - uses: actions/upload-artifact@v4
         with:
@@ -41,4 +56,6 @@ jobs:
             metadata/current-evidence-results-2026-10-31.json
             metadata/campaign-preference-diagnostic-2026-10-31.json
             metadata/campaign-run-record-2026-10-31.json
+            metadata/poll-admission-review-2026-10-31.json
+            metadata/poll-admission-sensitivity-2026-10-31.json
           retention-days: 90

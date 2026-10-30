@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "policy": "Immutable input trees for earlier research and refresh audits. Verify original hashes against these trees; never rehash historical results to match newer canonical inputs.",
+  "campaignInputRef": "d254030d9f04066d04d6de280dc5d50700c60d66",
+  "stagedInputRef": "d254030d9f04066d04d6de280dc5d50700c60d66",
+  "admissionInputRef": "9b32cdae813e1a06f3cda1512d136275604e63a3",
+  "october8RefreshAfterRef": "d254030d9f04066d04d6de280dc5d50700c60d66"
+}

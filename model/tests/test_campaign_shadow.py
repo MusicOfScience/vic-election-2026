@@ -9,7 +9,9 @@ from diagnose_campaign_preferences import project
 
 def test_campaign_shadow_keeps_effective_n_and_separate_other_categories():
     evidence=_load_evidence(ROOT,'metadata/current-evidence-shadow-2026-10-31.json')
-    events=pd.read_csv(ROOT/'model/data/processed/poll_events_seed.csv'); estimates=pd.read_csv(ROOT/'model/data/processed/poll_estimates_seed.csv')
+    import io, subprocess
+    frozen=lambda path: io.StringIO(subprocess.check_output(['git','show',f'9b32cdae813e1a06f3cda1512d136275604e63a3:{path}'],cwd=ROOT,text=True))
+    events=pd.read_csv(frozen('model/data/processed/poll_events_seed.csv')); estimates=pd.read_csv(frozen('model/data/processed/poll_estimates_seed.csv'))
     redbridge=next(r for r in evidence['assemblyPolls'] if r['pollster'].startswith('RedBridge'))
     morgan=evidence['assemblyPolls'][-1]
     original_events=events.copy(deep=True); original_estimates=estimates.copy(deep=True)

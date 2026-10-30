@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 2,
+  "asOf": "2026-10-31",
+  "mode": "admission-review-proposal-not-approved",
+  "policy": "Concrete owner-review proposal only. No evidence acceptance, canonical admission, parameter change or forecast refresh is authorised by this packet. Earlier independence holds remain in force.",
+  "assemblyPolls": [
+    {
+      "id": "demosau-vic-2026-09-10-20-primary",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-model-eligibility-decision",
+      "pollster": "DemosAU",
+      "commissioner": "PremierNational",
+      "fieldworkStart": "2026-09-10",
+      "fieldworkEnd": "2026-09-20",
+      "publicationDate": "2026-10-14",
+      "sampleSize": 1020,
+      "method": "Internet panels; rim weighted by age x gender, education, personal income, residential tenure, language, region, 2025 federal vote and left-right self-identification; leaner asked; unresolved undecideds excluded",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 30,
+        "alp": 25,
+        "oneNation": 20,
+        "greens": 14,
+        "otherParties": 11
+      },
+      "twoPartyPreferred": {
+        "coalition": 52,
+        "alp": 48,
+        "basis": "published DemosAU/PremierNational result",
+        "method": "Greens: 2022 preference flows; ONP/Other: respondent-allocated 2026 polling. Reported flows GRN 90-10 Labor, ONP 81-19 Coalition, Other 58-42 Labor. Supporting reference only; no preference model fitting."
+      },
+      "sourceUrl": "https://demosau.com/wp-content/uploads/2026/10/DemosAU-Report-Victoria-Poll-September-2026.pdf",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "primary-pdf-methodology-and-questionnaire-reconciled",
+      "proposedModelPollId": "demosau_2026-09",
+      "captureMode": "manual-primary-source-capture",
+      "modelEligibilityDecision": "pending",
+      "blocker": "Owner-specific model admission required. Primary questionnaire/method/base gaps resolved; cross-wave respondent overlap is undisclosed. Use reported effective N=572, not full N=1020, for polling weight.",
+      "effectiveSampleSize": 572,
+      "pollPublicationDate": "2026-10-14",
+      "sourceId": "demosau-victoria-state-polls",
+      "undecidedTreatment": "initial undecideds asked a leaner; remaining undecideds excluded",
+      "sampleFamily": "demosau",
+      "sourceCapture": {
+        "retrievalMode": "search-service-primary-PDF-text",
+        "retrievedAt": "2026-10-31",
+        "pages": [
+          1,
+          2,
+          3,
+          11
+        ],
+        "binaryCaptureStatus": "not-captured; direct file retrieval returned HTML instead of a PDF",
+        "effectiveSampleSizeSource": "PDF page 2: effective sample size after weighting",
+        "sampleReuse": "not stated in captured report"
+      }
+    },
+    {
+      "id": "redbridge-accent-vic-2026-10-02-08-current",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-model-eligibility-decision",
+      "pollster": "RedBridge / Accent Research",
+      "commissioner": "Australian Financial Review",
+      "fieldworkStart": "2026-10-02",
+      "fieldworkEnd": "2026-10-08",
+      "publicationDate": "2026-10-11",
+      "sampleSize": 1008,
+      "effectiveSampleSize": 775,
+      "method": "online panel; quotas for age, gender, location, education and 2025 federal vote; rim weighted across age, gender, education, religion and location; undecided leaner; unresolved respondents excluded",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 30,
+        "alp": 24,
+        "oneNation": 24,
+        "greens": 16,
+        "otherParties": 6
+      },
+      "twoPartyPreferred": {
+        "coalition": 56,
+        "alp": 44,
+        "basis": "respondent allocated; topline corroborated by multiple contemporary polling ledgers"
+      },
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-october-2026-victorian-state-poll",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "first-party-methodology-and-report-link; topline-cross-checked",
+      "proposedModelPollId": "redbridge_accent_2026-10",
+      "captureMode": "manual-primary-source-capture",
+      "modelEligibilityDecision": "pending",
+      "blocker": "The existing owner rule for RedBridge/Accent requires documented respondent/sample-family independence from prior waves. The October methodology confirms a separate fieldwork window but does not disclose cross-wave respondent reuse."
+    },
+    {
+      "id": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-primary-source-reconciliation",
+      "pollster": "Resolve Strategic",
+      "commissioner": "The Age",
+      "fieldworkStart": "2026-10-06",
+      "fieldworkEnd": "2026-10-10",
+      "publicationDate": "2026-10-13",
+      "sampleSize": 1000,
+      "method": "published media poll; primary-source methodology not captured in the project evidence trail",
+      "geography": "Victoria",
+      "primaryVote": {
+        "coalition": 28,
+        "alp": 25,
+        "oneNation": 23,
+        "greens": 15,
+        "otherParties": 9
+      },
+      "sourceUrl": "https://electiontracker.au/elections/vic/2026/polls",
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "secondary-ledger-corroborated",
+      "proposedModelPollId": "resolve_strategic_2026-10",
+      "captureMode": "corroborated-secondary-capture",
+      "modelEligibilityDecision": "hold",
+      "blocker": "Primary pollster/publisher methodology and a canonical primary-source capture remain required under the existing project policy.",
+      "primaryPublisherUrl": "https://www.theage.com.au/politics/victoria/wilson-is-gaining-economic-traction-as-carroll-s-popularity-takes-a-further-dive-20261012-p614pi.html"
+    },
+    {
+      "id": "newspoll-vic-2026-10-15-22-secondary",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-primary-source-reconciliation",
+      "pollster": "Newspoll / Pyxis Polling & Insights",
+      "commissioner": "The Australian",
+      "fieldworkStart": "2026-10-15",
+      "fieldworkEnd": "2026-10-22",
+      "publicationDate": "2026-10-25",
+      "sampleSize": 1017,
+      "method": "Online survey; publisher reports theoretical margin of error 3.4 percentage points; full wave methodology not captured",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 24,
+        "coalition": 33,
+        "oneNation": 20,
+        "greens": 14,
+        "otherParties": 9
+      },
+      "twoPartyPreferred": {
+        "alp": 45,
+        "coalition": 55
+      },
+      "sourceUrl": "https://www.pollbludger.net/2026/10/26/newspoll-labor-24-coalition-33-one-nation-20-in-victoria/",
+      "sourceTier": "reputable_secondary",
+      "verificationStatus": "primary-publisher-toplines-reconciled-methodology-incomplete",
+      "proposedModelPollId": "newspoll_2026-10",
+      "captureMode": "corroborated-secondary-capture",
+      "modelEligibilityDecision": "hold",
+      "blocker": "Toplines, full N and online mode now corroborated against indexed primary publisher. October questionnaire, effective N and undecided handling remain uncaptured. A reviewed exception is needed before admission; July 2025 methodology is not inherited.",
+      "corroboratingSources": [
+        "https://www.theaustralian.com.au/nation/daniel-andrews-won-three-elections-now-voters-have-turned-on-him/news-story/555b9e6dd559260625b4491c41eb604a",
+        "https://www.news.com.au/national/victoria/politics/newspoll-predicts-coalition-victory-after-12-years-of-labor-reign-in-victoria/news-story/5e41346497d85d4b2fd6d3deca98e9a6"
+      ],
+      "sourceId": "newspoll-pyxis-victoria",
+      "primaryPublisherUrl": "https://www.theaustralian.com.au/nation/politics/newspoll-coalition-on-track-to-end-12-years-of-labor-rule-in-victoria/news-story/de80200643073b5304702a952a05b3ec",
+      "primaryCaptureMode": "indexed-primary-publisher-report; direct article fetch unavailable",
+      "pollPublicationDate": "2026-10-25",
+      "sourceCapture": {
+        "retrievalMode": "search-service-indexed-primary-publisher",
+        "retrievedAt": "2026-10-31",
+        "primaryToplinesVerified": {
+          "ALP": 24,
+          "LIB_NAT": 33,
+          "ONP": 20,
+          "GRN": 14
+        },
+        "residual": {
+          "value": 9,
+          "status": "corroborated in secondary ledger; arithmetically 100 minus four published major categories"
+        },
+        "fieldworkSource": "secondary Poll Bludger 26 October; publisher companion report corroborates 15\u201322 October",
+        "publicationDateAssessment": "Primary publisher reporting was available 25 October; 26 October is secondary commentary date. Proposed correction; frozen prior packet unchanged."
+      },
+      "methodologySearch": {
+        "officialIndex": "https://www.pyxispolling.com/apc/",
+        "foundWaveSpecificOctober2026": false,
+        "rejectedSubstitute": "4 July 2025 Victorian methodology: different wave, N=1071/effective N=824; must not attach to October 2026"
+      }
+    },
+    {
+      "id": "roy-morgan-vic-2026-10-26-29-primary",
+      "kind": "poll",
+      "status": "shadow-only-awaiting-model-eligibility-decision",
+      "pollster": "Roy Morgan",
+      "fieldworkStart": "2026-10-26",
+      "fieldworkEnd": "2026-10-29",
+      "publicationDate": "2026-10-30",
+      "sampleSize": 3610,
+      "method": "SMS; representative Victoria-wide cross-section; effective sample size, detailed weighting, undecided treatment and repeat-respondent overlap not disclosed in captured release",
+      "geography": "Victoria",
+      "primaryVote": {
+        "alp": 22.5,
+        "coalition": 29.5,
+        "oneNation": 22,
+        "greens": 12.5,
+        "independents": 7.5,
+        "otherParties": 6
+      },
+      "twoPartyPreferred": {
+        "alp": 44,
+        "coalition": 56
+      },
+      "threePartyPreferred": {
+        "ALP": 43,
+        "LIB_NAT": 33,
+        "ONP": 24
+      },
+      "alternativePairwise": [
+        {
+          "parties": [
+            "ALP",
+            "ONP"
+          ],
+          "values": [
+            54.5,
+            45.5
+          ],
+          "status": "reported-reference-only"
+        },
+        {
+          "parties": [
+            "LIB_NAT",
+            "ONP"
+          ],
+          "values": [
+            74,
+            29
+          ],
+          "status": "source-arithmetic-conflict-excluded",
+          "sum": 103
+        }
+      ],
+      "sourceUrl": "https://www.roymorgan.com/findings/10373-victorian-state-voting-intention-october-2026",
+      "sourceTier": "primary_pollster",
+      "verificationStatus": "first-party-html-and-pdf-cross-checked",
+      "proposedModelPollId": "roy_morgan_2026-10-29",
+      "captureMode": "manual-primary-source-capture",
+      "modelEligibilityDecision": "pending",
+      "blocker": "Source facts verified against preserved HTML/PDF. Explicit comparable-wave admission is needed; effective N, undecided handling and respondent overlap remain undisclosed. Exclude erroneous Coalition\u2013ONP matchup; retain separate Independent/Other categories.",
+      "sourceCapture": {
+        "htmlSha256": "d19033784fe9873e250e8368c772e14f1467062a5abd26867143bcc5e919cce5",
+        "pdfSha256": "3ccf4b76c841b423caf3f8169a4d41cfc548e089b81093f350121b04a024f4eb",
+        "pdfUrl": "https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/10/30060517/10373-Victorian-State-Voting-Intention-October-2026-1.pdf",
+        "checkedPages": [
+          1,
+          2,
+          3
+        ]
+      },
+      "earlierWave": {
+        "fieldworkStart": "2026-10-08",
+        "fieldworkEnd": "2026-10-09",
+        "primaryVote": {
+          "alp": 22.5,
+          "coalition": 26,
+          "oneNation": 25,
+          "greens": 14,
+          "independents": 7,
+          "otherParties": 5.5
+        },
+        "sampleSize": null,
+        "status": "reference-only-missing-wave-sample-size-no-injection"
+      },
+      "pollPublicationDate": "2026-10-30",
+      "sourceId": "roy-morgan-victoria-state-polls",
+      "sampleFamily": "roy_morgan",
+      "undecidedTreatment": "undisclosed in captured release; published first-preference composition sums to 100"
+    }
+  ],
+  "assemblyScenarios": {
+    "primary_admission_candidate": [
+      "demosau-vic-2026-09-10-20-primary",
+      "roy-morgan-vic-2026-10-26-29-primary"
+    ],
+    "plus_newspoll_exception": [
+      "demosau-vic-2026-09-10-20-primary",
+      "roy-morgan-vic-2026-10-26-29-primary",
+      "newspoll-vic-2026-10-15-22-secondary"
+    ]
+  },
+  "councilEvidence": {
+    "id": "roy-morgan-upper-house-jul-sep-2026",
+    "status": "reference-only-pending-full-five-way-region-table-capture",
+    "pollster": "Roy Morgan",
+    "publicationDate": "2026-10-20",
+    "fieldworkPeriod": "2026-07 through 2026-09",
+    "sampleSize": 2845,
+    "averageRegionSample": 360,
+    "publishedMinimumSeatAllocation": {
+      "LIB_NAT": 12,
+      "ALP": 10,
+      "ONP": 6,
+      "GRN": 8,
+      "UNRESOLVED": 4
+    },
+    "publishedBlocMinimums": {
+      "LIB_NAT_plus_ONP": 18,
+      "ALP_plus_GRN": 18
+    },
+    "unresolvedRegions": [
+      "Western Victoria",
+      "Northern Metropolitan",
+      "Southern Metropolitan",
+      "Western Metropolitan"
+    ],
+    "sourceUrl": "https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026",
+    "sourceTier": "primary_pollster",
+    "modelInjection": false,
+    "reasonNotInjected": "The published prose exposes the four major-party regional values needed for most regions but does not expose the complete five-way primary table for every region in machine-readable text. Do not infer missing ONP/OTH values for Northern Metropolitan or Southern Metropolitan."
+  },
+  "reviewedAt": "2026-10-31",
+  "canonicalAdmission": "pending-specific-model-eligibility-decisions",
+  "scenarioDescriptions": {
+    "primary_admission_candidate": "Counterfactual admission of DemosAU September with effective N=572 and latest Morgan only. Existing earlier polls remain. Not an approved update.",
+    "plus_newspoll_exception": "Adds October Newspoll under a hypothetical explicit methodology exception. Toplines are primary-publisher reconciled; missing method is not invented."
+  },
+  "milestones": [
+    {
+      "date": "2026-11-03",
+      "label": "Roll closes at 8 pm Melbourne"
+    },
+    {
+      "date": "2026-11-04",
+      "label": "Nominations open"
+    },
+    {
+      "date": "2026-11-09",
+      "label": "Nominations close at 12 noon Melbourne; reconcile official candidate fields after publication"
+    },
+    {
+      "date": "2026-11-18",
+      "label": "Early voting opens"
+    },
+    {
+      "date": "2026-11-27",
+      "label": "Early voting ends"
+    },
+    {
+      "date": "2026-11-28",
+      "label": "Election day"
+    }
+  ],
+  "calendarSource": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate",
+  "calendarVerifiedAt": "2026-10-31",
+  "status": "awaiting-wave-specific-owner-decisions",
+  "sourceSnapshot": "metadata/current-evidence-shadow-2026-10-31.json",
+  "sourceSnapshotSha256": "63d888ab3c0319d688ff7b9693c3eb3f1c383035e10675b062c086062ec48a0f",
+  "reviews": [
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-primary",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "admit-with-explicit-comparable-wave-caveat",
+      "proposedAction": "add",
+      "requiredOwnerDecision": "Accept evidence and admit one DemosAU September wave with effective N=572; acknowledge undisclosed cross-wave respondent reuse; supersede September hold only for this identified wave.",
+      "earlierHoldSuperseded": false
+    },
+    {
+      "evidenceId": "roy-morgan-vic-2026-10-26-29-primary",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "admit-with-explicit-comparable-wave-caveat",
+      "proposedAction": "add",
+      "requiredOwnerDecision": "Accept and admit latest Morgan primary composition with unknown effective N/undecided/overlap caveats and existing sample cap; exclude erroneous alternate pair.",
+      "earlierHoldSuperseded": false
+    },
+    {
+      "evidenceId": "newspoll-vic-2026-10-15-22-secondary",
+      "evidenceRecommendation": "accept-toplines",
+      "modelRecommendation": "hold-unless-explicit-methodology-exception",
+      "proposedAction": "none-unless-exception",
+      "requiredOwnerDecision": "Either retain hold, or explicitly accept indexed-primary/corroborated toplines despite missing October method; residual9 must retain its corroborated/derived provenance.",
+      "earlierHoldSuperseded": false
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-10-02-08-current",
+      "evidenceRecommendation": "accept",
+      "modelRecommendation": "retain-independence-hold",
+      "proposedAction": "none",
+      "reason": "First-party October methodology gives effective N=775 and undecided treatment but not cross-wave independence; explicit earlier owner requirement remains unresolved."
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "evidenceRecommendation": "retain-secondary-evidence",
+      "modelRecommendation": "retain-primary-reconciliation-hold",
+      "proposedAction": "none",
+      "reason": "Primary publisher URL now located, but content/methodology not captured; no new primary facts verified."
+    }
+  ],
+  "approvalRequiredBy": {
+    "path": "docs/AUTOMATION_SPEC.md",
+    "section": "Routine governed sequence between milestones, steps 3\u20135",
+    "instruction": "Resolve eligibility through the existing owner/poll-review contracts, then update canonical inputs only for explicitly authorised observations."
+  }
+}

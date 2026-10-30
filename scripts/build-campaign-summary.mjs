@@ -9,3 +9,9 @@ const result = { asOf: report.asOf, simulations: report.simulationsPerScenario, 
 const text = JSON.stringify(result, null, 2)+'\n';
 const target = new URL('../app/campaign-summary.generated.json', import.meta.url);
 if (process.argv.includes('--check')) { if (readFileSync(target,'utf8') !== text) throw new Error('Campaign summary is stale'); } else writeFileSync(target,text);
+
+const admission = read('metadata/poll-admission-sensitivity-2026-10-31.json');
+const admissionCompact = { asOf: admission.asOf, simulations: admission.simulationsPerScenario, scenarios: Object.fromEntries(Object.entries(admission.scenarios).map(([name, value]) => [name, { pollCount: value.summary.polling.pollCount, parties: value.summary.assembly.parties, hungProbability: value.summary.assembly.hungProbability }])) };
+const admissionText = JSON.stringify(admissionCompact, null, 2)+'\n';
+const admissionTarget = new URL('../app/poll-admission-summary.generated.json', import.meta.url);
+if (process.argv.includes('--check')) { if (readFileSync(admissionTarget, 'utf8') !== admissionText) throw new Error('Admission summary is stale'); } else writeFileSync(admissionTarget, admissionText);

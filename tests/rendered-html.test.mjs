@@ -29,13 +29,13 @@ test("renders the joint experimental forecast dashboard", async () => {
   const html = await response.text();
   assert.match(html, /<title>Victorian Election Forecast 2026<\/title>/);
   assert.match(html, /A forecast you can interrogate/);
-  assert.match(html, /Retained snapshot: hung parliament leads/);
+  assert.match(html, /Experimental snapshot: hung parliament leads/);
   assert.match(html, /5,000[^<]*<!-- -->?[^<]*whole-election simulations/i);
   assert.match(html, /Experimental forecast/i);
   assert.match(html, /What this forecast is saying/i);
   assert.match(html, /How to read the forecast/i);
   assert.match(html, /88 electorates/i);
-  assert.match(html, /Forecast inputs are out of date/);
+  assert.match(html, /Experimental forecast status/);
   assert.match(html, /Campaign update/);
   assert.match(html, /Latest campaign evidence reviewed/);
   assert.match(html, /twelve most uncertain electorates/i);
@@ -45,5 +45,5 @@ test("renders the joint experimental forecast dashboard", async () => {
   assert.match(html, /Skip to forecast navigation/i);
   assert.match(html, /aria-label="Forecast sections"/i);
   assert.match(html, /Party colour key/i);
-  assert.match(html, /8 Oct 2026/i);
+  assert.match(html, /31 Oct 2026/i);
 });

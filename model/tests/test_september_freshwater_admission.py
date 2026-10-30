@@ -27,7 +27,7 @@ def test_admitted_freshwater_matches_retained_workbook_and_preserves_bases():
         row = estimates[(estimates.poll_id == "freshwater_2026-09") & (estimates.party_id == party)]
         assert len(row) == 1
         assert row.iloc[0].primary_pct == extracted["primaryVoteExact"][source]
-    forbidden = {"redbridge_accent_2026-09", "demosau_2026-09", "resolve_strategic_2026-09"}
+    forbidden = {"redbridge_accent_2026-09", "resolve_strategic_2026-09"}
     assert not forbidden.intersection(events.poll_id)
 
 

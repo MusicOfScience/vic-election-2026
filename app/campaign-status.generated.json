@@ -1,14 +1,15 @@
 {
   "schemaVersion": 1,
   "assessedAsOf": "2026-10-31",
-  "forecastDate": "2026-10-08",
-  "latestIncludedPollFieldwork": "2026-09-28",
+  "forecastDate": "2026-10-31",
+  "latestIncludedPollFieldwork": "2026-10-29",
   "latestReviewedPublication": "2026-10-30",
-  "pollAgeDays": 33,
+  "pollAgeDays": 2,
   "freshnessThresholdDays": 21,
-  "forecastStale": true,
-  "newerEvidenceOutsideForecast": true,
-  "campaignPollsAwaitingAdmission": 5,
+  "forecastStale": false,
+  "newerEvidenceOutsideForecast": false,
+  "campaignPollsAwaitingAdmission": 3,
+  "campaignPollsAdmitted": 2,
   "readiness": {
     "schemaVersion": 2,
     "assessedAsOf": "2026-10-31",
@@ -19,11 +20,9 @@
       "automaticProductionPublish": false
     },
     "summary": {
-      "passedRequiredGates": 4,
+      "passedRequiredGates": 6,
       "requiredGateCount": 9,
       "blockingGateIds": [
-        "criticalSourceFreshness",
-        "modelInputFreshness",
         "completeForecastBacktest",
         "probabilityCalibration",
         "productionAuthorisation"
@@ -35,11 +34,11 @@
         "label": "Source fingerprints match"
       },
       "criticalSourceFreshness": {
-        "passed": false,
+        "passed": true,
         "label": "Critical sources are within age policy"
       },
       "modelInputFreshness": {
-        "passed": false,
+        "passed": true,
         "label": "Newer reviewed evidence is resolved into or excluded from model inputs"
       },
       "deterministicOutputs": {
@@ -114,14 +113,14 @@
       "assessedAsOf": "2026-10-31",
       "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
       "modelInput": {
-        "latestPublicationDate": "2026-10-01",
-        "pollId": "freshwater_2026-09",
-        "pollster": "Freshwater Strategy",
+        "latestPublicationDate": "2026-10-30",
+        "pollId": "roy_morgan_2026-10-29",
+        "pollster": "Roy Morgan",
         "status": "model-eligible"
       },
       "acceptedEvidence": {
-        "latestPublicationDate": "2026-10-01",
-        "pollster": "Freshwater Strategy",
+        "latestPublicationDate": "2026-10-30",
+        "pollster": "Roy Morgan",
         "status": "human-reviewed-not-necessarily-model-eligible"
       },
       "stagedEvidence": {
@@ -134,18 +133,18 @@
       },
       "reviewResolution": {
         "stagedRecords": 16,
-        "resolvedRecords": 13,
-        "unresolvedRecords": 3,
+        "resolvedRecords": 16,
+        "unresolvedRecords": 0,
         "latestResolvedEvidence": {
-          "evidenceId": "newspoll-vic-2026-10-15-22-secondary",
-          "pollster": "Newspoll / Pyxis Polling & Insights",
-          "latestPublicationDate": "2026-10-26",
-          "decision": "hold"
+          "evidenceId": "roy-morgan-vic-2026-10-26-29-primary",
+          "pollster": "Roy Morgan",
+          "latestPublicationDate": "2026-10-30",
+          "decision": "approve"
         }
       },
       "newestEvidenceDate": "2026-10-30",
-      "newerEvidenceAwaitingReview": true,
-      "newerEvidenceExcludedByReview": true,
+      "newerEvidenceAwaitingReview": false,
+      "newerEvidenceExcludedByReview": false,
       "modelFreshnessUnchangedByStagedEvidence": true
     },
     "sources": [
@@ -206,10 +205,10 @@
       {
         "id": "vic-2026-poll-registry",
         "critical": true,
-        "dataEffectiveDate": "2026-09-28",
-        "ageDays": 33,
+        "dataEffectiveDate": "2026-10-29",
+        "ageDays": 2,
         "stalenessThresholdDays": 21,
-        "stale": true,
+        "stale": false,
         "artifactsCurrent": true
       },
       {
@@ -224,8 +223,8 @@
       {
         "id": "forecast-derived-outputs",
         "critical": true,
-        "dataEffectiveDate": "2026-10-08",
-        "ageDays": 23,
+        "dataEffectiveDate": "2026-10-31",
+        "ageDays": 0,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -241,7 +240,7 @@
       }
     ]
   },
-  "notice": "Retained experimental snapshot. Newer polling has been reviewed for sensitivity analysis but has not been admitted to this forecast. Published probabilities have not passed full production calibration.",
+  "notice": "2 campaign polls admitted under explicit owner approval; other campaign waves remain held. This is an experimental snapshot. Published probabilities have not passed full production calibration.",
   "council": {
     "regionalInput": "upper_house_region_poll_2026-08.csv",
     "newerRegionalPublication": "2026-10-20",

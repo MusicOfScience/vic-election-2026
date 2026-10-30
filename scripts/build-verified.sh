@@ -14,6 +14,7 @@ if [[ ! -x "${vinext}" ]]; then
 fi
 
 echo "Running bounded vinext build..."
+node "${SITES_PROJECT_ROOT}/scripts/apply-campaign-admission.mjs" --check
 node "${SITES_PROJECT_ROOT}/scripts/build-campaign-status.mjs" --check
 node "${SITES_PROJECT_ROOT}/scripts/build-campaign-summary.mjs" --check
 node "${SITES_PROJECT_ROOT}/scripts/check-campaign-record.mjs"

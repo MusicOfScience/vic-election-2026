@@ -57,6 +57,36 @@
       "decision": "hold",
       "canonicalAction": "none",
       "blocker": "Primary capture, category arithmetic and fieldwork/publication discrepancies unresolved."
+    },
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-primary",
+      "pollId": "demosau_2026-09",
+      "decision": "eligible",
+      "canonicalAction": "add"
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-10-02-08-current",
+      "pollId": "redbridge_accent_2026-10",
+      "decision": "hold",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "pollId": "resolve_strategic_2026-10",
+      "decision": "hold",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "newspoll-vic-2026-10-15-22-secondary",
+      "pollId": "newspoll_2026-10",
+      "decision": "hold",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "roy-morgan-vic-2026-10-26-29-primary",
+      "pollId": "roy_morgan_2026-10-29",
+      "decision": "eligible",
+      "canonicalAction": "add"
     }
   ]
 }

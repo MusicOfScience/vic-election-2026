@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-31",
+  "simulations": 5000,
+  "seed": 20260826,
+  "canonicalInputsChanged": false,
+  "ownerApprovalGranted": false,
+  "sha256": {
+    "metadata/poll-admission-review-2026-10-31.json": "fe5cdadbbebe81d5bc628d89cca90536d527135a6c23d74ba142cac3aafaa7fd",
+    "metadata/poll-admission-sensitivity-2026-10-31.json": "e861ebc84a9322ce850e84733a14b8770977736eed277d143c1c52cd22860d6b",
+    "model/scripts/run_current_evidence_shadow.py": "bb5bd5b4954bf95f2fb0404c01dc518c66dba4c37fd4a52e5f32a32baa66635f",
+    "model/scripts/run_staged_poll_shadow.py": "7f7990f8c5a3b65239bc8e4d9ab63689e662736292fd019ac65174d482078e77"
+  }
+}

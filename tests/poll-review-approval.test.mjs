@@ -9,19 +9,20 @@ test("project-owner approval records every dossier recommendation", () => {
   assert.equal(approval.reviewerRole, "project-owner");
   assert.equal(approval.evidenceDecisions.length, 11);
   const pollDecisions = reviewDecisions.decisions.filter((item) => item.kind === "poll");
-  assert.equal(pollDecisions.length, 11);
+  assert.equal(pollDecisions.length, 16);
   assert.deepEqual(approval.evidenceDecisions.map((item) => item.decision), ["defer", "approve", "approve", "approve", "approve", "hold", "hold", "approve", "approve", "hold", "hold"]);
 });
 
 test("evidence acceptance remains separate from model eligibility", () => {
-  assert.equal(accepted.polls.length, 6);
-  assert.equal(accepted.polls.filter((poll) => poll.modelEligible).length, 4);
-  assert.equal(modelDecisions.decisions.filter((item) => item.decision === "eligible").length, 4);
+  assert.equal(accepted.polls.length, 8);
+  assert.equal(accepted.polls.filter((poll) => poll.modelEligible).length, 6);
+  assert.equal(modelDecisions.decisions.filter((item) => item.decision === "eligible").length, 6);
   assert.equal(accepted.polls.find((poll) => poll.pollster.startsWith("RedBridge")).modelEligible, false);
 });
 
 test("canonical actions add two Freshwater waves and repair August without duplication", () => {
-  const actions = modelDecisions.decisions.filter((item) => item.decision === "eligible");
+  const legacyIds = new Set(approval.modelEligibilityDecisions.map((item) => item.evidenceId));
+  const actions = modelDecisions.decisions.filter((item) => item.decision === "eligible" && legacyIds.has(item.evidenceId));
   assert.deepEqual(actions.map((item) => item.canonicalAction), ["add", "add", "repair-existing", "add"]);
   assert.equal(new Set(actions.map((item) => item.pollId)).size, 4);
   assert.equal(actions.at(-1).pollId, "freshwater_2026-09");

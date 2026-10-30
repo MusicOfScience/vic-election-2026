@@ -15,7 +15,7 @@ test("refresh audit reconciles exact single-wave addition and every district del
   assert.equal(report.council.regions.length, 8);
   assert.equal(report.assembly.materialDistrictThreshold, 0.05);
   assert.deepEqual(report.assembly.materialDistricts, report.assembly.allDistrictChanges.filter((row) => row.maximumAbsoluteProbabilityChange >= 0.05).sort((a, b) => b.maximumAbsoluteProbabilityChange - a.maximumAbsoluteProbabilityChange));
-  assert.equal(report.forecast.sha256After, createHash("sha256").update(read(report.forecast.path)).digest("hex"));
+  assert.equal(report.forecast.sha256After, createHash("sha256").update(execFileSync("git", ["show", `d254030d9f04066d04d6de280dc5d50700c60d66:${report.forecast.path}`])).digest("hex"));
   assert.equal(report.integrity.historicalFrozenArtifactsUnchanged, true);
   assert.equal(report.integrity.modelParametersUnchanged, true);
   execFileSync(process.execPath, ["scripts/build-forecast-refresh-comparison.mjs", "--check"]);

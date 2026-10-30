@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "registryReviewedAt": "2026-10-08T00:00:00.000Z",
+  "registryReviewedAt": "2026-10-31T00:00:00Z",
   "sources": [
     {
       "id": "vec-2022-district-results",
@@ -58,7 +58,7 @@
       "localArtifacts": [
         "app/historical-data.generated.ts"
       ],
-      "notes": "The 2018–22 comparison uses the VEC estimate of 2018 support on the 2022 boundaries; it is not presented as a raw booth count."
+      "notes": "The 2018\u201322 comparison uses the VEC estimate of 2018 support on the 2022 boundaries; it is not presented as a raw booth count."
     },
     {
       "id": "vec-2026-enrolment",
@@ -128,9 +128,9 @@
       "confidence": "primary-mixed",
       "useStatus": "experimental",
       "modelRole": "Statewide multi-party polling state and uncertainty",
-      "canonicalUrl": "https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/",
-      "dataEffectiveDate": "2026-09-28",
-      "lastCheckedAt": "2026-10-08T00:00:00Z",
+      "canonicalUrl": "https://www.roymorgan.com/findings/10373-victorian-state-voting-intention-october-2026",
+      "dataEffectiveDate": "2026-10-29",
+      "lastCheckedAt": "2026-10-31T00:00:00Z",
       "updateFrequency": "weekly",
       "stalenessThresholdDays": 21,
       "criticalToForecast": true,
@@ -138,7 +138,12 @@
         "model/data/processed/poll_events_seed.csv",
         "model/data/processed/poll_estimates_seed.csv",
         "model/data/processed/upper_house_region_poll_2026-08.csv",
-        "app/poll-data.generated.ts"
+        "app/poll-data.generated.ts",
+        "metadata/poll-admission-approval-2026-10-31.json",
+        "metadata/poll-admission-proposal-2026-10-31/manifest.json",
+        "metadata/poll-admission-proposal-2026-10-31/poll-events.csv",
+        "metadata/poll-admission-proposal-2026-10-31/poll-estimates.csv",
+        "metadata/poll-admission-review-2026-10-31.json"
       ],
       "notes": "Each poll retains its own source URL, verification state, vote base, questionnaire regime and model-eligibility flag. The Upper House regional estimates are partially verified and receive guarded weight because regional sample sizes were not reported. Roy Morgan is one input rather than the forecast."
     },
@@ -170,8 +175,8 @@
       "useStatus": "derived",
       "modelRole": "Checksummed bridge from the seeded model run to the published dashboard",
       "canonicalUrl": "https://github.com/MusicOfScience/vic-election-2026",
-      "dataEffectiveDate": "2026-10-08",
-      "lastCheckedAt": "2026-10-08T00:00:00Z",
+      "dataEffectiveDate": "2026-10-31",
+      "lastCheckedAt": "2026-10-31T00:00:00Z",
       "updateFrequency": "dependency-driven",
       "stalenessThresholdDays": null,
       "criticalToForecast": true,

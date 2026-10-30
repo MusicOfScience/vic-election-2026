@@ -32,13 +32,15 @@
       "coverageClass": "canonical-plus-staged",
       "canonicalModelEligiblePollIds": [
         "demosau_2026-02",
-        "demosau_2026-06"
+        "demosau_2026-06",
+        "demosau_2026-09"
       ],
       "stagedEvidence": [
         "demosau_2026-08",
         "demosau_2026-09"
       ],
-      "nextAction": "Review September primary acquisition gaps and preserve August quarantine; no model eligibility inferred."
+      "nextAction": "Continue monitoring; owner-approved September DemosAU and latest Morgan are canonical. Other staged waves remain separately governed.",
+      "latestAdmissionDecision": "metadata/poll-admission-approval-2026-10-31.json"
     },
     {
       "id": "roy-morgan",
@@ -47,9 +49,11 @@
       "canonicalModelEligiblePollIds": [
         "roy_morgan_2026-02",
         "roy_morgan_2026-04",
-        "roy_morgan_2026-08"
+        "roy_morgan_2026-08",
+        "roy_morgan_2026-10-29"
       ],
-      "nextAction": "Continue live monitoring; retain published cross-tabs/preferences as supporting evidence rather than duplicate polls."
+      "nextAction": "Continue monitoring; owner-approved September DemosAU and latest Morgan are canonical. Other staged waves remain separately governed.",
+      "latestAdmissionDecision": "metadata/poll-admission-approval-2026-10-31.json"
     },
     {
       "id": "redbridge-accent",

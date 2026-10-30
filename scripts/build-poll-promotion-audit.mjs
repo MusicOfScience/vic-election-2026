@@ -1,3 +1,4 @@
+import { loadCampaignPolls } from "./load-campaign-polls.mjs";
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -124,7 +125,7 @@ function main() {
   const manual = JSON.parse(readFileSync(resolve(root, "metadata/manual-source-evidence-2026.json"), "utf8"));
   const primary = JSON.parse(readFileSync(resolve(root, "metadata/primary-source-evidence-2026.json"), "utf8"));
   const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
-  const report = buildPromotionAudit({ records: [...(manual.records ?? []), ...(primary.records ?? []), ...(research.records ?? [])], modelEvents, acceptedPolls: accepted.polls ?? [], asOf });
+  const report = buildPromotionAudit({ records: [...(manual.records ?? []), ...(primary.records ?? []), ...(research.records ?? []), ...loadCampaignPolls(root)], modelEvents, acceptedPolls: accepted.polls ?? [], asOf });
   writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
   console.log(`Poll promotion audit: ${report.summary.stagedPolls} staged; ${report.summary.promotableNow} promotable; ${report.summary.blocked} blocked. No model files written.`);
 }

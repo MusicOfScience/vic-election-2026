@@ -1,0 +1,68 @@
+{
+  "asOf": "2026-10-31",
+  "simulations": 5000,
+  "scenarios": {
+    "primary_admission_candidate": {
+      "pollCount": 15,
+      "parties": {
+        "ALP": {
+          "meanSeats": 34.4074,
+          "medianSeats": 34,
+          "majorityProbability": 0.0874
+        },
+        "LIB_NAT": {
+          "meanSeats": 35.7782,
+          "medianSeats": 35,
+          "majorityProbability": 0.1146
+        },
+        "ONP": {
+          "meanSeats": 15.3608,
+          "medianSeats": 15,
+          "majorityProbability": 0
+        },
+        "GRN": {
+          "meanSeats": 2.443,
+          "medianSeats": 2,
+          "majorityProbability": 0
+        },
+        "OTH_IND": {
+          "meanSeats": 0.0106,
+          "medianSeats": 0,
+          "majorityProbability": 0
+        }
+      },
+      "hungProbability": 0.798
+    },
+    "plus_newspoll_exception": {
+      "pollCount": 16,
+      "parties": {
+        "ALP": {
+          "meanSeats": 33.713,
+          "medianSeats": 34,
+          "majorityProbability": 0.0684
+        },
+        "LIB_NAT": {
+          "meanSeats": 37.576,
+          "medianSeats": 37,
+          "majorityProbability": 0.169
+        },
+        "ONP": {
+          "meanSeats": 14.186,
+          "medianSeats": 14,
+          "majorityProbability": 0
+        },
+        "GRN": {
+          "meanSeats": 2.518,
+          "medianSeats": 3,
+          "majorityProbability": 0
+        },
+        "OTH_IND": {
+          "meanSeats": 0.007,
+          "medianSeats": 0,
+          "majorityProbability": 0
+        }
+      },
+      "hungProbability": 0.7626
+    }
+  }
+}
