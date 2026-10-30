@@ -8,6 +8,7 @@ on:
       - 'model/scripts/run_current_evidence_shadow.py'
       - 'model/scripts/diagnose_campaign_preferences.py'
       - 'scripts/*campaign*.mjs'
+      - 'scripts/compare-campaign-json.py'
       - '.github/workflows/campaign-readiness.yml'
   workflow_dispatch:
 permissions:
@@ -29,8 +30,9 @@ jobs:
       - name: Reproduce current evidence sensitivities
         run: |
           PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src python model/scripts/run_current_evidence_shadow.py --evidence metadata/current-evidence-shadow-2026-10-31.json --output /tmp/campaign-reproduced.json --simulations 5000
-          cmp metadata/current-evidence-results-2026-10-31.json /tmp/campaign-reproduced.json
-          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src python model/scripts/diagnose_campaign_preferences.py
+          python scripts/compare-campaign-json.py metadata/current-evidence-results-2026-10-31.json /tmp/campaign-reproduced.json
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src:model/scripts python -c 'import json; from pathlib import Path; from diagnose_campaign_preferences import build_report; Path("/tmp/preference-reproduced.json").write_text(json.dumps(build_report(), indent=2))'
+          python scripts/compare-campaign-json.py metadata/campaign-preference-diagnostic-2026-10-31.json /tmp/preference-reproduced.json
           git diff --exit-code
       - uses: actions/upload-artifact@v4
         with:
