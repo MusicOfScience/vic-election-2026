@@ -2,6 +2,10 @@
 
 Updated: 2026-10-31
 
+## Current readiness path
+
+After merged #145, the owner requested progress to 9/9. [The current production-readiness audit](PRODUCTION_READINESS_PATH_2026-10-31.md) records the three evidence blockers, the verified deployment and actionable campaign work. No supported pre-election 9/9 path is established. Post-merge source monitoring failed on One Nation and Family First HTTP 403 responses; do not treat incomplete acquisition as no new evidence.
+
 ## Current campaign implementation
 
 Owner-approved refresh: **31 October 2026**. Exactly DemosAU September (full N=1,020/effective N=572) and Morgan 26–29 October (N=3,610) are added; 15 eligible polls. RedBridge, Resolve and Newspoll October remain held. The owner decision is `metadata/poll-admission-approval-2026-10-31.json`.
