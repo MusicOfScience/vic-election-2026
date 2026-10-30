@@ -1,3 +1,4 @@
+import { loadCampaignPolls } from "./load-campaign-polls.mjs";
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -110,7 +111,7 @@ function main() {
   const primary = JSON.parse(readFileSync(resolve(root, "metadata/primary-source-evidence-2026.json"), "utf8"));
   const research = JSON.parse(readFileSync(resolve(root, "metadata/research-source-evidence-2026.json"), "utf8"));
   const reviewLog = JSON.parse(readFileSync(resolve(root, "metadata/discovery-review-decisions.json"), "utf8"));
-  const campaign = JSON.parse(readFileSync(resolve(root, "metadata/current-evidence-shadow-2026-10-31.json"), "utf8"));
+  const campaign = { assemblyPolls: loadCampaignPolls(root) };
   const stagedPolls = [
     ...campaign.assemblyPolls,
     ...(manual.records ?? []),

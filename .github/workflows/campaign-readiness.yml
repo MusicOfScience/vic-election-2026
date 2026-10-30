@@ -5,6 +5,8 @@ on:
       - 'metadata/current-evidence-shadow-2026-10-31.json'
       - 'metadata/current-evidence-results-2026-10-31.json'
       - 'metadata/campaign-*-2026-10-31.json'
+      - 'metadata/poll-admission*.json'
+      - 'metadata/poll-admission-proposal-2026-10-31/**'
       - 'model/scripts/run_current_evidence_shadow.py'
       - 'model/scripts/diagnose_campaign_preferences.py'
       - 'scripts/*campaign*.mjs'
@@ -34,6 +36,11 @@ jobs:
           PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src:model/scripts python -c 'import json; from pathlib import Path; from diagnose_campaign_preferences import build_report; Path("/tmp/preference-reproduced.json").write_text(json.dumps(build_report(), indent=2))'
           python scripts/compare-campaign-json.py metadata/campaign-preference-diagnostic-2026-10-31.json /tmp/preference-reproduced.json
           git diff --exit-code
+      - name: Reproduce pending admission sensitivity without admission
+        run: |
+          PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=model/src python model/scripts/run_current_evidence_shadow.py --evidence metadata/poll-admission-review-2026-10-31.json --output /tmp/admission-reproduced.json --simulations 5000
+          python scripts/compare-campaign-json.py metadata/poll-admission-sensitivity-2026-10-31.json /tmp/admission-reproduced.json
+          git diff --exit-code
       - uses: actions/upload-artifact@v4
         with:
           name: campaign-readiness-2026-10-31
@@ -41,4 +48,6 @@ jobs:
             metadata/current-evidence-results-2026-10-31.json
             metadata/campaign-preference-diagnostic-2026-10-31.json
             metadata/campaign-run-record-2026-10-31.json
+            metadata/poll-admission-review-2026-10-31.json
+            metadata/poll-admission-sensitivity-2026-10-31.json
           retention-days: 90

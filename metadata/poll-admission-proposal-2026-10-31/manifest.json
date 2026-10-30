@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "status": "proposal-awaiting-owner",
+  "approved": false,
+  "canonicalInputsChanged": false,
+  "requestedActions": {
+    "evidenceAcceptance": [
+      "demosau-vic-2026-09-10-20-primary",
+      "roy-morgan-vic-2026-10-26-29-primary"
+    ],
+    "modelAdmission": [
+      "demosau_2026-09",
+      "roy_morgan_2026-10-29"
+    ],
+    "retainHolds": [
+      "redbridge-accent-vic-2026-10-02-08-current",
+      "resolve-strategic-vic-2026-10-06-10-secondary",
+      "newspoll-vic-2026-10-15-22-secondary"
+    ]
+  },
+  "assumptionsRequiringAcknowledgement": [
+    "Disjoint DemosAU/Morgan fieldwork does not prove respondent independence; repeat-respondent overlap is undisclosed.",
+    "Morgan published complete primary composition is treated as a comparable normalised multi-party SMS observation; exact questionnaire and undecided handling are not available. The prompted-party flag remains empty.",
+    "Do not treat pairwise/three-party figures as additional polls or fit the preference prior to them."
+  ],
+  "files": {
+    "metadata/poll-admission-proposal-2026-10-31/poll-events.csv": "ef1950e029efe5ad7fb6a9a37ee3a34003b5148d3d2aacb6107836c0dffbe802",
+    "metadata/poll-admission-proposal-2026-10-31/poll-estimates.csv": "5607965c82ae787be3c9db58fc05d08dfa9b98102903fd4c0ed36d77075be0f7"
+  },
+  "canonicalBaseline": {
+    "model/data/processed/poll_events_seed.csv": "f4d1df5d8d60b6beb9d4e433fd85b2ad443b1c577830542846919e632ec2074f",
+    "model/data/processed/poll_estimates_seed.csv": "cea8f27868031578179463ad5e4e39d438ea4705300a90158e9597eba6b38c0f",
+    "model/data/processed/experimental_forecast_2026.json": "a1b9f98566931293edbcaf7edc320e90778feffff401d8fbc69e3abb2328eff2"
+  }
+}

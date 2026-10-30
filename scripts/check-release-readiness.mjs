@@ -1,3 +1,4 @@
+import { loadCampaignPolls } from "./load-campaign-polls.mjs";
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -78,7 +79,7 @@ export function buildReadiness({ asOf }) {
   const historicalDataReady = validation.historicalDataReadiness?.passed === true
     && expectedCycles.every((cycle) => validation.historicalDataReadiness.cycles?.includes(cycle));
   const modelPolls = parseCsv(readFileSync(resolve(root, "model/data/processed/poll_events_seed.csv"), "utf8"));
-  const campaign = readJson("metadata/current-evidence-shadow-2026-10-31.json");
+  const campaign = { assemblyPolls: loadCampaignPolls(root) };
   const stagedPolls = [
     ...campaign.assemblyPolls,
     ...(manual.records ?? []),

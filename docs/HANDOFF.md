@@ -10,7 +10,7 @@ This batch adds current public currency/readiness, a Campaign update view, revie
 
 Current assessment is 4/9 gates at 31 October after registering unresolved campaign evidence (previous monitor: 5/9); the historical 8 October readiness record remains 6/9. No canonical inputs or forecast outputs changed, no research model was promoted, and no prospective seal or outcome score was created.
 
-Next: adjudicate explicit poll eligibility decisions, capture complete Council regional evidence, and reconcile actual VEC nominations after publication. The app separates newer reviewed evidence from older retained predictions.
+Next: approve or reject the concrete two-wave bundle in [poll admission review](POLL_ADMISSION_REVIEW_2026-10-31.md), capture complete Council regional evidence, and reconcile actual VEC nominations after publication. The review recovers DemosAU effective N=572 and keeps canonical inputs unchanged pending explicit decisions. The app separates newer reviewed evidence from older retained predictions.
 
 ## Historical handoff — 8 October
 
