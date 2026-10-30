@@ -144,8 +144,8 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   assert.match(html, /aria-label="Forecast sections"/);
   assert.match(html, /Party colour key/);
   assert.match(html, /majority threshold is 45 seats/);
-  assert.match(html, /8 Oct 2026/);
-  assert.match(html, /Experimental forecast snapshot from 8 Oct 2026/);
+  assert.match(html, /31 Oct 2026/);
+  assert.match(html, /Experimental forecast snapshot from 31 Oct 2026/);
   assert.match(html, /Snapshot date/);
   assert.doesNotMatch(html, /updated 26 August/);
 });
@@ -158,9 +158,9 @@ test("ships a complete checksummed source-provenance registry", async () => {
 
   assert.equal(sourceProvenance.summary.sourceGroups, 10);
   assert.equal(sourceProvenance.summary.officialSourceGroups, 7);
-  assert.equal(sourceProvenance.summary.tracedArtifacts, 31);
+  assert.equal(sourceProvenance.summary.tracedArtifacts, 36);
   assert.equal(sourceProvenance.summary.automationStatus, "scheduled-freshness-monitoring");
-  assert.equal(artifacts.length, 31);
+  assert.equal(artifacts.length, 36);
   assert.ok(artifacts.every((artifact) => /^[a-f0-9]{64}$/.test(artifact.sha256)));
   assert.equal(new Set(sourceProvenance.sources.map((source) => source.id)).size, 10);
   const reviewSource = sourceProvenance.sources.find((source) => source.id === "current-evidence-review-2026-10-08");
@@ -208,8 +208,8 @@ test("renders the governed candidate review dossier without implying nomination"
 test("generates the public poll series from the canonical model registry", async () => {
   const { pollSeries } = await vite.ssrLoadModule("/app/poll-data.generated.ts");
 
-  assert.equal(pollSeries.length, 13);
-  assert.equal(pollSeries.at(-1).id, "freshwater_2026-09");
+  assert.equal(pollSeries.length, 15);
+  assert.equal(pollSeries.at(-1).id, "roy_morgan_2026-10-29");
   assert.ok(pollSeries.every((poll) => Math.abs(poll.alp + poll.coalition + poll.onp + poll.greens + poll.other - 100) < .01));
   assert.ok(pollSeries.every((poll) => poll.verificationStatus === "verified" || poll.verificationStatus === "partially_verified"));
 });

@@ -45,6 +45,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch immutable research input trees
+        run: |
+          git fetch --no-tags --depth=1 origin d254030d9f04066d04d6de280dc5d50700c60d66
+          git fetch --no-tags --depth=1 origin 9b32cdae813e1a06f3cda1512d136275604e63a3
+      - name: Prepare original shadow input tree
+        run: git worktree add --detach /tmp/frozen-shadow d254030d9f04066d04d6de280dc5d50700c60d66
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -56,9 +62,9 @@ jobs:
         run: |
           simulations="${{ inputs.simulations }}"
           if [[ -z "${simulations}" ]]; then simulations="5000"; fi
-          PYTHONPATH="model/src" python model/scripts/run_staged_poll_seat_shadow.py \
+          PYTHONPATH="/tmp/frozen-shadow/model/src" python /tmp/frozen-shadow/model/scripts/run_staged_poll_seat_shadow.py \
             --simulations "${simulations}" \
-            --output staged-poll-seat-shadow.json
+            --output "$GITHUB_WORKSPACE/staged-poll-seat-shadow.json"
       - uses: actions/upload-artifact@v4
         with:
           name: staged-poll-seat-shadow
@@ -69,9 +75,9 @@ jobs:
         run: |
           simulations="${{ inputs.simulations }}"
           if [[ -z "${simulations}" ]]; then simulations="5000"; fi
-          PYTHONPATH="model/src" python model/scripts/run_current_evidence_shadow.py \
+          PYTHONPATH="/tmp/frozen-shadow/model/src" python /tmp/frozen-shadow/model/scripts/run_current_evidence_shadow.py \
             --simulations "${simulations}" \
-            --output current-evidence-shadow-2026-10-25.json
+            --output "$GITHUB_WORKSPACE/current-evidence-shadow-2026-10-25.json"
       - uses: actions/upload-artifact@v4
         with:
           name: current-evidence-shadow-2026-10-25

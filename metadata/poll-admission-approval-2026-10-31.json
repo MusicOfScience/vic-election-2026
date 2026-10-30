@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approved": true,
+  "approvedAt": "2026-10-30T22:22:10.610909+00:00",
+  "reviewerRole": "project-owner",
+  "decisionSource": "Explicit project-owner reply: Approve, to the exact DemosAU September + Morgan 26\u201329 October admission bundle and subsequent experimental refresh.",
+  "proposalManifestPath": "metadata/poll-admission-proposal-2026-10-31/manifest.json",
+  "proposalManifestSha256": "2183bac52693bd905f83a4e2a7f39bc3ebd87403a5c31f8bc57c0f1e12349587",
+  "acknowledgedAssumptions": [
+    "Disjoint DemosAU/Morgan fieldwork does not prove respondent independence; repeat-respondent overlap is undisclosed.",
+    "Morgan published complete primary composition is treated as a comparable normalised multi-party SMS observation; exact questionnaire and undecided handling are not available. The prompted-party flag remains empty.",
+    "Do not treat pairwise/three-party figures as additional polls or fit the preference prior to them."
+  ],
+  "productionAuthorised": false,
+  "preferenceModelChangeAuthorised": false,
+  "prospectiveSealAuthorised": false,
+  "evidenceDecisions": [
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-primary",
+      "decision": "approve"
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-10-02-08-current",
+      "decision": "hold"
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "decision": "hold"
+    },
+    {
+      "evidenceId": "newspoll-vic-2026-10-15-22-secondary",
+      "decision": "hold"
+    },
+    {
+      "evidenceId": "roy-morgan-vic-2026-10-26-29-primary",
+      "decision": "approve"
+    }
+  ],
+  "modelEligibilityDecisions": [
+    {
+      "evidenceId": "demosau-vic-2026-09-10-20-primary",
+      "pollId": "demosau_2026-09",
+      "decision": "eligible",
+      "canonicalAction": "add"
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-10-02-08-current",
+      "pollId": "redbridge_accent_2026-10",
+      "decision": "hold",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "pollId": "resolve_strategic_2026-10",
+      "decision": "hold",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "newspoll-vic-2026-10-15-22-secondary",
+      "pollId": "newspoll_2026-10",
+      "decision": "hold",
+      "canonicalAction": "none"
+    },
+    {
+      "evidenceId": "roy-morgan-vic-2026-10-26-29-primary",
+      "pollId": "roy_morgan_2026-10-29",
+      "decision": "eligible",
+      "canonicalAction": "add"
+    }
+  ]
+}

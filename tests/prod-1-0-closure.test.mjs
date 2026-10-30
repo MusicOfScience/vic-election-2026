@@ -1,3 +1,4 @@
+import { frozenResearchInput, researchAnchors } from "../scripts/frozen-research-input.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -32,6 +33,6 @@ test("canonical 2010 Council metric is preserved and closure identifies the refr
   const score = readJson("model/data/validation/historical-replays/vic_la_2010-v2-score.json");
   const audit = readJson("metadata/prod-1.0-closure-audit.json");
   assert.equal(score.council.regionalMeanAbsoluteSeatError, 0.27911458333333333);
-  const bytes = readFileSync(new URL("../model/data/processed/experimental_forecast_2026.json", import.meta.url));
+  const bytes = frozenResearchInput(researchAnchors.october8RefreshAfterRef, "model/data/processed/experimental_forecast_2026.json");
   assert.equal(audit.gates.deterministicOutputs.forecastSha256, createHash("sha256").update(bytes).digest("hex"));
 });

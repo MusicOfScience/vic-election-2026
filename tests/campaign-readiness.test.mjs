@@ -3,16 +3,16 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { buildCampaignStatus } from '../scripts/build-campaign-status.mjs';
 const read = (path) => JSON.parse(readFileSync(new URL('../'+path, import.meta.url),'utf8'));
-test('current status expires old polling without rewriting the retained release assessment', () => {
+test('current status reflects approved admission while historical snapshots remain frozen', () => {
   const current = buildCampaignStatus('2026-10-31');
-  assert.equal(current.forecastStale, true);
-  assert.equal(current.pollAgeDays, 33);
-  assert.equal(current.readiness.summary.passedRequiredGates,4);
-  assert.equal(current.readiness.gates.modelInputFreshness.passed,false);
+  assert.equal(current.forecastStale, false);
+  assert.equal(current.pollAgeDays, 2);
+  assert.equal(current.readiness.summary.passedRequiredGates,6);
+  assert.equal(current.readiness.gates.modelInputFreshness.passed,true);
   assert.equal(current.latestReviewedPublication,'2026-10-30');
-  assert.equal(current.campaignPollsAwaitingAdmission,5);
-  assert.equal(read('metadata/release-readiness.generated.json').assessedAsOf,'2026-10-08');
-  assert.equal(buildCampaignStatus('2026-11-03').pollAgeDays,36);
+  assert.equal(current.campaignPollsAwaitingAdmission,3);
+  assert.equal(read('metadata/release-readiness.generated.json').assessedAsOf,'2026-10-31');
+  assert.equal(buildCampaignStatus('2026-11-03').pollAgeDays,5);
 });
 test('Morgan primary composition is coherent while erroneous alternative pair is excluded', () => {
   const evidence=read('metadata/current-evidence-shadow-2026-10-31.json');

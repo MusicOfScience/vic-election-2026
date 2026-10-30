@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { ageInDays, buildReadiness } from "../scripts/check-release-readiness.mjs";
+import { frozenReadiness } from "./frozen-research-fixture.mjs";
+const { ageInDays, buildReadiness } = await frozenReadiness();
 
 test("October owner admission and explicit holds resolve current polling freshness", () => {
   const readiness = buildReadiness({ asOf: "2026-10-08" });

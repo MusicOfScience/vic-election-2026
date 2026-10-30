@@ -1,3 +1,4 @@
+import { frozenResearchInput, researchAnchors } from "./frozen-research-input.mjs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
@@ -7,7 +8,7 @@ import assert from "node:assert/strict";
 const root = resolve(new URL("..", import.meta.url).pathname);
 const base = "8ddf08a1963973397e9d3b1869d658009282fd5f"; // Merged PR #123; fixed pre-admission forecast.
 const old = (path) => execFileSync("git", ["show", `${base}:${path}`], { cwd: root, encoding: "utf8" });
-const current = (path) => readFileSync(resolve(root, path), "utf8");
+const current = (path) => frozenResearchInput(researchAnchors.october8RefreshAfterRef, path).toString("utf8");
 const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
 function csv(text) {
   const rows = []; let row = [], cell = "", quoted = false;
@@ -79,6 +80,6 @@ const report = {
 };
 const output = "metadata/forecast-refresh-2026-10-08.json";
 const payload = `${JSON.stringify(report, null, 2)}\n`;
-if (process.argv.includes("--check")) assert.equal(current(output), payload);
+if (process.argv.includes("--check")) assert.equal(readFileSync(resolve(root,output),"utf8"), payload);
 else writeFileSync(resolve(root, output), payload);
 console.log(`Refresh comparison: ${material.length} material districts; ${report.assembly.likelyFinalPairChanges.length} final-pair changes; ${historicalPaths.length} historical artefacts unchanged; forecast ${report.forecast.sha256After}.`);

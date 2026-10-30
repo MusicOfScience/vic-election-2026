@@ -113,6 +113,56 @@
       "modelInputsChanged": false
     },
     {
+      "evidenceId": "demosau-vic-2026-09-10-20-primary",
+      "recordHash": "eb672ee1a7c35fdb27c2fe0a3fae3f9b0ab854828f9b63d987a591061e3a16b9",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-30T22:22:10.610909+00:00",
+      "note": "Approved two-wave bundle; other campaign waves held. See metadata/poll-admission-approval-2026-10-31.json",
+      "modelInputsChanged": true
+    },
+    {
+      "evidenceId": "redbridge-accent-vic-2026-10-02-08-current",
+      "recordHash": "7a3dbab10fcd39e35727f85f3e2f829fea67aef801050c06af2f830d0a8a1ca4",
+      "kind": "poll",
+      "decision": "hold",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-30T22:22:10.610909+00:00",
+      "note": "Approved two-wave bundle; other campaign waves held. See metadata/poll-admission-approval-2026-10-31.json",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "resolve-strategic-vic-2026-10-06-10-secondary",
+      "recordHash": "a512734d2fc3059953b9ad693353ee9a60980bcee859aab178bde1f6a7c6edf6",
+      "kind": "poll",
+      "decision": "hold",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-30T22:22:10.610909+00:00",
+      "note": "Approved two-wave bundle; other campaign waves held. See metadata/poll-admission-approval-2026-10-31.json",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "newspoll-vic-2026-10-15-22-secondary",
+      "recordHash": "e656f6e54a339998f964ed0ef98edf7b746119abe3d7433c8e432e24544fb6e2",
+      "kind": "poll",
+      "decision": "hold",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-30T22:22:10.610909+00:00",
+      "note": "Approved two-wave bundle; other campaign waves held. See metadata/poll-admission-approval-2026-10-31.json",
+      "modelInputsChanged": false
+    },
+    {
+      "evidenceId": "roy-morgan-vic-2026-10-26-29-primary",
+      "recordHash": "69161524b0d688f3fe8f6f7846bbe8ee8ad2c2ba167c9913e32a102baba4b1a0",
+      "kind": "poll",
+      "decision": "approve",
+      "reviewer": "project-owner",
+      "reviewedAt": "2026-10-30T22:22:10.610909+00:00",
+      "note": "Approved two-wave bundle; other campaign waves held. See metadata/poll-admission-approval-2026-10-31.json",
+      "modelInputsChanged": true
+    },
+    {
       "evidenceId": "5d449b0e7201bdff7c7adfde262366be434b5598c8a7af736be7f27f86ec076d",
       "recordHash": "0555747eb23cf17c16af53f03753664e384e2b8c01c3b4dcb4591600c480e7ab",
       "kind": "candidate",

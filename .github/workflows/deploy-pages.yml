@@ -22,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch immutable research input trees
+        run: |
+          git fetch --no-tags --depth=1 origin d254030d9f04066d04d6de280dc5d50700c60d66
+          git fetch --no-tags --depth=1 origin 9b32cdae813e1a06f3cda1512d136275604e63a3
       - name: Fetch exact pre-refresh audit baseline
         # Keep checkout shallow; the audit needs this immutable tree, not its history.
         run: git fetch --no-tags --depth=1 origin 8ddf08a1963973397e9d3b1869d658009282fd5f

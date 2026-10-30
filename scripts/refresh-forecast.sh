@@ -31,6 +31,7 @@ if [[ "${3:-}" == "--plan" ]]; then
   exit 0
 fi
 node "${project_root}/scripts/validate-next-validation-protocol.mjs"
+node "${project_root}/scripts/apply-campaign-admission.mjs" --check
 
 if [[ "${run_forecast}" == "1" ]]; then python3 "${project_root}/model/scripts/run_experimental_forecast.py" --root "${project_root}/model"; fi
 if [[ "${run_model_export}" == "1" ]]; then node "${project_root}/scripts/generate-model-output.mjs" "${project_root}/model"; fi

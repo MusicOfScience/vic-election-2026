@@ -1,8 +1,10 @@
 # Poll admission review — 31 October 2026
 
-## Proposed decision, not yet approved
+## Proposal history, subsequently approved
 
-Accept the evidence and admit exactly **DemosAU September** and **Morgan 26–29 October** as current experimental Assembly polling inputs, with the limitations below. Retain the RedBridge October independence hold and Resolve/Newspoll methodology holds. No model parameter, preference prior, production gate, prospective seal or outcome score changes are proposed.
+**Owner decision recorded:** the owner approved the exact two-wave bundle and experimental refresh. See [implemented refresh](FORECAST_REFRESH_2026-10-31.md) and `metadata/poll-admission-approval-2026-10-31.json`. The original unapproved proposal manifest remains unchanged as the reviewed object.
+
+Original recommendation: accept the evidence and admit exactly **DemosAU September** and **Morgan 26–29 October** as current experimental Assembly polling inputs, with the limitations below. Retain the RedBridge October independence hold and Resolve/Newspoll methodology holds. No model parameter, preference prior, production gate, prospective seal or outcome score changes are proposed.
 
 The review packet is `metadata/poll-admission-review-2026-10-31.json`. Exact proposed event and estimate rows are in `metadata/poll-admission-proposal-2026-10-31/`; `manifest.json` binds their hashes and records `approved:false`. Model-eligible flags in these proposed CSVs express the requested state, not a present authorisation. Canonical files remain unchanged.
 

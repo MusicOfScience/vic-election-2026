@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 // The frozen sensitivity packet is immutable. Later source reconciliation lives
@@ -14,6 +14,12 @@ export function loadCampaignPolls(root) {
     if(!prior) throw new Error('Unrecognised campaign wave in admission review');
     if(JSON.stringify(prior.primaryVote)!==JSON.stringify(poll.primaryVote)) throw new Error('Admission review cannot silently alter reported primaries');
     if(poll.modelEligibilityDecision!==prior.modelEligibilityDecision) throw new Error('Source reconciliation cannot change eligibility decisions');
-    return poll;
+    const approvalPath=resolve(root,'metadata/poll-admission-approval-2026-10-31.json');
+    if(!existsSync(approvalPath)) return poll;
+    const approval=read('metadata/poll-admission-approval-2026-10-31.json');
+    if(approval.approved!==true) return poll;
+    const decision=approval.modelEligibilityDecisions.find(row=>row.evidenceId===poll.id);
+    if(!decision) return poll;
+    return {...poll,modelEligibilityDecision:decision.decision,blocker:decision.decision==='eligible' ? 'Admitted under explicit owner approval on 31 October 2026; missing-method and overlap caveats remain recorded.' : poll.blocker};
   });
 }

@@ -1,3 +1,4 @@
+import { frozenResearchInput, researchAnchors } from "./frozen-research-input.mjs";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -16,7 +17,7 @@ if (!expected?.combinedSha256 || !expected.files) throw new Error("shadow report
 
 const combined = createHash("sha256");
 for (const relative of Object.keys(expected.files).sort()) {
-  const payload = readFileSync(resolve(root, relative));
+  const payload = frozenResearchInput(researchAnchors.stagedInputRef, relative);
   const actual = createHash("sha256").update(payload).digest("hex");
   if (actual !== expected.files[relative]) throw new Error(`shadow report stale: ${relative} changed`);
   combined.update(relative);
@@ -26,4 +27,4 @@ for (const relative of Object.keys(expected.files).sort()) {
 }
 if (combined.digest("hex") !== expected.combinedSha256) throw new Error("shadow report: combined fingerprint mismatch");
 
-console.log(`Staged-poll shadow current: ${report.simulationsPerScenario} simulations; ${report.scenario.evidence.length} quarantined polls; canonical forecast untouched.`);
+console.log(`Frozen staged-poll shadow verified: ${report.simulationsPerScenario} simulations; ${report.scenario.evidence.length} quarantined polls; original inputs and result preserved.`);

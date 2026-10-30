@@ -4,13 +4,15 @@ Updated: 2026-10-31
 
 ## Current campaign implementation
 
-Main at review: `ef15e9f` (merged #142). The app remains an experimental 8 October forecast; canonical polling ends 28 September. #140 candidate resolution and #142 uncertainty research are retained but not production-promoted.
+Owner-approved refresh: **31 October 2026**. Exactly DemosAU September (full N=1,020/effective N=572) and Morgan 26–29 October (N=3,610) are added; 15 eligible polls. RedBridge, Resolve and Newspoll October remain held. The owner decision is `metadata/poll-admission-approval-2026-10-31.json`.
 
-This batch adds current public currency/readiness, a Campaign update view, reviewed 31 October sensitivity evidence, unchanged-engine scenario outputs, a no-fitting preference diagnostic and a VEC-only nomination reconciliation command. See [campaign readiness](CAMPAIGN_READINESS_2026-10-31.md) for results, exact scope, remaining input decisions and nomination workflow.
+Current Assembly means: Labor 34.41, Coalition 35.78, ONP 15.36, Greens 2.44. Hung frequency 79.80%; Coalition majority 11.46%; Labor majority 8.74%. These remain experimental and production authorisation stays closed. Readiness is 6/9, with complete backtest, probability calibration and production authorisation blocked.
 
-Current assessment is 4/9 gates at 31 October after registering unresolved campaign evidence (previous monitor: 5/9); the historical 8 October readiness record remains 6/9. No canonical inputs or forecast outputs changed, no research model was promoted, and no prospective seal or outcome score was created.
+See [approved refresh](FORECAST_REFRESH_2026-10-31.md) and machine audit `metadata/forecast-refresh-2026-10-31.json`. All old registry rows, model parameters, engine source bytes and 105 validation-archive files are preserved; only the assessment date changes in config. No new seal or scoring occurs.
 
-Next: approve or reject the concrete two-wave bundle in [poll admission review](POLL_ADMISSION_REVIEW_2026-10-31.md), capture complete Council regional evidence, and reconcile actual VEC nominations after publication. The review recovers DemosAU effective N=572 and keeps canonical inputs unchanged pending explicit decisions. The app separates newer reviewed evidence from older retained predictions.
+The source/admission dossier and earlier scenario results remain historical, with original bytes and hashes. `metadata/research-source-anchors.json` identifies their immutable input trees; shallow CI explicitly fetches them and uses isolated research worktrees. Do not replace frozen hashes with current-input hashes.
+
+Next: capture complete newer Council regional evidence, reconcile actual VEC nominations after publication, and address preference/final-pair uncertainty only through a separately governed historical protocol. #140/#142 research remains unpromoted. No parameter tuning to the Coalition result is authorised.
 
 ## Historical handoff — 8 October
 

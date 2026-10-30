@@ -265,6 +265,28 @@ export const pollSeries = [
     "other": 12
   },
   {
+    "id": "demosau_2026-09",
+    "date": "20 Sept",
+    "fieldworkStart": "2026-09-10",
+    "fieldworkEnd": "2026-09-20",
+    "publicationDate": "2026-10-14",
+    "pollster": "DemosAU",
+    "commissioner": "PremierNational",
+    "n": 1020,
+    "effectiveN": 572,
+    "method": "Internet panels; rim weighted by age x gender, education, personal income, residential tenure, language, region, 2025 federal vote and left-right self-identification; leaner asked; unresolved undecideds excluded",
+    "voteBase": "decided_reallocated",
+    "verificationStatus": "verified",
+    "sourceTier": "primary_pollster",
+    "sourceUrl": "https://demosau.com/wp-content/uploads/2026/10/DemosAU-Report-Victoria-Poll-September-2026.pdf",
+    "sourceDocumentTitle": "DemosAU / PremierNational Victoria Poll September 2026",
+    "alp": 25,
+    "coalition": 30,
+    "onp": 20,
+    "greens": 14,
+    "other": 11
+  },
+  {
     "id": "freshwater_2026-09",
     "date": "28 Sept",
     "fieldworkStart": "2026-09-24",
@@ -285,5 +307,27 @@ export const pollSeries = [
     "onp": 22.1313,
     "greens": 14.3689,
     "other": 10.5771
+  },
+  {
+    "id": "roy_morgan_2026-10-29",
+    "date": "29 Oct",
+    "fieldworkStart": "2026-10-26",
+    "fieldworkEnd": "2026-10-29",
+    "publicationDate": "2026-10-30",
+    "pollster": "Roy Morgan",
+    "commissioner": null,
+    "n": 3610,
+    "effectiveN": null,
+    "method": "SMS; representative Victoria-wide cross-section; effective sample size, detailed weighting, undecided treatment and repeat-respondent overlap not disclosed in captured release",
+    "voteBase": "decided_reallocated",
+    "verificationStatus": "verified",
+    "sourceTier": "primary_pollster",
+    "sourceUrl": "https://www.roymorgan.com/findings/10373-victorian-state-voting-intention-october-2026",
+    "sourceDocumentTitle": "Roy Morgan finding 10373",
+    "alp": 22.5,
+    "coalition": 29.5,
+    "onp": 22,
+    "greens": 12.5,
+    "other": 13.5
   }
 ] as const;
