@@ -1,0 +1,26 @@
+{
+  "assessedAsOf": "2026-10-31",
+  "scope": "manual primary-source acquisition recovery; not a runner recovery claim",
+  "sources": [
+    {
+      "id": "onp",
+      "url": "https://vic.onenation.org.au/candidates",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-30T23:22:19.263351+00:00",
+      "fullResponseSha256": "756728ddc2eb181d408a5d9c956fe6e1081b4f4a078a7740f5e01d59a3f887db",
+      "excerptPath": "metadata/campaign-operations-2026-10-31/onp-candidate-excerpt.html",
+      "excerptSha256": "59b01fabe4dbed38c0b688a7923be0453e71a9d733fb4f30eb25d86f79185c14",
+      "preservation": "candidate headings/table excerpt; full response hash recorded; full response not committed"
+    },
+    {
+      "id": "ff",
+      "url": "https://www.familyfirstparty.org.au/vic_2026",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-30T23:22:27.300834+00:00",
+      "fullResponseSha256": "266294a144e4070ce207f2beb1aabe9ac5cb0f460b76970d4b65263dbb10b2d7",
+      "excerptPath": "metadata/campaign-operations-2026-10-31/ff-candidate-excerpt.html",
+      "excerptSha256": "b1905e8f5b5e9b3f5b3c9661f5d6b8a1344e11c09f13626080a22f59cd40c39c",
+      "preservation": "candidate headings/table excerpt; full response hash recorded; full response not committed"
+    }
+  ]
+}

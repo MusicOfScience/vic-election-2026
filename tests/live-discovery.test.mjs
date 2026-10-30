@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
+  isKnown,
+  deduplicateDiscoveryRecords,
   extractLinks,
   findVecCandidateListUrls,
   extractVecCandidatesFromHtml,
@@ -122,4 +124,22 @@ test("Roy Morgan upper-house headline becomes a structured projection", () => {
 test("fieldwork and quoted CSV parsing are deterministic", () => {
   assert.deepEqual(parseFieldworkRange("survey conducted August 5-7, 2026"), { start: "2026-08-05", end: "2026-08-07" });
   assert.deepEqual(parseCsv('a,b\n1,"two, three"\n'), [{ a: "1", b: "two, three" }]);
+});
+
+
+test("accepted registry candidates need no discovery-only kind field and use governed region aliases", () => {
+  const accepted = { name: "Alex Example", contest: "Western Metropolitan", party: "Example Party", status: "endorsed", sourceAuthority: "Example Party" };
+  const found = { kind: "candidate", name: "Alex Example", contest: "Western Metro", party: "Example Party", candidateStatus: "endorsed", sourceAuthority: "Example Party" };
+  assert.equal(isKnown(found, [accepted], []), true);
+  for (const change of [{name:"Other Person"}, {contest:"Northern Metro"}, {party:"Other Party"}, {candidateStatus:"withdrawn"}]) {
+    assert.equal(isKnown({...found,...change}, [accepted], []), false);
+  }
+  assert.equal(isKnown({...found,sourceAuthority:"VEC",candidateStatus:"nominated"}, [accepted], []), false);
+  assert.equal(isKnown({...found,sourceAuthority:"VEC",candidateStatus:"nominated"}, [{...accepted,sourceAuthority:"VEC",status:"nominated"}], []), true);
+});
+
+test("a known municipal announcement cannot overwrite a new endorsement for the same person", () => {
+  const endorsement = {id:"party-carrier",kind:"candidate",name:"Alex Example",contest:"Mornington",candidateStatus:"endorsed",status:"quarantined-awaiting-review"};
+  const announcement = {...endorsement,id:"municipal-carrier",candidateStatus:"announced",status:"already-tracked"};
+  assert.deepEqual(deduplicateDiscoveryRecords([endorsement,announcement,endorsement]), [endorsement,announcement]);
 });

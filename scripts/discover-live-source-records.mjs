@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { contestKey } from "./candidate-contests.mjs";
 import { canonicaliseHtml } from "./monitor-live-sources.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -285,8 +286,10 @@ function identity(record) {
 }
 
 export function isKnown(record, candidates, polls) {
-  if (record.kind === "candidate") return candidates.some((item) => identity(item) === identity(record)
+  if (record.kind === "candidate") return candidates.some((item) => String(item.name ?? "").trim().toLowerCase() === String(record.name ?? "").trim().toLowerCase()
+    && contestKey(item.contest) === contestKey(record.contest)
     && item.party === record.party
+    && item.status === (record.officialStatus ?? record.candidateStatus)
     && (record.sourceAuthority !== "VEC" || (item.sourceAuthority === "VEC" && item.status === (record.officialStatus ?? record.candidateStatus))));
   if (record.kind === "poll") return polls.some((item) => item.pollster === record.pollster && item.fieldwork_start === record.fieldworkStart && item.fieldwork_end === record.fieldworkEnd && Number(item.sample_size) === record.sampleSize);
   return false;
@@ -373,6 +376,13 @@ async function discoverFromAdapter(adapter, candidates, polls) {
   });
 }
 
+// Distinct carriers can describe the same person with different party/status evidence.
+// Collapse exact source records only, so a later municipal announcement cannot
+// hide a new party endorsement or an official VEC nomination.
+export function deduplicateDiscoveryRecords(records) {
+  return [...new Map(records.map((record) => [record.id, record])).values()];
+}
+
 async function main() {
   const config = JSON.parse(readFileSync(adaptersPath, "utf8"));
   const registry = JSON.parse(readFileSync(candidatesPath, "utf8"));
@@ -389,7 +399,7 @@ async function main() {
     }
   }
 
-  const unique = [...new Map(records.map((record) => [identity(record), record])).values()];
+  const unique = deduplicateDiscoveryRecords(records);
   const quarantine = unique.filter((record) => record.status === "quarantined-awaiting-review");
   const report = {
     schemaVersion: 1,

@@ -2,6 +2,10 @@
 
 Updated: 2026-10-31
 
+## Current operational repairs
+
+[31 October campaign operations](CAMPAIGN_OPERATIONS_2026-10-31.md) fixes candidate identity comparison, preserves distinct party/municipal carriers, and makes electorate tiles follow search filters. Primary captures reconcile 97/103 One Nation entries; seven One Nation/Family First items require review. GitHub runner HTTP 403 failures persist after one retry, despite successful local acquisition. Accepted candidate/model inputs and all seals remain unchanged. Actual mobile-device QA remains outstanding.
+
 ## Current readiness path
 
 After merged #145, the owner requested progress to 9/9. [The current production-readiness audit](PRODUCTION_READINESS_PATH_2026-10-31.md) records the three evidence blockers, the verified deployment and actionable campaign work. No supported pre-election 9/9 path is established. Post-merge source monitoring failed on One Nation and Family First HTTP 403 responses; do not treat incomplete acquisition as no new evidence.
