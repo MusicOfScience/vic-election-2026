@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "assessedAsOf": "2026-10-31",
+  "policy": "heading checks are supporting evidence, not automatic acceptance; response hashes recorded, full responses not archived",
+  "pages": [
+    {
+      "url": "https://greens.org.au/vic/person/kai-titcher",
+      "finalUrl": "https://greens.org.au/vic/person/kai-titcher",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:24.675406+00:00",
+      "sha256": "8359e2df58e8d15e655ba4f052866bdcf68a824a57d142283c018948604195da",
+      "headings": [
+        "Kai Titcher",
+        "GET INVOLVED"
+      ]
+    },
+    {
+      "url": "https://greens.org.au/vic/person/lauren-granger-brown",
+      "finalUrl": "https://greens.org.au/vic/person/lauren-granger-brown",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:24.500708+00:00",
+      "sha256": "4422d721c764f602a3720696ed0d5696d11140b2a2921430c3c9f8e4c8b7e477",
+      "headings": [
+        "Lauren Granger-Brown",
+        "Get Involved"
+      ]
+    },
+    {
+      "url": "https://greens.org.au/vic/person/gavin-trewella",
+      "finalUrl": "https://greens.org.au/vic/person/gavin-trewella",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:24.276656+00:00",
+      "sha256": "de5962c122206aee1986ebd74b1f6fe5e8b85270184be2f068f5b35cea4e0081",
+      "headings": [
+        "Gavin Trewella",
+        "Get involved"
+      ]
+    },
+    {
+      "url": "https://greens.org.au/vic/person/vanessa-muradian",
+      "finalUrl": "https://greens.org.au/vic/person/vanessa-muradian",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:24.875096+00:00",
+      "sha256": "39d78bc26db88baa89287fa105f4191ab62df9629e029e2dfa4fa75cff73d369",
+      "headings": [
+        "Vanessa Muradian",
+        "Get in Touch"
+      ]
+    },
+    {
+      "url": "https://vic.onenation.org.au/ashli-beards",
+      "finalUrl": "https://vic.onenation.org.au/ashli-beards",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:29.060505+00:00",
+      "sha256": "8d05d0c9a3ee663dc500a7811d24d1786e23b5024304837e19a71e83f992b7ea",
+      "headings": [
+        "Get in touch",
+        "Navigation",
+        "Resources"
+      ]
+    },
+    {
+      "url": "https://vic.onenation.org.au/michael-abelman",
+      "finalUrl": "https://vic.onenation.org.au/michael-abelman",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:29.052631+00:00",
+      "sha256": "8edfcee66525e258a4c980d74f5c937db8bfe04068aa732e008e17b63f6b686d",
+      "headings": [
+        "Get in touch",
+        "Navigation",
+        "Resources"
+      ]
+    },
+    {
+      "url": "https://vic.onenation.org.au/steven-mitchell",
+      "finalUrl": "https://vic.onenation.org.au/steven-mitchell",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:28.996770+00:00",
+      "sha256": "2f09858d85ba4f24097532195823d6266557f5e27254821cb79cbb6562241b22",
+      "headings": [
+        "Get in touch",
+        "Navigation",
+        "Resources"
+      ]
+    },
+    {
+      "url": "https://vic.onenation.org.au/andrew-hirst",
+      "finalUrl": "https://vic.onenation.org.au/andrew-hirst",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:29.044784+00:00",
+      "sha256": "dbd75af1eae465590c8acd391863dd0acd62bc7ecbd1e9499351c072dd5a3225",
+      "headings": [
+        "Get in touch",
+        "Navigation",
+        "Resources"
+      ]
+    },
+    {
+      "url": "https://vic.onenation.org.au/david-laird",
+      "finalUrl": "https://vic.onenation.org.au/david-laird",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:35.216798+00:00",
+      "sha256": "c1471c01f3b1eacd245129c4d4a51a8e227e7f2e3231a5d2de88b381586094ab",
+      "headings": [
+        "Get in touch",
+        "Navigation",
+        "Resources"
+      ]
+    },
+    {
+      "url": "https://vic.onenation.org.au/clay-esler",
+      "finalUrl": "https://vic.onenation.org.au/clay-esler",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:35.128853+00:00",
+      "sha256": "023e45dd984387eb3e4210d4145eadc8a8965668d0eef97e26650665657535d7",
+      "headings": [
+        "Get in touch",
+        "Navigation",
+        "Resources"
+      ]
+    },
+    {
+      "url": "https://www.viclabor.org.au/our-team/kerry-macdonald",
+      "finalUrl": "https://www.viclabor.org.au/our-team/kerry-macdonald",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:32.768595+00:00",
+      "sha256": "d6971fedb5a00b71e56fcf9adf6ae8484d0ff1443e097a98c6687b5cd4dfa3ad",
+      "headings": [
+        "Kerry Macdonald",
+        "Donate to Kerry Macdonald .",
+        "Donate to Kerry Macdonald ."
+      ]
+    },
+    {
+      "url": "https://www.viclabor.org.au/our-team/ollie-young",
+      "finalUrl": "https://www.viclabor.org.au/our-team/ollie-young",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:32.248728+00:00",
+      "sha256": "8a7e6e1898200eddc2b6ec616f4d561948fd2396882221f6a9f3c522738266f4",
+      "headings": [
+        "Ollie Young",
+        "Donate to Ollie Young .",
+        "Donate to Ollie Young ."
+      ]
+    },
+    {
+      "url": "https://www.viclabor.org.au/our-team/stella-zigouras",
+      "finalUrl": "https://www.viclabor.org.au/our-team/stella-zigouras",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:34.948560+00:00",
+      "sha256": "b5c7081b0a48b3cbc71cd52fed66a0a2255cdf57e2aa2bb633b3be48f7d77211",
+      "headings": [
+        "Stella Zigouras",
+        "Donate to Stella Zigouras .",
+        "Donate to Stella Zigouras ."
+      ]
+    },
+    {
+      "url": "https://www.viclabor.org.au/our-team/surbhi-snowball",
+      "finalUrl": "https://www.viclabor.org.au/our-team/surbhi-snowball",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:34.928616+00:00",
+      "sha256": "1b2392e0797d1d29db1484ca1c7acdf760272fdb2f0013609f120d5de5f51219",
+      "headings": [
+        "Surbhi Snowball",
+        "Donate to Surbhi Snowball .",
+        "Donate to Surbhi Snowball ."
+      ]
+    },
+    {
+      "url": "https://vic.liberal.org.au/team/hamza-al-katranji",
+      "finalUrl": "https://vicliberal.org.au/team/hamza-al-katranji",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:48.268647+00:00",
+      "sha256": "f6c69ff8be9efd9bf1129409364794485368b11a62dd4475e69e1e6959a69d70",
+      "headings": [
+        "Welcome to Liberal Victoria website.",
+        "This browser is no longer supported"
+      ]
+    },
+    {
+      "url": "https://vic.liberal.org.au/team/william-billings",
+      "finalUrl": "https://vicliberal.org.au/team/william-billings",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:48.276454+00:00",
+      "sha256": "f6c69ff8be9efd9bf1129409364794485368b11a62dd4475e69e1e6959a69d70",
+      "headings": [
+        "Welcome to Liberal Victoria website.",
+        "This browser is no longer supported"
+      ]
+    },
+    {
+      "url": "https://vic.liberal.org.au/team/shankar-dharel",
+      "finalUrl": "https://vicliberal.org.au/team/shankar-dharel",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:48.288616+00:00",
+      "sha256": "f6c69ff8be9efd9bf1129409364794485368b11a62dd4475e69e1e6959a69d70",
+      "headings": [
+        "Welcome to Liberal Victoria website.",
+        "This browser is no longer supported"
+      ]
+    },
+    {
+      "url": "https://www.familyfirstparty.org.au/vic_2026",
+      "finalUrl": "https://www.familyfirstparty.org.au/vic_2026",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:39.756724+00:00",
+      "sha256": "30ab3816d2f0b99735b3ade95aa5bcecb2408f1072061fd85ccac1cc38400e34",
+      "headings": [
+        "Victorian State Election 2026",
+        "Legislative Council (Upper House) Candidates",
+        "Legislative Assembly (Lower House) Candidates",
+        "Sign up to receive updates"
+      ]
+    },
+    {
+      "url": "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/State-election-candidates",
+      "finalUrl": "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/State-election-candidates",
+      "status": 200,
+      "retrievedAt": "2026-10-31T04:28:44.709150+00:00",
+      "sha256": "9ce04fb264a0c06989ec6aff6a4096e643c846f28a573f0e9f7a1602f17cd0ee",
+      "headings": [
+        "H5N1 avian influenza (bird flu)",
+        "State election candidates",
+        "Victorian election candidates 2026",
+        "Electorate: Nepean",
+        "Electorate: Mornington",
+        "Electorate: Hastings",
+        "Get involved",
+        "Site Footer",
+        "Contact us",
+        "Site Footer",
+        "Share and connect",
+        "Site Footer",
+        "Visit our other sites"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "731ec6dc7d65f2df629a694044bb050e58a06b73794865ae41a27667d7dbcd5e",
+      "sourceId": "greens-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "f1e752276d5989b77268aca6162461931ffffda3fd500feaa608ed57dc3e072c",
+      "kind": "candidate",
+      "name": "Kai Titcher",
+      "contest": "Mornington",
+      "party": "Australian Greens Victoria",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Australian Greens Victoria",
+      "sourceUrl": "https://greens.org.au/vic/person/kai-titcher",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "b58bfa62cfb967aeac8754c916484fcc8f59b6d5ea8bc4ae2e5e62ed0499acc8",
+      "sourceId": "greens-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "c8b58eb94f8965ee669a0cc1d12fbf2e61e885d8f5c0e5b146d54a64d52392c1",
+      "kind": "candidate",
+      "name": "Lauren Granger-Brown",
+      "contest": "Sunbury",
+      "party": "Australian Greens Victoria",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Australian Greens Victoria",
+      "sourceUrl": "https://greens.org.au/vic/person/lauren-granger-brown",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "82c2f4a1d5f4c9335bc229f8169aed60cd9091eae32b77743449e185109c7779",
+      "sourceId": "greens-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "70b90c89fd34538cf9ac4f441d6db6d9007d5b40ae9cf75f3aa633e830dd3d69",
+      "kind": "candidate",
+      "name": "Gavin Trewella",
+      "contest": "Thomastown",
+      "party": "Australian Greens Victoria",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Australian Greens Victoria",
+      "sourceUrl": "https://greens.org.au/vic/person/gavin-trewella",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "f1708023fadb004f91b38406bb1ca0bd40522a2598cb4bee0ba89317a8b085b2",
+      "sourceId": "greens-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "f402dba129735042137fd3afb04881ebc945dbdf73dbe2cda10c0ad1e815b27b",
+      "kind": "candidate",
+      "name": "Vanessa Muradian",
+      "contest": "Warrandyte",
+      "party": "Australian Greens Victoria",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Australian Greens Victoria",
+      "sourceUrl": "https://greens.org.au/vic/person/vanessa-muradian",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "c0713be16a37514809eacf646fdd121ceca4eecf181457c01e4aa94cb81cb8d7",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "5e0560d176ae5a163678512ba1af56f73da8389a69db7fc05b1a0670d6af7728",
+      "kind": "candidate",
+      "name": "Ashli Beards",
+      "contest": "Mornington",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/ashli-beards",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "9334f53563e830021bea78279cb57f92f5882576d176b4268472ce5b6606a050",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "0912cea1b1182221c59c2df8ce2dcf222f81f9300241082546580a19bde8b79c",
+      "kind": "candidate",
+      "name": "Michael Abelman",
+      "contest": "Caulfield",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/michael-abelman",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "f5e08bfe1c8a1445bcd2184d9acb7b17f409d13be3bbbc636a9ce3043c2a6e91",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "14484efb3c788e5d0c51ff81d3dc2d32680a05d134474b4f624fa1d84ac8b716",
+      "kind": "candidate",
+      "name": "Steven Mitchell",
+      "contest": "Ashwood",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/steven-mitchell",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "56399b4b940ba8813eb01f0ba9630c7c2c284d93adc71642319c0a3b432e419f",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "ce1f240671f00e2b38ed43f0f2d3c50d5f460a7ddc557371a78455ebccab32a1",
+      "kind": "candidate",
+      "name": "Andrew Hirst",
+      "contest": "Cranbourne",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/andrew-hirst",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "dedb70d03827732c1964e4c87f82627829d04d049cb37868c9a8ae1b836fe5ab",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "03f89537f7a16f2ad784f9ffbf8c1afb2957bed3d60c28c1880015e8c9705da8",
+      "kind": "candidate",
+      "name": "David Laird",
+      "contest": "Kew",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/david-laird",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "d73533d9965a7a30d5de772b028bfb4295d322d24299e5d1ee8c34e875421a56",
+      "sourceId": "one-nation-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "c6d488cc02ccc6ad0ec98777508619dec6650a088a6faba7fa0da63ac9a90d62",
+      "kind": "candidate",
+      "name": "Clay Esler",
+      "contest": "Eastern Victoria",
+      "party": "Pauline Hanson's One Nation",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "One Nation Victoria",
+      "sourceUrl": "https://vic.onenation.org.au/clay-esler",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "d9b4bdffb90e27805caad39f28122f247eed92797f5ad642c9df00528bf49725",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "1233879545cca20e593dc2e618843b379ec7c01e1fb9590b78e4ef32dae21c42",
+      "kind": "candidate",
+      "name": "Kerry Macdonald",
+      "contest": "Mornington",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/kerry-macdonald",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "6ababa66eb717b42abedc82e498c51660c2a1eaf35686a42bb0f50addc0261fd",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "a38b07ec6217ee9ed5cb9317b6bfb7bc96cd6d0d60794b909bd1df7ff834d6ac",
+      "kind": "candidate",
+      "name": "Ollie Young",
+      "contest": "Benambra",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/ollie-young",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "29cc0ad2437cf7ce57e502bfee6dedfa2c5f3be804efad2e80c7e30131fdf343",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "133a13bf5dcfa149f6cbcb435bec24d763744ec2fee03c38daf81163d6fafea4",
+      "kind": "candidate",
+      "name": "Stella Zigouras",
+      "contest": "Mildura",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/stella-zigouras",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "50022207027364bde6ad22707fa7ec7b34ab1cabe38d52c67d45be35c1ecc703",
+      "sourceId": "labor-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "834dc2fb9af0f8e4fb64d2579348fd38011fe7797029e1ff806c9c5f55b9998b",
+      "kind": "candidate",
+      "name": "Surbhi Snowball",
+      "contest": "Nepean",
+      "party": "Australian Labor Party - Victorian Branch",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Victorian Labor",
+      "sourceUrl": "https://www.viclabor.org.au/our-team/surbhi-snowball",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": true,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "0e67826c675bd4fc0f3b8b6b82786d6069e031451767ab80349a32c5a5c86a2b",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "23370ab7e877a7c181d64c9b06a7d53fc16b16fde925d98597bb2125feeb48d6",
+      "kind": "candidate",
+      "name": "Hamza Al Katranji",
+      "contest": "Preston",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/hamza-al-katranji",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "4fcf706f739608b3918488f0eb6b172b942000b97ebe9287cae7020fce176a77",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "7d60511f9046366ab1d686efbce2409b15616a1e927a5287215c6edcd972adcd",
+      "kind": "candidate",
+      "name": "William Billings",
+      "contest": "Dandenong",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/william-billings",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "8835a4811e280aa6b105a65207989ee4055988310757ca7f8810518a2c63ed29",
+      "sourceId": "liberal-victoria-candidates",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "9834368493733fa38d1874d3a8755330089479a1730bd67dce3c0ea310999879",
+      "kind": "candidate",
+      "name": "Shankar Dharel",
+      "contest": "Northern Metropolitan Region",
+      "party": "Liberal Party of Australia (Victorian Division)",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Liberal Victoria",
+      "sourceUrl": "https://vic.liberal.org.au/team/shankar-dharel",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "785bee3380f8c59f3c6ddc9fa1a58123fbb77df94ed2f162f65651afddcb5496",
+      "sourceId": "family-first-victoria-coverage-gaps",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "f690b1d95bc11f31c85846ba82fc05a7df381bb9b7eb168401f0a4d8608af82c",
+      "kind": "candidate",
+      "name": "Lee Ann Elmes",
+      "contest": "Lowan",
+      "party": "Family First Party Australia",
+      "candidateStatus": "endorsed",
+      "sourceAuthority": "Family First Party Australia",
+      "sourceUrl": "https://www.familyfirstparty.org.au/vic_2026",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": false
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "6485381d685dbc7b006d824029f580e2afe9d1091ef87fa06de7925d9b343d98",
+      "sourceId": "mornington-peninsula-candidate-confirmations",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "87996f917a9ed2b772193e11b460e43f85546062b7207d1adf24be59602f2bd7",
+      "kind": "candidate",
+      "name": "Gene Brownlie",
+      "contest": "Mornington",
+      "party": "Victorian Socialists",
+      "candidateStatus": "announced",
+      "sourceAuthority": "Mornington Peninsula Shire",
+      "sourceUrl": "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/State-election-candidates",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": true
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    },
+    {
+      "id": "60015670773f95531ac1f4e3b49bf85fc7d6848535dd6b5c0bf8d8818140759a",
+      "sourceId": "mornington-peninsula-candidate-confirmations",
+      "status": "quarantined-awaiting-review",
+      "automaticPromotion": false,
+      "dataHash": "750eef5d100d288fc1eb9f5e4059ae720ed0882b8d0934a3d2f17c5e20b137c6",
+      "kind": "candidate",
+      "name": "Kerry Macdonald",
+      "contest": "Mornington",
+      "party": "Labor",
+      "candidateStatus": "announced",
+      "sourceAuthority": "Mornington Peninsula Shire",
+      "sourceUrl": "https://www.mornpen.vic.gov.au/The-Shire/Shout-Out-for-the-Peninsula/State-election-candidates",
+      "verification": {
+        "pageStatus": 200,
+        "nameInHeading": false,
+        "contestInHeading": true
+      },
+      "decision": "pending-human-review",
+      "forecastUse": "excluded",
+      "officialNomination": false
+    }
+  ]
+}
