@@ -2,6 +2,10 @@
 
 Updated: 2026-10-31
 
+## Continuation after merged #147
+
+See [candidate verification continuation](CANDIDATE_VERIFICATION_2026-10-31.md). Deployment passed. The later green monitor run skipped acquisition and does not demonstrate source recovery. Cadence summaries now distinguish NOT CHECKED from acquisition scheduled. Supporting first-party page checks are captured; no candidate acceptance or forecast changes occur.
+
 ## Current operational repairs
 
 [31 October campaign operations](CAMPAIGN_OPERATIONS_2026-10-31.md) fixes candidate identity comparison, preserves distinct party/municipal carriers, and makes electorate tiles follow search filters. Primary captures reconcile 97/103 One Nation entries; seven One Nation/Family First items require review. GitHub runner HTTP 403 failures persist after one retry, despite successful local acquisition. Accepted candidate/model inputs and all seals remain unchanged. Actual mobile-device QA remains outstanding.
