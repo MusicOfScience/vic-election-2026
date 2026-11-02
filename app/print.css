@@ -1,0 +1,77 @@
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  :root,
+  html {
+    color-scheme: light;
+    background: #fff;
+  }
+
+  body {
+    color: #11263b !important;
+    background: #fff !important;
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-shell {
+    min-height: 0;
+  }
+
+  .content-shell {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tabs-rail {
+    position: static;
+    backdrop-filter: none;
+  }
+
+  .tabs-scroll-cue,
+  .skip-link,
+  [data-slot="sheet-overlay"],
+  .seat-sheet > button {
+    display: none !important;
+  }
+
+  .surface {
+    box-shadow: none;
+  }
+
+  body:has(.seat-sheet[data-state="open"]) .site-shell {
+    display: none !important;
+  }
+
+  [data-slot="sheet-content"].seat-sheet {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    transform: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  .seat-sheet-body,
+  .mobile-booths {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .booth-table {
+    display: block !important;
+  }
+
+  .mobile-booths {
+    display: none !important;
+  }
+}
