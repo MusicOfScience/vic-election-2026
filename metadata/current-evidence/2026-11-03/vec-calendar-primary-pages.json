@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "stateElections": {
+      "url": "https://www.vec.vic.gov.au/voting/types-of-elections/state-elections",
+      "finalUrl": "https://www.vec.vic.gov.au/voting/types-of-elections/state-elections",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-11-02T13:57:15.191Z",
+      "bytes": 123631,
+      "sha256": "8643da7a60881a05baaedfb5922444bd077df4cbbbe60c56ef298eb8bba21deb",
+      "reviewExcerpts": [
+        "19 days before election day - 9 November 2026. Candidates can nominate until 12 noon on close of nomination day."
+      ]
+    },
+    "stateElection": {
+      "url": "https://www.vec.vic.gov.au/voting/2026-state-election",
+      "finalUrl": "https://www.vec.vic.gov.au/voting/2026-state-election",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-11-02T13:57:20.826Z",
+      "bytes": 138607,
+      "sha256": "f4f1399b1653b4ebfb2a9ff4d86a055cc449802945e863d09085a1bd135f63da",
+      "reviewExcerpts": [
+        "This year the roll will close at 8 pm on Tuesday 3 November, Melbourne Cup Day.",
+        "Candidate nominations: open at 9 am Wednesday 4 November; close at 12 noon on Monday 9 November for all candidates.",
+        "Nominations close for all candidates 12 noon Tuesday 10 November."
+      ]
+    },
+    "candidatePage": {
+      "url": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate",
+      "finalUrl": "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-11-02T13:57:21.114Z",
+      "bytes": 137032,
+      "sha256": "1e7bb09770170671b4151284be382d09fa9098b769891daa82ed6af0ae838e37",
+      "reviewExcerpts": [
+        "We are in the process of updating our website.",
+        "Candidate nominations: open on Wednesday 4 November; close at 12 noon on Monday 9 November for all candidates.",
+        "Nominations close for all candidates 12 noon Tuesday 10 November."
+      ]
+    },
+    "actAmendments": {
+      "url": "https://www.vec.vic.gov.au/about-us/legislation/electoral-act-amendments-2026",
+      "finalUrl": "https://www.vec.vic.gov.au/about-us/legislation/electoral-act-amendments-2026",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-11-02T13:57:21.399Z",
+      "bytes": 141492,
+      "sha256": "b2e7386054baf561d68e503ec078abdf940aff80f5c4965aed76935ae20e2ea5",
+      "reviewExcerpts": [
+        "The close of all types of candidate nominations is now 6 days after the issue of writs.",
+        "For the 2026 state election, the close of all types of candidate nominations is 9 November 2026."
+      ]
+    }
+  }
+}

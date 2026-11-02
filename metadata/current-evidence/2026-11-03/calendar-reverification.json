@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-11-02T13:57:21.399Z",
+  "authority": "Victorian Electoral Commission",
+  "sources": [
+    "https://www.vec.vic.gov.au/voting/types-of-elections/state-elections",
+    "https://www.vec.vic.gov.au/voting/2026-state-election"
+  ],
+  "supportingSources": [
+    "https://www.vec.vic.gov.au/candidates-and-parties/become-a-state-election-candidate",
+    "https://www.vec.vic.gov.au/about-us/legislation/electoral-act-amendments-2026",
+    "https://www.parliament.vic.gov.au/election"
+  ],
+  "dates": {
+    "rollClose": "2026-11-03T20:00:00+11:00",
+    "nominationsClose": "2026-11-09T12:00:00+11:00",
+    "earlyVotingStarts": "2026-11-18",
+    "electionDay": "2026-11-28"
+  },
+  "conflict": false,
+  "adjudication": "Current key-date notices and the new Electoral Act agree on 9 November. The 10 November entry is a retained legacy timeline row on pages that state the site is being updated; it is stale and does not change the registered dates. See prospective-validation-calendar-check.json for the full review note.",
+  "captureIndex": "vec-calendar-primary-pages.json",
+  "liveSourceReport": "live-source-report.json",
+  "liveSourceReportSha256": "439833c68a0d7f2d6f2c69e4de842c6adb51b1ce5415804b444e35cc0559cfff",
+  "policy": "No automatic source-baseline promotion, candidate acceptance, poll admission, or model change.",
+  "capturePolicy": "Full response SHA-256 values and the exact reviewed passages are retained; original HTML bodies were not committed."
+}
