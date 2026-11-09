@@ -37,6 +37,15 @@ def test_actual_clock_cutoff_and_no_backdating():
         sealing.check_window(p, 'post_freshwater_registration', instant(p['approval']['recordedAt'])-timedelta(seconds=1))
 
 
+def test_late_registration_remains_forbidden_after_first_milestone():
+    # Explicit regression guard: this is not a real or backdated seal.
+    protocol = read(ROOT, 'metadata/model-vnext-validation-protocol.json')
+    first_milestone = instant(protocol['snapshots'][1]['cutoff'])
+    with pytest.raises(ValueError, match='registration snapshot must precede later electoral milestones'):
+        sealing.check_window(protocol, 'post_freshwater_registration',
+                             first_milestone + timedelta(seconds=1))
+
+
 def test_unapproved_seal_refused(tmp_path):
     import shutil
     for path in ['metadata/model-vnext-validation-protocol.json','metadata/prospective-validation-approval.json','metadata/prospective-validation-approved-rules.json']:
@@ -74,14 +83,22 @@ def test_fixture_construction_hashes_and_comparators(archive):
     assert not m['productionAuthorised'] and not m['scoringAuthorised']
 
 
-def test_tampering_extra_files_and_fixture_promotion_fail(archive):
+def test_tampering_extra_files_and_fixture_promotion_fail(archive, monkeypatch):
     source = archive/'manifest.json'; original = source.read_bytes(); manifest = json.loads(original)
     manifest['kind'] = 'prospective-live'; manifest['registered'] = True; manifest['independentElectionCount'] = 1
     manifest['snapshotId'] = manifest['snapshotId'].removeprefix('fixture/')
     manifest.pop('manifestSha256'); manifest['manifestSha256'] = hashlib.sha256(canonical(manifest)).hexdigest()
     source.write_bytes(canonical(manifest))
-    with pytest.raises(ValueError, match='fixture availability'):
-        sealing.verify_package(archive)
+    # This synthetic fixture is deliberately forged as live to probe the
+    # *independent* provenance guard. Isolate it from the registration clock:
+    # a real registration after the first electoral milestone stays forbidden
+    # by check_window (tested separately below).
+    with monkeypatch.context() as isolated:
+        isolated.setattr(sealing, 'check_window',
+                         lambda protocol, snapshot_id, witnessed:
+                         (next(s for s in protocol['snapshots'] if s['id'] == snapshot_id), witnessed))
+        with pytest.raises(ValueError, match='fixture availability'):
+            sealing.verify_package(archive)
     source.write_bytes(original)
     changed = json.loads(original); changed['forecastSha256'] = '0'*64
     changed.pop('manifestSha256'); changed['manifestSha256'] = hashlib.sha256(canonical(changed)).hexdigest()
@@ -114,6 +131,11 @@ def test_live_seal_refuses_feature_branch_without_producing_snapshot(tmp_path, m
     # Isolate the branch guard from time-varying calendar freshness. This test is
     # about refusing feature-branch sealing; calendar freshness is tested separately.
     monkeypatch.setattr(sealing, 'check_calendar', lambda *args, **kwargs: None)
+    # Fix only the test's clock inside the registration window: otherwise,
+    # after 3 November the correct cutoff guard masks the branch guard.
+    frozen = read(ROOT, 'metadata/model-vnext-validation-protocol.json')
+    valid_test_instant = instant(frozen['approval']['recordedAt']) + timedelta(minutes=1)
+    monkeypatch.setattr(sealing, 'now', lambda: valid_test_instant)
     original = sealing.git
     monkeypatch.setattr(sealing,'git',lambda root,*args: 'codex/test-fixture' if args == ('branch','--show-current') else original(root,*args))
     with pytest.raises(ValueError, match='clean merged main'):
