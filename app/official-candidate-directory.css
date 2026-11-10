@@ -48,3 +48,14 @@
 @media(max-width:920px){.official-roster-form{grid-template-columns:1fr 1fr}.official-roster-house{grid-column:1 / -1}.official-roster-hero{align-items:flex-start;flex-direction:column}}
 @media(max-width:620px){.official-roster-hero{padding:25px 19px}.official-roster-totals article{padding:12px}.official-roster-totals strong{font-size:25px}.official-roster-totals span{font-size:10px}.official-roster-form{grid-template-columns:1fr}.official-roster-house{grid-column:1}.official-roster-house{flex-direction:row;flex-wrap:wrap;gap:12px}.official-roster-house legend{width:100%}.official-roster-candidates{grid-template-columns:1fr;padding:8px 15px}.official-roster-contest summary{padding:15px;gap:9px}.official-roster-contest-name strong{font-size:18px}.official-roster-count{font-size:11px}.official-roster-search{padding:17px}.official-roster-caveats{padding:19px 17px}}
 @media print{.official-roster-form,.official-roster-chevron{display:none}.official-roster-hero{background:#fff;color:#111}.official-roster-hero p:last-child{color:#222}.official-roster-contest{break-inside:avoid-page}}
+
+
+/* Verified 2026 Council ballot column structure, independently sourced from VEC. */
+.official-roster-council-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:18px}
+.official-roster-group{border:1px solid var(--line);background:var(--white);min-width:0}
+.official-roster-group h4{display:grid;gap:4px;margin:0;padding:12px 14px;border-bottom:1px solid var(--line);font-size:13px;font-weight:700;line-height:1.45;background:#f3f2eb}
+.official-roster-group h4 span{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-ink)}
+.official-roster-group-members{padding:4px 14px}
+.official-roster-group-members .official-roster-candidate:last-child{border-bottom:0}
+@media(max-width:620px){.official-roster-council-groups{grid-template-columns:1fr;padding:11px}.official-roster-group h4{padding:11px}}
+@media print{.official-roster-group{break-inside:avoid-page}}
