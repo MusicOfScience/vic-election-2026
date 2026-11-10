@@ -11,7 +11,7 @@ function recommendationLabel(authority: string, value: string) {
 export function CandidateReviewDossier() {
   return <section className="surface candidate-review-dossier" aria-labelledby="candidate-review-heading">
     <div className="section-heading candidate-review-heading">
-      <div><p className="eyebrow">Governed candidate review</p><h3 id="candidate-review-heading">{dossier.summary.acceptedRecords} provisional candidate records previously reviewed.</h3><p className="section-subcopy">This historical provisional-evidence register is separate from the VEC's 1,037 official candidates shown in the Official candidates tab. Announcements and endorsements do not automatically enter the forecast.</p></div>
+      <div><p className="eyebrow">Governed candidate review</p><h3 id="candidate-review-heading">{dossier.summary.acceptedRecords} provisional candidate records previously reviewed.</h3><p className="section-subcopy">This historical provisional-evidence register is separate from the VEC’s 1,037 official candidates shown in the Official candidates tab. Announcements and endorsements do not automatically enter the forecast.</p></div>
       <span className="candidate-review-status"><ShieldCheck size={15} />Approval recorded</span>
     </div>
     <div className="candidate-review-summary" aria-label="Candidate review summary">
