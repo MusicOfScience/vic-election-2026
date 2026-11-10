@@ -158,6 +158,10 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
 
 test("Pages site build keeps release version distinct from frozen forecast inputs", () => {
   const pages = readFileSync(new URL("../.github/workflows/deploy-pages.yml", import.meta.url), "utf8");
+  assert.match(pages, /Competing GitHub Pages publishers/);
+  assert.match(pages, /build_type/);
+  assert.match(pages, /"workflow"/);
+  assert.match(pages, /gh api/);
   assert.match(pages, /NEXT_PUBLIC_SITE_BUILD_SHA/);
   assert.match(pages, /NEXT_PUBLIC_SITE_BUILD_DATE/);
   assert.match(pages, /GITHUB_SHA/);
