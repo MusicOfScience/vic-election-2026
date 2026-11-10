@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ExternalLink, Search, ShieldCheck, UsersRound } from "lucide-react";
 import roster from "./vec-official-candidates-2026.review.json";
+import councilGroups from "./vec-council-groups-2026.review.json";
 
 type Chamber = "Assembly" | "Council";
 type CandidateRow = [Chamber, string, number, string, string | null];
@@ -29,6 +30,26 @@ function groupCandidates(chamber: Chamber, q: string, partyFilter: string) {
       (partyFilter === "all" || list.some((row) => (row[4] ?? "") === partyFilter)))
     .map(([contest, list]) => ({ contest, rows: list.sort((a, b) => a[2] - b[2]) }))
     .sort((a, b) => a.contest.localeCompare(b.contest, "en-AU"));
+}
+
+type GroupSpec = [string, string, number];
+
+function councilBlocks(region: string, rows: CandidateRow[]) {
+  const source = councilGroups.pages[region as keyof typeof councilGroups.pages];
+  if (!source) return [];
+  let offset = 0;
+  return (source.groups as GroupSpec[]).map(([letter, label, count]) => {
+    const block = { letter, label, rows: rows.slice(offset, offset + count) };
+    offset += count;
+    return block;
+  });
+}
+
+function CandidateLine({ candidate, position }: { candidate: CandidateRow; position: string | number }) {
+  return <div className="official-roster-candidate">
+    <span className="official-roster-position" title="Number within this source list">{position}</span>
+    <div><strong>{candidate[3]}</strong><span className={candidate[4] == null ? "official-roster-unaffiliated" : ""}>{describeParty(candidate[4])}</span></div>
+  </div>;
 }
 
 export function OfficialCandidateDirectory() {
@@ -82,20 +103,28 @@ export function OfficialCandidateDirectory() {
           <span className="official-roster-count">{group.rows.length} candidates</span>
           <span aria-hidden="true" className="official-roster-chevron">+</span>
         </summary>
-        <div className="official-roster-candidates">
-          {group.rows.map((candidate) => <div className="official-roster-candidate" key={candidate[2] + "|" + candidate[3]}>
-            <span className="official-roster-position" title="Position in captured VEC source report">{candidate[2]}</span>
-            <div><strong>{candidate[3]}</strong><span className={candidate[4] == null ? "official-roster-unaffiliated" : ""}>{describeParty(candidate[4])}</span></div>
-          </div>)}
-        </div>
-        <p className="official-roster-disclaimer">Numbers show order in the captured VEC workbook, not independently certified ballot-paper positions. Council group letters and ungrouped status require separate verification.</p>
+        {chamber === "Council"
+          ? <div className="official-roster-council-groups">
+              {councilBlocks(group.contest, group.rows).map((block) => <section className="official-roster-group" key={block.letter}>
+                <h4><span>{block.letter === "Ungrouped" ? "Below the line" : `Group ${block.letter}`}</span>{block.label === "Ungrouped" ? "Ungrouped candidates" : block.label}</h4>
+                <div className="official-roster-group-members">
+                  {block.rows.map((candidate, i) => <CandidateLine key={candidate[2] + "|" + candidate[3]} candidate={candidate} position={i + 1}/>)}
+                </div>
+              </section>)}
+            </div>
+          : <div className="official-roster-candidates">
+              {group.rows.map((candidate) => <CandidateLine key={candidate[2] + "|" + candidate[3]} candidate={candidate} position={candidate[2]} />)}
+            </div>}
+        <p className="official-roster-disclaimer">{chamber === "Council"
+          ? "Group letters, labels, candidate order and ungrouped status were independently reconciled against the eight VEC region pages on 11 November. There are no group voting tickets in 2026. Later VEC corrections are possible."
+          : "Numbers show position in the captured VEC workbook. Individual district ballot order is not independently certified for every district."}</p>
       </details>)}
       {groups.length === 0 && <p className="official-roster-empty">No contests match those filters. Try another candidate name or clear the registered-party filter.</p>}
     </section>
     <section className="surface official-roster-caveats" aria-label="Candidate data accuracy and forecast boundaries">
       <div><ShieldCheck size={20}/><h3>Official source, separate model</h3></div>
       <p>Source: VEC candidate report stamped <strong>9 November 2026, 7:58 pm AEDT</strong>. The raw source was independently fingerprinted; this public directory contains candidate names and registered-party labels only. No contact-person names, phone numbers or email addresses were imported.</p>
-      <p><strong>Important:</strong> {unmatchedParty} candidates have no registered-party label in the source. That does not necessarily mean independent or ungrouped. Particularly for the Legislative Council, ballot-group letters, above-the-line groups and ungrouped classification are not asserted here.</p>
+      <p><strong>Important:</strong> {unmatchedParty} candidates have no registered-party label in the VEC workbook. That does not necessarily mean independent or ungrouped. Council ballot groups are independently sourced from eight VEC region pages, including unnamed groups and five ungrouped nominees. Group affiliation must not be treated as a modelled preference transfer.</p>
       <p>The probabilistic forecast is still based on the <strong>31 October experimental model</strong>, which does not yet use this official ballot as its candidate mask. These nomination records do not change the seat probabilities, which remain uncalibrated for production release.</p>
       <div className="official-roster-checks"><UsersRound size={16} /><span>Source record: 734 Assembly + 303 Council · each of 96 contest totals reconciled · review-only candidate identities</span></div>
     </section>
