@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-11-11",
+  "mode": "candidate-evidence-review-only-no-admission-or-model-refresh",
+  "baselineForecastAsOf": "2026-10-31",
+  "forecastModel": "vic_2026_experimental_joint_v1",
+  "ownerApprovalRecorded": false,
+  "sourceDatePolicy": "Date ranges, source-of-fact and unresolved conflicts are recorded explicitly. No first-party methodology is inferred from earlier waves.",
+  "normalisationPolicy": "A separately published Others category is different from a computed four-party residual; where only four categories are published, record residual as a mathematical difference and do not mark it source-verified.",
+  "evidence": [
+    {
+      "id": "demosau-victoria-2026-10-30-11-05-media",
+      "scope": "state_assembly",
+      "pollster": "DemosAU",
+      "commissioner": "PremierNational",
+      "reportedDates": {
+        "start": "2026-10-30",
+        "end": "2026-11-05"
+      },
+      "reportedSampleSize": 1562,
+      "effectiveSampleSize": null,
+      "reportedPrimaries": {
+        "alp": 18,
+        "coalition": 33,
+        "onp": 21,
+        "greens": 17
+      },
+      "reportedTwoPartyPreferred": {
+        "coalition": 56,
+        "alp": 44
+      },
+      "otherPartyResidual": {
+        "value": 11,
+        "status": "computed-from-four-published-categories-not-verified-primary-report"
+      },
+      "publicationDate": "2026-11-09",
+      "publicationTier": "independent-contemporaneous-reporting-print-original-not-acquired",
+      "sourceUrl": "https://www.pollbludger.net/2026/11/09/demosau-labor-18-coalition-33-one-nation-21-in-victoria/",
+      "primaryPollsterMethodology": "not-publicly-verified-for-this-wave",
+      "primaryPublicationCaptured": false,
+      "nonOverlapClaim": "Fieldwork does not overlap September DemosAU window, but repeat panel respondents, weighting and effective sample for November undisclosed.",
+      "modelEligibility": "hold",
+      "reason": "Primary questionnaire/report, effective N, sampling, explicitly published residual and current-wave independence remain unverified. Do not transpose September method/ESS."
+    },
+    {
+      "id": "resolve-victoria-2026-11-early-media",
+      "scope": "state_assembly",
+      "pollster": "Resolve Strategic",
+      "commissioner": "The Age / Nine",
+      "reportedDates": {
+        "start": "2026-11-02",
+        "end": null
+      },
+      "alternativeEndDates": [
+        "2026-11-05",
+        "2026-11-07"
+      ],
+      "reportedSampleSize": 1000,
+      "effectiveSampleSize": null,
+      "reportedPrimaries": {
+        "alp": 22,
+        "coalition": 30,
+        "onp": 23,
+        "greens": 13
+      },
+      "reportedTwoPartyPreferred": null,
+      "otherPartyResidual": {
+        "value": 12,
+        "status": "computed-from-four-published-categories-not-independently-primary-verified"
+      },
+      "publicationDate": "2026-11-09",
+      "publicationTier": "primary-publisher-media-article-plus-independent-corroboration",
+      "sourceUrl": "https://www.brisbanetimes.com.au/politics/victoria/half-of-victorians-open-to-a-one-nation-coalition-as-carroll-faces-labor-wipeout-20261109-p61cjv.html",
+      "corroborationUrl": "https://www.pollbludger.net/2026/11/10/victorian-election-resolve-strategic-and-pakenham-seat-poll/",
+      "primaryPollsterMethodology": "not-captured-for-November-wave",
+      "primaryPublicationCaptured": "indexed-publisher-article-only-no-full-wave-table-or-method",
+      "nonOverlapClaim": "Exact Victorian subsample period differs across published summaries; possibly derived from shared federal survey, not an independent second national N.",
+      "modelEligibility": "hold",
+      "reason": "Conflicting 5/7 November end date; original 1,000 Victorian base and undecided/weighting definition require primary table. Overlap with national survey is not an extra independent wave."
+    },
+    {
+      "id": "lighthouse-victoria-2026-10-19-11-01-media",
+      "scope": "state_assembly",
+      "pollster": "Growth Intelligence Centre / Lighthouse Political Monitor",
+      "commissioner": "Herald Sun / News Corp",
+      "reportedDates": {
+        "start": "2026-10-19",
+        "end": "2026-11-01"
+      },
+      "reportedSampleSize": 1289,
+      "effectiveSampleSize": null,
+      "reportedPrimaries": {
+        "alp": 23,
+        "coalition": 31,
+        "onp": 22,
+        "greens": 14
+      },
+      "reportedTwoPartyPreferred": null,
+      "otherPartyResidual": {
+        "value": 10,
+        "status": "computed-residual"
+      },
+      "publicationDate": "2026-11-06",
+      "publicationTier": "independent-contemporaneous-coverage",
+      "sourceUrl": "https://www.pollbludger.net/2026/11/06/victorian-election-minus-three-weeks-2/",
+      "primaryPollsterMethodology": "not-captured",
+      "primaryPublicationCaptured": false,
+      "nonOverlapClaim": "Media reports this as a weekly tracking poll published as a two-week rolling average. Subsequent Lighthouse waves cannot be treated as independent.",
+      "modelEligibility": "hold",
+      "reason": "Rolling-wave sampling overlap and non-primary method documentation; alternative summaries misidentify Labor and One Nation, so retain independently corroborated 23/22 rather than silently normalise."
+    },
+    {
+      "id": "pakenham-2026-11-04-08-demosau-primary",
+      "scope": "assembly_district",
+      "contest": "Pakenham",
+      "pollster": "TKW Research / DemosAU",
+      "commissioner": "not-established",
+      "reportedDates": {
+        "start": "2026-11-04",
+        "end": "2026-11-08"
+      },
+      "reportedSampleSize": 484,
+      "effectiveSampleSize": 289,
+      "reportedEffectiveMarginOfErrorPercent": 5.8,
+      "reportedCandidatePrimaries": {
+        "onpPickering": 40,
+        "libDyson": 24,
+        "alpSoliven": 14,
+        "greensYawari": 13
+      },
+      "reportedTwoCandidatePreferred": {
+        "onpPickering": 50,
+        "libDyson": 50,
+        "status": "modelled-from-preference-assumptions-not-direct-survey-2CP"
+      },
+      "publicationDate": "2026-11-10",
+      "publicationTier": "first-party-released-interactive-source",
+      "sourceUrl": "https://demosau.com/wp-content/uploads/DemosAU/pakenham-electorate-poll.html",
+      "primaryPollsterMethodology": "Poll page discloses rim-weighted age x gender, education, household income, language and federal vote; excludes 6% don't know and 5% refused; leaner treatment provided. TKW and DemosAU local poll.",
+      "primaryPublicationCaptured": "web-extracted-first-party-page-no-archived-binary",
+      "nonOverlapClaim": "Same DemosAU participant/panel family may overlap Nov statewide wave; no independence established. Local electorate sample cannot be pooled as independent Victoria-wide wave.",
+      "modelEligibility": "hold",
+      "reason": "Seat poll is not a statewide poll event; cannot be added to statewide polling registry. Keep as independent local diagnostic with uncertainty and unknown respondent overlap."
+    }
+  ],
+  "invariants": {
+    "canonicalPollRegistryChanged": false,
+    "canonicalForecastChanged": false,
+    "proposedInputRowsAdded": 0,
+    "forecastRefreshed": false,
+    "ownerDecisionNeededForFutureAdmission": true,
+    "productionGatesChanged": false
+  },
+  "openResearchQuestion": "Whether current-model high-confidence and collapsed-other winning paths remain defensible under candidate-resolved preferences; no target outcome training or production promotion is authorised."
+}
