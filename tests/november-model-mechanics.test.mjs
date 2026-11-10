@@ -51,6 +51,13 @@ test("complete November integrity report discloses core 31 October model path ri
   assert.equal(result.statisticalProductionGatesChanged,false);
   assert.equal(result.eligibleNewPolls,0);
   assert.equal(result.counts.assemblyDistricts,88);
+  const local = result.onpGeographicPropensityControl;
+  assert.equal(local.configuredLocalLogitBound,.45);
+  assert.equal(local.aecAuxiliaryLowerBound,-1.2);
+  assert.equal(local.aecAuxiliaryUpperBound,1.1);
+  assert.equal(local.specialONPOverrideFollowsGenericBoundClip,true);
+  assert.ok(local.maximumPositiveOddsMultiplierFromSpecialAuxiliary > 3);
+  assert.ok(local.maximumPositiveOddsMultiplierIfGenericBoundApplied < 1.57);
   assert.equal(result.candidateAvailability.allFiveFamilyRepresentativesPerSeat,true);
   assert.equal(result.counts.missingNominatedPartyFamilies,0);
   assert.deepEqual(result.counts.coalitionNomineeDuplicationSeats,[{seat:"Ripon",count:2}]);
