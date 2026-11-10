@@ -41,6 +41,7 @@ jobs:
             --file vec-nominations-capture/vec-2026-candidates-raw.xls \
             --receipt vec-nominations-capture/capture-receipt.json \
             --registry metadata/candidates-2026.json \
+            --audit metadata/vec-nominations-2026-11-10-source-audit.json \
             --output vec-nominations-capture/review
       - name: Show candidate review totals, without contacts
         if: success()
