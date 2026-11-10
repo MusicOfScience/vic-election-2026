@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-10",
+  "status": "review-only-source-reconciled-not-registry-admitted",
+  "sourceAuthority": "Victorian Electoral Commission",
+  "sourceLandingUrl": "https://www.vec.vic.gov.au/2026-state-election",
+  "sourceFileUrl": "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls",
+  "sourceReportTitle": "Candidate Contact Persons' Details Summary Report",
+  "sourceReportAsAt": "09 Nov 2026 07:58 PM AEDT",
+  "capturedAt": "2026-11-10T13:05:01.324Z",
+  "sourceSizeBytes": 183296,
+  "sourceMime": "application/vnd.ms-excel",
+  "sourceFormat": "OLE Compound / BIFF8 legacy Excel .xls",
+  "sourceSha256": "f5c9505d01abb39bfd4e20cd389c6adea2e524a26423c7c82a51084e21d95c16",
+  "landingSha256": "64f256248a75cb3fffa8fbfa62807a11aee517faeabfd90235cb4470e3113154",
+  "sourceAccessRunId": 42821242121,
+  "artifactId": 13767960680,
+  "artifactExpiresAt": "2026-12-10T13:05:01Z",
+  "sourceContactFieldsPresent": true,
+  "sourceContactFieldsMayEnterPublicDerivedDataset": false,
+  "checkedBy": "manual byte-level BIFF8 extraction; source SHA256 independently recalculated",
+  "biFFSharedStringUniqueCount": 1941,
+  "biFFSharedStringCellCount": 5255,
+  "contestCounts": {
+    "assemblyDistricts": 88,
+    "councilRegions": 8,
+    "totalContests": 96,
+    "assemblyCandidates": 734,
+    "councilCandidates": 303,
+    "totalCandidates": 1037,
+    "eachSectionDeclaredCandidateCountMatched": true,
+    "duplicateCandidateWithinContestCount": 0
+  },
+  "councilRegionCandidates": {
+    "Eastern Victoria": 32,
+    "North-Eastern Metropolitan": 38,
+    "Northern Metropolitan": 43,
+    "Northern Victoria": 37,
+    "South-Eastern Metropolitan": 35,
+    "Southern Metropolitan": 31,
+    "Western Metropolitan": 43,
+    "Western Victoria": 44
+  },
+  "assemblyRppCoverage": {
+    "One Nation Victoria": 88,
+    "Australian Labor Party - Victorian Branch": 88,
+    "Australian Greens Victoria": 88,
+    "Victorian Socialists": 88,
+    "Liberal Party of Australia - Victorian Division": 77,
+    "National Party of Australia - Victoria": 12
+  },
+  "blankRppEntries": {
+    "assembly": 91,
+    "council": 21,
+    "policy": "Blank registered-party field does not prove independent or ungrouped Council ballot status"
+  },
+  "targetedIdentityFlags": [
+    {
+      "contest": "Melbourne",
+      "oldProvisional": "Matthew Collins",
+      "officialCandidate": "COURTIS, Phillip",
+      "registeredParty": "One Nation Victoria",
+      "action": "human identity/replacement review before admission"
+    },
+    {
+      "contest": "Ovens Valley",
+      "oldProvisional": "Ben Gilbert",
+      "officialCandidate": "GILBERT, Benjamin",
+      "action": "verify alias before admission"
+    }
+  ],
+  "ballotOrderBoundary": "Assembly row order matched VEC example nomination pages; Council group letter/order is not an explicit workbook field and must be independently extracted from VEC region pages.",
+  "perCandidateRosterCommitted": false,
+  "registryUpdated": false,
+  "modelUpdated": false,
+  "prospectiveSealUpdated": false,
+  "originalReleaseGatesChanged": false,
+  "note": "Counts and fields reflect one captured source version, not a guarantee that VEC will not subsequently amend the final ballot."
+}
