@@ -33,7 +33,7 @@ REGIONS = {
     "Western Victoria": "western-victoria",
 }
 MARKER = "the groups and candidates for this region election"
-GROUP_RE = re.compile(r"(?m)^[ \t]*([a-z])\.[ \t]+([^\n]+)[ \t]*$")
+GROUP_RE = re.compile(r"(?m)^[ \t]*([A-Z])\.[ \t]+([^\n]+)[ \t]*$")
 UNGROUPED_RE = re.compile(r"(?mi)^[ \t]*(Ungrouped)[ \t]*$")
 
 
@@ -49,11 +49,12 @@ def text_of_page(html: bytes, region: str) -> str:
     title = soup.get_text("\n", strip=True)
     if f"candidates for {region}".casefold() not in title.casefold():
         raise ValueError("Wrong region page or missing candidate-list heading")
-    normalized = clean(title).replace("\u00a0", " ")
-    start = normalized.find(MARKER)
-    if start < 0:
+    normalized = unicodedata.normalize("NFKC", title).replace("\u00a0", " ")
+    start_match = re.search(re.escape(MARKER), normalized, flags=re.IGNORECASE)
+    if start_match is None:
         raise ValueError("No VEC final ballot-order declaration")
-    return normalized[start:]
+    # Preserve the VEC's actual capitalisation in public group labels.
+    return normalized[start_match.start():]
 
 
 def headings_from_text(text: str) -> list[tuple[int, str, str]]:
