@@ -21,6 +21,12 @@ test("November poll-review sources are held and cannot silently enter the model"
   const demo = review.evidence.find((x) => x.id.startsWith("demosau-"));
   assert.equal(demo.otherPartyResidual.status, "computed-from-four-published-categories-not-verified-primary-report");
   assert.equal(demo.effectiveSampleSize, null);
+  const lighthouse = review.evidence.find((x) => x.id.startsWith("lighthouse-"));
+  assert.equal(lighthouse.reportedPrimaries.alp, 22);
+  assert.equal(lighthouse.reportedPrimaries.onp, 23);
+  assert.equal(lighthouse.contradictoryReport.printedPrimaries.alp, 23);
+  assert.equal(lighthouse.contradictoryReport.printedPrimaries.onp, 22);
+  assert.equal(lighthouse.modelEligibility, "hold");
 });
 
 test("candidate family mapping never equates blank registered party with an independent person", () => {
