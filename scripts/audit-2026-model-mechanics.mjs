@@ -61,7 +61,7 @@ export function familyFromRegisteredParty(party) {
 export function preferencePriorFromSource(source) {
   const m = String(source).match(/PREFERENCE_PRIOR = np\.array\(\[([\s\S]*?)\]\)/);
   if (!m) throw new Error("Cannot find the frozen preference mean matrix");
-  const matrix = JSON.parse("[" + m[1] + "]");
+  const matrix = JSON.parse("[" + m[1].replace(/,\\s*$/, "") + "]");
   if (matrix.length !== 5 || !matrix.every((row) => row.length === 5))
     throw new Error("Unexpected preference mean matrix size");
   for (let i = 0; i < 5; i++) {
