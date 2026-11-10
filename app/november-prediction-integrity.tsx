@@ -63,7 +63,7 @@ export function NovemberPollingEvidence() {
         </div>}
         {wave.id.startsWith("resolve-") && <p className="november-evidence-warning">Fieldwork end disputed: 5 or 7 November. The Victorian sample is not an additional independent sample from the associated federal survey.</p>}
         {wave.id.startsWith("demosau-") && <p className="november-evidence-warning">The remaining 11 points are an arithmetic residual, not a separately verified published Others figure. November effective sample size is unknown.</p>}
-        {wave.id.startsWith("lighthouse-") && <p className="november-evidence-warning">Rolling two-week tracking design. Separate waves must not be assumed independent.</p>}
+        {wave.id.startsWith("lighthouse-") && <p className="november-evidence-warning">Rolling two-week tracker; adjacent waves are dependent. A News Corp account gives Labor 22%, One Nation 23%, while an early Poll Bludger summary reversed those two figures. The disagreement is retained in the source record.</p>}
         {wave.id.startsWith("pakenham-") && <p className="november-evidence-warning">The published 50–50 two-candidate comparison is modelled using assumed preference flows, not a measured final count or a seat-win probability.</p>}
         <p className="november-evidence-status">Evidence: under review · canonical model: not admitted at the 11 November assessment</p>
         <a href={wave.sourceUrl} rel="noreferrer" target="_blank">Open supporting publication</a>

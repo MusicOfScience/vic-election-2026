@@ -90,9 +90,9 @@
       "reportedSampleSize": 1289,
       "effectiveSampleSize": null,
       "reportedPrimaries": {
-        "alp": 23,
+        "alp": 22,
         "coalition": 31,
-        "onp": 22,
+        "onp": 23,
         "greens": 14
       },
       "reportedTwoPartyPreferred": null,
@@ -101,13 +101,23 @@
         "status": "computed-residual"
       },
       "publicationDate": "2026-11-06",
-      "publicationTier": "independent-contemporaneous-coverage",
-      "sourceUrl": "https://www.pollbludger.net/2026/11/06/victorian-election-minus-three-weeks-2/",
+      "publicationTier": "contested-contemporary-reporting-first-party-publisher-article-corroborates-22-Labor-23-ONP",
+      "sourceUrl": "https://www.news.com.au/national/victoria/politics/new-victorian-poll-casts-more-doubt-for-labor-just-three-weeks-before-the-election/news-story/fb9f9df18a632a59d797a0a094a89c83",
       "primaryPollsterMethodology": "not-captured",
       "primaryPublicationCaptured": false,
-      "nonOverlapClaim": "Media reports this as a weekly tracking poll published as a two-week rolling average. Subsequent Lighthouse waves cannot be treated as independent.",
+      "nonOverlapClaim": "Tracking reports are stated to be rolling two-week averages, and adjacent waves share sample windows. Do not assume independence.",
       "modelEligibility": "hold",
-      "reason": "Rolling-wave sampling overlap and non-primary method documentation; alternative summaries misidentify Labor and One Nation, so retain independently corroborated 23/22 rather than silently normalise."
+      "reason": "Hold: poll's full primary tables, publication and rolling-wave sample design remain unverified. Evidence hierarchy supports Labor 22/ONP 23 over the 6 Nov Poll Bludger 23/22 transcription, but full first-party report is not captured. Do not pool rolling waves.",
+      "corroborationUrl": "https://acestrategies.au/victoria-election-2026/polls/",
+      "contradictoryReport": {
+        "sourceUrl": "https://www.pollbludger.net/2026/11/06/victorian-election-minus-three-weeks-2/",
+        "printedPrimaries": {
+          "alp": 23,
+          "onp": 22
+        },
+        "contemporaneousReaderCorrectionUrl": "https://www.pollbludger.net/2026/11/06/victorian-election-minus-three-weeks-2/comment-page-1/",
+        "provenance": "Poll Bludger's own 6 November page reverses the ALP/ONP figures relative to News Corp reporting, and a reader specifically flagged the swap that morning. Preserve both accounts; do not silently erase the discrepancy."
+      }
     },
     {
       "id": "pakenham-2026-11-04-08-demosau-primary",
