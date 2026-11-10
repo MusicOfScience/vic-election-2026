@@ -141,7 +141,11 @@ export function SeatIntegrityEvidence() {
         <p>In the model’s fixed preference prior, an eliminated Coalition family allocates 51% of its starting transfer weights to One Nation and 26% to Labor. Conditional on a final pair consisting only of One Nation and Labor, this renormalises to roughly <strong>66% for One Nation</strong>. That is model arithmetic, not a measured 2026 voter preference flow. Concentration 72 limits dispersion, and independent historical testing found that this level of confidence is questionable.</p>
       </article>
       <article>
-        <h4>3 · One local observation challenges Pakenham</h4>
+        <h4>3 · The One Nation geographical limit has an exception</h4>
+        <p>The model configuration lists a One Nation local log-odds bound of ±0.45, but the calculation later overrides it with an AEC-derived One Nation geographical pattern capped at −1.20 to +1.10. The higher effective positive bound permits a relative-odds multiplier of about 3.0, versus 1.57 under ±0.45. This is a code-level observation, <strong>not proof of a programming error</strong>. The reference model has not been altered.</p>
+      </article>
+      <article>
+        <h4>4 · One local observation challenges Pakenham</h4>
         <p>The October model gives Pakenham One Nation {pakenhamModel ? pp(pakenhamModel.primary_onp) : fallback} primary and {pakenhamModel ? pct(pakenhamModel.win_onp) : fallback} winning frequency. A separately published 4–8 November electorate survey reports {pakenhamPoll}% One Nation primary, about <strong>{gap.toFixed(1)} percentage points higher</strong> than the older model’s primary estimate. Its effective sample is {overlapUnknown}; its two-candidate result uses assumed transfers. This is a useful diagnostic discrepancy, <strong>not</strong> an independent calibration test or authorised forecast refresh.</p>
         <a href={pakenham?.sourceUrl ?? "https://demosau.com/"} rel="noreferrer" target="_blank">Read the Pakenham electorate poll</a>
       </article>
