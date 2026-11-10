@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "status": "source-verified-display-review-only",
+  "checkedAt": "2026-11-10T14:28:34.034294+00:00",
+  "sourceAuthority": "Victorian Electoral Commission",
+  "candidateWorkbookSha256": "f5c9505d01abb39bfd4e20cd389c6adea2e524a26423c7c82a51084e21d95c16",
+  "candidateRosterSha256": "088b83fa37f5cd9686490f27fb92b29e53129c80f372d3804ce9b6789f9e5314",
+  "sourcePagePattern": "https://www.vec.vic.gov.au/electoral-boundaries/state-regions/{slug}-region/nominations",
+  "candidateCount": 303,
+  "letteredGroupCount": 99,
+  "ungroupedCandidateCount": 5,
+  "privateContactFieldsIncluded": false,
+  "candidateRegistryPromoted": false,
+  "forecastInputsChanged": false,
+  "groupVotingTicketsPresent": false,
+  "pages": {
+    "Eastern Victoria": {
+      "sha256": "adbd5dcd5ff7212787d630d336621fa588d9ba016c283b2a3df4e5fbbd10e575",
+      "groups": [
+        [
+          "A",
+          "Victorian Socialists",
+          2
+        ],
+        [
+          "B",
+          "One Nation Victoria",
+          3
+        ],
+        [
+          "C",
+          "Liberal / The Nationals",
+          5
+        ],
+        [
+          "D",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "E",
+          "Labour DLP",
+          2
+        ],
+        [
+          "F",
+          "Animal Justice Party",
+          2
+        ],
+        [
+          "G",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "H",
+          "Affordable Housing Now – Sustainable Australia Party",
+          2
+        ],
+        [
+          "I",
+          "Shooters, Fishers and Farmers Party Victoria",
+          2
+        ],
+        [
+          "J",
+          "Unnamed-1",
+          2
+        ],
+        [
+          "K",
+          "The Greens",
+          5
+        ]
+      ]
+    },
+    "North-Eastern Metropolitan": {
+      "sha256": "5f257f01605865c2c5d9ed7829b9ef9f05bccfdc071acee08d9b26455ac68171",
+      "groups": [
+        [
+          "A",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "B",
+          "Victorian Socialists",
+          2
+        ],
+        [
+          "C",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "D",
+          "Affordable Housing Now – Sustainable Australia Party",
+          3
+        ],
+        [
+          "E",
+          "Labour DLP",
+          5
+        ],
+        [
+          "F",
+          "Family First",
+          2
+        ],
+        [
+          "G",
+          "One Nation Victoria",
+          3
+        ],
+        [
+          "H",
+          "Liberal",
+          5
+        ],
+        [
+          "I",
+          "Libertarian (formerly Liberal Democrats)",
+          2
+        ],
+        [
+          "J",
+          "Unnamed-1",
+          2
+        ],
+        [
+          "K",
+          "The Greens",
+          5
+        ],
+        [
+          "L",
+          "Australian Democrats",
+          2
+        ]
+      ]
+    },
+    "Northern Metropolitan": {
+      "sha256": "9feef526be3a39c0291616fdc725d1e4a432281942abea2eac84085b5618ea4e",
+      "groups": [
+        [
+          "A",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "B",
+          "Unnamed-1",
+          2
+        ],
+        [
+          "C",
+          "Liberal",
+          5
+        ],
+        [
+          "D",
+          "The Greens",
+          5
+        ],
+        [
+          "E",
+          "One Nation Victoria",
+          2
+        ],
+        [
+          "F",
+          "Affordable Housing Now – Sustainable Australia Party",
+          3
+        ],
+        [
+          "G",
+          "Socialist Alliance",
+          3
+        ],
+        [
+          "H",
+          "Labour DLP",
+          2
+        ],
+        [
+          "I",
+          "Australian Democrats",
+          2
+        ],
+        [
+          "J",
+          "Unnamed-2",
+          4
+        ],
+        [
+          "K",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "L",
+          "Victorian Socialists",
+          5
+        ],
+        [
+          "M",
+          "Family First",
+          2
+        ],
+        [
+          "Ungrouped",
+          "Ungrouped",
+          1
+        ]
+      ]
+    },
+    "Northern Victoria": {
+      "sha256": "33435a62697d59783eb24ec376d32ee4f153b21818984a3c4dd2ba04f72ba26d",
+      "groups": [
+        [
+          "A",
+          "Citizens Party",
+          2
+        ],
+        [
+          "B",
+          "Unnamed-1",
+          2
+        ],
+        [
+          "C",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "D",
+          "Family First",
+          2
+        ],
+        [
+          "E",
+          "Shooters, Fishers and Farmers Party Victoria",
+          2
+        ],
+        [
+          "F",
+          "Labour DLP",
+          2
+        ],
+        [
+          "G",
+          "Affordable Housing Now – Sustainable Australia Party",
+          2
+        ],
+        [
+          "H",
+          "One Nation Victoria",
+          3
+        ],
+        [
+          "I",
+          "Animal Justice Party",
+          2
+        ],
+        [
+          "J",
+          "Liberal / The Nationals",
+          5
+        ],
+        [
+          "K",
+          "The Greens",
+          5
+        ],
+        [
+          "L",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "M",
+          "Victorian Socialists",
+          2
+        ],
+        [
+          "Ungrouped",
+          "Ungrouped",
+          1
+        ]
+      ]
+    },
+    "South-Eastern Metropolitan": {
+      "sha256": "158c62e5ebd63917fc399726eae00094062f19594b4efa07d4c91ba4c35a6c90",
+      "groups": [
+        [
+          "A",
+          "One Nation Victoria",
+          3
+        ],
+        [
+          "B",
+          "Christian Alliance Party - Reform AU",
+          2
+        ],
+        [
+          "C",
+          "Citizens Party",
+          2
+        ],
+        [
+          "D",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "E",
+          "Victorian Socialists",
+          2
+        ],
+        [
+          "F",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "G",
+          "Affordable Housing Now – Sustainable Australia Party",
+          2
+        ],
+        [
+          "H",
+          "The Greens",
+          5
+        ],
+        [
+          "I",
+          "Libertarian (formerly Liberal Democrats)",
+          2
+        ],
+        [
+          "J",
+          "Australian Democrats",
+          2
+        ],
+        [
+          "K",
+          "Liberal",
+          5
+        ],
+        [
+          "L",
+          "Labour DLP",
+          2
+        ],
+        [
+          "Ungrouped",
+          "Ungrouped",
+          1
+        ]
+      ]
+    },
+    "Southern Metropolitan": {
+      "sha256": "ea333ac1f0e53ea54c8fe83e3a8cef7bdd81b5c3174e827a0a27659417f53438",
+      "groups": [
+        [
+          "A",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "B",
+          "Australian Democrats",
+          2
+        ],
+        [
+          "C",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "D",
+          "One Nation Victoria",
+          2
+        ],
+        [
+          "E",
+          "Family First",
+          2
+        ],
+        [
+          "F",
+          "Liberal",
+          5
+        ],
+        [
+          "G",
+          "Victorian Socialists",
+          2
+        ],
+        [
+          "H",
+          "Affordable Housing Now – Sustainable Australia Party",
+          2
+        ],
+        [
+          "I",
+          "Labour DLP",
+          2
+        ],
+        [
+          "J",
+          "Unnamed-1",
+          2
+        ],
+        [
+          "K",
+          "The Greens",
+          5
+        ]
+      ]
+    },
+    "Western Metropolitan": {
+      "sha256": "688a63e33402892491c46dac746b11d1a6fac02ce77254ddc79142ed8e12684b",
+      "groups": [
+        [
+          "A",
+          "Labour DLP",
+          2
+        ],
+        [
+          "B",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "C",
+          "Liberal",
+          5
+        ],
+        [
+          "D",
+          "Victorian Socialists",
+          5
+        ],
+        [
+          "E",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "F",
+          "Australian Democrats",
+          2
+        ],
+        [
+          "G",
+          "Affordable Housing Now – Sustainable Australia Party",
+          2
+        ],
+        [
+          "H",
+          "Family First",
+          5
+        ],
+        [
+          "I",
+          "The Greens",
+          5
+        ],
+        [
+          "J",
+          "The Republican",
+          4
+        ],
+        [
+          "K",
+          "One Nation Victoria",
+          2
+        ],
+        [
+          "L",
+          "The West Party",
+          3
+        ],
+        [
+          "Ungrouped",
+          "Ungrouped",
+          1
+        ]
+      ]
+    },
+    "Western Victoria": {
+      "sha256": "2d2b24742ae8e695bef8c4662303d676aafddf32406dfc38a98d77fb44ba11e4",
+      "groups": [
+        [
+          "A",
+          "The Greens",
+          5
+        ],
+        [
+          "B",
+          "Affordable Housing Now – Sustainable Australia Party",
+          2
+        ],
+        [
+          "C",
+          "Australian Labor Party",
+          5
+        ],
+        [
+          "D",
+          "Legalise Cannabis Victoria",
+          2
+        ],
+        [
+          "E",
+          "Australian Democrats",
+          2
+        ],
+        [
+          "F",
+          "Liberal / The Nationals",
+          5
+        ],
+        [
+          "G",
+          "Victorian Socialists",
+          2
+        ],
+        [
+          "H",
+          "Unnamed-1",
+          2
+        ],
+        [
+          "I",
+          "Libertarian (formerly Liberal Democrats)",
+          2
+        ],
+        [
+          "J",
+          "Socialist Alliance",
+          3
+        ],
+        [
+          "K",
+          "One Nation Victoria",
+          3
+        ],
+        [
+          "L",
+          "Labour DLP",
+          2
+        ],
+        [
+          "M",
+          "Shooters, Fishers and Farmers Party Victoria",
+          2
+        ],
+        [
+          "N",
+          "Family First",
+          4
+        ],
+        [
+          "O",
+          "The Republican",
+          2
+        ],
+        [
+          "Ungrouped",
+          "Ungrouped",
+          1
+        ]
+      ]
+    }
+  },
+  "sourceLimitations": "Workbook source row order and eight VEC final group pages independently reconciled on 11 November. Snapshot not guaranteed to reflect later VEC corrections; no preference transfers or group voting tickets inferred."
+}
