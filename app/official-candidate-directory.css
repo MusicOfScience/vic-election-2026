@@ -1,0 +1,50 @@
+.official-roster-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;padding:30px 32px;background:linear-gradient(120deg,#11263b,#244b61);color:#fff}
+.official-roster-hero h2{font:500 clamp(29px,3.8vw,47px)/1.06 Georgia,serif;letter-spacing:-.025em;margin:0 0 12px}
+.official-roster-hero p:last-child{font-size:13px;line-height:1.65;max-width:760px;color:#d5e1e6;margin:0}
+.official-roster-source{display:inline-flex;align-items:center;gap:8px;font-size:12px;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:11px 13px;white-space:nowrap}
+.official-roster-source:hover{border-color:#fff;background:rgba(255,255,255,.07)}
+.official-roster-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);background:var(--white)}
+.official-roster-totals article{display:grid;gap:8px;padding:19px 21px;border-right:1px solid var(--line)}
+.official-roster-totals article:last-child{border-right:0}
+.official-roster-totals strong{font:500 33px Georgia,serif}
+.official-roster-totals span{font-size:11px;color:var(--muted-ink);line-height:1.4}
+.official-roster-search{padding:22px 24px}
+.official-roster-form{display:grid;grid-template-columns:1.2fr 1.5fr 1fr;gap:18px;align-items:end}
+.official-roster-form label,.official-roster-house{min-width:0}
+.official-roster-house{margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:10px}
+.official-roster-house legend,.official-roster-query>span:first-child,.official-roster-select>span:first-child{display:block;margin-bottom:9px;font-size:11px;font-weight:700;color:var(--ink)}
+.official-roster-house label{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:12px}
+.official-roster-house input{accent-color:var(--ink);width:15px;height:15px}
+.official-roster-query,.official-roster-select{display:grid;gap:0}
+.official-roster-input{display:flex;align-items:center;gap:8px;border:1px solid var(--line);min-height:42px;padding:0 11px}
+.official-roster-input input{border:0;background:transparent;color:var(--ink);outline:none;width:100%;font-size:12px;min-width:0}
+.official-roster-input:focus-within{outline:2px solid var(--orange);outline-offset:1px}
+.official-roster-select select{border:1px solid var(--line);background:var(--white);color:var(--ink);padding:11px;font-size:12px;width:100%;min-width:0;min-height:42px}
+.official-roster-results{color:var(--muted-ink);border-top:1px solid var(--line);margin-top:18px;padding-top:13px;font-size:12px}
+.official-roster-contests{display:grid;gap:9px}
+.official-roster-contest summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:16px;min-height:77px;padding:17px 20px}
+.official-roster-contest summary::-webkit-details-marker{display:none}
+.official-roster-contest[open] summary{border-bottom:1px solid var(--line)}
+.official-roster-contest-name{display:grid;gap:5px;flex:1;min-width:0}
+.official-roster-contest-name strong{font:500 21px Georgia,serif}
+.official-roster-contest-name small{font-size:11px;color:var(--muted-ink)}
+.official-roster-count{white-space:nowrap;font-size:12px;font-weight:700}
+.official-roster-chevron{width:24px;height:24px;font-size:22px;font-weight:300;color:var(--muted-ink);text-align:center}
+.official-roster-contest[open] .official-roster-chevron{transform:rotate(45deg)}
+.official-roster-candidates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;padding:12px 20px}
+.official-roster-candidate{display:flex;align-items:baseline;gap:13px;min-width:0;border-bottom:1px solid #e4e6e0;padding:12px 0}
+.official-roster-position{font:600 12px ui-monospace,monospace;min-width:20px;color:var(--muted-ink)}
+.official-roster-candidate>div{min-width:0;display:grid;gap:4px}
+.official-roster-candidate strong{font-size:13px;font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+.official-roster-candidate div span{font-size:11px;color:var(--muted-ink);line-height:1.45}
+.official-roster-unaffiliated{font-style:italic}
+.official-roster-disclaimer{margin:0;padding:14px 20px;background:#f3f2eb;color:var(--muted-ink);font-size:11px;line-height:1.6}
+.official-roster-empty{padding:30px 20px;background:var(--white);border:1px solid var(--line)}
+.official-roster-caveats{padding:24px 26px;display:grid;gap:12px}
+.official-roster-caveats>div:first-child{display:flex;gap:10px;align-items:center}
+.official-roster-caveats h3{font:500 21px Georgia,serif;margin:0}
+.official-roster-caveats p{font-size:12px;line-height:1.65;color:var(--ink-soft);margin:0}
+.official-roster-checks{display:flex;gap:9px;align-items:flex-start;padding-top:13px;border-top:1px solid var(--line);font-size:11px;font-weight:700;color:var(--ink)}
+@media(max-width:920px){.official-roster-form{grid-template-columns:1fr 1fr}.official-roster-house{grid-column:1 / -1}.official-roster-hero{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){.official-roster-hero{padding:25px 19px}.official-roster-totals article{padding:12px}.official-roster-totals strong{font-size:25px}.official-roster-totals span{font-size:10px}.official-roster-form{grid-template-columns:1fr}.official-roster-house{grid-column:1}.official-roster-house{flex-direction:row;flex-wrap:wrap;gap:12px}.official-roster-house legend{width:100%}.official-roster-candidates{grid-template-columns:1fr;padding:8px 15px}.official-roster-contest summary{padding:15px;gap:9px}.official-roster-contest-name strong{font-size:18px}.official-roster-count{font-size:11px}.official-roster-search{padding:17px}.official-roster-caveats{padding:19px 17px}}
+@media print{.official-roster-form,.official-roster-chevron{display:none}.official-roster-hero{background:#fff;color:#111}.official-roster-hero p:last-child{color:#222}.official-roster-contest{break-inside:avoid-page}}
