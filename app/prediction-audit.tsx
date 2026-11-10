@@ -101,7 +101,7 @@ export function PredictionAudit() {
             <small>Top-party model frequency</small>
           </li>)}
         </ol>
-        <p className="prediction-audit-caption">Ranking is based only on each district's leading-party win frequency, not observed electoral volatility, uncertainty in the input polls, or an independent judgement of ballot composition.</p>
+        <p className="prediction-audit-caption">Ranking is based only on each district&apos;s leading-party win frequency, not observed electoral volatility, uncertainty in the input polls, or an independent judgement of ballot composition.</p>
       </div>
     </div>
     <div className="prediction-audit-method">
