@@ -168,11 +168,15 @@ def main():
     ap.add_argument("--file", required=True)
     ap.add_argument("--receipt", required=True)
     ap.add_argument("--registry", required=True)
+    ap.add_argument("--audit", required=True)
     ap.add_argument("--output", required=True)
     args = ap.parse_args()
     raw = Path(args.file).read_bytes()
     receipt = json.loads(Path(args.receipt).read_text())
     digest = hashlib.sha256(raw).hexdigest()
+    audit = json.loads(Path(args.audit).read_text())
+    if (audit.get("sourceSha256") != digest or audit.get("sourceSizeBytes") != len(raw)):
+        raise ValueError("Current VEC carrier does not match independently reviewed 10 November source audit")
     if (receipt.get("sourceFormat") != "xls"
             or receipt.get("captureStatus") != "REVIEW_REQUIRED"
             or receipt.get("sourceFileSha256") != digest):
