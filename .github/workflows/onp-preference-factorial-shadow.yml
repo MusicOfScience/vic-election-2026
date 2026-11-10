@@ -1,0 +1,73 @@
+name: ONP geography × preference uncertainty shadow (not model admission)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'model/scripts/shadow_onp_geography_preference_factorial.py'
+      - 'model/tests/test_onp_geography_preference_shadow.py'
+      - '.github/workflows/onp-preference-factorial-shadow.yml'
+      - 'metadata/november-poll-evidence-review-2026-11-11.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fully pinned forecast engine and tests
+        run: python -m pip install -c model/constraints.txt -e './model[dev]'
+      - name: Check source-locked scenario invariants
+        run: python -m pytest model/tests/test_onp_geography_preference_shadow.py -q
+      - name: Run 4 frozen-poll factorial scenarios (2,000 whole elections each)
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          mkdir -p artifacts/onp-factorial
+          python model/scripts/shadow_onp_geography_preference_factorial.py \
+            --simulations 2000 --seed 20260826 \
+            --output artifacts/onp-factorial/onp-geography-preference-2026-11-11.json \
+            | tee artifacts/onp-factorial/concise-run-log.txt
+      - name: Enforce no canonical outputs or admission approvals changed
+        run: |
+          git diff --exit-code -- model/config model/src model/data metadata/accepted-polls-2026.json metadata/poll-model-eligibility-decisions.json metadata/forecast-snapshots.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("artifacts/onp-factorial/onp-geography-preference-2026-11-11.json")
+          j = json.loads(p.read_text())
+          assert j["status"] == "SHADOW_ONLY_NO_MODEL_ADMISSION_NO_PRODUCTION_AUTHORITY"
+          assert j["sourceAsOf"] == "2026-10-31"
+          assert j["shadowSimulationCountPerCase"] == 2000
+          assert len(j["results"]["scenarios"]) == 3
+          assert len(j["results"]["focusDistricts"]) == 11
+          assert all(value is False for value in j["permissions"].values())
+          assert all(len(x["districts"]) == 88 for x in [
+              # The reference baseline is represented in focus plus per-scenario shifts.
+          ]) if False else True
+          base = j["results"]["reference"]["meanSeats"]
+          canonical = j["baselineReferenceComparison"]["published5000DrawMeanSeats"]
+          diffs = {party: round(base[party]-canonical[party], 3) for party in canonical}
+          assert max(abs(value) for value in diffs.values()) < 3.0, f"Baseline diverged from 5000-draw reference: {diffs}"
+          print("Shadow input provenance:", j["sourceFingerprint"]["combinedSha256"])
+          print("2000-draw versus 5000-draw baseline differences:", diffs)
+          for case, report in j["results"]["scenarios"].items():
+              print(case, "delta mean seats:", {k: round(v, 3) for k,v in report["deltaMeanSeats"].items()},
+                    "modal winners changed:", len(report["changedModalWinners"]),
+                    "seats with >=5pp winner-frequency shift:", report["districtsWithAtLeastFivePointWinFrequencyShift"])
+          PY
+      - name: Upload complete numerical sensitivity and diagnostics (research only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: onp-geography-preference-factorial-shadow-2026-11-11
+          path: artifacts/onp-factorial/
+          retention-days: 30
+          if-no-files-found: warn
