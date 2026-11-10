@@ -30,6 +30,21 @@ jobs:
           else
             node scripts/capture-vec-nominations.mjs --output vec-nominations-capture
           fi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned legacy XLS reader for review-only extraction
+        run: python -m pip install 'xlrd==2.0.1'
+      - name: Derive privacy-minimised 1,037-candidate review packet
+        run: |
+          python scripts/extract_vec_nominations.py \
+            --file vec-nominations-capture/vec-2026-candidates-raw.xls \
+            --receipt vec-nominations-capture/capture-receipt.json \
+            --registry metadata/candidates-2026.json \
+            --output vec-nominations-capture/review
+      - name: Show candidate review totals, without contacts
+        if: success()
+        run: cat vec-nominations-capture/review/summary.json >> "$GITHUB_STEP_SUMMARY"
       - name: Display evidence-only receipt
         if: always()
         shell: bash
@@ -45,5 +60,13 @@ jobs:
         with:
           name: vec-nominations-review-only
           path: vec-nominations-capture/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Upload privacy-minimised roster and reconciliation review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vec-nominations-candidate-review-only
+          path: vec-nominations-capture/review/
           retention-days: 30
           if-no-files-found: warn
