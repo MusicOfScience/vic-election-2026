@@ -6,6 +6,7 @@ import "./evidence-freshness-status.css";
 import "./poll-review-dossier.css";
 import "./candidate-review-dossier.css";
 import "./prediction-audit.css";
+import "./november-prediction-integrity.css";
 import "./official-candidate-directory.css";
 import "./print.css";
 import { PartyVisualKey } from "./party-visual-key";
