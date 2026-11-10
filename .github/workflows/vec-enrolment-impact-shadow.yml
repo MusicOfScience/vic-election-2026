@@ -35,6 +35,7 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
+          mkdir -p artifacts/vec-november-impact
           python model/scripts/shadow_vec_november_enrolment.py \
             --review-dir artifacts/vec-november-source \
             --output artifacts/vec-november-impact/forecast-impact-review.json \
