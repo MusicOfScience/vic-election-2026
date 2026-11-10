@@ -42,7 +42,7 @@ class CouncilGroupTests(unittest.TestCase):
             ["A", "A", "B", "B", "Ungrouped"])
         self.assertEqual([x["withinGroupOrdinal"] for x in result["candidates"]],
             [1, 2, 1, 2, 1])
-        self.assertEqual(result["groups"][1]["label"], "unnamed-1")
+        self.assertEqual(result["groups"][1]["label"], "Unnamed-1")
         self.assertFalse(any("phone" in str(x) or "email" in str(x)
                              for x in result["candidates"]))
 
