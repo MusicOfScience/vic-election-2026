@@ -198,11 +198,11 @@ test("renders the governed candidate review dossier without implying nomination"
   );
   const html = renderToStaticMarkup(React.createElement(CandidateReviewDossier));
 
-  assert.match(html, /194 candidate records now cover all 88 Assembly districts/i);
+  assert.match(html, /305 provisional candidate records previously reviewed/i);
   assert.match(html, /Approval recorded/i);
   assert.match(html, /88\/88/);
   assert.match(html, /Assembly coverage is complete/i);
-  assert.match(html, /does not make a candidate VEC-nominated/i);
+  assert.match(html, /separate from the VEC’s 1,037 official candidates/i);
 });
 
 test("generates the public poll series from the canonical model registry", async () => {
