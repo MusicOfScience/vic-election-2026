@@ -5,6 +5,7 @@ import "./analyst-evidence.css";
 import "./evidence-freshness-status.css";
 import "./poll-review-dossier.css";
 import "./candidate-review-dossier.css";
+import "./prediction-audit.css";
 import "./print.css";
 import { PartyVisualKey } from "./party-visual-key";
 import { AnalystEvidenceGuide } from "./analyst-evidence-guide";
