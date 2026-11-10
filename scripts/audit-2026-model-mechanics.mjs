@@ -129,7 +129,18 @@ export function buildSeatIntegrityAudit(root = ROOT) {
   if (districtRows.length !== 88 || roster.rows.length !== 1037 || chamber.length !== 5) {
     throw new Error("District, chamber or official source universe incomplete");
   }
-  const matrix = preferencePriorFromSource(contents.source.toString("utf8"));
+  const engineSource = contents.source.toString("utf8");
+  const matrix = preferencePriorFromSource(engineSource);
+  const assemblyYml = config.split(/^assembly:\s*$/m)[1]?.split(/^council:\s*$/m)[0];
+  const configuredOnpBound = Number(assemblyYml?.match(/^\s+ONP:\s*([0-9.]+)/m)?.[1]);
+  const sourceClipAt = engineSource.indexOf("local_pattern = np.clip(local_pattern, -local_limits, local_limits)");
+  const specialOnpOverrideAt = engineSource.indexOf("local_pattern[:, 2] = districts.onp_local_log.to_numpy(float)");
+  const sourceBound = engineSource.match(/pivot\["onp_local_log"\]\s*=\s*np\.clip\([^;\n]+,\s*(-[0-9.]+),\s*([0-9.]+)\)/);
+  if (!Number.isFinite(configuredOnpBound) || sourceClipAt < 0 ||
+      specialOnpOverrideAt < 0 || !sourceBound) {
+    throw new Error("ONP geographical locality implementation has changed; re-audit the assumptions");
+  }
+  const onpLocalOverrideBypassesConfiguredLimit = specialOnpOverrideAt > sourceClipAt;
   const names = new Map();
   for (const [chamber, contest, _ordinal, candidate, rpp] of roster.rows) {
     if (chamber !== "Assembly") continue;
@@ -203,6 +214,15 @@ export function buildSeatIntegrityAudit(root = ROOT) {
     },
     candidateAvailability: { allFiveFamilyRepresentativesPerSeat: missingFamilyNominees.length === 0,
       interpretation: "A family having nominated candidates is a necessary condition only; it does not validate model family-level vote share or independence from other nominees." },
+    onpGeographicPropensityControl: {
+      configuredLocalLogitBound: configuredOnpBound,
+      aecAuxiliaryLowerBound: Number(sourceBound[1]),
+      aecAuxiliaryUpperBound: Number(sourceBound[2]),
+      specialONPOverrideFollowsGenericBoundClip: onpLocalOverrideBypassesConfiguredLimit,
+      maximumPositiveOddsMultiplierFromSpecialAuxiliary: Math.exp(Number(sourceBound[2])),
+      maximumPositiveOddsMultiplierIfGenericBoundApplied: Math.exp(configuredOnpBound),
+      caveat: "Source-code ordering shows the 2022 AEC ONP local-log propensity replaces the generic family-limited ONP value after clipping. This may be an intentional special-case assumption or a stale config contract; it is NOT authority to silently retune the registered 2026 forecast."
+    },
     derivedConditionalPreferenceRatios: {
       "coalitionExclusionToOnpWhenOnlyOnpVsAlp": matrix[1][2] / (matrix[1][2] + matrix[1][0]),
       "laborExclusionToCoalitionWhenOnlyCoalitionVsOther": matrix[0][1] / (matrix[0][1] + matrix[0][4]),
@@ -235,6 +255,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     referenceAsOf:result.referenceAsOf,
     counts:result.counts,
     pakenhamIndependentDiagnostic:result.pakenhamIndependentDiagnostic,
+    onpGeographicPropensityControl:result.onpGeographicPropensityControl,
     conditionalPreferenceRatios:result.derivedConditionalPreferenceRatios,
     focusSeats:result.focusSeats.map(s=>({seat:s.seat,flags:s.flags}))
   },null,2));
