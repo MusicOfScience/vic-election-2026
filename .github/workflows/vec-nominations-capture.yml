@@ -31,11 +31,19 @@ jobs:
             node scripts/capture-vec-nominations.mjs --output vec-nominations-capture
           fi
       - name: Display evidence-only receipt
-        run: cat vec-nominations-capture/capture-receipt.json >> "$GITHUB_STEP_SUMMARY"
-      - name: Upload immutable-by-hash review carrier (not admitted)
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f vec-nominations-capture/capture-receipt.json ]]; then
+            cat vec-nominations-capture/capture-receipt.json >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No carrier receipt produced; inspect the acquisition error." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload raw review carrier and failure diagnostics (never model-admitted)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: vec-nominations-review-only
           path: vec-nominations-capture/
           retention-days: 30
-          if-no-files-found: error
+          if-no-files-found: warn

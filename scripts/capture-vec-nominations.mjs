@@ -59,17 +59,37 @@ export function findCandidateSpreadsheet(html, landingUrl = VEC_LANDING) {
 export function determineCarrierFormat(bytes, type = '') {
   const data = Buffer.from(bytes);
   if (data.length === 0 || data.length > MAX_BYTES) throw new Error('Empty/oversized candidate carrier');
+  // Legacy Excel 97–2003 uses the OLE compound-file header, not a ZIP header.
+  const oleHeader = Buffer.from([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1]);
+  if (data.subarray(0, 8).equals(oleHeader)) return 'xls';
   if (data.subarray(0, 4).equals(Buffer.from([0x50, 0x4b, 0x03, 0x04]))) return 'xlsx';
-  if (data.subarray(0, 8).toString('utf8').startsWith('<!DOCTYPE') ||
-      /^\s*<(?:html|!doctype)/i.test(data.subarray(0, 200).toString('utf8'))) {
-    throw new Error('VEC candidate link returned HTML, not candidate data');
-  }
   if (/pdf/i.test(type) || data.subarray(0, 4).toString('ascii') === '%PDF') {
     throw new Error('Unexpected PDF instead of candidate spreadsheet');
   }
-  const text = data.toString('utf8');
-  if (!text.includes('\ufffd') && /[,\t]/.test(text.split(/\r?\n/, 1)[0]) &&
-      text.split(/\r?\n/).length > 2) return 'csv';
+
+  // Some VEC/Excel exports are UTF-16 TSV/CSV or 2003 SpreadsheetML XML.
+  let text;
+  if (data[0] === 0xff && data[1] === 0xfe) {
+    text = data.subarray(2).toString('utf16le');
+  } else if (data[0] === 0xfe && data[1] === 0xff) {
+    const swapped = Buffer.from(data.subarray(2));
+    if (swapped.length % 2) throw new Error('Invalid UTF-16 candidate carrier');
+    swapped.swap16();
+    text = swapped.toString('utf16le');
+  } else {
+    text = data.toString('utf8').replace(/^\uFEFF/, '');
+  }
+  if (/^\s*(?:<!doctype\s+html|<html\b)/i.test(text.slice(0, 4096))) {
+    throw new Error('VEC candidate link returned HTML, not candidate data');
+  }
+  if (/^\s*<\?xml\b/i.test(text) &&
+      /urn:schemas-microsoft-com:office:spreadsheet/i.test(text.slice(0, 8192)) &&
+      /<([A-Za-z0-9_-]+:)?Workbook\b/.test(text.slice(0, 8192))) {
+    return 'xml';
+  }
+  const lines = text.split(/\r\n|\n|\r/).filter((line) => line.trim());
+  if (lines.length >= 2 && !text.includes('\ufffd') && !text.includes('\0') &&
+      /[,;\t]/.test(lines[0]) && /[,;\t]/.test(lines[1])) return 'csv';
   throw new Error('Unrecognised spreadsheet carrier; do not admit uninspected data');
 }
 async function getVec(url) {
@@ -114,8 +134,16 @@ async function main() {
   const fileUrl = suppliedFileUrl || findCandidateSpreadsheet(page.bytes.toString('utf8'), page.url);
   if (!isVecUrl(fileUrl)) throw new Error('Workbook URL is not VEC HTTPS');
   const workbook = await getVec(fileUrl);
-  const format = determineCarrierFormat(workbook.bytes, workbook.type);
-  const filename = 'vec-2026-candidates-raw.' + format;
+  // A rejected carrier must leave a diagnostic receipt and byte-exact file.
+  // File-format acceptance is not workbook parsing or candidate admission.
+  let format = null;
+  let rejection = null;
+  try {
+    format = determineCarrierFormat(workbook.bytes, workbook.type);
+  } catch (error) {
+    rejection = error.message;
+  }
+  const filename = format ? 'vec-2026-candidates-raw.' + format : 'vec-2026-candidates-unrecognised.bin';
   const receipt = {
     schemaVersion: 1,
     mode: 'raw-official-carrier-capture-review-only',
@@ -129,7 +157,10 @@ async function main() {
     sourceLandingSha256: hash(page.bytes),
     sourceFileSha256: hash(workbook.bytes),
     sourceBytes: workbook.bytes.length,
-    sourceFormat: format,
+    sourceFormat: format ?? 'unrecognised',
+    captureStatus: rejection ? 'REJECTED_CARRIER_REVIEW_REQUIRED' : 'REVIEW_REQUIRED',
+    rejectionReason: rejection,
+    sourceSignatureHex: workbook.bytes.subarray(0, 16).toString('hex'),
     http: { status: workbook.status, contentType: workbook.type,
       etag: workbook.etag, lastModified: workbook.lastModified },
     file: filename,
@@ -140,7 +171,18 @@ async function main() {
   await writeFile(resolve(output, 'source-landing.html'), page.bytes, { flag: 'wx' });
   await writeFile(resolve(output, 'capture-receipt.json'), JSON.stringify(receipt, null, 2) + '\n', { flag: 'wx' });
   console.log(JSON.stringify({ receipt: resolve(output, 'capture-receipt.json'),
-    format, bytes: receipt.sourceBytes, sha256: receipt.sourceFileSha256, status: 'REVIEW_REQUIRED' }));
+    format: receipt.sourceFormat, bytes: receipt.sourceBytes, sha256: receipt.sourceFileSha256,
+    status: receipt.captureStatus }));
+  if (rejection) {
+    // No candidate is admitted. The uploaded, time-limited artifact allows
+    // precise examination without dumping private candidate records to logs.
+    console.error('Candidate carrier rejected:', rejection,
+      '| file path:', new URL(workbook.url).pathname,
+      '| HTTP content type:', workbook.type,
+      '| bytes:', workbook.bytes.length,
+      '| signature(hex):', receipt.sourceSignatureHex);
+    throw new Error('VEC source carrier requires format review; see captured diagnostic artifact');
+  }
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   main().catch(error => { console.error(error.message); process.exitCode = 1; });
