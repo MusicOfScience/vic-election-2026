@@ -33,7 +33,7 @@ REGIONS = {
     "Western Victoria": "western-victoria",
 }
 MARKER = "the groups and candidates for this region election"
-GROUP_RE = re.compile(r"(?m)^[ \t]*([A-Z])\.[ \t]+([^\n]+)[ \t]*$")
+GROUP_RE = re.compile(r"(?m)^[ \t]*([a-z])\.[ \t]+([^\n]+)[ \t]*$")
 UNGROUPED_RE = re.compile(r"(?mi)^[ \t]*(Ungrouped)[ \t]*$")
 
 
