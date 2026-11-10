@@ -49,7 +49,7 @@ def test_reject_unexpected_assembly_universe():
 
 def test_reference_registration_and_inputs_are_not_mutated():
     config, manifest = stress.load_registered_reference(ROOT)
-    assert config["as_of"] == manifest["as_of"] == "2026-10-31"
+    assert str(config["as_of"]) == manifest["as_of"] == "2026-10-31"
     assert len(stress.SCENARIOS) == 4
     assert len(set(s[0] for s in stress.SCENARIOS)) == 4
     assert all(s[2] in [4, 72] for s in stress.SCENARIOS)
@@ -73,7 +73,7 @@ def test_factorial_interaction_formula_is_exact():
         districts = []
         for d in range(88):
             districts.append({
-                "district": str(d), "region": "R", "winner": "ALP",
+                "district": stress.FOCUS[d] if d < len(stress.FOCUS) else str(d), "region": "R", "winner": "ALP",
                 "winnerFrequency": 1.0, "modalPair": "ALP–LIB_NAT",
                 "modalPairFrequency": 1.0,
                 "winningFrequencies": {p: (1 if p == "ALP" else 0) for p in stress.forecast.PARTIES},
