@@ -49,6 +49,11 @@ jobs:
       - name: Refresh public analyst discovery feed
         continue-on-error: true
         run: node scripts/build-analyst-live-feed.mjs --output app/analyst-live.generated.json
+      - name: Stamp the publicly verifiable build date and source revision
+        shell: bash
+        run: |
+          printf 'NEXT_PUBLIC_SITE_BUILD_SHA=%s\n' "$GITHUB_SHA" >> "$GITHUB_ENV"
+          printf 'NEXT_PUBLIC_SITE_BUILD_DATE=%s\n' "$(TZ=Australia/Melbourne date '+%-d %b %Y %H:%M AEDT')" >> "$GITHUB_ENV"
       - run: npx next build
         env:
           GITHUB_PAGES: "true"
