@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readdir, readFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import test, { after } from "node:test";
 import { fileURLToPath } from "node:url";
@@ -146,8 +147,26 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   assert.match(html, /majority threshold is 45 seats/);
   assert.match(html, /31 Oct 2026/);
   assert.match(html, /Experimental forecast snapshot from 31 Oct 2026/);
-  assert.match(html, /Snapshot date/);
+  assert.match(html, /Forecast snapshot/);
+  assert.match(html, /Website compiled/);
+  assert.match(html, /November polling evidence reviewed/);
+  assert.match(html, /11 Nov 2026/);
+  assert.match(html, /November poll leads not admitted/);
+  assert.match(html, /website/i);
   assert.doesNotMatch(html, /updated 26 August/);
+});
+
+test("Pages site build keeps release version distinct from frozen forecast inputs", () => {
+  const pages = readFileSync(new URL("../.github/workflows/deploy-pages.yml", import.meta.url), "utf8");
+  assert.match(pages, /Competing GitHub Pages publishers/);
+  assert.match(pages, /build_type/);
+  assert.match(pages, /"workflow"/);
+  assert.match(pages, /gh api/);
+  assert.match(pages, /NEXT_PUBLIC_SITE_BUILD_SHA/);
+  assert.match(pages, /NEXT_PUBLIC_SITE_BUILD_DATE/);
+  assert.match(pages, /GITHUB_SHA/);
+  assert.match(pages, /Australia\/Melbourne/);
+  assert.match(pages, /npx next build/);
 });
 
 test("ships a complete checksummed source-provenance registry", async () => {

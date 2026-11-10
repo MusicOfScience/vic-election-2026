@@ -1,5 +1,6 @@
 import summary from './campaign-summary.generated.json';
 import status from './campaign-status.generated.json';
+import novemberReview from '../metadata/november-poll-evidence-review-2026-11-11.json';
 import evidence from '../metadata/current-evidence-shadow-2026-10-31.json';
 import admissionSummary from './poll-admission-summary.generated.json';
 import admissionReview from './campaign-evidence.generated.json';
@@ -8,11 +9,12 @@ import './campaign-update.css';
 const date = (value: string) => new Intl.DateTimeFormat('en-AU', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Australia/Melbourne' }).format(new Date(`${value}T12:00:00+11:00`));
 
 export function CampaignNotice() {
-  return <aside className="campaign-notice" aria-label="Forecast currency">
+  const heldNovemberLeads = novemberReview.evidence.filter((wave) => wave.modelEligibility === 'hold').length;
+  return <aside className="campaign-notice" aria-label="Forecast currency and publication versions">
     <strong>{status.forecastStale ? 'Forecast inputs are out of date' : 'Experimental forecast status'}</strong>
     <p>{status.notice}</p>
-    <dl><div><dt>Included polls through</dt><dd>{date(status.latestIncludedPollFieldwork)}</dd></div><div><dt>Latest campaign evidence reviewed</dt><dd>{date(status.latestReviewedPublication)}</dd></div><div><dt>Campaign waves held</dt><dd>{status.campaignPollsAwaitingAdmission}</dd></div><div><dt>Readiness assessed {date(status.assessedAsOf)}</dt><dd>{status.readiness.summary.passedRequiredGates}/{status.readiness.summary.requiredGateCount} gates pass</dd></div></dl>
-    <p>Open Campaign update for newer polling, evidence limitations and election dates. This snapshot does not estimate who would negotiate a minority government.</p>
+    <dl><div><dt>Included poll fieldwork</dt><dd>{date(status.latestIncludedPollFieldwork)}</dd></div><div><dt>Last admitted poll publication</dt><dd>{date(status.latestReviewedPublication)}</dd></div><div><dt>November polling evidence reviewed</dt><dd>{date(novemberReview.reviewDate)}</dd></div><div><dt>November poll leads not admitted</dt><dd>{heldNovemberLeads}</dd></div><div><dt>Readiness assessed {date(status.assessedAsOf)}</dt><dd>{status.readiness.summary.passedRequiredGates}/{status.readiness.summary.requiredGateCount} gates pass</dd></div></dl>
+    <p>Website publication and forecast calculations are different: new candidate, polling and scenario-analysis pages can be deployed without changing the approved 31 October forecast. Open <strong>Polls</strong> for November evidence still awaiting eligibility review. This snapshot does not estimate who would negotiate a minority government.</p>
   </aside>;
 }
 
