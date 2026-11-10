@@ -24,6 +24,7 @@ import historicalReplayConfig from "../model/config/historical-validation-cycles
 import { CampaignNotice, CampaignUpdate } from "./campaign-update";
 import { PollReviewDossier } from "./poll-review-dossier";
 import { CandidateReviewDossier } from "./candidate-review-dossier";
+import { PredictionAudit } from "./prediction-audit";
 
 type District = (typeof modelOutput.districts)[number];
 type Party = "ALP" | "LIB_NAT" | "ONP" | "GRN" | "OTH_IND";
@@ -180,6 +181,7 @@ function Forecast() {
     <section className="outcome-strip">{outcomes.map(([label, probability]) => <OutcomeProbability key={label} label={label} probability={probability} active={label === "Hung parliament"} />)}</section>
     <BattlegroundBoard />
     <HotspotLenses />
+    <PredictionAudit />
     <section className="forecast-grid">
       <article className="surface distribution-card"><div className="section-heading"><div><p className="eyebrow">How often each total occurs</p><h3>Labor’s possible Lower House results</h3></div><Badge variant="outline">Middle result {Math.round(chamber.ALP.median)}</Badge></div><div className="distribution-chart" role="img" aria-label="Distribution of Labor seats across 5,000 simulations; the majority threshold is 45 seats"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={1}><BarChart data={distribution} margin={{ top: 40, right: 4, left: -20, bottom: 0 }}><CartesianGrid vertical={false} stroke="#d7d8d4" strokeDasharray="2 4" /><XAxis dataKey="seats" tickLine={false} axisLine={false} tick={{ fontSize: 9 }} /><YAxis tickLine={false} axisLine={false} tick={{ fontSize: 9 }} tickFormatter={(v) => `${v}%`} /><Tooltip formatter={(value) => [`${Number(value).toFixed(1)}%`, "Share of simulations"]} /><ReferenceLine x={45} stroke="#ea7540" strokeWidth={2} label={<MajorityMarkerLabel />} /><Bar dataKey="probabilityPct" radius={[2, 2, 0, 0]}>{distribution.map((row) => <Cell key={row.seats} fill={row.seats >= 45 ? "#d84a42" : "#173d64"} />)}</Bar></BarChart></ResponsiveContainer></div><p className="chart-note">Each bar shows the share of 5,000 whole-election simulations producing that Labor seat total. The 88 electorates move together rather than being added as if they were independent.</p></article>
       <article className="surface signal-card"><p className="eyebrow">Central finding</p><h3>Three large blocs, few easy paths.</h3><div className="signal-number"><strong>{pct(hung)}</strong><span>chance that no party wins 45 seats</span></div><div className="signal-rule" /><p>One Nation’s polling rise is modelled as a distinct multi-party force. The count does not assume every electorate ends Labor versus Coalition.</p></article>
