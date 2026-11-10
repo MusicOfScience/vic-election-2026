@@ -1,0 +1,41 @@
+name: Capture VEC 2026 final candidate carrier (review only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      vec_file_url:
+        description: "Optional exact VEC candidate spreadsheet URL if discovery fails"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Capture official spreadsheet with raw SHA256 receipt
+        shell: bash
+        env:
+          VEC_FILE_URL: ${{ inputs.vec_file_url }}
+        run: |
+          if [[ -n "$VEC_FILE_URL" ]]; then
+            node scripts/capture-vec-nominations.mjs --file-url "$VEC_FILE_URL" --output vec-nominations-capture
+          else
+            node scripts/capture-vec-nominations.mjs --output vec-nominations-capture
+          fi
+      - name: Display evidence-only receipt
+        run: cat vec-nominations-capture/capture-receipt.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload immutable-by-hash review carrier (not admitted)
+        uses: actions/upload-artifact@v4
+        with:
+          name: vec-nominations-review-only
+          path: vec-nominations-capture/
+          retention-days: 30
+          if-no-files-found: error
