@@ -202,7 +202,7 @@ test("renders the governed candidate review dossier without implying nomination"
   assert.match(html, /Approval recorded/i);
   assert.match(html, /88\/88/);
   assert.match(html, /Assembly coverage is complete/i);
-  assert.match(html, /separate from the VEC&#x27;s 1,037 official candidates/i);
+  assert.match(html, /separate from the VEC’s 1,037 official candidates/i);
 });
 
 test("generates the public poll series from the canonical model registry", async () => {
