@@ -48,6 +48,8 @@ INPUTS = (
     "model/data/processed/upper_house_region_poll_2026-08.csv",
     "model/data/seed/recent_state_by_elections.json",
     "metadata/accepted-polls-2026.json",
+    "model/scripts/shadow_onp_geography_preference_factorial.py",
+    "docs/ONP_GEOGRAPHY_PREFERENCE_2X2_SHADOW_PROTOCOL_2026-11-11.md",
 )
 FOCUS = (
     "Greenvale", "Kororoit", "Sydenham", "Morwell", "Kalkallo", "Mill Park",
@@ -265,6 +267,10 @@ def run_experiment(repo: Path = REPO, *, simulations: int = 2000, seed: int = 20
             "note": "Published reference used 5000 draws, so a smaller simulation reference should differ modestly from pure Monte Carlo uncertainty; not a numerical identity test."
         },
         "results": compare_cells(cells),
+        "cellSummaries": {
+            name: {key: val for key, val in case.items() if key != "districts"}
+            for name, case in cells.items()
+        },
         "candidateMask": "No candidate-resolved ballot-mask run. All districts have a candidate from all five families, but distinct minor/independent candidates are still aggregated.",
         "permissions": {"newPollsAdmitted": False, "canonicalForecastModified": False,
                          "candidateRegistryModified": False,
