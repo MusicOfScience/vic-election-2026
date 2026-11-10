@@ -1,0 +1,39 @@
+.november-evidence,.seat-integrity{padding:24px 27px;display:grid;gap:19px}
+.november-review-header,.seat-integrity-header{display:grid;gap:8px}
+.november-review-header h3,.seat-integrity-header h3{font:500 28px/1.16 Georgia,serif;letter-spacing:-.02em;margin:0}
+.november-review-header p:last-child,.seat-integrity-header p:last-child{max-width:860px;line-height:1.65;font-size:12px;color:var(--ink-soft);margin:0}
+.november-evidence-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.november-evidence-item{display:grid;align-content:start;gap:10px;padding:18px;border:1px solid var(--line);background:#f7f7f3;min-width:0}
+.november-evidence-item-heading{display:grid;gap:5px}
+.november-evidence-item-heading strong{font:500 18px Georgia,serif}
+.november-evidence-item-heading span,.november-evidence-item>p{font-size:11px;line-height:1.55;color:var(--muted-ink);margin:0}
+.november-evidence-numbers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.november-evidence-numbers span{display:grid;gap:4px;min-width:0}
+.november-evidence-numbers b{font:500 23px Georgia,serif;white-space:nowrap}
+.november-evidence-numbers small{font-size:10px;color:var(--muted-ink)}
+.november-evidence-item .november-evidence-warning{color:var(--ink);font-size:11px;line-height:1.6}
+.november-evidence-item .november-evidence-status{font-weight:700;color:#85683b}
+.november-evidence-item a,.seat-integrity-explanation a{color:var(--ink);font-size:12px;font-weight:700;text-underline-offset:3px}
+.november-evidence-footnote{font-size:11px;line-height:1.6;color:var(--muted-ink);margin:0;border-top:1px solid var(--line);padding-top:13px}
+.seat-integrity-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line)}
+.seat-integrity-summary article{padding:16px 18px;display:grid;gap:6px;border-right:1px solid var(--line)}
+.seat-integrity-summary article:last-child{border-right:0}
+.seat-integrity-summary strong{font:500 31px Georgia,serif}
+.seat-integrity-summary span{font-size:11px;line-height:1.5;color:var(--muted-ink)}
+.seat-integrity-control{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.seat-integrity-control label{font-size:12px;font-weight:700}
+.seat-integrity-control select{max-width:100%;min-width:275px;padding:11px 12px;border:1px solid var(--line);background:var(--white);color:var(--ink);font-size:12px}
+.seat-integrity-table-wrap{overflow-x:auto}
+.seat-integrity-table{width:100%;border-collapse:collapse;font-size:12px;min-width:620px}
+.seat-integrity-table th,.seat-integrity-table td{padding:12px 9px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top;font-variant-numeric:tabular-nums}
+.seat-integrity-table th:first-child,.seat-integrity-table td:nth-child(2){text-align:left}
+.seat-integrity-table thead th{font-size:10px;color:var(--muted-ink);font-weight:700}
+.seat-integrity-table tbody th{font-weight:700}
+.seat-integrity-table tbody th small,.seat-integrity-table tbody td small{display:block;margin-top:4px;color:var(--muted-ink);font-size:10px;font-weight:400}
+.seat-integrity-explanation{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.seat-integrity-explanation article{padding:15px;border-top:3px solid var(--line);background:#f7f7f3}
+.seat-integrity-explanation h4{margin:0 0 10px;font:500 17px Georgia,serif}
+.seat-integrity-explanation p{font-size:11px;line-height:1.68;color:var(--ink-soft);margin:0 0 10px}
+@media(max-width:850px){.seat-integrity-explanation{grid-template-columns:1fr}.november-evidence-items{grid-template-columns:1fr}}
+@media(max-width:600px){.november-evidence,.seat-integrity{padding:19px 15px}.november-review-header h3,.seat-integrity-header h3{font-size:24px}.seat-integrity-summary article{padding:11px 10px}.seat-integrity-summary strong{font-size:25px}.seat-integrity-summary span{font-size:10px}.seat-integrity-control{flex-direction:column;align-items:flex-start}.seat-integrity-control select{width:100%;min-width:0}.november-evidence-numbers b{font-size:21px}}
+@media print{.november-evidence-item,.seat-integrity-explanation article{break-inside:avoid-page}.seat-integrity-control select{border:1px solid #777}}
