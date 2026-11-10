@@ -89,8 +89,8 @@ def bound_onp_geography(assembly_seed: pd.DataFrame, limit: float) -> pd.DataFra
 def load_registered_reference(repo: Path) -> tuple[dict, dict]:
     config = yaml.safe_load((repo / "model/config/experimental_forecast.yml").read_text())
     canonical = json.loads((repo / "model/data/processed/experimental_forecast_2026.json").read_text())
-    if (config["as_of"] != "2026-10-31" or config["seed"] != 20260826 or
-            canonical["as_of"] != config["as_of"] or
+    if (str(config["as_of"]) != "2026-10-31" or config["seed"] != 20260826 or
+            canonical["as_of"] != str(config["as_of"]) or
             canonical["seed"] != config["seed"] or
             canonical["status"] != "experimental_forecast" or
             float(config["assembly"]["local_logit_limits"]["ONP"]) != .45 or
@@ -238,8 +238,8 @@ def run_experiment(repo: Path = REPO, *, simulations: int = 2000, seed: int = 20
     return {
         "schemaVersion": 1,
         "status": "SHADOW_ONLY_NO_MODEL_ADMISSION_NO_PRODUCTION_AUTHORITY",
-        "sourceAsOf": config["as_of"],
-        "electionDate": config["election_date"],
+        "sourceAsOf": str(config["as_of"]),
+        "electionDate": str(config["election_date"]),
         "referenceForecastId": manifest["forecast_id"],
         "referenceSimulationCount": manifest["simulations"],
         "shadowSimulationCountPerCase": simulations,
