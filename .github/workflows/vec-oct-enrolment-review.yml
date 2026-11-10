@@ -1,0 +1,43 @@
+name: Capture October 2026 VEC enrolment (review only)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/capture-vec-enrolment-oct-2026.py'
+      - 'model/tests/test_vec_oct_enrolment_capture.py'
+      - '.github/workflows/vec-oct-enrolment-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install bounded, pinned XLS and test readers
+        run: python -m pip install 'xlrd==2.0.2' 'pytest==8.4.2'
+      - name: Test official URL, format and reconciliation rules
+        run: python -m pytest model/tests/test_vec_oct_enrolment_capture.py -q
+      - name: Read-only fetch of original October VEC district and region files
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python scripts/capture-vec-enrolment-oct-2026.py --output artifacts/vec-oct-enrolment
+      - name: Confirm no model inputs, approvals or registers have changed
+        if: always()
+        run: |
+          git diff --exit-code -- model/data model/config metadata/sources.json metadata/source-provenance.generated.json metadata/release-readiness.generated.json
+      - name: Keep raw official workbook bytes, SHA, and 88+8 reconciled preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vec-october-2026-enrolment-official-review
+          path: artifacts/vec-oct-enrolment/
+          retention-days: 30
+          if-no-files-found: warn
