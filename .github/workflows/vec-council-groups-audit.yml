@@ -1,0 +1,40 @@
+name: VEC 2026 Council ballot group audit (review only)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/audit_vec_council_groups.py'
+      - 'scripts/test_audit_vec_council_groups.py'
+      - '.github/workflows/vec-council-groups-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned HTML parser
+        run: python -m pip install 'beautifulsoup4==4.14.3'
+      - name: Run source-structure and fail-closed tests
+        run: python -m unittest discover -s scripts -p 'test_audit_vec_council_groups.py' -v
+      - name: Fetch eight VEC ballot-group pages and reconcile all 303 candidates
+        run: |
+          python scripts/audit_vec_council_groups.py \
+            --roster app/vec-official-candidates-2026.review.json \
+            --output vec-council-review
+      - name: Upload privacy-minimised review output even if incomplete
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vec-2026-council-ballot-groups-review
+          path: vec-council-review/
+          retention-days: 7
+          if-no-files-found: warn
