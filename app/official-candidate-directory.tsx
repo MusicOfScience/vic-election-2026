@@ -49,7 +49,7 @@ export function OfficialCandidateDirectory() {
       <div>
         <p className="eyebrow">Victorian Electoral Commission · 2026 official nominations</p>
         <h2>Every candidate. Every electorate.</h2>
-        <p>Explore all 1,037 people nominated for the 28 November state election, taken from the VEC's official candidate report after nominations closed. Candidate details are presented as VEC source records, separate from the experimental forecast.</p>
+        <p>Explore all 1,037 people nominated for the 28 November state election, taken from the VEC’s official candidate report after nominations closed. Candidate details are presented as VEC source records, separate from the experimental forecast.</p>
       </div>
       <a className="official-roster-source" href={sourceUrl} target="_blank" rel="noreferrer">View original VEC source <ExternalLink size={14}/></a>
     </section>
