@@ -49,9 +49,7 @@ jobs:
           assert len(j["results"]["scenarios"]) == 3
           assert len(j["results"]["focusDistricts"]) == 11
           assert all(value is False for value in j["permissions"].values())
-          assert all(len(x["districts"]) == 88 for x in [
-              # The reference baseline is represented in focus plus per-scenario shifts.
-          ]) if False else True
+          assert all(len(x["allDistrictShifts"]) == 88 for x in j["results"]["scenarios"].values())
           base = j["results"]["reference"]["meanSeats"]
           canonical = j["baselineReferenceComparison"]["published5000DrawMeanSeats"]
           diffs = {party: round(base[party]-canonical[party], 3) for party in canonical}
