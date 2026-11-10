@@ -47,6 +47,8 @@ jobs:
           assert j["sourceAsOf"] == "2026-10-31"
           assert j["shadowSimulationCountPerCase"] == 2000
           assert len(j["results"]["scenarios"]) == 3
+          assert set(j["cellSummaries"]) == {"reference","onp_geography_bounded","preferences_wider_stress","bounded_plus_wider"}
+          assert "model/scripts/shadow_onp_geography_preference_factorial.py" in j["sourceFingerprint"]["files"]
           assert len(j["results"]["focusDistricts"]) == 11
           assert all(value is False for value in j["permissions"].values())
           assert all(len(x["allDistrictShifts"]) == 88 for x in j["results"]["scenarios"].values())
