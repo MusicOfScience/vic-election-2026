@@ -1,0 +1,21 @@
+.vote-outlook { padding: clamp(1rem, 3vw, 1.8rem); }
+.vote-outlook h3 { margin: .25rem 0 1rem; font-size: clamp(1.2rem, 2.5vw, 1.65rem); line-height: 1.25; }
+.vote-outlook h4 { margin: 0 0 .65rem; font-size: .91rem; }
+.vote-outlook-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem 2rem; }
+.vote-primary-ranking { display: grid; gap: .4rem; margin: 0; padding: 0; list-style: none; }
+.vote-primary-ranking li { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem; padding: .42rem .65rem; background: var(--paper); border-inline-start: .22rem solid; font-size: .86rem; }
+.vote-primary-ranking small { display: block; color: var(--muted-ink); }
+.vote-pair-labels { display: flex; justify-content: space-between; align-items: end; gap: .65rem; font-size: .82rem; }
+.vote-pair-labels span:last-child { text-align: right; }
+.vote-pair-labels b { display: block; font-size: 1.22rem; font-variant-numeric: tabular-nums; }
+.vote-pair-bar { display: flex; height: .48rem; margin: .4rem 0; background: var(--coalition); }
+.vote-pair-bar i { background: var(--labor); }
+.vote-outlook-grid p, .vote-electorate-note, .vote-outlook-source { margin: .5rem 0 0; font-size: .79rem; line-height: 1.5; color: var(--muted-ink); }
+.vote-outlook-source { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .35rem 1rem; padding-top: .65rem; border-top: 1px solid var(--line); background: transparent; }
+.vote-outlook-source button { color: var(--ink); text-decoration: underline; cursor: pointer; }
+.vote-electorate { border-block: 1px solid var(--line); background: var(--white); }
+@media (max-width: 640px) { .vote-outlook-grid { grid-template-columns: 1fr; } }
+.vote-poll-inputs summary { cursor: pointer; font-weight: 700; }
+.vote-poll-inputs p, .vote-poll-inputs li { font-size: .82rem; line-height: 1.55; }
+.vote-poll-inputs ul { padding-inline-start: 1.25rem; }
+.vote-poll-inputs a { text-decoration: underline; }

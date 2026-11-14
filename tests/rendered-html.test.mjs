@@ -36,6 +36,9 @@ test("renders the joint experimental forecast dashboard", async () => {
   assert.match(html, /How to read the forecast/i);
   assert.match(html, /88 electorates/i);
   assert.match(html, /Every seat, at a glance/i);
+  assert.match(html, /Top three on first preferences/i);
+  assert.match(html, /Labor–Coalition two-party preferred/i);
+  assert.match(html, /See polling inputs/i);
   assert.match(html, /Middle 80% of simulated totals/i);
   const seatIds = [...html.matchAll(/data-seat="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(seatIds.length, 88);

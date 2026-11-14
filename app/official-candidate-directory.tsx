@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { ExternalLink, Search, ShieldCheck, UsersRound } from "lucide-react";
+import { ElectorateVoteOutlook } from "./assembly-vote-outlook";
+import type { Party } from "./assembly-parties";
 import roster from "./vec-official-candidates-2026.review.json";
 import councilGroups from "./vec-council-groups-2026.review.json";
 
@@ -52,7 +54,19 @@ function CandidateLine({ candidate, position }: { candidate: CandidateRow; posit
   </div>;
 }
 
-export function OfficialCandidateDirectory() {
+const partyLabels: Partial<Record<Party, string[]>> = {
+  ALP: ["Australian Labor Party - Victorian Branch"],
+  LIB_NAT: ["Liberal Party of Australia - Victorian Division", "National Party of Australia - Victoria"],
+  ONP: ["One Nation Victoria"],
+  GRN: ["Australian Greens Victoria"],
+};
+
+function soleNominee(rows: CandidateRow[], family: Party) {
+  const matches = rows.filter((row) => row[4] && partyLabels[family]?.includes(row[4]));
+  return matches.length === 1 ? matches[0][3] : null;
+}
+
+export function OfficialCandidateDirectory({ openPolls }: { openPolls: () => void }) {
   const [chamber, setChamber] = useState<Chamber>("Assembly");
   const [query, setQuery] = useState("");
   const [party, setParty] = useState("all");
@@ -103,6 +117,7 @@ export function OfficialCandidateDirectory() {
           <span className="official-roster-count">{group.rows.length} candidates</span>
           <span aria-hidden="true" className="official-roster-chevron">+</span>
         </summary>
+        {chamber === "Assembly" && <ElectorateVoteOutlook districtName={group.contest} candidate={(family) => soleNominee(group.rows, family)} openPolls={openPolls} />}
         {chamber === "Council"
           ? <div className="official-roster-council-groups">
               {councilBlocks(group.contest, group.rows).map((block) => <section className="official-roster-group" key={block.letter}>
@@ -125,7 +140,7 @@ export function OfficialCandidateDirectory() {
       <div><ShieldCheck size={20}/><h3>Official source, separate model</h3></div>
       <p>Source: VEC candidate report stamped <strong>9 November 2026, 7:58 pm AEDT</strong>. The raw source was independently fingerprinted; this public directory contains candidate names and registered-party labels only. No contact-person names, phone numbers or email addresses were imported.</p>
       <p><strong>Important:</strong> {unmatchedParty} candidates have no registered-party label in the VEC workbook. That does not necessarily mean independent or ungrouped. Council ballot groups are independently sourced from eight VEC region pages, including unnamed groups and five ungrouped nominees. Group affiliation must not be treated as a modelled preference transfer.</p>
-      <p>The probabilistic forecast is still based on the <strong>31 October experimental model</strong>, which does not yet use this official ballot as its candidate mask. These nomination records do not change the seat probabilities, which remain uncalibrated for production release.</p>
+      <p>The probabilistic forecast is still based on the <strong>dated experimental snapshot shown with each district</strong>, which does not yet use this official ballot as its candidate mask. These nomination records do not change the seat probabilities, which remain uncalibrated for production release.</p>
       <div className="official-roster-checks"><UsersRound size={16} /><span>Source record: 734 Assembly + 303 Council · each of 96 contest totals reconciled · review-only candidate identities</span></div>
     </section>
   </div>;

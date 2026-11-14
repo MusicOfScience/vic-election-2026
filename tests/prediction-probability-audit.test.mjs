@@ -42,3 +42,20 @@ test("district party-winning mass reconciles with chamber mean without independe
       family + " expected seats not consistent with chamber mean");
   }
 });
+
+test("vote outlook uses the exact published forecast and poll registry", async () => {
+  const { pollSeries } = await import("../app/poll-data.generated.ts");
+  const { modelOutput } = await import("../app/model-output.generated.ts");
+  const diagnostics = JSON.parse(readFileSync(resolve(root, "app/assembly-vote-diagnostics.generated.json"), "utf8"));
+  const pollIds = new Set(pollSeries.map((poll) => poll.id));
+  assert.equal(diagnostics.pollIds.length, modelOutput.manifest.polling.poll_count);
+  assert.ok(diagnostics.pollIds.every((id) => pollIds.has(id)));
+  assert.equal(diagnostics.asOf, modelOutput.manifest.as_of);
+  assert.equal(Object.keys(diagnostics.seats).length, 88);
+  for (const district of modelOutput.districts) {
+    const { pair, draws, firstWins } = diagnostics.seats[district.district_id];
+    assert.ok(draws >= district.final_pair_probability * diagnostics.simulations - 1e-9);
+    assert.ok(firstWins <= draws);
+    assert.equal(new Set(pair).size, 2);
+  }
+});
