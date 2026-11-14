@@ -150,7 +150,7 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   assert.match(html, /Forecast snapshot/);
   assert.match(html, /Website compiled/);
   assert.match(html, /November polling evidence reviewed/);
-  assert.match(html, /11 Nov 2026/);
+  assert.match(html, /14 Nov 2026/);
   assert.match(html, /November poll leads not admitted/);
   assert.match(html, /website/i);
   assert.doesNotMatch(html, /updated 26 August/);

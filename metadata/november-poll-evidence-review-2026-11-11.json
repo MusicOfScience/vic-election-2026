@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewDate": "2026-11-11",
+  "latestSupplementReview": "2026-11-14",
   "mode": "candidate-evidence-review-only-no-admission-or-model-refresh",
   "baselineForecastAsOf": "2026-10-31",
   "forecastModel": "vic_2026_experimental_joint_v1",
@@ -8,6 +9,37 @@
   "sourceDatePolicy": "Date ranges, source-of-fact and unresolved conflicts are recorded explicitly. No first-party methodology is inferred from earlier waves.",
   "normalisationPolicy": "A separately published Others category is different from a computed four-party residual; where only four categories are published, record residual as a mathematical difference and do not mark it source-verified.",
   "evidence": [
+    {
+      "id": "redbridge-accent-victoria-2026-11-03-10-publisher",
+      "scope": "state_assembly",
+      "pollster": "RedBridge Group / Accent Research",
+      "commissioner": "Australian Financial Review",
+      "reportedDates": {
+        "start": "2026-11-03",
+        "end": "2026-11-10"
+      },
+      "reportedSampleSize": 1008,
+      "effectiveSampleSize": null,
+      "reportedPrimaries": {
+        "alp": 23,
+        "coalition": 31,
+        "onp": 22,
+        "greens": 15
+      },
+      "reportedTwoPartyPreferred": {
+        "coalition": 57,
+        "alp": 43
+      },
+      "publicationDate": "2026-11-11",
+      "publicationTier": "commissioning-publisher-report-plus-independent-corroboration",
+      "sourceUrl": "https://www.afr.com/politics/victorian-coalition-position-strengthens-labor-reduced-to-rump-in-new-poll-20261111-p61d0z",
+      "corroborationUrl": "https://www.pollbludger.net/2026/11/12/redbridge-group-coalition-31-labor-23-one-nation-22-in-victoria/comment-page-2/",
+      "primaryPollsterMethodology": "not-verified-for-the-november-victorian-wave",
+      "primaryPublicationCaptured": "commissioning-publisher-report-only",
+      "nonOverlapClaim": "Fieldwork dates differ from earlier waves. Respondent overlap across waves is unverified.",
+      "modelEligibility": "hold",
+      "reason": "Full Victorian wave methodology, effective N, weighting and sample-family independence require review."
+    },
     {
       "id": "demosau-victoria-2026-10-30-11-05-media",
       "scope": "state_assembly",

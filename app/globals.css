@@ -141,25 +141,6 @@ a { color: inherit; }
 .forecast-kicker span { color: #bdcbd7; font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
 .forecast-copy h2 { margin: 0; max-width: 500px; font-size: clamp(43px, 5.8vw, 70px); line-height: .94; }
 .forecast-deck { max-width: 590px; margin: 18px 0 27px; color: #c7d3dd; font: 17px/1.55 Georgia, serif; }
-.seat-totals { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.18); }
-.seat-totals > div { padding: 18px 14px 0 0; display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 3px 9px; }
-.seat-totals span { font-size: 11px; font-weight: 800; }
-.seat-totals strong { font: 42px/.9 Georgia, serif; }
-.seat-totals small { grid-column: 1 / -1; color: #9eb0c0; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
-.seat-totals .labor strong { color: #ff766f; }
-.seat-totals .coalition strong { color: #78a9ee; }
-.seat-totals .greens strong { color: #62d5a3; }
-.seat-totals .onp strong { color: #b99be8; }
-.parliament-card { align-self: stretch; display: grid; align-content: center; padding: 22px 28px; }
-.seat-arc { width: 100%; max-height: 300px; overflow: visible; filter: drop-shadow(0 7px 10px rgba(0,0,0,.15)); }
-.seat-arc circle { stroke: rgba(255,255,255,.55); stroke-width: .75; transition: opacity .2s, r .2s; }
-.seat-arc circle:hover { opacity: 1; r: 10; }
-.majority-line { stroke: var(--orange); stroke-width: 2; }
-.arc-caption { display: flex; justify-content: space-between; gap: 12px; margin-top: -9px; color: #9eb0c0; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
-.arc-caption strong { color: white; }
-.arc-party-legend { margin-top: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 7px 14px; color: #c8d3dc; font-size: 9px; }
-.arc-party-legend span { display: inline-flex; align-items: center; gap: 5px; }
-.arc-party-legend i { width: 8px; height: 8px; border-radius: 50%; }
 .outcome-strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: rgba(255,254,250,.82); }
 .outcome-probability { padding: 20px 22px 17px; border-right: 1px solid var(--line); }
 .outcome-probability:last-child { border-right: 0; }
@@ -557,8 +538,6 @@ footer p { max-width: 480px; margin: 0; text-align: right; }
 @media (max-width: 980px) {
   .page-heading { align-items: flex-start; flex-direction: column; gap: 20px; }
   .forecast-hero { grid-template-columns: 1fr; }
-  .parliament-card { padding-top: 0; }
-  .seat-arc { max-height: 270px; }
   .scenario-studio { grid-template-columns: 1fr; gap: 24px; }
   .forecast-grid, .evidence-grid { grid-template-columns: 1fr; }
   .quick-read { grid-template-columns: 1fr; }
@@ -640,10 +619,6 @@ footer p { max-width: 480px; margin: 0; text-align: right; }
   .forecast-kicker { align-items: flex-start; flex-direction: column; margin-bottom: 23px; }
   .forecast-copy h2 { font-size: 48px; }
   .forecast-deck { font-size: 15px; }
-  .seat-totals > div { padding-right: 5px; }
-  .seat-totals strong { font-size: 32px; }
-  .parliament-card { padding: 0 10px 22px; }
-  .arc-caption { padding: 0 9px; }
   .outcome-strip { grid-template-columns: 1fr; }
   .quick-read-grid { grid-template-columns: 1fr; }
   .quick-read-grid article { border-right: 0; border-bottom: 1px solid #c9d2d8; }
