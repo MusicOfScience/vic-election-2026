@@ -22,9 +22,18 @@ test("district party-winning mass reconciles with chamber mean without independe
     const probabilities = families.map((family) => Number(district["win_" + family]));
     assert.ok(probabilities.every((p) => Number.isFinite(p) && p >= 0 && p <= 1), district.district_id);
     assert.ok(Math.abs(probabilities.reduce((sum, p) => sum + p, 0) - 1) < 0.00001, district.district_id);
+    const leader = district.favoured_party.toLowerCase();
+    assert.ok(families.includes(leader), district.district_id + " unknown leading group");
+    assert.equal(Number(district["win_" + leader]), Number(district.favoured_probability),
+      district.district_id + " leading-party label does not match its win frequency");
     assert.ok(Math.abs(Math.max(...probabilities) - Number(district.favoured_probability)) < 0.00001,
       district.district_id + " leading-party probability mismatch");
   }
+  const hung = Number(chamber[0].hung_probability);
+  const majorities = chamber.map((row) => Number(row.majority_probability));
+  assert.ok([hung, ...majorities].every((p) => Number.isFinite(p) && p >= 0 && p <= 1));
+  assert.ok(chamber.every((row) => Number(row.hung_probability) === hung));
+  assert.ok(Math.abs(majorities.reduce((sum, p) => sum + p, hung) - 1) < 0.00001);
   for (const family of families) {
     const expected = districts.reduce((sum, d) => sum + Number(d["win_" + family]), 0);
     const reported = chamber.find((row) => row.party.toLowerCase() === family);

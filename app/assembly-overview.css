@@ -1,0 +1,74 @@
+.forecast-hero::after { display: none; }
+.assembly-board-link { display: inline-flex; align-items: center; gap: .5rem; color: #fff; font-size: .85rem; text-underline-offset: .2em; }
+#assembly-board-title { scroll-margin-top: 5.5rem; }
+
+.assembly-outlook {
+  display: grid;
+  align-content: center;
+  gap: .85rem;
+  padding: clamp(1.25rem, 4vw, 2.75rem);
+  color: #f8f9fb;
+}
+.assembly-outlook-heading h3 { margin: 0; font-size: clamp(1.25rem, 3vw, 1.8rem); }
+.assembly-outlook-heading span, .assembly-outlook p { color: #d5dfe8; font-size: .8rem; }
+.assembly-outlook p { margin: 0; }
+.assembly-outlook ul { display: grid; gap: .8rem; margin: 0; padding: 0; list-style: none; }
+.assembly-outlook li, .assembly-axis {
+  display: grid;
+  grid-template-columns: minmax(5rem, 1fr) minmax(5.5rem, 1.55fr) 3rem;
+  gap: .7rem;
+  align-items: center;
+  font-size: .8rem;
+}
+.assembly-axis > div { position: relative; grid-column: 2; height: .9rem; color: #d5dfe8; font-size: .66rem; white-space: nowrap; }
+.assembly-axis span { position: absolute; }
+.assembly-axis span:nth-child(2) { left: 51.136%; transform: translateX(-50%); }
+.assembly-axis span:last-child { right: 0; }
+.assembly-range { position: relative; height: .25rem; background: #a6b6c950; }
+.assembly-range::after { content: ""; position: absolute; left: 51.136%; inset-block: -.55rem; border-left: 1px dashed #d5dfe8; }
+.assembly-range i { position: absolute; inset-block: -.07rem; border-radius: .25rem; background: color-mix(in srgb, var(--seat-party) 65%, white); }
+.assembly-range b { position: absolute; z-index: 1; top: 50%; width: .55rem; height: .55rem; border: 1px solid #173954; border-radius: 50%; transform: translate(-50%, -50%); background: #fff; }
+.assembly-range-value { text-align: right; font-variant-numeric: tabular-nums; }
+.assembly-range-value small { display: block; color: #d5dfe8; }
+
+.assembly-board {
+  --board-muted: #506076;
+  --tile-paper: #fff;
+  --tile-line: #dde3e8;
+  padding: clamp(1rem, 3vw, 2.15rem);
+}
+.assembly-board-header { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; margin-bottom: 1.35rem; }
+.assembly-board-header h3 { margin: .25rem 0; font-size: clamp(1.55rem, 3vw, 2.4rem); letter-spacing: -.035em; }
+.assembly-board-header p:not(.eyebrow), .assembly-board-note { max-width: 70ch; margin: .4rem 0 0; color: var(--board-muted); font-size: .85rem; line-height: 1.55; }
+.assembly-board-tallies { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .78rem; color: var(--board-muted); }
+.assembly-board-tallies b { color: var(--ink); font-size: 1rem; }
+.assembly-board-groups { display: grid; gap: 1.15rem; }
+.assembly-group { border-top: 1px solid var(--tile-line); padding-top: .75rem; }
+.assembly-group header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .25rem 1rem; margin-bottom: .6rem; }
+.assembly-group h4 { display: flex; align-items: center; gap: .45rem; margin: 0; font-size: 1rem; }
+.assembly-group h4::before { content: ""; width: .6rem; height: .6rem; border-radius: 50%; background: var(--seat-party); }
+.assembly-group header > span { color: var(--board-muted); font-size: .75rem; }
+.assembly-group ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: .35rem; padding: 0; margin: 0; list-style: none; }
+.assembly-group li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: .35rem;
+  min-height: 2.35rem;
+  padding: .42rem .45rem;
+  border: 1px solid var(--tile-line);
+  border-radius: .22rem;
+  background: color-mix(in srgb, var(--seat-party) 7%, var(--tile-paper));
+  font-size: .73rem;
+}
+.assembly-seat-name { overflow-wrap: anywhere; }
+.assembly-group li strong { font-variant-numeric: tabular-nums; }
+.assembly-seat-track { grid-column: 1 / -1; height: .16rem; background: var(--tile-line); }
+.assembly-seat-track i { display: block; height: 100%; background: var(--seat-party); }
+.assembly-board-note { margin-top: 1.2rem; }
+@media print {
+  .assembly-board { --board-muted: #506076; --tile-paper: #fff; --tile-line: #dde3e8; color: #11263b; background: #fff; }
+  .assembly-group header { break-after: avoid; }
+  .assembly-group li { break-inside: avoid; }
+  .assembly-board-tallies b { color: #11263b; }
+}

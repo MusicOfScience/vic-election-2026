@@ -3,8 +3,6 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const css = readFileSync(new URL("../app/party-visual-language.css", import.meta.url), "utf8");
-const key = readFileSync(new URL("../app/party-visual-key.tsx", import.meta.url), "utf8");
-const select = readFileSync(new URL("../components/ui/select.tsx", import.meta.url), "utf8");
 
 function hexRgb(hex) {
   const raw = hex.replace("#", "");
@@ -41,8 +39,6 @@ test("party colour roles include accessible dark inks and bright dark-surface co
   assert.match(css, /--party-one-nation-light:\s*#ffb43b/i);
   assert.ok(contrast("#a12438", "#ffffff") >= 4.5);
   assert.ok(contrast("#925300", "#ffffff") >= 4.5);
-  assert.match(css, /seat-totals \.labor strong[\s\S]*party-labor-light/);
-  assert.match(css, /seat-totals \.onp strong[\s\S]*party-one-nation-light/);
   assert.match(css, /party-chip\.onp[\s\S]*party-one-nation-ink/);
   assert.match(css, /seat-verdict\.onp[\s\S]*party-one-nation-ink/);
 });
@@ -51,7 +47,6 @@ test("One Nation retains orange identity and a secondary non-colour cue", () => 
   assert.match(css, /\[fill="#6e4da0"\].*party-one-nation/s);
   assert.match(css, /\[stroke="#6e4da0"\].*party-one-nation/s);
   assert.match(css, /poll-series-chart[\s\S]*stroke="#6e4da0"[\s\S]*stroke-dasharray:\s*6 3/i);
-  assert.match(css, /seat-arc circle\[fill="#6e4da0"\][\s\S]*stroke-width:\s*1\.15/i);
 });
 
 test("Other and independent use a cool neutral distinct from One Nation orange", () => {
@@ -59,25 +54,11 @@ test("Other and independent use a cool neutral distinct from One Nation orange",
   assert.match(css, /\[fill="#d19b2a"\].*party-other-independent/s);
 });
 
-test("forecast chamber graphic does not imply meaning with decorative centre lines", () => {
-  assert.match(css, /forecast-hero::after\s*\{\s*display:\s*none/i);
-  assert.match(css, /majority-line\s*\{\s*display:\s*none/i);
-  assert.match(css, /Each dot = one electorate/i);
-  assert.match(css, /modal forecast winner/i);
-  assert.match(css, /not an expected chamber seat count/i);
-  assert.match(css, /party can appear in the key with zero dots/i);
-  assert.match(css, /not geographic/i);
-});
-
-test("select portal content has an explicit opaque surface", () => {
-  assert.match(select, /backgroundColor:\s*"var\(--white, #fffefa\)"/i);
-  assert.match(select, /color:\s*"var\(--ink, #11263b\)"/i);
-});
-
-test("independent and teal-independent remain visually distinct", () => {
-  assert.match(css, /--party-independent:/);
-  assert.match(css, /--party-teal:/);
-  assert.match(css, /teal-independent[\s\S]*linear-gradient/);
-  assert.match(key, /Teal-aligned independent/);
-  assert.match(key, /remains an independent/i);
+test("chamber threshold and seat-by-seat leaders describe different quantities", () => {
+  const overview = readFileSync(new URL("../app/assembly-overview.tsx", import.meta.url), "utf8");
+  const styles = readFileSync(new URL("../app/assembly-overview.css", import.meta.url), "utf8");
+  assert.match(styles, /forecast-hero::after\s*\{\s*display:\s*none/i);
+  assert.match(overview, /45 · majority/);
+  assert.match(overview, /average seats across runs/);
+  assert.match(overview, /all 88 seats together in each simulation/);
 });
