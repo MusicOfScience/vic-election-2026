@@ -8,7 +8,7 @@ type Evidence = {
   id: string; scope: string; pollster: string; commissioner: string;
   reportedDates: {start: string; end: string | null};
   reportedSampleSize: number; effectiveSampleSize: number | null;
-  reportedPrimaries?: Partial<Record<"alp" | "coalition" | "onp" | "greens", number>>;
+  reportedPrimaries?: Partial<Record<"alp" | "coalition" | "onp" | "greens" | "other", number>>;
   reportedCandidatePrimaries?: Partial<Record<"onpPickering" | "libDyson" | "alpSoliven" | "greensYawari", number>>;
   reportedTwoCandidatePreferred?: { onpPickering: number; libDyson: number; status: string };
   sourceUrl: string;
@@ -47,7 +47,7 @@ export function NovemberPollingEvidence() {
     <div className="november-review-header">
       <p className="eyebrow">November polling evidence</p>
       <h3>Published polls awaiting model review</h3>
-      <p>{waves.length} reported polls are listed below. The latest update added the RedBridge Group / Accent Research statewide poll. The forecast uses its dated set of admitted inputs.</p>
+      <p>{waves.length} reported polls are listed below. First-party releases now verify the methodology and effective sample size for DemosAU and RedBridge / Accent. Each entry shows why it remains outside the forecast.</p>
     </div>
     <div className="november-evidence-items">
       {waves.map((wave) => <article key={wave.id} className="november-evidence-item">
@@ -63,7 +63,7 @@ export function NovemberPollingEvidence() {
           {(["onpPickering", "libDyson", "alpSoliven", "greensYawari"] as const).map((key) => <span key={key}><b>{wave.reportedCandidatePrimaries?.[key] ?? "—"}%</b><small>{{onpPickering:"ONP", libDyson:"Liberal", alpSoliven:"Labor", greensYawari:"Greens"}[key]}</small></span>)}
         </div>}
         {wave.id.startsWith("resolve-") && <p className="november-evidence-warning">Fieldwork end disputed: 5 or 7 November. The Victorian sample is not an additional independent sample from the associated federal survey.</p>}
-        {wave.id.startsWith("demosau-") && <p className="november-evidence-warning">The remaining 11 points are an arithmetic residual, not a separately verified published Others figure. November effective sample size is unknown.</p>}
+        {wave.reportedPrimaries?.other !== undefined && <p>Other: {wave.reportedPrimaries.other}% in the pollster’s published results.</p>}
         {wave.id.startsWith("lighthouse-") && <p className="november-evidence-warning">Rolling two-week tracker; adjacent waves are dependent. A News Corp account gives Labor 22%, One Nation 23%, while an early Poll Bludger summary reversed those two figures. The disagreement is retained in the source record.</p>}
         {wave.id.startsWith("pakenham-") && <p className="november-evidence-warning">The published 50–50 two-candidate comparison is modelled using assumed preference flows, not a measured final count or a seat-win probability.</p>}
         <p className="november-evidence-status">Model status: held · {wave.reason}</p>
