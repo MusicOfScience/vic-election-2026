@@ -142,6 +142,8 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   const html = renderToStaticMarkup(React.createElement(ElectionDashboard));
 
   assert.match(html, /Skip to forecast navigation/);
+  assert.match(html, /Find my electorate/);
+  assert.match(html, /class="battleground-grid"><button type="button"/);
   assert.match(html, /aria-label="Forecast sections"/);
   assert.match(html, /Party colour key/);
   assert.match(html, /majority threshold is 45 seats/);
