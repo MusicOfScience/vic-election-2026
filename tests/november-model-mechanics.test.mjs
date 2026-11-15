@@ -19,8 +19,10 @@ test("November poll-review sources are held and cannot silently enter the model"
   assert.deepEqual(resolveWave.alternativeEndDates, ["2026-11-05","2026-11-07"]);
   assert.equal(resolveWave.reportedDates.end, null);
   const demo = review.evidence.find((x) => x.id.startsWith("demosau-"));
-  assert.equal(demo.otherPartyResidual.status, "computed-from-four-published-categories-not-verified-primary-report");
-  assert.equal(demo.effectiveSampleSize, null);
+  assert.equal(demo.reportedPrimaries.other, 11);
+  assert.equal(demo.effectiveSampleSize, 818);
+  const redbridge = review.evidence.find((x) => x.id.startsWith("redbridge-"));
+  assert.equal(redbridge.effectiveSampleSize, 803);
   const lighthouse = review.evidence.find((x) => x.id.startsWith("lighthouse-"));
   assert.equal(lighthouse.reportedPrimaries.alp, 22);
   assert.equal(lighthouse.reportedPrimaries.onp, 23);

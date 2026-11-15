@@ -12,7 +12,7 @@ const pct = (value: number) => `${value.toFixed(1)}%`;
 const inputs = new Set(diagnostics.pollIds);
 const includedPolls = pollSeries.filter((poll) => inputs.has(poll.id))
   .sort((a, b) => b.fieldworkEnd.localeCompare(a.fieldworkEnd));
-const latest = includedPolls[0];
+export const latestForecastPoll = includedPolls[0];
 const matchups = diagnostics.seats as Partial<Record<string, {
   pair: Party[]; draws: number; firstShare: { mean: number; low: number; high: number }; firstWins: number;
 }>>;
@@ -50,7 +50,7 @@ export function StatewideVoteOutlook({ openPolls }: { openPolls: () => void }) {
       </div>
     </div>
     <div className="vote-outlook-source">
-      <span>{inputs.size} admitted statewide polls{latest && ` · Latest fieldwork ended ${date(latest.fieldworkEnd)}`}. The 2PP estimate comes from simulated transfers.</span>
+      <span>{inputs.size} admitted statewide polls{latestForecastPoll && ` · Latest fieldwork ended ${date(latestForecastPoll.fieldworkEnd)}`}. The 2PP estimate comes from simulated transfers.</span>
       <button type="button" onClick={openPolls}>See polling inputs →</button>
     </div>
   </section>;

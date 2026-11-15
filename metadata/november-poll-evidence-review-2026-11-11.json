@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewDate": "2026-11-11",
-  "latestSupplementReview": "2026-11-14",
+  "latestSupplementReview": "2026-11-15",
   "mode": "candidate-evidence-review-only-no-admission-or-model-refresh",
   "baselineForecastAsOf": "2026-10-31",
   "forecastModel": "vic_2026_experimental_joint_v1",
@@ -19,7 +19,7 @@
         "end": "2026-11-10"
       },
       "reportedSampleSize": 1008,
-      "effectiveSampleSize": null,
+      "effectiveSampleSize": 803,
       "reportedPrimaries": {
         "alp": 23,
         "coalition": 31,
@@ -31,14 +31,15 @@
         "alp": 43
       },
       "publicationDate": "2026-11-11",
-      "publicationTier": "commissioning-publisher-report-plus-independent-corroboration",
-      "sourceUrl": "https://www.afr.com/politics/victorian-coalition-position-strengthens-labor-reduced-to-rump-in-new-poll-20261111-p61d0z",
+      "publicationTier": "pollster-methodology-plus-commissioning-publisher-report",
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-november-2026-victorian-state-poll",
       "corroborationUrl": "https://www.pollbludger.net/2026/11/12/redbridge-group-coalition-31-labor-23-one-nation-22-in-victoria/comment-page-2/",
-      "primaryPollsterMethodology": "not-verified-for-the-november-victorian-wave",
-      "primaryPublicationCaptured": "commissioning-publisher-report-only",
+      "primaryPollsterMethodology": "Online panel with demographic and past-vote quotas, rim weighting, and a leaner follow-up. The 7% without a voting intention after follow-up were excluded.",
+      "primaryPublicationCaptured": "first-party-methodology-page-with-full-report-link",
       "nonOverlapClaim": "Fieldwork dates differ from earlier waves. Respondent overlap across waves is unverified.",
       "modelEligibility": "hold",
-      "reason": "Full Victorian wave methodology, effective N, weighting and sample-family independence require review."
+      "reason": "Pollster methodology and effective sample are verified. Sample-family independence and model admission remain under review.",
+      "commissioningPublisherUrl": "https://www.afr.com/politics/victorian-coalition-position-strengthens-labor-reduced-to-rump-in-new-poll-20261111-p61d0z"
     },
     {
       "id": "demosau-victoria-2026-10-30-11-05-media",
@@ -50,29 +51,28 @@
         "end": "2026-11-05"
       },
       "reportedSampleSize": 1562,
-      "effectiveSampleSize": null,
+      "effectiveSampleSize": 818,
       "reportedPrimaries": {
         "alp": 18,
         "coalition": 33,
         "onp": 21,
-        "greens": 17
+        "greens": 17,
+        "other": 11
       },
       "reportedTwoPartyPreferred": {
         "coalition": 56,
-        "alp": 44
-      },
-      "otherPartyResidual": {
-        "value": 11,
-        "status": "computed-from-four-published-categories-not-verified-primary-report"
+        "alp": 44,
+        "method": "Pollster estimate from unrounded primaries and specified preference flows"
       },
       "publicationDate": "2026-11-09",
-      "publicationTier": "independent-contemporaneous-reporting-print-original-not-acquired",
-      "sourceUrl": "https://www.pollbludger.net/2026/11/09/demosau-labor-18-coalition-33-one-nation-21-in-victoria/",
-      "primaryPollsterMethodology": "not-publicly-verified-for-this-wave",
-      "primaryPublicationCaptured": false,
-      "nonOverlapClaim": "Fieldwork does not overlap September DemosAU window, but repeat panel respondents, weighting and effective sample for November undisclosed.",
+      "publicationTier": "first-party-interactive-plus-independent-contemporaneous-reporting",
+      "sourceUrl": "https://demosau.com/wp-content/uploads/DemosAU/vic-poll-nov-2026.html",
+      "primaryPollsterMethodology": "Online survey with rim weighting. Leaners are included and the 4% still undecided are excluded from published primary shares.",
+      "primaryPublicationCaptured": "first-party-interactive-weighted-tables",
+      "nonOverlapClaim": "The fieldwork windows are distinct. Repeat panel participation across waves remains unverified.",
       "modelEligibility": "hold",
-      "reason": "Primary questionnaire/report, effective N, sampling, explicitly published residual and current-wave independence remain unverified. Do not transpose September method/ESS."
+      "reason": "First-party questionnaire, weighting, effective sample and Other share are verified. Sample-family independence and model admission remain under review.",
+      "corroborationUrl": "https://www.pollbludger.net/2026/11/09/demosau-labor-18-coalition-33-one-nation-21-in-victoria/"
     },
     {
       "id": "resolve-victoria-2026-11-early-media",

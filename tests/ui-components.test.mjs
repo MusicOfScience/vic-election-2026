@@ -147,10 +147,12 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   assert.match(html, /majority threshold is 45 seats/);
   assert.match(html, /31 Oct 2026/);
   assert.match(html, /Experimental forecast snapshot from 31 Oct 2026/);
-  assert.match(html, /Forecast snapshot/);
+  assert.match(html, /Forecast dated<\/span><strong>31 Oct 2026/);
+  assert.match(html, /Latest statewide poll used · fieldwork end<\/span><strong>29 Oct 2026/);
+  assert.match(html, /Latest statewide poll reviewed · confirmed fieldwork end<\/span><strong>10 Nov 2026/);
   assert.match(html, /Website compiled/);
   assert.match(html, /November polling evidence reviewed/);
-  assert.match(html, /14 Nov 2026/);
+  assert.match(html, /15 Nov 2026/);
   assert.match(html, /November poll leads not admitted/);
   assert.match(html, /website/i);
   assert.doesNotMatch(html, /updated 26 August/);
