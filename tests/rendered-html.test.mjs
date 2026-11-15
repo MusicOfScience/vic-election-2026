@@ -29,7 +29,8 @@ test("renders the joint experimental forecast dashboard", async () => {
   const html = await response.text();
   assert.match(html, /<title>Victorian Election Forecast 2026<\/title>/);
   assert.match(html, /A forecast you can interrogate/);
-  assert.match(html, /Experimental snapshot: hung parliament leads/);
+  assert.match(html, /Paths to an Assembly majority/);
+  assert.match(html, /Limits of the Assembly estimates/);
   assert.match(html, /5,000[^<]*<!-- -->?[^<]*whole-election simulations/i);
   assert.match(html, /Experimental forecast/i);
   assert.match(html, /What this forecast is saying/i);
