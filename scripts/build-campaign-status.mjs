@@ -1,3 +1,4 @@
+import novemberApproval from '../metadata/poll-admission-approval-2026-11-15.json' with { type: 'json' };
 import { loadCampaignPolls } from "./load-campaign-polls.mjs";
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
@@ -9,12 +10,14 @@ export function buildCampaignStatus(asOf) {
   const evidence = read('metadata/current-evidence-shadow-2026-10-31.json');
   const campaignPolls=loadCampaignPolls(root);
   const latestReviewedFieldwork=campaignPolls.map(poll=>poll.fieldworkEnd).sort().at(-1);
-  const admitted=campaignPolls.filter(poll=>poll.modelEligibilityDecision==='eligible').length;
-  const assessment = asOf ?? evidence.reviewedAt;
+  const november = read('metadata/november-poll-evidence-review-2026-11-11.json');
+  const admittedNovember = november.evidence.filter(wave => novemberApproval.admittedPollIds.includes(wave.id));
+  const admitted=campaignPolls.filter(poll=>poll.modelEligibilityDecision==='eligible').length + admittedNovember.length;
+  const assessment = asOf ?? novemberApproval.approvedAt;
   const readiness = buildReadiness({ asOf: assessment });
   const forecast = read('model/data/processed/experimental_forecast_2026.json');
   const pollSource = readiness.sources.find((source) => source.id === 'vic-2026-poll-registry');
-  const latestEvidenceDate = evidence.assemblyPolls.map((poll) => poll.publicationDate).sort().at(-1);
+  const latestEvidenceDate = [...evidence.assemblyPolls, ...admittedNovember].map((poll) => poll.publicationDate).sort().at(-1);
   return {
     schemaVersion: 1, assessedAsOf: assessment,
     forecastDate: forecast.as_of ?? forecast.manifest?.as_of ?? '2026-10-08',

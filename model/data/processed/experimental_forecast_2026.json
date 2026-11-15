@@ -2,7 +2,7 @@
   "forecast_id": "vic_2026_experimental_joint_v1",
   "status": "experimental_forecast",
   "production_compatible": false,
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-15",
   "simulations": 5000,
   "seed": 20260826,
   "party_order": [
@@ -13,93 +13,93 @@
     "OTH_IND"
   ],
   "polling": {
-    "poll_count": 15,
+    "poll_count": 17,
     "mean": {
-      "ALP": 24.277024061459784,
-      "LIB_NAT": 28.796437767535664,
-      "ONP": 22.413479754957258,
-      "GRN": 13.274672314856135,
-      "OTH_IND": 11.238386101191212
+      "ALP": 23.09476919869369,
+      "LIB_NAT": 29.77391456338032,
+      "ONP": 22.154268039578486,
+      "GRN": 14.000987998615788,
+      "OTH_IND": 10.976060199731767
     },
     "median": {
-      "ALP": 24.256302579042597,
-      "LIB_NAT": 28.79089836621644,
-      "ONP": 22.412208841025212,
-      "GRN": 13.272359494372253,
-      "OTH_IND": 11.232314623897533
+      "ALP": 23.06818191484962,
+      "LIB_NAT": 29.735615154162986,
+      "ONP": 22.131734214889775,
+      "GRN": 13.99820478804478,
+      "OTH_IND": 10.964724561622983
     },
     "lower80": {
-      "ALP": 22.981675930369903,
-      "LIB_NAT": 27.354863776229948,
-      "ONP": 21.206553305012168,
-      "GRN": 12.62841841149617,
-      "OTH_IND": 10.465033310593649
+      "ALP": 21.58081491643277,
+      "LIB_NAT": 28.2871531039674,
+      "ONP": 21.009132468358555,
+      "GRN": 13.152118584927901,
+      "OTH_IND": 10.272228031202594
     },
     "upper80": {
-      "ALP": 25.577151682114668,
-      "LIB_NAT": 30.222471155381882,
-      "ONP": 23.668043759506272,
-      "GRN": 13.926771001666053,
-      "OTH_IND": 12.04615440590814
+      "ALP": 24.660777763020892,
+      "LIB_NAT": 31.296805088475885,
+      "ONP": 23.343425106250624,
+      "GRN": 14.842930452585843,
+      "OTH_IND": 11.710944720857219
     },
     "house_effects": {
       "DemosAU": {
-        "ALP": -0.019110399102974185,
-        "LIB_NAT": 0.15807987026472858,
-        "ONP": -0.24716019995673832,
-        "GRN": 0.1292477045531779,
-        "OTH_IND": -0.021056975758199314
+        "ALP": -0.987162425120129,
+        "LIB_NAT": 0.6888960517498717,
+        "ONP": -0.3355467059898345,
+        "GRN": 0.6002096126231145,
+        "OTH_IND": 0.03360346673697734
       },
       "Freshwater Strategy": {
-        "ALP": -5.3489568131226406e-05,
-        "LIB_NAT": 0.07296398469090803,
-        "ONP": -0.042322052149387446,
-        "GRN": 0.30411734923211853,
-        "OTH_IND": -0.33470579220552743
+        "ALP": 0.29259507551857666,
+        "LIB_NAT": -0.1835754340513489,
+        "ONP": 0.02534187821303746,
+        "GRN": 0.08056495797903551,
+        "OTH_IND": -0.21492647765929185
       },
       "Newspoll / Pyxis Polling & Insights": {
-        "ALP": 0.3170166143503508,
-        "LIB_NAT": 0.20164429661923222,
-        "ONP": -0.2999210183705152,
-        "GRN": -0.014937884282588243,
-        "OTH_IND": -0.20380200831647954
+        "ALP": 0.32630815557299897,
+        "LIB_NAT": 0.10183286283926662,
+        "ONP": -0.2217340811251951,
+        "GRN": -0.06337458243195826,
+        "OTH_IND": -0.14303235485510335
       },
       "RedBridge / Accent Research": {
-        "ALP": 0.2427366575062493,
-        "LIB_NAT": -0.32761860934695974,
-        "ONP": 0.5565913064062897,
-        "GRN": -0.02065092286349035,
-        "OTH_IND": -0.4510584317021067
+        "ALP": 0.2481160113146963,
+        "LIB_NAT": -0.04188425092952386,
+        "ONP": 0.35472553588806477,
+        "GRN": 0.1281460233598306,
+        "OTH_IND": -0.6891033196330554
       },
       "Roy Morgan": {
-        "ALP": -0.5544568652881949,
-        "LIB_NAT": -0.12968450266606268,
-        "ONP": 0.021265289913849017,
-        "GRN": -0.40043092272575365,
-        "OTH_IND": 1.0633070007661658
+        "ALP": 0.11128831022884711,
+        "LIB_NAT": -0.5974336850910333,
+        "ONP": 0.1493375523374283,
+        "GRN": -0.7341746164783629,
+        "OTH_IND": 1.0709824390031297
       }
     },
     "sensitivity_by_half_life_days": {
       "21": {
-        "ALP": 23.340469333230573,
-        "LIB_NAT": 29.26874408485869,
-        "ONP": 22.02413294473307,
-        "GRN": 12.993461686378527,
-        "OTH_IND": 12.373191950799168
+        "ALP": 22.16828172205672,
+        "LIB_NAT": 30.45458658932472,
+        "ONP": 21.854535610986265,
+        "GRN": 14.153954352546593,
+        "OTH_IND": 11.368641725085611
       },
       "45": {
-        "ALP": 24.277024061459784,
-        "LIB_NAT": 28.796437767535664,
-        "ONP": 22.413479754957258,
-        "GRN": 13.274672314856135,
-        "OTH_IND": 11.238386101191212
+        "ALP": 23.09476919869369,
+        "LIB_NAT": 29.77391456338032,
+        "ONP": 22.154268039578486,
+        "GRN": 14.000987998615788,
+        "OTH_IND": 10.976060199731767
       },
       "90": {
-        "ALP": 24.755173253516755,
-        "LIB_NAT": 28.299252821043815,
-        "ONP": 22.806121284174857,
-        "GRN": 13.428541863733257,
-        "OTH_IND": 10.710910777531412
+        "ALP": 23.891606168053023,
+        "LIB_NAT": 28.992828270720068,
+        "ONP": 22.55421818336721,
+        "GRN": 13.890779552658824,
+        "OTH_IND": 10.670567825200845
       }
     },
     "model": "empirical_bayes_logistic_normal"
@@ -107,7 +107,7 @@
   "assembly": {
     "model": "correlated_multi_party_irv",
     "districts": 88,
-    "hung_probability": 0.798
+    "hung_probability": 0.6966
   },
   "council": {
     "model": "voter_directed_group_stv_approximation",
@@ -168,7 +168,7 @@
       "candidate_order_forecast": false
     },
     "config_path": "config/experimental_forecast.yml",
-    "config_sha256": "86c50570cef1a0475e79bed6f62453c42a50fbeca8af76c2b63dff21db7cdb0c"
+    "config_sha256": "448ddaee47ed8b6b98ccc7777a740968b0e4ac2b6589a85e1fe9122e10e444df"
   },
   "governance": {
     "demographic_residual_weight": 0,
@@ -179,23 +179,23 @@
   "outputs": {
     "districts": {
       "path": "data/processed/experimental_forecast_2026_districts.csv",
-      "sha256": "a59f988f7c339c3f4815596912d843bbeded31ec5888655684bddd74ebbbda71"
+      "sha256": "6077abf5517cb308e44da001104419a168e6987eb2c3c2e0424eb4fb1f8e447c"
     },
     "chamber": {
       "path": "data/processed/experimental_forecast_2026_chamber.csv",
-      "sha256": "243d57274661a78c4c9e501d94193a8df1b71d403658d61ac977414aab0ce896"
+      "sha256": "bc83e9fa2356e75d17f78f38c5e9caa8fb480ece838dbd8a1a97fde65e4eea34"
     },
     "seat_distribution": {
       "path": "data/processed/experimental_forecast_2026_seat_distribution.csv",
-      "sha256": "d8470e5e56b2c54cbb585d24d2b952514f1fb323ae9da6036251a17a324c937f"
+      "sha256": "43ce0005b09fdefbd444cb47b652ebdf4a82780c667d1a4f3c3a4a9f8a6adaa1"
     },
     "council_regions": {
       "path": "data/processed/experimental_forecast_2026_council_regions.csv",
-      "sha256": "693da3fd18d435d44e09c7c3df893a9f964822e8efced5e7a02b5526e0a88d08"
+      "sha256": "992d5b9857f34732e86813d1dbd1417c09d81678a422e2f8e2760457a906d20e"
     },
     "council": {
       "path": "data/processed/experimental_forecast_2026_council.csv",
-      "sha256": "c2763e00b9b6c1724fbd3a75daf65828ab3b302a48d4350cefb6284807c66d79"
+      "sha256": "0577e987d21378fd2832841bffe23993a35b4c604b6832cd4b98af4140a4b129"
     }
   }
 }

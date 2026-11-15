@@ -147,10 +147,10 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   assert.match(html, /aria-label="Forecast sections"/);
   assert.match(html, /Party colour key/);
   assert.match(html, /majority threshold is 45 seats/);
-  assert.match(html, /31 Oct 2026/);
-  assert.match(html, /Experimental forecast snapshot from 31 Oct 2026/);
-  assert.match(html, /Forecast dated<\/span><strong>31 Oct 2026/);
-  assert.match(html, /Latest statewide poll used · fieldwork end<\/span><strong>29 Oct 2026/);
+  assert.match(html, /15 Nov 2026/);
+  assert.match(html, /Experimental forecast snapshot from 15 Nov 2026/);
+  assert.match(html, /Forecast dated<\/span><strong>15 Nov 2026/);
+  assert.match(html, /Latest statewide poll used · fieldwork end<\/span><strong>10 Nov 2026/);
   assert.match(html, /Latest statewide poll reviewed · confirmed fieldwork end<\/span><strong>10 Nov 2026/);
   assert.match(html, /Website compiled/);
   assert.match(html, /November polling evidence reviewed/);
@@ -200,8 +200,8 @@ test("ships explicit fail-closed release gates", async () => {
 
   assert.equal(releaseReadiness.status, "experimental-blocked");
   assert.equal(releaseReadiness.gates.sourceIntegrity.passed, true);
-  assert.equal(releaseReadiness.gates.criticalSourceFreshness.passed, true);
-  assert.equal(releaseReadiness.sources.find((source) => source.id === "vec-2026-enrolment")?.stale, false);
+  assert.equal(releaseReadiness.gates.criticalSourceFreshness.passed, false);
+  assert.equal(releaseReadiness.sources.find((source) => source.id === "vec-2026-enrolment")?.stale, true);
   assert.equal(releaseReadiness.sources.find((source) => source.id === "vic-2026-poll-registry")?.stale, false);
   assert.equal(releaseReadiness.gates.productionAuthorisation.passed, false);
   assert.equal(releaseReadiness.automation.automaticProductionPublish, false);
@@ -231,8 +231,8 @@ test("renders the governed candidate review dossier without implying nomination"
 test("generates the public poll series from the canonical model registry", async () => {
   const { pollSeries } = await vite.ssrLoadModule("/app/poll-data.generated.ts");
 
-  assert.equal(pollSeries.length, 15);
-  assert.equal(pollSeries.at(-1).id, "roy_morgan_2026-10-29");
+  assert.equal(pollSeries.length, 17);
+  assert.equal(pollSeries.at(-1).id, "redbridge-accent-victoria-2026-11-03-10-publisher");
   assert.ok(pollSeries.every((poll) => Math.abs(poll.alp + poll.coalition + poll.onp + poll.greens + poll.other - 100) < .01));
   assert.ok(pollSeries.every((poll) => poll.verificationStatus === "verified" || poll.verificationStatus === "partially_verified"));
 });

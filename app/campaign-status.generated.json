@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "assessedAsOf": "2026-10-31",
-  "forecastDate": "2026-10-31",
-  "latestIncludedPollFieldwork": "2026-10-29",
-  "latestReviewedPublication": "2026-10-30",
-  "pollAgeDays": 2,
+  "assessedAsOf": "2026-11-15",
+  "forecastDate": "2026-11-15",
+  "latestIncludedPollFieldwork": "2026-11-10",
+  "latestReviewedPublication": "2026-11-11",
+  "pollAgeDays": 5,
   "freshnessThresholdDays": 21,
   "forecastStale": false,
   "newerEvidenceOutsideForecast": false,
   "campaignPollsAwaitingAdmission": 3,
-  "campaignPollsAdmitted": 2,
+  "campaignPollsAdmitted": 4,
   "readiness": {
     "schemaVersion": 2,
-    "assessedAsOf": "2026-10-31",
+    "assessedAsOf": "2026-11-15",
     "status": "experimental-blocked",
     "policy": "retain-last-valid-forecast",
     "automation": {
@@ -20,9 +20,10 @@
       "automaticProductionPublish": false
     },
     "summary": {
-      "passedRequiredGates": 6,
+      "passedRequiredGates": 5,
       "requiredGateCount": 9,
       "blockingGateIds": [
+        "criticalSourceFreshness",
         "completeForecastBacktest",
         "probabilityCalibration",
         "productionAuthorisation"
@@ -34,7 +35,7 @@
         "label": "Source fingerprints match"
       },
       "criticalSourceFreshness": {
-        "passed": true,
+        "passed": false,
         "label": "Critical sources are within age policy"
       },
       "modelInputFreshness": {
@@ -110,12 +111,12 @@
     },
     "evidenceFreshness": {
       "schemaVersion": 1,
-      "assessedAsOf": "2026-10-31",
+      "assessedAsOf": "2026-11-15",
       "policy": "Evidence freshness is informational. Only model-eligible evidence can satisfy the forecast freshness gate.",
       "modelInput": {
-        "latestPublicationDate": "2026-10-30",
-        "pollId": "roy_morgan_2026-10-29",
-        "pollster": "Roy Morgan",
+        "latestPublicationDate": "2026-11-11",
+        "pollId": "redbridge-accent-victoria-2026-11-03-10-publisher",
+        "pollster": "RedBridge / Accent Research",
         "status": "model-eligible"
       },
       "acceptedEvidence": {
@@ -152,7 +153,7 @@
         "id": "vec-2022-district-results",
         "critical": true,
         "dataEffectiveDate": "2022-11-26",
-        "ageDays": 1435,
+        "ageDays": 1450,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -161,7 +162,7 @@
         "id": "vec-2022-voting-centres",
         "critical": false,
         "dataEffectiveDate": "2022-11-26",
-        "ageDays": 1435,
+        "ageDays": 1450,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -170,7 +171,7 @@
         "id": "vec-historical-boundary-estimates",
         "critical": true,
         "dataEffectiveDate": "2022-11-26",
-        "ageDays": 1435,
+        "ageDays": 1450,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -179,16 +180,16 @@
         "id": "vec-2026-enrolment",
         "critical": true,
         "dataEffectiveDate": "2026-09-04",
-        "ageDays": 57,
+        "ageDays": 72,
         "stalenessThresholdDays": 62,
-        "stale": false,
+        "stale": true,
         "artifactsCurrent": true
       },
       {
         "id": "ebc-2021-boundaries",
         "critical": true,
         "dataEffectiveDate": "2022-11-01",
-        "ageDays": 1460,
+        "ageDays": 1475,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -197,7 +198,7 @@
         "id": "aec-2022-geographic-vote-surface",
         "critical": false,
         "dataEffectiveDate": "2022-05-21",
-        "ageDays": 1624,
+        "ageDays": 1639,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -205,8 +206,8 @@
       {
         "id": "vic-2026-poll-registry",
         "critical": true,
-        "dataEffectiveDate": "2026-10-29",
-        "ageDays": 2,
+        "dataEffectiveDate": "2026-11-10",
+        "ageDays": 5,
         "stalenessThresholdDays": 21,
         "stale": false,
         "artifactsCurrent": true
@@ -215,7 +216,7 @@
         "id": "vec-recent-by-elections",
         "critical": false,
         "dataEffectiveDate": "2025-02-08",
-        "ageDays": 630,
+        "ageDays": 645,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -224,7 +225,7 @@
         "id": "forecast-derived-outputs",
         "critical": true,
         "dataEffectiveDate": "2026-10-31",
-        "ageDays": 0,
+        "ageDays": 15,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
@@ -233,14 +234,14 @@
         "id": "current-evidence-review-2026-10-08",
         "critical": false,
         "dataEffectiveDate": "2026-10-02",
-        "ageDays": 29,
+        "ageDays": 44,
         "stalenessThresholdDays": null,
         "stale": false,
         "artifactsCurrent": true
       }
     ]
   },
-  "notice": "2 campaign polls admitted under explicit owner approval; other campaign waves remain held. This is an experimental snapshot. Published probabilities have not passed full production calibration.",
+  "notice": "4 campaign polls admitted under explicit owner approval; other campaign waves remain held. This is an experimental snapshot. Published probabilities have not passed full production calibration.",
   "council": {
     "regionalInput": "upper_house_region_poll_2026-08.csv",
     "newerRegionalPublication": "2026-10-20",

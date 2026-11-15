@@ -11,7 +11,8 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='9b32cdae813e1a06f3cda1512d136275604e63a3'
 NEW_IDS={'demosau_2026-09','roy_morgan_2026-10-29'}
 def before(path): return subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)
-def current(path): return (ROOT/path).read_bytes()
+OCTOBER_RELEASE='81e80b955d511ae7a51f5d55b26bd2001352a608'
+def current(path): return subprocess.check_output(['git','show',f'{OCTOBER_RELEASE}:{path}'],cwd=ROOT)
 def sha(data): return hashlib.sha256(data).hexdigest()
 def rows(data): return list(csv.DictReader(io.StringIO(data.decode())))
 def delta(a,b): return {'before':float(a),'after':float(b),'change':float(b)-float(a)}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "registryReviewedAt": "2026-10-31T00:00:00Z",
+  "registryReviewedAt": "2026-11-15T00:00:00Z",
   "sources": [
     {
       "id": "vec-2022-district-results",
@@ -129,7 +129,7 @@
       "useStatus": "experimental",
       "modelRole": "Statewide multi-party polling state and uncertainty",
       "canonicalUrl": "https://www.roymorgan.com/findings/10373-victorian-state-voting-intention-october-2026",
-      "dataEffectiveDate": "2026-10-29",
+      "dataEffectiveDate": "2026-11-10",
       "lastCheckedAt": "2026-10-31T00:00:00Z",
       "updateFrequency": "weekly",
       "stalenessThresholdDays": 21,

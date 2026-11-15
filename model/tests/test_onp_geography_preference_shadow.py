@@ -3,6 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 import hashlib
 import importlib.util
+import subprocess
 from pathlib import Path
 
 import numpy as np
@@ -47,8 +48,16 @@ def test_reject_unexpected_assembly_universe():
         stress.bound_onp_geography(frame().iloc[:87], .45)
 
 
-def test_reference_registration_and_inputs_are_not_mutated():
-    config, manifest = stress.load_registered_reference(ROOT)
+def test_reference_registration_and_inputs_are_not_mutated(tmp_path):
+    october_release = "81e80b955d511ae7a51f5d55b26bd2001352a608"
+    for path in ("model/config/experimental_forecast.yml",
+                 "model/data/processed/experimental_forecast_2026.json"):
+        target = tmp_path / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(subprocess.check_output(
+            ["git", "show", f"{october_release}:{path}"], cwd=ROOT,
+        ))
+    config, manifest = stress.load_registered_reference(tmp_path)
     assert str(config["as_of"]) == manifest["as_of"] == "2026-10-31"
     assert len(stress.SCENARIOS) == 4
     assert len(set(s[0] for s in stress.SCENARIOS)) == 4

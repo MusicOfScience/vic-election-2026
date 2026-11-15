@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { execFileSync } from "node:child_process";
 /**
  * Evidence-locked, output-only audit of the 2026 experimental district model.
  * No modelling parameters, canonical poll files, ballots or forecasts are edited.
@@ -110,7 +111,9 @@ export function buildSeatIntegrityAudit(root = ROOT) {
   const source = {};
   const contents = {};
   for (const [key, path] of Object.entries(paths)) {
-    contents[key] = readFileSync(resolve(root, path));
+    contents[key] = ["model", "chamber", "config"].includes(key)
+      ? execFileSync("git", ["show", `81e80b955d511ae7a51f5d55b26bd2001352a608:${path}`], { cwd: root })
+      : readFileSync(resolve(root, path));
     source[key] = { path, sha256: sha(contents[key]) };
   }
   const districtRows = parseCsv(contents.model.toString("utf8"));
