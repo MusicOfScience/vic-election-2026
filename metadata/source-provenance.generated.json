@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "registryReviewedAt": "2026-10-31T00:00:00Z",
+  "registryReviewedAt": "2026-11-15T00:00:00Z",
   "summary": {
     "sourceGroups": 10,
     "officialSourceGroups": 7,
@@ -208,7 +208,7 @@
       "useStatus": "experimental",
       "modelRole": "Statewide multi-party polling state and uncertainty",
       "canonicalUrl": "https://www.roymorgan.com/findings/10373-victorian-state-voting-intention-october-2026",
-      "dataEffectiveDate": "2026-10-29",
+      "dataEffectiveDate": "2026-11-10",
       "lastCheckedAt": "2026-10-31T00:00:00Z",
       "updateFrequency": "weekly",
       "stalenessThresholdDays": 21,
@@ -228,15 +228,15 @@
       "artifacts": [
         {
           "path": "model/data/processed/poll_events_seed.csv",
-          "sha256": "020bb4e2facb3188148a80060ec001b3db8473a999eae3aa8e4e3c7207f42bf0",
-          "bytes": 9670,
-          "records": 16
+          "sha256": "473e7b12877543a4fa7fa985ac4e328f6ac4741e80e6f3fc30b750282aee413f",
+          "bytes": 10892,
+          "records": 18
         },
         {
           "path": "model/data/processed/poll_estimates_seed.csv",
-          "sha256": "3d4c12a095e367aa2cf2fff278657c8bfe5b25aa22a240eb1f2f7192953a81b5",
-          "bytes": 5877,
-          "records": 78
+          "sha256": "9d84cf4b802c16c11b073f87c32ef95e325d83cdf0cd08f92ddffff5e1a7007f",
+          "bytes": 6801,
+          "records": 88
         },
         {
           "path": "model/data/processed/upper_house_region_poll_2026-08.csv",
@@ -246,8 +246,8 @@
         },
         {
           "path": "app/poll-data.generated.ts",
-          "sha256": "b15f0cb96819a3692a624ceb0e77e7a0e5c15c4d511850d5e94b510dfca622af",
-          "bytes": 11317,
+          "sha256": "75c689675bbeaf8499430a69a67d8fbde8714aab33a3f153ecd0c4f8f56d35d4",
+          "bytes": 12955,
           "records": null
         },
         {
@@ -336,44 +336,44 @@
       "artifacts": [
         {
           "path": "model/data/processed/experimental_forecast_2026.json",
-          "sha256": "8734dd6b0c709a37bd540d9453d47c8820f028e976c11722b3b7338f598051d0",
-          "bytes": 6310,
+          "sha256": "6b87b4cb6f593ebde42c00e0c0f57286bf3f0e6d48525214c8328df02f261c4d",
+          "bytes": 6286,
           "records": null
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_districts.csv",
-          "sha256": "a59f988f7c339c3f4815596912d843bbeded31ec5888655684bddd74ebbbda71",
-          "bytes": 38163,
+          "sha256": "6077abf5517cb308e44da001104419a168e6987eb2c3c2e0424eb4fb1f8e447c",
+          "bytes": 38192,
           "records": 88
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_chamber.csv",
-          "sha256": "243d57274661a78c4c9e501d94193a8df1b71d403658d61ac977414aab0ce896",
-          "bytes": 262,
+          "sha256": "bc83e9fa2356e75d17f78f38c5e9caa8fb480ece838dbd8a1a97fde65e4eea34",
+          "bytes": 266,
           "records": 5
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_seat_distribution.csv",
-          "sha256": "d8470e5e56b2c54cbb585d24d2b952514f1fb323ae9da6036251a17a324c937f",
-          "bytes": 765,
+          "sha256": "43ce0005b09fdefbd444cb47b652ebdf4a82780c667d1a4f3c3a4a9f8a6adaa1",
+          "bytes": 762,
           "records": 89
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council_regions.csv",
-          "sha256": "693da3fd18d435d44e09c7c3df893a9f964822e8efced5e7a02b5526e0a88d08",
-          "bytes": 4297,
+          "sha256": "992d5b9857f34732e86813d1dbd1417c09d81678a422e2f8e2760457a906d20e",
+          "bytes": 4316,
           "records": 8
         },
         {
           "path": "model/data/processed/experimental_forecast_2026_council.csv",
-          "sha256": "c2763e00b9b6c1724fbd3a75daf65828ab3b302a48d4350cefb6284807c66d79",
-          "bytes": 262,
+          "sha256": "0577e987d21378fd2832841bffe23993a35b4c604b6832cd4b98af4140a4b129",
+          "bytes": 260,
           "records": 5
         },
         {
           "path": "app/model-output.generated.ts",
-          "sha256": "b14f8e4adf17e89f04345f1ab1a87c41ac0d8741864deaf9ae35a4af7108a989",
-          "bytes": 134579,
+          "sha256": "046f0eab835116e054d2dcbb704e72185ded92d35576174e0cf6921d9d4be6e9",
+          "bytes": 134595,
           "records": null
         }
       ]

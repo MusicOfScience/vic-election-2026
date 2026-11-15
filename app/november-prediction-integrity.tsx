@@ -1,4 +1,6 @@
 "use client";
+import novemberApproval from '../metadata/poll-admission-approval-2026-11-15.json';
+
 
 import { useMemo, useState } from "react";
 import { modelOutput } from "./model-output.generated";
@@ -46,8 +48,8 @@ export function NovemberPollingEvidence() {
   return <section className="surface november-evidence" aria-label="November polling evidence review">
     <div className="november-review-header">
       <p className="eyebrow">November polling evidence</p>
-      <h3>Published polls awaiting model review</h3>
-      <p>{waves.length} reported polls are listed below. First-party releases now verify the methodology and effective sample size for DemosAU and RedBridge / Accent. Each entry shows why it remains outside the forecast.</p>
+      <h3>Published polls and model use</h3>
+      <p>{waves.length} reported polls are listed below. First-party releases now verify the methodology and effective sample size for DemosAU and RedBridge / Accent. Expand the poll inputs above to see which waves are used.</p>
     </div>
     <div className="november-evidence-items">
       {waves.map((wave) => <article key={wave.id} className="november-evidence-item">
@@ -66,7 +68,7 @@ export function NovemberPollingEvidence() {
         {wave.reportedPrimaries?.other !== undefined && <p>Other: {wave.reportedPrimaries.other}% in the pollster’s published results.</p>}
         {wave.id.startsWith("lighthouse-") && <p className="november-evidence-warning">Rolling two-week tracker; adjacent waves are dependent. A News Corp account gives Labor 22%, One Nation 23%, while an early Poll Bludger summary reversed those two figures. The disagreement is retained in the source record.</p>}
         {wave.id.startsWith("pakenham-") && <p className="november-evidence-warning">The published 50–50 two-candidate comparison is modelled using assumed preference flows, not a measured final count or a seat-win probability.</p>}
-        <p className="november-evidence-status">Model status: held · {wave.reason}</p>
+        <p className="november-evidence-status">Model status: {novemberApproval.admittedPollIds.includes(wave.id) ? "used in the forecast" : wave.id.startsWith("resolve-") ? "sensitivity check only" : `held · ${wave.reason}`}</p>
         <a href={wave.sourceUrl} rel="noreferrer" target="_blank">Open supporting publication</a>
       </article>)}
     </div>
@@ -97,7 +99,7 @@ export function SeatIntegrityEvidence() {
 
   return <section className="surface seat-integrity" aria-label="High-confidence seat model integrity audit">
     <div className="seat-integrity-header">
-      <p className="eyebrow">Mechanics audit · frozen reference model</p>
+      <p className="eyebrow">Mechanics audit · current experimental model</p>
       <h3>Where the model warrants scepticism</h3>
       <p>These are reproducible flags from the existing {modelOutput.manifest.as_of} experimental output, checked against the VEC’s 1,037 officially nominated candidates. They are <strong>not</strong> empirical errors, newly adjusted probabilities or recommendations on how to vote.</p>
     </div>
@@ -143,11 +145,11 @@ export function SeatIntegrityEvidence() {
       </article>
       <article>
         <h4>3 · The One Nation geographical limit has an exception</h4>
-        <p>The model configuration lists a One Nation local log-odds bound of ±0.45, but the calculation later overrides it with an AEC-derived One Nation geographical pattern capped at −1.20 to +1.10. The higher effective positive bound permits a relative-odds multiplier of about 3.0, versus 1.57 under ±0.45. This is a code-level observation, <strong>not proof of a programming error</strong>. The reference model has not been altered.</p>
+        <p>The model configuration lists a One Nation local log-odds bound of ±0.45, but the calculation later overrides it with an AEC-derived One Nation geographical pattern capped at −1.20 to +1.10. The higher effective positive bound permits a relative-odds multiplier of about 3.0, versus 1.57 under ±0.45. This is a code-level observation, <strong>not proof of a programming error</strong>. The geography setting is unchanged in this refresh.</p>
       </article>
       <article>
         <h4>4 · One local observation challenges Pakenham</h4>
-        <p>The October model gives Pakenham One Nation {pakenhamModel ? pp(pakenhamModel.primary_onp) : fallback} primary and {pakenhamModel ? pct(pakenhamModel.win_onp) : fallback} winning frequency. A separately published 4–8 November electorate survey reports {pakenhamPoll}% One Nation primary, about <strong>{gap.toFixed(1)} percentage points higher</strong> than the older model’s primary estimate. Its effective sample is {overlapUnknown}; its two-candidate result uses assumed transfers. This is a useful diagnostic discrepancy, <strong>not</strong> an independent calibration test or authorised forecast refresh.</p>
+        <p>The current model gives Pakenham One Nation {pakenhamModel ? pp(pakenhamModel.primary_onp) : fallback} primary and {pakenhamModel ? pct(pakenhamModel.win_onp) : fallback} winning frequency. A separately published 4–8 November electorate survey reports {pakenhamPoll}% One Nation primary, about <strong>{gap.toFixed(1)} percentage points higher</strong> than the model’s primary estimate. Its effective sample is {overlapUnknown}; its two-candidate result uses assumed transfers. This is a useful diagnostic discrepancy, <strong>not</strong> an independent calibration test or authorised forecast refresh.</p>
         <a href={pakenham?.sourceUrl ?? "https://demosau.com/"} rel="noreferrer" target="_blank">Read the Pakenham electorate poll</a>
       </article>
     </div>

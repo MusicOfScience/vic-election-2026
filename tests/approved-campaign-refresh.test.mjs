@@ -24,7 +24,7 @@ test('refresh reproduces approved sensitivity and preserves the historical archi
 });
 test('current readiness is fresh but production gates remain closed',()=>{
  const r=read('metadata/release-readiness.generated.json');
- assert.equal(r.assessedAsOf,'2026-10-31');assert.equal(r.summary.passedRequiredGates,6);
- assert.equal(r.gates.criticalSourceFreshness.passed,true);assert.equal(r.gates.modelInputFreshness.passed,true);
+ assert.equal(r.assessedAsOf,'2026-11-15');assert.equal(r.summary.passedRequiredGates,5);
+ assert.equal(r.gates.criticalSourceFreshness.passed,false);assert.equal(r.gates.modelInputFreshness.passed,true);
  for(const gate of ['completeForecastBacktest','probabilityCalibration','productionAuthorisation']) assert.equal(r.gates[gate].passed,false);
 });
