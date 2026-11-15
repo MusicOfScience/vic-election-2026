@@ -66,9 +66,9 @@ function soleNominee(rows: CandidateRow[], family: Party) {
   return matches.length === 1 ? matches[0][3] : null;
 }
 
-export function OfficialCandidateDirectory({ openPolls }: { openPolls: () => void }) {
+export function OfficialCandidateDirectory({ openPolls, initialDistrict = "" }: { openPolls: () => void; initialDistrict?: string }) {
   const [chamber, setChamber] = useState<Chamber>("Assembly");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialDistrict);
   const [party, setParty] = useState("all");
   const parties = useMemo(() => [...new Set(candidates.filter((r) => r[0] === chamber).map((r) => r[4] ?? ""))]
     .sort((a, b) => a.localeCompare(b)), [chamber]);
@@ -111,7 +111,7 @@ export function OfficialCandidateDirectory({ openPolls }: { openPolls: () => voi
       </div>
     </section>
     <section aria-label="Official candidate lists" className="official-roster-contests">
-      {groups.map((group) => <details className="surface official-roster-contest" key={chamber + group.contest}>
+      {groups.map((group) => <details className="surface official-roster-contest" key={chamber + group.contest} open={chamber === "Assembly" && group.contest === initialDistrict ? true : undefined}>
         <summary>
           <span className="official-roster-contest-name"><strong>{group.contest}</strong><small>{chamber === "Assembly" ? "Legislative Assembly district" : "Legislative Council region"}</small></span>
           <span className="official-roster-count">{group.rows.length} candidates</span>
