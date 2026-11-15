@@ -154,7 +154,7 @@ function Forecast({ openPolls, openDistrict }: { openPolls: () => void; openDist
     ...parties.map((party) => ({ label: `${partyMeta[party].label} majority`, probability: chamber[party].majority_probability })),
   ].sort((a, b) => b.probability - a.probability);
   const leadingOutcome = outcomeOptions[0];
-  const tiedOutcome = leadingOutcome.probability === outcomeOptions[1].probability;
+
   const outcomes = outcomeOptions.filter(({ label, probability }) =>
     probability > 0 || ["Hung parliament", "Labor majority", "Coalition majority"].includes(label));
   const support = modelOutput.seatDistribution.filter((row) => row.probability > 0);
@@ -166,13 +166,22 @@ function Forecast({ openPolls, openDistrict }: { openPolls: () => void; openDist
       <div className="forecast-copy">
         <div className="forecast-kicker"><Badge>Experimental forecast</Badge><span>{simulationCount} whole-election simulations · {forecastDate}</span></div>
         <p className="eyebrow">Lower House · {modelOutput.districts.length} electorates</p>
-        <h2>{tiedOutcome ? "Experimental snapshot: joint outcomes tied." : `Experimental snapshot: ${leadingOutcome.label.toLowerCase()} leads.`}</h2>
+        <h2>Paths to an Assembly majority</h2>
         <p className="forecast-deck">Polls, prior results, local patterns, by-elections and preference assumptions move together across {simulationCount} simulated Victorian elections.</p>
         <a className="assembly-board-link" href="#assembly-board-title">See all {modelOutput.districts.length} seat predictions <ArrowRight size={16} aria-hidden="true" /></a>
       </div>
       <AssemblyOutlook chamber={chamber} />
     </section>
     <section className="outcome-strip" aria-label="Simulated Assembly outcomes">{outcomes.map(({ label, probability }) => <OutcomeProbability key={label} label={label} probability={probability} active={probability === leadingOutcome.probability} />)}</section>
+    <aside className="model-warning" aria-label="Limits of the Assembly estimates">
+      <CircleAlert size={20} aria-hidden="true" />
+      <div>
+        <strong>These frequencies depend on the model’s assumptions</strong>
+        <p>Read them as shares of simulated elections. The model has yet to establish how closely those shares match real election chances.</p>
+        <p>In an October snapshot stress test, widening uncertainty about preferences moved the share of runs with no majority from about 80% to 43%. This shows how sensitive the result is to preferences.</p>
+        <a href="https://github.com/MusicOfScience/vic-election-2026/blob/main/docs/ONP_GEOGRAPHY_PREFERENCE_2X2_SHADOW_RESULTS_2026-11-11.md">Read the stress test</a>
+      </div>
+    </aside>
     <StatewideVoteOutlook openPolls={openPolls} />
     <AssemblySeatBoard districts={modelOutput.districts} chamber={chamber} />
     <ReadingGuide />
