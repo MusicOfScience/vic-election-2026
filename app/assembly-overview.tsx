@@ -33,7 +33,7 @@ export function AssemblyOutlook({ chamber }: { chamber: Chamber }) {
         </li>;
       })}
     </ul>
-    <p>The dot marks the median. The line shows where most runs land for each group.</p>
+    <p>The dot marks the median. The line shows where most runs land for each group. The Other / independent range treats separate candidates as one group and cannot tell you how a named independent will fare.</p>
   </section>;
 }
 
