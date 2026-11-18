@@ -53,7 +53,7 @@ export default function PollingReplay() {
   const ticks = [0, 1, 2, 3].map((i) => new Date(start + (end - start) * i / 3).toISOString());
   return <section className="surface forecast-explorer" id="polling-replay" aria-labelledby="polling-replay-title">
     <h3 id="polling-replay-title">Replay the polling average</h3>
-    <p>Each stop refits the forecast’s first-preference average with admitted polls published by that date. Earlier stops reconstruct the series using the latest release’s admission list.</p>
+    <p>Each stop refits the forecast’s first-preference average with admitted polls published by that date. The replay starts once at least three admitted polls are available and reconstructs earlier dates using the latest release’s admission list.</p>
     <div className="forecast-options replay-controls">
       <label>Weight of earlier polls
         <select value={halfLife} onChange={(event) => setHalfLife(event.target.value)}>

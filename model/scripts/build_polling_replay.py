@@ -30,7 +30,9 @@ def build(root):
     frames = []
     for date in sorted(set(publications) | {cutoff}):
         poll_ids = set(admitted.loc[publications <= date, "poll_id"])
-        if len(poll_ids) < 2:
+        # Skip the sparse two-poll frame. Its rank-one residual covariance leaves
+        # the seeded finite draws sensitive to the numerical library's choice of basis.
+        if len(poll_ids) < 3:
             continue
         available = events[events.poll_id.isin(poll_ids)]
         inputs = estimates[estimates.poll_id.isin(poll_ids)]
