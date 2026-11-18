@@ -14,8 +14,10 @@ export function CampaignNotice() {
   return <aside className="campaign-notice" aria-label="Forecast currency and publication versions">
     <strong>{status.forecastStale ? 'Forecast inputs are out of date' : 'Experimental forecast status'}</strong>
     <p>{status.notice}</p>
+    <details><summary>Poll admission and forecast dates</summary>
     <dl><div><dt>Included poll fieldwork</dt><dd>{date(status.latestIncludedPollFieldwork)}</dd></div><div><dt>Last admitted poll publication</dt><dd>{date(status.latestReviewedPublication)}</dd></div><div><dt>November polling evidence reviewed</dt><dd>{date(novemberReview.latestSupplementReview ?? novemberReview.reviewDate)}</dd></div><div><dt>November poll leads not admitted</dt><dd>{heldNovemberLeads}</dd></div><div><dt>Readiness assessed {date(status.assessedAsOf)}</dt><dd>{status.readiness.summary.passedRequiredGates}/{status.readiness.summary.requiredGateCount} gates pass</dd></div></dl>
     <p>The simulations use inputs from the {date(status.forecastDate)} snapshot. Open <strong>Polls</strong> for newer evidence awaiting review. A hung Assembly can lead to several different government arrangements.</p>
+    </details>
   </aside>;
 }
 

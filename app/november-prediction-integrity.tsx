@@ -1,4 +1,5 @@
 "use client";
+import { mainMatchup } from "./assembly-matchups";
 import novemberApproval from '../metadata/poll-admission-approval-2026-11-15.json';
 
 
@@ -126,7 +127,7 @@ export function SeatIntegrityEvidence() {
         const familyCandidates = list.filter((r) => registeredFamily(r[4]) === family);
         const onp = family === "ONP";
         return <tr key={seat.district_id}>
-          <th scope="row">{seat.district_name}<small>{seat.likely_final_pair.replaceAll("_", " ")}</small></th>
+          <th scope="row">{seat.district_name}<small>{mainMatchup(seat.district_id).label}</small></th>
           <td>{onp ? "One Nation" : "Others / independents"}</td>
           <td>{pp(onp ? seat.primary_onp : seat.primary_oth_ind)}</td>
           <td>{pct(onp ? seat.win_onp : seat.win_oth_ind)}</td>

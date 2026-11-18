@@ -17,16 +17,21 @@ def count(primary, preference, finalists=None):
     """Apply the engine's transfers, optionally keeping two groups in the count."""
     votes = primary.copy()
     continuing = set(range(len(engine.PARTIES)))
+    last_three_gap = last_out = None
     while len(continuing) > 2:
         removable = continuing if finalists is None else continuing.difference(finalists)
         source = min(removable, key=lambda x: (votes[x], x))
+        if finalists is None and len(continuing) == 3:
+            tallies = sorted(votes[idx] for idx in continuing)
+            last_three_gap = tallies[1] - tallies[0]
+            last_out = source
         continuing.remove(source)
         destinations = sorted(continuing)
         probs = preference[source, destinations]
         votes[destinations] += votes[source] * (probs / probs.sum())
         votes[source] = 0.0
     pair = tuple(sorted(continuing, key=lambda x: votes[x], reverse=True))
-    return pair, votes
+    return pair, votes, last_three_gap, last_out
 
 
 def summary(values):
@@ -47,6 +52,8 @@ def build(root):
     weights /= weights.sum()
     statewide = np.zeros(n)
     seat_pairs = [{} for _ in weights]
+    gaps = np.zeros((len(weights), n))
+    excluded = np.zeros((len(weights), len(engine.PARTIES)), dtype=int)
     labour, coalition = (engine.PARTIES.index(p) for p in ("ALP", "LIB_NAT"))
     original_count = engine._count_irv
     calls = 0
@@ -55,14 +62,15 @@ def build(root):
         nonlocal calls
         draw, seat = divmod(calls, len(weights))
         winner, ordered = original_count(primary, preference)
-        pair, votes = count(primary, preference)
+        pair, votes, gaps[seat, draw], last_out = count(primary, preference)
+        excluded[seat, last_out] += 1
         if pair != ordered:
             raise ValueError("Diagnostic count diverged from the canonical engine")
         first, second = sorted(ordered)
         total, wins = seat_pairs[seat].setdefault((first, second), ([], []))
         total.append(votes[first])
         wins.append(winner == first)
-        _, forced = count(primary, preference, (labour, coalition))
+        _, forced, _, _ = count(primary, preference, (labour, coalition))
         statewide[draw] += weights[seat] * forced[labour]
         calls += 1
         return winner, ordered
@@ -85,13 +93,20 @@ def build(root):
         raise ValueError("Diagnostic poll lineage mismatch")
 
     seats = {}
-    for district_id, pairs in zip(districts.district_id, seat_pairs):
-        (first, second), (shares, wins) = max(sorted(pairs.items()), key=lambda item: len(item[1][0]))
+    for district_id, pairs, seat_gaps, exclusions in zip(districts.district_id, seat_pairs, gaps, excluded):
+        ranked = sorted(pairs.items(), key=lambda item: (-len(item[1][0]), item[0]))
+        matchups = [
+            {"pair": [engine.PARTIES[first], engine.PARTIES[second]],
+             "draws": len(shares), "firstShare": summary(shares), "firstWins": sum(wins)}
+            for (first, second), (shares, wins) in ranked
+        ]
         seats[district_id] = {
-            "pair": [engine.PARTIES[first], engine.PARTIES[second]],
-            "draws": len(shares),
-            "firstShare": summary(shares),
-            "firstWins": sum(wins),
+            **matchups[0], "matchups": matchups,
+            "thirdPlaceGap": {
+                "medianPp": round(float(np.median(seat_gaps)) * 100, 4),
+                "withinTwoPoints": int(np.count_nonzero(seat_gaps <= .02)),
+                "lastExcluded": {p: int(tally) for p, tally in zip(engine.PARTIES, exclusions)},
+            },
         }
     return {"asOf": manifest["as_of"], "simulations": n,
             "forecastSha256": hashlib.sha256(manifest_bytes).hexdigest(),
