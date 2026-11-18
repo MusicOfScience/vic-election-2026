@@ -47,16 +47,18 @@ const rehearsalSteps: { at: string; status: keyof typeof statuses; votes: Record
   { at: "07:20", status: "published", votes: { a: 420, b: 380 }, series: 1, transition: "pair-published" },
   { at: "07:40", status: "withheld", votes: {}, series: null, transition: "pair-withheld" },
   { at: "08:03", status: "published", votes: { a: 630, c: 670 }, series: 2, transition: "pair-changed" },
+  { at: "08:12", status: "published", votes: { a: 630, c: 670 }, series: 2, transition: null },
   { at: "08:20", status: "published", votes: { a: 930, c: 970 }, series: 2, transition: null, declared: true },
 ];
 const rehearsalHistory: Observation[] = rehearsalSteps.map(({ at, status, votes, series, transition, declared }, index) => {
   const createdAt = `2026-11-28T${at}:00Z`;
-  const firstVotes = { a: 315 + 145 * index, b: 285 + 110 * index, c: 296 + 150 * index };
+  const batch = at === "08:12" ? index - 1 : index;
+  const firstVotes = { a: 315 + 145 * batch, b: 285 + 110 * batch - (at === "08:12" ? 12 : 0), c: 296 + 150 * batch };
   return {
     createdAt, series, transition, declared: declared ?? false,
     first: { votes: firstVotes, formal: Object.values(firstVotes).reduce((a, b) => a + b, 0),
-      coverage: { returned: index + 2, expected: 10 }, updatedAt: createdAt, voteModes: {} },
-    pair: { status, votes, coverage: status === "unavailable" ? null : { returned: index + 1, expected: 10 }, updatedAt: status === "unavailable" ? null : createdAt },
+      coverage: { returned: batch + 2, expected: 10 }, updatedAt: createdAt, voteModes: {} },
+    pair: { status, votes, coverage: status === "unavailable" ? null : { returned: batch + 1, expected: 10 }, updatedAt: status === "unavailable" ? null : at === "08:12" ? "2026-11-28T08:03:00Z" : createdAt },
   };
 });
 
@@ -76,7 +78,7 @@ function CountTable({ tally, candidates, onlyPublished = true }: { tally: Tally;
   </div>;
 }
 
-export default function CountStatus() {
+export default function CountStatus({ forecastDate }: { forecastDate: string }) {
   const [showDemo, setShowDemo] = useState(false);
   const [privateLedger, setPrivateLedger] = useState<Ledger | null>(null);
   const [fileError, setFileError] = useState("");
@@ -88,8 +90,12 @@ export default function CountStatus() {
   const district = ledger?.districts[districtId] ?? districts[0]?.[1];
   const index = frame ?? (ledger ? ledger.frames.length - 1 : 0);
   const moment = ledger?.frames[index]?.createdAt;
-  const history = moment ? district?.history.filter((entry) => entry.createdAt <= moment) ?? [] : [];
+  const history = moment ? district?.history.filter((entry) => Date.parse(entry.createdAt) <= Date.parse(moment)) ?? [] : [];
   const current = history.at(-1);
+  const earlier = history.at(-2);
+  const primaryRanks = Object.entries(current?.first.votes ?? {}).sort((a, b) => b[1] - a[1]);
+  const correctedPrimary = current && earlier && current.createdAt === moment &&
+    Object.entries(current.first.votes).some(([id, votes]) => votes < (earlier.first.votes[id] ?? 0));
   return <div className="tab-stack">
     <section className="surface forecast-explorer count-status" aria-labelledby="count-status-title">
       <p className="eyebrow">Victorian Legislative Assembly</p>
@@ -126,7 +132,7 @@ export default function CountStatus() {
         }}>Clear private count file</button></div>}
       </details>
       {!showDemo && privateLedger && <p role="note"><strong>Private preview.</strong> Source file mode: {privateLedger.mode}. These figures are visible only in this browser tab.</p>}
-      {ledger && district && current && moment && <>
+      {ledger && district && moment && <>
         <div className="forecast-options">
           <label>Electorate<select value={districtId && ledger.districts[districtId] ? districtId : districts[0][0]} onChange={(event) => setDistrictId(event.target.value)}>
             {districts.map(([id, row]) => <option key={id} value={id}>{row.name}</option>)}
@@ -136,11 +142,15 @@ export default function CountStatus() {
         <label className="replay-timeline">Count timeline
           <input type="range" min={0} max={ledger.frames.length - 1} value={index} aria-valuetext={formatDate(moment)} onChange={(event) => setFrame(Number(event.target.value))} />
         </label>
-        <p aria-live="polite"><strong>{district.name}</strong> · {formatDate(moment)} Melbourne time</p>
+        <p aria-live="polite"><strong>{district.name}</strong> · Count snapshot {formatDate(moment)} Melbourne time</p>
+        <p className="chart-note">Separate forecast snapshot: {forecastDate}.</p>
+        {!current ? <p>This electorate has no results in this snapshot. Move forward on the timeline to see later updates.</p> : <>
         <div className="count-status-grid">
           <section aria-label="First preferences"><h3>First preferences</h3>
             <p>{number.format(current.first.formal)} formal votes recorded in this view.</p>
             <CountTable tally={current.first} candidates={district.candidates} />
+            {correctedPrimary && <p role="note">A candidate’s first-preference tally fell since the previous snapshot. This can reflect a correction or a change in reporting coverage.</p>}
+            {primaryRanks.length >= 3 && <p>Second–third gap on first preferences: {number.format(primaryRanks[1][1] - primaryRanks[2][1])} votes. Preference transfers can still change the elimination order.</p>}
             {Object.keys(current.first.voteModes).length > 0 && <details><summary>Formal votes by VEC vote type</summary>
               <dl>{Object.entries(current.first.voteModes).map(([mode, votes]) => <div key={mode}><dt>{mode}</dt><dd>{number.format(votes)}</dd></div>)}</dl>
               <p className="chart-note">Categories follow the feed. Reporting coverage may differ by vote type.</p>
@@ -149,6 +159,8 @@ export default function CountStatus() {
           <section aria-label="Indicative two-candidate preferred count"><h3>{statuses[current.pair.status]}</h3>
             {current.pair.status === "withheld" && <p>The feed has withheld the indicative two-candidate-preferred count. First preferences can continue to update. The feed flag gives no reason for withholding.</p>}
             {current.pair.status === "published" && <p>Pair series {current.series}. When the pair changes, its earlier margins belong to a separate series.</p>}
+            {current.pair.status === "published" && current.pair.updatedAt && Date.parse(current.pair.updatedAt) < Date.parse(moment) &&
+              <p role="note">The latest available pair tally is from an earlier update than this snapshot.</p>}
             <CountTable tally={current.pair} candidates={district.candidates} onlyPublished={current.pair.status === "published"} />
           </section>
         </div>
@@ -162,6 +174,7 @@ export default function CountStatus() {
           })}</ul>
           <p className="chart-note">Milestone dates are the first captured snapshots showing each change.</p>
         </details>
+        </>}
       </>}
     </section>
   </div>;

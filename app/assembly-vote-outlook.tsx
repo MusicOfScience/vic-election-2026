@@ -68,9 +68,9 @@ export function ElectorateVoteOutlook({ districtName, candidate, openPolls }: { 
   const leader = district.favoured_party as Party;
   const { mean, low, high } = matchup.firstShare;
   return <section className="vote-outlook vote-electorate" aria-label={`${districtName} experimental forecast`}>
-    <header><p className="eyebrow">Experimental electorate forecast · {date(diagnostics.asOf)}</p><h3>{label(leader)} wins most often · {pct(district.favoured_probability * 100)} of all runs</h3></header>
+    <header><p className="eyebrow">Experimental electorate forecast · {date(diagnostics.asOf)}</p><h3>{partyMeta[leader].label} wins most often · {pct(district.favoured_probability * 100)} of all runs</h3>{candidate(leader) && <p>Official nominee for this group: {candidate(leader)}</p>}</header>
     <div className="vote-outlook-grid">
-      <div><h4>Top three on first preferences</h4><PrimaryRanking candidate={candidate} values={{ ALP: district.primary_alp, LIB_NAT: district.primary_lib_nat, ONP: district.primary_onp, GRN: district.primary_grn, OTH_IND: district.primary_oth_ind }} /></div>
+      <div><h4>Top three party groups on first preferences</h4><PrimaryRanking candidate={candidate} values={{ ALP: district.primary_alp, LIB_NAT: district.primary_lib_nat, ONP: district.primary_onp, GRN: district.primary_grn, OTH_IND: district.primary_oth_ind }} /></div>
       <div><h4>Most frequent final pair · {pct(100 * matchup.draws / diagnostics.simulations)} of runs</h4>
         <p>Modelled two-candidate preferred (2CP), for runs with this pair</p>
         <div className="vote-pair-labels"><span>{label(first)} <b>{pct(mean)}</b></span><span>{label(second)} <b>{pct(100 - mean)}</b></span></div>
