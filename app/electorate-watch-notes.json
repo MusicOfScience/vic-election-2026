@@ -1,0 +1,168 @@
+{
+  "albert-park": {
+    "title": "Three parties, two places",
+    "points": [
+      "The Greens took 20.91% of first preferences in 2022 and missed the final pair. Compare the most frequent winner with the most frequent pair above.",
+      "Watch the tally gap among Labor, Liberal and the Greens after the smaller candidates are excluded. An indicative Liberal–Greens count tells you little about a scenario in which Labor survives.",
+      "Georgie Dragwidge returns on the ballot. Track her own primary and the distribution of her parcel before assuming it favours any one survivor."
+    ]
+  },
+  "narre-warren-south": {
+    "title": "Three plausible winners in the model",
+    "points": [
+      "Labor won the 2022 final pair with 62.72%. In a three-way contest, the first count question is which contenders can survive to the last two.",
+      "Follow the gap between the Liberal and One Nation candidates once minor parcels are added. If One Nation passes Liberal, the direction and size of the eliminated Liberal parcel become decisive against Labor.",
+      "Check ordinary, early and postal batches separately and compare similar coverage before reading a geography shift into the result."
+    ]
+  },
+  "narre-warren-north": {
+    "title": "A three-way field behind a two-name headline",
+    "points": [
+      "Labor won 62.71% in the 2022 final pair. Compare the latest model pairing frequencies against the actual order once counting begins.",
+      "Check whether Liberal is actually third after transfers before treating a One Nation–Labor pair as the decisive count.",
+      "Compare One Nation’s primary with Liberal across comparable vote modes. An early Labor-versus-Liberal count could miss a different finalist."
+    ]
+  },
+  "macedon": {
+    "title": "A historical Labor margin with an unsettled pair",
+    "points": [
+      "Mary-Anne Thomas won the 2022 final pair with 59.54%. Track how often the most frequent pair occurs in the current experimental run.",
+      "Watch for Liberal and One Nation competing for second late in the count. Map any differences between ordinary voting centres and early voting separately before projecting a district-wide pattern."
+    ]
+  },
+  "eureka": {
+    "title": "Two plausible paths to the final pair",
+    "points": [
+      "Labor won the 2022 final pair with 57.17%. Record the second-to-third gap and where eliminated conservative and minor candidates transfer before leaning on the indicative pair."
+    ]
+  },
+  "ringwood": {
+    "title": "A near-even model with a new Labor candidate",
+    "points": [
+      "Labor won the 2022 result with Will Fowles. Use the current nominee list before carrying over any personal-vote assumptions.",
+      "Check which way the Labor–Liberal margin moves as early and postal votes are added. Look at how the Greens parcel is distributed if those two remain, and confirm the formal finalists if the gap to third tightens."
+    ]
+  },
+  "bendigo-east": {
+    "title": "Watch the Liberal–One Nation order",
+    "points": [
+      "Jacinta Allan polled 48.30% of first preferences in 2022. Her primary and the split between Liberal and One Nation are the first checks.",
+      "If Liberal is eliminated behind One Nation, compare the observed parcel with the model’s transfer assumption. If One Nation is eliminated first, the transfer direction to Labor and Liberal is a different question."
+    ]
+  },
+  "werribee": {
+    "title": "The by-election exposed a third candidate",
+    "points": [
+      "Labor fell from 59.63% in the 2022 final pair to 50.82% in February 2025. Paul Hopper was third on 14.56% of first preferences as an independent and is now listed for The West Party.",
+      "Track Hopper’s primary before allocating the residual vote. Then watch whether One Nation or Liberal is still ahead at the critical exclusion and whether the indicative pair is reset.",
+      "Compare 2025 and 2026 only by like-for-like vote modes where possible. The by-election field and turnout are different."
+    ]
+  },
+  "glen-waverley": {
+    "title": "The 2022 primary gap was less than half a point",
+    "points": [
+      "Labor’s John Mullahy took 40.64% to Liberal Neil Angus’s 40.17% on 2022 first preferences.",
+      "Watch the updated Labor–Liberal primary gap after comparable batches and track the Greens preference parcel as it reaches them. Check whether the final-two assumption still holds once booth coverage improves."
+    ]
+  },
+  "cranbourne": {
+    "title": "One Nation’s path is through the elimination order",
+    "points": [
+      "Labor took 46.18% of first preferences in 2022. Follow the order of elimination if Labor, Liberal and One Nation all remain competitive.",
+      "Watch whether Labor or Liberal is excluded first if One Nation survives. The two possible final pairs draw on different parcels, so avoid treating a single preference estimate as decisive."
+    ]
+  },
+  "niddrie": {
+    "title": "Watch the incumbent’s primary and the final parcel",
+    "points": [
+      "Ben Carroll polled 43.95% on first preferences in 2022.",
+      "Check how far Labor is below its own 2022 primary at like-for-like booths. If the Labor–Liberal pair holds, follow preferences from excluded Greens, One Nation and minor candidates as separate parcels."
+    ]
+  },
+  "broadmeadows": {
+    "title": "A strong old Labor primary does not settle the new pair",
+    "points": [
+      "Labor polled 45.71% on 2022 first preferences.",
+      "Watch whether One Nation’s support persists across vote modes and whether Liberal is excluded before the last two. Compare actual Liberal and smaller candidate parcels with the assumed flow to each finalist."
+    ]
+  },
+  "yan-yean": {
+    "title": "An indicative pair can miss a frequent winner",
+    "points": [
+      "Compare the most frequent pair above with the parties that win across all simulations. Watch the Liberal–One Nation gap after smaller exclusions.",
+      "If Liberal survives, an indicative One Nation–Labor result has limited value for that count path."
+    ]
+  },
+  "prahran": {
+    "title": "A three-way contest with a by-election precedent",
+    "points": [
+      "The Greens won the 2022 final pair with 62.01%. At the February 2025 by-election, Rachel Westaway won for Liberal with 51.35% against Angelica Di Camillo. Liberal and Greens were one vote apart on first preferences, and Labor did not contest.",
+      "Labor returns in 2026. Watch whether Labor or Greens gets ahead after smaller exclusions and what happens to their parcels if either is eliminated.",
+      "A Liberal–Greens rerun and a Liberal–Labor final pair each require different transfer assumptions. Keep both visible until the order is clear."
+    ]
+  },
+  "northcote": {
+    "title": "A 0.22-point winning margin in 2022",
+    "points": [
+      "Labor’s Kat Theophanous finished on 50.22% against Greens candidate Campbell Gome in 2022. Both are nominated again.",
+      "Watch whether Gome retains second through the exclusions. In 2022 the Victorian Socialists took 6.51% of first preferences. Its 2026 parcel and other smaller parcels are worth following independently."
+    ]
+  },
+  "kew": {
+    "title": "Sophie Torney’s first hurdle is second place",
+    "points": [
+      "Torney took 21.10% in 2022, 1.60 points behind Labor on first preferences. The final pair was Liberal–Labor, with Jess Wilson on 53.98%. Both Wilson and Torney are on the 2026 ballot.",
+      "Track Torney’s rank against Labor and any other candidate challenging for second. Compare ordinary and early votes separately and see whether incoming minor preferences close or widen that gap.",
+      "The model’s frequent Coalition–Other pairing is a pooled result and gives no Torney-specific likelihood."
+    ],
+    "source": "https://vec.vic.gov.au/electoral-boundaries/state-districts/kew-district/nominations"
+  },
+  "hawthorn": {
+    "title": "Shima Ibuki needs a path of her own",
+    "points": [
+      "Melissa Lowe took 19.98% in 2022, behind Labor’s 22.11%. John Pesutto won 51.74% against Labor in the final pair. Shima Ibuki is the independent to track on the 2026 Assembly ballot.",
+      "Check Ibuki’s own primary against Labor and Greens across vote modes. Watch whether one of those parties is excluded while Ibuki remains, and where that parcel actually flows.",
+      "The historical independent vote is evidence that a contest is possible. It belongs to a different candidate. The pooled 2026 percentage cannot establish Ibuki’s prospects."
+    ]
+  },
+  "benambra": {
+    "title": "A documented independent final pair, with a different candidate",
+    "points": [
+      "Independent Jacqui Hawkins took 31.70% on first preferences and 49.06% in the 2022 final pair. Lachie McKeeman is the independent nominated in 2026, with Steve Martin the Liberal nominee.",
+      "Track McKeeman’s primary and whether he can finish ahead of One Nation and Labor through successive exclusions. A Hawkins-sized primary is a historical benchmark to compare with actual results, with no assumption of transfer to McKeeman."
+    ]
+  },
+  "pakenham": {
+    "title": "A local poll challenges the statewide model’s seat view",
+    "points": [
+      "The 4–8 November TKW/DemosAU seat poll reported 40% for Warren Pickering, with an effective sample of 289 and a modelled two-candidate result. Compare this with the current experimental One Nation primary below.",
+      "Watch Pickering’s primary against the Liberal and Labor candidates across vote modes. When counting starts, a Liberal–One Nation comparison becomes useful only if that pair survives. Keep the survey’s assumed transfers distinct from actual parcels."
+    ],
+    "source": "https://demosau.com/wp-content/uploads/DemosAU/pakenham-electorate-poll.html"
+  },
+  "ripon": {
+    "title": "Liberal and Nationals are separate nominees",
+    "points": [
+      "Labor led Liberal by just 2.40 points on 2022 first preferences. This model collapses Liberal and Nationals into one Coalition family.",
+      "Track the Liberal and National primaries separately in 2026 and their order against One Nation. If one Coalition candidate falls early, how those ballots transfer can change the final pair."
+    ]
+  },
+  "brunswick": {
+    "title": "A Greens defence",
+    "points": [
+      "Compare the Greens primary with the official 2022 baseline by vote mode. Watch who reaches the final pair and whether changes in first preferences also move the final margin."
+    ]
+  },
+  "melbourne": {
+    "title": "A Greens defence with a changing race for second",
+    "points": [
+      "Check which rival emerges from the minor exclusions and how preferences shift after that point. Keep a close primary ranking separate from any indicative two-candidate result."
+    ]
+  },
+  "richmond": {
+    "title": "A Greens defence where transfers matter",
+    "points": [
+      "Follow the Greens and Labor primaries against the 2022 anchor, then check separately how smaller progressive and Liberal parcels affect the actual final count."
+    ]
+  }
+}

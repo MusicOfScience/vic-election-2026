@@ -49,7 +49,7 @@ test("renders the joint experimental forecast dashboard", async () => {
   assert.match(html, /November polling evidence reviewed/);
   assert.match(html, /Last admitted poll publication/);
   assert.match(html, /Website compiled/);
-  assert.match(html, /twelve most uncertain electorates/i);
+  assert.match(html, /Where the count could turn/i);
   assert.match(html, /Three ways a seat becomes a hotspot/i);
   assert.match(html, /Swing history/i);
   assert.match(html, /Data &amp; sources/i);

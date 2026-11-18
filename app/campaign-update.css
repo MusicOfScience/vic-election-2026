@@ -1,4 +1,5 @@
 .campaign-notice { margin: 0 0 24px; padding: 22px; background: #fff4df; border: 1px solid #aa7020; border-radius: 14px; color: #39280d; }
+.campaign-notice summary { cursor: pointer; font-weight: 650; }
 .campaign-notice > strong { font-size: 1.15rem; }
 .campaign-notice p { line-height: 1.65; margin: 10px 0; }
 .campaign-notice dl { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin: 18px 0; }

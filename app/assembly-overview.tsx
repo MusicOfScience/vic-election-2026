@@ -76,3 +76,40 @@ export function AssemblySeatBoard({ districts, chamber }: { districts: Districts
     <p className="assembly-board-note">Seat leaders come from each electorate counted separately. Chamber totals and majority frequencies come from counting all 88 seats together in each simulation. Others / independents is a pooled group in the model.</p>
   </section>;
 }
+
+const chamberPositions = [12, 15, 18, 20, 23].flatMap((count, row) =>
+  Array.from({ length: count }, (_, i) => {
+    const radius = 32 + row * 4.3;
+    const angle = .08 + (Math.PI - .16) * i / (count - 1);
+    return { x: 50 - radius * Math.cos(angle), y: 99 - 1.94 * radius * Math.sin(angle), angle };
+  }),
+).sort((a, b) => a.angle - b.angle);
+
+export function AssemblySeatDots({ districts, openDistrict }: { districts: Districts; openDistrict: (district: Districts[number]) => void }) {
+  const groups = [...parties].map((party) => ({
+    party, seats: districts.filter((seat) => seat.favoured_party === party).sort((a, b) => a.favoured_probability - b.favoured_probability),
+  })).sort((a, b) => b.seats.length - a.seats.length);
+  return <section className="surface forecast-explorer" aria-labelledby="assembly-dots-title">
+    <h3 id="assembly-dots-title">Seats in the house</h3>
+    <p>Each dot shows the leading group in one electorate. Select a dot to open its profile. The ranges above count all seats together in each simulation.</p>
+    <div className="chamber-dot-scroll"><div className="chamber-dot-field" role="group" aria-label="Electorate dots. Use arrow keys to move between seats." onKeyDown={(event) => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      const buttons = [...event.currentTarget.querySelectorAll("button")];
+      const i = buttons.indexOf(event.target as HTMLButtonElement);
+      if (i < 0) return;
+      event.preventDefault();
+      const next = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1 : Math.min(buttons.length - 1, Math.max(0, i + (event.key === "ArrowLeft" ? -1 : 1)));
+      buttons[i].tabIndex = -1;
+      buttons[next].tabIndex = 0;
+      buttons[next].focus();
+    }}>
+      {groups.flatMap(({ seats }) => seats).map((seat, i) => {
+        const label = `${seat.district_name} · ${partyMeta[seat.favoured_party as Party].label} ${frequency(seat.favoured_probability)} of wins`;
+        return <button key={seat.district_id} type="button" className="chamber-dot" aria-label={label} title={label}
+          tabIndex={i === 0 ? 0 : -1} onClick={() => openDistrict(seat)}
+          style={{ left: `${chamberPositions[i].x}%`, top: `${chamberPositions[i].y}%`, "--dot-colour": `var(--${partyMeta[seat.favoured_party as Party].css})` } as CSSProperties}><i aria-hidden="true" /></button>;
+      })}
+    </div></div>
+    <ul className="chamber-legend">{groups.map(({party, seats}) => <li key={party}><i style={{ background: `var(--${partyMeta[party].css})` }} aria-hidden="true" />{partyMeta[party].label} <strong>{seats.length}</strong></li>)}</ul>
+  </section>;
+}

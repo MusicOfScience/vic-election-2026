@@ -143,7 +143,9 @@ test("ships the Batch 6 navigation and chart accessibility pass", async () => {
 
   assert.match(html, /Skip to forecast navigation/);
   assert.match(html, /Find my electorate/);
-  assert.match(html, /class="battleground-grid"><button type="button"/);
+  assert.match(html, /class="watch-card-grid"><button type="button"/);
+  assert.equal((html.match(/class="chamber-dot"/g) ?? []).length, 88);
+  assert.match(html, /Most frequent pair · Coalition vs Greens 52.4%/);
   assert.match(html, /aria-label="Forecast sections"/);
   assert.match(html, /Party colour key/);
   assert.match(html, /majority threshold is 45 seats/);
