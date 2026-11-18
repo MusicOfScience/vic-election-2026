@@ -1,0 +1,11 @@
+.count-status h2 { margin: 0 0 .55rem; }
+.count-status-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: .75rem 0; }
+.count-status-grid section { min-width: 0; border: 1px solid var(--border); border-radius: .75rem; padding: .85rem; }
+.count-tally p { font-size: .86rem; }
+.count-tally table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.count-tally td, .count-tally th { padding: .3rem; border-bottom: 1px solid var(--border); text-align: right; }
+.count-tally th:first-child { text-align: left; overflow-wrap: anywhere; }
+.count-rehearsal { padding: .7rem; border: 1px dashed currentColor; border-radius: .5rem; }
+@media (max-width: 690px) { .count-status-grid { grid-template-columns: 1fr; } }
+.count-tally { margin-bottom: .55rem; }
+.count-status-grid dl > div { display: flex; justify-content: space-between; gap: .5rem; }
