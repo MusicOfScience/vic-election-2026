@@ -157,6 +157,20 @@ function Forecast({ openPolls, openDistrict }: { openPolls: () => void; openDist
         <a className="assembly-board-link" href="#assembly-board-title">See all {modelOutput.districts.length} seat predictions <ArrowRight size={16} aria-hidden="true" /></a>
       </div>
       <AssemblyOutlook chamber={chamber} />
+      <section className="surface forecast-explorer" aria-labelledby="forecast-history-title">
+        <h3 id="forecast-history-title">How the Assembly outlook has moved</h3>
+        <table className="matchup-table">
+          <caption>Average seats and share of simulations with no majority</caption>
+          <thead><tr><th scope="col">Forecast</th><th scope="col">Labor seats</th><th scope="col">Coalition seats</th><th scope="col">Hung Assembly</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">8 October</th><td>38.3</td><td>31.0</td><td>77.6%</td></tr>
+            <tr><th scope="row">31 October</th><td>34.4</td><td>35.8</td><td>79.8%</td></tr>
+            <tr><th scope="row">{forecastDate}</th><td>{chamber.ALP.mean.toFixed(1)}</td><td>{chamber.LIB_NAT.mean.toFixed(1)}</td><td>{pct(chamber.ALP.hung_probability, 1)}</td></tr>
+          </tbody>
+        </table>
+        <p>The 31 October update added September DemosAU and late-October Roy Morgan polling. The 15 November update added DemosAU and RedBridge/Accent waves. Poll weights also change as surveys age.</p>
+        <a href="https://github.com/MusicOfScience/vic-election-2026/blob/main/docs/FORECAST_REFRESH_2026-10-31.md">Read the October forecast record</a>
+      </section>
     </section>
     <section className="outcome-strip" aria-label="Simulated Assembly outcomes">{outcomes.map(({ label, probability }) => <OutcomeProbability key={label} label={label} probability={probability} active={probability === leadingOutcome.probability} />)}</section>
     <aside className="model-warning" aria-label="Limits of the Assembly estimates">
