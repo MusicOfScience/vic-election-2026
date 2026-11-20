@@ -35,3 +35,6 @@
 .matchup-table { width: 100%; border-collapse: collapse; }
 .matchup-table :is(th,td) { text-align: left; padding: .4rem .3rem; border-bottom: 1px solid var(--border); font-size: .85rem; vertical-align: top; }
 @media (max-width: 480px) { .chamber-dot { width: 15px; height: 15px; } .matchup-table :is(th,td) { font-size: .76rem; } }
+
+.seat-path { margin-block: 1rem; }
+.seat-path-track { display: flex; height: .75rem; margin-block: .35rem; background: rgba(128,128,128,.16); border-radius: .25rem; overflow: hidden; }
