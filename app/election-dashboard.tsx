@@ -157,7 +157,8 @@ function Forecast({ openPolls, openDistrict }: { openPolls: () => void; openDist
         <a className="assembly-board-link" href="#assembly-board-title">See all {modelOutput.districts.length} seat predictions <ArrowRight size={16} aria-hidden="true" /></a>
       </div>
       <AssemblyOutlook chamber={chamber} />
-      <section className="surface forecast-explorer" aria-labelledby="forecast-history-title">
+    </section>
+    <section className="surface forecast-explorer" aria-labelledby="forecast-history-title">
         <h3 id="forecast-history-title">How the Assembly outlook has moved</h3>
         <table className="matchup-table">
           <caption>Average seats and share of simulations with no majority</caption>
@@ -170,7 +171,6 @@ function Forecast({ openPolls, openDistrict }: { openPolls: () => void; openDist
         </table>
         <p>The 31 October update added September DemosAU and late-October Roy Morgan polling. The 15 November update added DemosAU and RedBridge/Accent waves. Poll weights also change as surveys age.</p>
         <a href="https://github.com/MusicOfScience/vic-election-2026/blob/main/docs/FORECAST_REFRESH_2026-10-31.md">Read the October forecast record</a>
-      </section>
     </section>
     <section className="outcome-strip" aria-label="Simulated Assembly outcomes">{outcomes.map(({ label, probability }) => <OutcomeProbability key={label} label={label} probability={probability} active={probability === leadingOutcome.probability} />)}</section>
     <aside className="model-warning" aria-label="Limits of the Assembly estimates">
@@ -375,7 +375,7 @@ export function DataSources() {
       <div className="snapshot-history-list">{snapshots.map((snapshot) => <article key={snapshot.id}><div><strong>{readableDate(snapshot.forecastAsOf)}</strong><span>Forecast as of</span></div><div><strong>{snapshot.passedGates}/{snapshot.totalGates}</strong><span>Gates passed</span></div><div><strong>{snapshot.status === "experimental-blocked" ? "Experimental" : snapshot.status}</strong><span>{readableDate(snapshot.capturedAt)} capture</span></div><code title={snapshot.commitSha}>Commit {snapshot.commitSha.slice(0, 8)}…</code></article>)}</div>
     </section>
     <section className="surface replay-readiness" aria-label="Historical replay readiness">
-      <div className="section-heading"><div><p className="eyebrow">Validation engine</p><h3>Historical replay readiness</h3><p className="section-subcopy">Each cycle is evaluated against its frozen cutoff; runnable validation is separate from production authorisation.</p></div><Badge variant="outline">{replayCycles.filter((cycle) => cycle.runnable).length}/{replayCycles.length} cycles runnable</Badge></div>
+      <div className="section-heading"><div><p className="eyebrow">Validation engine</p><h3>Historical replay readiness</h3><p className="section-subcopy">The model can replay the 2010, 2014, 2018 and 2022 Victorian elections using evidence available by each cutoff. Readiness tells you which tests can run. Accuracy depends on how the predictions compare with the results.</p></div><Badge variant="outline">{replayCycles.filter((cycle) => cycle.runnable).length}/{replayCycles.length} cycles runnable</Badge></div>
       <div className="replay-cycle-list">{replayCycles.map((cycle) => <article key={cycle.id}><div><strong>{cycle.id.replace("vic_la_", "Victorian ")}</strong><span>Information cutoff {readableDate(cycle.informationCutoff)}</span></div><span className="replay-status">{cycle.runnable ? "Runnable for validation" : "Not runnable"}</span><ul>{cycle.blockedBy.map((blocker: string) => <li key={blocker}>{blocker.replaceAll("-", " ")}</li>)}</ul></article>)}</div>
     </section>
     <section className="surface release-ledger">

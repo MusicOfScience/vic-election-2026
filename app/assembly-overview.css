@@ -67,6 +67,11 @@
 .assembly-seat-track i { display: block; height: 100%; background: var(--seat-party); }
 .assembly-board-note { margin-top: 1.2rem; }
 @media print {
+  .forecast-hero { background: white; color: #11263b; }
+  .forecast-hero .assembly-outlook, .forecast-hero .assembly-outlook *,
+  .forecast-hero .forecast-copy, .forecast-hero .forecast-copy p,
+  .forecast-hero .assembly-board-link { color: #11263b; }
+  .forecast-hero .assembly-range::after { border-color: #526474; }
   .assembly-board { --board-muted: #506076; --tile-paper: #fff; --tile-line: #dde3e8; color: #11263b; background: #fff; }
   .assembly-group header { break-after: avoid; }
   .assembly-group li { break-inside: avoid; }
