@@ -51,6 +51,11 @@ export function ElectorateWatchBrief({ district }: { district: District }) {
     {brief && <p><strong>{brief.title}</strong></p>}
     <ul className="seat-watch-list">{(brief?.points ?? ["Compare first preferences by vote mode and track the second-to-third gap as candidates are excluded.", "Check the official indicative pair when counting starts. Changes to that pair can change how an early margin should be read."]).map((line) => <li key={line}>{line}</li>)}</ul>
     <p className="seat-explainer">Reading guide · 18 November 2026. Historical results and local observations provide context for the count.</p>
+    <details><summary>Which preference cards could matter here?</summary>
+      <p>Compare the final pairs above with the recommendations on each registered card. Start with candidates who may be excluded while second and third place are close. A transfer at that stage can change which two candidates finish the count.</p>
+      <p>Check the district printed on the small-ballot instructions. Combined cards also cover a Council region. Voters choose their own preferences, and several registrations can recommend the same order.</p>
+      <a href="https://www.vec.vic.gov.au/voting/2026-state-election/how-to-vote-cards">Find the registered cards for {district.district_name} in the VEC register</a>
+    </details>
     <p><a href={source}>VEC district results</a>{brief?.source && <> · <a href={brief.source}>Additional local evidence</a></>}</p>
   </section>;
 }
