@@ -21,6 +21,13 @@ export function AssemblyMatchups({ districtId }: { districtId: string }) {
   return <section className="seat-detail-section" aria-labelledby="seat-matchups-title">
     <h3 id="seat-matchups-title">Who can make the final two?</h3>
     <p>With three groups left, second and third are within two points in <strong>{shareOfRuns(seat.thirdPlaceGap.withinTwoPoints)}</strong> of runs. The median gap is <strong>{seat.thirdPlaceGap.medianPp.toFixed(1)} points</strong>. {partyMeta[lastOut].label} is most often last out, in <strong>{shareOfRuns(seat.thirdPlaceGap.lastExcluded[lastOut])}</strong> of runs.</p>
+    <h4>Paths to winning this seat</h4>
+    <p>Each bar shows how often a pair reaches the final count across all {count.format(diagnostics.simulations)} runs. The colours divide those runs by winner.</p>
+    {seat.matchups.map(({ pair: [first, second], draws, firstWins }) => <div key={first + second} className="seat-path">
+      <strong>{partyMeta[first].label} / {partyMeta[second].label} · {shareOfRuns(draws)}</strong>
+      <div aria-hidden="true" className="seat-path-track">{[[first, firstWins], [second, draws - firstWins]].map(([party, wins]) => <span key={party} style={{width: shareOfRuns(Number(wins)), backgroundColor: `var(--${partyMeta[party as Party].css})`}} />)}</div>
+      <small>Wins within this pair · {partyMeta[first].label} {count.format(firstWins)} · {partyMeta[second].label} {count.format(draws - firstWins)}</small>
+    </div>)}
     <details open><summary>Final pairs and conditional margins</summary>
       <table className="matchup-table">
         <thead><tr><th scope="col">Pair</th><th scope="col">Share of runs</th><th scope="col">First group’s vote share</th></tr></thead>
