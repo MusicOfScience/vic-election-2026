@@ -93,7 +93,7 @@ export default function PollingReplay() {
       const change = previous ? stats.mean[p] - previous.variants[halfLife].mean[p] : null;
       return <li key={p} style={{ borderColor: colour(p) }}><strong>{partyMeta[p].label}</strong><b>{pct(stats.mean[p])}</b><span>{pct(stats.low[p])}–{pct(stats.high[p])} middle 80%</span>{change !== null && <span>{change.toFixed(1) === "-0.0" ? "0.0" : `${change >= .05 ? "+" : ""}${change.toFixed(1)}`} pp since previous stop</span>}</li>;
     })}</ul>
-    <details><summary>Polls available at this stop</summary><ul>{admitted.map((poll) => <li key={poll.id}>
+    <details><summary>Polls used at this stop ({admitted.length})</summary><p>This list includes only polls used in the average. Other published surveys may be held for review or used only for sensitivity checks.</p><ul>{admitted.map((poll) => <li key={poll.id}>
       {poll.sourceUrl ? <a href={poll.sourceUrl}>{poll.pollster}</a> : poll.pollster} · Published {dates.format(new Date(poll.publicationDate))} · Fieldwork ended {dates.format(new Date(poll.fieldworkEnd))}{newIds.includes(poll.id) && " · Added at this stop"}
     </li>)}</ul></details>
     <p className="chart-note">{mode === "ribbons" ? "Ribbon width shows vote share. Crossings indicate a rank change between stops. " : ""}A movement can reflect several new polls or a change in their weights. The interval describes the polling model at that stop.</p>
