@@ -37,6 +37,8 @@ export function VoteOutlookPollInputs() {
 }
 
 export function StatewideVoteOutlook({ openPolls }: { openPolls: () => void }) {
+  const primary = modelOutput.manifest.polling.mean;
+  const demosLabor = primary.ALP + .19 * primary.ONP + .90 * primary.GRN + .58 * primary.OTH_IND;
   const { mean, low, high } = diagnostics.statewideLabor2pp;
   return <section className="surface vote-outlook" aria-labelledby="statewide-vote-title">
     <header><p className="eyebrow">Statewide vote · {date(diagnostics.asOf)} snapshot</p><h3 id="statewide-vote-title">First preferences and two-party preferred</h3></header>
@@ -49,6 +51,10 @@ export function StatewideVoteOutlook({ openPolls }: { openPolls: () => void }) {
         <p>Each simulated count keeps Labor and the Coalition as the last two groups. The statewide estimate weights electorates by enrolment.</p>
       </div>
     </div>
+    <details><summary>Why does our two-party estimate differ from DemosAU’s?</summary>
+      <p>DemosAU reported Coalition 56% in its 30 October–5 November poll. Applying its published transfer assumptions to our pooled first preferences gives Coalition <strong>{pct(100 - demosLabor)}</strong>. Our own transfers and electorate weighting give <strong>{pct(100 - mean)}</strong>.</p>
+      <p>The comparison holds our statewide first preferences fixed. DemosAU allocates 19% of One Nation preferences, 90% of Greens preferences and 58% of other preferences to Labor. Its own survey had different first preferences. <a href="https://demosau.com/wp-content/uploads/DemosAU/vic-poll-nov-2026.html">Read the poll and methodology</a>.</p>
+    </details>
     <div className="vote-outlook-source">
       <span>{inputs.size} admitted statewide polls{latestForecastPoll && ` · Latest fieldwork ended ${date(latestForecastPoll.fieldworkEnd)}`}. The 2PP estimate comes from simulated transfers.</span>
       <button type="button" onClick={openPolls}>See polling inputs →</button>
