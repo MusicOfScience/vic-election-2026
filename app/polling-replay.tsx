@@ -88,6 +88,7 @@ export default function PollingReplay() {
         <rect x={x(active.date) - 2} y={bars[index][p][0]} height={bars[index][p][1] - bars[index][p][0]} width={5} fill={colour(p)} />
       </g>)}
     </svg>
+    <h4>Modelled first preferences on {dates.format(new Date(active.date))}</h4>
     <ul className="poll-replay-values">{parties.map((p) => {
       const change = previous ? stats.mean[p] - previous.variants[halfLife].mean[p] : null;
       return <li key={p} style={{ borderColor: colour(p) }}><strong>{partyMeta[p].label}</strong><b>{pct(stats.mean[p])}</b><span>{pct(stats.low[p])}–{pct(stats.high[p])} middle 80%</span>{change !== null && <span>{change.toFixed(1) === "-0.0" ? "0.0" : `${change >= .05 ? "+" : ""}${change.toFixed(1)}`} pp since previous stop</span>}</li>;
