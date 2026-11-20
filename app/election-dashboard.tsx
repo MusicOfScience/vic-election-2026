@@ -1,6 +1,6 @@
 "use client";
 
-import { lazy, Suspense, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Activity, ArrowRight, BookOpenCheck, ChartNoAxesCombined, CircleAlert, CircleHelp, Clock3, Database, ExternalLink, FileCheck2, History, Landmark, Layers3, MapPinned, Search, ShieldCheck, Vote } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { LabelProps } from "recharts";
@@ -408,8 +408,28 @@ export function ElectionDashboard() {
   const [candidateDistrict, setCandidateDistrict] = useState("");
   const sheetTrigger = useRef<HTMLElement | null>(null);
 
-  const openTab = (tab: string) => {
+  useEffect(() => {
+    const restoreSection = () => {
+      const section = new URL(window.location.href).searchParams.get("section") ?? "forecast";
+      const valid = Array.from(document.querySelectorAll('[data-slot="tabs-trigger"]')).some(trigger => trigger.getAttribute("aria-controls")?.endsWith("-content-" + section));
+      setActiveTab(valid ? section : "forecast");
+      setSelectedDistrict(null);
+      setCandidateDistrict("");
+    };
+    restoreSection();
+    window.addEventListener("popstate", restoreSection);
+    return () => window.removeEventListener("popstate", restoreSection);
+  }, []);
+
+  const selectSection = (tab: string) => {
+    const url = new URL(window.location.href);
+    if (tab === "forecast") url.searchParams.delete("section");
+    else url.searchParams.set("section", tab);
+    if (url.href !== window.location.href) window.history.pushState(null, "", url);
     setActiveTab(tab);
+  };
+  const openTab = (tab: string) => {
+    selectSection(tab);
     document.getElementById("forecast-navigation")?.scrollIntoView();
     document.querySelector<HTMLButtonElement>(`[data-slot="tabs-trigger"][aria-controls$="-content-${tab}"]`)?.focus({ preventScroll: true });
   };
@@ -428,7 +448,7 @@ export function ElectionDashboard() {
     <a className="skip-link" href="#forecast-navigation">Skip to forecast navigation</a>
     <header className="topbar"><div className="topbar-inner"><a href="#content" className="brand"><span className="brand-mark">V</span><span><strong>Victorian Election</strong><small>Forecasting laboratory · 2026</small></span></a><div className="status-cluster" aria-label={`Experimental forecast snapshot from ${forecastDate}`}><span className="status-dot" aria-hidden="true" /><span>Experimental snapshot · {forecastDate}</span></div></div></header>
     <div className="content-shell" id="content"><section className="page-heading"><div><p className="eyebrow">The election, rendered honestly</p><h1>A forecast you can interrogate.</h1><p className="page-deck">See the headline, then open the evidence: polls, all 88 electorates, Upper House regions, historical swings, source provenance and the tests the model passed—or failed.</p><Button type="button" className="find-electorate" onClick={() => openTab("districts")}><Search size={16} />Find my electorate</Button></div><PollingDates includeBuild /></section>
-      <CampaignNotice /><Tabs value={activeTab} onValueChange={(tab) => { setCandidateDistrict(""); setActiveTab(tab); }} className="dashboard-tabs"><div className="tabs-rail" id="forecast-navigation"><TabsList variant="line" className="dashboard-tabs-list" aria-label="Forecast sections"><TabsTrigger value="forecast"><Layers3 />Forecast</TabsTrigger><TabsTrigger value="count"><Vote />Count status</TabsTrigger><TabsTrigger value="campaign"><Clock3 />Campaign update</TabsTrigger><TabsTrigger value="polling"><Activity />Polls</TabsTrigger><TabsTrigger value="districts"><MapPinned />88 electorates</TabsTrigger><TabsTrigger value="officials"><Vote />Official candidates</TabsTrigger><TabsTrigger value="council"><Landmark />Upper House</TabsTrigger><TabsTrigger value="history"><History />Swing history</TabsTrigger><TabsTrigger value="data"><BookOpenCheck />Data &amp; sources</TabsTrigger><TabsTrigger value="model"><Database />How it works</TabsTrigger></TabsList><span className="tabs-scroll-cue" aria-hidden="true">Swipe →</span></div><TabsContent value="forecast"><Forecast openPolls={openPolls} openDistrict={openDistrict} /></TabsContent><TabsContent value="count"><Suspense fallback={<p role="status">Loading count status…</p>}><CountStatus forecastDate={forecastDate} /></Suspense></TabsContent><TabsContent value="campaign"><CampaignUpdate /></TabsContent><TabsContent value="polling"><Polling /></TabsContent><TabsContent value="districts"><DistrictExplorer openDistrict={openDistrict} /></TabsContent><TabsContent value="officials"><Suspense fallback={<p role="status">Loading official candidates…</p>}><OfficialCandidateDirectory key={candidateDistrict} initialDistrict={candidateDistrict} openPolls={openPolls} /></Suspense></TabsContent><TabsContent value="council"><Council /></TabsContent><TabsContent value="history"><HistoricalExplorer /></TabsContent><TabsContent value="data"><DataSources /></TabsContent><TabsContent value="model"><Model /></TabsContent></Tabs>
+      <CampaignNotice /><Tabs value={activeTab} onValueChange={(tab) => { setCandidateDistrict(""); selectSection(tab); }} className="dashboard-tabs"><div className="tabs-rail" id="forecast-navigation"><TabsList variant="line" className="dashboard-tabs-list" aria-label="Forecast sections"><TabsTrigger value="forecast"><Layers3 />Forecast</TabsTrigger><TabsTrigger value="count"><Vote />Count status</TabsTrigger><TabsTrigger value="campaign"><Clock3 />Campaign update</TabsTrigger><TabsTrigger value="polling"><Activity />Polls</TabsTrigger><TabsTrigger value="districts"><MapPinned />88 electorates</TabsTrigger><TabsTrigger value="officials"><Vote />Official candidates</TabsTrigger><TabsTrigger value="council"><Landmark />Upper House</TabsTrigger><TabsTrigger value="history"><History />Swing history</TabsTrigger><TabsTrigger value="data"><BookOpenCheck />Data &amp; sources</TabsTrigger><TabsTrigger value="model"><Database />How it works</TabsTrigger></TabsList><span className="tabs-scroll-cue" aria-hidden="true">Swipe →</span></div><TabsContent value="forecast"><Forecast openPolls={openPolls} openDistrict={openDistrict} /></TabsContent><TabsContent value="count"><Suspense fallback={<p role="status">Loading count status…</p>}><CountStatus forecastDate={forecastDate} /></Suspense></TabsContent><TabsContent value="campaign"><CampaignUpdate /></TabsContent><TabsContent value="polling"><Polling /></TabsContent><TabsContent value="districts"><DistrictExplorer openDistrict={openDistrict} /></TabsContent><TabsContent value="officials"><Suspense fallback={<p role="status">Loading official candidates…</p>}><OfficialCandidateDirectory key={candidateDistrict} initialDistrict={candidateDistrict} openPolls={openPolls} /></Suspense></TabsContent><TabsContent value="council"><Council /></TabsContent><TabsContent value="history"><HistoricalExplorer /></TabsContent><TabsContent value="data"><DataSources /></TabsContent><TabsContent value="model"><Model /></TabsContent></Tabs>
     </div>
     <SeatDetail district={selectedDistrict} onClose={() => setSelectedDistrict(null)} openCandidates={openCandidates} restoreFocus={() => {
       if (sheetTrigger.current?.isConnected) sheetTrigger.current.focus({ preventScroll: true });
