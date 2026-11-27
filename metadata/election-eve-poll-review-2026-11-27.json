@@ -1,0 +1,122 @@
+{
+  "asOf": "2026-11-27",
+  "polls": [
+    {
+      "id": "demosau_2026-11-late",
+      "proposedModelPollId": "demosau_2026-11-late",
+      "pollster": "DemosAU",
+      "fieldworkStart": "2026-11-21",
+      "fieldworkEnd": "2026-11-25",
+      "publicationDate": "2026-11-26",
+      "sampleSize": 2092,
+      "effectiveSampleSize": 1321,
+      "primaryVote": {
+        "coalition": 34,
+        "alp": 19,
+        "oneNation": 16,
+        "greens": 16,
+        "otherParties": 15
+      },
+      "sourceUrl": "https://demosau.com/wp-content/uploads/DemosAU/vic-poll-end-nov-2026.html",
+      "method": "Online panel; ballot-specific candidate choices; rim weighting; leaners included and remaining undecideds excluded.",
+      "reviewNote": "Use the detailed results table's 15% combined other, which matches the four minor-party and independent components. The press release prints 16%.",
+      "sourceTier": "primary_pollster",
+      "captureMode": "manual-primary-source-capture",
+      "methodologyUrl": "https://demosau.com/wp-content/uploads/2026/11/DemosAU_Victoria_Poll_Late_November_2026_Methodology_Statement.pdf"
+    },
+    {
+      "id": "redbridge_accent_2026-11-late",
+      "proposedModelPollId": "redbridge_accent_2026-11-late",
+      "pollster": "RedBridge / Accent Research",
+      "fieldworkStart": "2026-11-13",
+      "fieldworkEnd": "2026-11-20",
+      "publicationDate": "2026-11-22",
+      "sampleSize": 1507,
+      "effectiveSampleSize": 1286,
+      "primaryVote": {
+        "coalition": 33,
+        "alp": 22,
+        "oneNation": 23,
+        "greens": 15,
+        "otherParties": 7
+      },
+      "sourceUrl": "https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-victorian-state-poll-13-20-november",
+      "method": "Online panel; rim weighted; leaners included and remaining undecideds excluded.",
+      "reviewNote": "Cross-wave respondent reuse is undisclosed. The replacement scenario checks the effect of removing the immediately preceding wave.",
+      "sourceTier": "primary_pollster",
+      "captureMode": "manual-primary-source-capture"
+    },
+    {
+      "id": "roy_morgan_2026-11-late",
+      "proposedModelPollId": "roy_morgan_2026-11-late",
+      "pollster": "Roy Morgan",
+      "fieldworkStart": "2026-11-18",
+      "fieldworkEnd": "2026-11-19",
+      "publicationDate": "2026-11-23",
+      "sampleSize": 1563,
+      "effectiveSampleSize": null,
+      "primaryVote": {
+        "coalition": 31,
+        "alp": 22.5,
+        "oneNation": 20,
+        "greens": 13,
+        "otherParties": 8.5,
+        "independents": 5
+      },
+      "sourceUrl": "https://www.roymorgan.com/findings/10393-victorian-state-voting-intention-november-2026",
+      "method": "Special statewide SMS survey. Effective sample size unpublished in the release.",
+      "reviewNote": "Use the topline and chart label's 19 November end. One sentence says 20 November.",
+      "sourceTier": "primary_pollster",
+      "captureMode": "manual-primary-source-capture"
+    },
+    {
+      "id": "newspoll_pyxis_2026-11-late",
+      "proposedModelPollId": "newspoll_pyxis_2026-11-late",
+      "pollster": "Newspoll / Pyxis Polling & Insights",
+      "fieldworkStart": "2026-11-20",
+      "fieldworkEnd": "2026-11-25",
+      "publicationDate": "2026-11-27",
+      "sampleSize": 1506,
+      "effectiveSampleSize": null,
+      "primaryVote": {
+        "coalition": 33,
+        "alp": 20,
+        "oneNation": 18,
+        "greens": 17,
+        "otherParties": 12
+      },
+      "sourceUrl": "https://www.pollbludger.net/2026/11/27/victorian-polls-newspoll-and-demosau/",
+      "method": "Publisher and secondary sources corroborate published primaries and total sample. Full weighting, questionnaire and effective sample not captured.",
+      "reviewNote": "The 20\u201325 November dates come from secondary ledgers. Use the poll in sensitivity only pending primary methodology capture.",
+      "sourceTier": "reputable_secondary",
+      "captureMode": "corroborated-secondary-capture"
+    },
+    {
+      "id": "resolve_strategic_2026-11-late",
+      "proposedModelPollId": "resolve_strategic_2026-11-late",
+      "pollster": "Resolve Strategic",
+      "fieldworkStart": "2026-11-20",
+      "fieldworkEnd": "2026-11-23",
+      "publicationDate": "2026-11-25",
+      "sampleSize": 1000,
+      "effectiveSampleSize": null,
+      "primaryVote": {
+        "coalition": 31,
+        "alp": 20,
+        "oneNation": 25,
+        "greens": 13,
+        "otherParties": 11
+      },
+      "sourceUrl": "https://www.brisbanetimes.com.au/politics/victoria/four-out-of-five-voters-want-anyone-but-labor-a-once-in-a-century-drubbing-looms-20261125-p61gug.html",
+      "method": "Publisher reports a statewide sample of 1,000. Effective sample size and sample independence not captured.",
+      "reviewNote": "This is the final Resolve wave, distinct from the early-November wave already held for sensitivity.",
+      "sourceTier": "reputable_secondary",
+      "captureMode": "corroborated-secondary-capture"
+    }
+  ],
+  "replaceEarlier": [
+    "demosau-victoria-2026-10-30-11-05-media",
+    "redbridge-accent-victoria-2026-11-03-10-publisher",
+    "roy_morgan_2026-10-29"
+  ]
+}

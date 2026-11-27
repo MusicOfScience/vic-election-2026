@@ -1,0 +1,120 @@
+{
+  "asOf": "2026-11-27",
+  "simulations": 5000,
+  "scenarios": {
+    "reaged": {
+      "pollCount": 17,
+      "pollingMean": {
+        "ALP": 23.091,
+        "LIB_NAT": 29.754,
+        "ONP": 22.163,
+        "GRN": 13.981,
+        "OTH_IND": 11.011
+      },
+      "meanSeats": {
+        "ALP": 30.658,
+        "LIB_NAT": 39.841,
+        "ONP": 14.614,
+        "GRN": 2.876,
+        "OTH_IND": 0.01
+      },
+      "coalitionMajority": 0.2732,
+      "hungAssembly": 0.6894
+    },
+    "three": {
+      "pollCount": 20,
+      "pollingMean": {
+        "ALP": 22.363,
+        "LIB_NAT": 31.146,
+        "ONP": 20.973,
+        "GRN": 14.35,
+        "OTH_IND": 11.167
+      },
+      "meanSeats": {
+        "ALP": 28.056,
+        "LIB_NAT": 44.952,
+        "ONP": 11.899,
+        "GRN": 3.081,
+        "OTH_IND": 0.012
+      },
+      "coalitionMajority": 0.5156,
+      "hungAssembly": 0.47019999999999995
+    },
+    "replace": {
+      "pollCount": 17,
+      "pollingMean": {
+        "ALP": 22.68,
+        "LIB_NAT": 31.251,
+        "ONP": 20.608,
+        "GRN": 14.368,
+        "OTH_IND": 11.093
+      },
+      "meanSeats": {
+        "ALP": 29.185,
+        "LIB_NAT": 44.643,
+        "ONP": 11.114,
+        "GRN": 3.045,
+        "OTH_IND": 0.013
+      },
+      "coalitionMajority": 0.4922,
+      "hungAssembly": 0.48519999999999996
+    },
+    "plusNewspoll": {
+      "pollCount": 21,
+      "pollingMean": {
+        "ALP": 21.917,
+        "LIB_NAT": 31.48,
+        "ONP": 20.476,
+        "GRN": 14.793,
+        "OTH_IND": 11.334
+      },
+      "meanSeats": {
+        "ALP": 27.232,
+        "LIB_NAT": 46.524,
+        "ONP": 10.932,
+        "GRN": 3.299,
+        "OTH_IND": 0.013
+      },
+      "coalitionMajority": 0.592,
+      "hungAssembly": 0.39780000000000004
+    },
+    "plusResolve": {
+      "pollCount": 21,
+      "pollingMean": {
+        "ALP": 22.046,
+        "LIB_NAT": 31.142,
+        "ONP": 21.491,
+        "GRN": 14.171,
+        "OTH_IND": 11.15
+      },
+      "meanSeats": {
+        "ALP": 26.415,
+        "LIB_NAT": 45.551,
+        "ONP": 12.953,
+        "GRN": 3.068,
+        "OTH_IND": 0.012
+      },
+      "coalitionMajority": 0.5504,
+      "hungAssembly": 0.4436
+    },
+    "allFive": {
+      "pollCount": 22,
+      "pollingMean": {
+        "ALP": 21.703,
+        "LIB_NAT": 31.44,
+        "ONP": 20.971,
+        "GRN": 14.584,
+        "OTH_IND": 11.302
+      },
+      "meanSeats": {
+        "ALP": 25.929,
+        "LIB_NAT": 46.907,
+        "ONP": 11.902,
+        "GRN": 3.249,
+        "OTH_IND": 0.013
+      },
+      "coalitionMajority": 0.6124,
+      "hungAssembly": 0.38260000000000005
+    }
+  }
+}
