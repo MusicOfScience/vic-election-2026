@@ -1,0 +1,30 @@
+.metro-map { padding: clamp(1rem, 3vw, 2rem); }
+.metro-map h2 { margin: 0 0 .4rem; font-size: clamp(1.4rem, 3.6vw, 2.25rem); }
+.metro-map p { margin: .5rem 0; }
+.metro-map-note { font-size: .88rem; }
+.metro-map-note a { text-decoration: underline; }
+.metro-map-layers, .metro-map-tools, .metro-map-legend {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .5rem .75rem; margin: .75rem 0;
+}
+.metro-map-legend { list-style: none; padding: 0; font-size: .82rem; }
+.metro-map-legend li { display: inline-flex; align-items: center; gap: .35rem; }
+.metro-map-legend i { width: .85rem; height: .85rem; border: 1px solid #64748b; }
+.metro-map button, .metro-map select {
+  border: 1px solid currentColor; padding: .35rem .6rem; min-height: 2.75rem; border-radius: .25rem;
+}
+.metro-map button[aria-pressed="true"] { color: var(--white); background: var(--ink); border-color: var(--ink); }
+.metro-map button[aria-disabled="true"] { opacity: .55; cursor: default; }
+.metro-map-tools label { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .45rem; }
+.metro-map select { max-width: 100%; background: var(--white); }
+.metro-map-figure { display: block; width: min(100%, 42rem); max-height: 75vh; margin: 1rem auto; background: #e9f0f4; }
+.metro-map-figure path { cursor: pointer; stroke: #fff; stroke-width: .8; vector-effect: non-scaling-stroke; }
+.metro-map-figure path:hover, .metro-map-figure path[data-selected="true"] { stroke: #15253c; stroke-width: 2; }
+.election-night { padding: 1rem clamp(1rem, 3vw, 1.5rem); margin-bottom: 1rem; }
+.election-night h2 { margin: 0 0 .35rem; font-size: clamp(1.25rem, 2vw, 1.55rem); }
+.election-night p { margin: .5rem 0; }
+.election-night-links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.election-night a, .election-night-links button { text-decoration: underline; text-underline-offset: .2em; }
+.election-night-links a, .election-night-links button { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.late-poll-table { overflow-x: auto; }
+.late-poll-table table { min-width: 28rem; }
+.late-poll-table th small { display: block; font-weight: normal; }
