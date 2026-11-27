@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { boothData } from "./booth-data.generated";
 import { parties, partyMeta, type Party } from "./assembly-parties";
-import type { modelOutput } from "./model-output.generated";
+import type { modelOutput } from "./election-eve-release/model-output.generated";
 
 type District = (typeof modelOutput.districts)[number];
 type Booth = {

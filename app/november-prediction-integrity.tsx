@@ -4,7 +4,7 @@ import novemberApproval from '../metadata/poll-admission-approval-2026-11-15.jso
 
 
 import { useMemo, useState } from "react";
-import { modelOutput } from "./model-output.generated";
+import { modelOutput } from "./election-eve-release/model-output.generated";
 import candidateRoster from "./vec-official-candidates-2026.review.json";
 import review from "../metadata/november-poll-evidence-review-2026-11-11.json";
 type Evidence = {

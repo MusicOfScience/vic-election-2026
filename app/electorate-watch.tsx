@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { partyMeta, type Party } from "./assembly-parties";
-import { modelOutput } from "./model-output.generated";
+import { modelOutput } from "./election-eve-release/model-output.generated";
 import { mainMatchup } from "./assembly-matchups";
 import notes from "./electorate-watch-notes.json";
 import "./forecast-explorers.css";

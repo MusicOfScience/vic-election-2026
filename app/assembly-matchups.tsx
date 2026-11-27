@@ -1,5 +1,5 @@
 import { parties, partyMeta, type Party } from "./assembly-parties";
-import diagnostics from "./assembly-vote-diagnostics.generated.json";
+import diagnostics from "./election-eve-release/assembly-vote-diagnostics.generated.json";
 import "./forecast-explorers.css";
 
 type Matchup = { pair: Party[]; draws: number; firstShare: { mean: number; low: number; high: number }; firstWins: number };

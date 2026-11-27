@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import type { modelOutput } from "./model-output.generated";
+import type { modelOutput } from "./election-eve-release/model-output.generated";
 import { parties, partyMeta, type Party } from "./assembly-parties";
 import "./assembly-overview.css";
 

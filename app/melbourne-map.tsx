@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { parties, partyMeta, type Party } from "./assembly-parties";
-import type { modelOutput } from "./model-output.generated";
+import type { modelOutput } from "./election-eve-release/model-output.generated";
 import map from "./melbourne-map.generated.json";
 import "./melbourne-map.css";
 

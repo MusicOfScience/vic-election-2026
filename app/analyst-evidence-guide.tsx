@@ -9,7 +9,7 @@ import reviewedAdditions from "../metadata/analyst-live-reviewed-additions.json"
 import externalModels from "../metadata/analyst-external-models.json";
 import analystLive from "./analyst-live.generated.json";
 import stagedPollShadow from "../metadata/staged-poll-seat-shadow-2026.json";
-import { modelOutput } from "./model-output.generated";
+import { modelOutput } from "./election-eve-release/model-output.generated";
 
 const subscribe = () => () => {};
 const clientSnapshot = () => true;

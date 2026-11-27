@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { modelOutput } from "./model-output.generated";
+import { modelOutput } from "./election-eve-release/model-output.generated";
 import campaignStatus from "./campaign-status.generated.json";
 import historicalStatus from "../model/data/validation/historical-replays/historical-four-cycle-validation-status.json";
 

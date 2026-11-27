@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { CircleAlert } from "lucide-react";
-import { pollSeries } from "./poll-data.generated";
+import { pollSeries } from "./election-eve-release/poll-data.generated";
 import campaignEvidence from "../metadata/current-evidence-shadow-2026-10-31.json";
 import manualEvidence from "../metadata/manual-source-evidence-2026.json";
 import primaryEvidence from "../metadata/primary-source-evidence-2026.json";
