@@ -7,7 +7,7 @@ export const officialResults = "https://www.vec.vic.gov.au/results/state-electio
 const latePolls = [...review.polls].sort((a, b) => b.publicationDate.localeCompare(a.publicationDate));
 const scenarios = [
   ["reaged", "Existing polls, dated to 27 November"],
-  ["three", "Add DemosAU, RedBridge and Morgan"],
+  ["three", "Final forecast · add DemosAU, RedBridge and Morgan"],
   ["replace", "Replace the three earlier waves"],
   ["plusNewspoll", "Add the three plus Newspoll"],
   ["plusResolve", "Add the three plus Resolve"],
@@ -28,10 +28,10 @@ export function ElectionNight({ openMap, openCount }: { openMap: () => void; ope
   </section>;
 }
 
-export function LatePolling({ includedThrough, forecastDate }: { includedThrough: string; forecastDate: string }) {
+export function LatePolling() {
   return <section className="surface election-night" aria-labelledby="late-polls-title">
     <h2 id="late-polls-title">Late campaign polling</h2>
-    <p>The {forecastDate} forecast uses polls with fieldwork through {includedThrough}. The table and sensitivity test below use later published statewide first preferences.</p>
+    <p>The 27 November forecast adds the final DemosAU, RedBridge/Accent and Roy Morgan waves to the original 17 polls. Newspoll and Resolve appear in the sensitivity scenarios.</p>
     <div className="late-poll-table" role="region" aria-label="Late statewide poll results" tabIndex={0}>
       <table className="matchup-table">
         <thead><tr><th scope="col">Poll</th><th scope="col">Coalition</th><th scope="col">Labor</th><th scope="col">One Nation</th><th scope="col">Greens</th></tr></thead>

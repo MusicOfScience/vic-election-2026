@@ -29,7 +29,7 @@ test("renders the joint experimental forecast dashboard", async () => {
   const html = await response.text();
   assert.match(html, /<title>Victorian Election Forecast 2026<\/title>/);
   assert.match(html, /A forecast you can interrogate/);
-  assert.match(html, /Paths to an Assembly majority/);
+  assert.match(html, /Coalition near the Assembly majority threshold/);
   assert.match(html, /Limits of the Assembly estimates/);
   assert.match(html, /5,000[^<]*<!-- -->?[^<]*whole-election simulations/i);
   assert.match(html, /Experimental forecast/i);
@@ -44,10 +44,10 @@ test("renders the joint experimental forecast dashboard", async () => {
   const seatIds = [...html.matchAll(/data-seat="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(seatIds.length, 88);
   assert.equal(new Set(seatIds).size, 88);
-  assert.match(html, /Experimental forecast status/);
+  assert.match(html, /Final pre-election experimental forecast/);
   assert.match(html, /Campaign update/);
-  assert.match(html, /November polling evidence reviewed/);
-  assert.match(html, /Last admitted poll publication/);
+  assert.match(html, /Latest statewide poll reviewed/);
+  assert.match(html, /Latest statewide poll used/);
   assert.match(html, /Website compiled/);
   assert.match(html, /Where the count could turn/i);
   assert.match(html, /Three ways a seat becomes a hotspot/i);

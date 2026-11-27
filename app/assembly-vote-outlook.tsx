@@ -1,7 +1,7 @@
 import { parties, partyMeta, type Party } from "./assembly-parties";
-import { modelOutput } from "./model-output.generated";
-import { pollSeries } from "./poll-data.generated";
-import diagnostics from "./assembly-vote-diagnostics.generated.json";
+import { modelOutput } from "./election-eve-release/model-output.generated";
+import { pollSeries } from "./election-eve-release/poll-data.generated";
+import diagnostics from "./election-eve-release/assembly-vote-diagnostics.generated.json";
 import "./assembly-vote-outlook.css";
 
 type District = (typeof modelOutput.districts)[number];

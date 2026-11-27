@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { parties, partyMeta, type Party } from "./assembly-parties";
-import { pollSeries } from "./poll-data.generated";
-import replayData from "./polling-replay.generated.json";
+import { pollSeries } from "./election-eve-release/poll-data.generated";
+import replayData from "./election-eve-release/polling-replay.generated.json";
 import "./forecast-explorers.css";
 
 type Values = Record<Party, number>;

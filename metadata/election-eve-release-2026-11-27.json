@@ -1,0 +1,16 @@
+{
+  "forecastDate": "2026-11-27",
+  "approvalDate": "2026-11-27",
+  "approvedBy": "project-owner",
+  "status": "experimental-pre-election",
+  "priorReleaseCommit": "9ec70fa7dfbc5486e4e5baad297a7eb3711f7d50",
+  "admittedPollIds": [
+    "demosau_2026-11-late",
+    "redbridge_accent_2026-11-late",
+    "roy_morgan_2026-11-late"
+  ],
+  "sensitivityOnlyPollIds": [
+    "newspoll_pyxis_2026-11-late",
+    "resolve_strategic_2026-11-late"
+  ]
+}
