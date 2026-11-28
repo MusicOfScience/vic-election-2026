@@ -29,3 +29,8 @@
 .vec-operations-note { margin: 0; padding: .65rem 1rem .65rem 1.8rem; border: 1px solid var(--border); border-radius: .5rem; }
 .vec-live-results .count-tally { overflow-x: auto; }
 .vec-live-results details { padding-block: .25rem; }
+
+
+.vec-overview-table { max-height: 23rem; overflow: auto; }
+.vec-overview-table thead { position: sticky; top: 0; background: var(--background); }
+.vec-overview-table button { text-align: left; text-decoration: underline; text-underline-offset: .16em; }

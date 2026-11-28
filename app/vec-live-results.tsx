@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
+import { ContestOverview, HistoricalComparison, LocationResults } from "./vec-count-analysis";
 
 const id = z.string().regex(/^[a-zA-Z0-9_-]+$/);
 const integer = z.number().int().nonnegative();
@@ -15,6 +16,12 @@ const tally = z.object({
 });
 const pair = z.object({
   updatedAt: date, coverage: coverageSchema, candidates, status: z.enum(["reported", "unavailable", "withheld"]),
+});
+const change = z.object({ family: id, prior: z.number().min(0).max(100), current: z.number().min(0).max(100) });
+const location = z.object({
+  id, name: z.string(), classification: z.string().nullable(), formal: integer.nullable(), informal: integer.nullable(),
+  firstVotes: z.record(id, integer), pairStatus: z.enum(["reported", "unavailable", "withheld", "incompatible"]).nullable(),
+  pairVotes: z.record(id, integer),
 });
 const contest = z.object({
   id, name: z.string(),
@@ -35,6 +42,8 @@ const contest = z.object({
     pairStatus: z.enum(["reported", "unavailable", "withheld"]).nullable(),
     pairVotes: z.record(id, integer),
   })),
+  comparison: z.object({ primary: z.array(change), pair: z.array(change) }).nullable().optional(),
+  locations: z.array(location).optional(),
   operationalExceptions: z.array(z.object({
     pollingLocationId: id, referenceLabel: z.string(), status: z.enum(["closed", "receiving"]),
     venue: z.string().optional(),
@@ -54,12 +63,13 @@ const house = z.object({
 });
 export const vecResultsSchema = z.object({
   schemaVersion: z.literal(2), mode: z.enum(["production", "sample", "trial"]),
-  source: z.literal("Victorian Electoral Commission results data feed"), eventName: z.string(),
+  source: z.literal("Victorian Electoral Commission results data feed"), eventName: z.string(), eventId: id.optional(),
   status: z.object({ state: z.string(), checkedAt: date, lastSuccessfulIngestionAt: date, failures: z.array(z.string()) }),
   houses: z.object({ L: house, U: house }),
 });
 export type VecResults = z.infer<typeof vecResultsSchema>;
-type Contest = z.infer<typeof contest>;
+export type CountContest = z.infer<typeof contest>;
+type Contest = CountContest;
 type Count = NonNullable<Contest["count"]>;
 type VoteRow = { id: string; name: string; votes: number; aboveTheLine?: number; elected?: boolean | null };
 
@@ -170,9 +180,69 @@ function Progression({ contest, upper }: { contest: Contest; upper: boolean }) {
   </details>;
 }
 
-export function VecLiveResults({ ledger, forecastDate }: { ledger: VecResults; forecastDate: string }) {
+export function VecLiveResults({ ledger, forecastDate, onRefresh }: {
+  ledger: VecResults; forecastDate: string; onRefresh: (value: VecResults) => void;
+}) {
   const [selection, setSelection] = useState<"L" | "U">("L");
   const [contestId, setContestId] = useState("");
+  const [watchFile, setWatchFile] = useState<FileSystemFileHandle | null>(null);
+  const [watchNote, setWatchNote] = useState("");
+  const detail = useRef<HTMLHeadingElement>(null);
+  const lastChecked = useRef(ledger.status.checkedAt ?? "");
+  useEffect(() => {
+    lastChecked.current = ledger.status.checkedAt ?? "";
+  }, [ledger.status.checkedAt]);
+  const eventId = ledger.eventId, eventName = ledger.eventName, mode = ledger.mode;
+  useEffect(() => {
+    if (!watchFile) return;
+    let active = true, busy = false;
+    const refresh = async () => {
+      if (busy) return;
+      busy = true;
+      try {
+        const file = await watchFile.getFile();
+        if (file.size > 60_000_000) throw new Error("size");
+        const candidate = vecResultsSchema.parse(JSON.parse(await file.text()));
+        if (candidate.mode !== mode || candidate.eventName !== eventName || candidate.eventId !== eventId) throw new Error("event");
+        const next = candidate.status.checkedAt ?? "";
+        if (active && next > lastChecked.current) {
+          lastChecked.current = next;
+          onRefresh(candidate);
+          setWatchNote("Following this file locally. The viewer checks every 15 seconds.");
+        }
+      } catch {
+        if (active) setWatchNote("The selected file could not be refreshed. The previous snapshot is still displayed.");
+      } finally {
+        busy = false;
+      }
+    };
+    void refresh();
+    const timer = window.setInterval(() => void refresh(), 15_000);
+    return () => { active = false; window.clearInterval(timer); };
+  }, [watchFile, eventId, eventName, mode, onRefresh]);
+
+  async function followFile() {
+    const local = window as Window & { showOpenFilePicker?: () => Promise<FileSystemFileHandle[]> };
+    if (!local.showOpenFilePicker) {
+      setWatchNote("This browser uses manual file selection. Choose the updated private count file again to refresh.");
+      return;
+    }
+    try {
+      const [handle] = await local.showOpenFilePicker();
+      if (!handle) return;
+      const file = await handle.getFile();
+      if (file.size > 60_000_000) throw new Error("size");
+      const candidate = vecResultsSchema.parse(JSON.parse(await file.text()));
+      if (candidate.mode !== mode || candidate.eventName !== eventName || candidate.eventId !== eventId)
+        throw new Error("event");
+      if ((candidate.status.checkedAt ?? "") < (ledger.status.checkedAt ?? "")) throw new Error("older file");
+      setWatchNote("Following this file locally. The viewer checks every 15 seconds.");
+      setWatchFile(handle);
+    } catch (error) {
+      if (!(error instanceof DOMException && error.name === "AbortError"))
+        setWatchNote("Choose the current private count file for this election to start following it.");
+    }
+  }
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const timer = window.setInterval(() => setNow(Date.now()), 30_000);
@@ -191,6 +261,12 @@ export function VecLiveResults({ ledger, forecastDate }: { ledger: VecResults; f
       ? <p className="count-rehearsal" role="note"><strong>{ledger.mode === "sample" ? "VEC sample only." : "Election-night trial only."}</strong> This rehearsal contains test results.</p>
       : <p role="note"><strong>Private preview.</strong> Official results observed in the downloaded VEC feed.</p>}
     <p className="chart-note">{ledger.source}. Experimental pre-election forecast dated {forecastDate}.</p>
+    {mode === "production" && <div>
+      <div className="forecast-options">{watchFile
+        ? <button type="button" onClick={() => { setWatchFile(null); setWatchNote(""); }}>Stop following this file</button>
+        : <button type="button" onClick={() => void followFile()}>Follow a count file on this Mac</button>}</div>
+      {watchNote && <p role="status">{watchNote}</p>}
+    </div>}
     <div className="forecast-options" aria-label="House">
       <button type="button" aria-pressed={!upper} onClick={() => { setSelection("L"); setContestId(""); }}>Legislative Assembly</button>
       <button type="button" aria-pressed={upper} onClick={() => { setSelection("U"); setContestId(""); }}>Legislative Council</button>
@@ -215,13 +291,20 @@ export function VecLiveResults({ ledger, forecastDate }: { ledger: VecResults; f
       {data.statewide.primaries.length > 0 && <details><summary>Show statewide party totals</summary>
         <Rows rows={data.statewide.primaries.map((row, index) => ({ ...row, id: String(index) }))} total={data.statewide.formal} /></details>}
     </section>
+    {mode === "production" && data.contests.every(contest => contest.locations === undefined) &&
+      <p className="chart-note">Open <code>private-analysis.json</code> for polling-location details and 2022 comparisons.</p>}
+    <ContestOverview key={selection} contests={data.contests} upper={upper} onSelect={id => {
+      setContestId(id);
+      detail.current?.scrollIntoView({ block: "start" });
+      detail.current?.focus({ preventScroll: true });
+    }} />
     {current && <>
       <label className="vec-contest-picker">{upper ? "Council region" : "Assembly district"}
         <select value={current.id} onChange={event => setContestId(event.target.value)}>
           {data.contests.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}
         </select>
       </label>
-      <h3>{current.name}</h3>
+      <h3 ref={detail} tabIndex={-1}>{current.name}</h3>
       {current.operationalExceptions.length > 0 && <ul className="vec-operations-note">
         {current.operationalExceptions.map(item => <li key={item.pollingLocationId}>
           <strong>{item.referenceLabel}</strong> {item.status === "closed" ? "closed due to flooding. Expected zero."
@@ -237,7 +320,9 @@ export function VecLiveResults({ ledger, forecastDate }: { ledger: VecResults; f
           {!upper && <PairResult contest={current} count={current.count} />}
         </div>
       </>}
+      <HistoricalComparison comparison={current.comparison} />
       <Progression contest={current} upper={upper} />
+      <LocationResults key={current.id} contest={current} />
     </>}
   </div>;
 }

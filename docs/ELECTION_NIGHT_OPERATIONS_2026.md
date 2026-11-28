@@ -68,3 +68,15 @@ Use the Mac first. GitHub Actions scheduling has variable latency and requires a
 2. Run the Azure probe after 18:00 AEDT and record its outcome. Use the SharePoint fallback in the meantime.
 3. Arrange written approval for any feed-derived public display and distribution. The public VEC results pages are the visitor fallback.
 4. Complete live model validation before making conditional projections or analytical calls. The current feed supplies observed counts. The VEC removed group voting tickets for the 2026 Council election. [VEC count rules](https://www.vec.vic.gov.au/voting/2026-state-election/how-votes-are-counted).
+
+## Private analysis viewer
+
+The private viewer provides a district and region results board, a sortable Assembly indicative 2CP monitor, recent count progression, reported polling-location details and Assembly comparisons with verified final 2022 results. The change in share uses reported 2026 votes against the 2022 final share, so early results reflect the places and vote types that have reported. The 2CP comparison requires the same supported party pairing in both elections. Candidate and location IDs come from private references. Location classifications are shown separately and withheld or incompatible pairings stay distinct from zero votes. Matched-booth swing needs a verified 2022-to-2026 crosswalk.
+
+For an existing active ingestion process, run the read-only exporter to update a separate private file:
+
+```sh
+../.venv/bin/python scripts/export-vec-private-analysis.py --root .. --interval 30
+```
+
+Open `production/private-analysis.json` in Count status. In desktop Chrome or Edge, **Follow a count file on this Mac** grants the viewer read access to that one file and checks it every 15 seconds. The regular file picker supports manual refresh in other browsers. This viewer provides no public feed endpoint.

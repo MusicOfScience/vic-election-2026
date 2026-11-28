@@ -140,7 +140,7 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
           setPrivateLedger(null); setVecLedger(null); setDistrictId(""); setFrame(null);
         }}>Clear private count file</button></div>}
       </details>
-      {!showDemo && vecLedger && <VecLiveResults key={vecLedger.status.checkedAt} ledger={vecLedger} forecastDate={forecastDate} />}
+      {!showDemo && vecLedger && <VecLiveResults key="private" ledger={vecLedger} forecastDate={forecastDate} onRefresh={setVecLedger} />}
       {!showDemo && privateLedger && <p role="note"><strong>Private preview.</strong> Source file mode: {privateLedger.mode}. These figures are visible only in this browser tab.</p>}
       {ledger && district && moment && <>
         <div className="forecast-options">
