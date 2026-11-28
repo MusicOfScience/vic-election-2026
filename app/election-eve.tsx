@@ -2,7 +2,7 @@ import review from "../metadata/election-eve-poll-review-2026-11-27.json";
 import sensitivity from "../metadata/election-eve-poll-sensitivity-2026-11-27.json";
 import "./melbourne-map.css";
 
-export const officialResults = "https://www.vec.vic.gov.au/results/state-election-results";
+export const officialResults = "https://www.vec.vic.gov.au/results/2026-results";
 
 const latePolls = [...review.polls].sort((a, b) => b.publicationDate.localeCompare(a.publicationDate));
 const scenarios = [
