@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "event": "2026 Victorian state general election",
+  "exceptions": [
+    {
+      "id": "mordialloc-keysborough-gardens-closure",
+      "districtLabel": "Mordialloc District",
+      "sourceDate": "2026-11-28",
+      "provenance": "VEC Results Data Feed email, Keysborough Gardens voting centre closed, Mordialloc District",
+      "locations": [
+        {
+          "referenceLabel": "Keysborough Gardens",
+          "status": "closed",
+          "expectedZero": true,
+          "includeInMatchedBoothSwing": false
+        },
+        {
+          "referenceLabel": "Chapel",
+          "status": "receiving",
+          "venue": "Sirius College",
+          "includeInMatchedBoothSwing": false
+        }
+      ]
+    }
+  ]
+}

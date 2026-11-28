@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "kind": "published-pre-election-release-preservation",
+  "recordedAt": "2026-11-28T04:30:48.174414+00:00",
+  "releaseCommit": "0ddd428010c17fc1d89874f719c6b7392dee453a",
+  "releaseCommitTime": "2026-11-27T19:48:11+11:00",
+  "releaseForecastDate": "2026-11-27",
+  "forecastId": "vic_2026_experimental_joint_v1",
+  "status": "experimental-pre-election",
+  "productionCompatible": false,
+  "simulations": 5000,
+  "seed": 20260826,
+  "modelInputTree": "9ec70fa7dfbc5486e4e5baad297a7eb3711f7d50",
+  "modeledPollCount": 20,
+  "newlyAdmittedPollIds": [
+    "demosau_2026-11-late",
+    "redbridge_accent_2026-11-late",
+    "roy_morgan_2026-11-late"
+  ],
+  "forecastGenerationTimestamp": null,
+  "prospectiveProtocol": "vic-2026-prospective-observational-v1",
+  "prospectiveFinalSnapshotStatus": "missed-witnessed-cutoff",
+  "prospectiveFinalCutoff": "2026-11-27T23:59:59+11:00",
+  "artifacts": {
+    "metadata/election-eve-release-2026-11-27.json": "99785f010f8131a7e61f56b6a1178ddd90f888827da960ee1b0b962b7f8dca9d",
+    "metadata/election-eve-poll-review-2026-11-27.json": "6421e7b7aa1fc6f52e663087be5f205e0239a32b0e5936b34e9fec0d095d536f",
+    "scripts/build-election-eve-release.sh": "e082af3cadd245928d04186488f85c6b67168ebd0954bc2569a5322989b0fefb",
+    "app/election-eve-release/assembly-vote-diagnostics.generated.json": "b8b0d753fb13eed948257fc03e15144f2e05ce8975070f3d3b7c17db1d442a2c",
+    "app/election-eve-release/model-output.generated.ts": "bba2d2785c83a2ca476139e2fba7fb37a0052ebc076a5d599a6b6affcfd5bbd6",
+    "app/election-eve-release/poll-data.generated.ts": "be40abe50600d47553a2516d8734686855dbd3f935c3a54b71bbba2725d2b8e4",
+    "app/election-eve-release/polling-replay.generated.json": "d6f81ffdb8d3ae7fcc9e631169294ee771a9304f6e6c6218cd61b6d25d5b0189"
+  }
+}

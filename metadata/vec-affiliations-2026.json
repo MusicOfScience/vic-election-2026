@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "source": "https://vec.vic.gov.au/-/media/a66d0966edc240cf8f15eb04db8248ce.doc",
+  "affiliations": {
+    "4": {
+      "registeredName": "Australian Greens Victoria",
+      "abbreviation": "The Greens",
+      "initials": "GRN",
+      "ballotName": "The Greens",
+      "modelFamily": "GRN"
+    },
+    "5": {
+      "registeredName": "Australian Labor Party - Victorian Branch",
+      "abbreviation": "Australian Labor Party",
+      "initials": null,
+      "ballotName": "Australian Labor Party",
+      "modelFamily": "ALP"
+    },
+    "7": {
+      "registeredName": "Democratic Labour Party (DLP)",
+      "abbreviation": "Labour DLP",
+      "initials": null,
+      "ballotName": "Labour DLP",
+      "modelFamily": null
+    },
+    "8": {
+      "registeredName": "Liberal Party of Australia - Victorian Division",
+      "abbreviation": "Liberal",
+      "initials": null,
+      "ballotName": "Liberal",
+      "modelFamily": "LIB_NAT"
+    },
+    "9": {
+      "registeredName": "National Party of Australia - Victoria",
+      "abbreviation": "The Nationals",
+      "initials": null,
+      "ballotName": "The Nationals",
+      "modelFamily": "LIB_NAT"
+    },
+    "25": {
+      "registeredName": "Animal Justice Party",
+      "abbreviation": "AJP",
+      "initials": "AJP",
+      "ballotName": "Animal Justice Party",
+      "modelFamily": null
+    },
+    "28": {
+      "registeredName": "Shooters, Fishers and Farmers Party Victoria",
+      "abbreviation": "Shooters, Fishers & Farmers Vic",
+      "initials": null,
+      "ballotName": "Shooters, Fishers and Farmers Party Victoria",
+      "modelFamily": null
+    },
+    "30": {
+      "registeredName": "Libertarian Party (formerly Liberal Democrats)",
+      "abbreviation": "Libertarian (formerly Liberal Democrats)",
+      "initials": null,
+      "ballotName": "Libertarian (formerly Liberal Democrats)",
+      "modelFamily": null
+    },
+    "88": {
+      "registeredName": "One Nation Victoria",
+      "abbreviation": "One Nation",
+      "initials": "ON",
+      "ballotName": "One Nation Victoria",
+      "modelFamily": "ONP"
+    },
+    "90": {
+      "registeredName": "Victorian Socialists",
+      "abbreviation": null,
+      "initials": null,
+      "ballotName": "Victorian Socialists",
+      "modelFamily": null
+    },
+    "91": {
+      "registeredName": "Affordable Housing Now – Sustainable Australia Party",
+      "abbreviation": "Sustainable Australia Party",
+      "initials": null,
+      "ballotName": "Affordable Housing Now – Sustainable Australia Party",
+      "modelFamily": null
+    },
+    "97": {
+      "registeredName": "Christian Alliance Party – Reform AU",
+      "abbreviation": "Christian Alliance Party",
+      "initials": "CAP",
+      "ballotName": "Christian Alliance Party – Reform AU",
+      "modelFamily": null
+    },
+    "99": {
+      "registeredName": "Safety Victoria – Violent Crime Prevention",
+      "abbreviation": null,
+      "initials": null,
+      "ballotName": "Safety Victoria – Violent Crime Prevention",
+      "modelFamily": null
+    },
+    "101": {
+      "registeredName": "Family First Victoria",
+      "abbreviation": "Family First",
+      "initials": null,
+      "ballotName": "Family First",
+      "modelFamily": null
+    },
+    "102": {
+      "registeredName": "Legalise Cannabis Victoria",
+      "abbreviation": "Legalise Cannabis",
+      "initials": "LCVIC",
+      "ballotName": "Legalise Cannabis Victoria",
+      "modelFamily": null
+    },
+    "106": {
+      "registeredName": "The West Party",
+      "abbreviation": "West",
+      "initials": "TWP",
+      "ballotName": "The West Party",
+      "modelFamily": null
+    },
+    "107": {
+      "registeredName": "Free Palestine",
+      "abbreviation": null,
+      "initials": null,
+      "ballotName": "Free Palestine",
+      "modelFamily": null
+    },
+    "108": {
+      "registeredName": "Australian Citizens Party (Victorian Division)",
+      "abbreviation": "Citizens Party",
+      "initials": "ACP",
+      "ballotName": "Citizens Party",
+      "modelFamily": null
+    },
+    "109": {
+      "registeredName": "The Republican Make Australia Great Again",
+      "abbreviation": "The Republican",
+      "initials": null,
+      "ballotName": "The Republican",
+      "modelFamily": null
+    },
+    "110": {
+      "registeredName": "Climate Action Now",
+      "abbreviation": "CAN",
+      "initials": null,
+      "ballotName": "Climate Action Now",
+      "modelFamily": null
+    },
+    "111": {
+      "registeredName": "I'm Voting to Avoid the Fine",
+      "abbreviation": null,
+      "initials": null,
+      "ballotName": "I'm Voting to Avoid the Fine",
+      "modelFamily": null
+    },
+    "112": {
+      "registeredName": "Socialist Alliance",
+      "abbreviation": null,
+      "initials": "SA",
+      "ballotName": "Socialist Alliance",
+      "modelFamily": null
+    },
+    "113": {
+      "registeredName": "Australian Democrats",
+      "abbreviation": null,
+      "initials": "AD",
+      "ballotName": "Australian Democrats",
+      "modelFamily": null
+    }
+  }
+}
