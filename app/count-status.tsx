@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
+import { officialResults } from "./election-eve";
 import { VecLiveResults, vecResultsSchema, type VecResults } from "./vec-live-results";
 import "./count-status.css";
 
@@ -102,14 +103,11 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
     <section className="surface forecast-explorer count-status" aria-labelledby="count-status-title">
       <p className="eyebrow">Victorian state election</p>
       <h2 id="count-status-title">Election count status</h2>
-      <p>Follow first preferences, indicative Assembly pairings and declarations reported by the Victorian Electoral Commission (VEC).</p>
-      <div className="forecast-options"><button type="button" aria-pressed={showDemo} onClick={() => {
-        setShowDemo(!showDemo); setDistrictId(""); setFrame(showDemo ? null : 0);
-      }}>{showDemo ? "Exit rehearsal" : "Try the rehearsal"}</button><a href={vecFeed}>VEC feed and documentation</a><a href="https://www.vec.vic.gov.au/results/state-election-results">Official state election results</a></div>
-      {showDemo && <p className="count-rehearsal" role="note"><strong>Rehearsal only.</strong> The district and candidate labels are fictional. All vote totals in this view are illustrative.</p>}
-      {!ledger && !vecLedger && <p><strong>Follow public results on the VEC website.</strong> Review an authorised Assembly and Council count file privately in this browser.</p>}
-      <details><summary>Review a count file privately</summary>
-        <p>Choose private-view.json from the VEC ingestion runner or a saved Assembly count ledger. The file stays in this browser tab.</p>
+      <p>The Victorian Electoral Commission (VEC) publishes the public count as results come in.</p>
+      <p className="count-public-results"><a className="count-primary-link" href={officialResults}>View official VEC results</a></p>
+      <details className="count-view-option"><summary>Review a count file privately</summary>
+        <p>The file picker uses files on this device. On the Mac running the VEC feed, choose <code>private-view.json</code>. The file stays in this browser tab.</p>
+        <p><a href={vecFeed}>VEC feed documentation</a></p>
         <label>Count ledger file <input type="file" accept=".json,application/json" disabled={loading} onChange={async (event) => {
           const file = event.target.files?.[0];
           event.target.value = "";
@@ -140,6 +138,13 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
           setPrivateLedger(null); setVecLedger(null); setDistrictId(""); setFrame(null);
         }}>Clear private count file</button></div>}
       </details>
+      <details className="count-view-option">
+        <summary>Sample rehearsal</summary>
+        <div className="forecast-options"><button type="button" aria-pressed={showDemo} onClick={() => {
+          setShowDemo(!showDemo); setDistrictId(""); setFrame(showDemo ? null : 0);
+        }}>{showDemo ? "Exit sample rehearsal" : "Open fictional sample"}</button></div>
+      </details>
+      {showDemo && <p className="count-rehearsal" role="note"><strong>Sample rehearsal.</strong> The districts, candidates and vote totals are fictional.</p>}
       {!showDemo && vecLedger && <VecLiveResults key="private" ledger={vecLedger} forecastDate={forecastDate} onRefresh={setVecLedger} />}
       {!showDemo && privateLedger && <p role="note"><strong>Private preview.</strong> Source file mode: {privateLedger.mode}. These figures are visible only in this browser tab.</p>}
       {ledger && district && moment && <>
