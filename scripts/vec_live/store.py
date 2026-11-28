@@ -280,11 +280,14 @@ def statewide(house, contests, rows):
             candidate = candidates[candidate_id]
             affiliation = candidate["affiliation"] or {}
             registered = affiliation.get("register") or {}
-            identity = affiliation.get("id") or ("independent" if candidate["independent"] else "unaffiliated")
-            label = registered.get("ballotName") or affiliation.get("feedName") or (
-                f"Affiliation {identity}" if affiliation.get("id") else
-                "Independent candidates" if candidate["independent"] else "Unclassified affiliation"
-            )
+            official_id = affiliation.get("id")
+            if official_id:
+                identity = official_id
+                label = registered.get("ballotName") or affiliation.get("feedName") or f"Affiliation {official_id}"
+            elif candidate["independent"]:
+                identity, label = "independent", "Independent candidates"
+            else:
+                identity, label = "unclassified", "Unregistered or unclassified affiliation"
             bucket = parties.setdefault(identity, {"name": label, "votes": 0})
             bucket["votes"] += number["votes"]
     return {"reporting": reporting, "expected": len(contests), "formal": formal if reporting else None,

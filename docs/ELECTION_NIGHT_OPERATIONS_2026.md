@@ -16,7 +16,7 @@ The 2022 V1 pack contains 72 result ZIPs, two setup ZIPs, one setup XML and a sc
 
 ## Mac runner
 
-Use a local private folder outside Git on a Mac with Python 3.11 or newer. Keep the Mac connected to power and a stable network. macOS `caffeinate` below keeps idle sleep off while ingestion runs. After interruption, repeat the same command from the same checkout and private directory. The archive and journal make a repeat safe.
+Use a local private folder outside Git on a Mac with Python 3.11 or newer. On the prepared Mac, the clean checkout is at `~/Documents/VEC-2026-Private/runner` and the private Python environment already exists. Keep the Mac connected to power and a stable network. macOS `caffeinate` below keeps idle sleep off while ingestion runs. After interruption, repeat the same command from the same checkout and private directory. The archive and journal make a repeat safe.
 
 ```zsh
 umask 077
