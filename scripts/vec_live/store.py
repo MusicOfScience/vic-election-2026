@@ -148,8 +148,12 @@ class Store:
             items = list(extract_inputs(name, raw))
             if self.mode == "production" and any(info.sample for info, _, _ in items):
                 raise FeedError("Sample or trial data cannot enter production")
-            if any(info.reference for info, _, _ in items):
-                self.ingest_references([(info, data) for info, data, _ in items if info.reference], source)
+            references = [(info, data, carrier) for info, data, carrier in items if info.reference]
+            if references:
+                self.ingest_references([(info, data) for info, data, _ in references], source)
+                for _, _, carrier in references:
+                    if carrier is not None:
+                        self.retain(carrier, "zip")
         except ValueError as error:
             reason = str(error) if isinstance(error, FeedError) else "Invalid file metadata"
             self.quarantined(name, sha256(raw).hexdigest(), reason)
