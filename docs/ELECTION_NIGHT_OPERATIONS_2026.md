@@ -28,7 +28,7 @@ python3 -m venv "$VEC_PRIVATE/.venv"
 
 ### Manual SharePoint fallback
 
-Download these three setup files into `incoming`. The VEC lists the production names as `State2026MediaFilePollingLocationsV2.xml`, `State2026MediaFileCandidatesV2.xml` and `State2026MediaFileGroupsAndTicketsV2.xml`. Download the current Lower House and Upper House LitePP results ZIPs once live. A SharePoint bulk ZIP containing those files also works. Keep the names and ZIPs as downloaded.
+Download these three setup files into `incoming`. The VEC lists the production names as `State2026MediaFilePollingLocationsV2.xml`, `State2026MediaFileCandidatesV2.xml` and `State2026MediaFileGroupsAndTicketsV2.xml`. Download the current Lower House and Upper House LitePP results ZIPs once live. SharePoint can wrap each setup XML in a VEC ZIP, then wrap those files together in a OneDrive bulk ZIP. The runner accepts that structure directly. Keep the names and ZIPs as downloaded.
 
 ```zsh
 "$VEC_PRIVATE/.venv/bin/python" scripts/ingest-vec-media.py \

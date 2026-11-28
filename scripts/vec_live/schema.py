@@ -22,7 +22,7 @@ MAX_ARCHIVE = 48_000_000
 MAX_XML = 24_000_000
 FILENAME = re.compile(
     r"(?P<event>(?:test)?state2026)mediafile"
-    r"(?:(?P<reference>candidates|groupsandtickets|pollinglocations)v2\.xml|"
+    r"(?:(?P<reference>candidates|groupsandtickets|pollinglocations)v2\.(?:xml|zip)|"
     r"(?P<variant>litepp|lite|verbose)(?P<house>lh|uh)v2_"
     r"(?P<stamp>\d{8}_\d{6})\.(?:xml|zip))", re.IGNORECASE,
 )
@@ -98,11 +98,13 @@ def extract_inputs(name, raw):
         raise FeedError("Expected VEC ZIP or XML")
     members = list(files_in_zip(raw))
     if info:
+        label = "Reference" if info.reference else "Results"
         if len(members) != 1 or PurePosixPath(members[0][0]).stem.lower() != Path(info.name).stem.lower():
-            raise FeedError("Results ZIP must contain its matching XML")
+            raise FeedError(f"{label} ZIP must contain its matching XML")
         if not members[0][0].lower().endswith(".xml"):
-            raise FeedError("Results ZIP member is not XML")
-        yield info, members[0][1], raw
+            raise FeedError(f"{label} ZIP member is not XML")
+        # Archive the verified carrier but record reference provenance under its XML name.
+        yield identify(members[0][0]) if info.reference else info, members[0][1], raw
         return
     recognised = [(member, content) for member, content in members if identify(member)]
     if not recognised:

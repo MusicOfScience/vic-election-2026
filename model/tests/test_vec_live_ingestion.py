@@ -43,6 +43,38 @@ def test_archive_integrity_and_no_external_xml():
     assert identify("State2022mediafilelitepplh_20221126_220008.zip") is None
 
 
+def test_sharepoint_bulk_zip_preserves_the_nested_reference_archive():
+    stem = "State2026MediaFileCandidatesV2"
+    candidate = b"""<EML xmlns="urn:oasis:names:tc:evs:schema:eml"><CandidateList>
+        <EventIdentifier Id="123"><EventName>Example general election</EventName></EventIdentifier>
+        </CandidateList></EML>"""
+    carrier = zip_bytes(stem + ".xml", candidate)
+    bulk = zip_bytes("Setup/" + stem + ".zip", carrier)
+    [(info, payload, original)] = extract_inputs("OneDrive.zip", bulk)
+    assert info.reference == "candidates"
+    assert info.name == stem + ".xml"
+    assert payload == candidate
+    assert original == carrier
+    with pytest.raises(FeedError, match="Reference ZIP must contain its matching XML"):
+        list(extract_inputs(stem + ".zip", zip_bytes("different.xml", candidate)))
+    with pytest.raises(FeedError, match="Reference ZIP member is not XML"):
+        list(extract_inputs(stem + ".zip", zip_bytes(stem + ".zip", candidate)))
+
+
+def test_private_store_retains_reference_wrapper_and_inner_archive(tmp_path):
+    stem = "State2026MediaFilePollingLocationsV2"
+    payload = b"""<PollingDistrictList xmlns="http://www.aec.gov.au/xml/schema/mediafeed"
+        xmlns:eml="urn:oasis:names:tc:evs:schema:eml"><eml:EventIdentifier Id="123">
+        <eml:EventName>Example general election</eml:EventName></eml:EventIdentifier></PollingDistrictList>"""
+    carrier = zip_bytes(stem + ".xml", payload)
+    bulk = zip_bytes(stem + ".zip", carrier)
+    with open_store(tmp_path, "production") as store:
+        assert store.ingest_file("OneDrive.zip", bulk, "sharepoint") == (0, [])
+        assert (store.archive / (sha256(bulk).hexdigest() + ".zip")).read_bytes() == bulk
+        assert (store.archive / (sha256(carrier).hexdigest() + ".zip")).read_bytes() == carrier
+        assert store.db.execute("SELECT name FROM references_inbox").fetchone() == (stem + ".xml",)
+
+
 def test_azure_credential_alternatives_limits_and_preopening():
     now = datetime(2026, 11, 28, 8, tzinfo=timezone.utc)
     token = "sp=rl&sr=c&sig=synthetic"
