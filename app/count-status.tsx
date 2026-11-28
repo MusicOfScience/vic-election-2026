@@ -106,7 +106,7 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
       <p>The Victorian Electoral Commission (VEC) publishes the public count as results come in.</p>
       <p className="count-public-results"><a className="count-primary-link" href={officialResults}>View official VEC results</a></p>
       <details className="count-view-option"><summary>Review a count file privately</summary>
-        <p>The file picker uses files on this device. On the Mac running the VEC feed, choose <code>private-view.json</code>. The file stays in this browser tab.</p>
+        <p>On the Mac running the VEC feed, choose <code>private-analysis.json</code> for results, swing and polling-location detail. The file stays in this browser tab.</p>
         <p><a href={vecFeed}>VEC feed documentation</a></p>
         <label>Count ledger file <input type="file" accept=".json,application/json" disabled={loading} onChange={async (event) => {
           const file = event.target.files?.[0];
@@ -145,7 +145,7 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
         }}>{showDemo ? "Exit sample rehearsal" : "Open fictional sample"}</button></div>
       </details>
       {showDemo && <p className="count-rehearsal" role="note"><strong>Sample rehearsal.</strong> The districts, candidates and vote totals are fictional.</p>}
-      {!showDemo && vecLedger && <VecLiveResults key="private" ledger={vecLedger} forecastDate={forecastDate} onRefresh={setVecLedger} />}
+      {!showDemo && vecLedger && <VecLiveResults key={`${vecLedger.mode}:${vecLedger.eventId}`} ledger={vecLedger} forecastDate={forecastDate} onRefresh={setVecLedger} />}
       {!showDemo && privateLedger && <p role="note"><strong>Private preview.</strong> Source file mode: {privateLedger.mode}. These figures are visible only in this browser tab.</p>}
       {ledger && district && moment && <>
         <div className="forecast-options">

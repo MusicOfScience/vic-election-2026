@@ -143,6 +143,7 @@ test("leads Count status with official results and keeps the fictional sample co
   assert.match(html, /<details class="count-view-option"><summary>Review a count file privately<\/summary>/);
   assert.match(html, /<details class="count-view-option"><summary>Sample rehearsal<\/summary>/);
   assert.ok(html.indexOf("View official VEC results") < html.indexOf("Review a count file privately"));
+  assert.match(html, /<code>private-analysis\.json<\/code>/);
   assert.ok(html.indexOf("Review a count file privately") < html.indexOf("Sample rehearsal"));
   assert.doesNotMatch(html, /Example district|Rehearsal only/);
 });

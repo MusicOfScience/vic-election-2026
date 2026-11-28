@@ -79,4 +79,4 @@ For an existing active ingestion process, run the read-only exporter from a chec
   --root "$VEC_PRIVATE" --interval 30
 ```
 
-Open `production/private-analysis.json` in Count status. In desktop Chrome or Edge, **Follow a count file on this Mac** grants the viewer read access to that one file and checks it every 15 seconds. The regular file picker supports manual refresh in other browsers. This viewer provides no public feed endpoint.
+Open `production/private-analysis.json` in Count status. After loading it in desktop Chrome or Edge, select **Follow a count file on this Mac** and choose that file again. The viewer checks it every 15 seconds. The regular file picker supports manual refresh in other browsers. This viewer provides no public feed endpoint.
