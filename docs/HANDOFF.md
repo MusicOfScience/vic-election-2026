@@ -1,5 +1,9 @@
 # Project handoff
 
+## 28 November election-night operations
+
+[Current handoff and operator commands](ELECTION_NIGHT_OPERATIONS_2026.md). The 27 November public experimental forecast is preserved by Git and content hashes. The registered final prospective seal was missed. The VEC media feed remains private.
+
 Updated: 2026-10-31
 
 ## Continuation after merged #147
