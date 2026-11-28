@@ -9,10 +9,11 @@ import "./melbourne-map.css";
 
 type District = (typeof modelOutput.districts)[number];
 type Layer = "held" | "contest" | "forecast";
-type Scope = "metro" | "assembly" | "council";
+type Scope = "metro" | "inner" | "assembly" | "council";
 const scopes: { id: Scope; label: string }[] = [
-  { id: "metro", label: "Greater Melbourne" },
   { id: "assembly", label: "Statewide Assembly" },
+  { id: "metro", label: "Greater Melbourne" },
+  { id: "inner", label: "Inner Melbourne" },
   { id: "council", label: "Legislative Council" },
 ];
 const layers: { id: Layer; label: string }[] = [
@@ -40,12 +41,21 @@ export default function MelbourneMap({ districts, forecastDate, openDistrict, op
   openCouncil: () => void;
 }) {
   const [layer, setLayer] = useState<Layer>("held");
-  const [scope, setScope] = useState<Scope>("metro");
-  const [zoom, setZoom] = useState(false);
+  const [scope, setScope] = useState<Scope>("assembly");
+  const [zoom, setZoom] = useState(0);
+  const [centre, setCentre] = useState("");
   const [selected, setSelected] = useState("");
   const detailsButton = useRef<HTMLButtonElement>(null);
   const byId = new Map<string, District>(districts.map((district) => [district.district_id, district]));
-  const metro = scope === "metro";
+  const metro = scope === "metro" || scope === "inner";
+  const baseView = scope === "inner" ? "195 255 360 390" : metro ? "0 0 724 780"
+    : scope === "council" ? geography.council.viewBox : geography.assembly.viewBox;
+  const [left, top, width, height] = baseView.split(" ").map(Number);
+  const focus = scope === "assembly" ? geography.assembly.centres.find(item => item.name === centre) : undefined;
+  const scale = 1.5 ** (zoom + (focus ? 4 : 0));
+  const centreX = focus?.x ?? left + width / 2;
+  const centreY = focus?.y ?? top + height / 2;
+  const viewBox = [centreX - width / scale / 2, centreY - height / scale / 2, width / scale, height / scale].join(" ");
   const activeLayer = !metro && layer === "held" ? "forecast" : layer;
   const assemblyShapes = metro ? map : geography.assembly.areas.map(area => ({ ...area, held: "" }));
   const districtOptions = assemblyShapes.map((seat) => {
@@ -60,8 +70,18 @@ export default function MelbourneMap({ districts, forecastDate, openDistrict, op
     <h2 id="metro-map-title">Victorian electorate maps</h2>
     <div className="metro-map-layers" role="group" aria-label="Map area">
       {scopes.map(({ id, label }) => <button type="button" key={id} aria-pressed={scope === id} onClick={() => {
-        setScope(id); setSelected(""); setZoom(false);
+        setScope(id); setSelected(""); setCentre(""); setZoom(0);
       }}>{label}</button>)}
+    </div>
+    <div className="metro-map-tools" role="group" aria-label="Map zoom">
+      {scope === "assembly" && <label>Regional centre<select value={centre} onChange={event => {
+        setCentre(event.target.value); setZoom(0);
+      }}><option value="">All Victoria</option>
+        {geography.assembly.centres.map(item => <option key={item.name}>{item.name}</option>)}
+      </select></label>}
+      <button type="button" disabled={zoom === 0} onClick={() => setZoom(zoom - 1)}>Zoom out</button>
+      <button type="button" disabled={zoom === 4} onClick={() => setZoom(zoom + 1)}>Zoom in</button>
+      <button type="button" disabled={!centre && zoom === 0} onClick={() => { setCentre(""); setZoom(0); }}>Reset map</button>
     </div>
     {scope === "council" ? <>
       <p>Victoria elects five Legislative Councillors from each of eight regions.</p>
@@ -73,7 +93,7 @@ export default function MelbourneMap({ districts, forecastDate, openDistrict, op
         <button type="button" onClick={openCouncil}>Open Upper House analysis</button>
       </div>
       {region && <p role="status"><strong>{region.name}</strong> · Five Council seats</p>}
-      <svg className="metro-map-figure" viewBox={geography.council.viewBox} role="img"
+      <svg className="metro-map-figure" viewBox={viewBox} role="img"
         aria-label="Map of Victoria’s eight Legislative Council regions. The region selector also selects each area.">
         {geography.council.areas.map(area => <path key={area.id} d={area.path} fillRule="evenodd"
           fill={selected === area.id ? "#295970" : "#9dbeca"} data-selected={selected === area.id}
@@ -93,7 +113,6 @@ export default function MelbourneMap({ districts, forecastDate, openDistrict, op
       {legend.map(({ label, colour }) => <li key={label}><i style={{ backgroundColor: colour }} aria-hidden="true" />{label}</li>)}
     </ul>
     <div className="metro-map-tools">
-      {metro && <button type="button" aria-pressed={zoom} onClick={() => setZoom(!zoom)}>{zoom ? "Show Greater Melbourne" : "Zoom to inner Melbourne"}</button>}
       <label>Electorate<select value={selected} onChange={(event) => setSelected(event.target.value)}>
         <option value="">Choose an electorate</option>
         {districtOptions.map(({ id, district }) => <option key={id} value={id}>{district.district_name}</option>)}
@@ -104,9 +123,8 @@ export default function MelbourneMap({ districts, forecastDate, openDistrict, op
     </div>
     {district && <p role="status"><strong>{district.district_name}</strong> · {partyMeta[district.favoured_party as Party].label} wins
       {" "}{percent(district.favoured_probability)} of experimental runs.</p>}
-    <svg className="metro-map-figure" viewBox={metro ? (zoom ? "195 255 360 390" : "0 0 724 780") : geography.assembly.viewBox}
-      role="img" aria-label={metro ? "State electorates in Greater Melbourne. Use the electorate selector to open a seat." :
-        "All 88 Victorian Assembly districts. Use the electorate selector to open a seat."}>
+    <svg className="metro-map-figure" viewBox={viewBox}
+      role="img" aria-label={`Assembly districts around ${focus?.name ?? (scope === "inner" ? "inner Melbourne" : metro ? "Greater Melbourne" : "Victoria")}. Use the electorate selector to open a seat.`}>
       {districtOptions.map(({ id, path, held, district }) => {
         const current = holder[held as keyof typeof holder];
         const party = partyMeta[district.favoured_party as Party];

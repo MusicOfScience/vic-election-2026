@@ -11,6 +11,11 @@ test("statewide map paths match the 2026 district and region universe", async ()
   const electorates = [new Set(rows.map(row => row[0])), new Set(rows.map(row => row[1]))];
   assert.match(maps.sourceSha256, /^[a-f\d]{64}$/);
   assert.ok(gzipSync(archive).byteLength < 100_000);
+  assert.deepEqual(maps.assembly.centres.map(centre => centre.name), [
+    "Geelong", "Ballarat", "Bendigo", "Shepparton", "Mildura", "Warrnambool", "Wodonga", "Latrobe Valley",
+  ]);
+  const [, , width, height] = maps.assembly.viewBox.split(" ").map(Number);
+  assert.ok(maps.assembly.centres.every(({ x, y }) => x > 0 && x < width && y > 0 && y < height));
   for (const [index, item] of [maps.assembly, maps.council].entries()) {
     assert.match(item.viewBox, /^0 0 900 [\d.]+$/);
     assert.equal(item.areas.length, index === 0 ? 88 : 8);

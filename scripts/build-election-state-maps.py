@@ -11,10 +11,20 @@ from zipfile import ZipFile
 
 import shapely
 from shapely.affinity import affine_transform
-from shapely.geometry import shape
+from shapely.geometry import Point, shape
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = "https://vec.vic.gov.au/-/media/f67f3c2562c9439c880150ede051991f.zip"
+CENTRES = (
+    ("Geelong", 144.36, -38.15),
+    ("Ballarat", 143.85, -37.56),
+    ("Bendigo", 144.28, -36.76),
+    ("Shepparton", 145.40, -36.38),
+    ("Mildura", 142.16, -34.19),
+    ("Warrnambool", 142.48, -38.38),
+    ("Wodonga", 146.89, -36.12),
+    ("Latrobe Valley", 146.53, -38.20),
+)
 
 
 def slug(name):
@@ -72,6 +82,15 @@ def build(archive_path):
             if len({row["boundaryCode"] for row in entries}) != len(entries):
                 raise ValueError(f"{house} source boundary codes are not unique")
             outputs[house] = {"viewBox": "0 0 " + " ".join(map(str, view_box)), "areas": entries}
+            if house == "assembly":
+                centres = []
+                for name, lon, lat in CENTRES:
+                    location = Point(lon, lat)
+                    if not any(item.covers(location) for item in geometries):
+                        raise ValueError(f"{name} map centre is outside Assembly boundaries")
+                    point = affine_transform(location, transform)
+                    centres.append({"name": name, "x": round(point.x, 2), "y": round(point.y, 2)})
+                outputs[house]["centres"] = centres
     return {"schemaVersion": 1, "source": SOURCE,
             "sourceSha256": sha256(archive_path.read_bytes()).hexdigest(), **outputs}
 
