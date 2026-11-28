@@ -9,3 +9,23 @@
 @media (max-width: 690px) { .count-status-grid { grid-template-columns: 1fr; } }
 .count-tally { margin-bottom: .55rem; }
 .count-status-grid dl > div { display: flex; justify-content: space-between; gap: .5rem; }
+
+.vec-live-results { display: grid; gap: .8rem; }
+.vec-live-results h3 { margin: .1rem 0 .3rem; }
+.vec-live-results p, .vec-live-results dl { margin: .3rem 0; }
+.vec-count-facts { display: grid; gap: .25rem; font-size: .91rem; }
+.vec-count-facts > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem .6rem; }
+.vec-count-facts dd { font-variant-numeric: tabular-nums; font-weight: 600; margin: 0; }
+.vec-contest-picker { display: grid; gap: .35rem; max-width: 28rem; font-weight: 600; }
+.vec-contest-picker select {
+  min-height: 44px;
+  width: 100%;
+  padding: .35rem .6rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: .45rem;
+}
+.vec-live-results button[aria-pressed="true"] { box-shadow: inset 0 -3px currentColor; }
+.vec-operations-note { margin: 0; padding: .65rem 1rem .65rem 1.8rem; border: 1px solid var(--border); border-radius: .5rem; }
+.vec-live-results .count-tally { overflow-x: auto; }
+.vec-live-results details { padding-block: .25rem; }
