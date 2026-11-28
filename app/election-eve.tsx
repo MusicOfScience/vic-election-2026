@@ -23,7 +23,7 @@ export function ElectionNight({ openMap, openCount }: { openMap: () => void; ope
     <div className="election-night-links">
       <a href={officialResults}>Official VEC results</a>
       <button type="button" onClick={openCount}>Count status</button>
-      <button type="button" onClick={openMap}>Greater Melbourne map</button>
+      <button type="button" onClick={openMap}>Electorate maps</button>
     </div>
   </section>;
 }

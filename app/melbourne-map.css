@@ -13,7 +13,7 @@
   border: 1px solid currentColor; padding: .35rem .6rem; min-height: 2.75rem; border-radius: .25rem;
 }
 .metro-map button[aria-pressed="true"] { color: var(--white); background: var(--ink); border-color: var(--ink); }
-.metro-map button[aria-disabled="true"] { opacity: .55; cursor: default; }
+.metro-map button[aria-disabled="true"], .metro-map button:disabled { opacity: .55; cursor: default; }
 .metro-map-tools label { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .45rem; }
 .metro-map select { max-width: 100%; background: var(--white); }
 .metro-map-figure { display: block; width: min(100%, 42rem); max-height: 75vh; margin: 1rem auto; background: #e9f0f4; }
