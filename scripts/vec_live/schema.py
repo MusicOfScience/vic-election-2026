@@ -17,6 +17,7 @@ AEC = "{http://www.aec.gov.au/xml/schema/mediafeed}"
 VEC = "{http://www.vec.vic.gov.au}"
 MELBOURNE = ZoneInfo("Australia/Melbourne")
 OPENING = datetime(2026, 11, 28, 18, tzinfo=MELBOURNE)
+TRIAL_DAY = datetime(2026, 11, 25, tzinfo=MELBOURNE).date()
 MAX_ARCHIVE = 48_000_000
 MAX_XML = 24_000_000
 FILENAME = re.compile(
@@ -170,6 +171,8 @@ def check_event(element, mode, info):
         raise FeedError("Sample or trial data cannot enter production")
     if mode == "sample" and (not info.sample or event_id != "18738" or not TEST_MARKER.search(name)):
         raise FeedError("Input does not match the verified 2026 sample event")
+    if mode == "trial" and (info.sample or event_id == "18738"):
+        raise FeedError("The September sample event must stay in sample mode")
     return event_id, name
 
 
@@ -484,6 +487,8 @@ def snapshot(info, raw, reference, mode):
         raise FeedError("Filename and XML publication timestamps disagree")
     if mode == "production" and (published < OPENING or published > datetime.now(timezone.utc)):
         raise FeedError("Production snapshot is outside the live count window")
+    if mode == "trial" and published.astimezone(MELBOURNE).date() != TRIAL_DAY:
+        raise FeedError("Trial snapshot is outside the 25 November rehearsal date")
     if root.get("Verbose") != ("true" if info.variant == "verbose" else "false"):
         raise FeedError("Result variant does not agree with XML")
     election = required(root, VEC + "Election")
@@ -494,6 +499,8 @@ def snapshot(info, raw, reference, mode):
     results = {}
     warnings = []
     quarantined = []
+    closed_locations = {item["pollingLocationId"] for item in reference["operationalExceptions"]
+                        if item.get("expectedZero")}
     body = required(election, VEC + ("House" if house == "L" else "Senate"))
     for contest in required(body, VEC + "Contests").findall(VEC + "Contest"):
         contest_id = key(contest, EML + "ContestIdentifier")
@@ -519,6 +526,8 @@ def snapshot(info, raw, reference, mode):
                     quarantined.append({"contestId": contest_id, "pollingLocationId": location_id,
                                         "section": "first", "reason": str(error)})
                     place_first = None
+                if location_id in closed_locations and place_first and place_first["total"]["votes"]:
+                    warnings.append(f"Closed location {location_id} has a nonzero count; reconcile with the VEC")
                 place_pair = preferred(place.find(VEC + "TwoCandidatePreferred"), roster["candidates"],
                                        blocked=pair["status"] == "withheld") if pair is not None else None
                 if place_pair and place_pair["status"] == "reported" and place_pair["candidates"].keys() != pair["candidates"].keys():

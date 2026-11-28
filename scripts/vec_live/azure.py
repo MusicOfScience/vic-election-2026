@@ -17,7 +17,10 @@ class TransportError(FeedError):
 def credentials(env, now):
     sas_url = env.get("VEC_SAS_URL")
     if sas_url:
-        url = urlsplit(sas_url)
+        try:
+            url = urlsplit(sas_url)
+        except ValueError:
+            raise TransportError("Invalid HTTPS Azure results container URL") from None
         if (url.scheme != "https" or not ENDPOINT.fullmatch(url.netloc)
                 or url.path not in ("/results", "/results/") or url.fragment):
             raise TransportError("Invalid HTTPS Azure results container URL")
@@ -37,7 +40,9 @@ def credentials(env, now):
             or any(c.isspace() for c in sas) or "#" in sas):
         raise TransportError("Invalid Azure SAS credential")
     permissions = fields.get("sp", [])
-    if permissions and (len(permissions) != 1 or set(permissions[0]) != {"r", "l"}):
+    if (not permissions and "si" not in fields) or (
+        permissions and (len(permissions) != 1 or set(permissions[0]) != {"r", "l"})
+    ):
         raise TransportError("Azure SAS must carry read and list permissions only")
     if fields.get("sr") not in (None, ["c"]):
         raise TransportError("Azure SAS must be scoped to the results container")
@@ -88,7 +93,8 @@ class AzureFeed:
             endpoint, "results", credential=sas, logging_enable=False, redirect_total=0,
             retry_policy=ExponentialRetry(initial_backoff=1, increment_base=2, retry_total=3,
                                           random_jitter_range=1),
-            connection_timeout=7, read_timeout=20,
+            connection_timeout=7, read_timeout=20, max_single_get_size=4_000_000,
+            max_chunk_get_size=4_000_000,
         )
 
     def available(self):
@@ -117,9 +123,13 @@ class AzureFeed:
         try:
             download = self.client.get_blob_client(blob.name).download_blob(
                 etag=blob.etag, match_condition=MatchConditions.IfNotModified, max_concurrency=1)
-            data = download.readall()
+            buffer = bytearray()
+            for chunk in download.chunks():
+                buffer.extend(chunk)
+                if len(buffer) > blob.size:
+                    raise TransportError("Azure download exceeded its listed size")
         except (AzureError, OSError) as error:
             raise classified(error) from None
-        if len(data) != blob.size:
+        if len(buffer) != blob.size:
             raise TransportError("Azure download did not match the listed size")
-        return data
+        return bytes(buffer)

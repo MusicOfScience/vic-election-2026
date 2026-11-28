@@ -35,6 +35,8 @@ Download these three setup files into `incoming`. The VEC lists the production n
   --root "$VEC_PRIVATE" --mode production manual "$VEC_PRIVATE/incoming"
 ```
 
+Use `--mode trial` for manually saved 25 November rehearsal files and `--mode sample` for the public September sample pack. Those modes write to separate private directories.
+
 Check `production/status.json`, then open **Count status → Review a count file privately** and choose `production/private-view.json` when the website includes V2 viewer support. Reload the file after an update. Keep the entire production folder out of Git and cloud sync. The closed Keysborough Gardens and receiving Chapel centres are resolved within Mordialloc against production polling-location IDs. An unresolved match is shown as a warning and disables the adjusted location denominator until reviewed. Official contest totals and official locations returned are preserved.
 
 ### Azure

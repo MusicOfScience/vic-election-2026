@@ -257,7 +257,7 @@ def compact_result(row):
 
 
 def analytical_coverage(row, annotations):
-    if not row or not annotations or not row["places"]:
+    if not row or len(annotations) != 2 or not row["places"]:
         return None
     excluded = {item["pollingLocationId"] for item in annotations}
     places = {key: value for key, value in row["places"].items() if key not in excluded}

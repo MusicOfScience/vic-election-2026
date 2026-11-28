@@ -83,7 +83,7 @@ def run_once(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, required=True, help="Private directory outside Git")
-    parser.add_argument("--mode", choices=("sample", "production"), required=True)
+    parser.add_argument("--mode", choices=("sample", "trial", "production"), required=True)
     commands = parser.add_subparsers(dest="command", required=True)
     manual = commands.add_parser("manual")
     manual.add_argument("input", nargs="+", type=Path)
