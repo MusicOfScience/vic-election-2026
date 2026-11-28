@@ -135,6 +135,19 @@ test("keeps the majority label in a high-contrast capsule above the columns", as
   assert.match(html, /translate\(220, 13\)/);
 });
 
+test("leads Count status with official results and keeps the fictional sample collapsed", async () => {
+  const { default: CountStatus } = await vite.ssrLoadModule("/app/count-status.tsx");
+  const html = renderToStaticMarkup(React.createElement(CountStatus, { forecastDate: "2026-11-27" }));
+
+  assert.match(html, /href="https:\/\/www\.vec\.vic\.gov\.au\/results\/2026-results">View official VEC results/);
+  assert.match(html, /<details class="count-view-option"><summary>Review a count file privately<\/summary>/);
+  assert.match(html, /<details class="count-view-option"><summary>Sample rehearsal<\/summary>/);
+  assert.ok(html.indexOf("View official VEC results") < html.indexOf("Review a count file privately"));
+  assert.match(html, /<code>private-analysis\.json<\/code>/);
+  assert.ok(html.indexOf("Review a count file privately") < html.indexOf("Sample rehearsal"));
+  assert.doesNotMatch(html, /Example district|Rehearsal only/);
+});
+
 test("ships the Batch 6 navigation and chart accessibility pass", async () => {
   const { ElectionDashboard } = await vite.ssrLoadModule(
     "/app/election-dashboard.tsx",

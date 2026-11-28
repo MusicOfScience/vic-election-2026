@@ -1,4 +1,12 @@
 .count-status h2 { margin: 0 0 .55rem; }
+.count-public-results { margin: .8rem 0 1rem; }
+.count-primary-link {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: .45rem .75rem; border-radius: 8px;
+  color: var(--primary-foreground); background: var(--primary);
+  font-weight: 600;
+}
+.count-view-option > summary { min-height: 44px; padding: .6rem 0; cursor: pointer; }
 .count-status-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: .75rem 0; }
 .count-status-grid section { min-width: 0; border: 1px solid var(--border); border-radius: .75rem; padding: .85rem; }
 .count-tally p { font-size: .86rem; }
@@ -29,3 +37,8 @@
 .vec-operations-note { margin: 0; padding: .65rem 1rem .65rem 1.8rem; border: 1px solid var(--border); border-radius: .5rem; }
 .vec-live-results .count-tally { overflow-x: auto; }
 .vec-live-results details { padding-block: .25rem; }
+
+
+.vec-overview-table { max-height: 23rem; overflow: auto; }
+.vec-overview-table thead { position: sticky; top: 0; background: var(--background); }
+.vec-overview-table button { text-align: left; text-decoration: underline; text-underline-offset: .16em; }

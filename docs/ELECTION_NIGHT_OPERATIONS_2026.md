@@ -8,7 +8,7 @@ GitHub main at the start of this work was `0ddd428010c17fc1d89874f719c6b7392dee4
 
 The [forecast preservation receipt](../metadata/election-night-forecast-preservation-2026.json) verifies seven release and input carrier hashes against the 27 November main commit. It records the 20-wave experimental release and the exact input tree and approval. The Git publication record predates polls closing. The precise model generation time is unavailable. The registered `final_pre_election` cutoff passed at 23:59:59 AEDT on 27 November without a witnessed seal. The release cannot be substituted for a protocol-eligible final snapshot. Production model authorisation and prospective scoring gates remain closed.
 
-The VEC approved access to the SharePoint folder. Azure read/list authentication and production-reference reconciliation are pending. Public display of feed-derived figures is disabled. Clause 1.2 in the October public template restricts disclosure of the feed in original or modified form. Obtain written VEC permission covering the proposed dashboard and any public JSON distribution. The signed copy and original closure PDF were unavailable at handoff. The VEC closure email independently verifies the Mordialloc exception. [VEC feed, official resources and terms](https://vec.vic.gov.au/about-us/media/2026-results-data-feed).
+The VEC approved SharePoint access. After polls closed, the Mac runner passed an authenticated Azure list/read probe and began ingesting both houses. Production setup reconciled to 88 Assembly districts and eight Council regions. The submitted terms copy was recovered from VEC correspondence. Clause 1.2 restricts disclosure of the feed in original or modified form. Obtain written VEC permission covering the proposed dashboard and any public JSON distribution. The public Count status page links to the VEC results. The closure notice was verified against the production polling-location references. [VEC feed, official resources and terms](https://vec.vic.gov.au/about-us/media/2026-results-data-feed).
 
 The private source manifest is `~/Documents/VEC-2026-Private/source-manifest-2026-11-28.json`. Public sample tests passed 129 snapshots across all six variants, 23 publications per Lower House variant and 20 per Upper House variant. The sample has six Assembly contests and one Council region. Evelyn changes 2CP pairing after withholding while primaries continue. Later snapshots exercise smaller rechecked totals, district-wide recounts and declaration flags. Five Council polling-location first-preference rows from the 22 September simulated mobile-vote snapshot do not add to formal votes. They are quarantined in each affected detailed variant. Council region totals reconcile.
 
@@ -64,7 +64,19 @@ Use the Mac first. GitHub Actions scheduling has variable latency and requires a
 
 ## Next verified gates
 
-1. Inspect the production setup. Verify official event and both Mordialloc polling-location IDs against it, then compare the first accepted snapshots for both houses against the VEC site.
-2. Run the Azure probe after 18:00 AEDT and record its outcome. Use the SharePoint fallback in the meantime.
-3. Arrange written approval for any feed-derived public display and distribution. The public VEC results pages are the visitor fallback.
-4. Complete live model validation before making conditional projections or analytical calls. The current feed supplies observed counts. The VEC removed group voting tickets for the 2026 Council election. [VEC count rules](https://www.vec.vic.gov.au/voting/2026-state-election/how-votes-are-counted).
+1. Monitor ingestion freshness for both houses and use the SharePoint fallback during an Azure outage.
+2. Arrange written approval for any feed-derived public display and distribution. The public VEC results pages are the visitor fallback.
+3. Complete live model validation before making conditional projections or analytical calls. The current feed supplies observed counts. The VEC removed group voting tickets for the 2026 Council election. [VEC count rules](https://www.vec.vic.gov.au/voting/2026-state-election/how-votes-are-counted).
+
+## Private analysis viewer
+
+The private viewer provides a district and region results board, a sortable Assembly indicative 2CP monitor, recent count progression, reported polling-location details and Assembly comparisons with verified final 2022 results. The change in share uses reported 2026 votes against the 2022 final share, so early results reflect the places and vote types that have reported. The 2CP comparison requires the same supported party pairing in both elections. Candidate and location IDs come from private references. Location classifications are shown separately and withheld or incompatible pairings stay distinct from zero votes. Matched-booth swing needs a verified 2022-to-2026 crosswalk.
+
+For an existing active ingestion process, run the read-only exporter from a checkout containing the analysis code to update a separate private file. Point the command at the same private data directory as the ingestion runner.
+
+```sh
+"$VEC_PRIVATE/.venv/bin/python" scripts/export-vec-private-analysis.py \
+  --root "$VEC_PRIVATE" --interval 30
+```
+
+Open `production/private-analysis.json` in Count status. After loading it in desktop Chrome or Edge, select **Follow a count file on this Mac** and choose that file again. The viewer checks it every 15 seconds. The regular file picker supports manual refresh in other browsers. This viewer provides no public feed endpoint.

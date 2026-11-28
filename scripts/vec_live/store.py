@@ -10,7 +10,8 @@ import sqlite3
 from tempfile import NamedTemporaryFile
 import zlib
 
-from .schema import (MAX_ARCHIVE, FeedError, extract_inputs, identify, load_references,
+from .analysis import baselines, compare, polling_locations
+from .schema import (MAX_ARCHIVE, FeedError, extract_inputs, identify, known_locations, load_references,
                      reference_root, register_from_repository, snapshot)
 
 VARIANT_RANK = {"lite": 0, "verbose": 1, "litepp": 2}
@@ -64,9 +65,12 @@ def open_store(directory, mode):
 
 
 class Store:
-    def __init__(self, path, mode, db):
+    def __init__(self, path, mode, db, *, readonly=False):
         self.path, self.mode, self.db = path, mode, db
         self.archive = path / "archive"
+        self.references = None
+        if readonly:
+            return
         self.archive.mkdir(mode=0o700, exist_ok=True)
         db.executescript("""
             CREATE TABLE IF NOT EXISTS references_inbox (
@@ -88,7 +92,6 @@ class Store:
                 UNIQUE(name, digest, reason)
             );
         """)
-        self.references = None
 
     def retain(self, data, suffix):
         digest = sha256(data).hexdigest()
@@ -178,8 +181,7 @@ class Store:
         with self.db:
             self.db.execute("INSERT OR IGNORE INTO downloads VALUES (?,?)", (name, etag))
 
-    def publish_private(self, state, failures):
-        checked_at = now()
+    def latest(self):
         latest = {}
         for house in HOUSES:
             row = self.db.execute("""
@@ -188,19 +190,26 @@ class Store:
             """, (house,)).fetchone()
             if row:
                 latest[house] = {**decoded(row[1]), "ingestedAt": row[0]}
+        return latest
+
+    def view(self, status):
+        return {"schemaVersion": 2, "mode": self.mode,
+                "source": "Victorian Electoral Commission results data feed",
+                "eventId": self.references["eventId"], "eventName": self.references["eventName"],
+                "status": status, "houses": self.viewer_houses(self.latest())}
+
+    def publish_private(self, state, failures):
+        checked_at = now()
         accepted_at = self.db.execute("SELECT max(accepted) FROM snapshots").fetchone()[0]
         status = {"state": state, "checkedAt": checked_at, "lastSuccessfulIngestionAt": accepted_at,
                   "failures": failures, "mode": self.mode}
         if self.references:
-            output = {"schemaVersion": 2, "mode": self.mode,
-                      "source": "Victorian Electoral Commission results data feed",
-                      "eventId": self.references["eventId"], "eventName": self.references["eventName"],
-                      "status": status, "houses": self.viewer_houses(latest)}
-            atomic(self.path / "private-view.json", encoded(output) + b"\n")
+            atomic(self.path / "private-view.json", encoded(self.view(status)) + b"\n")
         atomic(self.path / "status.json", encoded(status) + b"\n")
 
     def viewer_houses(self, latest):
         result = {}
+        comparison = baselines() if self.mode == "production" else None
         for house in HOUSES:
             contests = self.references["contests"][house]
             current = latest.get(house)
@@ -219,6 +228,9 @@ class Store:
                     {"id": key, "name": ref["name"], "candidates": ref["candidates"],
                      "groups": ref.get("groups", {}), "count": compact_result(rows.get(key)),
                      "history": histories.get(key, []),
+                     "comparison": compare(ref, rows.get(key), comparison) if house == "L" and comparison else None,
+                     "locations": polling_locations(rows.get(key), known_locations(self.references, ref))
+                     if rows.get(key) and rows[key]["places"] else [],
                      "operationalExceptions": [item for item in annotations if item["contestId"] == key],
                      "analyticalCoverage": analytical_coverage(
                          rows.get(key), [item for item in annotations if item["contestId"] == key]
