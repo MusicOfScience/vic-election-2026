@@ -12,11 +12,11 @@ The VEC approved access to the SharePoint folder. Azure read/list authentication
 
 The private source manifest is `~/Documents/VEC-2026-Private/source-manifest-2026-11-28.json`. Public sample tests passed 129 snapshots across all six variants, 23 publications per Lower House variant and 20 per Upper House variant. The sample has six Assembly contests and one Council region. Evelyn changes 2CP pairing after withholding while primaries continue. Later snapshots exercise smaller rechecked totals, district-wide recounts and declaration flags. Five Council polling-location first-preference rows from the 22 September simulated mobile-vote snapshot do not add to formal votes. They are quarantined in each affected detailed variant. Council region totals reconcile.
 
-The 2022 sample ZIP contains 74 nested ZIPs, one XML and a scenario guide, and contains V1 carriers bearing real election dates. Authenticity of the counts for replay awaits reconciliation against published VEC results. The geography ZIP contains 88 valid Assembly polygons and eight valid Council polygons. Its longitude/latitude coordinates fall in Victoria, with no explicit CRS member. The VEC identifies the 2021 redivision as the latest. Exact production-ID correspondence has yet to be checked. [VEC boundary reviews](https://vec.vic.gov.au/electoral-boundaries/state-boundary-reviews).
+The 2022 V1 pack contains 72 result ZIPs, two setup ZIPs, one setup XML and a scenario guide. The final 15 December Assembly capture agrees with all published candidate primaries in 85 of 87 November districts. Box Hill and Sydenham each differ by one formal vote, and Narracan is a zero placeholder because its election was later. That supports a contemporaneous count archive, with later corrections and separate contests to reconcile before scoring. No 2022 replay or model update was activated. The geography ZIP contains 88 valid Assembly polygons and eight valid Council polygons. Its longitude/latitude coordinates fall in Victoria, with no explicit CRS member. The VEC identifies the 2021 redivision as the latest. Exact production-ID correspondence has yet to be checked. [VEC boundary reviews](https://vec.vic.gov.au/electoral-boundaries/state-boundary-reviews).
 
 ## Mac runner
 
-Use a local private folder outside Git on a Mac with Python 3.11 or newer. Keep the Mac connected to power and a stable network. macOS `caffeinate` below keeps idle sleep off while ingestion runs. After interruption, repeat the same command from the same checkout and private directory. The archive and journal make a repeat safe.
+Use a local private folder outside Git on a Mac with Python 3.11 or newer. On the prepared Mac, the clean checkout is at `~/Documents/VEC-2026-Private/runner` and the private Python environment already exists. Keep the Mac connected to power and a stable network. macOS `caffeinate` below keeps idle sleep off while ingestion runs. After interruption, repeat the same command from the same checkout and private directory. The archive and journal make a repeat safe.
 
 ```zsh
 umask 077
@@ -37,7 +37,7 @@ Download these three setup files into `incoming`. The VEC lists the production n
 
 Use `--mode trial` for manually saved 25 November rehearsal files and `--mode sample` for the public September sample pack. Those modes write to separate private directories.
 
-Check `production/status.json`, then open **Count status → Review a count file privately** and choose `production/private-view.json` when the website includes V2 viewer support. Reload the file after an update. Keep the entire production folder out of Git and cloud sync. The closed Keysborough Gardens and receiving Chapel centres are resolved within Mordialloc against production polling-location IDs. An unresolved match is shown as a warning and disables the adjusted location denominator until reviewed. Official contest totals and official locations returned are preserved.
+Check `production/status.json`, then open **Count status → Review a count file privately** and choose `production/private-view.json` on the updated website. Switch between the Assembly and Council using the house buttons. Reload the file after an update. Keep the entire production folder out of Git and cloud sync. The closed Keysborough Gardens and receiving Chapel centres are resolved within Mordialloc against production polling-location IDs. An unresolved match is shown as a warning and disables the adjusted location denominator until reviewed. Official contest totals and official locations returned are preserved.
 
 ### Azure
 

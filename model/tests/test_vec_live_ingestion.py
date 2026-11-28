@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from vec_live.azure import AzureFeed, TransportError, credentials  # noqa: E402
 from vec_live.schema import FeedError, extract_inputs, identify, register_from_repository, snapshot, xml  # noqa: E402
-from vec_live.store import decoded, open_store  # noqa: E402
+from vec_live.store import decoded, open_store, statewide  # noqa: E402
 
 
 def zip_bytes(name, content):
@@ -202,3 +202,18 @@ def test_exception_register_requires_official_ids_before_adjustment():
         "Keysborough Gardens": "closed", "Chapel": "receiving"
     }
     assert all(not row["includeInMatchedBoothSwing"] for row in exception["locations"])
+
+
+def test_statewide_totals_do_not_assign_unregistered_votes_to_a_named_party():
+    roster = {"seat": {"candidates": {
+        "a": {"independent": False, "affiliation": {"id": None, "feedName": "Unregistered A"}},
+        "b": {"independent": False, "affiliation": {"id": None, "feedName": "Unregistered B"}},
+        "c": {"independent": True, "affiliation": None},
+    }}}
+    counts = {"seat": {"first": {"status": "reported", "formal": {"votes": 60}, "candidates": {
+        "a": {"votes": 10}, "b": {"votes": 20}, "c": {"votes": 30},
+    }}}}
+    assert statewide("L", roster, counts)["primaries"] == [
+        {"name": "Independent candidates", "votes": 30},
+        {"name": "Unregistered or unclassified affiliation", "votes": 30},
+    ]

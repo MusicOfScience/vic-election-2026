@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
+import { VecLiveResults, vecResultsSchema, type VecResults } from "./vec-live-results";
 import "./count-status.css";
 
 const statuses = {
@@ -81,6 +82,7 @@ function CountTable({ tally, candidates, onlyPublished = true }: { tally: Tally;
 export default function CountStatus({ forecastDate }: { forecastDate: string }) {
   const [showDemo, setShowDemo] = useState(false);
   const [privateLedger, setPrivateLedger] = useState<Ledger | null>(null);
+  const [vecLedger, setVecLedger] = useState<VecResults | null>(null);
   const [fileError, setFileError] = useState("");
   const [loading, setLoading] = useState(false);
   const [districtId, setDistrictId] = useState("");
@@ -98,16 +100,16 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
     Object.entries(current.first.votes).some(([id, votes]) => votes < (earlier.first.votes[id] ?? 0));
   return <div className="tab-stack">
     <section className="surface forecast-explorer count-status" aria-labelledby="count-status-title">
-      <p className="eyebrow">Victorian Legislative Assembly</p>
+      <p className="eyebrow">Victorian state election</p>
       <h2 id="count-status-title">Election count status</h2>
-      <p>Follow first preferences, indicative pair changes and declarations reported by the Victorian Electoral Commission (VEC).</p>
+      <p>Follow first preferences, indicative Assembly pairings and declarations reported by the Victorian Electoral Commission (VEC).</p>
       <div className="forecast-options"><button type="button" aria-pressed={showDemo} onClick={() => {
         setShowDemo(!showDemo); setDistrictId(""); setFrame(showDemo ? null : 0);
       }}>{showDemo ? "Exit rehearsal" : "Try the rehearsal"}</button><a href={vecFeed}>VEC feed and documentation</a><a href="https://www.vec.vic.gov.au/results/state-election-results">Official state election results</a></div>
       {showDemo && <p className="count-rehearsal" role="note"><strong>Rehearsal only.</strong> The district and candidate labels are fictional. All vote totals in this view are illustrative.</p>}
-      {!ledger && <p><strong>Public results are published by the VEC.</strong> You can also try the rehearsal or review an authorised count file privately in this browser.</p>}
+      {!ledger && !vecLedger && <p><strong>Follow public results on the VEC website.</strong> Review an authorised Assembly and Council count file privately in this browser.</p>}
       <details><summary>Review a count file privately</summary>
-        <p>Choose a JSON ledger made by the project’s count converter. The file stays in this browser tab.</p>
+        <p>Choose private-view.json from the VEC ingestion runner or a saved Assembly count ledger. The file stays in this browser tab.</p>
         <label>Count ledger file <input type="file" accept=".json,application/json" disabled={loading} onChange={async (event) => {
           const file = event.target.files?.[0];
           event.target.value = "";
@@ -116,9 +118,16 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
           setLoading(true);
           try {
             if (file.size > 60_000_000) throw new Error("The count file exceeds the 60 MB local preview limit.");
-            const parsed = ledgerSchema.safeParse(JSON.parse(await file.text()));
-            if (!parsed.success) throw new Error("This file does not match the count ledger format.");
-            setPrivateLedger(parsed.data); setDistrictId(""); setFrame(null); setShowDemo(false);
+            const json: unknown = JSON.parse(await file.text());
+            const current = vecResultsSchema.safeParse(json);
+            if (current.success) {
+              setVecLedger(current.data); setPrivateLedger(null);
+            } else {
+              const parsed = ledgerSchema.safeParse(json);
+              if (!parsed.success) throw new Error("This file does not match the count ledger format.");
+              setPrivateLedger(parsed.data); setVecLedger(null);
+            }
+            setDistrictId(""); setFrame(null); setShowDemo(false);
           } catch (error) {
             setFileError(error instanceof SyntaxError ? "The selected file is not valid JSON." :
               error instanceof Error ? error.message : "The count file could not be read.");
@@ -127,10 +136,11 @@ export default function CountStatus({ forecastDate }: { forecastDate: string }) 
           }
         }} /></label>
         {fileError && <p role="alert">{fileError}</p>}
-        {privateLedger && <div className="forecast-options"><button type="button" disabled={loading} onClick={() => {
-          setPrivateLedger(null); setDistrictId(""); setFrame(null);
+        {(privateLedger || vecLedger) && <div className="forecast-options"><button type="button" disabled={loading} onClick={() => {
+          setPrivateLedger(null); setVecLedger(null); setDistrictId(""); setFrame(null);
         }}>Clear private count file</button></div>}
       </details>
+      {!showDemo && vecLedger && <VecLiveResults key={vecLedger.status.checkedAt} ledger={vecLedger} forecastDate={forecastDate} />}
       {!showDemo && privateLedger && <p role="note"><strong>Private preview.</strong> Source file mode: {privateLedger.mode}. These figures are visible only in this browser tab.</p>}
       {ledger && district && moment && <>
         <div className="forecast-options">
